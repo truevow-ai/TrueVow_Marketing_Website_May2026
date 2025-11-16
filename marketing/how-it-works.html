@@ -1,0 +1,1503 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrueVow Intake™ — Answer Every Call. Never Hear Them. Pay Only When You Win.</title>
+    <meta name="description" content="See exactly how Benjamin works across all practice areas. Full qualifying intake for PI, Family, Immigration, Criminal, Employment, Business, Real Estate, Estate Planning. $29/booking. Free website chatbot included.">
+    
+    <style>
+        /* RESET & BASE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+        
+        body {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #1A1A1A;
+            background: #FFFFFF;
+        }
+        
+        
+        /* NAVIGATION - Styles removed, using inline styles only to match 33% Cap page */
+        
+        /* HERO */
+        .hero {
+            background: #000000;
+            color: #FFFFFF;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 42pt;
+            font-weight: 700;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+        
+        .hero p {
+            font-size: 24pt;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto 40px;
+            color: #CCCCCC;
+        }
+        
+        .hero-cta {
+            display: inline-block;
+            background: #0A2463;
+            color: #FFFFFF;
+            padding: 20px 48px;
+            border-radius: 8px;
+            font-size: 20pt;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(10, 36, 99, 0.4);
+        }
+        
+        .hero-cta:hover {
+            background: #051533;
+            transform: translateY(-4px);
+        }
+        
+        /* MICRO-MOVIE */
+        .micro-movie {
+            background: #F8F9FF;
+            border-left: 4px solid #E8F5E9;
+            padding: 40px 40px 40px 50px;
+            margin: 60px auto;
+            max-width: 900px;
+            font-size: 18pt;
+            color: #333333;
+            font-style: italic;
+            line-height: 1.9;
+        }
+        
+        .micro-movie p {
+            margin-bottom: 20px;
+        }
+        
+        .micro-movie strong {
+            font-weight: 700;
+            color: #000000;
+            font-style: normal;
+        }
+        
+        /* SECTION */
+        .section {
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 0 24px;
+        }
+        
+        .section h2 {
+            font-size: 28pt;
+            font-weight: 600;
+            color: #1A1A1A;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section p {
+            font-size: 18pt;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 24px;
+        }
+        
+        .section ul {
+            font-size: 18pt;
+            line-height: 2;
+            color: #333;
+            margin: 24px 0 24px 40px;
+        }
+        
+        /* TIER CARDS */
+        .tier-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin: 40px 0;
+        }
+        
+        .tier-card {
+            background: #F8F9FA;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .tier-card h3 {
+            font-size: 24pt;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+        
+        .tier-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 16pt;
+            line-height: 2.2;
+        }
+        
+        .tier-card ul li {
+            margin-bottom: 12px;
+        }
+        
+        .tier-free {
+            border: 3px solid #10B981;
+        }
+        
+        .tier-free h3 {
+            color: #10B981;
+        }
+        
+        .tier-paid {
+            border: 3px solid #0A2463;
+        }
+        
+        .tier-paid h3 {
+            color: #0A2463;
+        }
+        
+        /* CALL FLOW GRID */
+        .call-flow-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin: 40px 0;
+        }
+        
+        .call-flow-card {
+            background: #F8F9FA;
+            padding: 24px;
+            border-radius: 12px;
+            border-left: 4px solid #0A2463;
+        }
+        
+        .call-flow-card h4 {
+            font-size: 18pt;
+            font-weight: 700;
+            color: #0A2463;
+            margin-bottom: 16px;
+        }
+        
+        .call-flow-card p {
+            font-size: 15pt;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 12px;
+        }
+        
+        /* CTA BUTTON */
+        .cta-button {
+            display: block;
+            background: #0A2463;
+            color: #FFFFFF;
+            padding: 20px 50px;
+            border-radius: 8px;
+            font-size: 20pt;
+            font-weight: 700;
+            text-decoration: none;
+            text-align: center;
+            max-width: 700px;
+            margin: 60px auto;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(10, 36, 99, 0.3);
+        }
+        
+        .cta-button:hover {
+            background: #051533;
+            transform: translateY(-2px);
+        }
+        
+        /* GUARANTEE BOX */
+        .guarantee-box {
+            background: #E8F4FD;
+            padding: 40px;
+            border-radius: 12px;
+            border-left: 4px solid #0A2463;
+            margin: 40px 0;
+        }
+        
+        /* FOOTER */
+        footer {
+            background: #1A1A1A;
+            color: #777777;
+            padding: 60px 20px;
+            text-align: center;
+            border-top: 1px solid #000000;
+        }
+        
+        footer .footer-title {
+            font-size: 18pt;
+            font-weight: 600;
+            color: #FFFFFF;
+            margin-bottom: 8px;
+        }
+        
+        footer a {
+            color: #999;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        footer a:hover {
+            color: #FFFFFF;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 28pt;
+            }
+            
+            .tier-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .call-flow-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            /* Navigation responsive styles removed - using inline styles only */
+        }
+    </style>
+</head>
+<body>
+
+
+    <!-- NAVIGATION -->
+    <!-- NAVIGATION --><!-- STANDARDIZED NAVIGATION - Embedded for direct file opening -->
+<nav style="position: sticky; top: 0; z-index: 1000; background: white; border-bottom: 1px solid #E5E5E5; padding: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.05); font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center;">
+        <a href="index.html" style="display: flex; align-items: center; text-decoration: none; gap: 12px;">
+            <img src="../assets/logo.svg" alt="TrueVow" style="height: 40px; width: auto;">
+        </a>
+        <div style="display: flex; gap: 32px; align-items: center;">
+            <a href="index.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500;">Home</a>
+            <a href="how-it-works.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500;">How It Works</a>
+            <a href="pricing.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500;">Pricing</a>
+            <a href="county-cap.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500;">33% Cap</a>
+            <a href="profitability.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500;">ROI</a>
+        </div>
+        <a href="apply.html" style="background: #0A2463; color: white !important; padding: 12px 24px; border-radius: 8px; font-size: 16px; font-weight: 600; text-decoration: none;">Apply Now →</a>
+    </div>
+</nav>
+
+
+
+
+
+    <!-- HERO -->
+    <div class="hero">
+        <h1>See Exactly How Benjamin Works<br>Across All 9 Practice Areas</h1>
+        <p>From Personal Injury to Immigration to Family Law—<br>Benjamin answers, qualifies, and books consultations.<br>Pay only $29/booking. No monthly fees. Ever.</p>
+        <a href="how-it-works.html#how-it-works" class="hero-cta">See How It Works →</a>
+    </div>
+
+    <!-- MICRO-MOVIE (MULTI-PRACTICE!) -->
+    <div class="micro-movie">
+        <p><strong>Friday at 2:17 p.m.</strong> — a lead fills out your website form.</p>
+        
+        <p>Benjamin captures their info — no audio. No storage.</p>
+        
+        <p style="margin-top: 32px;"><strong>Friday evening</strong> — three calls ring through, one at a time.</p>
+        
+        <p><strong>7:32 p.m.:</strong> Car accident victim (rear-ended on I-95) — Benjamin qualifies, books consultation.</p>
+        
+        <p><strong>9:18 p.m.:</strong> Parent seeking custody modification — Benjamin qualifies, books consultation.</p>
+        
+        <p><strong>11:47 p.m.:</strong> Asylum seeker from Venezuela — Benjamin qualifies, books consultation.</p>
+        
+        <p style="margin-top: 24px; font-style: normal; font-weight: 600; color: #0A2463;">Works the same for Bankruptcy, Employment, Criminal, Real Estate, Estate Planning, Workers' Comp.</p>
+        
+        <p style="margin-top: 32px;"><strong>You wake up Saturday morning.</strong></p>
+        
+        <p>Four new consultations booked.</p>
+        
+        <p>One from your website — <strong>free</strong>.</p>
+        
+        <p>Three from your phone — <strong>$87 total</strong> ($29 each, standard nationwide).</p>
+        
+        <p style="margin-top: 32px; font-weight: 700; font-style: normal;">The quiet thrill of knowing Benjamin handled your intake while you were sleeping—</p>
+        
+        <p style="font-weight: 700; font-style: normal;">a cold wave of relief. The first deep breath all week.</p>
+    </div>
+
+    <!-- PRIMARY CTA -->
+    <a href="apply.html" class="cta-button">
+        Experience Benjamin Live — Schedule Your Demo →
+    </a>
+
+    <!-- SECTION: NOT AN ANSWERING SERVICE (CATEGORY REFRAME) -->
+    <div class="section">
+        <h2>🚀 This Isn't an Answering Service. It's Your Case Acquisition System.</h2>
+        <p>
+            TrueVow Intake isn't a receptionist. It's not an AI answering bot. It's your
+            <strong>Case Acquisition System</strong> — engineered to turn qualified calls into booked consultations,
+            without you ever hearing a word.
+        </p>
+        <ul>
+            <li><strong>Receptionists</strong>: answer calls — they don't qualify them.</li>
+            <li><strong>AI tools</strong>: record conversations — they risk your license.</li>
+            <li><strong>TrueVow</strong>: qualifies with practice-specific, yes/no-only scripts — then books consults — while you focus on winning cases.</li>
+        </ul>
+        <p style="margin-top: 16px; font-weight: 700;">You're not outsourcing judgment. You're outsourcing labor — with full oversight.</p>
+        <p style="margin-top: 8px;">Pay $29 only when you win. No monthly fees. Ever.</p>
+    </div>
+
+    <!-- SECTION: TWO TIERS -->
+    <div class="section" id="how-it-works">
+        <h2>📦 Your Two Options — One Mission</h2>
+        
+        <div class="tier-grid">
+            <!-- FREE TIER -->
+            <div class="tier-card tier-free">
+                <h3>✅ Website Chatbot — FREE FOREVER</h3>
+                <ul>
+                    <li>✓ Embed Benjamin on your website (no code needed!)</li>
+                    <li>✓ Asks yes/no questions tailored to YOUR practice area</li>
+                    <li>✓ Captures name, phone, email</li>
+                    <li>✓ Works for: PI, Family, Immigration, Criminal, Employment, Bankruptcy, Real Estate, Estate Planning, Workers' Comp</li>
+                    <li>✓ Never records audio. Never stores secrets.</li>
+                    <li>✓ Spanish included FREE</li>
+                </ul>
+                <p style="margin-top: 24px; font-weight: 700; font-size: 18pt; color: #10B981;">
+                    FREE. No monthly fees. Ever.
+                </p>
+            </div>
+            
+            <!-- PAID TIER -->
+            <div class="tier-card tier-paid">
+                <h3>📞 Phone Intake — Pay Only When You Win</h3>
+                <ul>
+                    <li>✓ Benjamin answers your phone 24/7 (even 2:47 a.m.!)</li>
+                    <li>✓ Full qualifying intake tailored to your practice area</li>
+                    <li>✓ Dangerous admission detection (PI, Criminal!)</li>
+                    <li>✓ Statute checking (PI, Employment, Family!)</li>
+                    <li>✓ Jurisdiction verification (Immigration, Real Estate!)</li>
+                    <li>✓ Automatic calendar booking</li>
+                    <li>✓ Spanish included FREE</li>
+                    <li>✓ Works for ALL 9 practice areas!</li>
+                </ul>
+                <p style="margin-top: 24px; font-weight: 700; font-size: 18pt; color: #0A2463;">
+                    $29/qualified booking
+                </p>
+                <p style="margin-top: 8px; font-size: 14pt; color: #666;">
+                    11 FREE to start • No monthly fees • No contracts • Cancel anytime
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION: HOW IT WORKS -->
+    <div class="section">
+        <h2>🔒 How Benjamin Works — With Your Rules, Not Ours</h2>
+        
+        <p><strong>Step 1 – Capture & Qualify</strong></p>
+        <p>During onboarding, your compliance specialist works with you to customize Benjamin's script—based on your practice area and state rules.</p>
+        <p>Once approved, our solutions engineer implements it.</p>
+        <p style="font-weight: 700; color: #0A2463;">You control the criteria. Benjamin executes it — no guesswork, no drift.</p>
+        
+        <p style="margin-top: 40px;"><strong>Step 2 – Book & Confirm</strong></p>
+        <p>Benjamin answers calls, asks only yes/no questions, qualifies leads, books consultations—</p>
+        <p style="font-weight: 700; color: #0A2463;">All without hearing a single confession. All without storing a single secret.</p>
+        
+        <p style="margin-top: 40px;"><strong>Step 3 – Your Control (Choose Your Mode!)</strong></p>
+        <p>Toggle between three modes:</p>
+        <ul>
+            <li><strong>Paranoid Mode:</strong> Every booking waits for your text "YES." (You approve manually!)</li>
+            <li><strong>Hybrid Mode:</strong> Routine cases auto-book; complex ones wait for approval.</li>
+            <li><strong>Cruise Mode:</strong> Benjamin handles everything — fully autonomous, but always under your rules.</li>
+        </ul>
+        <p style="font-weight: 700; color: #1A1A1A; margin-top: 24px;">You're not outsourcing judgment. You're outsourcing labor — with full oversight.</p>
+    </div>
+
+    <!-- CTA -->
+    <a href="apply.html" class="cta-button">
+        Get Started — Pay Only When You Win →
+    </a>
+
+    <!-- SECTION: PRECISION-BUILT SCRIPTS (ALL 9 AREAS!) -->
+    <div class="section">
+        <h2>📋 Precision-Built for Your Practice Area</h2>
+        
+        <p>We've engineered ethical, yes/no-only scripts for all major practice areas — all live today:</p>
+        
+        <div style="background: #F8F9FA; padding: 32px; border-radius: 12px; margin: 32px 0;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+                <div>
+                    <p style="font-size: 16pt; line-height: 2; margin: 0;">
+                        🚗 <strong>Personal Injury:</strong> Car accidents, slip & fall, product liability, dog bites<br>
+                        🏭 <strong>Workers' Compensation:</strong> Workplace injuries, occupational diseases<br>
+                        👔 <strong>Employment Law:</strong> Wrongful termination, discrimination, harassment<br>
+                        👨‍👩‍👧 <strong>Family Law:</strong> Divorce, custody, child support, domestic violence<br>
+                        ⚖️ <strong>Criminal Defense:</strong> DUI, misdemeanors, felonies
+                    </p>
+                </div>
+                <div>
+                    <p style="font-size: 16pt; line-height: 2; margin: 0;">
+                        🌎 <strong>Immigration:</strong> Asylum, deportation defense, visas, citizenship<br>
+                        💳 <strong>Bankruptcy:</strong> Chapter 7, Chapter 13, debt relief, foreclosure defense<br>
+                        🏠 <strong>Real Estate:</strong> Transactions, landlord-tenant, foreclosure<br>
+                        💼 <strong>Estate Planning:</strong> Wills, trusts, probate
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <p style="font-weight: 700; color: #0A2463; text-align: center; margin-top: 32px;">
+            Scripts auto-adapt to your state's rules. Custom scripts available for complex sub-specialties.
+        </p>
+    </div>
+
+    <!-- SECTION SEPARATOR -->
+    <div style="height: 2px; background: linear-gradient(to right, transparent, #E5E5E5, transparent); margin: 60px auto; max-width: 600px;"></div>
+
+    <!-- SECTION: INTERACTIVE CALL FLOW EXPLORER -->
+    <div class="section">
+        <h2>🗣️ See Benjamin's EXACT Questions — Live!</h2>
+        
+        <p style="text-align: center; font-size: 16pt; color: #666; margin-bottom: 40px;">
+            See what Benjamin checks for in each practice area — built for compliance, tailored to your state's rules.
+        </p>
+        
+        <!-- DROPDOWN SELECTORS -->
+        <div style="background: #F8F9FA; padding: 40px; border-radius: 12px; margin: 40px 0;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px;">
+                <!-- Practice Area Dropdown -->
+                <div>
+                    <label style="display: block; font-weight: 700; font-size: 16pt; margin-bottom: 12px; color: #1A1A1A;">
+                        1️⃣ Select Practice Area:
+                    </label>
+                    <select id="practiceArea" style="width: 100%; padding: 16px; font-size: 16pt; border-radius: 8px; border: 2px solid #0A2463;">
+                        <option value="">— Choose Practice Area —</option>
+                        <option value="personal_injury">🚗 Personal Injury</option>
+                        <option value="family_law">👨‍👩‍👧 Family Law</option>
+                        <option value="immigration">🌎 Immigration</option>
+                        <option value="criminal_defense">⚖️ Criminal Defense</option>
+                        <option value="employment_law">👔 Employment Law</option>
+                        <option value="bankruptcy">💳 Bankruptcy</option>
+                        <option value="real_estate">🏠 Real Estate</option>
+                        <option value="estate_planning">💼 Estate Planning</option>
+                        <option value="workers_comp">🏭 Workers' Compensation</option>
+                    </select>
+                </div>
+                
+                <!-- Sub-Area Dropdown -->
+                <div>
+                    <label style="display: block; font-weight: 700; font-size: 16pt; margin-bottom: 12px; color: #1A1A1A;">
+                        2️⃣ Select Sub-Area:
+                    </label>
+                    <select id="subArea" style="width: 100%; padding: 16px; font-size: 16pt; border-radius: 8px; border: 2px solid #0A2463;" disabled>
+                        <option value="">— First select practice area —</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Script Display -->
+            <div id="scriptDisplay" style="background: #FFFFFF; padding: 32px; border-radius: 8px; border-left: 4px solid #0A2463; min-height: 300px; display: none;">
+                <h3 style="font-size: 20pt; font-weight: 700; color: #0A2463; margin-bottom: 24px;">
+                    📋 Benjamin's Script: <span id="scriptTitle"></span>
+                </h3>
+                <div id="scriptQuestions" style="font-size: 16pt; line-height: 2.2; color: #333;">
+                    <!-- Questions populate here -->
+                </div>
+                <p style="margin-top: 32px; padding-top: 24px; border-top: 2px solid #E5E5E5; font-weight: 700; font-size: 18pt; color: #10B981;">
+                    ✅ Qualified! → Benjamin books consultation.
+                </p>
+            </div>
+            
+            <p id="selectPrompt" style="text-align: center; font-size: 18pt; color: #999; margin-top: 40px;">
+                👆 Select a practice area and sub-area to see Benjamin's exact script!
+            </p>
+        </div>
+        
+        <p style="text-align: center; font-size: 20pt; font-weight: 700; margin-top: 60px; color: #1A1A1A;">
+            Benjamin doesn't replace you — he protects your time so you can focus on winning cases.
+        </p>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Practice Area → Sub-Area mapping
+            const subAreas = {
+            personal_injury: [
+                {value: 'car_accident', label: 'Car Accident'},
+                {value: 'slip_fall', label: 'Slip & Fall'},
+                {value: 'workplace_injury', label: 'Workplace Injury'},
+                {value: 'dog_bite', label: 'Dog Bite'},
+                {value: 'product_defect', label: 'Product Defect'}
+            ],
+            family_law: [
+                {value: 'child_custody', label: 'Child Custody'},
+                {value: 'divorce', label: 'Divorce'},
+                {value: 'child_support', label: 'Child Support'},
+                {value: 'domestic_violence', label: 'Domestic Violence'},
+                {value: 'paternity', label: 'Paternity'},
+                {value: 'alimony', label: 'Alimony'},
+                {value: 'adoption', label: 'Adoption'}
+            ],
+            immigration: [
+                {value: 'asylum', label: 'Asylum'},
+                {value: 'deportation', label: 'Deportation Defense'},
+                {value: 'green_card', label: 'Green Card'},
+                {value: 'citizenship', label: 'Citizenship'},
+                {value: 'visa', label: 'Visa'},
+                {value: 'family_immigration', label: 'Family Immigration'}
+            ],
+            criminal_defense: [
+                {value: 'dui_dwi', label: 'DUI / DWI'},
+                {value: 'drug_charges', label: 'Drug Charges'},
+                {value: 'assault_battery', label: 'Assault / Battery'},
+                {value: 'theft', label: 'Theft'},
+                {value: 'domestic_violence', label: 'Domestic Violence'}
+            ],
+            employment_law: [
+                {value: 'wrongful_termination', label: 'Wrongful Termination'},
+                {value: 'discrimination', label: 'Discrimination'},
+                {value: 'harassment', label: 'Harassment'},
+                {value: 'wage_disputes', label: 'Wage Disputes'},
+                {value: 'retaliation', label: 'Retaliation'}
+            ],
+            bankruptcy: [
+                {value: 'chapter_7', label: 'Chapter 7 Liquidation'},
+                {value: 'chapter_13', label: 'Chapter 13 Repayment'},
+                {value: 'foreclosure_defense', label: 'Foreclosure Defense'},
+                {value: 'debt_consolidation', label: 'Debt Consolidation'}
+            ],
+            real_estate: [
+                {value: 'residential_purchase', label: 'Residential Purchase'},
+                {value: 'commercial_purchase', label: 'Commercial Purchase'},
+                {value: 'lease_disputes', label: 'Lease Disputes'},
+                {value: 'foreclosure', label: 'Foreclosure'},
+                {value: 'property_disputes', label: 'Property Disputes'}
+            ],
+            estate_planning: [
+                {value: 'wills', label: 'Wills'},
+                {value: 'trusts', label: 'Trusts'},
+                {value: 'probate', label: 'Probate'},
+                {value: 'power_of_attorney', label: 'Power of Attorney'},
+                {value: 'guardianship', label: 'Guardianship'}
+            ],
+            workers_comp: [
+                {value: 'workplace_injury', label: 'Workplace Injury'},
+                {value: 'occupational_disease', label: 'Occupational Disease'},
+                {value: 'repetitive_stress', label: 'Repetitive Stress'},
+                {value: 'denied_claim', label: 'Denied Claim'}
+            ]
+        };
+        
+        // Actual scripts from our JSON question banks
+        const scripts = {
+            'personal_injury_car_accident': {
+                title: 'Personal Injury → Car Accident',
+                questions: [
+                    "Q1. Did this happen in [your state]?",
+                    "Q2. When did the accident occur?",
+                    "Q3. Was a police report filed at the scene?",
+                    "Q4. Did you or the other party receive a citation?",
+                    "Q5. Were there witnesses?",
+                    "Q6. Did your car sustain damage?",
+                    "Q7. Have you seen a doctor for injuries?",
+                    "Q8. What type of injuries did you sustain?",
+                    "Q9. Are you still receiving medical treatment?",
+                    "Q10. Was the other party injured?",
+                    "Q11. Has the injury kept you from working?",
+                    "Q12. What insurance coverage do you have?",
+                    "Q13. Have you received an estimate for repairs?",
+                    "Q14. Has the insurer made an offer?",
+                    "Q15. Would you like to book a consultation?"
+                ]
+            },
+            'personal_injury_slip_fall': {
+                title: 'Personal Injury → Slip & Fall',
+                questions: [
+                    "Q1. Did this happen in [your state]?",
+                    "Q2. When did this happen?",
+                    "Q3. Where did you fall? (Store, restaurant, sidewalk, etc.)",
+                    "Q4. What caused the fall? (Wet floor, uneven surface, etc.)",
+                    "Q5. Did you report the incident to the property owner?",
+                    "Q6. Were there witnesses?",
+                    "Q7. Did you take photos of the scene?",
+                    "Q8. Have you seen a doctor for injuries?",
+                    "Q9. What type of injuries did you sustain?",
+                    "Q10. Are you still receiving treatment?",
+                    "Q11. Has the injury kept you from working?",
+                    "Q12. Has the property owner or insurer contacted you?"
+                ]
+            },
+            'personal_injury_workplace_injury': {
+                title: 'Personal Injury → Workplace Injury',
+                questions: [
+                    "Q1. Where did the injury occur?",
+                    "Q2. When did the injury happen?",
+                    "Q3. Did you report it to your employer?",
+                    "Q4. Did you seek medical treatment?",
+                    "Q5. What type of injury did you sustain?",
+                    "Q6. Are you still receiving treatment?",
+                    "Q7. Has your claim been denied?",
+                    "Q8. Are you currently working?"
+                ]
+            },
+            'personal_injury_dog_bite': {
+                title: 'Personal Injury → Dog Bite',
+                questions: [
+                    "Q1. Did this happen in [your state]?",
+                    "Q2. When did the dog bite occur?",
+                    "Q3. Where did it happen?",
+                    "Q4. Do you know the dog owner?",
+                    "Q5. Did you seek medical treatment?",
+                    "Q6. What injuries did you sustain?",
+                    "Q7. Was the incident reported to animal control?",
+                    "Q8. Has the owner's insurance contacted you?"
+                ]
+            },
+            'personal_injury_product_defect': {
+                title: 'Personal Injury → Product Defect',
+                questions: [
+                    "Q1. Did this happen in [your state]?",
+                    "Q2. What product caused the injury?",
+                    "Q3. When did the injury occur?",
+                    "Q4. Do you still have the product?",
+                    "Q5. Did you seek medical treatment?",
+                    "Q6. What injuries did you sustain?",
+                    "Q7. Have you contacted the manufacturer?",
+                    "Q8. Do you have proof of purchase?"
+                ]
+            },
+            'family_law_child_custody': {
+                title: 'Family Law → Child Custody',
+                questions: [
+                    "Q1. What type of case is this? (Custody, Divorce, Support, etc.)",
+                    "Q2. Are you a parent of the child or children?",
+                    "Q3. Is there a current custody order in place?",
+                    "Q4. Is there a history of domestic violence?",
+                    "Q5. Are you requesting sole or joint custody?",
+                    "Q6. Has a settlement offer been made?"
+                ]
+            },
+            'family_law_divorce': {
+                title: 'Family Law → Divorce',
+                questions: [
+                    "Q1. What kind of family situation? (Divorce, Custody, Support, etc.)",
+                    "Q2. Are you married to the respondent?",
+                    "Q3. How long have you been married?",
+                    "Q4. Do you have minor children together?",
+                    "Q5. Is there a prenuptial agreement?",
+                    "Q6. Are there significant assets to divide?",
+                    "Q7. Is this contested or uncontested?",
+                    "Q8. Has your spouse filed already?"
+                ]
+            },
+            'family_law_child_support': {
+                title: 'Family Law → Child Support',
+                questions: [
+                    "Q1. What type of case? (Support, Custody, Divorce, etc.)",
+                    "Q2. Is there a current support order in place?",
+                    "Q3. Are you seeking to increase or decrease support?",
+                    "Q4. Has there been a change in income?",
+                    "Q5. How many children are involved?",
+                    "Q6. Is the other parent current on payments?"
+                ]
+            },
+            'family_law_domestic_violence': {
+                title: 'Family Law → Domestic Violence',
+                questions: [
+                    "Q1. What type of case? (DV, Custody, Divorce, etc.)",
+                    "Q2. Are you in immediate danger right now?",
+                    "Q3. Is there a current restraining order?",
+                    "Q4. Do you have minor children?",
+                    "Q5. Have you contacted law enforcement?",
+                    "Q6. Are you seeking emergency protective orders?"
+                ]
+            },
+            'family_law_paternity': {
+                title: 'Family Law → Paternity',
+                questions: [
+                    "Q1. What type of case? (Paternity, Custody, Support, etc.)",
+                    "Q2. Are you the biological parent?",
+                    "Q3. Has paternity been established?",
+                    "Q4. Are you seeking custody or support?",
+                    "Q5. Is there a current court order?",
+                    "Q6. Has DNA testing been done?"
+                ]
+            },
+            'family_law_alimony': {
+                title: 'Family Law → Alimony',
+                questions: [
+                    "Q1. What type of case? (Alimony, Divorce, Support, etc.)",
+                    "Q2. Are you currently divorced?",
+                    "Q3. How long were you married?",
+                    "Q4. Is there a current alimony order?",
+                    "Q5. Are you seeking to modify support?",
+                    "Q6. Has there been a change in circumstances?"
+                ]
+            },
+            'family_law_adoption': {
+                title: 'Family Law → Adoption',
+                questions: [
+                    "Q1. What type of adoption? (Domestic, international, stepparent, etc.)",
+                    "Q2. Have you identified a child?",
+                    "Q3. Are you working with an agency?",
+                    "Q4. Are both parents consenting?",
+                    "Q5. Have you completed a home study?",
+                    "Q6. What is your timeline?"
+                ]
+            },
+            'immigration_asylum': {
+                title: 'Immigration → Asylum',
+                questions: [
+                    "Q1. How can we help? (Asylum, Deportation, Visa, etc.)",
+                    "Q2. Do you fear returning to your home country?",
+                    "Q3. Are you currently in the U.S.?",
+                    "Q4. Did you apply within one year of arriving?",
+                    "Q5. Have immigration officials contacted you?",
+                    "Q6. Are you applying with family members?",
+                    "Q7. Which country are you from?",
+                    "Q8. Has any offer been made?"
+                ]
+            },
+            'immigration_deportation': {
+                title: 'Immigration → Deportation Defense',
+                questions: [
+                    "Q1. Are you in removal proceedings?",
+                    "Q2. Have you received a Notice to Appear?",
+                    "Q3. Do you have a court date?",
+                    "Q4. Are you currently detained?",
+                    "Q5. How long have you been in the U.S.?",
+                    "Q6. Do you have family members who are U.S. citizens?",
+                    "Q7. Have you been convicted of any crimes?"
+                ]
+            },
+            'immigration_green_card': {
+                title: 'Immigration → Green Card',
+                questions: [
+                    "Q1. What is your current immigration status?",
+                    "Q2. How are you eligible for a green card?",
+                    "Q3. Are you married to a U.S. citizen?",
+                    "Q4. Do you have a job offer from a U.S. employer?",
+                    "Q5. Have you filed any applications?",
+                    "Q6. Do you have any immigration violations?"
+                ]
+            },
+            'immigration_citizenship': {
+                title: 'Immigration → Citizenship',
+                questions: [
+                    "Q1. How long have you had your green card?",
+                    "Q2. Have you lived in the U.S. continuously?",
+                    "Q3. Have you been arrested or convicted of any crimes?",
+                    "Q4. Can you speak and read English?",
+                    "Q5. Are you married to a U.S. citizen?",
+                    "Q6. Have you filed for citizenship before?"
+                ]
+            },
+            'immigration_visa': {
+                title: 'Immigration → Visa',
+                questions: [
+                    "Q1. What type of visa are you seeking?",
+                    "Q2. What is the purpose of your travel?",
+                    "Q3. How long do you plan to stay?",
+                    "Q4. Do you have a sponsor?",
+                    "Q5. Have you been denied a visa before?",
+                    "Q6. When do you need to travel?"
+                ]
+            },
+            'immigration_family_immigration': {
+                title: 'Immigration → Family Immigration',
+                questions: [
+                    "Q1. What is your relationship to the U.S. citizen?",
+                    "Q2. Is the U.S. citizen your spouse, parent, or sibling?",
+                    "Q3. Has the petition been filed?",
+                    "Q4. What is your current status?",
+                    "Q5. Are you inside or outside the U.S.?",
+                    "Q6. Have you overstayed any visa?"
+                ]
+            },
+            'criminal_defense_dui_dwi': {
+                title: 'Criminal Defense → DUI / DWI',
+                questions: [
+                    "Q1. What is the primary charge?",
+                    "Q2. Where were you arrested?",
+                    "Q3. Were your Miranda rights read during questioning?",
+                    "Q4. Did you take a breathalyzer or blood test?",
+                    "Q5. What was your BAC (blood alcohol content)?",
+                    "Q6. Have you been charged with DUI before?",
+                    "Q7. Do you have a court date set?"
+                ]
+            },
+            'criminal_defense_drug_charges': {
+                title: 'Criminal Defense → Drug Charges',
+                questions: [
+                    "Q1. What is the specific charge?",
+                    "Q2. Is this possession, distribution, or manufacturing?",
+                    "Q3. What substance is involved?",
+                    "Q4. Where were you arrested?",
+                    "Q5. Were your Miranda rights read?",
+                    "Q6. Did police have a search warrant?",
+                    "Q7. Do you have a court date?"
+                ]
+            },
+            'criminal_defense_assault_battery': {
+                title: 'Criminal Defense → Assault / Battery',
+                questions: [
+                    "Q1. What are you being charged with?",
+                    "Q2. Is this a misdemeanor or felony?",
+                    "Q3. Was anyone injured?",
+                    "Q4. Were you arrested or just charged?",
+                    "Q5. Were your Miranda rights read?",
+                    "Q6. Is this domestic-related?",
+                    "Q7. Do you have a court date?"
+                ]
+            },
+            'criminal_defense_theft': {
+                title: 'Criminal Defense → Theft',
+                questions: [
+                    "Q1. What are you being charged with?",
+                    "Q2. What is the alleged value of items?",
+                    "Q3. Is this shoplifting or burglary?",
+                    "Q4. Were you arrested?",
+                    "Q5. Were your Miranda rights read?",
+                    "Q6. Have you been charged with theft before?",
+                    "Q7. Do you have a court date?"
+                ]
+            },
+            'criminal_defense_domestic_violence': {
+                title: 'Criminal Defense → Domestic Violence',
+                questions: [
+                    "Q1. What is the specific charge?",
+                    "Q2. Is there a restraining order?",
+                    "Q3. Were you arrested?",
+                    "Q4. Were your Miranda rights read?",
+                    "Q5. Was anyone injured?",
+                    "Q6. Do you have a court date?",
+                    "Q7. Have you been charged with DV before?"
+                ]
+            },
+            'employment_law_wrongful_termination': {
+                title: 'Employment Law → Wrongful Termination',
+                questions: [
+                    "Q1. Did this happen in [your state]?",
+                    "Q2. When did the termination occur?",
+                    "Q3. Were you given a reason for termination?",
+                    "Q4. Did you file an EEOC complaint?",
+                    "Q5. Do you have documentation?",
+                    "Q6. Were you under contract?",
+                    "Q7. Did you receive severance?"
+                ]
+            },
+            'employment_law_discrimination': {
+                title: 'Employment Law → Discrimination',
+                questions: [
+                    "Q1. What type of discrimination? (Race, age, gender, disability, etc.)",
+                    "Q2. When did the discrimination occur?",
+                    "Q3. Are you still employed there?",
+                    "Q4. Did you report it to HR?",
+                    "Q5. Did you file an EEOC complaint?",
+                    "Q6. Do you have documentation or witnesses?",
+                    "Q7. Were you terminated or demoted?"
+                ]
+            },
+            'employment_law_harassment': {
+                title: 'Employment Law → Harassment',
+                questions: [
+                    "Q1. What type of harassment? (Sexual, hostile work environment, etc.)",
+                    "Q2. When did the harassment occur?",
+                    "Q3. Who is the harasser? (Supervisor, coworker, client, etc.)",
+                    "Q4. Did you report it to HR?",
+                    "Q5. Are you still employed there?",
+                    "Q6. Did you file an EEOC complaint?",
+                    "Q7. Do you have documentation or witnesses?"
+                ]
+            },
+            'employment_law_wage_disputes': {
+                title: 'Employment Law → Wage Disputes',
+                questions: [
+                    "Q1. What type of wage issue? (Unpaid wages, overtime, misclassification, etc.)",
+                    "Q2. When did you last work there?",
+                    "Q3. Are you still employed there?",
+                    "Q4. How much are you owed?",
+                    "Q5. Do you have pay stubs or time records?",
+                    "Q6. Did you report this to your employer?",
+                    "Q7. Did you file a complaint with the labor board?"
+                ]
+            },
+            'employment_law_retaliation': {
+                title: 'Employment Law → Retaliation',
+                questions: [
+                    "Q1. What did you report or complain about?",
+                    "Q2. When did you make the complaint?",
+                    "Q3. What adverse action was taken against you?",
+                    "Q4. When did the retaliation occur?",
+                    "Q5. Are you still employed there?",
+                    "Q6. Did you file an EEOC complaint?",
+                    "Q7. Do you have documentation?"
+                ]
+            },
+            'bankruptcy_chapter_7': {
+                title: 'Bankruptcy → Chapter 7 Liquidation',
+                questions: [
+                    "Q1. Did this happen in [your state]?",
+                    "Q2. When did you decide to file?",
+                    "Q3. Are you currently employed?",
+                    "Q4. Approximate monthly income?",
+                    "Q5. Do you own a home or vehicle?",
+                    "Q6. Have you received foreclosure or repo notices?",
+                    "Q7. Have you filed for bankruptcy before?"
+                ]
+            },
+            'bankruptcy_chapter_13': {
+                title: 'Bankruptcy → Chapter 13 Repayment',
+                questions: [
+                    "Q1. Are you looking at Chapter 7 or Chapter 13?",
+                    "Q2. What is your current monthly income?",
+                    "Q3. Do you own a home?",
+                    "Q4. Are you behind on mortgage payments?",
+                    "Q5. What is your total debt amount?",
+                    "Q6. Have you filed for bankruptcy before?"
+                ]
+            },
+            'bankruptcy_foreclosure_defense': {
+                title: 'Bankruptcy → Foreclosure Defense',
+                questions: [
+                    "Q1. Have you received a foreclosure notice?",
+                    "Q2. When is the foreclosure sale date?",
+                    "Q3. Are you currently employed?",
+                    "Q4. How far behind are you on payments?",
+                    "Q5. Have you tried to negotiate with the lender?",
+                    "Q6. Do you want to keep the home?"
+                ]
+            },
+            'bankruptcy_debt_consolidation': {
+                title: 'Bankruptcy → Debt Consolidation',
+                questions: [
+                    "Q1. What is your total debt amount?",
+                    "Q2. What types of debt? (Credit cards, medical, student loans, etc.)",
+                    "Q3. Are you currently employed?",
+                    "Q4. What is your monthly income?",
+                    "Q5. Have creditors started collection actions?",
+                    "Q6. Have you considered bankruptcy?"
+                ]
+            },
+            'real_estate_residential_purchase': {
+                title: 'Real Estate → Residential Purchase',
+                questions: [
+                    "Q1. Is this a purchase, sale, or dispute?",
+                    "Q2. Is the property residential or commercial?",
+                    "Q3. Is there a signed contract?",
+                    "Q4. What is the property value?",
+                    "Q5. Do you have a real estate agent?",
+                    "Q6. Is there a title issue?",
+                    "Q7. When is the closing date?"
+                ]
+            },
+            'real_estate_commercial_purchase': {
+                title: 'Real Estate → Commercial Purchase',
+                questions: [
+                    "Q1. Is this a purchase, sale, or lease?",
+                    "Q2. What type of commercial property?",
+                    "Q3. Is there a signed contract?",
+                    "Q4. What is the property value?",
+                    "Q5. Are you working with a broker?",
+                    "Q6. Are there zoning issues?",
+                    "Q7. When is the closing date?"
+                ]
+            },
+            'real_estate_lease_disputes': {
+                title: 'Real Estate → Lease Disputes',
+                questions: [
+                    "Q1. Are you the landlord or tenant?",
+                    "Q2. What is the dispute about?",
+                    "Q3. Is there a written lease agreement?",
+                    "Q4. When did the dispute arise?",
+                    "Q5. Have you tried to resolve it?",
+                    "Q6. Has an eviction notice been filed?"
+                ]
+            },
+            'real_estate_foreclosure': {
+                title: 'Real Estate → Foreclosure',
+                questions: [
+                    "Q1. Have you received a foreclosure notice?",
+                    "Q2. When is the foreclosure sale date?",
+                    "Q3. How far behind are you on payments?",
+                    "Q4. Have you tried to negotiate with the lender?",
+                    "Q5. Do you want to keep the property?",
+                    "Q6. Have you considered bankruptcy?"
+                ]
+            },
+            'real_estate_property_disputes': {
+                title: 'Real Estate → Property Disputes',
+                questions: [
+                    "Q1. What type of dispute? (Boundary, easement, title, etc.)",
+                    "Q2. Who is the other party?",
+                    "Q3. When did the dispute arise?",
+                    "Q4. Do you have a survey or title report?",
+                    "Q5. Have you tried to resolve it?",
+                    "Q6. Is there active litigation?"
+                ]
+            },
+            'estate_planning_wills': {
+                title: 'Estate Planning → Wills',
+                questions: [
+                    "Q1. Do you need a will, trust, or probate help?",
+                    "Q2. Do you have minor children?",
+                    "Q3. What is the approximate estate value?",
+                    "Q4. Do you have an existing estate plan?",
+                    "Q5. Are you married?",
+                    "Q6. Do you own real estate?"
+                ]
+            },
+            'estate_planning_trusts': {
+                title: 'Estate Planning → Trusts',
+                questions: [
+                    "Q1. What type of trust? (Revocable, irrevocable, special needs, etc.)",
+                    "Q2. What is the approximate estate value?",
+                    "Q3. Do you have minor children?",
+                    "Q4. Do you own real estate or business interests?",
+                    "Q5. Do you have an existing trust?",
+                    "Q6. What are your main goals?"
+                ]
+            },
+            'estate_planning_probate': {
+                title: 'Estate Planning → Probate',
+                questions: [
+                    "Q1. Are you the executor or beneficiary?",
+                    "Q2. When did the person pass away?",
+                    "Q3. Was there a will?",
+                    "Q4. What is the approximate estate value?",
+                    "Q5. Are there disputes among beneficiaries?",
+                    "Q6. Has probate been opened?"
+                ]
+            },
+            'estate_planning_power_of_attorney': {
+                title: 'Estate Planning → Power of Attorney',
+                questions: [
+                    "Q1. What type of POA? (Financial, medical, general, etc.)",
+                    "Q2. For whom are you creating this?",
+                    "Q3. Is this person mentally competent?",
+                    "Q4. Do they have significant assets?",
+                    "Q5. Is this urgent?",
+                    "Q6. Do you have an existing POA?"
+                ]
+            },
+            'estate_planning_guardianship': {
+                title: 'Estate Planning → Guardianship',
+                questions: [
+                    "Q1. Who needs a guardian? (Minor child, elderly parent, etc.)",
+                    "Q2. Are you seeking guardianship?",
+                    "Q3. Is this contested?",
+                    "Q4. Is the person mentally or physically incapacitated?",
+                    "Q5. Are there other family members involved?",
+                    "Q6. Has a petition been filed?"
+                ]
+            },
+            'workers_comp_workplace_injury': {
+                title: "Workers' Compensation → Workplace Injury",
+                questions: [
+                    "Q1. Where did the injury occur?",
+                    "Q2. When did the injury happen?",
+                    "Q3. Did you report it to your employer?",
+                    "Q4. Did you seek medical treatment?",
+                    "Q5. Has your claim been denied?",
+                    "Q6. Are you currently working?"
+                ]
+            },
+            'workers_comp_occupational_disease': {
+                title: "Workers' Compensation → Occupational Disease",
+                questions: [
+                    "Q1. What type of disease or condition?",
+                    "Q2. How long have you worked in this environment?",
+                    "Q3. Did you report it to your employer?",
+                    "Q4. Have you been diagnosed by a doctor?",
+                    "Q5. Has your claim been filed?",
+                    "Q6. Are you still working?"
+                ]
+            },
+            'workers_comp_repetitive_stress': {
+                title: "Workers' Compensation → Repetitive Stress",
+                questions: [
+                    "Q1. What type of repetitive stress injury?",
+                    "Q2. How long have you had symptoms?",
+                    "Q3. Did you report it to your employer?",
+                    "Q4. Have you seen a doctor?",
+                    "Q5. Are you on modified duty?",
+                    "Q6. Has a claim been filed?"
+                ]
+            },
+            'workers_comp_denied_claim': {
+                title: "Workers' Compensation → Denied Claim",
+                questions: [
+                    "Q1. When was your claim denied?",
+                    "Q2. What reason was given for denial?",
+                    "Q3. When did the injury occur?",
+                    "Q4. Did you report it to your employer timely?",
+                    "Q5. Do you have medical documentation?",
+                    "Q6. Have you filed an appeal?"
+                ]
+            }
+        };
+        
+        // Event listeners
+        document.getElementById('practiceArea').addEventListener('change', function() {
+            const practiceArea = this.value;
+            const subAreaSelect = document.getElementById('subArea');
+            
+            // Reset sub-area
+            subAreaSelect.innerHTML = '<option value="">— Choose Sub-Area —</option>';
+            subAreaSelect.disabled = !practiceArea;
+            
+            // Hide script
+            document.getElementById('scriptDisplay').style.display = 'none';
+            document.getElementById('selectPrompt').style.display = 'block';
+            
+            // Populate sub-areas
+            if (practiceArea && subAreas[practiceArea]) {
+                subAreas[practiceArea].forEach(sub => {
+                    const option = document.createElement('option');
+                    option.value = sub.value;
+                    option.textContent = sub.label;
+                    subAreaSelect.appendChild(option);
+                });
+            }
+        });
+        
+        document.getElementById('subArea').addEventListener('change', function() {
+            const practiceArea = document.getElementById('practiceArea').value;
+            const subArea = this.value;
+            const scriptKey = `${practiceArea}_${subArea}`;
+            const script = scripts[scriptKey];
+            
+            if (script) {
+                // Show script
+                document.getElementById('scriptTitle').textContent = script.title;
+                const questionsDiv = document.getElementById('scriptQuestions');
+                questionsDiv.innerHTML = script.questions.map(q => 
+                    `<p style="margin-bottom: 12px;">${q}</p>`
+                ).join('');
+                
+                document.getElementById('scriptDisplay').style.display = 'block';
+                document.getElementById('selectPrompt').style.display = 'none';
+            }
+        });
+        }); // End DOMContentLoaded
+    </script>
+
+    <!-- SECTION: ULTIMATE NO-RISK GUARANTEE -->
+    <div class="section">
+        <h2>🛡️ The Ultimate No-Risk Guarantee</h2>
+        
+        <div class="guarantee-box">
+            <p style="font-size: 18pt; line-height: 1.8; color: #333;">
+                <strong style="color: #0A2463;">Pricing:</strong> $29/booking (nationwide)<br>
+                <br>
+                <strong style="color: #0A2463;">Promise:</strong> We invoice only AFTER a qualified consultation is booked<br>
+                <br>
+                <strong style="color: #0A2463;">Guarantee:</strong><br>
+                • Month 1: 0 bookings → $0 invoice<br>
+                • Month 2: Still 0 → $0 invoice<br>
+                • Month 3: Same → we part ways. You never pay a dime.<br>
+                <br>
+                <strong style="color: #0A2463;">What you DON'T pay for:</strong><br>
+                • Spam calls<br>
+                • Wrong practice area<br>
+                • Expired statutes<br>
+                • Out-of-jurisdiction cases<br>
+                • Cases you choose not to take
+            </p>
+        </div>
+        
+        <p style="text-align: center; font-size: 22pt; font-weight: 700; margin-top: 40px; color: #1A1A1A;">
+            Not an app. Not a bot. The quiet partner who captures the cases you were meant to win.
+        </p>
+    </div>
+
+    <!-- SECTION SEPARATOR -->
+    <div style="height: 2px; background: linear-gradient(to right, transparent, #E5E5E5, transparent); margin: 60px auto; max-width: 600px;"></div>
+
+    <!-- SECTION: COMPLIANCE -->
+    <div class="section">
+        <h2>🔒 Compliance Built for Attorneys</h2>
+        
+        <p style="text-align: center; font-size: 20pt; color: #0A2463; font-weight: 700; margin-bottom: 32px;">
+            When the Bar asks: "Did you use AI?" — you show proof, not promises.
+        </p>
+        
+        <ul>
+            <li><strong>Zero-Knowledge Architecture:</strong> Benjamin never hears or stores PHI/PII</li>
+            <li><strong>Not AI (No Hallucinations!):</strong> Deterministic system built exclusively for law firms</li>
+            <li><strong>Bar-Reviewed Scripts:</strong> All 9 practice areas comply with ABA Model Rules</li>
+            <li><strong>Audit Trail:</strong> Every action timestamped, exportable as PDF</li>
+            <li><strong>You Own All Data:</strong> We never train on your contacts or use them for anything</li>
+        </ul>
+        
+        <p style="margin-top: 32px; font-weight: 700; color: #1A1A1A;">
+            This isn't marketing. This is malpractice prevention.
+        </p>
+    </div>
+
+    <!-- SECTION SEPARATOR -->
+    <div style="height: 2px; background: linear-gradient(to right, transparent, #E5E5E5, transparent); margin: 60px auto; max-width: 600px;"></div>
+
+    <!-- SECTION: BONUS FEATURE (SETTLE!) -->
+    <div class="section">
+        <h2 style="white-space: nowrap;">🎁 BONUS: FREE Settlement Predictions (Settle!™)</h2>
+        
+        <p style="text-align: center; font-size: 18pt; color: #666; margin-bottom: 40px;">
+            Every Intake customer gets FREE access to Settle! — our settlement benchmarking engine.
+        </p>
+        
+        <div style="background: linear-gradient(135deg, #F8F9FA 0%, #E8F4FD 100%); padding: 40px; border-radius: 12px; border-left: 4px solid #10B981; margin: 40px 0;">
+            <p style="font-size: 18pt; line-height: 2; color: #333;">
+                <strong style="color: #0A2463;">The adjuster offers $27,500.</strong><br>
+                Is that fair?
+            </p>
+            
+            <p style="font-size: 20pt; font-weight: 700; color: #10B981; margin: 24px 0;">
+                Settle tells you the truth: "Fair value: $52K–$85K. Counter at $70K."
+            </p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-top: 32px;">
+                <div>
+                    <p style="font-size: 16pt; font-weight: 700; color: #0A2463;">✅ 11 FREE Credits</p>
+                    <p style="font-size: 14pt; color: #666;">Prediction credits included with Intake</p>
+                </div>
+                <div>
+                    <p style="font-size: 16pt; font-weight: 700; color: #0A2463;">📊 Settlement Range</p>
+                    <p style="font-size: 14pt; color: #666;">Based on comparable verdicts & settlements</p>
+                </div>
+                <div>
+                    <p style="font-size: 16pt; font-weight: 700; color: #0A2463; white-space: nowrap;">💡 Negotiation Strategy</p>
+                    <p style="font-size: 14pt; color: #666;">Know when to settle vs. go to trial</p>
+                </div>
+            </div>
+            
+            <p style="margin-top: 32px; font-size: 16pt; color: #333; font-style: italic;">
+                Works for PI, Employment, Medical Malpractice, and more. Coming soon for all practice areas.
+            </p>
+        </div>
+    </div>
+
+    <!-- SECTION SEPARATOR -->
+    <div style="height: 2px; background: linear-gradient(to right, transparent, #E5E5E5, transparent); margin: 60px auto; max-width: 600px;"></div>
+
+    <!-- SECTION: FAQ -->
+    <div class="section">
+        <h2>❓ Frequently Asked Questions</h2>
+        
+        <div style="margin: 40px 0;">
+            <div class="faq-item" style="margin-bottom: 16px; border: 1px solid #E5E5E5; border-radius: 8px; overflow: hidden;">
+                <div class="faq-question" style="padding: 20px; background: #F8F9FA; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                    <p style="font-size: 18pt; font-weight: 700; color: #0A2463; margin: 0;">
+                        What if Benjamin misqualifies a lead?
+                    </p>
+                    <span class="faq-icon" style="font-size: 24pt; color: #0A2463; transition: transform 0.3s;">+</span>
+                </div>
+                <div class="faq-answer" style="padding: 0 20px; max-height: 0; overflow: hidden; transition: all 0.3s ease;">
+                    <p style="font-size: 16pt; line-height: 1.8; color: #333; padding: 20px 0;">
+                        You don't pay. We invoice only AFTER a consultation is booked AND confirmed by you (in Paranoid or Hybrid mode). If you reject it, we don't charge. Zero risk.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="faq-item" style="margin-bottom: 16px; border: 1px solid #E5E5E5; border-radius: 8px; overflow: hidden;">
+                <div class="faq-question" style="padding: 20px; background: #F8F9FA; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                    <p style="font-size: 18pt; font-weight: 700; color: #0A2463; margin: 0;">
+                        Can I customize the questions Benjamin asks?
+                    </p>
+                    <span class="faq-icon" style="font-size: 24pt; color: #0A2463; transition: transform 0.3s;">+</span>
+                </div>
+                <div class="faq-answer" style="padding: 0 20px; max-height: 0; overflow: hidden; transition: all 0.3s ease;">
+                    <p style="font-size: 16pt; line-height: 1.8; color: #333; padding: 20px 0;">
+                        Absolutely. During onboarding, your compliance specialist works with you to tailor the script to your practice area, state rules, and firm preferences. You approve it before it goes live.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="faq-item" style="margin-bottom: 16px; border: 1px solid #E5E5E5; border-radius: 8px; overflow: hidden;">
+                <div class="faq-question" style="padding: 20px; background: #F8F9FA; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                    <p style="font-size: 18pt; font-weight: 700; color: #0A2463; margin: 0;">
+                        What happens to the call recordings?
+                    </p>
+                    <span class="faq-icon" style="font-size: 24pt; color: #0A2463; transition: transform 0.3s;">+</span>
+                </div>
+                <div class="faq-answer" style="padding: 0 20px; max-height: 0; overflow: hidden; transition: all 0.3s ease;">
+                    <p style="font-size: 16pt; line-height: 1.8; color: #333; padding: 20px 0;">
+                        Nothing. Because we don't record them. Benjamin uses yes/no questions and captures only contact info + qualification status. No audio. No transcripts. No storage. Zero-knowledge architecture.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="faq-item" style="margin-bottom: 16px; border: 1px solid #E5E5E5; border-radius: 8px; overflow: hidden;">
+                <div class="faq-question" style="padding: 20px; background: #F8F9FA; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                    <p style="font-size: 18pt; font-weight: 700; color: #0A2463; margin: 0;">
+                        Does Benjamin work for my practice area?
+                    </p>
+                    <span class="faq-icon" style="font-size: 24pt; color: #0A2463; transition: transform 0.3s;">+</span>
+                </div>
+                <div class="faq-answer" style="padding: 0 20px; max-height: 0; overflow: hidden; transition: all 0.3s ease;">
+                    <p style="font-size: 16pt; line-height: 1.8; color: #333; padding: 20px 0;">
+                        Yes. We have compliance-vetted scripts for: Personal Injury, Family Law, Immigration, Criminal Defense, Employment Law, Bankruptcy, Real Estate, Estate Planning, and Workers' Compensation. Custom scripts available for sub-specialties.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="faq-item" style="margin-bottom: 16px; border: 1px solid #E5E5E5; border-radius: 8px; overflow: hidden;">
+                <div class="faq-question" style="padding: 20px; background: #F8F9FA; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                    <p style="font-size: 18pt; font-weight: 700; color: #0A2463; margin: 0;">
+                        How long does setup take?
+                    </p>
+                    <span class="faq-icon" style="font-size: 24pt; color: #0A2463; transition: transform 0.3s;">+</span>
+                </div>
+                <div class="faq-answer" style="padding: 0 20px; max-height: 0; overflow: hidden; transition: all 0.3s ease;">
+                    <p style="font-size: 16pt; line-height: 1.8; color: #333; padding: 20px 0;">
+                        48 hours. After you submit your demo request, we'll send you a dedicated phone number within 5 minutes. You'll experience Benjamin live (as your client would!). If you approve, we go live within 2 business days.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // FAQ Accordion functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                const icon = item.querySelector('.faq-icon');
+                
+                question.addEventListener('click', () => {
+                    const isOpen = answer.style.maxHeight && answer.style.maxHeight !== '0px';
+                    
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        const otherAnswer = otherItem.querySelector('.faq-answer');
+                        const otherIcon = otherItem.querySelector('.faq-icon');
+                        otherAnswer.style.maxHeight = '0';
+                        otherIcon.textContent = '+';
+                        otherIcon.style.transform = 'rotate(0deg)';
+                    });
+                    
+                    // Toggle current item
+                    if (!isOpen) {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                        icon.textContent = '−';
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- FINAL CTA (BLACK) -->
+    <a href="apply.html" class="cta-button" style="background: #000000;">
+        📞 Experience Benjamin Live — Schedule Your Demo Call →
+    </a>
+
+        <!-- FOOTER -->
+    <!-- FOOTER -->﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script>
+            function toggleFAQ(element) {
+                element.classList.toggle('active');
+            }
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelectorAll('.faq-item').forEach(function(item) {
+                    item.addEventListener('click', function() {
+                        toggleFAQ(this);
+                    });
+                });
+            });
+        </script>
+
+﻿<!-- STANDARDIZED FOOTER - Apply to all pages -->
+<footer style="background: #1A1A1A; color: white; padding: 60px 20px 120px 20px; text-align: center;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <!-- Logo -->
+        <img src="../assets/logo.svg" alt="TrueVow" style="height: 50px; width: auto; margin-bottom: 24px; opacity: 0.9;">
+        
+        <p style="font-size: 16px; color: #999; margin-bottom: 40px; line-height: 1.6;">
+            More clients. More money. More time with your family.<br>
+            All without risking your license.
+        </p>
+        
+        <!-- 3-Column Links -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 900px; margin: 40px auto; text-align: center;">
+            <div>
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px;">PRODUCT</h4>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="how-it-works.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">How It Works</a>
+                    <a href="pricing.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Pricing</a>
+                    <a href="profitability.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">ROI &amp; Profitability</a>
+                    <a href="county-cap.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">33% County Cap</a>
+                </div>
+            </div>
+            <div>
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px;">RESOURCES</h4>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="blog.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Blog</a>
+                    <a href="case-studies.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Case Studies</a>
+                    <a href="partner.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Partner Program</a>
+                    <a href="affiliate.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Affiliate Program</a>
+                </div>
+            </div>
+            <div>
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px;">COMPANY</h4>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="about.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">About Us</a>
+                    <a href="careers.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Careers</a>
+                    <a href="press.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Press</a>
+                    <a href="apply.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Contact</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Legal Links -->
+        <div style="display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 40px; flex-wrap: wrap; font-size: 14px;">
+            <a href="../legal/privacy.html" style="color: #999; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Privacy Policy</a>
+            <span style="color: #555;">|</span>
+            <a href="../legal/terms.html" style="color: #999; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Terms of Service</a>
+            <span style="color: #555;">|</span>
+            <a href="../legal/msa.html" style="color: #999; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">MSA</a>
+            <span style="color: #555;">|</span>
+            <a href="../legal/bar-compliance.html" style="color: #999; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Bar Compliance</a>
+        </div>
+        
+        <!-- Disclaimer -->
+        <p style="font-size: 11pt; color: #555; margin-top: 32px; line-height: 1.8; max-width: 900px; margin-left: auto; margin-right: auto; padding-bottom: 60px;">
+            © 2026 TrueVow Technologies. All rights reserved. TrueVow is a brand of TrueVow Global Technologies FZ-LLC (UAE), a subsidiary of TrueVow Global Holdings LLC (Nevis). TrueVow (USA) Inc. (Wyoming) provides passive marketing only and does not handle contracts or operations. All contracts are with TrueVow Global Technologies FZ-LLC (UAE). Technology and IP held by TrueVow Global Holdings LLC (Nevis). We are not a law firm and do not provide legal advice. By using our services, you acknowledge that TrueVow operates as a technology and services provider only.
+        </p>
+    </div>
+</footer>
+
+
+</body>
+</html>
+

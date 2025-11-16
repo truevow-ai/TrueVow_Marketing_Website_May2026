@@ -1,0 +1,1861 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for TrueVow Intake Services | Get 11 FREE Bookings</title>
+    <meta name="description" content="Apply for TrueVow Intake Services. Get 11 FREE qualified bookings to start. Pay only $29 per booking after that. Founding Member status available after first paid booking.">
+    <link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #1A1A1A;
+            background: #F8F9FA;
+        }
+        
+        /* NAVIGATION */
+        nav {
+            background: #FFFFFF;
+            border-bottom: 1px solid #E5E5E5;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .logo-monogram {
+            position: relative;
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
+        }
+        
+        .logo-monogram-t {
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 32px;
+            font-weight: 300;
+            color: #808080;
+            opacity: 0.5;
+            line-height: 1;
+        }
+        
+        .logo-monogram-v {
+            position: absolute;
+            left: 8px;
+            top: 0;
+            font-size: 32px;
+            font-weight: 700;
+            color: #0A2463;
+            line-height: 1;
+        }
+        
+        .logo-text {
+            display: flex;
+            align-items: baseline;
+            gap: 0;
+        }
+        
+        .logo-true {
+            font-size: 22px;
+            font-weight: 400;
+            color: #808080;
+            letter-spacing: 0.5px;
+        }
+        
+        .logo-vow {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0A2463;
+            letter-spacing: 0.5px;
+        }
+        
+        .logo-law {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0A2463;
+            margin-left: 1px;
+        }
+        
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, #0A2463 0%, #1a3a8a 100%);
+            color: white;
+            padding: 60px 24px 40px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 20px;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto 32px;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        /* PROGRESS BAR */
+        .progress-container {
+            max-width: 800px;
+            margin: 40px auto 60px;
+            padding: 0 24px;
+        }
+        
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-bottom: 16px;
+        }
+        
+        .progress-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #E5E5E5;
+            color: #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 20px;
+            margin: 0 auto 8px;
+            transition: all 0.3s;
+        }
+        
+        .progress-step.active .step-number {
+            background: #0A2463;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0,102,255,0.3);
+        }
+        
+        .progress-step.completed .step-number {
+            background: #10B981;
+            color: white;
+        }
+        
+        .step-label {
+            font-size: 14px;
+            color: #666;
+            font-weight: 600;
+        }
+        
+        .progress-step.active .step-label {
+            color: #0A2463;
+        }
+        
+        /* FORM CONTAINER */
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto 80px;
+            padding: 0 24px;
+        }
+        
+        .form-card {
+            background: white;
+            border-radius: 16px;
+            padding: 48px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .form-section {
+            display: none;
+        }
+        
+        .form-section.active {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section-title {
+            font-size: 28px;
+            font-weight: 800;
+            color: #0A2463;
+            margin-bottom: 12px;
+        }
+        
+        .section-subtitle {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 32px;
+        }
+        
+        .form-group {
+            margin-bottom: 24px;
+        }
+        
+        label {
+            display: block;
+            font-weight: 600;
+            color: #1A1A1A;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        
+        label .required {
+            color: #C62828;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #E5E5E5;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #0A2463;
+        }
+        
+        select {
+            background: white;
+            cursor: pointer;
+        }
+        
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-top: 24px;
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+            cursor: pointer;
+        }
+        
+        .checkbox-group label {
+            margin-bottom: 0;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        
+        .form-buttons {
+            display: flex;
+            gap: 16px;
+            margin-top: 40px;
+        }
+        
+        .btn {
+            flex: 1;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.3s;
+            border: none;
+        }
+        
+        .btn-primary {
+            background: #0A2463;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #0052CC;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,102,255,0.3);
+        }
+        
+        .btn-secondary {
+            background: #F0F0F0;
+            color: #0A2463;
+        }
+        
+        .btn-secondary:hover {
+            background: #E5E5E5;
+        }
+        
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .info-box {
+            background: #E8F4FD;
+            border-left: 4px solid #0A2463;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 24px 0;
+            text-align: left !important;
+        }
+        
+        .info-box strong {
+            color: #0A2463;
+        }
+        
+        .info-box p {
+            text-align: left !important;
+            margin-left: 0 !important;
+            padding-left: 0 !important;
+        }
+        
+        .alert {
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+        }
+        
+        .alert-info {
+            background: #E8F4FD;
+            color: #0A2463;
+            border-left: 4px solid #0A2463;
+        }
+        
+        .alert-success {
+            background: #E8F5E9;
+            color: #2E7D32;
+            border-left: 4px solid #10B981;
+        }
+        
+        .alert-error {
+            background: #FFEBEE;
+            color: #C62828;
+            border-left: 4px solid #EF5350;
+        }
+        
+        /* MODAL POPUP STYLES */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 32px;
+            color: #999;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.2s;
+        }
+        
+        .modal-close:hover {
+            background: #F5F5F5;
+            color: #333;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .form-card {
+                padding: 32px 24px;
+            }
+            
+            .form-buttons {
+                flex-direction: column-reverse;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <!-- STANDARDIZED NAVIGATION - Apply to all pages -->
+<!-- STANDARDIZED NAVIGATION - Apply to all pages -->
+<!-- STANDARDIZED NAVIGATION - Apply to all pages -->
+<!-- STANDARDIZED NAVIGATION - Apply to all pages -->
+<nav style="position: sticky; top: 0; z-index: 1000; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 16px 0;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; padding: 0 24px; position: relative;">
+        <!-- LEFT: Logo -->
+        <a href="/marketing/index.html" style="display: flex; align-items: center; text-decoration: none; gap: 12px;">
+            <img src="/assets/logo.svg" alt="TrueVow" style="height: 40px; width: auto;">
+        </a>
+        
+        <!-- CENTER: Navigation Links -->
+        <div style="display: flex; gap: 60px; align-items: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+            <a href="/marketing/index.html" style="color: #333; text-decoration: none; font-size: 16px; font-weight: 500; transition: color 0.3s;" onmouseover="this.style.color='#0A2463'" onmouseout="this.style.color='#333'">Home</a>
+            <a href="/marketing/how-it-works.html" style="color: #333; text-decoration: none; font-size: 16px; font-weight: 500; transition: color 0.3s;" onmouseover="this.style.color='#0A2463'" onmouseout="this.style.color='#333'">How It Works</a>
+            <a href="/marketing/pricing.html" style="color: #333; text-decoration: none; font-size: 16px; font-weight: 500; transition: color 0.3s;" onmouseover="this.style.color='#0A2463'" onmouseout="this.style.color='#333'">Pricing</a>
+            <a href="/marketing/county-cap.html" style="color: #333; text-decoration: none; font-size: 16px; font-weight: 500; transition: color 0.3s;" onmouseover="this.style.color='#0A2463'" onmouseout="this.style.color='#333'">33% Cap</a>
+            <a href="/marketing/profitability.html" style="color: #333; text-decoration: none; font-size: 16px; font-weight: 500; transition: color 0.3s;" onmouseover="this.style.color='#0A2463'" onmouseout="this.style.color='#333'">ROI</a>
+        </div>
+        
+        <!-- RIGHT: CTA Button -->
+        <a href="/marketing/apply.html" style="margin-left: auto; background: #0A2463; color: white; padding: 12px 28px; border-radius: 8px; font-size: 16px; font-weight: 600; text-decoration: none; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px;" onmouseover="this.style.background='#0D2F7E'" onmouseout="this.style.background='#0A2463'">
+            Apply Now →
+        </a>
+    </div>
+</nav>
+
+
+
+
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Apply for TrueVow Intake Services</h1>
+        <p class="hero-subtitle">
+            Get Benjamin answering your calls 24/7. Applications reviewed within 48 hours.
+        </p>
+        <div class="hero-badge">
+            ⚡ Only 21 firms approved per week • 76-hour setup after approval
+        </div>
+    </section>
+
+    <!-- PROGRESS INDICATOR -->
+    <div class="progress-container">
+        <div class="progress-steps">
+            <div class="progress-step active" data-step="1">
+                <div class="step-number">1</div>
+                <div class="step-label">Your Info</div>
+            </div>
+            <div class="progress-step" data-step="2">
+                <div class="step-number">2</div>
+                <div class="step-label">Practice Details</div>
+            </div>
+            <div class="progress-step" data-step="3">
+                <div class="step-number">3</div>
+                <div class="step-label">Eligibility</div>
+            </div>
+            <div class="progress-step" data-step="4">
+                <div class="step-number">4</div>
+                <div class="step-label">Review & Submit</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="form-container">
+        <div class="form-card">
+            <form id="applicationForm">
+                
+                <!-- STEP 1: YOUR INFORMATION -->
+                <div class="form-section active" data-step="1">
+                    <h2 class="section-title">Your Information</h2>
+                    <p class="section-subtitle">Let's start with your contact details.</p>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                        <div class="form-group">
+                            <label for="first_name">First Name <span class="required">*</span></label>
+                            <input type="text" id="first_name" name="first_name" required placeholder="John">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="last_name">Last Name <span class="required">*</span></label>
+                            <input type="text" id="last_name" name="last_name" required placeholder="Smith">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="john@smithlaw.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567" onblur="validatePhoneFormat(this)" oninput="formatPhoneInput(this)">
+                        <small style="color: #666; font-size: 14px;">Format: (555) 123-4567 or 555-123-4567 or 5551234567 (exactly 10 digits)</small>
+                        <small id="phoneError" style="color: #DC2626; font-size: 13px; display: none; margin-top: 4px;"></small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="firm_name">Law Firm Name <span class="required">*</span></label>
+                        <input type="text" id="firm_name" name="firm_name" required placeholder="Smith & Associates Law Firm">
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="button" class="btn btn-primary" onclick="nextStep()">Continue →</button>
+                    </div>
+                </div>
+                
+                <!-- STEP 2: PRACTICE DETAILS -->
+                <div class="form-section" data-step="2">
+                    <h2 class="section-title">Practice Details</h2>
+                    <p class="section-subtitle">Tell us about your practice area and location.</p>
+                    
+                    <div class="form-group">
+                        <label for="practice_area">Primary Practice Area <span class="required">*</span></label>
+                        <select id="practice_area" name="practice_area" required>
+                            <option value="">Select your practice area</option>
+                            <option value="personal-injury">Personal Injury</option>
+                            <option value="family-law">Family Law</option>
+                            <option value="immigration">Immigration</option>
+                            <option value="criminal-defense">Criminal Defense</option>
+                            <option value="employment-law">Employment Law</option>
+                            <option value="real-estate">Real Estate</option>
+                            <option value="bankruptcy">Bankruptcy</option>
+                            <option value="estate-planning">Estate Planning</option>
+                            <option value="workers-comp">Workers' Compensation</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="firm_website">Law Firm Website <span style="color: #666; font-weight: 400;">(Optional)</span></label>
+                        <input type="text" id="firm_website" name="firm_website" placeholder="https://smithlaw.com or leave blank">
+                        <small style="color: #666; font-size: 14px;">Helps us verify your practice. Not required for approval.</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="state">State <span class="required">*</span></label>
+                        <select id="state" name="state" required onchange="loadCounties()">
+                            <option value="">Select your state</option>
+                            <option value="FL">Florida</option>
+                            <option value="CA">California</option>
+                            <option value="TX">Texas</option>
+                            <option value="OH">Ohio</option>
+                            <option value="NY">New York</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="IL">Illinois</option>
+                            <option value="GA">Georgia</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="MI">Michigan</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="IN">Indiana</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MD">Maryland</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="CO">Colorado</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="AL">Alabama</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="OR">Oregon</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="UT">Utah</option>
+                            <option value="IA">Iowa</option>
+                            <option value="NV">Nevada</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="KS">Kansas</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="ID">Idaho</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="ME">Maine</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="MT">Montana</option>
+                            <option value="DE">Delaware</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="AK">Alaska</option>
+                            <option value="VT">Vermont</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="desired_county">📍 Primary County <span class="required">*</span></label>
+                        <select id="desired_county" name="desired_county" required disabled onchange="checkCountyCapacity()">
+                            <option value="">First select a state</option>
+                        </select>
+                        <div id="countyCapacityAlert" style="margin-top: 12px;"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="firm_size">Firm Size <span class="required">*</span></label>
+                        <select id="firm_size" name="firm_size" required>
+                            <option value="">Select firm size</option>
+                            <option value="solo">Solo Attorney</option>
+                            <option value="2-5">2-5 Attorneys</option>
+                            <option value="6-10">6-10 Attorneys</option>
+                            <option value="11-21">11-21 Attorneys</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="monthly_calls">Current Monthly Inbound Calls (estimate) <span class="required">*</span></label>
+                        <select id="monthly_calls" name="monthly_calls" required>
+                            <option value="">Select range</option>
+                            <option value="0-10">0-10 calls</option>
+                            <option value="11-20">11-20 calls</option>
+                            <option value="21-40">21-40 calls</option>
+                            <option value="41-80">41-80 calls</option>
+                            <option value="80+">80+ calls</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="referral_source">How did you hear about TrueVow?</label>
+                        <select id="referral_source" name="referral_source">
+                            <option value="">Select source</option>
+                            <option value="google">Google Search</option>
+                            <option value="linkedin">LinkedIn</option>
+                            <option value="facebook">Facebook</option>
+                            <option value="referral">Referral from colleague</option>
+                            <option value="conference">Legal conference/event</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="button" class="btn btn-secondary" onclick="previousStep(event)">← Back</button>
+                        <button type="button" class="btn btn-primary" onclick="nextStep()">Continue →</button>
+                    </div>
+                </div>
+                
+                <!-- STEP 3: ELIGIBILITY -->
+                <div class="form-section" data-step="3">
+                    <h2 class="section-title">Eligibility Confirmation</h2>
+                    <p class="section-subtitle">Please confirm you meet our eligibility criteria.</p>
+                    
+                    <div class="info-box">
+                        <strong>TrueVow is exclusively for solo and small law firms (=21 attorneys)</strong> who handle inbound client calls in high-volume civil practices.
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="eligibility_1" name="eligibility_1" required>
+                        <label for="eligibility_1">
+                            I am actively licensed to practice law (not retired or inactive)
+                        </label>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="eligibility_2" name="eligibility_2" required>
+                        <label for="eligibility_2">
+                            My firm handles inbound client calls (potential new clients calling us)
+                        </label>
+                    </div>
+                    
+                    <div class="checkbox-group" id="eligibility_3_container">
+                        <input type="checkbox" id="eligibility_3" name="eligibility_3" required>
+                        <label for="eligibility_3">
+                            My firm has 21 or fewer attorneys
+                        </label>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="eligibility_4" name="eligibility_4" required>
+                        <label for="eligibility_4">
+                            I am not in-house counsel, government attorney, or retired Bar member
+                        </label>
+                    </div>
+                    
+                    <div id="eligibilityMessageBox" class="info-box" style="margin-top: 32px; background: #0A2463; color: white; padding: 24px; border-radius: 8px; border-left: 4px solid #1A1A1A; line-height: 1.8; display: none; text-align: left;">
+                        <p style="font-size: 18px; font-weight: 700; margin-bottom: 12px; color: white; text-align: left; margin-left: 0; padding-left: 0;">
+                            ✅ Excellent! You meet our eligibility criteria.
+                        </p>
+                        <p style="font-size: 16px; color: white; margin-bottom: 16px; text-align: left; margin-left: 0; padding-left: 0; text-indent: 0;">
+                            <strong>Why we need your Bar License Number:</strong><br>
+                            TrueVow is exclusively designed for solo and small law firm owners (21 or fewer attorneys). We carefully curate our member base to ensure we're serving the right firms — those who face the unique challenges of running a smaller practice. Your Bar license verification confirms you're a licensed attorney and helps us maintain the quality and integrity of our community. <strong>You're not just another application to us; you're a valued member of an exclusive community.</strong>
+                        </p>
+                        <p style="font-size: 14px; color: #E0E7FF; margin-bottom: 0; text-align: left; margin-left: 0; padding-left: 0;">
+                            You can enter it in any format (e.g., "FL Bar #123456" or just "123456") — we'll handle the rest.
+                        </p>
+                    </div>
+                    
+                    <div class="form-group" style="margin-top: 24px;">
+                        <label for="bar_number">State Bar License Number <span class="required">*</span></label>
+                        <input type="text" id="bar_number" name="bar_number" required placeholder="FL Bar #123456 or 123456">
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="button" class="btn btn-secondary" onclick="previousStep(event)">← Back</button>
+                        <button type="button" class="btn btn-primary" onclick="nextStep()">Continue →</button>
+                    </div>
+                </div>
+                
+                <!-- STEP 4: REVIEW & SUBMIT -->
+                <div class="form-section" data-step="4">
+                    <h2 class="section-title">Review & Submit</h2>
+                    <p class="section-subtitle">Please review your application before submitting.</p>
+                    
+                    <div id="reviewSummary" style="background: #F8F9FA; padding: 24px; border-radius: 12px; margin-bottom: 32px;">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                    
+                    <div class="info-box">
+                        <strong>📋 What happens next:</strong><br>
+                        1. We'll review your application within 48 hours<br>
+                        2. If approved, we'll schedule your 30-minute onboarding call<br>
+                        3. Your onboarding call will set up your intake system<br>
+                        4. Benjamin goes live within 76 hours of onboarding!<br>
+                        5. You get all 11 free bookings (and 24/7 Benjamin coverage) before any billing starts<br>
+                        6. After 11 free bookings or 3 months (whichever comes first), we invoice at month-end only for actual bookings<br>
+                        7. If we don't book anything for 3 consecutive months, you pay nothing and can pause or part ways with zero obligation
+                    </div>
+                    
+                    <!-- FOUNDING MEMBER INTEREST -->
+                    <div style="background: linear-gradient(135deg, #FFF9E6 0%, #FFF5D6 100%); border: 2px solid #F59E0B; border-radius: 12px; padding: 24px; margin: 32px 0;">
+                        <h3 style="font-size: 20px; font-weight: 800; color: #92400E; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+                            🏆 Interested in Founding Member Status• (Worth $1,244+/year!)
+                        </h3>
+                        <p style="color: #78350F; margin-bottom: 16px; font-size: 15px; line-height: 1.6;">
+                            <strong>How it works:</strong><br>
+                            1. You start with <strong>11 FREE bookings</strong> (standard for all customers)<br>
+                            2. After you exhaust the 11 FREE bookings, you pay <strong>$29/booking</strong><br>
+                            3. Once you've paid for your <strong>1st qualified booking</strong>, you qualify to become a Founding Member<br>
+                            4. If approved ✅ You get <strong>TWO lifetime benefits:</strong>
+                        </p>
+                        <div style="background: #2C3E50; color: white; padding: 20px; border-radius: 8px; margin: 16px 0; border-left: 4px solid #1A1A1A;">
+                            <p style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">
+                                💰 BENEFIT #1: 3 FREE bookings EVERY month forever
+                            </p>
+                            <p style="font-size: 15px; opacity: 0.95;">
+                                Worth $87/month = <strong>$1,044/year saved</strong>
+                            </p>
+                        </div>
+                        <div style="background: #5B7FA6; color: white; padding: 20px; border-radius: 8px; margin: 16px 0; border-left: 4px solid #1A1A1A;">
+                            <p style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">
+                                🔒 BENEFIT #2: $25/booking rate locked forever
+                            </p>
+                            <p style="font-size: 15px; opacity: 0.95;">
+                                (vs. $29 standard = ~<strong>$200/year saved</strong> at 50 bookings/year)
+                            </p>
+                        </div>
+                        <div style="background: #FEF3C7; padding: 16px; border-radius: 8px; margin: 16px 0;">
+                            <p style="color: #78350F; font-size: 14px; font-weight: 600; margin-bottom: 8px;">
+                                ⚡ To Stay "Active" (and keep getting 3 FREE/month), do ONE of these:
+                            </p>
+                            <p style="color: #78350F; font-size: 14px; line-height: 1.8;">
+                                • <strong>1 paid booking per month</strong> (shows you're actively using TrueVow)<br>
+                                • <strong>1 settlement contribution per month</strong> (helps build Settle™ database)<br>
+                                • <strong>3 attorney referrals per year</strong> who convert to paying customers
+                            </p>
+                        </div>
+                        <div class="checkbox-group" style="margin: 0;">
+                            <input type="checkbox" id="founding_member_interest" name="founding_member_interest">
+                            <label for="founding_member_interest" style="color: #78350F; font-weight: 600;">
+                                ✅ Yes, after my 1st paid booking, contact me about Founding Member status (Save $1,244+/year!)
+                            </label>
+                        </div>
+                        <p style="color: #92400E; font-size: 14px; margin-top: 12px; font-style: italic;">
+                            Limited to 2,100 attorneys nationwide. You're building this with us, not just using it.
+                        </p>
+                    </div>
+                    
+                    <!-- SETTLE INTEREST -->
+                    <div style="background: linear-gradient(135deg, #E0F2FE 0%, #DBEAFE 100%); border: 2px solid #0EA5E9; border-radius: 12px; padding: 24px; margin: 32px 0;">
+                        <h3 style="font-size: 20px; font-weight: 800; color: #075985; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+                            Interested in Settle™• (Settle™ment Intelligence Database)
+                        </h3>
+                        <p style="color: #0C4A6E; margin-bottom: 16px; font-size: 15px; line-height: 1.6;">
+                            Insurance companies use <strong>Colossus</strong> (11 million claims, $50+ billion advantage) to lowball you. 
+                            <strong>Settle™</strong> gives YOU settlement data so you know what your case is truly worth. Stop guessing. Stop settling for $27K when it's worth $85K.
+                        </p>
+                        <div class="checkbox-group" style="margin: 0;">
+                            <input type="checkbox" id="settle_interest" name="settle_interest">
+                            <label for="settle_interest" style="color: #0C4A6E; font-weight: 600;">
+                                ✅ Yes, I want to be notified when Settle™™ launches (Q3 2026)
+                            </label>
+                        </div>
+                        <p style="color: #075985; font-size: 14px; margin-top: 12px; font-style: italic;">
+                            Founding Members get 11 FREE settlement predictions + priority access to contribute anonymous settlements.
+                        </p>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terms_agree" name="terms_agree" required>
+                        <label for="terms_agree">
+                            I agree to the <a href="../legal/terms.html" style="color: #0A2463;">Terms of Service</a> and <a href="../legal/bar-compliance.html" style="color: #0A2463;">Bar Compliance Policy</a>
+                        </label>
+                    </div>
+                    
+                    <!-- CONSENT MESSAGE -->
+                    <div style="margin: 24px 0; padding: 20px; background: #E8F4FD; border-left: 4px solid #0A2463; border-radius: 8px;">
+                        <p style="font-size: 14px; color: #0C4A6E; line-height: 1.6; margin: 0;">
+                            <strong>Consent Notice:</strong> By submitting, I consent to receive automated calls, SMS, and emails from TrueVow at this number for application to become a valued member, for onboarding purposes, and support. Message/data rates may apply. Consent is not required to purchase.
+                        </p>
+                    </div>
+                    
+                    <div id="submitMessage"></div>
+                    
+                    <div class="form-buttons">
+                        <button type="button" class="btn btn-secondary" onclick="previousStep(event)">← Back</button>
+                        <button type="submit" class="btn btn-primary" id="submitBtn">Submit Application →</button>
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+    
+    <!-- MODAL POPUP -->
+    <div id="applicationModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeApplicationModal()">&times;</button>
+            <div id="modalMessage"></div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        let currentStep = 1;
+        const totalSteps = 4;
+        const formData = {};
+        let demoSessionData = null;
+        
+        // Check for demo session parameter and auto-populate
+        async function loadDemoSession() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const demoSessionId = urlParams.get('demo');
+            
+            if (demoSessionId) {
+                try {
+                    const response = await fetch(`/api/v1/demo-session/${demoSessionId}`);
+                    if (response.ok) {
+                        demoSessionData = await response.json();
+                        
+                        // Pre-fill form fields
+                        if (demoSessionData.first_name) {
+                            document.getElementById('first_name').value = demoSessionData.first_name;
+                        }
+                        if (demoSessionData.last_name) {
+                            document.getElementById('last_name').value = demoSessionData.last_name;
+                        }
+                        if (demoSessionData.email) {
+                            document.getElementById('email').value = demoSessionData.email;
+                        }
+                        if (demoSessionData.phone) {
+                            document.getElementById('phone').value = demoSessionData.phone;
+                        }
+                        if (demoSessionData.firm_name) {
+                            document.getElementById('firm_name').value = demoSessionData.firm_name;
+                        }
+                        if (demoSessionData.practice_area) {
+                            document.getElementById('practice_area').value = demoSessionData.practice_area;
+                        }
+                        
+                        // Show welcome message
+                        const heroSubtitle = document.querySelector('.hero-subtitle');
+                        if (heroSubtitle && demoSessionData.first_name) {
+                            heroSubtitle.innerHTML = `Welcome back, ${demoSessionData.first_name}! Thanks for trying Benjamin. Now let's complete your application.`;
+                        }
+                    }
+                } catch (error) {
+                    console.error('Error loading demo session:', error);
+                }
+            }
+        }
+        
+        // Load demo session on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            loadDemoSession();
+        });
+        
+        // County data by state (expandable to full API later)
+        const stateCounties = {
+            "FL": [
+                { value: "miami-dade", name: "Miami-Dade", total: 60, filled: 48 },
+                { value: "broward", name: "Broward", total: 46, filled: 38 },
+                { value: "palm-beach", name: "Palm Beach", total: 31, filled: 5 },
+                { value: "hillsborough", name: "Hillsborough (Tampa)", total: 40, filled: 6 },
+                { value: "orange", name: "Orange (Orlando)", total: 36, filled: 5 },
+                { value: "duval", name: "Duval (Jacksonville)", total: 25, filled: 4 },
+                { value: "pinellas", name: "Pinellas", total: 23, filled: 3 },
+                { value: "lee", name: "Lee", total: 20, filled: 3 },
+                { value: "polk", name: "Polk", total: 18, filled: 2 },
+                { value: "brevard", name: "Brevard", total: 16, filled: 2 },
+                { value: "other-fl", name: "Other Florida County", total: 0, filled: 0 }
+            ],
+            "CA": [
+                { value: "los-angeles", name: "Los Angeles", total: 120, filled: 45 },
+                { value: "san-diego", name: "San Diego", total: 55, filled: 18 },
+                { value: "orange-ca", name: "Orange", total: 48, filled: 12 },
+                { value: "riverside", name: "Riverside", total: 35, filled: 8 },
+                { value: "san-bernardino", name: "San Bernardino", total: 32, filled: 7 },
+                { value: "santa-clara", name: "Santa Clara", total: 42, filled: 15 },
+                { value: "alameda", name: "Alameda", total: 38, filled: 12 },
+                { value: "sacramento", name: "Sacramento", total: 28, filled: 9 },
+                { value: "other-ca", name: "Other California County", total: 0, filled: 0 }
+            ],
+            "TX": [
+                { value: "harris", name: "Harris (Houston)", total: 85, filled: 32 },
+                { value: "dallas", name: "Dallas", total: 72, filled: 28 },
+                { value: "tarrant", name: "Tarrant (Fort Worth)", total: 45, filled: 15 },
+                { value: "bexar", name: "Bexar (San Antonio)", total: 42, filled: 14 },
+                { value: "travis", name: "Travis (Austin)", total: 38, filled: 12 },
+                { value: "collin", name: "Collin", total: 25, filled: 8 },
+                { value: "other-tx", name: "Other Texas County", total: 0, filled: 0 }
+            ],
+            "OH": [
+                { value: "cuyahoga", name: "Cuyahoga (Cleveland)", total: 42, filled: 15 },
+                { value: "franklin", name: "Franklin (Columbus)", total: 38, filled: 13 },
+                { value: "hamilton", name: "Hamilton (Cincinnati)", total: 35, filled: 12 },
+                { value: "summit", name: "Summit (Akron)", total: 22, filled: 7 },
+                { value: "other-oh", name: "Other Ohio County", total: 0, filled: 0 }
+            ]
+        };
+        
+        // Load counties based on selected state
+        function loadCounties() {
+            const state = document.getElementById('state').value;
+            const countySelect = document.getElementById('desired_county');
+            
+            if (!state) {
+                countySelect.disabled = true;
+                countySelect.innerHTML = '<option value="">First select a state</option>';
+                return;
+            }
+            
+            // Enable county dropdown
+            countySelect.disabled = false;
+            
+            // Get counties for selected state
+            const counties = stateCounties[state] || [];
+            
+            if (counties.length === 0) {
+                // State doesn't have county data yet - show generic option
+                countySelect.innerHTML = `
+                    <option value="">Select your county</option>
+                    <option value="not-listed">County not listed (will contact me for details)</option>
+                `;
+            } else {
+                // Populate with actual counties
+                countySelect.innerHTML = '<option value="">Select your county</option>';
+                counties.forEach(county => {
+                    const option = document.createElement('option');
+                    option.value = county.value;
+                    option.textContent = county.name;
+                    option.dataset.total = county.total;
+                    option.dataset.filled = county.filled;
+                    countySelect.appendChild(option);
+                });
+            }
+            
+            // Clear capacity alert
+            document.getElementById('countyCapacityAlert').innerHTML = '';
+        }
+        
+        function nextStep() {
+            // Validate current step
+            if (!validateStep(currentStep)) {
+                return;
+            }
+            
+            // Additional phone validation check for step 1 (double-check)
+            if (currentStep === 1) {
+                const phoneField = document.getElementById('phone');
+                const phoneError = document.getElementById('phoneError');
+                if (phoneField && phoneField.value) {
+                    if (!isValidPhone(phoneField.value)) {
+                        phoneField.focus();
+                        phoneField.style.borderColor = '#DC2626';
+                        if (phoneError) {
+                            phoneError.style.display = 'block';
+                            const digitsOnly = phoneField.value.replace(/\D/g, '');
+                            if (digitsOnly.length < 10) {
+                                phoneError.textContent = 'Phone number must have exactly 10 digits.';
+                            } else if (digitsOnly.length > 11) {
+                                phoneError.textContent = 'Phone number cannot have more than 11 digits.';
+                            } else if (digitsOnly.length === 11 && digitsOnly[0] !== '1') {
+                                phoneError.textContent = 'If 11 digits, must start with "1" (US country code).';
+                            } else {
+                                phoneError.textContent = 'Invalid phone number format. Please enter exactly 10 digits: (555) 123-4567';
+                            }
+                        }
+                        alert('Please enter a valid 10-digit US phone number. Format: (555) 123-4567 or 555-123-4567');
+                        return;
+                    } else {
+                        phoneField.style.borderColor = '#E5E5E5';
+                        if (phoneError) {
+                            phoneError.style.display = 'none';
+                        }
+                    }
+                }
+            }
+            
+            // Save form data
+            saveStepData(currentStep);
+            
+            // Move to next step
+            if (currentStep < totalSteps) {
+                currentStep++;
+                showStep(currentStep);
+                
+                // If we're on review step, populate summary
+                if (currentStep === 4) {
+                    populateReviewSummary();
+                }
+            }
+        }
+        
+        function previousStep(e) {
+            // Prevent default form behavior and stop propagation
+            if (e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            
+            if (currentStep > 1) {
+                currentStep--;
+                showStep(currentStep);
+                // Note: showStep() already scrolls to top, but we ensure it here too
+            }
+        }
+        
+        function showStep(step) {
+            // Hide all sections
+            document.querySelectorAll('.form-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show current section
+            const currentSection = document.querySelector(`.form-section[data-step="${step}"]`);
+            if (currentSection) {
+                currentSection.classList.add('active');
+            }
+            
+            // Update progress indicator
+            document.querySelectorAll('.progress-step').forEach((stepEl, index) => {
+                stepEl.classList.remove('active', 'completed');
+                if (index + 1 < step) {
+                    stepEl.classList.add('completed');
+                } else if (index + 1 === step) {
+                    stepEl.classList.add('active');
+                }
+            });
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        function validateStep(step) {
+            const section = document.querySelector(`.form-section[data-step="${step}"]`);
+            const requiredFields = section.querySelectorAll('[required]');
+            
+            for (let field of requiredFields) {
+                // Skip hidden/disabled fields or fields in hidden sections
+                const computedStyle = window.getComputedStyle(field);
+                const parentSection = field.closest('.form-section');
+                const isParentHidden = parentSection && parentSection.style.display === 'none';
+                const isFieldHidden = computedStyle.display === 'none' || computedStyle.visibility === 'hidden' || field.offsetParent === null;
+                
+                if (isFieldHidden || field.disabled || isParentHidden) {
+                    continue;
+                }
+                
+                if (!field.value || (field.type === 'checkbox' && !field.checked)) {
+                    field.focus();
+                    if (field.type === 'checkbox') {
+                        alert('Please confirm all eligibility criteria.');
+                    } else {
+                        alert('Please fill in all required fields before continuing.');
+                    }
+                    return false;
+                }
+                
+                // Special validation for phone (strict validation)
+                if (field.type === 'tel' || field.id === 'phone') {
+                    if (!isValidPhone(field.value)) {
+                        field.focus();
+                        field.style.borderColor = '#DC2626';
+                        const digitsOnly = field.value.replace(/\D/g, '');
+                        let errorMsg = 'Please enter a valid 10-digit US phone number.';
+                        if (digitsOnly.length < 10) {
+                            errorMsg = 'Phone number must have exactly 10 digits.';
+                        } else if (digitsOnly.length > 11) {
+                            errorMsg = 'Phone number cannot have more than 11 digits.';
+                        } else if (digitsOnly.length === 11 && digitsOnly[0] !== '1') {
+                            errorMsg = 'If 11 digits, must start with "1" (US country code).';
+                        }
+                        alert(errorMsg + ' Format: (555) 123-4567 or 555-123-4567');
+                        return false;
+                    } else {
+                        field.style.borderColor = '#E5E5E5';
+                    }
+                }
+                
+                // Special validation for email
+                if (field.type === 'email' && !isValidEmail(field.value)) {
+                    field.focus();
+                    alert('Please enter a valid email address.');
+                    return false;
+                }
+            }
+            
+            return true;
+        }
+        
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+        
+        function formatPhoneInput(input) {
+            // Auto-format as user types (optional enhancement)
+            let value = input.value.replace(/\D/g, '');
+            if (value.length > 0 && value.length <= 10) {
+                if (value.length <= 3) {
+                    input.value = value.length > 0 ? '(' + value : value;
+                } else if (value.length <= 6) {
+                    input.value = '(' + value.substring(0, 3) + ') ' + value.substring(3);
+                } else {
+                    input.value = '(' + value.substring(0, 3) + ') ' + value.substring(3, 6) + '-' + value.substring(6, 10);
+                }
+            }
+            // Clear error message when user starts typing
+            const phoneError = document.getElementById('phoneError');
+            if (phoneError) {
+                phoneError.style.display = 'none';
+            }
+            input.style.borderColor = '#E5E5E5';
+        }
+        
+        function validatePhoneFormat(input) {
+            const phoneError = document.getElementById('phoneError');
+            if (!isValidPhone(input.value)) {
+                input.style.borderColor = '#DC2626';
+                if (phoneError) {
+                    phoneError.style.display = 'block';
+                    const digitsOnly = input.value.replace(/\D/g, '');
+                    if (digitsOnly.length < 10) {
+                        phoneError.textContent = 'Phone number must have exactly 10 digits.';
+                    } else if (digitsOnly.length > 11) {
+                        phoneError.textContent = 'Phone number cannot have more than 11 digits.';
+                    } else if (digitsOnly.length === 11 && digitsOnly[0] !== '1') {
+                        phoneError.textContent = 'If 11 digits, must start with "1" (US country code).';
+                    } else {
+                        phoneError.textContent = 'Invalid phone number format. Please enter exactly 10 digits: (555) 123-4567';
+                    }
+                }
+                return false;
+            } else {
+                input.style.borderColor = '#E5E5E5';
+                if (phoneError) {
+                    phoneError.style.display = 'none';
+                }
+                return true;
+            }
+        }
+        
+        function isValidPhone(phone) {
+            // Remove all non-digit characters
+            const digitsOnly = phone.replace(/\D/g, '');
+            
+            // Must have exactly 10 or 11 digits
+            if (digitsOnly.length < 10 || digitsOnly.length > 11) {
+                return false;
+            }
+            
+            // If 11 digits, must start with "1" (US country code)
+            if (digitsOnly.length === 11 && digitsOnly[0] !== '1') {
+                return false;
+            }
+            
+            // If 11 digits starting with 1, remove it to validate the remaining 10
+            const phoneNumber = digitsOnly.length === 11 ? digitsOnly.substring(1) : digitsOnly;
+            
+            // Must be exactly 10 digits after removing country code
+            if (phoneNumber.length !== 10) {
+                return false;
+            }
+            
+            // First digit of area code cannot be 0 or 1 (but 555 is valid for area codes)
+            if (phoneNumber[0] === '0' || phoneNumber[0] === '1') {
+                return false;
+            }
+            
+            // Note: Exchange code CAN start with 0 or 1 (e.g., 123, 101 are valid)
+            // So we don't validate the 4th digit - it can be any digit 0-9
+            
+            return true;
+        }
+        
+        function saveStepData(step) {
+            const section = document.querySelector(`.form-section[data-step="${step}"]`);
+            const inputs = section.querySelectorAll('input, select, textarea');
+            
+            inputs.forEach(input => {
+                if (input.type === 'checkbox') {
+                    formData[input.name] = input.checked;
+                } else {
+                    formData[input.name] = input.value;
+                }
+            });
+        }
+        
+        // Show/hide eligibility message based on checkbox status
+        function checkEligibilityCheckboxes() {
+            const eligibility1 = document.getElementById('eligibility_1');
+            const eligibility2 = document.getElementById('eligibility_2');
+            const eligibility3 = document.getElementById('eligibility_3');
+            const eligibility4 = document.getElementById('eligibility_4');
+            const messageBox = document.getElementById('eligibilityMessageBox');
+            
+            if (eligibility1 && eligibility2 && eligibility3 && eligibility4 && messageBox) {
+                function updateMessageVisibility() {
+                    if (eligibility1.checked && eligibility2.checked && eligibility3.checked && eligibility4.checked) {
+                        messageBox.style.display = 'block';
+                    } else {
+                        messageBox.style.display = 'none';
+                    }
+                }
+                
+                eligibility1.addEventListener('change', updateMessageVisibility);
+                eligibility2.addEventListener('change', updateMessageVisibility);
+                eligibility3.addEventListener('change', updateMessageVisibility);
+                eligibility4.addEventListener('change', updateMessageVisibility);
+                
+                // Initial check
+                updateMessageVisibility();
+            }
+        }
+        
+        // Auto-check "21 or fewer" if solo attorney is selected
+        function checkFirmSizeLogic() {
+            const firmSizeSelect = document.getElementById('firm_size');
+            const eligibility3Checkbox = document.getElementById('eligibility_3');
+            const eligibility3Container = document.getElementById('eligibility_3_container');
+            
+            if (firmSizeSelect && eligibility3Checkbox && eligibility3Container) {
+                firmSizeSelect.addEventListener('change', function() {
+                    if (this.value === 'solo') {
+                        // Solo attorney automatically has 1 or fewer attorneys
+                        eligibility3Checkbox.checked = true;
+                        eligibility3Checkbox.disabled = true;
+                        eligibility3Container.style.opacity = '0.6';
+                        eligibility3Container.style.pointerEvents = 'none';
+                    } else {
+                        // Re-enable if not solo
+                        eligibility3Checkbox.disabled = false;
+                        eligibility3Container.style.opacity = '1';
+                        eligibility3Container.style.pointerEvents = 'auto';
+                    }
+                });
+                
+                // Check on page load if solo is already selected
+                if (firmSizeSelect.value === 'solo') {
+                    eligibility3Checkbox.checked = true;
+                    eligibility3Checkbox.disabled = true;
+                    eligibility3Container.style.opacity = '0.6';
+                    eligibility3Container.style.pointerEvents = 'none';
+                }
+            }
+        }
+        
+        // Initialize firm size logic and eligibility message
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function() {
+                checkFirmSizeLogic();
+                checkEligibilityCheckboxes();
+            });
+        } else {
+            checkFirmSizeLogic();
+            checkEligibilityCheckboxes();
+        }
+        
+        function checkCountyCapacity() {
+            const countySelect = document.getElementById('desired_county');
+            const selectedOption = countySelect.selectedOptions[0];
+            const alertDiv = document.getElementById('countyCapacityAlert');
+            
+            if (!selectedOption || !selectedOption.dataset.total) {
+                alertDiv.innerHTML = '';
+                return;
+            }
+            
+            const total = parseInt(selectedOption.dataset.total);
+            const filled = parseInt(selectedOption.dataset.filled);
+            
+            if (total === 0) {
+                // County has no data (e.g., "Other County")
+                alertDiv.innerHTML = '';
+                return;
+            }
+            
+            const remaining = total - filled;
+            const fillPercent = Math.round((filled / total) * 100);
+            
+            if (fillPercent >= 70) {
+                // High demand
+                alertDiv.innerHTML = `
+                    <div class="alert alert-info">
+                        • <strong>HIGH DEMAND:</strong> ${remaining} of ${total} seats remaining (${fillPercent}% filled)<br>
+                        <small>Applications reviewed first-come, first-served.</small>
+                    </div>
+                `;
+            } else {
+                // Good availability
+                alertDiv.innerHTML = `
+                    <div class="alert alert-success">
+                        • <strong>SEATS AVAILABLE:</strong> ${remaining} of ${total} seats open<br>
+                        <small>Your county has good availability!</small>
+                    </div>
+                `;
+            }
+        }
+        
+        function populateReviewSummary() {
+            const summary = document.getElementById('reviewSummary');
+            
+            summary.innerHTML = `
+                <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 16px; color: #0A2463;">Your Application Summary</h3>
+                
+                <div style="margin-bottom: 16px;">
+                    <strong>📧 Email:</strong> ${formData.email || 'N/A'}
+                </div>
+                <div style="margin-bottom: 16px;">
+                    <strong>🏢 Firm Name:</strong> ${formData.firm_name || 'N/A'}
+                </div>
+                <div style="margin-bottom: 16px;">
+                    <strong>📞 Phone:</strong> ${formData.phone || 'N/A'}
+                </div>
+                <div style="margin-bottom: 16px;">
+                    <strong>⚖️ Bar Number:</strong> ${formData.bar_number || 'N/A'}
+                </div>
+                <div style="margin-bottom: 16px;">
+                    <strong>📋 Practice Area:</strong> ${document.getElementById('practice_area').selectedOptions[0]?.text || 'N/A'}
+                </div>
+                <div style="margin-bottom: 16px;">
+                    <strong>📍 County:</strong> ${document.getElementById('desired_county').selectedOptions[0]?.text || 'N/A'}
+                </div>
+                <div style="margin-bottom: 16px;">
+                    <strong>👥 Firm Size:</strong> ${document.getElementById('firm_size').selectedOptions[0]?.text || 'N/A'}
+                </div>
+                <div style="margin-bottom: 16px;">
+                    <strong>📊 Monthly Calls:</strong> ${document.getElementById('monthly_calls').selectedOptions[0]?.text || 'N/A'}
+                </div>
+            `;
+        }
+        
+        // Supabase Configuration
+        const SUPABASE_URL = 'https://napwpkagxzqfpbearkjs.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5hcHdwa2FneHpxZnBiZWFya2pzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI0NDg3ODcsImV4cCI6MjA3ODAyNDc4N30.OSHgEylvGsDBwi4xI7Rs0_hpWtULmqadCr_m_eV_EgE';
+        
+        // Success modal function - defined globally so it's always accessible
+        function showSuccessMessage(emailAddress) {
+            console.log('✅ Showing success modal for:', emailAddress);
+            
+            // Get email from parameter or form data
+            const email = emailAddress || formData.email || 'the email you provided';
+            const firstName = formData.first_name || '';
+            
+            const modal = document.getElementById('applicationModal');
+            const modalMessage = document.getElementById('modalMessage');
+            
+            if (modal && modalMessage) {
+                modalMessage.innerHTML = `
+                    <div style="text-align: center;">
+                        <div style="font-size: 64px; margin-bottom: 20px;">✅</div>
+                        <h2 style="font-size: 28px; font-weight: 800; color: #0A2463; margin-bottom: 16px;">Application Submitted Successfully!</h2>
+                        <p style="font-size: 18px; color: #666; line-height: 1.6; margin-bottom: 24px;">
+                            ${firstName ? `Thank you, ${firstName}!` : 'Thank you!'} We'll review your application within <strong>48 hours</strong> and contact you at <strong>${email}</strong>.
+                        </p>
+                        <div style="background: #E8F5E9; border-left: 4px solid #10B981; padding: 20px; border-radius: 8px; margin: 24px 0; text-align: left;">
+                            <p style="margin: 0; color: #2E7D32; font-size: 16px; line-height: 1.6;">
+                                <strong>What's Next?</strong><br>
+                                • You'll receive a confirmation email shortly<br>
+                                • Our team will review your application within 48 hours<br>
+                                • If approved, we'll schedule your 30-minute onboarding call<br>
+                                • Your onboarding call will set up your intake system<br>
+                                • You get all 11 free bookings (and 24/7 Benjamin coverage) before any billing starts<br>
+                                • After 11 free bookings or 3 months (whichever comes first), we invoice at month-end only for actual bookings<br>
+                                • If we don't book anything for 3 consecutive months, you pay nothing and can pause or part ways with zero obligation
+                            </p>
+                        </div>
+                        <button onclick="closeApplicationModal()" style="margin-top: 24px; background: #0A2463; color: white; padding: 12px 32px; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#0D2F7E'" onmouseout="this.style.background='#0A2463'">
+                            Got it
+                        </button>
+                    </div>
+                `;
+                
+                // Show modal
+                modal.classList.add('active');
+                // Prevent body scroll when modal is open
+                document.body.style.overflow = 'hidden';
+                console.log('✅ Success modal displayed');
+            } else {
+                console.error('❌ Modal not found!');
+                alert('✅ Application submitted successfully! We will contact you within 48 hours.');
+            }
+        }
+        
+        // Global function to close modal
+        function closeApplicationModal() {
+            const modal = document.getElementById('applicationModal');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+        
+        // Form submission - Ensure DOM is ready
+        function initFormSubmission() {
+            const form = document.getElementById('applicationForm');
+            if (!form) {
+                console.error('❌ Form not found! Retrying...');
+                setTimeout(initFormSubmission, 100);
+                return;
+            }
+
+            prefillFromDemoLead();
+            
+            console.log('✅ Form found, attaching submit handler');
+            
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                console.log('✅ Form submit event triggered');
+                
+                // Save final step data
+                saveStepData(currentStep);
+                
+                // Also save ALL steps data to ensure nothing is missing
+                for (let i = 1; i <= currentStep; i++) {
+                    saveStepData(i);
+                }
+                
+                console.log('📋 FormData collected:', formData);
+                
+                const submitBtn = document.getElementById('submitBtn');
+                const messageDiv = document.getElementById('submitMessage');
+                
+                if (!submitBtn) {
+                    console.error('❌ Submit button not found!');
+                    alert('Error: Submit button not found. Please refresh the page.');
+                    return;
+                }
+                
+                if (!messageDiv) {
+                    console.error('❌ Message div not found!');
+                    alert('Error: Message div not found. Please refresh the page.');
+                    return;
+                }
+                
+                // Disable button
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Submitting Application...';
+                
+                // CRITICAL: Remove validation constraints from hidden/invalid fields to prevent browser errors
+                // This fixes the "form control not focusable" errors
+                const allInputs = form.querySelectorAll('input, select, textarea');
+                for (let input of allInputs) {
+                    const computedStyle = window.getComputedStyle(input);
+                    const parentSection = input.closest('.form-section');
+                    const isParentHidden = parentSection && (parentSection.style.display === 'none' || !parentSection.classList.contains('active'));
+                    const isFieldHidden = computedStyle.display === 'none' || computedStyle.visibility === 'hidden' || input.offsetParent === null;
+                    
+                    if (isFieldHidden || isParentHidden) {
+                        // Temporarily remove validation attributes from hidden fields
+                        input.removeAttribute('required');
+                        input.removeAttribute('pattern');
+                        input.setCustomValidity('');
+                        // Also remove required class if it exists
+                        input.classList.remove('required');
+                    }
+                }
+                
+                // Prepare submission data for Supabase
+                // Note: After nuclear reset, table starts with just email
+                // Then we add all columns back - form sends everything
+                const fullName = `${formData.first_name || ''} ${formData.last_name || ''}`.trim() || '';
+                
+                const submissionData = {
+                    // Required field (after nuclear reset, just email is required)
+                    email: formData.email || '',
+                    
+                    // Contact info
+                    first_name: formData.first_name || null,
+                    last_name: formData.last_name || null,
+                    primary_contact_name: fullName || null, // Add if column exists
+                    phone: formData.phone || null,
+                    
+                    // Firm info
+                    firm_name: formData.firm_name || null,
+                    practice_area: formData.practice_area || null,
+                    state: formData.state || null,
+                    desired_county: formData.desired_county || null,
+                    firm_size: formData.firm_size || null,
+                    monthly_calls: formData.monthly_calls || null,
+                    referral_source: formData.referral_source || null,
+                    bar_number: formData.bar_number || null,
+                    firm_website: formData.firm_website || null,
+                    
+                    // Eligibility
+                    eligibility_1: formData.eligibility_1 || false,
+                    eligibility_2: formData.eligibility_2 || false,
+                    eligibility_3: formData.eligibility_3 || false,
+                    eligibility_4: formData.eligibility_4 || false,
+                    
+                    // Interests
+                    founding_member_interest: formData.founding_member_interest || false,
+                    settle_interest: formData.settle_interest || false,
+                    terms_agree: formData.terms_agree || false,
+                    consider_founding_member_future: formData.consider_founding_member_future || false,
+                    early_access_settle: formData.early_access_settle || false,
+                    
+                    // Metadata
+                    application_source: 'apply_page',
+                    status: 'pending'
+                };
+                
+                // Ensure required fields are always present (even if empty string)
+                // Database should accept nulls for all fields except email
+                // But we'll send empty strings for required form fields to be safe
+                if (!submissionData.firm_name && submissionData.firm_name !== '') {
+                    const firmNameInput = document.getElementById('firm_name');
+                    submissionData.firm_name = firmNameInput ? firmNameInput.value || '' : '';
+                }
+                
+                console.log('📤 Submitting to Supabase:', submissionData);
+                console.log('📤 Firm Name Value:', submissionData.firm_name);
+                console.log('📤 Supabase URL:', `${SUPABASE_URL}/rest/v1/firm_applications`);
+                
+                try {
+                    // Submit directly to Supabase
+                    const response = await fetch(`${SUPABASE_URL}/rest/v1/firm_applications`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'apikey': SUPABASE_ANON_KEY,
+                            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                            'Prefer': 'return=representation'
+                        },
+                        body: JSON.stringify(submissionData)
+                    });
+                    
+                    const responseText = await response.text();
+                    console.log('Supabase Response Status:', response.status);
+                    console.log('Supabase Response:', responseText);
+                    
+                    if (response.ok) {
+                        let responseData;
+                        try {
+                            responseData = responseText ? JSON.parse(responseText) : { success: true };
+                            console.log('✅ Form submitted successfully:', responseData);
+                            
+                            // Extract email from response or form data
+                            const submittedEmail = (responseData && responseData[0] && responseData[0].email) || formData.email || '';
+                            
+                            // Show success message immediately
+                            showSuccessMessage(submittedEmail);
+                            
+                            // Disable submit button
+                            submitBtn.disabled = true;
+                            submitBtn.textContent = 'Submitted ✓';
+                            
+                            return; // Exit early on success
+                        } catch (parseError) {
+                            console.warn('Could not parse response, but status is OK:', parseError);
+                            // Even if parsing fails, if status is OK, show success
+                            showSuccessMessage(formData.email);
+                            submitBtn.disabled = true;
+                            submitBtn.textContent = 'Submitted ✓';
+                            return;
+                        }
+                    } else {
+                        let errorData;
+                        try {
+                            errorData = JSON.parse(responseText);
+                        } catch (e) {
+                            errorData = { message: responseText || 'Submission failed' };
+                        }
+                        console.error('❌ Supabase Error:', errorData);
+                        const errorMsg = errorData.message || errorData.hint || errorData.error || 'Please check console for details';
+                        alert(`Submission failed: ${errorMsg}`);
+                        throw new Error(errorMsg);
+                    }
+                } catch (error) {
+                    console.error('❌ Form submission error:', error);
+                    console.error('Error details:', {
+                        message: error.message,
+                        stack: error.stack,
+                        submissionData: submissionData,
+                        formData: formData
+                    });
+                    
+                    // Show user-friendly error message
+                    const errorMsg = `Error submitting form: ${error.message}\n\nTroubleshooting:\n1. Check browser console (F12) for details\n2. Verify Supabase tables exist\n3. Check network tab for API response\n4. Ensure all required fields are filled`;
+                    
+                    alert(errorMsg);
+                    messageDiv.innerHTML = `
+                        <div class="alert alert-error" style="margin-top: 24px; background: #FFEBEE; border-left: 4px solid #C62828; padding: 16px; border-radius: 8px;">
+                            <strong>❌ Submission Failed</strong><br>
+                            ${error.message}<br>
+                            <small style="color: #666;">Please check the browser console (F12) for more details.</small>
+                        </div>
+                    `;
+                    
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Submit Application →';
+                    return;
+                }
+            });
+        }
+        
+        // Initialize form submission when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initFormSubmission);
+        } else {
+            initFormSubmission();
+        }
+        
+        function prefillFromDemoLead() {
+            try {
+                const leadRaw = localStorage.getItem('truevowDemoLead');
+                if (!leadRaw) return;
+                const lead = JSON.parse(leadRaw);
+                const firstInput = document.getElementById('first_name');
+                const lastInput = document.getElementById('last_name');
+                const emailInput = document.getElementById('email');
+                const phoneInput = document.getElementById('phone');
+                const firmInput = document.getElementById('firm_name');
+                const practiceSelect = document.getElementById('practice_area');
+
+                if (lead.first_name && firstInput) {
+                    firstInput.value = lead.first_name;
+                    formData.first_name = lead.first_name;
+                }
+                if (lead.last_name && lastInput) {
+                    lastInput.value = lead.last_name;
+                    formData.last_name = lead.last_name;
+                }
+                if (lead.email && emailInput) {
+                    emailInput.value = lead.email;
+                    formData.email = lead.email;
+                }
+                if (lead.phone && phoneInput) {
+                    phoneInput.value = lead.phone;
+                    formData.phone = lead.phone;
+                }
+                if (lead.firm_name && firmInput) {
+                    firmInput.value = lead.firm_name;
+                    formData.firm_name = lead.firm_name;
+                }
+                if (lead.practice_area && practiceSelect) {
+                    practiceSelect.value = lead.practice_area;
+                    formData.practice_area = lead.practice_area;
+                }
+
+                const demoBanner = document.querySelector('.hero-badge');
+                if (demoBanner && lead.first_name) {
+                    demoBanner.textContent = `⚡ Welcome back ${lead.first_name}! Your demo details are already synced — finish the application below.`;
+                }
+            } catch (err) {
+                console.warn('Could not prefill demo lead data:', err);
+            }
+        }
+        
+        // Modal event listeners - close on outside click or Escape key
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('applicationModal');
+            if (modal) {
+                // Close modal when clicking outside
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        closeApplicationModal();
+                    }
+                });
+                
+                // Close modal with Escape key
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && modal.classList.contains('active')) {
+                        closeApplicationModal();
+                    }
+                });
+            }
+        });
+        
+        // Also initialize modal listeners if DOM is already loaded
+        if (document.readyState !== 'loading') {
+            const modal = document.getElementById('applicationModal');
+            if (modal) {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        closeApplicationModal();
+                    }
+                });
+                
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && modal.classList.contains('active')) {
+                        closeApplicationModal();
+                    }
+                });
+            }
+        }
+    </script>
+
+        <!-- FOOTER -->
+    <!-- STANDARDIZED FOOTER - Apply to all pages -->
+<!-- STANDARDIZED FOOTER - Apply to all pages -->
+<!-- STANDARDIZED FOOTER - Apply to all pages -->
+<!-- STANDARDIZED FOOTER - Apply to all pages -->
+<footer style="background: #1A1A1A; color: white; padding: 60px 20px 120px 20px; text-align: center;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <!-- Logo -->
+        <img src="/assets/logo.svg" alt="TrueVow" style="height: 50px; width: auto; margin-bottom: 24px; opacity: 0.9;">
+        
+        <p style="font-size: 16px; color: #999; margin-bottom: 40px; line-height: 1.6;">
+            More clients. More money. More time with your family.<br>
+            All without risking your license.
+        </p>
+        
+        <!-- 3-Column Links -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 900px; margin: 40px auto; text-align: center;">
+            <div>
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px;">PRODUCT</h4>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="/marketing/how-it-works.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">How It Works</a>
+                    <a href="/marketing/pricing.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Pricing</a>
+                    <a href="/marketing/profitability.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">ROI &amp; Profitability</a>
+                    <a href="/marketing/county-cap.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">33% County Cap</a>
+                </div>
+            </div>
+            <div>
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px;">RESOURCES</h4>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="/marketing/blog.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Blog</a>
+                    <a href="/marketing/case-studies.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Case Studies</a>
+                    <a href="/marketing/partner.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Partner Program</a>
+                    <a href="/marketing/affiliate.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Affiliate Program</a>
+                </div>
+            </div>
+            <div>
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px;">COMPANY</h4>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="/marketing/about.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">About Us</a>
+                    <a href="/marketing/careers.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Careers</a>
+                    <a href="/marketing/press.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Press</a>
+                    <a href="/marketing/apply.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Contact</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Legal Links -->
+        <div style="display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 40px; flex-wrap: wrap; font-size: 14px;">
+            <a href="/legal/privacy.html" style="color: #999; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Privacy Policy</a>
+            <span style="color: #555;">|</span>
+            <a href="/legal/terms.html" style="color: #999; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Terms of Service</a>
+            <span style="color: #555;">|</span>
+            <a href="/legal/msa.html" style="color: #999; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">MSA</a>
+            <span style="color: #555;">|</span>
+            <a href="/legal/bar-compliance.html" style="color: #999; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Bar Compliance</a>
+        </div>
+        
+        <!-- Disclaimer -->
+        <p style="font-size: 11pt; color: #555; margin-top: 32px; line-height: 1.8; max-width: 900px; margin-left: auto; margin-right: auto; padding-bottom: 60px;">
+            © 2026 TrueVow Technologies. All rights reserved. TrueVow is a brand of TrueVow Global Technologies LLC (UAE), a subsidiary of TrueVow Global Holdings LLC (Nevis). TrueVow (USA) Inc. (Wyoming) provides passive marketing only and does not handle contracts or operations. All contracts are with TrueVow Global Technologies LLC (UAE). Technology and IP held by TrueVow Global Holdings LLC (Nevis). We are not a law firm and do not provide legal advice. By using our services, you acknowledge that TrueVow operates as a technology and services provider only.
+        </p>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+

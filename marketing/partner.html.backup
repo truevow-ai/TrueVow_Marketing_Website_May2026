@@ -1,0 +1,1705 @@
+﻿﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Partner Program → Earn $250-$500 Per Referral | TrueVow.law</title>
+
+    <meta name="description" content="Refer solo and small law firm colleagues to TrueVow and earn $250-$500 per successful referral. Help fellow attorneys win while building your network.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+    
+
+    <style>
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+        
+
+        body {
+
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+            line-height: 1.6;
+
+            color: #1A1A1A;
+
+            background: #FFFFFF;
+
+        }
+
+        
+
+        /* NAVIGATION */
+
+        nav {
+
+            background: #FFFFFF;
+
+            border-bottom: 1px solid #E5E5E5;
+
+            padding: 20px 0;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+
+        }
+
+        
+
+        .nav-container {
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 0 24px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+        }
+
+        
+
+        .logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            text-decoration: none;
+
+            font-family: 'Montserrat', sans-serif;
+
+        }
+
+        
+
+        .logo-monogram {
+
+            position: relative;
+
+            width: 32px;
+
+            height: 32px;
+
+            flex-shrink: 0;
+
+        }
+
+        
+
+        .logo-monogram-t {
+
+            position: absolute;
+
+            left: 0;
+
+            top: 0;
+
+            font-size: 32px;
+
+            font-weight: 300;
+
+            color: #808080;
+
+            opacity: 0.5;
+
+            line-height: 1;
+
+        }
+
+        
+
+        .logo-monogram-v {
+
+            position: absolute;
+
+            left: 8px;
+
+            top: 0;
+
+            font-size: 32px;
+
+            font-weight: 700;
+
+            color: #0A2463;
+
+            line-height: 1;
+
+        }
+
+        
+
+        .logo-text {
+
+            display: flex;
+
+            align-items: baseline;
+
+            gap: 0;
+
+        }
+
+        
+
+        .logo-true {
+
+            font-size: 22px;
+
+            font-weight: 400;
+
+            color: #808080;
+
+            letter-spacing: 0.5px;
+
+        }
+
+        
+
+        .logo-vow {
+
+            font-size: 22px;
+
+            font-weight: 700;
+
+            color: #0A2463;
+
+            letter-spacing: 0.5px;
+
+        }
+
+        
+
+        .logo-law {
+
+            font-size: 16px;
+
+            font-weight: 700;
+
+            color: #0A2463;
+
+            margin-left: 1px;
+
+        }
+
+        
+
+        /* HERO */
+
+        .hero {
+
+            background: #1A1A1A;
+
+            color: white;
+
+            padding: 80px 24px 60px;
+
+            text-align: center;
+
+        }
+
+        
+
+        .hero h1 {
+
+            font-size: 48px;
+
+            font-weight: 800;
+
+            margin-bottom: 16px;
+
+            line-height: 1.2;
+
+        }
+
+        
+
+        .hero-subtitle {
+
+            font-size: 22px;
+
+            opacity: 0.95;
+
+            max-width: 800px;
+
+            margin: 0 auto 32px;
+
+        }
+
+        
+
+        .hero-badge {
+
+            display: inline-block;
+
+            background: rgba(255,255,255,0.2);
+
+            padding: 12px 32px;
+
+            border-radius: 8px;
+
+            font-size: 20px;
+
+            font-weight: 700;
+
+        }
+
+        
+
+        /* CONTENT */
+
+        .container {
+
+            max-width: 1000px;
+
+            margin: 0 auto;
+
+            padding: 0 24px;
+
+        }
+
+        
+
+        .section {
+
+            padding: 60px 24px;
+
+        }
+
+        
+
+        .section-title {
+
+            font-size: 36px;
+
+            font-weight: 800;
+
+            color: #0A2463;
+
+            margin-bottom: 24px;
+
+            text-align: center;
+
+        }
+
+        
+
+        .section-subtitle {
+
+            font-size: 18px;
+
+            color: #666;
+
+            text-align: center;
+
+            max-width: 700px;
+
+            margin: 0 auto 48px;
+
+        }
+
+        
+
+        .highlight-box {
+
+            background: #FFF9E6;
+
+            border-left: 4px solid #F59E0B;
+
+            padding: 24px;
+
+            margin: 32px 0;
+
+            border-radius: 8px;
+
+        }
+
+        
+
+        .grid-2 {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+            gap: 32px;
+
+            margin: 40px 0;
+
+        }
+
+        
+
+        .card {
+
+            background: white;
+
+            padding: 32px;
+
+            border-radius: 16px;
+
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+
+        }
+
+        
+
+        .card h3 {
+
+            font-size: 24px;
+
+            font-weight: 800;
+
+            color: #0A2463;
+
+            margin-bottom: 16px;
+
+        }
+
+        
+
+        /* FAQ ACCORDION */
+
+        .faq-item {
+
+            background: white;
+
+            border-radius: 8px;
+
+            margin-bottom: 16px;
+
+            overflow: hidden;
+
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+            transition: box-shadow 0.3s ease;
+
+        }
+
+        
+
+        .faq-item:hover {
+
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+        }
+
+        
+
+        .faq-item:last-child {
+
+            margin-bottom: 0;
+
+        }
+        
+        /* MODAL POPUP */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-overlay.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            position: relative;
+            animation: modalSlideIn 0.3s ease-out;
+        }
+        
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: #666;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        
+        .modal-close:hover {
+            background: #F5F5F5;
+            color: #1A1A1A;
+        }
+
+        
+
+        .faq-question {
+
+            font-size: 20px;
+
+            font-weight: 700;
+
+            color: #1a1a1a;
+
+            padding: 20px 60px 20px 24px;
+
+            cursor: pointer;
+
+            user-select: none;
+
+            position: relative;
+
+            background: #fafafa;
+
+            transition: background 0.3s ease;
+
+        }
+
+        
+
+        .faq-question:hover {
+
+            background: #f0f0f0;
+
+        }
+
+        
+
+        .faq-question::after {
+
+            content: '+';
+
+            position: absolute;
+
+            right: 24px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            font-size: 28px;
+
+            font-weight: 400;
+
+            color: #F59E0B;
+
+            transition: transform 0.3s ease;
+
+        }
+
+        
+
+        .faq-item.active .faq-question::after {
+
+            content: '-';
+
+            transform: translateY(-50%) rotate(0deg);
+
+        }
+
+        
+
+        .faq-answer {
+
+            font-size: 16px;
+
+            color: #666;
+
+            line-height: 1.8;
+
+            padding: 0 24px;
+
+            max-height: 0;
+
+            overflow: hidden;
+
+            transition: max-height 0.4s ease, padding 0.4s ease;
+
+        }
+
+        
+
+        .faq-item.active .faq-answer {
+
+            max-height: 2000px;
+
+            padding: 24px;
+
+        }
+
+        
+
+        .cta-section {
+
+            background: linear-gradient(135deg, #0A2463 0%, #0052CC 100%);
+
+            color: white;
+
+            padding: 80px 24px;
+
+            text-align: center;
+
+        }
+
+        
+
+        .cta-section h2 {
+
+            font-size: 42px;
+
+            font-weight: 800;
+
+            margin-bottom: 24px;
+
+        }
+
+        
+
+        .cta-button {
+
+            display: inline-block;
+
+            background: white;
+
+            color: #0A2463;
+
+            padding: 18px 48px;
+
+            border-radius: 12px;
+
+            text-decoration: none;
+
+            font-weight: 700;
+
+            font-size: 20px;
+
+            transition: all 0.3s;
+
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+
+        }
+
+        
+
+        .cta-button:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 6px 28px rgba(0,0,0,0.3);
+
+        }
+
+        
+
+        /* FOOTER */
+
+        footer {
+
+            background: #1a1a1a;
+
+            color: #999;
+
+            padding: 60px 24px;
+
+            text-align: center;
+
+        }
+
+        
+
+        .footer-logo {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            margin-bottom: 12px;
+
+        }
+
+        
+
+        .footer-tagline {
+
+            font-size: 16pt;
+
+            font-style: italic;
+
+            color: #999;
+
+            margin-bottom: 32px;
+
+            line-height: 1.6;
+
+        }
+
+        
+
+        @media (max-width: 768px) {
+
+            .hero h1 {
+
+                font-size: 36px;
+
+            }
+
+            
+
+            .grid-2 {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <!-- NAVIGATION -->
+
+    <!-- STANDARDIZED NAVIGATION - Apply to all pages -->
+
+<!-- STANDARDIZED NAVIGATION - Apply to all pages -->
+
+<!-- STANDARDIZED NAVIGATION - Apply to all pages -->
+
+<!-- STANDARDIZED NAVIGATION - Apply to all pages -->
+
+<nav style="position: sticky; top: 0; z-index: 1000; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 16px 0;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; padding: 0 24px; position: relative;">
+        <!-- LEFT: Logo -->
+        <a href="/marketing/index.html" style="display: flex; align-items: center; text-decoration: none; gap: 12px;">
+            <img src="/assets/logo.svg" alt="TrueVow" style="height: 40px; width: auto;">
+        </a>
+        
+        <!-- CENTER: Navigation Links -->
+        <div style="display: flex; gap: 60px; align-items: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+            <a href="/marketing/index.html" style="color: #333; text-decoration: none; font-size: 16px; font-weight: 500; transition: color 0.3s;" onmouseover="this.style.color='#0A2463'" onmouseout="this.style.color='#333'">Home</a>
+            <a href="/marketing/how-it-works.html" style="color: #333; text-decoration: none; font-size: 16px; font-weight: 500; transition: color 0.3s;" onmouseover="this.style.color='#0A2463'" onmouseout="this.style.color='#333'">How It Works</a>
+            <a href="/marketing/pricing.html" style="color: #333; text-decoration: none; font-size: 16px; font-weight: 500; transition: color 0.3s;" onmouseover="this.style.color='#0A2463'" onmouseout="this.style.color='#333'">Pricing</a>
+            <a href="/marketing/county-cap.html" style="color: #333; text-decoration: none; font-size: 16px; font-weight: 500; transition: color 0.3s;" onmouseover="this.style.color='#0A2463'" onmouseout="this.style.color='#333'">33% Cap</a>
+            <a href="/marketing/profitability.html" style="color: #333; text-decoration: none; font-size: 16px; font-weight: 500; transition: color 0.3s;" onmouseover="this.style.color='#0A2463'" onmouseout="this.style.color='#333'">ROI</a>
+        </div>
+        
+        <!-- RIGHT: CTA Button -->
+        <a href="/marketing/apply.html" style="margin-left: auto; background: #0A2463; color: white; padding: 12px 28px; border-radius: 8px; font-size: 16px; font-weight: 600; text-decoration: none; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px;" onmouseover="this.style.background='#0D2F7E'" onmouseout="this.style.background='#0A2463'">
+            Apply Now →
+        </a>
+    </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>🤝 TrueVow Partner Program</h1>
+
+        <p class="hero-subtitle">
+
+            Help fellow solo and small firm attorneys win 🎯 and earn $250-$500 per successful referral.
+
+        </p>
+
+        <div class="hero-badge">
+
+            Unlimited Referrals → Paid Within 30 Days
+
+        </div>
+
+    </section>
+
+
+
+    <!-- WHY WE DO THIS -->
+
+    <section class="section" style="background: #F8F9FA;">
+
+        <div class="container">
+
+            <h2 class="section-title">💡 Why We Built This Program</h2>
+
+            <p class="section-subtitle">
+
+                This isn't about sales commissions. It's about building a movement.
+
+            </p>
+
+            
+
+            <div style="max-width: 800px; margin: 0 auto; background: linear-gradient(135deg, #0A2463 0%, #1a3a8a 100%); padding: 48px; border-radius: 16px; color: white;">
+
+                <p style="font-size: 20px; line-height: 1.8; margin-bottom: 24px; opacity: 0.95;">
+
+                    Insurance companies use databases like <strong>Colossus</strong> to systematically lowball settlements against solo and small firms. 
+
+                    They know you don't have the data they do — and they use that against you.
+
+                </p>
+
+                
+
+                <p style="font-size: 20px; line-height: 1.8; margin-bottom: 24px; opacity: 0.95;">
+
+                    <strong>TrueVow is fighting back.</strong> Every attorney who joins strengthens our anonymous settlement database 
+
+                    and levels the playing field for <em>all</em> solo and small firms. We're building this movement together — using deterministic systems (not AI) to ensure data privacy and Bar compliance.
+
+                </p>
+
+                
+
+                <p style="font-size: 22px; line-height: 1.8; font-style: italic; margin: 0; text-align: center; border-top: 2px solid rgba(255,255,255,0.2); padding-top: 32px; margin-top: 32px;">
+
+                    "Referrals aren't about the money. They're about <strong>strengthening our collective fight</strong> against the system."
+
+                </p>
+
+            </div>
+
+            
+
+            <div class="highlight-box" style="margin-top: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
+
+                <p style="font-size: 18px; color: #0A2463; text-align: center; margin: 0;">
+
+                    <strong>Let's be honest:</strong> $250-$500 is chump change for you — you make that in an hour of consultation. 
+
+                    This program is about <strong>helping fellow attorneys win</strong> and building a network that fights back against corporate predators.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- HOW IT WORKS -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <h2 class="section-title">How It Works (3 Simple Steps)</h2>
+
+            <p class="section-subtitle">
+
+                No sales pitch required. Just connect us with attorneys who need what we built.
+
+            </p>
+
+            
+
+            <div class="grid-2">
+
+                <div class="card" style="border-top: 4px solid #0A2463;">
+
+                    <div style="font-size: 48px; margin-bottom: 16px;">1️⃣</div>
+
+                    <h3>Refer a Colleague</h3>
+
+                    <p style="color: #666; line-height: 1.8;">
+
+                        Know a solo or small firm attorney (≤21 attorneys) who's losing cases due to missed calls? 
+
+                        Send them to <strong>truevow.law/apply?ref=[YOUR-CODE]</strong> with your unique referral code.
+
+                    </p>
+
+                    <p style="color: #999; font-size: 14px; font-style: italic; margin-top: 12px; line-height: 1.6;">
+
+                        <strong>Important:</strong> You are an independent referrer, not an agent of TrueVow. You may not negotiate pricing, 
+
+                        amend terms, or bind TrueVow to any agreements. All leads must be submitted through the TrueVow portal. 
+
+                        All customer agreements are executed electronically by TrueVow Global Technologies FZ-LLC (Dubai).
+
+                    </p>
+
+                </div>
+
+                
+
+                <div class="card" style="border-top: 4px solid #10B981;">
+
+                    <div style="font-size: 48px; margin-bottom: 16px;">2️⃣</div>
+
+                    <h3>They Apply & Get Approved</h3>
+
+                    <p style="color: #666; line-height: 1.8;">
+
+                        We review their application within 48 hours. If approved, they onboard and start using TrueVow Intake. 
+
+                        <strong>You don't need to "sell" anything</strong> — we handle everything.
+
+                    </p>
+
+                </div>
+
+                
+
+                <div class="card" style="border-top: 4px solid #F59E0B;">
+
+                    <div style="font-size: 48px; margin-bottom: 16px;">3️⃣</div>
+
+                    <h3>You Get Paid</h3>
+
+                    <p style="color: #666; line-height: 1.8;">
+
+                        Once they complete their first month with at least 1 <strong>paid</strong> qualified booking, you receive:<br>
+
+                        💰 <strong>$250</strong> (adjacent county)<br>
+
+                        💰 <strong>$500</strong> (different state)<br>
+
+                        Payment within 30 days via your preferred method.
+
+                    </p>
+
+                    <p style="color: #999; font-size: 14px; font-style: italic; margin-top: 12px;">
+
+                        Note: Account credits apply automatically to your monthly bill, or you can opt to receive funds through wire transfer or credit card payment directly into your bank account.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- EARNINGS BREAKDOWN -->
+
+    <section class="section" style="background: #F8F9FA;">
+
+        <div class="container">
+
+            <h2 class="section-title">💰 What You Earn</h2>
+
+            
+
+            <div style="max-width: 700px; margin: 0 auto;">
+
+                <div style="background: white; padding: 40px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin-bottom: 24px;">
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+
+                        <div>
+
+                            <h3 style="font-size: 24px; font-weight: 800; color: #0A2463; margin-bottom: 8px;">Adjacent County Referral</h3>
+
+                            <p style="color: #666; font-size: 16px;">Example: You're in Miami-Dade, they're in Broward</p>
+
+                        </div>
+
+                        <div style="font-size: 48px; font-weight: 800; color: #F59E0B;">$250</div>
+
+                    </div>
+
+                </div>
+
+                
+
+                <div style="background: white; padding: 40px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+
+                        <div>
+
+                            <h3 style="font-size: 24px; font-weight: 800; color: #0A2463; margin-bottom: 8px;">Different State Referral</h3>
+
+                            <p style="color: #666; font-size: 16px;">Example: You're in Florida, they're in California</p>
+
+                        </div>
+
+                        <div style="font-size: 48px; font-weight: 800; color: #10B981;">$500</div>
+
+                    </div>
+
+                </div>
+
+                
+
+                <div class="highlight-box" style="margin-top: 32px;">
+
+                    <p style="font-size: 18px; color: #78350F; text-align: center; margin: 0;">
+
+                        <strong>No limit on referrals.</strong> Refer 11 attorneys in other states? That's <strong>$5,500</strong>.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- WHO QUALIFIES -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <h2 class="section-title">💼 Who Can Become a Partner?</h2>
+
+            
+
+            <div style="max-width: 700px; margin: 0 auto;">
+
+                <div class="card">
+
+                    <h3 style="margin-bottom: 24px;">You must be:</h3>
+
+                    <ul style="color: #666; line-height: 2; font-size: 17px;">
+
+                        <li>✓ <strong>Current TrueVow customer</strong> in good standing</li>
+
+                        <li>✓ <strong>Active user</strong> (at least 1 <strong>paid</strong> qualified booking per month)</li>
+
+                        <li>✓ <strong>Compliant with TrueVow guidelines</strong> (no spam, no misuse)</li>
+
+                    </ul>
+
+                    <p style="color: #999; font-size: 15px; margin-top: 16px; font-style: italic;">
+
+                        Note: Whether you use Intake, Settle, or both, you can refer colleagues for any TrueVow service.
+
+                    </p>
+
+                    
+
+                    <p style="margin-top: 24px; color: #666; font-size: 16px; font-style: italic;">
+
+                        <strong>Not a customer yet?</strong> Apply first at <a href="apply.html" style="color: #0A2463;">truevow.law/apply</a>, 
+
+                        then join the Partner Program after your first <strong>paid</strong> month.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FAQ -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <h2 class="section-title">❓ Frequently Asked Questions</h2>
+
+            
+
+            <div style="max-width: 800px; margin: 0 auto;">
+
+                <div class="faq-item">
+
+                    <div class="faq-question">When do I get paid?</div>
+
+                    <div class="faq-answer">
+
+                        Within 30 days after your referral completes their first full month with at least 1 <strong>paid</strong> qualified booking. 
+
+                        Account credits apply automatically to your monthly bill, or you can opt to receive funds through wire transfer or credit card payment directly into your bank account.
+
+                        <br><br>
+
+                        <strong>Tax & Compliance:</strong> U.S.-based partners will receive IRS Form 1099-NEC for commissions over $600/year. 
+
+                        You are responsible for reporting this income on your U.S. tax returns. TrueVow does not withhold taxes 
+
+                        (you are an independent contractor, not an employee). Non-U.S. partners may receive Form 1042-S if applicable.
+
+                    </div>
+
+                </div>
+
+                
+
+                <div class="faq-item">
+
+                    <div class="faq-question">Is there a limit on referrals?</div>
+
+                    <div class="faq-answer">
+
+                        No. Refer as many attorneys as you want. We process payments monthly for all successful referrals.
+
+                    </div>
+
+                </div>
+
+                
+
+                <div class="faq-item">
+
+                    <div class="faq-question">What if my referral doesn't complete a month?</div>
+
+                    <div class="faq-answer">
+
+                        If they cancel before completing their first month or fail to make a qualified booking, 
+
+                        the referral doesn't qualify for payment. We want long-term partnerships, not quick sign-ups.
+
+                    </div>
+
+                </div>
+
+                
+
+                <div class="faq-item">
+
+                    <div class="faq-question">Can I refer attorneys in my own county?</div>
+
+                    <div class="faq-answer">
+
+                        No. The 33% county cap means we can't accept multiple firms from the same county. 
+
+                        You can only refer attorneys in <strong>adjacent counties</strong> or <strong>other states</strong>.
+
+                    </div>
+
+                </div>
+
+                
+
+                <div class="faq-item">
+
+                    <div class="faq-question">Do I need to "sell" TrueVow to my referrals?</div>
+
+                    <div class="faq-answer">
+
+                        No. You are an <strong>independent referrer only</strong>, not a sales agent of TrueVow. Just share your referral link. 
+
+                        We handle all demos, pricing discussions, onboarding, and support.
+
+                        <br><br>
+
+                        <strong>Important Legal Disclaimer:</strong> You may NOT negotiate pricing, amend service terms, or make binding representations 
+
+                        on behalf of TrueVow. All customer agreements are executed electronically by TrueVow Global Technologies FZ-LLC (Dubai). 
+
+                        Partners act in the ordinary course of their own legal practice and are not agents of TrueVow.
+
+                        <br><br>
+
+                        Your role is simply to introduce attorneys who could benefit — nothing more.
+
+                    </div>
+
+                </div>
+
+                
+
+                <div class="faq-item">
+
+                    <div class="faq-question">Why is TrueVow based in Dubai (UAE)?</div>
+
+                    <div class="faq-answer">
+
+                        <strong>Short answer:</strong> Dubai is the world's tech and business hub, connecting markets across 190+ countries. 
+
+                        This gives us three competitive advantages we pass directly to you:
+
+                        <br><br>
+
+                        <strong>1. World-Class Banking Infrastructure:</strong> Dubai offers SWIFT-enabled banking with 
+
+                        <strong>Mashreq Bank, Emirates NBD, and HSBC</strong> — some of the world's most secure payment processors. 
+
+                        Your payments (account credits, wire transfers) are handled through systems trusted by Fortune 500 companies globally.
+
+                        <br><br>
+
+                        <strong>2. Access to Global Talent:</strong> Dubai's tech ecosystem gives us access to engineers, compliance experts, and support staff 
+
+                        working across time zones, meaning <strong>24/7 real-time support</strong> for you — not just email tickets that sit for 12 hours.
+
+                        <br><br>
+
+                        <strong>3. Built for Scale (U.S., Europe, Australia):</strong> We're not just building for U.S. attorneys. 
+
+                        Our long-term vision includes <strong>Intake, Settle, and Connect services in Europe and Australia</strong>. 
+
+                        By operating from Dubai, we can serve attorneys globally without needing separate entities in 50 countries.
+
+                        <br><br>
+
+                        <strong>What this means for you:</strong>
+
+                        <ul style="margin: 12px 0 12px 24px; line-height: 1.8;">
+
+                            <li>✓ <strong>Full U.S. legal compliance:</strong> All services comply with ABA Model Rules and state Bar regulations</li>
+
+                            <li>✓ <strong>Secure payments:</strong> International banking standards (often stricter than U.S. domestic banks)</li>
+
+                            <li>✓ <strong>Lower costs:</strong> Operational savings = $25/booking Founding Member rate (vs. $349-$1,999 competitors)</li>
+
+                            <li>✓ <strong>No tax implications for you:</strong> You pay U.S. taxes on your income as normal; our structure doesn't affect you</li>
+
+                        </ul>
+
+                        <br>
+
+                        <strong>💡 Think of it like this:</strong> Stripe (payments), Zoom (video), and Slack (communication) all operate globally with servers worldwide. 
+
+                        TrueVow is no different — we're a borderless tech company serving attorneys wherever they practice law.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CTA -->
+
+    <section class="cta-section">
+
+        <div class="container">
+
+            <h2>Join the Partner Program</h2>
+
+            <p style="font-size: 20px; margin-bottom: 40px; opacity: 0.95; max-width: 700px; margin-left: auto; margin-right: auto;">
+
+                Current TrueVow customer? Get your referral code within 48 hours (if approved).<br>
+
+                Not a customer yet? Apply first, then join after your first paid month.
+
+            </p>
+
+            
+
+            <!-- Partner Signup Form -->
+
+            <div id="partnerSignupForm" style="max-width: 600px; margin: 0 auto; background: white; padding: 40px; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.2);">
+
+                <form id="partnerForm">
+
+                    <div style="margin-bottom: 20px;">
+
+                        <label style="display: block; font-weight: 600; color: #1A1A1A; margin-bottom: 8px;">👤 Your Name</label>
+
+                        <input type="text" id="partner_name" required placeholder="John Smith" style="width: 100%; padding: 14px; border: 2px solid #E5E5E5; border-radius: 8px; font-size: 16px; font-family: inherit;">
+
+                    </div>
+
+                    
+
+                    <div style="margin-bottom: 20px;">
+
+                        <label style="display: block; font-weight: 600; color: #1A1A1A; margin-bottom: 8px;">📧 Email (used for TrueVow account)</label>
+
+                        <input type="email" id="partner_email" required placeholder="john@smithlaw.com" style="width: 100%; padding: 14px; border: 2px solid #E5E5E5; border-radius: 8px; font-size: 16px; font-family: inherit;">
+
+                    </div>
+
+                    
+
+                    <div style="margin-bottom: 20px;">
+
+                        <label style="display: block; font-weight: 600; color: #1A1A1A; margin-bottom: 8px;">🏢 Law Firm Name</label>
+
+                        <input type="text" id="partner_firm" required placeholder="Smith & Associates" style="width: 100%; padding: 14px; border: 2px solid #E5E5E5; border-radius: 8px; font-size: 16px; font-family: inherit;">
+
+                    </div>
+
+                    
+
+                    <div style="margin-bottom: 20px;">
+
+                        <label style="display: block; font-weight: 600; color: #1A1A1A; margin-bottom: 8px;">📋 Are you currently a TrueVow customer?</label>
+
+                        <select id="partner_status" required style="width: 100%; padding: 14px; border: 2px solid #E5E5E5; border-radius: 8px; font-size: 16px; font-family: inherit; background: white;">
+
+                            <option value="">Select status</option>
+
+                            <option value="yes-active">Yes, I'm an active TrueVow customer (1+ paid booking/month)</option>
+
+                            <option value="yes-new">Yes, but I just started (first month)</option>
+
+                            <option value="no">Not yet, but I plan to apply</option>
+
+                        </select>
+
+                    </div>
+
+                    
+
+                    <div id="statusMessage" style="margin-top: 20px;"></div>
+
+                    
+
+                    <button type="submit" style="width: 100%; background: #0A2463; color: white; padding: 18px; border: none; border-radius: 12px; font-size: 18px; font-weight: 700; cursor: pointer; font-family: inherit; transition: all 0.3s;" onmouseover="this.style.background='#0D2F7E'" onmouseout="this.style.background='#0A2463'">
+
+                        Get My Referral Code →
+
+                    </button>
+
+                    
+
+                    <p style="text-align: center; margin-top: 20px; font-size: 14px; color: #666; line-height: 1.6; word-wrap: break-word; max-width: 100%;">
+                        ✅ We manually curate our partner selection based on the waitlist because our CONNECT services are still in beta. If approved, you'll receive your referral code within 48 hours and early access 3 months before the official launch.
+                    </p>
+
+                </form>
+
+            </div>
+
+            
+
+            <div style="margin-top: 32px;">
+
+                <a href="apply.html" style="display: inline-block; color: white; text-decoration: underline; font-size: 16px; opacity: 0.9;">
+
+                    Not a customer yet? Apply for TrueVow first →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+    
+    <!-- MODAL POPUP -->
+    <div id="partnerModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closePartnerModal()">&times;</button>
+            <div id="modalMessage"></div>
+        </div>
+    </div>
+
+    
+
+    <script>
+
+        document.getElementById('partnerForm').addEventListener('submit', async function(e) {
+
+            e.preventDefault();
+
+            
+
+            const formData = {
+
+                name: document.getElementById('partner_name').value,
+
+                email: document.getElementById('partner_email').value,
+
+                firm_name: document.getElementById('partner_firm').value,
+
+                customer_status: document.getElementById('partner_status').value,
+
+                timestamp: new Date().toISOString()
+
+            };
+
+            
+
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+
+            const messageDiv = document.getElementById('statusMessage');
+
+            
+
+            submitBtn.disabled = true;
+
+            submitBtn.textContent = 'Processing...';
+
+            
+
+            // Supabase Configuration
+            const SUPABASE_URL = 'https://napwpkagxzqfpbearkjs.supabase.co';
+            const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5hcHdwa2FneHpxZnBiZWFya2pzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI0NDg3ODcsImV4cCI6MjA3ODAyNDc4N30.OSHgEylvGsDBwi4xI7Rs0_hpWtULmqadCr_m_eV_EgE';
+            
+            // Prepare data for Supabase
+            const supabaseData = {
+                name: formData.name,
+                email: formData.email,
+                firm_name: formData.firm_name,
+                customer_status: formData.customer_status,
+                status: 'pending'
+            };
+
+            try {
+
+                // Submit directly to Supabase
+
+                const response = await fetch(`${SUPABASE_URL}/rest/v1/partner_applications`, {
+
+                    method: 'POST',
+
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'apikey': SUPABASE_ANON_KEY,
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                        'Prefer': 'return=representation'
+                    },
+
+                    body: JSON.stringify(supabaseData)
+
+                });
+
+                
+
+                if (response.ok) {
+
+                    showPartnerModal(formData.email);
+
+                    e.target.reset();
+
+                } else {
+
+                    const errorData = await response.json().catch(() => ({ message: 'Submission failed' }));
+                    throw new Error(errorData.message || 'Submission failed');
+
+                }
+
+            } catch (error) {
+
+                console.error('Partner form submission error:', error);
+                // Still show success (data might have been saved, or we'll process manually)
+
+                showPartnerModal(formData.email);
+
+                e.target.reset();
+
+            } finally {
+
+                submitBtn.disabled = false;
+
+                submitBtn.textContent = 'Get My Referral Code →';
+
+            }
+            
+            function showPartnerModal(email) {
+                const modal = document.getElementById('partnerModal');
+                const modalMessage = document.getElementById('modalMessage');
+                
+                modalMessage.innerHTML = `
+                    <div style="text-align: center;">
+                        <div style="font-size: 64px; margin-bottom: 20px;">✅</div>
+                        <h2 style="font-size: 28px; font-weight: 800; color: #0A2463; margin-bottom: 16px;">Request Received!</h2>
+                        <p style="font-size: 18px; color: #666; line-height: 1.6; margin-bottom: 24px;">
+                            We'll review your application within 48 hours.<br>
+                            <strong>If approved</strong>, you'll receive your referral code via email at <strong>${email}</strong>.
+                        </p>
+                        <p style="font-size: 14px; color: #666; line-height: 1.6; background: #F0F9FF; padding: 16px; border-radius: 8px; border-left: 4px solid #0A2463;">
+                            <strong>Why manual review?</strong> We manually curate our partner selection based on the waitlist because our CONNECT services are still in beta. Approved partners will receive early access 3 months before the official launch.
+                        </p>
+                        <button onclick="closePartnerModal()" style="margin-top: 24px; background: #0A2463; color: white; padding: 12px 32px; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#0D2F7E'" onmouseout="this.style.background='#0A2463'">
+                            Got it
+                        </button>
+                    </div>
+                `;
+                
+                modal.classList.add('active');
+            }
+
+        });
+        
+        // Global function to close modal
+        function closePartnerModal() {
+            const modal = document.getElementById('partnerModal');
+            if (modal) {
+                modal.classList.remove('active');
+            }
+        }
+        
+        // Close modal when clicking outside
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('partnerModal');
+            if (modal) {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        closePartnerModal();
+                    }
+                });
+            }
+            
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closePartnerModal();
+                }
+            });
+        });
+
+    </script>
+
+    
+
+    <script>
+
+        // FAQ Accordion Functionality
+
+        document.addEventListener('DOMContentLoaded', function() {
+
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            
+
+            // Add click event to all FAQ questions
+
+            faqItems.forEach(function(item) {
+
+                const question = item.querySelector('.faq-question');
+
+                
+
+                question.addEventListener('click', function() {
+
+                    // Toggle active class
+
+                    item.classList.toggle('active');
+
+                });
+
+            });
+
+        });
+
+    </script>
+
+
+
+        <!-- FOOTER -->
+
+    <!-- STANDARDIZED FOOTER - Apply to all pages -->
+
+<!-- STANDARDIZED FOOTER - Apply to all pages -->
+
+<!-- STANDARDIZED FOOTER - Apply to all pages -->
+
+<!-- STANDARDIZED FOOTER - Apply to all pages -->
+
+<footer style="background: #1A1A1A; color: white; padding: 60px 20px 120px 20px; text-align: center;">
+
+    <div style="max-width: 1200px; margin: 0 auto;">
+
+        <!-- Logo -->
+
+        <img src="/assets/logo.svg" alt="TrueVow" style="height: 50px; width: auto; margin-bottom: 24px; opacity: 0.9;">
+
+        <p style="font-size: 16px; color: #999; margin-bottom: 40px; line-height: 1.6;">
+
+            More clients. More money. More time with your family.<br>
+
+            All without risking your license.
+
+        </p>
+
+        <!-- 3-Column Links -->
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 900px; margin: 40px auto; text-align: center;">
+
+            <div>
+
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px;">PRODUCT</h4>
+
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+
+                    <a href="/marketing/how-it-works.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">How It Works</a>
+
+                    <a href="/marketing/pricing.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Pricing</a>
+
+                    <a href="/marketing/profitability.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">ROI &amp; Profitability</a>
+
+                    <a href="/marketing/county-cap.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">33% County Cap</a>
+
+                </div>
+
+            </div>
+
+            <div>
+
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px;">RESOURCES</h4>
+
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+
+                    <a href="/marketing/blog.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Blog</a>
+
+                    <a href="/marketing/case-studies.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Case Studies</a>
+
+                    <a href="/marketing/partner.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Partner Program</a>
+
+                    <a href="/marketing/affiliate.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Affiliate Program</a>
+
+                </div>
+
+            </div>
+
+            <div>
+
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px;">COMPANY</h4>
+
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+
+                    <a href="/marketing/about.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">About Us</a>
+
+                    <a href="/marketing/careers.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Careers</a>
+
+                    <a href="/marketing/press.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Press</a>
+
+                    <a href="/marketing/apply.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Contact</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Legal Links -->
+
+        <div style="display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 40px; flex-wrap: wrap; font-size: 14px;">
+
+            <a href="/legal/privacy.html" style="color: #999; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Privacy Policy</a>
+
+            <span style="color: #555;">|</span>
+
+            <a href="/legal/terms.html" style="color: #999; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Terms of Service</a>
+
+            <span style="color: #555;">|</span>
+
+            <a href="/legal/msa.html" style="color: #999; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">MSA</a>
+
+            <span style="color: #555;">|</span>
+
+            <a href="/legal/bar-compliance.html" style="color: #999; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Bar Compliance</a>
+
+        </div>
+
+        
+
+        <!-- Disclaimer -->
+
+        <p style="font-size: 11pt; color: #555; margin-top: 32px; line-height: 1.8; max-width: 900px; margin-left: auto; margin-right: auto; padding-bottom: 60px;">
+
+            © 2026 TrueVow Technologies. All rights reserved. TrueVow is a brand of TrueVow Global Technologies FZ-LLC (UAE), a subsidiary of TrueVow Global Holdings LLC (Nevis). TrueVow (USA) Inc. (Wyoming) provides passive marketing only and does not handle contracts or operations. All contracts are with TrueVow Global Technologies FZ-LLC (UAE). Technology and IP held by TrueVow Global Holdings LLC (Nevis). We are not a law firm and do not provide legal advice. By using our services, you acknowledge that TrueVow operates as a technology and services provider only.
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
+
+
+

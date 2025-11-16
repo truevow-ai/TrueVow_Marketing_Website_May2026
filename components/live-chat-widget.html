@@ -1,0 +1,514 @@
+<!-- LIVE CHAT WIDGET COMPONENT -->
+<!-- Instant answers = instant trust = higher conversion -->
+<!-- Add this before </body> tag -->
+
+<style>
+    .chat-widget {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 9998;
+        font-family: 'Montserrat', -apple-system, sans-serif;
+    }
+    
+    .chat-button {
+        width: 64px;
+        height: 64px;
+        background: linear-gradient(135deg, #0066FF 0%, #0052CC 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 28px;
+        cursor: pointer;
+        box-shadow: 0 4px 16px rgba(0, 102, 255, 0.4);
+        transition: all 0.3s;
+        border: none;
+        position: relative;
+    }
+    
+    .chat-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 24px rgba(0, 102, 255, 0.6);
+    }
+    
+    .chat-button-badge {
+        position: absolute;
+        top: -4px;
+        right: -4px;
+        background: #DC2626;
+        color: white;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        font-size: 12px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid white;
+    }
+    
+    .chat-button-pulse {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: #0066FF;
+        animation: pulse 2s infinite;
+        opacity: 0;
+    }
+    
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+            opacity: 0.7;
+        }
+        100% {
+            transform: scale(1.4);
+            opacity: 0;
+        }
+    }
+    
+    .chat-window {
+        display: none;
+        position: absolute;
+        bottom: 80px;
+        right: 0;
+        width: 400px;
+        height: 600px;
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        flex-direction: column;
+        overflow: hidden;
+    }
+    
+    .chat-window.open {
+        display: flex;
+        animation: slideUpChat 0.3s;
+    }
+    
+    @keyframes slideUpChat {
+        from { transform: translateY(20px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+    
+    .chat-header {
+        background: linear-gradient(135deg, #0066FF 0%, #0052CC 100%);
+        color: white;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .chat-header-info {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .chat-header-avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+    }
+    
+    .chat-header-text h3 {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 700;
+    }
+    
+    .chat-header-text p {
+        margin: 0;
+        font-size: 12px;
+        opacity: 0.9;
+    }
+    
+    .chat-status {
+        width: 8px;
+        height: 8px;
+        background: #10B981;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 4px;
+        animation: blink 2s infinite;
+    }
+    
+    @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.4; }
+    }
+    
+    .chat-close {
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: white;
+        font-size: 24px;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        cursor: pointer;
+        line-height: 1;
+    }
+    
+    .chat-messages {
+        flex: 1;
+        padding: 20px;
+        overflow-y: auto;
+        background: #F8F9FA;
+    }
+    
+    .chat-message {
+        margin-bottom: 16px;
+        display: flex;
+        gap: 12px;
+        animation: messageSlide 0.3s;
+    }
+    
+    @keyframes messageSlide {
+        from { transform: translateY(10px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+    
+    .chat-message.user {
+        flex-direction: row-reverse;
+    }
+    
+    .chat-message-avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        background: #0066FF;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 14px;
+    }
+    
+    .chat-message.user .chat-message-avatar {
+        background: #10B981;
+    }
+    
+    .chat-message-bubble {
+        background: white;
+        padding: 12px 16px;
+        border-radius: 12px;
+        max-width: 70%;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+    
+    .chat-message.user .chat-message-bubble {
+        background: #0066FF;
+        color: white;
+    }
+    
+    .chat-message-time {
+        font-size: 11px;
+        color: #999;
+        margin-top: 4px;
+    }
+    
+    .chat-typing {
+        display: none;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 16px;
+    }
+    
+    .chat-typing.show {
+        display: flex;
+    }
+    
+    .chat-typing-dots {
+        display: flex;
+        gap: 4px;
+    }
+    
+    .chat-typing-dot {
+        width: 8px;
+        height: 8px;
+        background: #999;
+        border-radius: 50%;
+        animation: typing 1.4s infinite;
+    }
+    
+    .chat-typing-dot:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+    
+    .chat-typing-dot:nth-child(3) {
+        animation-delay: 0.4s;
+    }
+    
+    @keyframes typing {
+        0%, 60%, 100% { transform: translateY(0); }
+        30% { transform: translateY(-10px); }
+    }
+    
+    .chat-quick-replies {
+        padding: 16px 20px;
+        background: white;
+        border-top: 1px solid #E5E5E5;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .chat-quick-reply {
+        background: #F0F0F0;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+    
+    .chat-quick-reply:hover {
+        background: #E5E5E5;
+    }
+    
+    .chat-input-area {
+        padding: 16px 20px;
+        background: white;
+        border-top: 1px solid #E5E5E5;
+        display: flex;
+        gap: 12px;
+    }
+    
+    .chat-input {
+        flex: 1;
+        border: 1px solid #E5E5E5;
+        border-radius: 24px;
+        padding: 12px 20px;
+        font-size: 15px;
+        font-family: inherit;
+    }
+    
+    .chat-input:focus {
+        outline: none;
+        border-color: #0066FF;
+    }
+    
+    .chat-send {
+        background: #0066FF;
+        border: none;
+        color: white;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        transition: all 0.2s;
+    }
+    
+    .chat-send:hover {
+        background: #0052CC;
+        transform: scale(1.05);
+    }
+    
+    @media (max-width: 768px) {
+        .chat-window {
+            width: calc(100vw - 32px);
+            height: calc(100vh - 120px);
+            right: 16px;
+        }
+    }
+</style>
+
+<div class="chat-widget">
+    <button class="chat-button" id="chatButton" onclick="toggleChat()">
+        <div class="chat-button-pulse"></div>
+        💬
+        <span class="chat-button-badge">1</span>
+    </button>
+    
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <div class="chat-header-info">
+                <div class="chat-header-avatar">👨‍💼</div>
+                <div class="chat-header-text">
+                    <h3>Yasha (Founder)</h3>
+                    <p><span class="chat-status"></span> Online now</p>
+                </div>
+            </div>
+            <button class="chat-close" onclick="toggleChat()">×</button>
+        </div>
+        
+        <div class="chat-messages" id="chatMessages">
+            <div class="chat-message">
+                <div class="chat-message-avatar">Y</div>
+                <div>
+                    <div class="chat-message-bubble">
+                        Hi! 👋 I'm Yasha, founder of TrueVow. I'm here to answer any questions about the 33% county cap or Founding Member benefits.
+                    </div>
+                    <div class="chat-message-time">Just now</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chat-typing" id="chatTyping">
+            <div class="chat-message-avatar">Y</div>
+            <div class="chat-typing-dots">
+                <div class="chat-typing-dot"></div>
+                <div class="chat-typing-dot"></div>
+                <div class="chat-typing-dot"></div>
+            </div>
+        </div>
+        
+        <div class="chat-quick-replies">
+            <button class="chat-quick-reply" onclick="sendQuickReply('How many seats left in my county?')">
+                📊 Seats left in my county?
+            </button>
+            <button class="chat-quick-reply" onclick="sendQuickReply('What if my county fills up?')">
+                🚨 What if my county fills?
+            </button>
+            <button class="chat-quick-reply" onclick="sendQuickReply('How is Founding Member rate protected?')">
+                🎖️ How is $25 rate protected?
+            </button>
+        </div>
+        
+        <div class="chat-input-area">
+            <input 
+                type="text" 
+                class="chat-input" 
+                id="chatInput" 
+                placeholder="Type your question..." 
+                onkeypress="handleChatKeyPress(event)"
+            />
+            <button class="chat-send" onclick="sendMessage()">➤</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const chatResponses = {
+        'seats': 'Great question! Miami-Dade has 48/60 seats filled, Broward has 38/46, and Palm Beach has just 5/31. Which county are you in?',
+        'full': 'If your county fills up, you have 3 options:\n\n1️⃣ Join the waitlist (4-6 month avg)\n2️⃣ Sign up in an adjacent county\n3️⃣ Refer & earn $250-$500 while you wait\n\nWould you like me to check your county status?',
+        'rate': 'Your $19/booking Founding Member rate applies as long as you remain active (min 1 booking/month) and follow our ethical guidelines. If we raise public prices in the future, you will continue to pay less than the public rate.',
+        'founding': 'Founding Members are the first 2,100 firms nationwide. You get:\n\n✅ $19/booking Founding Member rate (vs $29 standard today)\n✅ 3 FREE bookings every month while you stay active\n✅ 21 FREE bookings in Month 1\n✅ $250-$500 referral bounty\n✅ Direct feedback channel\n\nReady to apply?',
+        'apply': 'Awesome! The application takes 2 minutes:\n\n1. Basic info (name, email, phone)\n2. Bar # & county\n3. Practice area & firm size\n\nApplications reviewed within 48 hours. Should I send you the link?',
+        'county': 'We launch county-by-county to maintain the 33% cap. Currently live in 10 major Florida counties. Which county do you practice in?',
+        'default': 'Great question! Let me connect you with our team for a personalized answer. What\'s the best way to reach you - email or phone?'
+    };
+    
+    function toggleChat() {
+        const chatWindow = document.getElementById('chatWindow');
+        const badge = document.querySelector('.chat-button-badge');
+        
+        chatWindow.classList.toggle('open');
+        
+        if (chatWindow.classList.contains('open')) {
+            badge.style.display = 'none';
+            document.getElementById('chatInput').focus();
+            
+            // Track analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'chat_opened', {
+                    'event_category': 'engagement',
+                    'event_label': 'Live Chat Widget'
+                });
+            }
+        }
+    }
+    
+    function handleChatKeyPress(event) {
+        if (event.key === 'Enter') {
+            sendMessage();
+        }
+    }
+    
+    function sendQuickReply(message) {
+        sendMessage(message);
+    }
+    
+    function sendMessage(quickReply = null) {
+        const input = document.getElementById('chatInput');
+        const message = quickReply || input.value.trim();
+        
+        if (!message) return;
+        
+        // Add user message
+        addMessage(message, 'user');
+        input.value = '';
+        
+        // Show typing indicator
+        const typing = document.getElementById('chatTyping');
+        typing.classList.add('show');
+        
+        // Simulate response delay
+        setTimeout(() => {
+            typing.classList.remove('show');
+            
+            // Get response based on keywords
+            const response = getResponse(message);
+            addMessage(response, 'agent');
+        }, 1500 + Math.random() * 1000);
+        
+        // Track analytics
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'chat_message_sent', {
+                'event_category': 'engagement',
+                'event_label': 'Chat Message'
+            });
+        }
+    }
+    
+    function getResponse(message) {
+        const lowerMessage = message.toLowerCase();
+        
+        if (lowerMessage.includes('seat') || lowerMessage.includes('left') || lowerMessage.includes('available')) {
+            return chatResponses.seats;
+        } else if (lowerMessage.includes('full') || lowerMessage.includes('fill') || lowerMessage.includes('waitlist')) {
+            return chatResponses.full;
+        } else if (lowerMessage.includes('rate') || lowerMessage.includes('$25') || lowerMessage.includes('price') || lowerMessage.includes('protect')) {
+            return chatResponses.rate;
+        } else if (lowerMessage.includes('founding') || lowerMessage.includes('member') || lowerMessage.includes('benefit')) {
+            return chatResponses.founding;
+        } else if (lowerMessage.includes('apply') || lowerMessage.includes('sign up') || lowerMessage.includes('join')) {
+            return chatResponses.apply;
+        } else if (lowerMessage.includes('county') || lowerMessage.includes('counties') || lowerMessage.includes('where')) {
+            return chatResponses.county;
+        } else {
+            return chatResponses.default;
+        }
+    }
+    
+    function addMessage(text, type) {
+        const messagesContainer = document.getElementById('chatMessages');
+        const messageHTML = `
+            <div class="chat-message ${type}">
+                <div class="chat-message-avatar">${type === 'user' ? 'Y' : 'Y'}</div>
+                <div>
+                    <div class="chat-message-bubble">${text.replace(/\n/g, '<br>')}</div>
+                    <div class="chat-message-time">Just now</div>
+                </div>
+            </div>
+        `;
+        
+        messagesContainer.insertAdjacentHTML('beforeend', messageHTML);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+    
+    // Show chat button badge after 5 seconds (new message simulation)
+    setTimeout(() => {
+        const badge = document.querySelector('.chat-button-badge');
+        badge.style.display = 'flex';
+    }, 5000);
+</script>
+

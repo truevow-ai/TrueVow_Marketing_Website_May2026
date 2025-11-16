@@ -1,0 +1,1 @@
+﻿<section class="hero">        <h1>??? County Capacity Policy</h1>        <p class="hero-subtitle">Why we cap at 33% per county. How it protects your competitive advantage. Live availability by county.</p>                <!-- SIMPLIFIED STATS -->        <div class="live-stats">            <div class=

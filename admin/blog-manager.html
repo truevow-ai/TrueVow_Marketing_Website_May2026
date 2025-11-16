@@ -1,0 +1,1875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Content Manager | TrueVow Admin</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .login-screen {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f5f5f5;
+        }
+
+        .login-box {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .login-box h2 {
+            color: #0A2463;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .login-box input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #E5E7EB;
+            border-radius: 8px;
+            font-size: 15px;
+            margin-bottom: 16px;
+        }
+
+        .login-box button {
+            width: 100%;
+            padding: 12px;
+            background: #0A2463;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .login-box .error {
+            color: #DC2626;
+            font-size: 14px;
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            color: #0A2463;
+            margin-bottom: 8px;
+            font-size: 32px;
+            font-weight: 800;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 32px;
+            font-size: 16px;
+        }
+
+        .form-card {
+            background: white;
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 32px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+            font-size: 14px;
+        }
+
+        label .required {
+            color: #DC2626;
+        }
+
+        input[type="text"],
+        input[type="url"],
+        input[type="date"],
+        input[type="number"],
+        input[type="password"],
+        input[type="file"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #E5E7EB;
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+
+        input[type="file"] {
+            padding: 8px;
+            cursor: pointer;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #0A2463;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .char-count {
+            font-size: 12px;
+            color: #999;
+            margin-top: 4px;
+            text-align: right;
+        }
+
+        .char-count.warning {
+            color: #F59E0B;
+        }
+
+        .char-count.error {
+            color: #DC2626;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .help-text {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .message {
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+
+        .message.success {
+            background: #D1FAE5;
+            color: #065F46;
+            border: 1px solid #10B981;
+        }
+
+        .message.error {
+            background: #FEE2E2;
+            color: #991B1B;
+            border: 1px solid #DC2626;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 12px;
+            margin-top: 32px;
+        }
+
+        button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        button.primary {
+            background: #0A2463;
+            color: white;
+        }
+
+        button.primary:hover:not(:disabled) {
+            background: #051633;
+        }
+
+        button.secondary {
+            background: white;
+            color: #333;
+            border: 2px solid #E5E7EB;
+        }
+
+        button.secondary:hover {
+            background: #F9FAFB;
+        }
+
+        button.danger {
+            background: #DC2626;
+            color: white;
+            padding: 8px 16px;
+            font-size: 14px;
+        }
+
+        button.danger:hover {
+            background: #B91C1C;
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Content List Styles */
+        .content-item {
+            background: #F9FAFB;
+            border: 2px solid #E5E7EB;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .content-item:hover {
+            border-color: #0A2463;
+        }
+
+        .content-item-info {
+            flex: 1;
+        }
+
+        .content-item-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .content-item-meta {
+            font-size: 12px;
+            color: #666;
+            display: flex;
+            gap: 12px;
+            margin-top: 4px;
+        }
+
+        .content-item-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .badge-draft {
+            background: #FEF3C7;
+            color: #92400E;
+        }
+
+        .badge-published {
+            background: #D1FAE5;
+            color: #065F46;
+        }
+
+        .badge-archived {
+            background: #E5E7EB;
+            color: #374151;
+        }
+
+        .content-item-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        /* Pagination Styles */
+        .pagination {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .pagination button {
+            padding: 8px 12px;
+            border: 2px solid #E5E7EB;
+            background: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            min-width: 40px;
+        }
+
+        .pagination button:hover:not(:disabled) {
+            background: #F9FAFB;
+            border-color: #0A2463;
+        }
+
+        .pagination button.active {
+            background: #0A2463;
+            color: white;
+            border-color: #0A2463;
+        }
+
+        .pagination button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Scrollable content list */
+        #contentList {
+            scrollbar-width: thin;
+            scrollbar-color: #C1C1C1 #F5F5F5;
+        }
+
+        #contentList::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        #contentList::-webkit-scrollbar-track {
+            background: #F5F5F5;
+            border-radius: 4px;
+        }
+
+        #contentList::-webkit-scrollbar-thumb {
+            background: #C1C1C1;
+            border-radius: 4px;
+        }
+
+        #contentList::-webkit-scrollbar-thumb:hover {
+            background: #A1A1A1;
+        }
+
+        .select-with-button {
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+        }
+
+        .select-with-button select {
+            flex: 1;
+        }
+
+        .add-button {
+            padding: 12px 16px;
+            background: #10B981;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background 0.2s;
+        }
+
+        .add-button:hover {
+            background: #059669;
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: white;
+            border-radius: 12px;
+            padding: 32px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal h2 {
+            color: #0A2463;
+            margin-bottom: 24px;
+        }
+
+        .modal .button-group {
+            margin-top: 24px;
+        }
+
+        .thumbnail-upload-section {
+            margin-top: 16px;
+        }
+
+        .thumbnail-preview {
+            margin-top: 12px;
+            display: none;
+        }
+
+        .thumbnail-preview img {
+            max-width: 200px;
+            max-height: 200px;
+            border-radius: 8px;
+            border: 2px solid #E5E7EB;
+        }
+
+        .thumbnail-options {
+            display: flex;
+            gap: 16px;
+            margin-top: 8px;
+        }
+
+        .thumbnail-option {
+            flex: 1;
+        }
+
+        .thumbnail-option label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 20px 16px;
+            }
+
+            .form-card {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="loginScreen" class="login-screen">
+        <div class="login-box">
+            <h2>🔐 Admin Login</h2>
+            <input type="password" id="passwordInput" placeholder="Enter admin password" autofocus>
+            <button onclick="checkPassword()">Login</button>
+            <div id="loginError" class="error hidden"></div>
+        </div>
+    </div>
+
+    <!-- Main Content (Hidden until logged in) -->
+    <div id="mainContent" class="hidden">
+        <div class="container">
+            <h1>📝 Blog Content Manager</h1>
+            <p class="subtitle">Add new articles and videos to the blog hub directory</p>
+
+            <!-- Success/Error Messages -->
+            <div id="message" class="message" style="display: none;"></div>
+
+            <!-- Main Form -->
+            <div class="form-card">
+                <h2 style="color: #0A2463; margin-bottom: 24px; font-size: 24px;" id="formTitle">➕ Add New Content</h2>
+                <form id="blogForm">
+                    <!-- Title -->
+                    <div class="form-group">
+                        <label>
+                            Title <span class="required">*</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="title" 
+                            name="title" 
+                            placeholder="Article or video title (up to 200 characters)"
+                            maxlength="200"
+                            required
+                        >
+                        <div class="char-count" id="titleCount">0 / 200</div>
+                    </div>
+
+                    <!-- Teaser -->
+                    <div class="form-group">
+                        <label>
+                            Teaser <span class="required">*</span>
+                        </label>
+                        <textarea 
+                            id="teaser" 
+                            name="teaser" 
+                            placeholder="Description/opening hook from your LinkedIn post (up to 500 characters recommended)"
+                            maxlength="500"
+                            required
+                        ></textarea>
+                        <div class="char-count" id="teaserCount">0 / 500</div>
+                    </div>
+
+                    <!-- Canonical URL (Required only when published) -->
+                    <div class="form-group">
+                        <label id="canonicalUrlLabel">
+                            Canonical URL <span class="required" id="canonicalRequired">*</span>
+                        </label>
+                        <input 
+                            type="url" 
+                            id="canonicalUrl" 
+                            name="canonicalUrl" 
+                            placeholder="https://linkedin.com/pulse/... or https://youtu.be/..."
+                        >
+                        <div class="help-text" id="canonicalHelpText">Full URL to your social media post. Required when status is "Published". UTM parameter will be added automatically.</div>
+                    </div>
+
+                    <!-- Platform and Type (Swapped: Platform on left, Type on right) -->
+                    <div class="form-group grid-2">
+                        <div>
+                            <label>
+                                Platform <span class="required">*</span>
+                            </label>
+                            <select id="platformName" name="platformName" required>
+                                <option value="">Select Platform...</option>
+                                <option value="linkedin">LinkedIn</option>
+                                <option value="youtube">YouTube</option>
+                                <option value="facebook">Facebook</option>
+                                <option value="instagram">Instagram</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>
+                                Content Type <span class="required">*</span>
+                            </label>
+                            <select id="type" name="type" required disabled>
+                                <option value="">Select Platform First</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Content Pillar -->
+                    <div class="form-group">
+                        <label>
+                            Content Pillar <span class="required">*</span>
+                        </label>
+                        <div class="select-with-button">
+                            <select id="contentPillar" name="contentPillar" required>
+                                <option value="">Loading pillars...</option>
+                            </select>
+                            <button type="button" class="add-button" onclick="openAddPillarModal()" title="Add New Content Pillar">+</button>
+                        </div>
+                        <div class="help-text">Select the content pillar this content belongs to. This helps organize your content calendar.</div>
+                    </div>
+
+                    <!-- Read/Watch Time -->
+                    <div class="form-group" id="readTimeGroup" style="display: none;">
+                        <label>
+                            Read Time (minutes) <span class="required">*</span>
+                        </label>
+                        <input 
+                            type="number" 
+                            id="readTimeMinutes" 
+                            name="readTimeMinutes" 
+                            min="1"
+                            placeholder="5"
+                        >
+                    </div>
+
+                    <div class="form-group" id="watchTimeGroup" style="display: none;">
+                        <label>
+                            Watch Time (minutes) <span class="required">*</span>
+                        </label>
+                        <input 
+                            type="number" 
+                            id="watchTimeMinutes" 
+                            name="watchTimeMinutes" 
+                            min="1"
+                            placeholder="8"
+                        >
+                    </div>
+
+                    <!-- Publish Date -->
+                    <div class="form-group">
+                        <label>
+                            Publish Date <span class="required">*</span>
+                        </label>
+                        <input 
+                            type="date" 
+                            id="publishDate" 
+                            name="publishDate" 
+                            required
+                        >
+                        <div class="help-text">Date the content was published on the platform</div>
+                    </div>
+
+                    <!-- Thumbnail (Optional) -->
+                    <div class="form-group">
+                        <label>
+                            Thumbnail (Optional)
+                        </label>
+                        <div class="thumbnail-options">
+                            <div class="thumbnail-option">
+                                <label>Upload Image</label>
+                                <input 
+                                    type="file" 
+                                    id="thumbnailFile" 
+                                    name="thumbnailFile" 
+                                    accept="image/*"
+                                >
+                            </div>
+                            <div class="thumbnail-option">
+                                <label>Or Enter URL</label>
+                                <input 
+                                    type="url" 
+                                    id="thumbnailUrl" 
+                                    name="thumbnailUrl" 
+                                    placeholder="https://..."
+                                >
+                            </div>
+                        </div>
+                        <div class="thumbnail-preview" id="thumbnailPreview">
+                            <img id="thumbnailPreviewImg" src="" alt="Thumbnail preview">
+                            <button type="button" class="secondary" onclick="clearThumbnailPreview()" style="margin-top: 8px; padding: 6px 12px; font-size: 13px;">Remove Preview</button>
+                        </div>
+                        <div class="help-text">Optional: Upload an image or paste an image URL. If not provided, a gradient with emoji will be used.</div>
+                    </div>
+
+                    <!-- Status and Featured -->
+                    <div class="form-group grid-2">
+                        <div>
+                            <label>
+                                Status <span class="required">*</span>
+                            </label>
+                            <select id="status" name="status" required>
+                                <option value="draft">Draft</option>
+                                <option value="published" selected>Published</option>
+                                <option value="archived">Archived</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label style="margin-bottom: 12px;">Options</label>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="isFeatured" name="isFeatured">
+                                <label for="isFeatured" style="margin: 0; font-weight: normal;">Featured Content</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hidden field for edit mode -->
+                    <input type="hidden" id="contentId" name="contentId">
+
+                    <!-- Submit Buttons -->
+                    <div class="button-group">
+                        <button type="submit" class="primary" id="submitBtn">
+                            Add Content
+                        </button>
+                        <button type="button" class="secondary" id="resetBtn">
+                            Clear Form
+                        </button>
+                        <button type="button" class="secondary" id="cancelEditBtn" style="display: none;">
+                            Cancel Edit
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Instructions -->
+            <div class="form-card">
+                <h2 style="font-size: 20px; margin-bottom: 16px; color: #0A2463;">📋 How to Use</h2>
+                <ol style="padding-left: 24px; color: #666;">
+                    <li style="margin-bottom: 8px;"><strong>Publish on Platform:</strong> First, publish your content on LinkedIn, YouTube, Facebook, or Instagram.</li>
+                    <li style="margin-bottom: 8px;"><strong>Select Platform:</strong> Choose the platform from the dropdown (left side).</li>
+                    <li style="margin-bottom: 8px;"><strong>Select Type:</strong> Choose the content type from the dropdown (right side) - options change based on platform.</li>
+                    <li style="margin-bottom: 8px;"><strong>Copy URL:</strong> Copy the full URL from your published post.</li>
+                    <li style="margin-bottom: 8px;"><strong>Fill Form:</strong> Enter the title, teaser, and paste the URL above.</li>
+                    <li style="margin-bottom: 8px;"><strong>Set Status:</strong> Choose "Published" to make it visible on the blog hub immediately.</li>
+                    <li style="margin-bottom: 8px;"><strong>Submit:</strong> Click "Add Content" - it will appear on the blog page automatically!</li>
+                </ol>
+            </div>
+
+            <!-- Existing Content List (Moved to bottom for editing) -->
+            <div class="form-card">
+                <h2 style="color: #0A2463; margin-bottom: 16px; font-size: 24px;">📝 Existing Blog Content</h2>
+                <p style="color: #666; margin-bottom: 16px; font-size: 14px;">Click "Edit" to modify existing content, or "Delete" to remove it.</p>
+                
+                <!-- Search and Filter Controls -->
+                <div style="margin-bottom: 20px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
+                    <input 
+                        type="text" 
+                        id="contentSearch" 
+                        placeholder="Search by title or teaser..." 
+                        style="flex: 1; min-width: 200px; padding: 10px; border: 2px solid #E5E7EB; border-radius: 8px; font-size: 14px;"
+                    >
+                    <select id="statusFilter" style="padding: 10px; border: 2px solid #E5E7EB; border-radius: 8px; font-size: 14px;">
+                        <option value="">All Status</option>
+                        <option value="published">Published</option>
+                        <option value="draft">Draft</option>
+                        <option value="archived">Archived</option>
+                    </select>
+                    <select id="platformFilter" style="padding: 10px; border: 2px solid #E5E7EB; border-radius: 8px; font-size: 14px;">
+                        <option value="">All Platforms</option>
+                        <option value="linkedin">LinkedIn</option>
+                        <option value="youtube">YouTube</option>
+                        <option value="facebook">Facebook</option>
+                        <option value="instagram">Instagram</option>
+                    </select>
+                    <button type="button" id="clearFilters" class="secondary" style="padding: 10px 16px;">Clear</button>
+                </div>
+
+                <!-- Results Count -->
+                <div id="resultsCount" style="margin-bottom: 12px; color: #666; font-size: 14px;"></div>
+
+                <!-- Content List -->
+                <div id="contentList" style="min-height: 100px; max-height: 600px; overflow-y: auto;">
+                    <div style="text-align: center; padding: 20px; color: #666;">Loading content...</div>
+                </div>
+
+                <!-- Pagination -->
+                <div id="pagination" style="margin-top: 20px; display: flex; justify-content: center; align-items: center; gap: 8px; flex-wrap: wrap;">
+                    <!-- Pagination controls will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="deleteModal" class="modal-overlay" onclick="closeDeleteModal()" style="display: none;">
+        <div class="modal" onclick="event.stopPropagation()">
+            <h2>🗑️ Delete Content</h2>
+            <p style="margin-bottom: 24px; color: #666;">Are you sure you want to delete this content? This action cannot be undone.</p>
+            <div id="deleteContentInfo" style="background: #F3F4F6; padding: 16px; border-radius: 8px; margin-bottom: 24px;">
+                <!-- Content info will be inserted here -->
+            </div>
+            <div class="button-group">
+                <button type="button" class="primary danger" id="confirmDeleteBtn">
+                    Yes, Delete
+                </button>
+                <button type="button" class="secondary" onclick="closeDeleteModal()">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Content Pillar Modal -->
+    <div id="pillarModal" class="modal-overlay" onclick="closeModalOnOverlay(event)">
+        <div class="modal" onclick="event.stopPropagation()">
+            <h2>➕ Add New Content Pillar</h2>
+            <form id="pillarForm">
+                <div class="form-group">
+                    <label>
+                        Pillar Name <span class="required">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="pillarName" 
+                        name="pillarName" 
+                        placeholder="e.g., Ethics & Compliance"
+                        maxlength="100"
+                        required
+                    >
+                </div>
+                <div class="form-group">
+                    <label>Description (Optional)</label>
+                    <textarea 
+                        id="pillarDescription" 
+                        name="pillarDescription" 
+                        placeholder="Brief description of this content pillar"
+                        rows="3"
+                    ></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Color (Optional)</label>
+                    <input 
+                        type="color" 
+                        id="pillarColor" 
+                        name="pillarColor" 
+                        value="#0A2463"
+                    >
+                    <div class="help-text">Color for visual organization in content calendar</div>
+                </div>
+                <div id="pillarModalMessage" class="message" style="display: none;"></div>
+                <div class="button-group">
+                    <button type="submit" class="primary">Add Pillar</button>
+                    <button type="button" class="secondary" onclick="closeAddPillarModal()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // =====================================================
+        // CONFIGURATION (Must be first!)
+        // =====================================================
+        const SUPABASE_URL = 'https://napwpkagxzqfpbearkjs.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5hcHdwa2FneHpxZnBiZWFya2pzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI0NDg3ODcsImV4cCI6MjA3ODAyNDc4N30.OSHgEylvGsDBwi4xI7Rs0_hpWtULmqadCr_m_eV_EgE';
+
+        // =====================================================
+        // PASSWORD PROTECTION
+        // =====================================================
+        const ADMIN_PASSWORD = 'truevow2025'; // Change this to your desired password
+
+        function checkPassword() {
+            const password = document.getElementById('passwordInput').value;
+            const errorDiv = document.getElementById('loginError');
+            
+            if (password === ADMIN_PASSWORD) {
+                document.getElementById('loginScreen').classList.add('hidden');
+                document.getElementById('mainContent').classList.remove('hidden');
+                sessionStorage.setItem('adminLoggedIn', 'true');
+                // Initialize form after login
+                initializeForm();
+            } else {
+                errorDiv.textContent = 'Incorrect password. Please try again.';
+                errorDiv.classList.remove('hidden');
+                document.getElementById('passwordInput').value = '';
+                document.getElementById('passwordInput').focus();
+            }
+        }
+
+        // Allow Enter key to submit password
+        document.getElementById('passwordInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                checkPassword();
+            }
+        });
+
+        // =====================================================
+        // CONTENT PILLARS MANAGEMENT
+        // =====================================================
+
+        // Load content pillars from database
+        async function loadContentPillars() {
+            const pillarSelect = document.getElementById('contentPillar');
+            
+            try {
+                const response = await fetch(`${SUPABASE_URL}/rest/v1/content_pillars?is_active=eq.true&order=display_order.asc,name.asc`, {
+                    method: 'GET',
+                    headers: {
+                        'apikey': SUPABASE_ANON_KEY,
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (!response.ok) {
+                    // If table doesn't exist, show message
+                    if (response.status === 404 || response.status === 406) {
+                        pillarSelect.innerHTML = '<option value="">⚠️ Content pillars table not found. Please run the migration SQL first.</option>';
+                        return;
+                    }
+                    throw new Error(`HTTP ${response.status}`);
+                }
+
+                const pillars = await response.json();
+                
+                pillarSelect.innerHTML = '<option value="">Select Content Pillar...</option>';
+                
+                if (pillars.length === 0) {
+                    pillarSelect.innerHTML += '<option value="">No pillars found. Click + to add one.</option>';
+                } else {
+                    pillars.forEach(pillar => {
+                        const option = document.createElement('option');
+                        option.value = pillar.id;
+                        option.textContent = pillar.name;
+                        if (pillar.description) {
+                            option.title = pillar.description;
+                        }
+                        pillarSelect.appendChild(option);
+                    });
+                }
+            } catch (error) {
+                console.error('Error loading content pillars:', error);
+                pillarSelect.innerHTML = '<option value="">Error loading pillars. Check console.</option>';
+            }
+        }
+
+        // Open add pillar modal
+        function openAddPillarModal() {
+            document.getElementById('pillarModal').classList.add('active');
+            document.getElementById('pillarName').focus();
+        }
+
+        // Close add pillar modal
+        function closeAddPillarModal() {
+            document.getElementById('pillarModal').classList.remove('active');
+            document.getElementById('pillarForm').reset();
+            document.getElementById('pillarModalMessage').style.display = 'none';
+        }
+
+        // Close modal when clicking overlay
+        function closeModalOnOverlay(event) {
+            if (event.target.id === 'pillarModal') {
+                closeAddPillarModal();
+            }
+        }
+
+        // Handle add pillar form submission
+        document.getElementById('pillarForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const messageEl = document.getElementById('pillarModalMessage');
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            
+            try {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Adding...';
+                
+                const pillarData = {
+                    name: document.getElementById('pillarName').value.trim(),
+                    description: document.getElementById('pillarDescription').value.trim() || null,
+                    color: document.getElementById('pillarColor').value,
+                    is_active: true,
+                    display_order: 0
+                };
+
+                const response = await fetch(`${SUPABASE_URL}/rest/v1/content_pillars`, {
+                    method: 'POST',
+                    headers: {
+                        'apikey': SUPABASE_ANON_KEY,
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                        'Content-Type': 'application/json',
+                        'Prefer': 'return=representation'
+                    },
+                    body: JSON.stringify(pillarData)
+                });
+
+                const responseText = await response.text();
+
+                if (!response.ok) {
+                    let errorMessage = `HTTP ${response.status}`;
+                    try {
+                        const error = JSON.parse(responseText);
+                        errorMessage = error.message || error.error_description || errorMessage;
+                        if (error.hint) {
+                            errorMessage += ` (${error.hint})`;
+                        }
+                    } catch (e) {
+                        errorMessage = responseText || errorMessage;
+                    }
+                    throw new Error(errorMessage);
+                }
+
+                const newPillar = JSON.parse(responseText);
+                // If single object, wrap in array
+                const pillar = Array.isArray(newPillar) ? newPillar[0] : newPillar;
+                
+                // Add to dropdown
+                const pillarSelect = document.getElementById('contentPillar');
+                const option = document.createElement('option');
+                option.value = pillar.id;
+                option.textContent = pillar.name;
+                option.selected = true;
+                pillarSelect.appendChild(option);
+                
+                // Show success and close modal
+                messageEl.textContent = `✅ Pillar "${pillar.name}" added successfully!`;
+                messageEl.className = 'message success';
+                messageEl.style.display = 'block';
+                
+                setTimeout(() => {
+                    closeAddPillarModal();
+                }, 1500);
+                
+            } catch (error) {
+                console.error('Error adding pillar:', error);
+                messageEl.textContent = `❌ Failed to add pillar: ${error.message}`;
+                messageEl.className = 'message error';
+                messageEl.style.display = 'block';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Add Pillar';
+            }
+        });
+
+        // =====================================================
+        // PLATFORM AND TYPE CONFIGURATION
+        // =====================================================
+        const platformTypes = {
+            linkedin: [
+                { value: 'article', label: 'LinkedIn Article', needsReadTime: true },
+                { value: 'reel', label: 'LinkedIn Reel', needsReadTime: false }
+            ],
+            youtube: [
+                { value: 'video', label: 'YouTube Video', needsReadTime: false }
+            ],
+            facebook: [
+                { value: 'post', label: 'Facebook Post', needsReadTime: true },
+                { value: 'video', label: 'Facebook Video', needsReadTime: false },
+                { value: 'reel', label: 'Facebook Reel', needsReadTime: false }
+            ],
+            instagram: [
+                { value: 'post', label: 'Instagram Post', needsReadTime: false },
+                { value: 'reel', label: 'Instagram Reel', needsReadTime: false },
+                { value: 'video', label: 'Instagram Video', needsReadTime: false }
+            ]
+        };
+
+        // =====================================================
+        // FORM HANDLING VARIABLES (Declare early)
+        // =====================================================
+        const statusSelect = document.getElementById('status');
+        const canonicalUrlInput = document.getElementById('canonicalUrl');
+        const canonicalRequired = document.getElementById('canonicalRequired');
+        const canonicalHelpText = document.getElementById('canonicalHelpText');
+        const platformSelect = document.getElementById('platformName');
+        const typeSelect = document.getElementById('type');
+        const readTimeGroup = document.getElementById('readTimeGroup');
+        const watchTimeGroup = document.getElementById('watchTimeGroup');
+        const readTimeInput = document.getElementById('readTimeMinutes');
+        const watchTimeInput = document.getElementById('watchTimeMinutes');
+
+        // =====================================================
+        // CANONICAL URL CONDITIONAL REQUIRED
+        // =====================================================
+        function updateCanonicalUrlRequirement() {
+            if (!statusSelect || !canonicalUrlInput) return; // Safety check
+            const status = statusSelect.value;
+            if (status === 'published') {
+                canonicalUrlInput.required = true;
+                canonicalRequired.style.display = 'inline';
+                canonicalHelpText.textContent = 'Full URL to your social media post. Required when status is "Published". UTM parameter will be added automatically.';
+            } else {
+                canonicalUrlInput.required = false;
+                canonicalRequired.style.display = 'none';
+                canonicalHelpText.textContent = 'Full URL to your social media post. Optional for drafts (not published yet). UTM parameter will be added automatically.';
+            }
+        }
+
+        // =====================================================
+        // FORM INITIALIZATION FUNCTION
+        // =====================================================
+        function initializeForm() {
+            // Set default publish date to today
+            const publishDateInput = document.getElementById('publishDate');
+            if (publishDateInput) {
+                publishDateInput.valueAsDate = new Date();
+            }
+            
+            // Load content pillars
+            loadContentPillars();
+            
+            // Load existing content list
+            loadContentList();
+            
+            // Set up content filters (search, pagination)
+            setupContentFilters();
+            
+            // Update canonical URL requirement based on default status
+            updateCanonicalUrlRequirement();
+            
+            // Set up platform/type handlers
+            setupPlatformTypeHandlers();
+        }
+
+        // Set up platform and type handlers
+        function setupPlatformTypeHandlers() {
+            if (!platformSelect || !typeSelect) return;
+            
+            platformSelect.addEventListener('change', (e) => {
+                const platform = e.target.value;
+                
+                // Clear type dropdown
+                typeSelect.innerHTML = '<option value="">Select Type...</option>';
+                
+                if (platform && platformTypes[platform]) {
+                    // Enable type dropdown
+                    typeSelect.disabled = false;
+                    
+                    // Populate type options
+                    platformTypes[platform].forEach(type => {
+                        const option = document.createElement('option');
+                        option.value = type.value;
+                        option.textContent = type.label;
+                        typeSelect.appendChild(option);
+                    });
+                    
+                    // Hide both time inputs initially
+                    if (readTimeGroup) readTimeGroup.style.display = 'none';
+                    if (watchTimeGroup) watchTimeGroup.style.display = 'none';
+                    if (readTimeInput) readTimeInput.required = false;
+                    if (watchTimeInput) watchTimeInput.required = false;
+                } else {
+                    // Disable type dropdown if no platform selected
+                    typeSelect.disabled = true;
+                    if (readTimeGroup) readTimeGroup.style.display = 'none';
+                    if (watchTimeGroup) watchTimeGroup.style.display = 'none';
+                }
+            });
+
+            typeSelect.addEventListener('change', (e) => {
+                const platform = platformSelect.value;
+                const selectedType = e.target.value;
+                
+                if (!platform || !selectedType) return;
+                
+                // Find the type configuration
+                const typeConfig = platformTypes[platform]?.find(t => t.value === selectedType);
+                
+                if (typeConfig) {
+                    if (typeConfig.needsReadTime) {
+                        // Show read time for articles/posts
+                        if (readTimeGroup) readTimeGroup.style.display = 'block';
+                        if (watchTimeGroup) watchTimeGroup.style.display = 'none';
+                        if (readTimeInput) readTimeInput.required = true;
+                        if (watchTimeInput) watchTimeInput.required = false;
+                        if (watchTimeInput) watchTimeInput.value = '';
+                    } else {
+                        // Show watch time for videos/reels
+                        if (readTimeGroup) readTimeGroup.style.display = 'none';
+                        if (watchTimeGroup) watchTimeGroup.style.display = 'block';
+                        if (readTimeInput) readTimeInput.required = false;
+                        if (watchTimeInput) watchTimeInput.required = true;
+                        if (readTimeInput) readTimeInput.value = '';
+                    }
+                }
+            });
+
+            // Set up status change handler
+            if (statusSelect) {
+                statusSelect.addEventListener('change', updateCanonicalUrlRequirement);
+            }
+        }
+
+        // =====================================================
+        // THUMBNAIL UPLOAD HANDLING
+        // =====================================================
+        const thumbnailFileInput = document.getElementById('thumbnailFile');
+        const thumbnailUrlInput = document.getElementById('thumbnailUrl');
+        const thumbnailPreview = document.getElementById('thumbnailPreview');
+        const thumbnailPreviewImg = document.getElementById('thumbnailPreviewImg');
+        let uploadedThumbnailUrl = null;
+
+        // Handle file upload
+        thumbnailFileInput.addEventListener('change', async (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            // Validate file type
+            if (!file.type.startsWith('image/')) {
+                showMessage('❌ Please select an image file.', 'error');
+                e.target.value = '';
+                return;
+            }
+
+            // Validate file size (max 5MB)
+            if (file.size > 5 * 1024 * 1024) {
+                showMessage('❌ Image size must be less than 5MB. Please compress the image and try again.', 'error');
+                e.target.value = '';
+                return;
+            }
+
+            // Convert to base64 and show preview
+            try {
+                showMessage('⏳ Processing thumbnail...', 'success');
+                
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    uploadedThumbnailUrl = event.target.result; // Store base64 data URL
+                    thumbnailPreviewImg.src = event.target.result;
+                    thumbnailPreview.style.display = 'block';
+                    thumbnailUrlInput.value = ''; // Clear URL input when file is uploaded
+                    showMessage('✅ Thumbnail ready! It will be saved with your content.', 'success');
+                };
+                reader.onerror = () => {
+                    throw new Error('Failed to read image file');
+                };
+                reader.readAsDataURL(file);
+                
+            } catch (error) {
+                console.error('Error processing thumbnail:', error);
+                showMessage('❌ Failed to process thumbnail. You can use the URL option instead.', 'error');
+                e.target.value = '';
+            }
+        });
+
+        // Handle URL input
+        thumbnailUrlInput.addEventListener('input', (e) => {
+            const url = e.target.value.trim();
+            if (url) {
+                // Clear file input when URL is entered
+                thumbnailFileInput.value = '';
+                uploadedThumbnailUrl = null;
+                thumbnailPreview.style.display = 'none';
+            }
+        });
+
+        // Clear thumbnail preview
+        function clearThumbnailPreview() {
+            thumbnailFileInput.value = '';
+            thumbnailUrlInput.value = '';
+            thumbnailPreview.style.display = 'none';
+            uploadedThumbnailUrl = null;
+        }
+
+        // Character counters
+        const titleInput = document.getElementById('title');
+        const teaserInput = document.getElementById('teaser');
+        const titleCount = document.getElementById('titleCount');
+        const teaserCount = document.getElementById('teaserCount');
+
+        titleInput.addEventListener('input', (e) => {
+            const count = e.target.value.length;
+            titleCount.textContent = `${count} / 200`;
+            titleCount.className = 'char-count' + (count > 180 ? ' warning' : '') + (count > 200 ? ' error' : '');
+        });
+
+        teaserInput.addEventListener('input', (e) => {
+            const count = e.target.value.length;
+            teaserCount.textContent = `${count} / 500`;
+            teaserCount.className = 'char-count' + (count > 450 ? ' warning' : '') + (count > 500 ? ' error' : '');
+        });
+
+        // Note: Platform and Type handling is set up in setupPlatformTypeHandlers() function
+
+        // =====================================================
+        // LOAD CONTENT LIST (with pagination and filtering)
+        // =====================================================
+        let allContentItems = [];
+        let filteredContentItems = [];
+        let currentPage = 1;
+        const itemsPerPage = 10;
+
+        async function loadContentList() {
+            const contentListEl = document.getElementById('contentList');
+            if (!contentListEl) {
+                console.error('Content list element not found');
+                return;
+            }
+            
+            contentListEl.innerHTML = '<div style="text-align: center; padding: 20px; color: #666;">Loading content...</div>';
+            
+            try {
+                // Fetch ALL content (including drafts) - admin needs to see everything
+                const response = await fetch(`${SUPABASE_URL}/rest/v1/blog_content?order=publish_date.desc,created_at.desc`, {
+                    method: 'GET',
+                    headers: {
+                        'apikey': SUPABASE_ANON_KEY,
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                        'Content-Type': 'application/json',
+                        'Prefer': 'return=representation'
+                    }
+                });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    console.error('Failed to load content list:', response.status, errorText);
+                    throw new Error(`HTTP ${response.status}: ${errorText}`);
+                }
+
+                allContentItems = await response.json();
+                applyFiltersAndRender();
+                
+            } catch (error) {
+                console.error('Error loading content list:', error);
+                contentListEl.innerHTML = '<div style="text-align: center; padding: 20px; color: #DC2626;">Error loading content. Check console for details.</div>';
+            }
+        }
+
+        // Apply filters and render content
+        function applyFiltersAndRender() {
+            const searchTerm = document.getElementById('contentSearch').value.toLowerCase().trim();
+            const statusFilter = document.getElementById('statusFilter').value;
+            const platformFilter = document.getElementById('platformFilter').value;
+
+            // Filter content
+            filteredContentItems = allContentItems.filter(item => {
+                const matchesSearch = !searchTerm || 
+                    item.title.toLowerCase().includes(searchTerm) || 
+                    (item.teaser && item.teaser.toLowerCase().includes(searchTerm));
+                
+                const matchesStatus = !statusFilter || item.status === statusFilter;
+                const matchesPlatform = !platformFilter || item.platform_name === platformFilter;
+
+                return matchesSearch && matchesStatus && matchesPlatform;
+            });
+
+            // Reset to page 1 when filters change
+            currentPage = 1;
+
+            // Update results count
+            const resultsCountEl = document.getElementById('resultsCount');
+            if (resultsCountEl) {
+                const total = filteredContentItems.length;
+                resultsCountEl.textContent = total === 0 
+                    ? 'No content found.' 
+                    : `Showing ${Math.min((currentPage - 1) * itemsPerPage + 1, total)}-${Math.min(currentPage * itemsPerPage, total)} of ${total} items`;
+            }
+
+            renderContentList();
+            renderPagination();
+        }
+
+        // Render content list (paginated)
+        function renderContentList() {
+            const contentListEl = document.getElementById('contentList');
+            if (!contentListEl) return;
+
+            if (filteredContentItems.length === 0) {
+                contentListEl.innerHTML = '<div style="text-align: center; padding: 20px; color: #666;">No content found. Try adjusting your filters or add your first blog post using the form above!</div>';
+                return;
+            }
+
+            // Calculate pagination
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const pageItems = filteredContentItems.slice(startIndex, endIndex);
+
+            contentListEl.innerHTML = pageItems.map(item => {
+                const statusBadge = item.status === 'published' 
+                    ? '<span class="content-item-badge badge-published">Published</span>'
+                    : item.status === 'draft'
+                    ? '<span class="content-item-badge badge-draft">Draft</span>'
+                    : '<span class="content-item-badge badge-archived">Archived</span>';
+                
+                const publishDate = item.publish_date ? new Date(item.publish_date).toLocaleDateString() : 'No date';
+                const platform = item.platform_name ? item.platform_name.charAt(0).toUpperCase() + item.platform_name.slice(1) : 'Unknown';
+                const type = item.type ? item.type.charAt(0).toUpperCase() + item.type.slice(1) : 'Unknown';
+                
+                // Escape HTML to prevent XSS
+                const title = escapeHtml(item.title);
+                const escapedTitle = item.title.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+                
+                return `
+                    <div class="content-item">
+                        <div class="content-item-info">
+                            <div class="content-item-title">${title}</div>
+                            <div class="content-item-meta">
+                                ${statusBadge}
+                                <span>${platform} • ${type}</span>
+                                <span>${publishDate}</span>
+                                ${item.is_featured ? '<span>⭐ Featured</span>' : ''}
+                            </div>
+                        </div>
+                        <div class="content-item-actions">
+                            <button type="button" class="secondary" onclick="editContent('${item.id}')">Edit</button>
+                            <button type="button" class="danger" onclick="confirmDelete('${item.id}', '${escapedTitle}')">Delete</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Render pagination controls
+        function renderPagination() {
+            const paginationEl = document.getElementById('pagination');
+            if (!paginationEl) return;
+
+            const totalPages = Math.ceil(filteredContentItems.length / itemsPerPage);
+            
+            if (totalPages <= 1) {
+                paginationEl.innerHTML = '';
+                return;
+            }
+
+            let paginationHTML = '';
+
+            // Previous button
+            paginationHTML += `
+                <button 
+                    type="button" 
+                    class="secondary" 
+                    onclick="changePage(${currentPage - 1})"
+                    ${currentPage === 1 ? 'disabled' : ''}
+                >
+                    ← Previous
+                </button>
+            `;
+
+            // Page numbers
+            const maxVisiblePages = 5;
+            let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+            let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+            
+            if (endPage - startPage < maxVisiblePages - 1) {
+                startPage = Math.max(1, endPage - maxVisiblePages + 1);
+            }
+
+            if (startPage > 1) {
+                paginationHTML += `<button type="button" class="secondary" onclick="changePage(1)">1</button>`;
+                if (startPage > 2) {
+                    paginationHTML += `<span style="padding: 0 8px;">...</span>`;
+                }
+            }
+
+            for (let i = startPage; i <= endPage; i++) {
+                paginationHTML += `
+                    <button 
+                        type="button" 
+                        class="secondary ${i === currentPage ? 'active' : ''}"
+                        onclick="changePage(${i})"
+                    >
+                        ${i}
+                    </button>
+                `;
+            }
+
+            if (endPage < totalPages) {
+                if (endPage < totalPages - 1) {
+                    paginationHTML += `<span style="padding: 0 8px;">...</span>`;
+                }
+                paginationHTML += `<button type="button" class="secondary" onclick="changePage(${totalPages})">${totalPages}</button>`;
+            }
+
+            // Next button
+            paginationHTML += `
+                <button 
+                    type="button" 
+                    class="secondary" 
+                    onclick="changePage(${currentPage + 1})"
+                    ${currentPage === totalPages ? 'disabled' : ''}
+                >
+                    Next →
+                </button>
+            `;
+
+            paginationEl.innerHTML = paginationHTML;
+        }
+
+        // Change page
+        function changePage(page) {
+            const totalPages = Math.ceil(filteredContentItems.length / itemsPerPage);
+            if (page < 1 || page > totalPages) return;
+            currentPage = page;
+            renderContentList();
+            renderPagination();
+            
+            // Update results count
+            const resultsCountEl = document.getElementById('resultsCount');
+            if (resultsCountEl) {
+                const total = filteredContentItems.length;
+                resultsCountEl.textContent = `Showing ${Math.min((currentPage - 1) * itemsPerPage + 1, total)}-${Math.min(currentPage * itemsPerPage, total)} of ${total} items`;
+            }
+
+            // Scroll to top of content list
+            const contentListEl = document.getElementById('contentList');
+            if (contentListEl) {
+                contentListEl.scrollTop = 0;
+            }
+        }
+
+        // Helper function to escape HTML
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Set up filter event listeners
+        function setupContentFilters() {
+            const searchInput = document.getElementById('contentSearch');
+            const statusFilter = document.getElementById('statusFilter');
+            const platformFilter = document.getElementById('platformFilter');
+            const clearFiltersBtn = document.getElementById('clearFilters');
+
+            if (searchInput) {
+                searchInput.addEventListener('input', debounce(applyFiltersAndRender, 300));
+            }
+            if (statusFilter) {
+                statusFilter.addEventListener('change', applyFiltersAndRender);
+            }
+            if (platformFilter) {
+                platformFilter.addEventListener('change', applyFiltersAndRender);
+            }
+            if (clearFiltersBtn) {
+                clearFiltersBtn.addEventListener('click', () => {
+                    document.getElementById('contentSearch').value = '';
+                    document.getElementById('statusFilter').value = '';
+                    document.getElementById('platformFilter').value = '';
+                    applyFiltersAndRender();
+                });
+            }
+        }
+
+        // Debounce function for search
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // =====================================================
+        // EDIT CONTENT
+        // =====================================================
+        async function editContent(contentId) {
+            try {
+                const response = await fetch(`${SUPABASE_URL}/rest/v1/blog_content?id=eq.${contentId}`, {
+                    method: 'GET',
+                    headers: {
+                        'apikey': SUPABASE_ANON_KEY,
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+
+                const contentItems = await response.json();
+                if (contentItems.length === 0) {
+                    throw new Error('Content not found');
+                }
+
+                const item = contentItems[0];
+                
+                // Populate form
+                document.getElementById('contentId').value = item.id;
+                document.getElementById('title').value = item.title || '';
+                document.getElementById('teaser').value = item.teaser || '';
+                document.getElementById('canonicalUrl').value = item.canonical_url ? item.canonical_url.replace(/\?utm_source=.*/, '') : '';
+                document.getElementById('publishDate').value = item.publish_date ? item.publish_date.split('T')[0] : '';
+                document.getElementById('thumbnailUrl').value = item.thumbnail_url || '';
+                document.getElementById('platformName').value = item.platform_name || '';
+                document.getElementById('contentPillar').value = item.content_pillar_id || '';
+                document.getElementById('status').value = item.status || 'draft';
+                document.getElementById('isFeatured').checked = item.is_featured || false;
+
+                // Update character counts
+                titleCount.textContent = `${item.title ? item.title.length : 0} / 200`;
+                teaserCount.textContent = `${item.teaser ? item.teaser.length : 0} / 500`;
+
+                // Set platform and type
+                if (item.platform_name) {
+                    platformSelect.dispatchEvent(new Event('change'));
+                    setTimeout(() => {
+                        document.getElementById('type').value = item.type || '';
+                        typeSelect.dispatchEvent(new Event('change'));
+                    }, 100);
+                }
+
+                // Set read/watch time
+                if (item.read_time_minutes) {
+                    document.getElementById('readTimeMinutes').value = item.read_time_minutes;
+                }
+                if (item.watch_time_minutes) {
+                    document.getElementById('watchTimeMinutes').value = item.watch_time_minutes;
+                }
+
+                // Update form UI
+                document.getElementById('formTitle').textContent = '✏️ Edit Content';
+                document.getElementById('submitBtn').textContent = 'Update Content';
+                document.getElementById('cancelEditBtn').style.display = 'inline-block';
+                
+                // Scroll to form
+                document.querySelector('.form-card').scrollIntoView({ behavior: 'smooth' });
+                
+            } catch (error) {
+                console.error('Error loading content for edit:', error);
+                showMessage(`❌ Failed to load content: ${error.message}`, 'error');
+            }
+        }
+
+        // =====================================================
+        // CANCEL EDIT
+        // =====================================================
+        function cancelEdit() {
+            document.getElementById('contentId').value = '';
+            document.getElementById('formTitle').textContent = '➕ Add New Content';
+            document.getElementById('submitBtn').textContent = 'Add Content';
+            document.getElementById('cancelEditBtn').style.display = 'none';
+            resetForm();
+        }
+
+        // =====================================================
+        // DELETE CONTENT
+        // =====================================================
+        let deleteContentId = null;
+
+        function confirmDelete(contentId, title) {
+            deleteContentId = contentId;
+            document.getElementById('deleteContentInfo').innerHTML = `
+                <strong>Title:</strong> ${title}
+            `;
+            document.getElementById('deleteModal').style.display = 'flex';
+        }
+
+        function closeDeleteModal() {
+            document.getElementById('deleteModal').style.display = 'none';
+            deleteContentId = null;
+        }
+
+        document.getElementById('confirmDeleteBtn').addEventListener('click', async () => {
+            if (!deleteContentId) return;
+
+            const deleteBtn = document.getElementById('confirmDeleteBtn');
+            deleteBtn.disabled = true;
+            deleteBtn.textContent = 'Deleting...';
+
+            try {
+                const response = await fetch(`${SUPABASE_URL}/rest/v1/blog_content?id=eq.${deleteContentId}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'apikey': SUPABASE_ANON_KEY,
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(`HTTP ${response.status}: ${errorText}`);
+                }
+
+                closeDeleteModal();
+                showMessage('✅ Content deleted successfully!', 'success');
+                loadContentList();
+                
+            } catch (error) {
+                console.error('Error deleting content:', error);
+                showMessage(`❌ Failed to delete content: ${error.message}`, 'error');
+            } finally {
+                deleteBtn.disabled = false;
+                deleteBtn.textContent = 'Yes, Delete';
+            }
+        });
+
+        // =====================================================
+        // RESET FORM
+        // =====================================================
+        function resetForm() {
+            document.getElementById('blogForm').reset();
+            document.getElementById('contentId').value = '';
+            document.getElementById('publishDate').valueAsDate = new Date();
+            titleCount.textContent = '0 / 200';
+            teaserCount.textContent = '0 / 500';
+            typeSelect.innerHTML = '<option value="">Select Platform First</option>';
+            typeSelect.disabled = true;
+            readTimeGroup.style.display = 'none';
+            watchTimeGroup.style.display = 'none';
+            document.getElementById('contentPillar').value = '';
+            clearThumbnailPreview();
+            updateCanonicalUrlRequirement();
+            document.getElementById('message').style.display = 'none';
+            document.getElementById('formTitle').textContent = '➕ Add New Content';
+            document.getElementById('submitBtn').textContent = 'Add Content';
+            document.getElementById('cancelEditBtn').style.display = 'none';
+        }
+
+        // Show message
+        function showMessage(text, type) {
+            const messageEl = document.getElementById('message');
+            messageEl.textContent = text;
+            messageEl.className = `message ${type}`;
+            messageEl.style.display = 'block';
+            
+            // Scroll to message
+            messageEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            
+            // Auto-hide after 5 seconds for success messages
+            if (type === 'success') {
+                setTimeout(() => {
+                    messageEl.style.display = 'none';
+                }, 5000);
+            }
+        }
+
+        // Reset form button
+        document.getElementById('resetBtn').addEventListener('click', resetForm);
+
+        // Form submission
+        document.getElementById('blogForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = true;
+            
+            // Check if editing or creating (declare early so it's accessible in finally block)
+            const contentId = document.getElementById('contentId').value;
+            const isEdit = !!contentId;
+            
+            submitBtn.textContent = isEdit ? 'Updating...' : 'Adding...';
+
+            try {
+                // Get form data
+                const formData = new FormData(e.target);
+                const type = formData.get('type');
+                const platform = formData.get('platformName');
+                
+                // Find type config to determine if it needs read or watch time
+                const typeConfig = platformTypes[platform]?.find(t => t.value === type);
+                const needsReadTime = typeConfig?.needsReadTime || false;
+                
+                // Handle canonical URL (required only for published)
+                let canonicalUrl = formData.get('canonicalUrl') ? formData.get('canonicalUrl').trim() : '';
+                const status = formData.get('status');
+                
+                // Validate canonical URL if status is published
+                if (status === 'published' && !canonicalUrl) {
+                    throw new Error('Canonical URL is required when status is "Published"');
+                }
+                
+                // Add UTM parameter to URL if not present and URL exists
+                if (canonicalUrl && !canonicalUrl.includes('utm_source')) {
+                    const separator = canonicalUrl.includes('?') ? '&' : '?';
+                    canonicalUrl += `${separator}utm_source=truevow_blog`;
+                }
+                
+                // Set to null if empty (for drafts)
+                if (!canonicalUrl) {
+                    canonicalUrl = null;
+                }
+
+                // Handle thumbnail (file upload or URL)
+                let thumbnailUrl = formData.get('thumbnailUrl') ? formData.get('thumbnailUrl').trim() : '';
+                
+                // Use uploaded file URL if available
+                if (uploadedThumbnailUrl) {
+                    thumbnailUrl = uploadedThumbnailUrl;
+                }
+                
+                // Set to null if empty (optional field)
+                if (!thumbnailUrl) {
+                    thumbnailUrl = null;
+                }
+
+                // Get content pillar
+                const contentPillarId = formData.get('contentPillar');
+                if (!contentPillarId) {
+                    throw new Error('Please select a content pillar');
+                }
+
+                // Prepare data for Supabase
+                const data = {
+                    title: formData.get('title').trim(),
+                    teaser: formData.get('teaser').trim(),
+                    publish_date: formData.get('publishDate'),
+                    type: type,
+                    platform_name: platform,
+                    content_pillar_id: contentPillarId,
+                    read_time_minutes: needsReadTime ? parseInt(formData.get('readTimeMinutes')) : null,
+                    watch_time_minutes: !needsReadTime ? parseInt(formData.get('watchTimeMinutes')) : null,
+                    is_featured: formData.get('isFeatured') === 'on',
+                    status: status
+                };
+
+                // Only add canonical_url if it exists (null for drafts is fine in database)
+                if (canonicalUrl) {
+                    data.canonical_url = canonicalUrl;
+                } else {
+                    data.canonical_url = null;
+                }
+
+                // Only add thumbnail_url if it exists
+                if (thumbnailUrl) {
+                    data.thumbnail_url = thumbnailUrl;
+                } else {
+                    data.thumbnail_url = null;
+                }
+
+                // Submit to Supabase (POST for create, PATCH for update)
+                let response;
+                if (isEdit) {
+                    response = await fetch(`${SUPABASE_URL}/rest/v1/blog_content?id=eq.${contentId}`, {
+                        method: 'PATCH',
+                        headers: {
+                            'apikey': SUPABASE_ANON_KEY,
+                            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                            'Content-Type': 'application/json',
+                            'Prefer': 'return=representation'
+                        },
+                        body: JSON.stringify(data)
+                    });
+                } else {
+                    response = await fetch(`${SUPABASE_URL}/rest/v1/blog_content`, {
+                        method: 'POST',
+                        headers: {
+                            'apikey': SUPABASE_ANON_KEY,
+                            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                            'Content-Type': 'application/json',
+                            'Prefer': 'return=representation'
+                        },
+                        body: JSON.stringify(data)
+                    });
+                }
+
+                const responseText = await response.text();
+                
+                if (!response.ok) {
+                    let errorMessage = `HTTP ${response.status}: ${response.statusText}`;
+                    try {
+                        const error = JSON.parse(responseText);
+                        errorMessage = error.message || error.error_description || errorMessage;
+                        if (error.hint) {
+                            errorMessage += ` (${error.hint})`;
+                        }
+                    } catch (e) {
+                        errorMessage = responseText || errorMessage;
+                    }
+                    throw new Error(errorMessage);
+                }
+
+                const result = JSON.parse(responseText);
+                
+                // Success!
+                showMessage(
+                    `✅ Content ${isEdit ? 'updated' : 'added'} successfully! ${data.status === 'published' ? 'It will appear on the blog hub immediately.' : 'Saved as draft.'}`,
+                    'success'
+                );
+
+                // Reload content list
+                loadContentList();
+
+                // Reset form
+                resetForm();
+
+            } catch (error) {
+                console.error(`Error ${isEdit ? 'updating' : 'adding'} content:`, error);
+                showMessage(
+                    `❌ Failed to ${isEdit ? 'update' : 'add'} content: ${error.message}. Check browser console (F12) for details.`,
+                    'error'
+                );
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = isEdit ? 'Update Content' : 'Add Content';
+            }
+        });
+    </script>
+</body>
+</html>
