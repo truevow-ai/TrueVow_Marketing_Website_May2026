@@ -62,6 +62,7 @@ This rule is **MANDATORY** and **ZERO-TOLERANCE**. Violations cause:
 
 - `components/STANDARD_FOOTER.html` - Finalized footer component
 - `components/STANDARD_NAVIGATION.html` - Finalized navigation component
+- `marketing/pricing.html` - **FINALIZED & LOCKED** (See `rules/PRICING_PAGE_FINALIZED_LOCK.md`)
 
 ---
 

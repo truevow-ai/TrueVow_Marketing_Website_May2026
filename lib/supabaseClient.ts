@@ -104,7 +104,7 @@ export async function getPublishedContent(options?: {
   limit?: number
 }) {
   let query = supabase
-    .from('blog_content')
+    .from('web_blog_content')
     .select('*')
     .eq('status', 'published')
     .order('publish_date', { ascending: false })
@@ -168,7 +168,7 @@ export async function subscribeToNewsletter(email: string, metadata?: {
   source?: string
 }) {
   const { data, error } = await supabase
-    .from('newsletter_subscribers')
+    .from('web_newsletter_subscribers')
     .insert({
       email: email.toLowerCase().trim(),
       ip_addr: metadata?.ipAddr,

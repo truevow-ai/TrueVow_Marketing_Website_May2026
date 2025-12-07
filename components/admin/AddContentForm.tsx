@@ -94,7 +94,7 @@ export default function AddContentForm({ onSuccess, onCancel }: AddContentFormPr
       }
 
       const { data, error } = await supabase
-        .from('blog_content')
+        .from('web_blog_content')
         .insert(insertData)
         .select()
         .single()

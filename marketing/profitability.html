@@ -4,8 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TrueVow Profitability & ROI Comparison | Why $29 Beats $5,900 Salaries</title>
-    <meta name="description" content="See exactly how TrueVow outruns in-house intake salaries, answering services, and DIY voicemail. Compare costs, run the ROI calculator, and prove the business case in minutes.">
+    <meta name="description" content="See exactly how TrueVow outruns in-house intake salaries, answering services, and DIY voicemail. Compare costs, run the ROI calculator, and prove the business case in minutes.">    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
+    <script>
+        // Prevent browser from restoring scroll position on refresh
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        // Force scroll to top immediately
+        window.scrollTo(0, 0);
+    </script>
     <style>
         :root {
             --primary: #0A2463;
@@ -106,6 +116,7 @@
             font-size: 3.1rem;
             font-weight: 800;
             letter-spacing: -1px;
+            margin-top: 100px;
             margin-bottom: 20px;
         }
 
@@ -114,6 +125,34 @@
             color: rgba(255,255,255,0.78);
             max-width: 760px;
             margin: 0 auto 32px;
+        }
+
+        /* Typewriter Animation Styles */
+        .typewriter-line {
+            margin-bottom: 20px;
+            min-height: 1.5em;
+            /* Prevent layout shift when content changes */
+            display: block;
+            height: auto;
+        }
+
+        .typewriter-line.completed {
+            margin-bottom: 20px;
+        }
+
+        .typewriter-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1em;
+            background-color: rgba(255,255,255,0.78);
+            margin-left: 2px;
+            animation: blink 1s infinite;
+            vertical-align: baseline;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
         }
 
         .hero-highlight {
@@ -158,7 +197,7 @@
         .section {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 90px 24px 60px;
+            padding: 60px 24px 40px;
         }
 
         .section h2 {
@@ -179,15 +218,19 @@
 
         .comparison-table {
             width: 100%;
-            border-collapse: collapse;
-            box-shadow: 0 18px 40px rgba(15,23,42,0.08);
-            border-radius: 18px;
-            overflow: hidden;
-            background: #FFFFFF;
+            border-collapse: separate;
+            border-spacing: 0 12px;
+            box-shadow: none;
+            background: transparent;
         }
 
         .comparison-table thead {
+            background: transparent;
+        }
+
+        .comparison-table thead tr {
             background: #F8FAFC;
+            border-radius: 12px;
         }
 
         .comparison-table th,
@@ -195,7 +238,6 @@
             padding: 22px 26px;
             text-align: left;
             font-size: 0.97rem;
-            border-bottom: 1px solid #E2E8F0;
         }
 
         .comparison-table th {
@@ -204,6 +246,47 @@
             text-transform: uppercase;
             font-size: 0.82rem;
             letter-spacing: 1.5px;
+            border-bottom: none;
+        }
+
+        .comparison-table tbody tr {
+            background: #FFFFFF;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(15,23,42,0.06);
+            border-left: 4px solid #E2E8F0;
+            transition: all 0.2s ease;
+            margin-bottom: 12px;
+        }
+
+        .comparison-table tbody tr:hover {
+            box-shadow: 0 4px 16px rgba(15,23,42,0.12);
+            border-left-color: var(--primary);
+            transform: translateX(4px);
+        }
+
+        .comparison-table tbody tr:first-child {
+            border-left-color: var(--primary);
+            border-left-width: 5px;
+        }
+
+        .comparison-table tbody td {
+            border-bottom: none;
+        }
+
+        .comparison-table tbody td:first-child {
+            font-weight: 600;
+            color: var(--slate-900);
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .comparison-table tbody td:first-child::before {
+            content: '→';
+            position: absolute;
+            left: 18px;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.1rem;
         }
 
         .truevow-column {
@@ -264,7 +347,7 @@
         .divider {
             height: 2px;
             background: linear-gradient(to right, transparent, rgba(15,23,42,0.12), transparent);
-            margin: 70px auto;
+            margin: 40px auto;
             max-width: 580px;
         }
 
@@ -510,6 +593,48 @@
                 font-size: 2rem;
             }
         }
+
+        /* STICKY FLOATING CTA BUTTON - STANDARDIZED */
+        .sticky-cta-button {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 9999;
+            background: #0A2463;
+            color: #FFFFFF;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(10,36,99,0.25);
+            transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+        }
+        .sticky-cta-button:hover {
+            background: #0052CC;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(10,36,99,0.35);
+        }
+        .sticky-cta-button .cta-text {
+            white-space: nowrap;
+        }
+        @media (max-width: 768px) {
+            .sticky-cta-button {
+                bottom: 16px;
+                right: 16px;
+                left: 16px;
+                padding: 14px 24px;
+                font-size: 15px;
+                justify-content: center;
+            }
+            .sticky-cta-button .cta-text {
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -520,38 +645,83 @@
             <img src="../assets/logo.svg" alt="TrueVow" style="height: 40px; width: auto;">
         </a>
         <div style="display: flex; gap: 32px; align-items: center;">
-            <a href="index.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500;">Home</a>
-            <a href="how-it-works.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500;">How It Works</a>
-            <a href="pricing.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500;">Pricing</a>
-            <a href="county-cap.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500;">33% Cap</a>
-            <a href="profitability.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500;">ROI</a>
+            <a href="index.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500; letter-spacing: 0; font-family: inherit;">Home</a>
+            <a href="how-it-works.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500; letter-spacing: 0; font-family: inherit;">How It Works</a>
+            <a href="pricing.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500; letter-spacing: 0; font-family: inherit;">Pricing</a>
+            <a href="county-cap.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500; letter-spacing: 0; font-family: inherit;">33% Cap</a>
+            <a href="profitability.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500; letter-spacing: 0; font-family: inherit;">ROI</a>
         </div>
-        <a href="apply.html" style="background: #0A2463; color: white !important; padding: 12px 24px; border-radius: 8px; font-size: 16px; font-weight: 600; text-decoration: none;">Apply Now →</a>
+        <a href="apply.html" style="background: #0A2463; color: #FFFFFF !important; padding: 12px 24px; border-radius: 8px; font-size: 16px; font-weight: 600; text-decoration: none; transition: background 0.2s ease; font-family: inherit;" onmouseover="this.style.background='#0052CC'" onmouseout="this.style.background='#0A2463'">Start Capturing Every Call →</a>
     </div>
 </nav>
 
     <header class="hero">
-        <div style="max-width: 760px; margin: 0 auto 32px; text-align: left; font-size: 0.98rem; color: rgba(255,255,255,0.78);">
-            <p>“Do I really need this, or can I just make my staff better?”</p>
-            <p>“Will this actually work — or will I just waste another month and a few grand?”</p>
-            <p>“Is this going to be another tech headache I end up managing myself?”</p>
-            <p>“Can I really trust a system to talk to my clients the way I do?”</p>
-            <p style="margin-top: 12px;">You’re asking the right questions. You’ve seen the features. You’ve checked the pricing. Now there’s only one question left: <strong>What’s the actual return for your firm?</strong></p>
+        <div id="typewriter-container" style="max-width: 760px; margin: 0 auto 20px; text-align: left; font-size: 0.98rem; color: rgba(255,255,255,0.78); position: relative;">
+            <!-- Placeholder lines to reserve space -->
+            <p class="typewriter-line" style="visibility: hidden; margin-bottom: 20px;">"Can I afford to keep losing $5,150 per missed call while I train my staff?"</p>
+            <p class="typewriter-line" style="visibility: hidden; margin-bottom: 20px;">"Will I keep losing cases to voicemail, or will this actually work?"</p>
+            <p class="typewriter-line" style="visibility: hidden; margin-bottom: 20px;">"Is this going to be another tech headache I end up managing myself?"</p>
+            <p class="typewriter-line" style="visibility: hidden; margin-bottom: 20px;">"Can I trust a system that follows my rules (not AI) to capture the cases I'm losing?"</p>
+            <p class="typewriter-line" style="visibility: hidden; margin-top: 12px; margin-bottom: 20px;">You're asking the right questions. You've seen the features. You've checked the pricing. Now there's only one question left: <strong>What are you losing now, and what will you stop losing?</strong></p>
         </div>
-        <h1>Every Missed Case Costs $5,150. Every Answered One Builds Equity.</h1>
-        <p>You’ve already paid for the lead. TrueVow stops the silent bleed — every call answered, every intake completed, every qualified booking tracked. In internal pilots, firms using TrueVow have converted more clients and spent less on intake while sharply reducing lost leads to voicemail.</p>
-        <div class="hero-highlight" style="margin-top: 20px; margin-bottom: 28px;">
+        <h1>Every Missed Case Costs $5,150.<br>Every Answered One Builds Equity.</h1>
+        <div class="hero-highlight" style="margin-top: 20px; margin-bottom: 24px;">
             ⚖️ Stop leaking ad spend. Turn your intake into an asset.
         </div>
-        <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
-            <a href="#roi-math" class="nav-cta" style="text-decoration:none;">Calculate My ROI</a>
-            <a href="#comparisons" class="nav-cta" style="background:#E5E7EB;color:#111827;text-decoration:none;">See Real-World Comparisons</a>
+        <p>You've already paid for the lead. You stop the silent bleed —<br>every call answered, every intake completed, every qualified booking tracked.<br>In internal pilots, firms using TrueVow have converted more clients and<br>spent less on intake while sharply reducing lost leads to voicemail.</p>
+        <div style="display: flex; justify-content: center; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 20px; margin-bottom: 40px;">
+            <a href="#roi-math" class="nav-cta" style="text-decoration:none; margin-left: 0;">Calculate My ROI</a>
+            <a href="#comparisons" class="nav-cta" style="background:#E5E7EB;color:#111827;text-decoration:none; margin-left: 0;">See Real-World Comparisons</a>
         </div>
     </header>
 
+    <!-- TRUST BADGE RIBBON (ROI-Specific) -->
+    <section style="padding: 20px 24px; background: #F8F9FA; border-bottom: 1px solid #E5E5E5;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="color: #10B981; font-size: 20px; font-weight: 700;">✓</span>
+                <span style="color: #1A1A1A; font-size: 16px; font-weight: 600;">Performance-Based Pricing</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="color: #10B981; font-size: 20px; font-weight: 700;">✓</span>
+                <span style="color: #1A1A1A; font-size: 16px; font-weight: 600;">No Monthly Minimums</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="color: #10B981; font-size: 20px; font-weight: 700;">✓</span>
+                <span style="color: #1A1A1A; font-size: 16px; font-weight: 600;">Pay Only When You Win</span>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: 15px 24px; background: white;">
+        <div style="padding: 32px; background: #E2E8F0; border-radius: 16px; max-width: 900px; margin-left: auto; margin-right: auto; border: 2px solid #CBD5E1;">
+            <h2 style="font-size: 2.2rem; font-weight: 700; color: #0F172A; margin-bottom: 24px; text-align: center;">
+                Reclaim 15 Hours/Week with Your Family
+            </h2>
+            <p style="font-size: 1.2rem; color: #1A1A1A; line-height: 1.8; max-width: 800px; margin: 0 auto 32px; text-align: center; font-weight: 500;">
+                Wake up to <strong style="color: #0A2463; font-weight: 700;">3 booked consultations</strong> instead of voicemails. 
+                Feel the relief when you walk out at 5 PM knowing <strong style="color: #0A2463; font-weight: 700;">every call is answered</strong>. 
+                That's not just ROI — that's your life back.
+            </p>
+            <div style="background: #ECFEF4; border-left: 4px solid #22C55E; padding: 24px; border-radius: 12px; max-width: 700px; margin: 0 auto;">
+                <p style="font-size: 1.1rem; color: #1A1A1A; margin: 0; line-height: 1.7;">
+                    <strong style="color: #166534;">Hear that?</strong> That's $5,150 calling at 9 PM. You're sleeping. Benjamin is working.
+                </p>
+            </div>
+        </div>
+    </section>
+
     <section class="section" id="roi-math">
         <h2>The Simple Math of Fixing Intake Once</h2>
-        <p class="lead">This page is about one question: if you stop losing the cases you already paid to acquire, what happens to your firm’s economics over the next 3–12 months?</p>
+        <p class="lead" style="font-size: 1.3rem; font-weight: 500; color: var(--slate-400);">This page is about one question: if you stop losing the cases you already paid<br>to acquire, what happens to your firm's economics over the<br>next 3–12 months?</p>
+        <div style="background: #FFF7ED; border-left: 4px solid #F59E0B; padding: 28px; border-radius: 12px; margin-bottom: 40px; max-width: 900px; margin-left: auto; margin-right: auto;">
+            <p style="font-size: 1.1rem; color: #1A1A1A; line-height: 1.8; margin: 0;">
+                <strong style="color: #92400E; font-size: 1.2rem;">You're probably skeptical.</strong> That's smart. You've seen "too good to be true" before. 
+                Here's the verified math, based on <strong>real firm economics</strong> and industry benchmarks. 
+                No hype. No promises. Just numbers you can check yourself.
+            </p>
+        </div>
+
         <div class="cost-grid">
             <div class="cost-card">
                 <h3>Cost per Qualified Booking</h3>
@@ -573,30 +743,84 @@
             </div>
             <div class="cost-card">
                 <h3>Example Revenue Lift</h3>
-                <div class="amount">$15,450 / month</div>
+                <div class="amount" style="white-space: nowrap;">$5,150 to $15,450</div>
                 <ul>
-                    <li>3 additional retained cases / month × $5,150 net per case.</li>
+                    <li>1-3 additional retained cases / month × $5,150 net per case.</li>
                     <li>No extra ad spend — just better capture and conversion.</li>
-                    <li>Over $185,000 per year from leads you already pay for.</li>
+                    <li>$154,500 per year recovered from leads you're already losing.</li>
                 </ul>
             </div>
         </div>
         <div class="highlight-box" style="margin-top: 30px;">
             <strong>Key idea:</strong> You don’t need more leads. You need to stop losing the ones you already earned.
+            </div>
+
+        <div style="background: #0B1120; color: #FFFFFF; border-radius: 24px; padding: 40px 32px; margin-top: 40px; max-width: 1100px; margin-left: auto; margin-right: auto;">
+            <h3 style="font-size: 1.8rem; font-weight: 700; color: #FFFFFF; margin-bottom: 32px; text-align: center;">
+                Your ROI Over Time
+            </h3>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
+                <div style="background: rgba(255,255,255,0.1); border-radius: 16px; padding: 28px 24px; text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: 800; color: #FACC15; margin-bottom: 12px;">Month 3</div>
+                    <div style="font-size: 1.1rem; color: rgba(255,255,255,0.8); margin-bottom: 8px;">6 cases × $5,150</div>
+                    <div style="font-size: 1.5rem; font-weight: 700; color: #FFFFFF;">$30,900</div>
+                    <div style="font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-top: 8px;">Est. cost: ~$174</div>
+                    <div style="font-size: 0.95rem; font-weight: 600; color: #FACC15; margin-top: 8px;">Net: $30,726</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); border-radius: 16px; padding: 28px 24px; text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: 800; color: #FACC15; margin-bottom: 12px;">Month 6</div>
+                    <div style="font-size: 1.1rem; color: rgba(255,255,255,0.8); margin-bottom: 8px;">8 cases × $5,150</div>
+                    <div style="font-size: 1.5rem; font-weight: 700; color: #FFFFFF;">$41,200</div>
+                    <div style="font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-top: 8px;">Est. cost: ~$232</div>
+                    <div style="font-size: 0.95rem; font-weight: 600; color: #FACC15; margin-top: 8px;">Net: $40,968</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); border-radius: 16px; padding: 28px 24px; text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: 800; color: #FACC15; margin-bottom: 12px;">Month 9</div>
+                    <div style="font-size: 1.1rem; color: rgba(255,255,255,0.8); margin-bottom: 8px;">8 cases × $5,150</div>
+                    <div style="font-size: 1.5rem; font-weight: 700; color: #FFFFFF;">$41,200</div>
+                    <div style="font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-top: 8px;">Est. cost: ~$232</div>
+                    <div style="font-size: 0.95rem; font-weight: 600; color: #FACC15; margin-top: 8px;">Net: $40,968</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); border-radius: 16px; padding: 28px 24px; text-align: center; border: 2px solid #FACC15;">
+                    <div style="font-size: 2.5rem; font-weight: 800; color: #FACC15; margin-bottom: 12px; white-space: nowrap;">Month 12</div>
+                    <div style="font-size: 1.1rem; color: rgba(255,255,255,0.8); margin-bottom: 8px;">8 cases × $5,150</div>
+                    <div style="font-size: 1.5rem; font-weight: 700; color: #FFFFFF;">$41,200</div>
+                    <div style="font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-top: 8px;">Est. cost: ~$232</div>
+                    <div style="font-size: 1rem; font-weight: 700; color: #FACC15; margin-top: 12px;">Net: $40,968</div>
+                </div>
+            </div>
+            <div style="background: rgba(255,255,255,0.1); border-radius: 12px; padding: 16px; margin-top: 24px; text-align: center;">
+                <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin: 0; line-height: 1.6;">
+                    <strong style="color: #FACC15;">Estimated monthly cost:</strong> Average small law firm books 8-12 consultations/month × $29/booking = ~$232-$348/month. You pay for all booked consultations, not just converted cases. Actual cost varies by consultation volume.
+                </p>
+        </div>
+            <div style="background: rgba(250,204,21,0.15); border-radius: 12px; padding: 20px; margin-top: 32px; text-align: center;">
+                <p style="font-size: 1rem; color: #FFFFFF; margin: 0; line-height: 1.7;">
+                    <strong style="color: #FACC15;">Recover $154,500/year in cases you're currently losing to voicemail.</strong><br>
+                    30 cases × $5,150 = $154,500 recovered revenue.
+                </p>
+            </div>
+            <div style="background: rgba(250,204,21,0.15); border-radius: 12px; padding: 20px; margin-top: 16px; text-align: center;">
+                <p style="font-size: 1rem; color: #FFFFFF; margin: 0; line-height: 1.7;">
+                    <strong style="color: #FACC15;">One retained case pays for 177 TrueVow bookings.</strong><br>
+                    One $5,150 case ÷ $29/booking = 177 bookings.<br>
+                    Even if only 1 in 10 consultations converts, you still profit. This compounds every month.
+                </p>
+            </div>
         </div>
     </section>
 
     <section class="section" id="why-works">
         <h2>Why TrueVow Works When Others Don’t</h2>
-        <p class="lead">Most tools promise “AI magic.” Lawyers don’t need magic. They need something that answers fast, follows instructions every time, and stays squarely inside the ethical lines.</p>
+        <p class="lead" style="font-size: 1.3rem; font-weight: 500; color: var(--slate-400);">Most tools promise "AI magic." Lawyers don't need magic. They need something that answers fast, follows instructions every time, and stays squarely inside the ethical lines.</p>
         <div class="cost-grid">
             <div class="cost-card">
-                <h3>Deterministic Logic</h3>
+                <h3>FSM-Based Architecture (Finite State Machine)</h3>
                 <ul>
-                    <li>TrueVow is built on deterministic, finite-state logic — not a black-box model guessing what to say.</li>
-                    <li>Every step in the intake flow can be inspected, tested, and approved.</li>
-                    <li>No hallucinated promises, no “creative” answers that create risk.</li>
-                </ul>
+                    <li>Uses fixed rules (not AI) — every decision is predictable and auditable.</li>
+                    <li>You can review and approve every step before it goes live.</li>
+                    <li>No AI hallucinations or creative answers that create compliance risk.</li>
+            </ul>
             </div>
             <div class="cost-card">
                 <h3>Intake You Can Audit</h3>
@@ -609,17 +833,30 @@
             <div class="cost-card">
                 <h3>Built for Real Firms</h3>
                 <ul>
-                    <li>Designed for solo and small firms who can’t afford wasted ad spend.</li>
+                    <li>Designed for solo and small law firms who can't afford wasted ad spend.</li>
                     <li>Intake behaves like infrastructure, not another system you babysit.</li>
-                    <li>Staff focuses on billable work — TrueVow handles the repetitive screening.</li>
+                    <li>Staff focuses on billable work — you get repetitive screening handled automatically.</li>
                 </ul>
             </div>
+        </div>
+
+        <div class="highlight-box" style="margin-top: 40px; background: #FEF2F2; border-left: 4px solid #DC2626; padding: 24px;">
+            <h3 style="color: #991B1B; margin-bottom: 16px; font-size: 1.3rem;">Why Other Legal Tech Vendors Don't Tell You About AI's Risks</h3>
+            <p style="color: #1F2937; line-height: 1.8; margin-bottom: 12px;">
+                <strong>They know the problems.</strong> Every legal tech vendor using generative AI understands that LLMs (Large Language Models) hallucinate, make up case law, and can violate ABA Model Rule 1.1 (competence) and 1.6 (confidentiality). They've seen the Bar complaints. They've read the ethics opinions.
+            </p>
+            <p style="color: #1F2937; line-height: 1.8; margin-bottom: 12px;">
+                <strong>But they sell the AI hype anyway.</strong> Why? Because "AI-powered" sounds cutting-edge. Because investors fund AI companies. Because it's easier to build than deterministic systems. And because most law firms won't discover the problems until after they've signed a 12-month contract.
+            </p>
+            <p style="color: #1F2937; line-height: 1.8; margin-bottom: 0;">
+                <strong>TrueVow chose the harder path:</strong> FSM-based architecture that's auditable, deterministic, and Bar-defensible. We don't use generative AI for legal decisions because your license is worth more than our marketing pitch. When the Bar asks "Did you use AI?", you answer "No — I use FSM-based intake automation. Here's the decision tree." That's the difference between a vendor and a partner.
+            </p>
         </div>
     </section>
 
     <section class="section" id="comparisons">
         <h2>TrueVow vs. Your Current Options</h2>
-        <p class="lead">If you don’t choose TrueVow, you’ll choose one of these: hire more staff, pay an answering service, try a generic AI widget, or keep doing nothing.</p>
+        <p class="lead" style="font-size: 1.3rem; font-weight: 500; color: var(--slate-400);">If you don't choose TrueVow, you'll choose one of these: hire more staff, pay an answering service, try a generic AI widget, or keep doing nothing.</p>
         <table class="comparison-table" style="margin-bottom: 32px;">
             <thead>
                 <tr>
@@ -633,15 +870,15 @@
                 <tr>
                     <td>
                         <span class="option-badge">TrueVow</span><br>
-                        Deterministic intake engine.
+                        Rule-based system (not AI).
                     </td>
                     <td class="truevow-column">$29 per qualified booking</td>
-                    <td>Variable cost only when opportunities appear.</td>
-                    <td class="truevow-column">Sub-minute response, bar-aligned flows, and auditable intake logs.</td>
+                    <td>You only pay when you get a qualified booking.</td>
+                    <td class="truevow-column">Sub-minute response, Bar-compliant flows, and auditable intake logs.</td>
                 </tr>
                 <tr>
                     <td>In-House Intake Hire</td>
-                    <td>$55,000–$80,000+ per year fixed cost</td>
+                    <td>$48,000 per year fixed cost</td>
                     <td>Coverage gaps, turnover, and non-billable overhead.</td>
                     <td>Human judgment, but availability limited to business hours.</td>
                 </tr>
@@ -652,7 +889,7 @@
                     <td>Messages taken, but you still have to qualify and chase.</td>
                 </tr>
                 <tr>
-                    <td>Generic AI Reception / Chatbot</td>
+                    <td>AI Generic Receptionist ChatBots</td>
                     <td>Monthly subscription + setup fees</td>
                     <td>Unclear data practices and hallucinated responses.</td>
                     <td>Partial intake that still requires staff follow-up.</td>
@@ -666,13 +903,13 @@
             </tbody>
         </table>
         <div class="highlight-box">
-            <strong>Bottom line:</strong> hiring, answering, or “doing nothing” are all fixed or opaque costs. TrueVow turns intake into a clear, controllable unit cost per qualified booking.
+            <strong>Bottom line:</strong> hiring, answering, or “doing nothing” are all fixed or opaque costs. You turn intake into a clear, controllable unit cost per qualified booking.
         </div>
     </section>
 
     <section class="section" id="compounding">
         <h2>The Compounding Effect of Better Intake</h2>
-        <p class="lead">Small improvements in capture and conversion compound faster than any ad budget ever could.</p>
+        <p class="lead" style="font-size: 1.3rem; font-weight: 500; color: var(--slate-400);">Small improvements in capture and conversion compound faster than any ad budget ever could.</p>
         <div class="alt-savings">
             <div class="alt-row">
                 <strong>A few missed calls each week</strong>
@@ -680,7 +917,7 @@
             </div>
             <div class="alt-row">
                 <strong>Each retained case worth ≈ $5,150 net</strong>
-                <span>Even 1–3 additional cases per month quickly becomes six figures in annual impact.</span>
+                <span>Recover 1-3 cases per month = 30 cases/year = $154,500</span>
             </div>
             <div class="alt-row">
                 <strong>Fixed once, paid back every month</strong>
@@ -688,13 +925,13 @@
             </div>
         </div>
         <div class="highlight-box" style="margin-top: 24px;">
-            <strong>For most solo and small PI firms we model, intake leaks translate into roughly $12,000–$20,000 in lost net fees every month, depending on case value and how many viable calls slip through.</strong>
+            <strong>For most solo and small law firms we model, intake leaks translate into roughly $12,000–$20,000 in lost net fees every month, depending on case value and how many viable calls slip through.</strong>
         </div>
     </section>
 
     <section class="section" id="vision">
         <h2>Your Next 90 Days with Intake Handled</h2>
-        <p class="lead">This isn’t about becoming a “category hero.” It’s about running the firm you already built with less chaos and more control.</p>
+        <p class="lead" style="font-size: 1.3rem; font-weight: 500; color: var(--slate-400);">This isn't about becoming a "category hero." It's about running the firm you already built with less chaos and more control.</p>
         <div class="cost-grid">
             <div class="cost-card">
                 <h3>No More Guesswork</h3>
@@ -702,11 +939,11 @@
             </div>
             <div class="cost-card">
                 <h3>No More 9 PM Panic</h3>
-                <p style="font-size:0.95rem; line-height:1.6;">Late-night calls and weekend leads don’t depend on who checked voicemail. TrueVow captures and qualifies them automatically.</p>
+                <p style="font-size:0.95rem; line-height:1.6;">Late-night calls and weekend leads don't depend on who checked voicemail. You capture and qualify them automatically.</p>
             </div>
             <div class="cost-card">
                 <h3>A Calendar That Fills Itself</h3>
-                <p style="font-size:0.95rem; line-height:1.6;">You open your calendar and see qualified consults — not a list of “maybe” callbacks. Intake starts behaving like infrastructure, not a gamble.</p>
+                <p style="font-size:0.95rem; line-height:1.6;">You open your calendar and see qualified consults — not a list of "maybe" callbacks. Intake starts behaving like infrastructure, not a guess.</p>
             </div>
         </div>
         <div class="highlight-box" style="margin-top: 28px;">
@@ -716,7 +953,7 @@
 
     <section class="section" id="trust">
         <h2>System Trust &amp; Data, Not Fabricated Stories</h2>
-        <p class="lead">Lawyers don’t trust marketing copy. They trust standards, systems, and math.</p>
+        <p class="lead" style="font-size: 1.3rem; font-weight: 500; color: var(--slate-400);">Lawyers don't trust marketing copy. They trust standards, systems, and math.</p>
         <div class="cost-grid">
             <div class="cost-card">
                 <h3>Bar-First Architecture</h3>
@@ -750,13 +987,13 @@
 
     <section class="section" id="economics-detail">
         <h2>Marketing ROI &amp; Cost Per Acquisition</h2>
-        <p class="lead">Most firms know what they spend on ads. Very few know the true cost of a retained client once staff time, missed calls, and abandoned leads are included.</p>
+        <p class="lead" style="font-size: 1.3rem; font-weight: 500; color: var(--slate-400);">Most firms know what they spend on ads. Very few know the true cost of a retained client once staff time, missed calls, and abandoned leads are included.</p>
         <div class="highlight-box" style="margin-bottom: 32px;">
             <strong>The hidden bill inside a “normal” intake funnel:</strong>
             <ul style="margin-top: 12px; padding-left: 18px; line-height: 1.6;">
-                <li><strong>Manual screening:</strong> 7–10 minutes per lead in salary and benefits.</li>
-                <li><strong>Attorney review:</strong> conflict checks and document chasing eat into billable hours.</li>
-                <li><strong>Opportunity cost:</strong> viable calls arrive while staff are rejecting the 80% you can’t accept.</li>
+                <li><strong>Manual screening:</strong> You pay salary and benefits for every lead — even the 80% you reject.</li>
+                <li><strong>Attorney review:</strong> Attorneys waste billable hours on intake screening before they even get to conflict checks.</li>
+                <li><strong>Opportunity cost:</strong> While staff is busy screening and rejecting unqualified leads, good calls go to voicemail and are lost.</li>
             </ul>
             <p style="margin-top: 12px;">A modest lead cost can quickly become an expensive retained client when the pipeline is leaky and unstructured.</p>
         </div>
@@ -800,7 +1037,7 @@
 
     <section class="section" id="staffing">
         <h2>TrueVow vs. Internal Staffing</h2>
-        <p class="lead">A full-time intake hire is a fixed bet: salary, benefits, and risk of turnover, regardless of how many cases actually convert.</p>
+        <p class="lead" style="font-size: 1.3rem; font-weight: 500; color: var(--slate-400);">A full-time intake hire is a fixed bet: salary, benefits, and risk of turnover, regardless of how many cases actually convert.</p>
         <table class="comparison-table" style="margin-bottom: 32px;">
             <thead>
                 <tr>
@@ -844,8 +1081,8 @@
 
     <section class="section" id="operational-proof">
         <h2>Operational Proof Points</h2>
-        <p class="lead">Partners move faster when they see operating metrics, not adjectives. These ranges reflect what TrueVow targets in pilots.</p>
-        <div class="cost-grid" style="margin-top: 18px;">
+        <p class="lead" style="font-size: 1.3rem; font-weight: 500; color: var(--slate-400);">Partners move faster when they see operating metrics, not adjectives. These ranges reflect what TrueVow targets in pilots.</p>
+        <div class="cost-grid" style="margin-top: 18px; grid-template-columns: repeat(3, 1fr);">
             <div class="cost-card" style="background:#F8FAFC;">
                 <h3>⏱ Faster Response</h3>
                 <p>Moving from hours to under a minute for new inquiries drastically reduces drop-off.</p>
@@ -856,7 +1093,7 @@
             </div>
             <div class="cost-card" style="background:#ECFEF4;">
                 <h3>📅 Better Conversion Path</h3>
-                <p>More leads progress from “interested” to “booked consult” without manual chasing.</p>
+                <p>More leads progress from "interested" to "booked consult" without manual chasing.</p>
             </div>
             <div class="cost-card" style="background:#F1F5F9;">
                 <h3>🛡 Fewer Intake Errors</h3>
@@ -866,6 +1103,10 @@
                 <h3>💸 Faster Payback</h3>
                 <p>In many pilots, the cost of TrueVow is covered quickly by a small lift in retained cases.</p>
             </div>
+            <div class="cost-card" style="background:#EFF6FF; border: 2px solid #0A2463;">
+                <h3>💰 Zero Monthly Fees</h3>
+                <p><strong>Pay only when you win.</strong> No contracts, no minimums, no wasted ad spend. You invest $29 per qualified booking — not $3,000/month hoping it works.</p>
+        </div>
         </div>
         <div class="highlight-box" style="margin-top: 14px;">These are operational expectations, not guarantees. Legal outcomes always remain with you and your team.</div>
     </section>
@@ -882,17 +1123,17 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Deterministic FSM intake (no LLM deciding what to say)</td>
+                    <td>Rule-based system (not AI) that follows your rules</td>
                     <td><strong>Yes</strong></td>
                     <td>Rare</td>
                 </tr>
                 <tr>
-                    <td>Zero-knowledge handling + strict retention windows</td>
+                    <td>Minimal data storage with strict retention rules</td>
                     <td><strong>Yes</strong></td>
                     <td>Often no</td>
                 </tr>
                 <tr>
-                    <td>Audit-ready intake logs for compliance reviews</td>
+                    <td>Complete intake logs you can show to the Bar</td>
                     <td><strong>Yes</strong></td>
                     <td>Partial or manual</td>
                 </tr>
@@ -902,7 +1143,7 @@
                     <td>Opaque or per-minute</td>
                 </tr>
                 <tr>
-                    <td>Flows screened with ethics counsel</td>
+                    <td>Intake process reviewed with ethics counsel</td>
                     <td><strong>Yes</strong> (by design intent)</td>
                     <td>Generic scripts</td>
                 </tr>
@@ -913,31 +1154,206 @@
                 </tr>
             </tbody>
         </table>
-        <div class="highlight-box" style="max-width: 900px; margin: 0 auto;">If you want to go line by line, request a compliance walkthrough and we’ll show you every major decision point in the intake flow.</div>
+        <div class="highlight-box" style="max-width: 900px; margin: 0 auto; margin-bottom: 40px;">Below is the complete standard call flow for a Personal Injury law firm. Expand it to audit every step from a compliance perspective — see exactly what Benjamin says, what questions are asked, and how decisions are made.</div>
+        
+        <!-- Complete Call Flow Accordion -->
+        <div style="max-width: 900px; margin: 0 auto; margin-top: 40px;">
+            <button class="accordion-toggle" onclick="toggleAccordion()" style="width: 100%; background: #F8F9FA; border: 2px solid #E5E7EB; border-radius: 12px; padding: 20px 24px; text-align: left; cursor: pointer; font-size: 1.1rem; font-weight: 600; color: #1A1A1A; display: flex; justify-content: space-between; align-items: center; transition: all 0.3s ease;">
+                <span>View Complete 16-Question Call Flow (Compliance Review)</span>
+                <span id="accordion-icon" style="font-size: 1.5rem; color: #0A2463; transition: transform 0.3s ease;">+</span>
+            </button>
+            <div id="accordion-content" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; background: #FFFFFF; border: 2px solid #E5E7EB; border-top: none; border-radius: 0 0 12px 12px;">
+                <div style="padding: 32px 24px;">
+                    <h3 style="font-size: 1.4rem; font-weight: 700; color: #1A1A1A; margin-bottom: 24px;">Complete Call Flow: From First Ring to Booking Confirmation</h3>
+                    
+                    <div style="background: #F0FDF4; border-left: 4px solid #22C55E; padding: 16px 20px; border-radius: 8px; margin-bottom: 24px;">
+                        <p style="margin: 0; color: #166534; font-weight: 600; font-size: 0.95rem;">Every step is pre-defined, auditable, and Bar-compliant. No AI decisions. No creative answers. Just your approved rules, executed consistently. This is the actual script currently implemented for Personal Injury cases.</p>
+            </div>
+
+                    <div style="margin-bottom: 32px;">
+                        <h4 style="font-size: 1.1rem; font-weight: 700; color: #0A2463; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #E5E7EB;">STEP 1: Call Answer & Initial Greeting</h4>
+                        <div style="background: #F8F9FA; padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                            <p style="margin: 0; color: #1A1A1A; line-height: 1.7;"><strong>Benjamin:</strong> "Hi — I'm Benjamin, a virtual intake assistant for {law_firm_name}.</p>
+                            <p style="margin: 8px 0 0 0; color: #1A1A1A; line-height: 1.7;">This call is private. No recording is made.</p>
+                            <p style="margin: 8px 0 0 0; color: #1A1A1A; line-height: 1.7;">Nothing you say will be shared without your consent.</p>
+                            <p style="margin: 8px 0 0 0; color: #1A1A1A; line-height: 1.7;">I'll ask you questions to help connect you with an attorney — I can't provide legal advice, only an attorney can.</p>
+                            <p style="margin: 8px 0 0 0; color: #1A1A1A; line-height: 1.7;">We're here to understand what happened, so we can help. Let's get started...</p>
+                            <p style="margin: 8px 0 0 0; color: #1A1A1A; line-height: 1.7;"><strong>Are you a new caller or returning?</strong>"</p>
+            </div>
+                        <p style="font-size: 0.9rem; color: #666; margin-top: 8px; margin-bottom: 0;"><strong>Compliance Note:</strong> Clear disclosure that Benjamin is a service provider to the law firm, not part of the firm. Proactive compliance with Rule 5.5, prevents expectation of legal advice.</p>
+            </div>
+
+                    <div style="margin-bottom: 32px;">
+                        <h4 style="font-size: 1.1rem; font-weight: 700; color: #0A2463; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #E5E7EB;">STEP 2: Contact Information Collection (For New Callers)</h4>
+                        <div style="background: #F8F9FA; padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                            <p style="margin: 0; color: #1A1A1A; line-height: 1.7;"><strong>Benjamin:</strong> "Thank you for reaching out. Let's gather some preliminary details to better understand your case. This will ensure the attorney is fully prepared to assist you during the consultation. Before we begin with the details, I'd like to capture your contact information — just in case we get disconnected or the call drops. This way, we can reach back out to you, book your consultation, and make sure you get the help you need. Your information is completely confidential and only used to contact you about your case. Is that okay with you? — Just say 'One' for Yes or 'Two' to Skip."</p>
+                            <p style="margin: 12px 0 0 0; color: #1A1A1A; line-height: 1.7;"><strong>If Yes:</strong> "Thanks, may I have your first name. And if you don't mind Could you spell it out please?"</p>
+                            <p style="margin: 8px 0 0 0; color: #1A1A1A; line-height: 1.7;">"{first_name}... Could you also spell out your last name as well?"</p>
+                            <p style="margin: 8px 0 0 0; color: #1A1A1A; line-height: 1.7;">"Could i have our email address, and would you be kind to spell it out for accuracy please?"</p>
+                            <p style="margin: 8px 0 0 0; color: #1A1A1A; line-height: 1.7;">"And finally would you be kind and provide me with your preferred contact number, rest assured your number will not be shared with any third party and will strictly be used for communication between the law firm and yourself?"</p>
+            </div>
+                        <p style="font-size: 0.9rem; color: #666; margin-top: 8px; margin-bottom: 0;"><strong>Compliance Note:</strong> Contact information is only collected with explicit permission. If caller skips, Benjamin proceeds to practice area selection.</p>
+        </div>
+
+                    <div style="margin-bottom: 32px;">
+                        <h4 style="font-size: 1.1rem; font-weight: 700; color: #0A2463; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #E5E7EB;">STEP 3: Practice Area Selection</h4>
+                        <div style="background: #F8F9FA; padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                            <p style="margin: 0; color: #1A1A1A; line-height: 1.7;"><strong>Benjamin:</strong> "To connect you with the right support — just let us know which type of case this is about. Just say the number from any of the following options:"</p>
+                            <ul style="margin: 12px 0 0 0; padding-left: 20px; color: #1A1A1A; line-height: 1.8;">
+                                <li>'One' — if it's a car accident</li>
+                                <li>'Two' — if it's a slip and fall</li>
+                                <li>'Three' — if it's a workplace injury</li>
+                                <li>'Four' — if it's a dog bite</li>
+                                <li>'Five' — if it's due to a defective product</li>
+                                <li>'Six' — if it's another personal injury claim</li>
+                            </ul>
+                            <p style="margin: 12px 0 0 0; color: #1A1A1A; line-height: 1.7;">"Just say the number — or repeat the case type."</p>
+            </div>
+                        <p style="font-size: 0.9rem; color: #666; margin-top: 8px; margin-bottom: 0;"><strong>Design Note:</strong> No open-ended questions. Only selections. Avoids asking "What happened?" — too traumatic. Gives control: they pick the label that fits.</p>
+            </div>
+
+                    <div style="margin-bottom: 32px;">
+                        <h4 style="font-size: 1.1rem; font-weight: 700; color: #0A2463; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #E5E7EB;">STEP 4: Car Accident Qualification Questions (Q2-Q17)</h4>
+                        <p style="color: #666; font-size: 0.95rem; margin-bottom: 16px;">If caller selects "One" (Car Accident), Benjamin proceeds through 16 sequential questions. All questions use yes/no or selection-based logic. No open-ended questions. No legal advice.</p>
+                        
+                        <div style="background: #FFF7ED; border-left: 4px solid #F59E0B; padding: 16px 20px; border-radius: 8px; margin-bottom: 20px;">
+                            <p style="margin: 0; color: #92400E; font-weight: 600; font-size: 0.95rem; margin-bottom: 12px;">Complete Question Flow for Car Accident Cases:</p>
+                            <ol style="margin: 0; padding-left: 20px; color: #1A1A1A; line-height: 1.8;">
+                                <li><strong>Q2:</strong> "I understand you need assistance with Car accident case. Now, tell me — was this in California?" (Yes/No/Not sure)</li>
+                                <li><strong>Q3:</strong> "Sorry to hear that. When did the accident occur?" (Today/Within last week/More than a week ago/More than a month ago)</li>
+                                <li><strong>Q4:</strong> "Was a police report filed at the scene? Just say the number" (Yes I filed it/No no officer came/Not sure I left the scene)</li>
+                                <li><strong>Q5:</strong> "Did you or the other party receive a citation?" (Only asked if Q4 = Yes) (Yes I received/Yes other party received/No citations)</li>
+                                <li><strong>Q6:</strong> "Were there any witnesses? Just say the number" (Yes I have names/Yes but don't have contact/No I was alone/Not sure)</li>
+                                <li><strong>Q7:</strong> "Did your car sustain damage? Just say the number" (Minor/Moderate/Severe/Total loss/No damage but I was hurt/Not sure)</li>
+                                <li><strong>Q8:</strong> "Have you seen a doctor for injuries from the accident? Just say the number" (Yes ER visit/Yes doctor's office/Yes physical therapy/Yes surgery/No not yet/Waiting for appointment)</li>
+                                <li><strong>Q9:</strong> "What type of injuries did you sustain?" (Head Injury/Broken Bone/Cuts and Bruises/Whiplash/Multiple injury types/Other) <em>— Skipped if Q8 = No not yet or Waiting</em></li>
+                                <li><strong>Q10:</strong> "Are you still receiving medical treatment? Just say the number" (Yes/No) <em>— Skipped if Q8 = No not yet or Waiting</em></li>
+                                <li><strong>Q11:</strong> "Was the other party injured? Just say the number" (Yes Minor/Yes Severe/No Only I was hurt/Not sure)</li>
+                                <li><strong>Q12:</strong> "Has the injury kept you from working? Just say the number" (Yes I'm on leave/Yes light duty only/No back to work/Self-employed income affected/Unemployed job prospects lost)</li>
+                                <li><strong>Q13:</strong> "What kind of insurance coverage do you have? Just say the number" (Full Coverage/Liability Coverage/Uninsured or Underinsured Motorist/Commercial Policy/Don't know my policy)</li>
+                                <li><strong>Q14:</strong> "Have you received an estimate for the car repairs?" (Yes/No)</li>
+                                <li><strong>Q15:</strong> "Has the other party's insurer made an offer? Just say the number" (Yes here's the amount/Yes but I didn't accept/No silent/No I haven't contacted them)</li>
+                                <li><strong>Q16:</strong> "If you're comfortable sharing, what range was the offer in?" (Under $25,000/$25,000–$50,000/Over $50,000)</li>
+                                <li><strong>Q17:</strong> "Would you like to schedule a consultation? Just say the number" (Book my consult now/Call me back at a later time/Please send me the intake form first)</li>
+                            </ol>
+            </div>
+                        <p style="font-size: 0.9rem; color: #666; margin-top: 8px; margin-bottom: 0;"><strong>Compliance Safeguards:</strong> Never asks for names, SSNs, or medical details. Never asks for diagnosis — only treatment status. Never asks for VIN, photos, or repair cost. All answers are categorical. Questions are factual only — no legal advice.</p>
+        </div>
+
+                    <div style="margin-bottom: 32px;">
+                        <h4 style="font-size: 1.1rem; font-weight: 700; color: #0A2463; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #E5E7EB;">STEP 5: Consultation Booking (Three Options)</h4>
+                        
+                        <div style="background: #ECFEF4; border-left: 4px solid #22C55E; padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                            <p style="margin: 0; color: #166534; font-weight: 600; margin-bottom: 12px;">OPTION A: "Book My Consult Now"</p>
+                            <p style="margin: 0; color: #1A1A1A; line-height: 1.7;"><strong>Benjamin:</strong> "What is your preferred date and time? Or I can suggest the next available slots. Would you prefer morning or afternoon? We have openings: Wednesday at 9:30 AM or Wednesday at 2:00 PM. Which one works better?"</p>
+                            <p style="margin: 12px 0 0 0; color: #1A1A1A; line-height: 1.7;">After response: "Thank you. Your consultation is confirmed for [Day] at [Time]. We'll send a secure message to your phone with: A link to complete your intake form, Our Engagement Letter — explaining how we work, What to bring to your first meeting. No voicemail. No pressure. Just clarity. If anything changes, you can reschedule through the link. Have a good day. And rest easy — we're here when you're ready."</p>
+        </div>
+
+                        <div style="background: #FEF2F2; border-left: 4px solid #DC2626; padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                            <p style="margin: 0; color: #991B1B; font-weight: 600; margin-bottom: 12px;">OPTION B: "Call Me Back Later"</p>
+                            <p style="margin: 0; color: #1A1A1A; line-height: 1.7;"><strong>Benjamin:</strong> "We understand. There's no obligation. We won't leave a voicemail. We won't send an email. We won't save your number beyond this session. If you choose to reach out again — whether today or in six months — we'll be here. Until you choose for us to call you at a preferred time of yours?"</p>
+                            <p style="margin: 12px 0 0 0; color: #1A1A1A; line-height: 1.7;">After response: "Have a good day. And rest easy — we're here when you're ready."</p>
+                            <p style="margin: 12px 0 0 0; color: #DC2626; font-size: 0.9rem; font-weight: 600;">⚠️ Do NOT store phone beyond session. Only call once — unless reconfirmed.</p>
+                        </div>
+
+                        <div style="background: #EFF6FF; border-left: 4px solid #0A2463; padding: 16px; border-radius: 8px; margin-bottom: 0;">
+                            <p style="margin: 0; color: #0A2463; font-weight: 600; margin-bottom: 12px;">OPTION C: "Send Me Intake Form & Engagement Letter"</p>
+                            <p style="margin: 0; color: #1A1A1A; line-height: 1.7;"><strong>Benjamin:</strong> "Thank you for sharing. We've captured your request. I'm sending two secure links to your phone via SMS: A private link to complete your intake — only you can access it, An Engagement Letter explaining how we work — no jargon, just clarity. If you choose to move forward, you should submit the intake form and our attorney will reach out within 24 hours or you can choose to book a consultation yourself. Until then — rest easy. Your privacy is protected. Your story was never recorded. And nothing you said will be shared unless you confirm. We're here when you're ready."</p>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 32px;">
+                        <h4 style="font-size: 1.1rem; font-weight: 700; color: #0A2463; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #E5E7EB;">STEP 6: SMS Confirmation</h4>
+                        <div style="background: #F8F9FA; padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                            <p style="margin: 0; color: #1A1A1A; line-height: 1.7;"><strong>For Booked Consultations:</strong> SMS sent with appointment details, secure intake form link, Engagement Letter link, what to bring, and expiration notice (7 days).</p>
+                            <p style="margin: 12px 0 0 0; color: #1A1A1A; line-height: 1.7;"><strong>For Intake Form Requests:</strong> SMS sent with private intake form link and Engagement Letter link. No tracking. No login. No risk.</p>
+                            <p style="margin: 12px 0 0 0; color: #1A1A1A; line-height: 1.7;"><strong>System Action:</strong> Complete intake log sent to firm with all questions asked and answers given. Timestamped. Auditable.</p>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 0;">
+                        <h4 style="font-size: 1.1rem; font-weight: 700; color: #0A2463; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #E5E7EB;">STEP 7: Call Completion</h4>
+                        <div style="background: #F8F9FA; padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                            <p style="margin: 0; color: #1A1A1A; line-height: 1.7;"><strong>Benjamin:</strong> "You're all set! We'll see you [Day] at [Time]. If you need to reschedule, just call this number. Have a great day!"</p>
+                        </div>
+                        <p style="font-size: 0.9rem; color: #666; margin-top: 8px; margin-bottom: 0;"><strong>Result:</strong> Qualified booking created (if applicable). Complete intake log available for attorney review. No legal advice given. No promises made. No audio stored. Just factual information collection and appointment scheduling.</p>
+                    </div>
+
+                    <div style="background: #EFF6FF; border-left: 4px solid #0A2463; padding: 20px; border-radius: 8px; margin-top: 32px;">
+                        <p style="margin: 0; color: #1A1A1A; line-height: 1.7; font-weight: 600; margin-bottom: 8px;">Key Compliance Safeguards:</p>
+                        <ul style="margin: 0; padding-left: 20px; color: #1A1A1A; line-height: 1.8;">
+                            <li>Every question is pre-approved by you during onboarding</li>
+                            <li>No legal advice is ever given — only factual questions</li>
+                            <li>Complete audit trail of every call is available</li>
+                            <li>All decisions follow your rules — no AI creativity</li>
+                            <li>Caller is clearly informed that Benjamin is not an attorney</li>
+                            <li>You only pay for qualified bookings (≥8 questions answered, within statute, practice area match)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script>
+            function toggleAccordion() {
+                const content = document.getElementById('accordion-content');
+                const icon = document.getElementById('accordion-icon');
+                
+                if (content.style.maxHeight === '0px' || content.style.maxHeight === '') {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    icon.textContent = '−';
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    content.style.maxHeight = '0px';
+                    icon.textContent = '+';
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            }
+    </script>
     </section>
 
-    <section class="section" id="faq">
+                <section class="section" id="faq">
         <h2>Frequently Asked Questions</h2>
-        <div style="max-width: 900px; margin: 24px auto;">
-            <div style="margin-bottom: 18px;">
-                <strong>Do you replace my receptionist?</strong>
-                <p>We replace unpredictability, not people. Many firms keep a receptionist for in-office tasks and client care, and let TrueVow handle every inbound lead 24/7.</p>
+        <div style="max-width: 1000px; margin: 0 auto; padding: 40px 24px;">
+            <div class="faq-card" style="background: #F0FDF4; border-left: 4px solid #22C55E; border-radius: 12px; padding: 24px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(34,197,94,0.1);">
+                <p style="font-size: 18px; color: #1A1A1A; margin: 0 0 12px 0; line-height: 1.6; font-weight: 700;">
+                    <strong style="color: #166534;">Do you replace my receptionist?</strong>
+                </p>
+                <p style="font-size: 16px; color: #1A1A1A; margin: 0; line-height: 1.6;">
+                    We replace unpredictability, not people. Many firms keep a receptionist for in-office tasks and client care, and let TrueVow handle every inbound lead 24/7.
+                </p>
             </div>
-            <div style="margin-bottom: 18px;">
-                <strong>Do you use generative AI to make legal decisions?</strong>
-                <p>No. Core intake relies on deterministic finite-state logic that your firm can review. Supporting ML is used for infrastructure tasks like speech-to-text, not for giving legal advice.</p>
+            <div class="faq-card" style="background: #F0FDF4; border-left: 4px solid #22C55E; border-radius: 12px; padding: 24px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(34,197,94,0.1);">
+                <p style="font-size: 18px; color: #1A1A1A; margin: 0 0 12px 0; line-height: 1.6; font-weight: 700;">
+                    <strong style="color: #166534;">Do you use generative AI to make legal decisions?</strong>
+                </p>
+                <p style="font-size: 16px; color: #1A1A1A; margin: 0; line-height: 1.6;">
+                    No. Core intake relies on deterministic finite-state logic that your firm can review. Supporting ML is used for infrastructure tasks like speech-to-text, not for giving legal advice.
+                </p>
             </div>
-            <div style="margin-bottom: 18px;">
-                <strong>What data is stored and for how long?</strong>
-                <p>By default, we avoid long-term storage. Where retention is enabled, it operates within clearly defined windows and is designed to support QA and export, not model training.</p>
+            <div class="faq-card" style="background: #F0FDF4; border-left: 4px solid #22C55E; border-radius: 12px; padding: 24px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(34,197,94,0.1);">
+                <p style="font-size: 18px; color: #1A1A1A; margin: 0 0 12px 0; line-height: 1.6; font-weight: 700;">
+                    <strong style="color: #166534;">What data is stored and for how long?</strong>
+                </p>
+                <p style="font-size: 16px; color: #1A1A1A; margin: 0; line-height: 1.6;">
+                    By default, we avoid long-term storage. Where retention is enabled, it operates within clearly defined windows and is designed to support QA and export, not model training.
+                </p>
             </div>
-            <div style="margin-bottom: 18px;">
-                <strong>Can you prove ROI using our own funnel numbers?</strong>
-                <p>Yes. We encourage firms to plug in their actual marketing and intake data. The whole point of TrueVow is to make your economics transparent enough to defend in a partner meeting.</p>
+            <div class="faq-card" style="background: #F0FDF4; border-left: 4px solid #22C55E; border-radius: 12px; padding: 24px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(34,197,94,0.1);">
+                <p style="font-size: 18px; color: #1A1A1A; margin: 0 0 12px 0; line-height: 1.6; font-weight: 700;">
+                    <strong style="color: #166534;">Can you prove ROI using our own funnel numbers?</strong>
+                </p>
+                <p style="font-size: 16px; color: #1A1A1A; margin: 0; line-height: 1.6;">
+                    Yes. We encourage firms to plug in their actual marketing and intake data. The whole point of TrueVow is to make your economics transparent enough to defend in a partner meeting.
+                </p>
             </div>
-            <div style="margin-bottom: 18px;">
-                <strong>Is this only for personal injury practices?</strong>
-                <p>No. While the example math often uses PI-style case values, the underlying intake engine is built to support multiple practice areas where missed calls and slow follow-up cost real money.</p>
+            <div class="faq-card" style="background: #F0FDF4; border-left: 4px solid #22C55E; border-radius: 12px; padding: 24px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(34,197,94,0.1);">
+                <p style="font-size: 18px; color: #1A1A1A; margin: 0 0 12px 0; line-height: 1.6; font-weight: 700;">
+                    <strong style="color: #166534;">Is this only for personal injury practices?</strong>
+                </p>
+                <p style="font-size: 16px; color: #1A1A1A; margin: 0; line-height: 1.6;">
+                    No. While the example math often uses PI-style case values, the underlying intake engine is built to support multiple practice areas where missed calls and slow follow-up cost real money.
+                </p>
             </div>
         </div>
     </section>
@@ -945,10 +1361,10 @@
     <section class="section" id="final-cta">
         <div class="cta-panel">
             <h3>The Next Call You Miss Could Cost You $5,150</h3>
-            <p>The next one you capture with TrueVow could start a $5,150 case. You’ve already built the firm. TrueVow helps it run like the future you pictured when you started.</p>
+            <p>The next one you capture could start a $5,150 case. You've already built the firm. You run it like the future you pictured when you started.</p>
             <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:16px; margin-top: 8px;">
-                <a href="apply.html?source=roi" style="background:#FACC15;color:#1A1A1A;text-decoration:none;">Book My Demo</a>
-                <a href="#roi-math" style="background:#FFFFFF;color:#111827;text-decoration:none;">Calculate My ROI</a>
+                <a href="index.html#form" style="background:#FACC15;color:#1A1A1A;text-decoration:none; padding: 16px 34px; border-radius: 999px; font-weight: 700; font-size: 1rem; box-shadow: 0 14px 40px rgba(250,204,21,0.28); transition: transform 0.2s ease, box-shadow 0.2s ease; display: inline-flex; align-items: center; justify-content: center;">Get a live demo call in 8 minutes.</a>
+                <a href="apply.html" style="background:#6B7280;color:#FFFFFF;text-decoration:none; padding: 16px 34px; border-radius: 999px; font-weight: 700; font-size: 1rem; box-shadow: 0 14px 40px rgba(107,114,128,0.28); transition: transform 0.2s ease, box-shadow 0.2s ease; display: inline-flex; align-items: center; justify-content: center;">Apply Now • Pay Only When You Win →</a>
             </div>
         </div>
     </section>
@@ -1009,11 +1425,139 @@
         
         <!-- Disclaimer -->
         <p style="font-size: 11pt; color: #555; margin-top: 32px; line-height: 1.8; max-width: 900px; margin-left: auto; margin-right: auto; padding-bottom: 60px;">
-            © 2026 TrueVow Technologies. All rights reserved. TrueVow is a brand of TrueVow Global Technologies FZ-LLC (UAE), a subsidiary of TrueVow Global Holdings LLC (Nevis). TrueVow (USA) Inc. (Wyoming) provides passive marketing only and does not handle contracts or operations. All contracts are with TrueVow Global Technologies FZ-LLC (UAE). Technology and IP held by TrueVow Global Holdings LLC (Nevis). We are not a law firm and do not provide legal advice. By using our services, you acknowledge that TrueVow operates as a technology and services provider only.
+            © 2026 TrueVow Technologies. All rights reserved. TrueVow is a brand of TrueVow Global Tech FZE LLC (UAE), a subsidiary of TrueVow Global Holdings LLC (Nevis). TrueVow (USA) Inc. (Wyoming) provides passive marketing only and does not handle contracts or operations. All contracts are with TrueVow Global Tech FZE LLC (UAE). Technology and IP held by TrueVow Global Holdings LLC (Nevis). We are not a law firm and do not provide legal advice. By using our services, you acknowledge that TrueVow operates as a technology and services provider only.
         </p>
     </div>
 </footer>
 
+<script>
+    // Typewriter Animation
+    (function() {
+        const questions = [
+            '"Can I afford to keep losing $5,150 per missed call while I train my staff?"',
+            '"Will I keep losing cases to voicemail, or will this actually work?"',
+            '"Is this going to be another tech headache I end up managing myself?"',
+            '"Can I trust a system that follows my rules (not AI) to capture the cases I\'m losing?"'
+        ];
+        
+        const finalText = 'You\'re asking the right questions. You\'ve seen the features. You\'ve checked the pricing. Now there\'s only one question left: <strong>What are you losing now, and what will you stop losing?</strong>';
+        
+        const container = document.getElementById('typewriter-container');
+        if (!container) return;
+        
+        // Get all placeholder lines
+        const placeholderLines = container.querySelectorAll('.typewriter-line');
+        
+        let currentQuestionIndex = 0;
+        let currentCharIndex = 0;
+        let currentLineElement = null;
+        
+        // Typing speed: ~50-60 words per minute (reading speed)
+        // Average word length ~5 chars, so ~250-300 chars per minute = ~4-5 chars per second
+        // For better readability, we'll use ~60ms per character (~16-17 chars/second)
+        const typingSpeed = 60; // milliseconds per character
+        const pauseBetweenQuestions = 1500; // 1.5 seconds pause between questions
+        const pauseBeforeFinal = 2000; // 2 seconds pause before final text
+        
+        function typeNextCharacter() {
+            if (currentQuestionIndex < questions.length) {
+                // Still typing questions
+                if (!currentLineElement) {
+                    // Use existing placeholder line and make it visible
+                    currentLineElement = placeholderLines[currentQuestionIndex];
+                    currentLineElement.style.visibility = 'visible';
+                    currentLineElement.textContent = ''; // Clear placeholder text
+                }
+                
+                const currentQuestion = questions[currentQuestionIndex];
+                
+                if (currentCharIndex < currentQuestion.length) {
+                    // Type next character with cursor
+                    const textSoFar = currentQuestion.substring(0, currentCharIndex + 1);
+                    currentLineElement.innerHTML = textSoFar + '<span class="typewriter-cursor"></span>';
+                    currentCharIndex++;
+                    setTimeout(typeNextCharacter, typingSpeed);
+                } else {
+                    // Question complete, remove cursor and mark as completed
+                    currentLineElement.innerHTML = currentQuestion;
+                    currentLineElement.classList.add('completed');
+                    currentLineElement = null;
+                    currentCharIndex = 0;
+                    currentQuestionIndex++;
+                    setTimeout(typeNextCharacter, pauseBetweenQuestions);
+                }
+            } else if (currentQuestionIndex === questions.length) {
+                // All questions done, now type final text
+                if (!currentLineElement) {
+                    // Use the last placeholder line (final text)
+                    currentLineElement = placeholderLines[questions.length];
+                    // Make it visible - keep placeholder text to maintain layout height
+                    // We'll replace it gradually as we type, preventing layout shift
+                    currentLineElement.style.visibility = 'visible';
+                    // Don't clear placeholder text yet - it maintains the space
+                    // Reset to start typing from beginning
+                    currentCharIndex = 0;
+                    setTimeout(typeNextCharacter, pauseBeforeFinal);
+                    return;
+                }
+                
+                if (currentCharIndex < finalText.length) {
+                    // On first character, clear the placeholder text
+                    if (currentCharIndex === 0) {
+                        currentLineElement.textContent = '';
+                    }
+                    // Type final text (including HTML) with cursor
+                    // Handle HTML tags properly - if we're in the middle of a tag, skip to end of tag
+                    let char = finalText[currentCharIndex];
+                    if (char === '<') {
+                        // Find the end of the HTML tag
+                        const tagEnd = finalText.indexOf('>', currentCharIndex);
+                        if (tagEnd !== -1) {
+                            // Insert the whole tag at once
+                            currentCharIndex = tagEnd + 1;
+                        } else {
+                            currentCharIndex++;
+                        }
+                    } else {
+                        currentCharIndex++;
+                    }
+                    const textSoFar = finalText.substring(0, currentCharIndex);
+                    currentLineElement.innerHTML = textSoFar + '<span class="typewriter-cursor"></span>';
+                    setTimeout(typeNextCharacter, typingSpeed);
+                } else {
+                    // Animation complete - remove cursor
+                    currentLineElement.innerHTML = finalText;
+                }
+            }
+        }
+        
+        // Start animation when page loads
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', typeNextCharacter);
+        } else {
+            typeNextCharacter();
+        }
+    })();
 
+    // Force scroll to top on page load/refresh
+    window.addEventListener('load', function() {
+        window.scrollTo(0, 0);
+    });
+    
+    // Also handle immediate scroll if page is already loaded
+    if (document.readyState === 'complete') {
+        window.scrollTo(0, 0);
+    } else {
+        document.addEventListener('DOMContentLoaded', function() {
+            window.scrollTo(0, 0);
+        });
+    }
+</script>
+
+    <!-- STICKY FLOATING CTA BUTTON -->
+    <a href="apply.html" class="sticky-cta-button">
+        <span class="cta-text">Lock Your Spot →</span>
+        <span style="font-size: 18px;">🚀</span>
+    </a>
 </body>
 </html>

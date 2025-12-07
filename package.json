@@ -1,0 +1,20 @@
+{
+  "name": "truevow-website",
+  "version": "1.0.0",
+  "description": "TrueVow Marketing Website with Supabase Database Integration",
+  "scripts": {
+    "db:execute": "node scripts/execute_sql_to_supabase.js",
+    "db:populate": "node scripts/populate_county_data.js",
+    "db:test": "node scripts/test-db-connections.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "pg": "^8.11.3",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
+

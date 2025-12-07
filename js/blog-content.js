@@ -25,7 +25,7 @@ const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
  */
 async function fetchBlogContent(options = {}) {
     try {
-        let url = `${SUPABASE_URL}/rest/v1/blog_content?status=eq.published&order=publish_date.desc`;
+        let url = `${SUPABASE_URL}/rest/v1/web_blog_content?status=eq.published&order=publish_date.desc`;
         
         // Add filters
         if (options.type) {
@@ -71,7 +71,7 @@ async function fetchBlogContent(options = {}) {
  */
 async function trackContentAnalytics(contentId, eventType, metadata = {}) {
     try {
-        const response = await fetch(`${SUPABASE_URL}/rest/v1/blog_analytics`, {
+        const response = await fetch(`${SUPABASE_URL}/rest/v1/web_blog_analytics`, {
             method: 'POST',
             headers: {
                 'apikey': SUPABASE_ANON_KEY,
