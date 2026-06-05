@@ -6,21 +6,17 @@
  *
  * Usage:
  *   <script src="widget.js"
- *     data-bridge-type="assemblyai"
- *     data-tenant-url="https://your-tenant-app.com"
- *     data-firm-name="Oakwood Law Firm"
+ *     data-endpoint="/api/v1/widget/chat"
  *     data-agent-name="Benjamin"
  *     data-primary-color="#1a56db">
  *   </script>
  *
  * Supported data-* attributes (all optional, defaults shown):
- *   data-bridge-type     "assemblyai"    — cartesia | assemblyai | simple | gemini | pipecat
- *   data-tenant-url      required        — Tenant App base URL (http://localhost:3056)
- *   data-firm-name       "oakwood_law_firm"
- *   data-agent-name      "Benjamin"
- *   data-primary-color   "#1a56db"
- *   data-position        "bottom-right"  — bottom-right | bottom-left
- *   data-show-launcher   "true"
+ *   data-endpoint         "/api/v1/widget/chat"  — Sales Ops widget endpoint (isolated LLM, not Tenant App)
+ *   data-agent-name       "Benjamin"
+ *   data-primary-color    "#1a56db"
+ *   data-position         "bottom-right"  — bottom-right | bottom-left
+ *   data-show-launcher    "true"
  */
 
 (function () {
@@ -28,13 +24,11 @@
   if (!script) { var scripts = document.getElementsByTagName('script'); script = scripts[scripts.length - 1] }
 
   var CONFIG = {
-    bridgeType:    script.getAttribute('data-bridge-type')    || 'assemblyai',
-    tenantUrl:     script.getAttribute('data-tenant-url')     || 'http://localhost:3056',
-    firmName:      script.getAttribute('data-firm-name')      || 'oakwood_law_firm',
-    agentName:     script.getAttribute('data-agent-name')     || 'Benjamin',
-    primaryColor:  script.getAttribute('data-primary-color')  || '#1a56db',
-    position:      script.getAttribute('data-position')       || 'bottom-right',
-    showLauncher:  script.getAttribute('data-show-launcher')  !== 'false',
+    endpoint:     script.getAttribute('data-endpoint')      || '/api/v1/widget/chat',
+    agentName:    script.getAttribute('data-agent-name')    || 'Benjamin',
+    primaryColor: script.getAttribute('data-primary-color') || '#1a56db',
+    position:     script.getAttribute('data-position')      || 'bottom-right',
+    showLauncher: script.getAttribute('data-show-launcher') !== 'false',
   }
 
   // ── CSS ──────────────────────────────────────────────────────────
@@ -69,7 +63,6 @@
     '.tvw-mic-btn[data-active=true]{background:#ef4444;color:#fff;border-color:#ef4444;animation:tvw-pulse 1s infinite}',
     '@keyframes tvw-pulse{0%,100%{box-shadow:0 0 0 0 rgba(239,68,68,.4)}50%{box-shadow:0 0 0 10px rgba(239,68,68,0)}}',
     '.tvw-send-btn{width:40px;height:40px;border-radius:50%;border:none;background:' + CONFIG.primaryColor + ';color:#fff;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center}',
-    '.tvw-bridge-badge{font-size:10px;opacity:.7;margin-top:2px}',
     CONFIG.position === 'bottom-left'
       ? '.tvw-launcher{bottom:24px;left:24px} .tvw-chat{bottom:90px;left:24px}'
       : '.tvw-launcher{bottom:24px;right:24px} .tvw-chat{bottom:90px;right:24px}',
@@ -97,8 +90,7 @@
   var chat = el('div', 'tvw-chat')
   chat.innerHTML =
     '<div class="tvw-chat-header">' +
-      '<div><h3>' + CONFIG.agentName + '</h3>' +
-      '<div class="tvw-bridge-badge">via ' + CONFIG.bridgeType + '</div></div>' +
+      '<div><h3>' + CONFIG.agentName + '</h3></div>' +
       '<button onclick="this.closest(\'.tvw-chat\').classList.remove(\'open\')">&times;</button>' +
     '</div>' +
     '<div class="tvw-chat-messages" id="tvwMessages"></div>' +
@@ -143,26 +135,19 @@
     container.scrollTop = container.scrollHeight
 
     try {
-      var res = await fetch(CONFIG.tenantUrl + '/api/v1/voice-bridge/process', {
+      var res = await fetch(CONFIG.endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          bridge_type: CONFIG.bridgeType,
+          message: text,
           session_id: sessionId,
-          user_text: text,
-          firm_id: CONFIG.firmName,
         }),
       })
       var data = await res.json()
-      var response = data.prompt || data.response || data.message || 'I didn\'t catch that.'
+      var response = data.response || 'I didn\'t catch that.'
 
       if (typing) typing.remove()
       addMsg('agent', response)
-
-      if (data.is_complete) {
-        sessionId = crypto.randomUUID ? crypto.randomUUID() : Date.now().toString(36)
-        addMsg('system', 'Consultation complete. Want to schedule a callback?')
-      }
     } catch (_) {
       if (typing) typing.remove()
       addMsg('agent', 'Connection issue. Please try again.')
