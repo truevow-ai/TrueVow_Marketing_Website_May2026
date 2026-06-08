@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrueVow Pricing — Pipeline Control for Solo & Small Law Firms</title>
-    <meta name="description" content="Stop losing cases across your pipeline. INTAKE captures calls, LEVERAGE structures case value, and SETTLE supports settlement decisions with confidence-labeled comparable signals.">
+    <title>TrueVow Pricing — AI Intake & Case Qualification for PI Law Firms</title>
+    <meta name="description" content="Never miss a case. Only pay for qualified opportunities. Simple, scalable pricing for solo and small PI firms.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
@@ -29,8 +29,8 @@
         .nav-cta:hover { background: #0052CC; }
         .nav-dropdown { position: relative; }
         .nav-dropdown-toggle { cursor: pointer; display: inline-flex; align-items: center; gap: 4px; background: none; border: none; color: #555; text-decoration: none; font-size: 16px; font-weight: 500; font-family: 'Montserrat', sans-serif; padding: 0; }
-                .nav-dropdown-toggle::after { content: ' ▾'; font-size: 10px; }
-                .nav-dropdown:hover .nav-dropdown-toggle::after { content: ' ▴'; }
+        .nav-dropdown-toggle::after { content: ' ▾'; font-size: 10px; }
+        .nav-dropdown:hover .nav-dropdown-toggle::after { content: ' ▴'; }
         .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%); background: white; border: 1px solid #E5E5E5; border-radius: 8px; padding: 8px 0; min-width: 210px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); z-index: 1001; }
         .nav-dropdown-menu a { display: block; padding: 10px 20px; color: #555555 !important; text-decoration: none !important; font-size: 15px; font-weight: 500; white-space: nowrap; }
         .nav-dropdown-menu a:hover { color: #0A2463 !important; background: #F8F9FA; }
@@ -38,65 +38,23 @@
         .hero { padding: 80px 24px; background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%); color: white; text-align: center; }
         .hero h1 { font-size: 52px; font-weight: 800; margin-bottom: 24px; color: white; line-height: 1.2; max-width: 900px; margin-left: auto; margin-right: auto; }
         .hero-subtitle { font-size: 22px; color: #E5E5E5; margin-bottom: 32px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.8; }
-        .pipeline-stages { display: flex; justify-content: center; gap: 24px; margin: 40px 0; flex-wrap: wrap; }
-        .pipeline-stage { background: rgba(255,255,255,0.1); padding: 24px 32px; border-radius: 12px; border: 2px solid rgba(255,255,255,0.2); min-width: 180px; }
-        .pipeline-stage-label { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; font-weight: 700; }
-        .pipeline-stage.intake .pipeline-stage-label { color: #10B981; }
-        .pipeline-stage.leverage .pipeline-stage-label { color: #60A5FA; }
-        .pipeline-stage.settle .pipeline-stage-label { color: #FFD700; }
-        .pipeline-stage-name { font-size: 24px; font-weight: 800; color: white; }
-        .hero-trust { display: inline-block; background: rgba(255, 255, 255, 0.06); color: rgba(255,255,255,0.85); padding: 16px 32px; border-radius: 8px; font-weight: 600; margin-top: 24px; border: 1px solid rgba(255,255,255,0.2); }
         .hero-cta { margin-top: 40px; }
         .hero-cta a { display: inline-block; background: white; color: #0A2463; padding: 20px 48px; border-radius: 12px; font-size: 20px; font-weight: 800; text-decoration: none; transition: all 0.2s; box-shadow: 0 4px 20px rgba(255,255,255,0.2); }
         .hero-cta a:hover { background: #0A2463; color: white; transform: translateY(-3px); box-shadow: 0 8px 30px rgba(255,255,255,0.15); }
         .hero-anchor { margin-top: 20px; font-size: 16px; color: rgba(255,255,255,0.7); font-weight: 600; }
-        .cost-box { margin-top: 48px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); border-radius: 16px; padding: 40px; max-width: 700px; margin-left: auto; margin-right: auto; }
-        .cost-box h3 { font-size: 24px; font-weight: 800; color: #FFD700; margin-bottom: 24px; }
-        .cost-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        .cost-row:last-child { border-bottom: none; }
-        .cost-cause { font-size: 16px; color: rgba(255,255,255,0.8); }
-        .cost-bottom { margin-top: 24px; font-size: 18px; color: rgba(255,255,255,0.9); }
-        .cost-bottom strong { color: #FFD700; }
         .trust-bar { padding: 20px 24px; background: #F8F9FA; border-bottom: 1px solid #E5E5E5; }
         .trust-bar-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; }
         .trust-item { display: flex; align-items: center; gap: 8px; }
         .trust-icon { color: #10B981; font-size: 20px; font-weight: 700; }
         .trust-text { font-size: 16px; font-weight: 600; }
-        .urgency-section { padding: 60px 24px; background: white; }
-        .urgency-container { max-width: 900px; margin: 0 auto; }
-        .urgency-box { background: #E2E8F0; border: 1px solid #CBD5E1; border-radius: 16px; padding: 48px; text-align: center; }
-        .urgency-box h2 { font-size: 28px; color: #1A1A1A; margin-bottom: 24px; line-height: 1.4; }
-        .urgency-highlight { color: #B91C1C; font-weight: 800; }
-        .urgency-cta { margin-top: 40px; }
-        .urgency-cta a { display: inline-block; background: #0A2463; color: white; padding: 20px 48px; border-radius: 12px; font-size: 18px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 12px rgba(10,36,99,0.2); transition: all 0.2s; }
-        .urgency-cta a:hover { background: #0052CC; transform: translateY(-2px); }
-        .what-is-section { padding: 80px 24px; background: #F8F9FA; }
         .section-container { max-width: 1000px; margin: 0 auto; }
         .section-title { font-size: 42px; font-weight: 800; text-align: center; margin-bottom: 16px; color: #1A1A1A; }
         .section-subtitle { font-size: 20px; text-align: center; color: #666; margin-bottom: 48px; }
-        .pipeline-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 48px; }
-        .pipeline-card { background: white; border-radius: 16px; padding: 40px; text-align: center; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid transparent; transition: all 0.3s; }
-        .pipeline-card:hover { transform: translateY(-6px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
-        .pipeline-card.intake { border-color: #10B981; }
-        .pipeline-card.leverage { border-color: #0A2463; }
-        .pipeline-card.settle { border-color: #FFD700; }
-        .pipeline-icon { font-size: 48px; margin-bottom: 16px; }
-        .pipeline-label { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: #666; margin-bottom: 8px; font-weight: 700; }
-        .pipeline-name { font-size: 28px; font-weight: 800; margin-bottom: 16px; color: #1A1A1A; }
-        .pipeline-problem { font-size: 16px; color: #B91C1C; margin-bottom: 16px; font-weight: 600; }
-        .pipeline-solution { font-size: 16px; font-weight: 600; }
-        .pipeline-card.intake .pipeline-solution { color: #10B981; }
-        .pipeline-card.leverage .pipeline-solution { color: #0A2463; }
-        .pipeline-card.settle .pipeline-solution { color: #B8860B; }
         .pricing-section { padding: 80px 24px; background: white; }
         .pricing-section.alt { background: #F8F9FA; }
         .pricing-header { text-align: center; margin-bottom: 48px; }
         .pricing-header h2 { font-size: 42px; font-weight: 800; margin-bottom: 16px; color: #1A1A1A; }
         .pricing-header p { font-size: 20px; color: #666; max-width: 700px; margin: 0 auto; line-height: 1.8; }
-        .module-label { display: inline-block; color: white; padding: 8px 20px; border-radius: 20px; font-size: 14px; font-weight: 700; letter-spacing: 1px; margin-bottom: 16px; }
-        .module-label.green { background: #10B981; }
-        .module-label.blue { background: #0A2463; }
-        .module-label.gold { background: #B8860B; }
         .pricing-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 1100px; margin: 0 auto; }
         .pricing-card { background: white; border: 1px solid #e5e5e5; border-radius: 16px; padding: 40px; position: relative; transition: all 0.3s; }
         .pricing-card:hover { transform: translateY(-6px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
@@ -110,8 +68,6 @@
         .price-included { font-size: 14px; font-weight: 600; margin-top: 8px; }
         .price-note { font-size: 14px; color: #888; margin-top: 6px; font-style: italic; }
         .intake-color { color: #10B981; }
-        .leverage-color { color: #0A2463; }
-        .settle-color { color: #B8860B; }
         .tier-features { list-style: none; margin-bottom: 40px; }
         .tier-features li { display: flex; align-items: flex-start; margin-bottom: 12px; font-size: 15px; color: #1a1a1a; }
         .feature-check { color: #10B981; margin-right: 8px; font-size: 18px; flex-shrink: 0; }
@@ -119,76 +75,46 @@
         .tier-cta:hover { background: #0052CC; transform: translateY(-2px); }
         .tier-cta.green { background: #10B981; box-shadow: 0 4px 12px rgba(16,185,129,0.2); }
         .tier-cta.green:hover { background: #059669; }
-        .tier-cta.gold { background: #B8860B; box-shadow: 0 4px 12px rgba(184,134,11,0.2); }
-        .tier-cta.gold:hover { background: #996F09; }
         .tier-fine-print { font-size: 13px; color: #666; margin-top: 20px; text-align: center; }
-        .lead-explainer { background: linear-gradient(135deg, #F0FDF4 0%, #ECFDF5 100%); border: 1px solid #10B981; border-radius: 16px; padding: 40px; margin-bottom: 48px; max-width: 800px; margin-left: auto; margin-right: auto; text-align: center; }
-        .lead-explainer h3 { font-size: 24px; font-weight: 800; color: #10B981; margin-bottom: 20px; }
-        .lead-explainer ul { list-style: none; max-width: 500px; margin: 0 auto; }
-        .lead-explainer li { font-size: 16px; color: #1A1A1A; padding: 8px 0; text-align: left; }
-        .lead-explainer li strong { color: #10B981; }
-        .lead-explainer .lead-note { margin-top: 20px; font-size: 18px; font-weight: 700; color: #0A2463; }
-        .consequence-box { margin-top: 48px; max-width: 800px; margin-left: auto; margin-right: auto; border-radius: 12px; padding: 32px; }
-        .consequence-box.red { background: #FEF2F2; border: 1px solid #FECACA; }
-        .consequence-box.blue { background: #EFF6FF; border: 1px solid #BFDBFE; }
-        .consequence-box.gold { background: #FFFBEB; border: 1px solid #FDE68A; }
-        .consequence-box h4 { font-size: 18px; font-weight: 800; margin-bottom: 16px; }
-        .consequence-box.red h4 { color: #B91C1C; }
-        .consequence-box.blue h4 { color: #0A2463; }
-        .consequence-box.gold h4 { color: #B8860B; }
-        .consequence-box ul { list-style: none; }
-        .consequence-box li { font-size: 15px; color: #1A1A1A; padding: 6px 0 6px 24px; position: relative; }
-        .consequence-box li::before { content: '\2192'; position: absolute; left: 0; font-weight: 700; }
-        .consequence-box.red li::before { color: #B91C1C; }
-        .consequence-box.blue li::before { color: #0A2463; }
-        .consequence-box.gold li::before { color: #B8860B; }
-        .consequence-box .consequence-note { margin-top: 16px; font-size: 15px; font-weight: 700; }
-        .consequence-box.red .consequence-note { color: #B91C1C; }
-        .consequence-box.blue .consequence-note { color: #0A2463; }
-        .consequence-box.gold .consequence-note { color: #B8860B; }
-        .connecting-line { text-align: center; margin-top: 40px; font-size: 18px; color: #0A2463; font-weight: 700; max-width: 600px; margin-left: auto; margin-right: auto; }
-        .system-flow-section { padding: 80px 24px; background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%); color: white; }
-        .system-flow-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; max-width: 1000px; margin: 48px auto 0; }
-        .flow-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 32px 24px; text-align: center; }
-        .flow-card-number { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
-        .flow-card.intake .flow-card-number { color: #10B981; }
-        .flow-card.leverage .flow-card-number { color: #60A5FA; }
-        .flow-card.settle .flow-card-number { color: #FFD700; }
-        .flow-card h4 { font-size: 18px; font-weight: 700; color: white; margin-bottom: 8px; }
-        .flow-card p { font-size: 14px; color: rgba(255,255,255,0.7); }
-        .difference-section { padding: 80px 24px; background: white; }
-        .difference-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 900px; margin: 48px auto 0; }
-        .difference-card { border-radius: 16px; padding: 40px; }
-        .difference-card.without { background: #FEF2F2; border: 1px solid #FECACA; }
-        .difference-card.with { background: #F0FDF4; border: 1px solid #10B981; }
-        .difference-card h3 { font-size: 22px; font-weight: 800; margin-bottom: 20px; }
-        .difference-card.without h3 { color: #B91C1C; }
-        .difference-card.with h3 { color: #10B981; }
-        .difference-card li { font-size: 16px; color: #1A1A1A; padding: 8px 0 8px 28px; list-style: none; position: relative; }
-        .difference-card.without li::before { content: '\2717'; position: absolute; left: 0; color: #B91C1C; font-weight: 700; }
-        .difference-card.with li::before { content: '\2713'; position: absolute; left: 0; color: #10B981; font-weight: 700; }
-        .difference-bottom { text-align: center; margin-top: 40px; font-size: 20px; color: #1A1A1A; }
-        .difference-bottom strong { color: #0A2463; }
-        .comparison-section { padding: 80px 24px; background: #F8F9FA; border-top: 1px solid #E5E7EB; border-bottom: 1px solid #E5E7EB; }
-        .comparison-title { font-size: 28px; font-weight: 700; text-align: center; margin-bottom: 32px; color: #0A2463; }
-        .comparison-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 1000px; margin: 0 auto; }
-        .comparison-item { background: white; padding: 32px; border-radius: 12px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
-        .comparison-label { font-size: 14px; color: #666; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
-        .comparison-price { font-size: 42px; font-weight: 800; color: #0A2463; margin-bottom: 8px; }
-        .comparison-detail { font-size: 14px; color: #666; margin-bottom: 16px; }
-        .comparison-drawbacks { font-size: 14px; color: #B91C1C; text-align: left; }
-        .comparison-drawbacks span { display: block; margin-bottom: 4px; }
-        .comparison-bottom { text-align: center; margin-top: 40px; font-size: 20px; font-weight: 700; color: #0A2463; }
-        .onboarding-section { padding: 80px 24px; background: white; }
+        .tier-best-for { text-align: center; margin-top: 16px; font-size: 14px; color: #0A2463; font-weight: 600; font-style: italic; }
+        .how-it-works-section { padding: 80px 24px; background: #F8F9FA; }
+        .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 1000px; margin: 48px auto 0; }
+        .step-card { background: white; border-radius: 16px; padding: 40px 32px; text-align: center; box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: all 0.3s; }
+        .step-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+        .step-number { width: 56px; height: 56px; background: linear-gradient(135deg, #0A2463, #0052CC); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: white; font-size: 24px; font-weight: 800; }
+        .step-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 12px; color: #1A1A1A; }
+        .step-card p { font-size: 15px; color: #666; line-height: 1.7; }
+        .step-qualification { margin-top: 16px; }
+        .step-qualification span { display: block; font-size: 14px; color: #10B981; font-weight: 600; margin-bottom: 4px; }
+        .addons-section { padding: 80px 24px; background: white; }
+        .addons-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 900px; margin: 48px auto 0; }
+        .addon-card { background: #F8F9FA; border: 1px solid #E5E5E5; border-radius: 12px; padding: 32px; transition: all 0.2s; }
+        .addon-card:hover { border-color: #0A2463; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+        .addon-icon { font-size: 24px; margin-bottom: 12px; }
+        .addon-card h4 { font-size: 18px; font-weight: 700; color: #1A1A1A; margin-bottom: 8px; }
+        .addon-card p { font-size: 14px; color: #666; line-height: 1.6; }
+        .why-section { padding: 80px 24px; background: linear-gradient(135deg, #0A2463, #081737); color: white; }
+        .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 800px; margin: 48px auto 0; }
+        .why-card { display: flex; align-items: flex-start; gap: 16px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 28px; }
+        .why-icon { font-size: 28px; flex-shrink: 0; }
+        .why-text h4 { font-size: 18px; font-weight: 700; color: white; margin-bottom: 4px; }
+        .why-text p { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.5; }
+        .roi-section { padding: 80px 24px; background: #F8F9FA; }
+        .roi-box { background: white; max-width: 700px; margin: 0 auto; border-radius: 16px; padding: 48px; text-align: center; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #E5E5E5; }
+        .roi-box h3 { font-size: 28px; font-weight: 800; color: #10B981; margin-bottom: 20px; }
+        .roi-numbers { display: flex; justify-content: center; gap: 48px; margin: 32px 0; flex-wrap: wrap; }
+        .roi-stat { text-align: center; }
+        .roi-stat-value { font-size: 36px; font-weight: 800; color: #0A2463; }
+        .roi-stat-label { font-size: 14px; color: #666; margin-top: 4px; }
+        .roi-conclusion { font-size: 20px; font-weight: 700; color: #10B981; margin-top: 24px; }
+        .positioning-section { padding: 80px 24px; background: white; text-align: center; }
+        .positioning-line { font-size: 36px; font-weight: 800; color: #0A2463; max-width: 800px; margin: 0 auto; line-height: 1.3; }
+        .onboarding-section { padding: 80px 24px; background: #F8F9FA; }
         .onboarding-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; max-width: 1000px; margin: 48px auto 0; }
         .onboarding-step { text-align: center; }
         .onboarding-number { width: 60px; height: 60px; background: linear-gradient(135deg, #0A2463 0%, #0052CC 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 24px; font-weight: 700; color: white; }
         .onboarding-step h4 { font-size: 20px; font-weight: 700; margin-bottom: 8px; color: #1A1A1A; }
         .onboarding-step p { font-size: 16px; color: #666; }
-        .objections-section { padding: 80px 24px; background: #F8F9FA; }
-        .objection-card { background: white; padding: 32px; border-radius: 12px; border-left: 4px solid #0A2463; margin-bottom: 24px; max-width: 900px; margin-left: auto; margin-right: auto; }
-        .objection-card h3 { font-size: 22px; font-weight: 700; margin-bottom: 12px; color: #1A1A1A; }
-        .objection-card p { font-size: 18px; color: #666; line-height: 1.7; }
         .faq-section { padding: 100px 24px; background: white; }
         .faq-container { max-width: 800px; margin: 0 auto; }
         .faq-category { margin-bottom: 48px; }
@@ -206,6 +132,7 @@
         .final-cta-btn { display: inline-block; background: #FFD700; color: #000; padding: 20px 48px; border-radius: 12px; font-size: 20px; font-weight: 800; text-decoration: none; box-shadow: 0 4px 20px rgba(255,215,0,0.3); transition: all 0.2s; }
         .final-cta-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(255,215,0,0.4); }
         .final-cta-badges { margin-top: 32px; display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; font-size: 14px; opacity: 0.9; }
+        .pricing-disclaimer { max-width: 700px; margin: 32px auto 0; font-size: 14px; color: #666; line-height: 1.7; text-align: center; }
         footer { padding: 80px 24px; background: #000; color: white; text-align: center; }
         .footer-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 900px; margin: 40px auto; text-align: center; }
         .footer-col h4 { color: #fff; font-size: 16px; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px; }
@@ -215,27 +142,17 @@
         .footer-legal a { color: #999; text-decoration: none; }
         .footer-legal a:hover { color: #fff; }
         .footer-disclaimer { font-size: 11pt; color: #555; margin-top: 32px; line-height: 1.8; max-width: 900px; margin-left: auto; margin-right: auto; padding-bottom: 40px; }
-        /* Scroll Reveal */
         .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
         .reveal.visible { opacity: 1; transform: translateY(0); }
-        /* Progress Bar */
-        .progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, #10B981, #0A2463, #B8860B); z-index: 10000; width: 0%; transition: width 0.1s linear; }
-        /* Cost number animation */
-        .cost-effect { font-size: 16px; color: #FF6B6B; font-weight: 700; }
-        .cost-effect.animated { font-weight: 800; text-shadow: 0 0 8px rgba(255,107,107,0.4); }
-        /* Smart sticky CTA */
+        .progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, #10B981, #0A2463, #0052CC); z-index: 10000; width: 0%; transition: width 0.1s linear; }
         .sticky-cta { position: fixed; bottom: 24px; right: 24px; z-index: 9999; background: #0A2463; color: #fff; padding: 16px 32px; border-radius: 12px; font-size: 16px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 12px rgba(10,36,99,0.2); display: flex; align-items: center; gap: 8px; border: none; transition: all 0.3s; }
         .sticky-cta:hover { background: #0052CC; transform: translateY(-2px); }
         .sticky-cta .cta-sub { font-size: 12px; opacity: 0.8; font-weight: 500; display: block; margin-top: 2px; }
-        /* Exit intent banner */
         .exit-banner { position: fixed; top: -60px; left: 0; right: 0; background: #0A2463; color: white; text-align: center; padding: 14px 24px; font-size: 15px; font-weight: 600; z-index: 10001; transition: top 0.4s ease; }
         .exit-banner.show { top: 0; }
         .exit-banner a { color: #FFD700; text-decoration: none; font-weight: 700; margin-left: 12px; }
-        @media (max-width: 968px) { .pricing-grid-3, .comparison-grid, .pipeline-grid { grid-template-columns: 1fr; } .pricing-grid-3 { max-width: 450px; } .comparison-grid { max-width: 400px; } .onboarding-grid, .system-flow-grid { grid-template-columns: repeat(2, 1fr); } .difference-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 36px; } .section-title { font-size: 32px; } .footer-links { grid-template-columns: 1fr; } }
-        @media (max-width: 768px) { .nav-links { display: none; }
-            .nav-cta { display: none; } .onboarding-grid, .system-flow-grid { grid-template-columns: 1fr; } }
-
-        /* HAMBURGER */
+        @media (max-width: 968px) { .pricing-grid-3, .steps-grid, .addons-grid, .why-grid { grid-template-columns: 1fr; } .pricing-grid-3 { max-width: 450px; } .onboarding-grid { grid-template-columns: repeat(2, 1fr); } .hero h1 { font-size: 36px; } .section-title { font-size: 32px; } .positioning-line { font-size: 28px; } .footer-links { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { .nav-links { display: none; } .nav-cta { display: none; } .onboarding-grid { grid-template-columns: 1fr; } .roi-numbers { flex-direction: column; gap: 24px; } }
         .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; gap: 5px; }
         .nav-hamburger span { display: block; width: 24px; height: 2px; background: #555; border-radius: 2px; transition: all 0.3s; }
         .nav-hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
@@ -257,11 +174,9 @@
     <script src="analytics.js"></script>
 </head>
 <body>
-    <!-- PROGRESS BAR -->
     <div class="progress-bar" id="progressBar"></div>
-    <!-- EXIT INTENT BANNER -->
-    <div class="exit-banner" id="exitBanner">Still deciding? <a href="trial.html?product=intake">Apply for INTAKE →</a></div>
-    <!-- NAVIGATION -->
+    <div class="exit-banner" id="exitBanner">Still deciding? <a href="trial.html">Apply for Access →</a></div>
+
     <nav>
         <div class="nav-container">
             <a href="index.html" class="logo">
@@ -277,90 +192,49 @@
                 </div>
             </a>
             <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="how-it-works.html">How It Works</a>
-            <a href="pricing.html">Pricing</a>
-            <div class="nav-dropdown">
-                <button class="nav-dropdown-toggle">Resources</button>
-                <div class="nav-dropdown-menu">
-                    <a href="profitability.html">ROI Calculator</a>
-                    <a href="county-cap.html">County Availability</a>
-                    <a href="compliance.html">Data &amp; Compliance</a>
-                    <a href="integrations.html">Integrations &amp; Setup</a>
-                    <a href="blog.html">Blog</a>
+                <a href="index.html">Home</a>
+                <a href="how-it-works.html">How It Works</a>
+                <a href="pricing.html">Pricing</a>
+                <div class="nav-dropdown">
+                    <button class="nav-dropdown-toggle">Resources</button>
+                    <div class="nav-dropdown-menu">
+                        <a href="profitability.html">ROI Calculator</a>
+                        <a href="county-cap.html">County Availability</a>
+                        <a href="compliance.html">Data &amp; Compliance</a>
+                        <a href="integrations.html">Integrations &amp; Setup</a>
+                        <a href="blog.html">Blog</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <button class="nav-hamburger" id="navHamburger" aria-label="Menu"><span></span><span></span><span></span></button>
-        <a href="trial.html" class="nav-cta">See Benjamin Live (8 min) →</a>
+            <button class="nav-hamburger" id="navHamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+            <a href="trial.html" class="nav-cta">Apply for Access →</a>
         </div>
     </nav>
-<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
-<div class="mobile-nav-panel" id="mobileNavPanel">
-    <button class="mobile-nav-close" id="mobileNavClose">&times;</button>
-    <a href="index.html">Home</a>
-    <a href="how-it-works.html">How It Works</a>
-    <a href="pricing.html">Pricing</a>
-    <div class="mobile-nav-label">Resources</div>
-    <a href="profitability.html">ROI Calculator</a>
-    <a href="county-cap.html">County Availability</a>
-    <a href="compliance.html">Data &amp; Compliance</a>
-    <a href="integrations.html">Integrations &amp; Setup</a>
-    <a href="blog.html">Blog</a>
-    <a href="trial.html" class="mobile-cta">See Benjamin Live (8 min) &rarr;</a>
-</div>
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <div class="mobile-nav-panel" id="mobileNavPanel">
+        <button class="mobile-nav-close" id="mobileNavClose">&times;</button>
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="pricing.html">Pricing</a>
+        <div class="mobile-nav-label">Resources</div>
+        <a href="profitability.html">ROI Calculator</a>
+        <a href="county-cap.html">County Availability</a>
+        <a href="compliance.html">Data &amp; Compliance</a>
+        <a href="integrations.html">Integrations &amp; Setup</a>
+        <a href="blog.html">Blog</a>
+        <a href="trial.html" class="mobile-cta">Apply for Access &rarr;</a>
+    </div>
 
     <!-- HERO -->
     <section class="hero">
-        <h1>Stop Letting Cases Leak Across Your Pipeline</h1>
+        <h1>AI Intake &amp; Case Qualification for Personal Injury Law Firms</h1>
         <p class="hero-subtitle">
-            You're already paying for leads.<br>
-            You may not be capturing all of them.<br>
-            Response time can cost you.<br>
-            And case value may be harder to defend than it should be.<br><br>
-            <strong style="color: #FF6B6B;">That's where the pipeline leaks.</strong>
+            Never miss a case. Only pay for qualified opportunities.
         </p>
-        <div class="pipeline-stages">
-            <div class="pipeline-stage intake">
-                <div class="pipeline-stage-label">Stage 1</div>
-                <div class="pipeline-stage-name">INTAKE</div>
-            </div>
-            <div class="pipeline-stage leverage">
-                <div class="pipeline-stage-label">Stage 2</div>
-                <div class="pipeline-stage-name">LEVERAGE</div>
-            </div>
-            <div class="pipeline-stage settle">
-                <div class="pipeline-stage-label">Stage 3</div>
-                <div class="pipeline-stage-name">SETTLE</div>
-            </div>
-        </div>
-        <div class="hero-trust">
-            ✓ Bar-conscious workflows • ✓ No client identifiers in case analysis • ✓ Deterministic intake logic
-        </div>
         <div class="hero-cta">
             <a href="trial.html">Apply for Access →</a>
         </div>
-        <div class="hero-anchor">Plans start at $199/month</div>
-        <!-- COST BOX -->
-        <div class="cost-box">
-            <h3>What This Is Costing You (Monthly)</h3>
-            <div class="cost-row">
-                <span class="cost-cause">Missed calls</span>
-                <span class="cost-effect">opportunities you may never see</span>
-            </div>
-            <div class="cost-row">
-                <span class="cost-cause">Slow response</span>
-                <span class="cost-effect">leads that may go cold</span>
-            </div>
-            <div class="cost-row">
-                <span class="cost-cause">Weak valuation</span>
-                <span class="cost-effect">value that may be harder to defend</span>
-            </div>
-            <div class="cost-bottom">
-                You don't have a lead problem.<br>
-                You have a <strong>pipeline leak problem</strong>.
-            </div>
-        </div>
+        <div class="hero-anchor">Plans start at $499/month</div>
     </section>
 
     <!-- TRUST BAR -->
@@ -373,613 +247,219 @@
         </div>
     </section>
 
-    <!-- NOT JUST CALL ANSWERING -->
-    <section class="what-is-section reveal" style="padding: 80px 24px; background: #F8F9FA;">
-        <div class="section-container">
-            <div style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
-                <h2 style="font-size: 36px; font-weight: 800; color: #0A2463; margin-bottom: 20px;">Not Just Call Answering</h2>
-                <p style="font-size: 18px; color: #555; line-height: 1.7;">Generic AI receptionists can be useful for basic coverage. Human answering services can be useful for overflow and message-taking. TrueVow is built for PI intake pipeline control: qualification, grading, booking, priority alerts, structured records, optional follow-up, and case-value handoff.</p>
-            </div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 1000px; margin: 0 auto;">
-                <div style="background: white; border-radius: 12px; padding: 32px 28px; border: 1px solid #E5E5E5; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
-                    <h3 style="font-size: 20px; font-weight: 700; color: #555; margin-bottom: 12px;">Generic AI Receptionist</h3>
-                    <p style="font-size: 15px; color: #555; line-height: 1.6; margin-bottom: 16px;">Good for basic call coverage, FAQs, simple scheduling, and message capture.</p>
-                    <div style="border-top: 1px solid #E5E5E5; padding-top: 12px;">
-                        <p style="font-size: 13px; color: #999; line-height: 1.6;"><strong style="color: #888;">Limitations:</strong> Usually limited for PI-specific qualification, lead grading, statute/risk filtering, A+ prioritization, and case-value pipeline visibility.</p>
-                    </div>
-                </div>
-                <div style="background: white; border-radius: 12px; padding: 32px 28px; border: 1px solid #E5E5E5; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
-                    <h3 style="font-size: 20px; font-weight: 700; color: #555; margin-bottom: 12px;">Human Answering Service</h3>
-                    <p style="font-size: 15px; color: #555; line-height: 1.6; margin-bottom: 16px;">Good for human touch, overflow, after-hours support, and message-taking.</p>
-                    <div style="border-top: 1px solid #E5E5E5; padding-top: 12px;">
-                        <p style="font-size: 13px; color: #999; line-height: 1.6;"><strong style="color: #888;">Limitations:</strong> Qualification depth varies. Structured scoring, economic signals, automated priority alerts, and pipeline analytics are usually limited.</p>
-                    </div>
-                </div>
-                <div style="background: white; border-radius: 12px; padding: 32px 28px; border: 2px solid #10B981; box-shadow: 0 4px 16px rgba(16,185,129,0.1);">
-                    <h3 style="font-size: 20px; font-weight: 700; color: #0A2463; margin-bottom: 12px;">TrueVow INTAKE</h3>
-                    <p style="font-size: 15px; color: #555; line-height: 1.6; margin-bottom: 16px;">Built for controlled PI intake: routed calls answered when enabled, firm-approved question paths, lead grading, A+ prioritization, booking, Spanish support, priority SMS, structured records, and expansion into FOLLOW-UP, LEVERAGE, and SETTLE.</p>
-                </div>
-            </div>
-            <p style="text-align: center; margin-top: 32px; font-size: 14px; color: #888;">TrueVow is not priced like a generic receptionist because it is not trying to be one. It is designed to protect the intake pipeline.</p>
-        </div>
-    </section>
-
-    <!-- TRANSPARENT PRICING SECTION -->
-    <section class="what-is-section reveal" style="padding: 60px 24px; background: white;">
-        <div class="section-container">
-            <div style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
-                <h2 style="font-size: 36px; font-weight: 800; color: #0A2463; margin-bottom: 20px;">Transparent Starting Pricing. No Enterprise AI Guesswork.</h2>
-                <p style="font-size: 18px; color: #555; line-height: 1.7; margin-bottom: 16px;">Many legal AI platforms require a demo before you can understand pricing. TrueVow is different.</p>
-                <p style="font-size: 18px; color: #555; line-height: 1.7; margin-bottom: 16px;">We publish starting prices because solo and small PI firms should know the basic economics before spending time in a sales process.</p>
-                <p style="font-size: 16px; color: #0A2463; font-weight: 600; line-height: 1.7;">Apply first, get approved, then select and activate inside the customer portal. No public checkout. No forced platform migration. Start with INTAKE, then add FOLLOW-UP, LEVERAGE, or SETTLE only when the workflow proves value.</p>
-            </div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; max-width: 900px; margin: 0 auto;">
-                <div style="background: linear-gradient(135deg, #EFF6FF 0%, #F0FDF4 100%); border: 1px solid #D1E9FF; border-radius: 12px; padding: 28px 24px; text-align: center;">
-                    <h4 style="color: #0A2463; font-size: 18px; font-weight: 700; margin-bottom: 8px;">Clear Starting Prices</h4>
-                    <p style="color: #555; font-size: 15px; line-height: 1.6;">Know the monthly entry point before you apply.</p>
-                </div>
-                <div style="background: linear-gradient(135deg, #EFF6FF 0%, #F0FDF4 100%); border: 1px solid #D1E9FF; border-radius: 12px; padding: 28px 24px; text-align: center;">
-                    <h4 style="color: #0A2463; font-size: 18px; font-weight: 700; margin-bottom: 8px;">Approval Before Activation</h4>
-                    <p style="color: #555; font-size: 15px; line-height: 1.6;">We review firm fit, county availability, and onboarding readiness before payment.</p>
-                </div>
-                <div style="background: linear-gradient(135deg, #EFF6FF 0%, #F0FDF4 100%); border: 1px solid #D1E9FF; border-radius: 12px; padding: 28px 24px; text-align: center;">
-                    <h4 style="color: #0A2463; font-size: 18px; font-weight: 700; margin-bottom: 8px;">Expand Only When Useful</h4>
-                    <p style="color: #555; font-size: 15px; line-height: 1.6;">Start with the phone. Add outbound follow-up, case structuring, or settlement reports only when needed.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- URGENCY BOX -->
-    <section class="urgency-section reveal">
-        <div class="urgency-container">
-            <div class="urgency-box">
-                <h2>A missed call does not show up in your books.<br><span class="urgency-highlight">It shows up later as a case you never knew you lost.</span></h2>
-                <p style="font-size: 18px; color: #666; line-height: 1.8;">A late-night caller who does not reach your firm may keep searching until someone responds.</p>
-                <div class="urgency-cta"><a href="profitability.html">Run the Intake Leakage Calculator &rarr;</a></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PIPELINE EXPLANATION -->
-    <section class="what-is-section reveal">
-        <div class="section-container">
-            <h2 class="section-title">One System. Three Critical Moments.</h2>
-            <p class="section-subtitle">Control every stage where money is made — or lost.</p>
-            <div class="pipeline-grid">
-                <div class="pipeline-card intake">
-                    <div class="pipeline-icon">📞</div>
-                    <div class="pipeline-label">Stage 1</div>
-                    <div class="pipeline-name">INTAKE</div>
-                    <div class="pipeline-problem">Missed calls = Lost cases</div>
-                    <div class="pipeline-solution">Routed calls answered when enabled</div>
-                </div>
-                <div class="pipeline-card leverage">
-                    <div class="pipeline-icon">⚖️</div>
-                    <div class="pipeline-label">Stage 2</div>
-                    <div class="pipeline-name">LEVERAGE</div>
-                    <div class="pipeline-problem">Guesswork = Under-settled</div>
-                    <div class="pipeline-solution">Structured cases = Stronger position</div>
-                </div>
-                <div class="pipeline-card settle">
-                    <div class="pipeline-icon">💰</div>
-                    <div class="pipeline-label">Stage 3</div>
-                    <div class="pipeline-name">SETTLE</div>
-                    <div class="pipeline-problem">Blind decisions = Money left on table</div>
-                    <div class="pipeline-solution">Confidence-labeled signals = clearer decisions</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- INTAKE PRICING -->
-    <section class="pricing-section alt reveal" id="intake">
+    <!-- PRICING TIERS -->
+    <section class="pricing-section reveal" id="pricing">
         <div class="section-container">
             <div class="pricing-header">
-                <span class="module-label green">STAGE 1</span>
-                <h2>INTAKE — Capture More Qualified Calls</h2>
-                <p>Missed calls and slow response can become signed cases for someone else.</p>
-            </div>
-            <div class="lead-explainer">
-                <h3>How Lead Access Works</h3>
-                <ul>
-                    <li>✓ Routed calls answered when enabled</li>
-                    <li>✓ You can see <strong>all leads instantly (A, B, C, D)</strong></li>
-                    <li>✓ <strong>B, C, and D leads are always free</strong></li>
-                    <li>✓ <strong>A+ leads (high-value cases) require an unlock</strong></li>
-                </ul>
-                <div class="lead-note">You don't pay for leads.<br>You pay for access to the cases you actually want.</div>
+                <h2>Simple, Scalable Pricing</h2>
+                <p>Choose the plan that fits your firm's volume. No surprises. No complexity.</p>
             </div>
             <div class="pricing-grid-3">
+                <!-- SOLO -->
                 <div class="pricing-card">
-                    <div class="tier-name">Solo</div>
-                    <div class="tier-tagline">Designed for one-attorney intake coverage</div>
+                    <div class="tier-name">SOLO</div>
+                    <div class="tier-tagline">For Small Firms Getting Started</div>
                     <div class="tier-price">
-                        <span class="price-main intake-color">$199</span><span class="price-period">/month</span>
-                        <div class="price-included intake-color">3 A+ case unlocks included</div>
-                        <div class="price-note">500 included voice minutes/month</div>
+                        <span class="price-main intake-color">$499</span><span class="price-period">/month</span>
+                        <div class="price-included">Perfect for solo attorneys who want consistent intake without complexity.</div>
                     </div>
                     <ul class="tier-features">
-                        <li><span class="feature-check">✓</span> All leads visible (A/B/C/D)</li>
-                        <li><span class="feature-check">✓</span> Routed calls answered when enabled</li>
-                        <li><span class="feature-check">✓</span> Practice area qualification</li>
-                        <li><span class="feature-check">✓</span> Spam/statute filtering</li>
-                        <li><span class="feature-check">✓</span> Single calendar</li>
-                        <li><span class="feature-check">✓</span> Spanish included</li>
-                        <li><span class="feature-check">✓</span> Instant SMS for A+ leads</li>
-                        <li style="color: #999;"><span style="color: #999;">+</span> <span style="color: #999;">$49 per additional A+ unlock</span></li>
+                        <li><span class="feature-check">✓</span> Up to 100 AI intake calls (~1,100 mins)</li>
+                        <li><span class="feature-check">✓</span> 24/7 call answering &amp; qualification</li>
+                        <li><span class="feature-check">✓</span> Smart intake (case type, injury severity, liability screening)</li>
+                        <li><span class="feature-check">✓</span> SMS &amp; email appointment confirmations</li>
+                        <li><span class="feature-check">✓</span> Basic analytics dashboard</li>
+                        <li><span class="feature-check">✓</span> 7-day call recording storage (export anytime)</li>
                     </ul>
-                    <a href="trial.html?product=intake&plan=solo" class="tier-cta green">Apply for INTAKE →</a>
-                    <div class="tier-fine-print">Core INTAKE only &bull; Month-to-month &bull; Approval required</div>
+                    <p style="font-size:14px;color:#10B981;font-weight:600;text-align:center;margin-bottom:16px;">No unlocks. No surprises.</p>
+                    <a href="trial.html?plan=solo" class="tier-cta green">Apply for SOLO →</a>
+                    <div class="tier-fine-print">Month-to-month &bull; Approval required</div>
+                    <div class="tier-best-for">Best for firms handling 10–30 leads/month</div>
                 </div>
+
+                <!-- GROWTH -->
                 <div class="pricing-card popular" style="border-color: #10B981;">
                     <div class="pricing-badge">⭐ MOST POPULAR</div>
-                    <div class="tier-name">Growth</div>
-                    <div class="tier-tagline">Single attorney seat &bull; Multiple connected calendars</div>
-                    <div class="tier-price">
-                        <span class="price-main intake-color">$599</span><span class="price-period">/month</span>
-                        <div class="price-included intake-color">11 A+ case unlocks included</div>
-                        <div class="price-note">1,500 included voice minutes/month</div>
-                    </div>
-                    <ul class="tier-features">
-                        <li><span class="feature-check">✓</span> Everything in Solo, PLUS:</li>
-                        <li><span class="feature-check">✓</span> <strong>Priority onboarding</strong></li>
-                        <li><span class="feature-check">✓</span> <strong>Advanced analytics</strong></li>
-                        <li><span class="feature-check">✓</span> <strong>Multi-calendar sync</strong></li>
-                        <li><span class="feature-check">✓</span> <strong>Custom intake scripts</strong></li>
-                        <li><span class="feature-check">✓</span> <strong>Dedicated phone number</strong></li>
-                        <li><span class="feature-check">✓</span> <strong>Structured handoff support</strong></li>
-                        <li><span class="feature-check">✓</span> <strong>FOLLOW-UP add-on available</strong></li>
-                        <li style="color: #999;"><span style="color: #999;">+</span> <span style="color: #999;">$39 per additional A+ unlock</span></li>
-                    </ul>
-                    <a href="trial.html?product=intake&plan=growth" class="tier-cta green">Apply for INTAKE →</a>
-                    <div class="tier-fine-print">Onboarding is limited to maintain setup quality</div>
-                </div>
-                <div class="pricing-card">
-                    <div class="tier-name">Team</div>
-                    <div class="tier-tagline">Up to 5 attorneys &bull; Multiple connected calendars</div>
+                    <div class="tier-name">GROWTH</div>
+                    <div class="tier-tagline">For Scaling Law Firms</div>
                     <div class="tier-price">
                         <span class="price-main intake-color">$1,499</span><span class="price-period">/month</span>
-                        <div class="price-included intake-color">33 A+ case unlocks included</div>
-                        <div class="price-note">4,500 included voice minutes/month</div>
+                        <div class="price-included">Built for firms investing in marketing and needing better conversion.</div>
                     </div>
                     <ul class="tier-features">
-                        <li><span class="feature-check">✓</span> Everything in Growth, PLUS:</li>
-                        <li><span class="feature-check">✓</span> <strong>Concurrent calling</strong></li>
-                        <li><span class="feature-check">✓</span> <strong>Multi-user dashboard</strong></li>
-                        <li><span class="feature-check">✓</span> <strong>White-label options</strong></li>
-                        <li><span class="feature-check">✓</span> <strong>Priority onboarding support</strong></li>
-                        <li><span class="feature-check">✓</span> <strong>Priority support channel</strong></li>
-                        <li><span class="feature-check">✓</span> <strong>FOLLOW-UP add-on available</strong></li>
-                        <li style="color: #999;"><span style="color: #999;">+</span> <span style="color: #999;">$29 per additional A+ unlock</span></li>
+                        <li><span class="feature-check">✓</span> Everything in SOLO, plus:</li>
+                        <li><span class="feature-check">✓</span> Up to 200 AI intake calls</li>
+                        <li><span class="feature-check">✓</span> <strong>40 FREE qualified lead unlocks</strong></li>
+                        <li><span class="feature-check">✓</span> <strong>CRM + smart engagement workflows</strong> (follow-ups, reactivation)</li>
+                        <li><span class="feature-check">✓</span> <strong>Website chat widget</strong> (convert visitors instantly)</li>
+                        <li><span class="feature-check">✓</span> <strong>Spanish-language intake</strong> included</li>
+                        <li><span class="feature-check">✓</span> <strong>Advanced analytics</strong> (lead quality + conversion tracking)</li>
+                        <li style="color:#888;"><span style="color:#888;">🔓</span> <span style="color:#888;">Additional Qualified Lead Unlocks: $40 per unlock</span></li>
                     </ul>
-                    <a href="trial.html?product=intake&plan=team" class="tier-cta green">Apply for INTAKE →</a>
-                    <div class="tier-fine-print">Custom onboarding included</div>
+                    <a href="trial.html?plan=growth" class="tier-cta green">Apply for GROWTH →</a>
+                    <div class="tier-fine-print">Month-to-month &bull; Approval required</div>
+                    <div class="tier-best-for">Best for firms handling 50–150 leads/month</div>
                 </div>
-            </div>
-            <!-- WITHOUT INTAKE -->
-            <div class="consequence-box red">
-                <h4>⚠️ What Happens Without INTAKE</h4>
-                <ul>
-                    <li>Calls go to voicemail → follow-up risk increases</li>
-                    <li>After-hours leads → may keep searching</li>
-                    <li>Slow response → stronger leads can go cold</li>
-                </ul>
-                <div class="consequence-note">This is where most firms lose cases.</div>
-            </div>
-            <div style="max-width: 700px; margin: 32px auto 0; font-size: 14px; color: #666; line-height: 1.7;">
-                <p><strong>A, B, C, and D leads are visible without unlock. Only A+ leads require an unlock.</strong></p>
-                <p style="margin-top: 8px;">Included A+ unlocks reset monthly and do not roll over.</p>
-                <p style="margin-top: 8px;">Plans include monthly routed voice usage. If usage consistently exceeds the included amount, we may recommend a plan upgrade or apply additional usage charges after notice.</p>
-                <p style="margin-top: 8px;">Call recordings and transcripts are optional and configured during onboarding. Retention and export settings may vary by plan and firm policy.</p>
-            </div>
-            <!-- HOW A+ UNLOCKS WORK -->
-            <div style="max-width:700px;margin:40px auto 0;padding:28px;border-radius:12px;border:1px solid #E5E5E5;background:#FAFAFA">
-                <h3 style="font-size:22px;font-weight:800;color:#0A2463;margin-bottom:16px">How A+ Unlocks Work</h3>
-                <p style="font-size:16px;color:#555;line-height:1.7">Every lead is graded. A, B, C, and D leads are visible without unlock.</p>
-                <p style="font-size:16px;color:#555;line-height:1.7;margin-top:12px">Only A+ leads require an unlock. A+ leads are high-priority opportunities based on injury, treatment, jurisdiction, timing, and liability signals.</p>
-                <p style="font-size:16px;color:#555;line-height:1.7;margin-top:12px">Each plan includes monthly A+ unlocks. If included unlocks are used, additional A+ unlocks are added to the monthly invoice based on the plan.</p>
-            </div>
-            <!-- MID-PAGE CTA -->
-            <div style="text-align: center; margin-top: 40px; padding: 32px; background: linear-gradient(135deg, #F0FDF4 0%, #ECFDF5 100%); border-radius: 16px; border: 1px solid #10B981; max-width: 600px; margin-left: auto; margin-right: auto;">
-                <p style="font-size: 20px; font-weight: 800; color: #0A2463; margin-bottom: 16px;">If you fix nothing else — fix this first.</p>
-                <a href="trial.html?product=intake" style="display: inline-block; background: #10B981; color: white; padding: 16px 40px; border-radius: 8px; font-size: 18px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 12px rgba(16,185,129,0.2);">Apply for INTAKE →</a>
-            </div>
-            <div style="text-align: center; margin-top: 24px; font-size: 14px; color: #888;">Onboarding is limited to maintain setup quality.</div>
-        </div>
-    </section>
 
-    <!-- LEVERAGE PRICING -->
-    <section class="pricing-section reveal" id="leverage">
-        <div class="section-container">
-            <div class="pricing-header">
-                <span class="module-label blue">STAGE 2</span>
-                <h2>LEVERAGE — Where Money Is Won or Lost</h2>
-                <p>You're probably settling cases for less than they're worth.<br>Not because you're bad at law — because you don't have structured visibility.<br><strong>Most firms don't lose cases. They lose value inside the case.</strong></p>
-            </div>
-            <!-- WHERE FIRMS LOSE MONEY -->
-            <div class="consequence-box blue">
-                <h4>💸 Where Firms Lose Money Inside Cases</h4>
-                <ul>
-                    <li>Missing damages → undervalued demand</li>
-                    <li>Weak positioning → lower offers</li>
-                    <li>No structure → inconsistent outcomes</li>
-                </ul>
-                <div class="consequence-note">This is where recoverable value can disappear before negotiation even starts.</div>
-            </div>
-            <div class="pricing-grid-3">
+                <!-- TEAM -->
                 <div class="pricing-card">
-                    <div class="tier-name">Solo</div>
-                    <div class="tier-tagline">Structure every case</div>
+                    <div class="tier-name">TEAM</div>
+                    <div class="tier-tagline">For High-Volume &amp; Performance-Driven Firms</div>
                     <div class="tier-price">
-                        <span class="price-main leverage-color">$99</span><span class="price-period">/month</span>
-                        <div style="font-size: 14px; color: #10B981; font-weight: 600; margin-top: 8px;">$79/mo with INTAKE</div>
-                        <div class="price-note">5 active cases included</div>
+                        <span class="price-main intake-color">$3,999</span><span class="price-period">/month</span>
+                        <div class="price-included">Maximize signed cases with automation and scale.</div>
                     </div>
                     <ul class="tier-features">
-                        <li><span class="feature-check" style="color: #0A2463;">✓</span> Damage identification</li>
-                        <li><span class="feature-check" style="color: #0A2463;">✓</span> Case structuring templates</li>
-                        <li><span class="feature-check" style="color: #0A2463;">✓</span> Position analysis</li>
-                        <li><span class="feature-check" style="color: #0A2463;">✓</span> Weekly case summaries</li>
-                        <li style="color: #999;"><span style="color: #999;">+</span> <span style="color: #999;">$19 per additional active case</span></li>
+                        <li><span class="feature-check">✓</span> Everything in GROWTH, plus:</li>
+                        <li><span class="feature-check">✓</span> Up to 500 AI intake calls</li>
+                        <li><span class="feature-check">✓</span> <strong>120 FREE qualified lead unlocks</strong></li>
+                        <li><span class="feature-check">✓</span> <strong>Auto-unlock rules</strong> (only pay for cases you want)</li>
+                        <li><span class="feature-check">✓</span> <strong>Deep analytics</strong> (ROI, case source tracking, performance insights)</li>
+                        <li><span class="feature-check">✓</span> <strong>API + integrations</strong> (case management systems, CRMs)</li>
+                        <li><span class="feature-check">✓</span> <strong>Priority support</strong></li>
+                        <li style="color:#888;"><span style="color:#888;">🔓</span> <span style="color:#888;">Additional Unlocks: $30–$35 per unlock (volume optimized)</span></li>
                     </ul>
-                    <a href="trial.html?product=leverage&plan=solo" class="tier-cta">Request LEVERAGE Access →</a>
-                    <div class="tier-fine-print">Active case capacity &bull; Does not roll over &bull; Lower ecosystem pricing applies when INTAKE is active</div>
-                </div>
-                <div class="pricing-card popular" style="border-color: #0A2463;">
-                    <div class="pricing-badge">⭐ MOST POPULAR</div>
-                    <div class="tier-name">Growth</div>
-                    <div class="tier-tagline">Stronger cases, bigger outcomes</div>
-                    <div class="tier-price">
-                        <span class="price-main leverage-color">$349</span><span class="price-period">/month</span>
-                        <div style="font-size: 14px; color: #10B981; font-weight: 600; margin-top: 8px;">$279/mo with INTAKE</div>
-                        <div class="price-note">21 active cases included</div>
-                    </div>
-                    <ul class="tier-features">
-                        <li><span class="feature-check" style="color: #0A2463;">✓</span> Everything in Solo, PLUS:</li>
-                        <li><span class="feature-check" style="color: #0A2463;">✓</span> <strong>Negotiation playbooks</strong></li>
-                        <li><span class="feature-check" style="color: #0A2463;">✓</span> <strong>Comparative case analysis</strong></li>
-                        <li><span class="feature-check" style="color: #0A2463;">✓</span> <strong>Public-pattern insights</strong></li>
-                        <li><span class="feature-check" style="color: #0A2463;">✓</span> <strong>Settlement readiness score</strong></li>
-                        <li style="color: #999;"><span style="color: #999;">+</span> <span style="color: #999;">$14 per additional active case</span></li>
-                    </ul>
-                    <a href="trial.html?product=leverage&plan=growth" class="tier-cta">Request LEVERAGE Access →</a>
-                    <div class="tier-fine-print">Active case capacity &bull; Does not roll over &bull; Lower ecosystem pricing applies when INTAKE is active</div>
-                </div>
-                <div class="pricing-card">
-                    <div class="tier-name">Team</div>
-                    <div class="tier-tagline">Full case optimization</div>
-                    <div class="tier-price">
-                        <span class="price-main leverage-color">$899</span><span class="price-period">/month</span>
-                        <div style="font-size: 14px; color: #10B981; font-weight: 600; margin-top: 8px;">$699/mo with INTAKE</div>
-                        <div class="price-note">55 active cases included</div>
-                    </div>
-                    <ul class="tier-features">
-                        <li><span class="feature-check" style="color: #0A2463;">✓</span> Everything in Growth, PLUS:</li>
-                        <li><span class="feature-check" style="color: #0A2463;">✓</span> <strong>Team case assignment</strong></li>
-                        <li><span class="feature-check" style="color: #0A2463;">✓</span> <strong>Batch case processing</strong></li>
-                        <li><span class="feature-check" style="color: #0A2463;">✓</span> <strong>Custom workflow configuration</strong></li>
-                        <li><span class="feature-check" style="color: #0A2463;">✓</span> <strong>Priority onboarding support</strong></li>
-                        <li style="color: #999;"><span style="color: #999;">+</span> <span style="color: #999;">$12 per additional active case</span></li>
-                    </ul>
-                    <a href="trial.html?product=leverage&plan=team" class="tier-cta">Request LEVERAGE Access →</a>
-                    <div class="tier-fine-print">Active case capacity &bull; Does not roll over &bull; Lower ecosystem pricing applies when INTAKE is active</div>
+                    <a href="trial.html?plan=team" class="tier-cta green">Apply for TEAM →</a>
+                    <div class="tier-fine-print">Month-to-month &bull; Approval required</div>
+                    <div class="tier-best-for">Best for firms handling 150+ leads/month</div>
                 </div>
             </div>
-            <div class="connecting-line">If INTAKE helps win the case, LEVERAGE helps structure the value story.</div>
+            <div class="pricing-disclaimer">
+                <p>Included qualified lead unlocks reset monthly and do not roll over. Voice minute overages beyond plan limits are discussed before any additional charges apply. All plans require approval and onboarding configuration.</p>
+            </div>
         </div>
     </section>
 
-    <!-- SETTLE PRICING -->
-    <section class="pricing-section alt reveal" id="settle">
+    <!-- HOW IT WORKS -->
+    <section class="how-it-works-section reveal">
+        <div class="section-container">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-subtitle">Three simple steps to a fully automated intake pipeline.</p>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Every Call Is Answered Instantly</h3>
+                    <p>AI handles intake, qualification, and screening 24/7 — calls never go to voicemail.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>You See Qualified Cases First</h3>
+                    <p>Each lead is pre-screened:</p>
+                    <div class="step-qualification">
+                        <span>✓ Injury type</span>
+                        <span>✓ Liability clarity</span>
+                        <span>✓ Case viability</span>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>You Choose What to Unlock</h3>
+                    <p>Preview everything. Pay only to access contact + booking. Or automate with rules (TEAM).</p>
+                    <p style="font-size:14px;color:#10B981;font-weight:600;margin-top:12px;">You only pay for cases worth pursuing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADD-ONS -->
+    <section class="addons-section reveal" id="addons">
         <div class="section-container">
             <div class="pricing-header">
-                <span class="module-label gold">STAGE 3</span>
-                <h2>SETTLE — Check the Range Before You Decide</h2>
-                <p>Most settlement decisions are made with incomplete information.<br><strong>That's why firms under-settle — and never realize it.</strong><br><br>Used only when it matters — right before a decision that affects your revenue.<br>Built from available comparable settlement signals, with confidence clearly labeled.</p>
+                <h2>Add-Ons (Optional)</h2>
+                <p>Enhance your intake system as you grow.</p>
             </div>
-            <!-- BEFORE YOU DECIDE -->
-            <div class="consequence-box gold">
-                <h4>⚖️ Before You Decide</h4>
-                <p style="font-size: 16px; color: #666; margin-bottom: 16px;">Ask yourself:</p>
-                <ul>
-                    <li>Is this offer fair?</li>
-                    <li>Am I leaving money on the table?</li>
-                    <li>What would similar cases settle for?</li>
-                </ul>
-                <div class="consequence-note">SETTLE helps answer that before you decide.</div>
-            </div>
-            <div class="pricing-grid-3" style="max-width: 900px;">
-                <div class="pricing-card" style="border-color: #B8860B;">
-                    <div class="tier-name">Single Report</div>
-                    <div class="tier-tagline">Best for one-off demand or offer checks.</div>
-                    <div class="tier-price">
-                        <span class="price-main settle-color">$39</span><span class="price-period">/report</span>
-                        <div class="price-note">No commitment</div>
-                    </div>
-                    <ul class="tier-features">
-                        <li><span class="feature-check" style="color: #B8860B;">✓</span> Settlement range</li>
-                        <li><span class="feature-check" style="color: #B8860B;">✓</span> Confidence level</li>
-                        <li><span class="feature-check" style="color: #B8860B;">✓</span> Comparable signals</li>
-                        <li><span class="feature-check" style="color: #B8860B;">✓</span> Data limitation disclosure</li>
-                    </ul>
-                    <a href="trial.html?product=settle&plan=single" class="tier-cta gold">Request SETTLE Access →</a>
+            <div class="addons-grid">
+                <div class="addon-card">
+                    <div class="addon-icon">📞</div>
+                    <h4>Outbound AI Follow-Up Agent</h4>
+                    <p>Automate lead nurturing &amp; missed call recovery. Reach out to leads that didn't convert on first contact.</p>
                 </div>
-                <div class="pricing-card popular" style="border-color: #B8860B; border-width: 2px;">
-                    <div class="pricing-badge">MOST POPULAR</div>
-                    <div class="tier-name">Ecosystem Rate</div>
-                    <div class="tier-tagline">For firms with active INTAKE or LEVERAGE</div>
-                    <div class="tier-price">
-                        <span class="price-main settle-color">$29</span><span class="price-period">/report</span>
-                        <div style="font-size: 14px; color: #10B981; font-weight: 600; margin-top: 8px;">Billed monthly in arrears</div>
-                        <div class="price-note">No bundles or prepayment</div>
-                    </div>
-                    <ul class="tier-features">
-                        <li><span class="feature-check" style="color: #B8860B;">✓</span> Everything in Single Report</li>
-                        <li><span class="feature-check" style="color: #B8860B;">✓</span> <strong>Auto-populate from INTAKE</strong></li>
-                        <li><span class="feature-check" style="color: #B8860B;">✓</span> <strong>LEVERAGE insights included</strong></li>
-                        <li><span class="feature-check" style="color: #B8860B;">✓</span> <strong>Added to monthly invoice</strong></li>
-                    </ul>
-                    <a href="trial.html?product=settle&plan=ecosystem" class="tier-cta gold">Request SETTLE Access →</a>
+                <div class="addon-card">
+                    <div class="addon-icon">💾</div>
+                    <h4>Extended Call Storage</h4>
+                    <p>90-day or 180-day retention options. Keep recordings and transcripts longer for compliance and review.</p>
                 </div>
-                <div class="pricing-card" style="border-color: #B8860B;">
-                    <div class="tier-name">SETTLE Pro</div>
-                    <div class="tier-tagline">For high-volume firms</div>
-                    <div class="tier-price">
-                        <span class="price-main settle-color">$299</span><span class="price-period">/month</span>
-                        <div style="font-size: 14px; color: #10B981; font-weight: 600; margin-top: 8px;">15 reports included &bull; $25/report after</div>
-                        <div class="price-note">Dedicated support</div>
-                    </div>
-                    <ul class="tier-features">
-                        <li><span class="feature-check" style="color: #B8860B;">✓</span> Everything in Ecosystem Rate</li>
-                        <li><span class="feature-check" style="color: #B8860B;">✓</span> <strong>15 reports/month included</strong></li>
-                        <li><span class="feature-check" style="color: #B8860B;">✓</span> <strong>$25 per additional report</strong></li>
-                    </ul>
-                    <a href="trial.html?product=settle&plan=pro" class="tier-cta gold">Apply for SETTLE Pro →</a>
+                <div class="addon-card">
+                    <div class="addon-icon">📊</div>
+                    <h4>Advanced Reporting Suite</h4>
+                    <p>Pro-level insights for Growth firms. Deeper analytics on lead sources, conversion funnels, and ROI.</p>
                 </div>
-            </div>
-            <div style="text-align: center; margin-top: 32px; font-size: 15px; color: #666; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.7;">
-                Standalone firms may also request <strong>11-Pack</strong> ($385) or <strong>25-Pack</strong> ($750) access. Pack and Pro report balances are subject to expiration and rollover rules shown in the Customer Portal. If SETTLE does not have enough data to generate a meaningful report, you are not charged.
+                <div class="addon-card">
+                    <div class="addon-icon">🔗</div>
+                    <h4>Custom CRM / Case Management Integrations</h4>
+                    <p>Connect TrueVow directly to your existing case management system or CRM for seamless data flow.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- OPTIONAL INTAKE ADD-ONS -->
-    <section class="pricing-section reveal" id="add-ons">
+    <!-- WHY FIRMS CHOOSE THIS MODEL -->
+    <section class="why-section reveal">
         <div class="section-container">
-            <div class="pricing-header">
-                <span class="module-label green">OPTIONAL INTAKE ADD-ONS</span>
-                <h2>Optional INTAKE Add-Ons</h2>
-                <p>Add-ons are available for Growth and Team plans. Solo is kept simple for one-attorney intake coverage.</p>
-            </div>
-
-            <!-- FOLLOW-UP -->
-            <div style="text-align:center;margin-bottom:24px">
-                <h3 style="font-size:28px;font-weight:900;color:#1A1A1A;margin-bottom:8px">FOLLOW-UP</h3>
-                <p style="font-size:17px;color:#666">Stop losing leads to slow response. Missed call callbacks, form submissions, reminders, and callback requests.</p>
-            </div>
-            <div class="lead-explainer" style="border-color: #0A2463; background: linear-gradient(135deg, #EFF6FF 0%, #E8F4FD 100%);">
-                <h3 style="color: #0A2463;">What&rsquo;s Included Inside INTAKE (No Extra Cost)</h3>
-                <ul>
-                    <li>&check; Booking confirmation SMS/email</li>
-                    <li>&check; Consultation reminder SMS/email</li>
-                    <li>&check; A+ priority SMS to attorney</li>
-                    <li>&check; Basic client confirmation message</li>
-                </ul>
-            </div>
-            <div class="pricing-grid-3" style="max-width: 700px;">
-                <div class="pricing-card" style="border-color: #10B981;">
-                    <div class="tier-name">Starter</div>
-                    <div class="tier-tagline">For missed calls, form submissions, reminders, and callback requests</div>
-                    <div class="tier-price">
-                        <span class="price-main intake-color">$149</span><span class="price-period">/month</span>
-                        <div class="price-included intake-color">200 follow-up actions included</div>
-                        <div class="price-note">300 connected outbound AI voice minutes included</div>
+            <h2 class="section-title" style="color: white;">Why Firms Choose This Model</h2>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">❌</div>
+                    <div class="why-text">
+                        <h4>No missed calls = no lost cases</h4>
+                        <p>Every inbound call is answered instantly, 24/7. You never lose a lead to voicemail again.</p>
                     </div>
-                    <ul class="tier-features">
-                        <li><span class="feature-check">&check;</span> Missed call callback</li>
-                        <li><span class="feature-check">&check;</span> Website form submission callback</li>
-                        <li><span class="feature-check">&check;</span> Abandoned intake follow-up</li>
-                        <li><span class="feature-check">&check;</span> No-show reschedule</li>
-                        <li><span class="feature-check">&check;</span> Consultation reminders</li>
-                        <li><span class="feature-check">&check;</span> Business-hours calling windows</li>
-                        <li><span class="feature-check">&check;</span> Opt-out handling &amp; audit logs</li>
-                    </ul>
-                    <a href="trial.html?product=intake&addon=followup-starter" class="tier-cta green">Add FOLLOW-UP &rarr;</a>
-                    <div class="tier-fine-print">Available on Growth and Team</div>
                 </div>
-                <div class="pricing-card" style="border-color: #10B981;">
-                    <div class="tier-name">Scale</div>
-                    <div class="tier-tagline">For higher-volume follow-up workflows</div>
-                    <div class="tier-price">
-                        <span class="price-main intake-color">$299</span><span class="price-period">/month</span>
-                        <div class="price-included intake-color">600 follow-up actions included</div>
-                        <div class="price-note">750 connected outbound AI voice minutes included</div>
+                <div class="why-card">
+                    <div class="why-icon">❌</div>
+                    <div class="why-text">
+                        <h4>No wasted ad spend on unqualified leads</h4>
+                        <p>Only qualified opportunities reach your desk. Your marketing dollars work harder.</p>
                     </div>
-                    <ul class="tier-features">
-                        <li><span class="feature-check">&check;</span> Everything in Starter, PLUS:</li>
-                        <li><span class="feature-check">&check;</span> <strong>Social media lead callback</strong></li>
-                        <li><span class="feature-check">&check;</span> <strong>Multi-attempt follow-up sequences</strong></li>
-                        <li><span class="feature-check">&check;</span> <strong>Timezone-aware scheduling</strong></li>
-                        <li><span class="feature-check">&check;</span> <strong>After-hours callback queue</strong></li>
-                        <li><span class="feature-check">&check;</span> <strong>Custom firm-approved scripts</strong></li>
-                        <li><span class="feature-check">&check;</span> <strong>SMS opt-out language included</strong></li>
-                    </ul>
-                    <a href="trial.html?product=intake&addon=followup-scale" class="tier-cta green">Add FOLLOW-UP &rarr;</a>
-                    <div class="tier-fine-print">Available on Growth and Team</div>
                 </div>
-            </div>
-            <p style="text-align:center;margin-top:16px;font-size:13px;color:#888">A follow-up action means one outbound SMS follow-up, one outbound call attempt, or one scheduled reminder action. Connected AI voice minutes are counted separately when Benjamin handles an answered outbound call. Additional actions and connected voice minutes billed based on plan terms.</p>
-            <div class="consequence-box blue" style="margin-top: 24px;">
-                <h4>Outbound Guardrails</h4>
-                <ul>
-                    <li>Business-hours calling windows enforced</li>
-                    <li>Timezone respect</li>
-                    <li>Opt-out handling and SMS opt-out language</li>
-                    <li>Call attempt limits &mdash; no harassment patterns</li>
-                    <li>Consent and recording disclosure</li>
-                    <li>Clear caller identity &mdash; no deception</li>
-                    <li>Firm-approved scripts &mdash; no legal advice</li>
-                    <li>Audit log of all attempts</li>
-                    <li>No debt-collection-style persistence</li>
-                </ul>
-                <div class="consequence-note">FOLLOW-UP is an INTAKE add-on, not a standalone product.</div>
-            </div>
-
-            <!-- COMPLETE -->
-            <div style="text-align:center;margin:48px 0 24px">
-                <h3 style="font-size:28px;font-weight:900;color:#1A1A1A;margin-bottom:8px">TrueVow COMPLETE&trade;</h3>
-                <p style="font-size:17px;color:#666">Secure post-call intake packet for collecting details that should not slow down the live call.</p>
-            </div>
-            <div class="pricing-grid-3" style="max-width: 700px;">
-                <div class="pricing-card" style="border-color: #10B981;">
-                    <div class="tier-name">COMPLETE Starter</div>
-                    <div class="tier-price">
-                        <span class="price-main intake-color">$99</span><span class="price-period">/month</span>
-                        <div class="price-included intake-color">15 packets included</div>
-                        <div class="price-note">250 MB storage included</div>
+                <div class="why-card">
+                    <div class="why-icon">✅</div>
+                    <div class="why-text">
+                        <h4>Pay only for qualified opportunities</h4>
+                        <p>Preview every lead. You decide which cases to unlock based on value — not volume.</p>
                     </div>
-                    <ul class="tier-features">
-                        <li><span class="feature-check">&check;</span> Secure post-call intake packet</li>
-                        <li><span class="feature-check">&check;</span> Additional detail collection</li>
-                        <li><span class="feature-check">&check;</span> Upload support</li>
-                        <li><span class="feature-check">&check;</span> 1 automated reminder per packet</li>
-                    </ul>
-                    <a href="trial.html?product=intake&addon=complete-starter" class="tier-cta green">Add COMPLETE &rarr;</a>
-                    <div class="tier-fine-print">Additional packets billed at $9/packet &bull; Available on Growth and Team</div>
                 </div>
-                <div class="pricing-card" style="border-color: #10B981;">
-                    <div class="tier-name">COMPLETE Scale</div>
-                    <div class="tier-price">
-                        <span class="price-main intake-color">$199</span><span class="price-period">/month</span>
-                        <div class="price-included intake-color">55 packets included</div>
-                        <div class="price-note">1 GB storage included</div>
+                <div class="why-card">
+                    <div class="why-icon">✅</div>
+                    <div class="why-text">
+                        <h4>Predictable + scalable pricing</h4>
+                        <p>Know your costs before you scale. Plans grow with your firm, not ahead of it.</p>
                     </div>
-                    <ul class="tier-features">
-                        <li><span class="feature-check">&check;</span> Everything in Starter, PLUS:</li>
-                        <li><span class="feature-check">&check;</span> <strong>Up to 2 automated reminders per packet</strong></li>
-                        <li><span class="feature-check">&check;</span> <strong>Higher storage capacity</strong></li>
-                    </ul>
-                    <a href="trial.html?product=intake&addon=complete-scale" class="tier-cta green">Add COMPLETE &rarr;</a>
-                    <div class="tier-fine-print">Additional packets billed at $5/packet &bull; Available on Growth and Team</div>
-                </div>
-            </div> & TRANSCRIPTS -->
-            <div style="text-align:center;margin:48px 0 24px">
-                <h3 style="font-size:28px;font-weight:900;color:#1A1A1A;margin-bottom:8px">Recordings &amp; Transcripts</h3>
-                <p style="font-size:17px;color:#666">Optional call recording and transcript add-ons for Growth and Team plans.</p>
-                <p style="font-size:14px;color:#B91C1C;margin-top:8px">Recording and transcript features are optional and configured during onboarding based on firm policy, caller disclosure requirements, and jurisdiction.</p>
-            </div>
-            <div class="pricing-grid-3">
-                <div class="pricing-card" style="border-color: #10B981;">
-                    <div class="tier-name">Recordings Only</div>
-                    <div class="tier-price">
-                        <span class="price-main intake-color">$49</span><span class="price-period">/month</span>
-                        <div class="price-included intake-color">1,500 recorded minutes included</div>
-                        <div class="price-note">180-day retention configuration available</div>
-                    </div>
-                    <ul class="tier-features">
-                        <li><span class="feature-check">&check;</span> Call recording</li>
-                        <li><span class="feature-check">&check;</span> Configured during onboarding</li>
-                        <li><span class="feature-check">&check;</span> Firm-controlled policy</li>
-                    </ul>
-                    <a href="trial.html?product=intake&addon=recordings" class="tier-cta green">Add Recordings &rarr;</a>
-                    <div class="tier-fine-print">Additional recorded minutes billed at $0.05/min &bull; Available on Growth and Team</div>
-                </div>
-                <div class="pricing-card" style="border-color: #10B981;">
-                    <div class="tier-name">Recordings + Transcripts Starter</div>
-                    <div class="tier-price">
-                        <span class="price-main intake-color">$199</span><span class="price-period">/month</span>
-                        <div class="price-included intake-color">1,500 transcribed minutes included</div>
-                        <div class="price-note">Recording + transcript access</div>
-                    </div>
-                    <ul class="tier-features">
-                        <li><span class="feature-check">&check;</span> Everything in Recordings Only</li>
-                        <li><span class="feature-check">&check;</span> <strong>Transcript generation</strong></li>
-                        <li><span class="feature-check">&check;</span> <strong>Full transcript access</strong></li>
-                    </ul>
-                    <a href="trial.html?product=intake&addon=transcripts-starter" class="tier-cta green">Add Transcripts &rarr;</a>
-                    <div class="tier-fine-print">Additional transcribed minutes billed at $0.15/min &bull; Available on Growth and Team</div>
-                </div>
-                <div class="pricing-card" style="border-color: #10B981;">
-                    <div class="tier-name">Recordings + Transcripts Scale</div>
-                    <div class="tier-price">
-                        <span class="price-main intake-color">$399</span><span class="price-period">/month</span>
-                        <div class="price-included intake-color">4,500 transcribed minutes included</div>
-                        <div class="price-note">Built for higher-volume firms</div>
-                    </div>
-                    <ul class="tier-features">
-                        <li><span class="feature-check">&check;</span> Everything in Starter, PLUS:</li>
-                        <li><span class="feature-check">&check;</span> <strong>3x transcript capacity</strong></li>
-                        <li><span class="feature-check">&check;</span> <strong>Advanced retention policy</strong></li>
-                    </ul>
-                    <a href="trial.html?product=intake&addon=transcripts-scale" class="tier-cta green">Add Transcripts &rarr;</a>
-                    <div class="tier-fine-print">Additional transcribed minutes billed at $0.10/min &bull; Available on Growth and Team</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SYSTEM FLOW -->
-    <section class="system-flow-section reveal">
+    <!-- ROI SNAPSHOT -->
+    <section class="roi-section reveal">
         <div class="section-container">
-            <h2 class="section-title" style="color: white;">How This Actually Works (In Practice)</h2>
-            <p class="section-subtitle" style="color: rgba(255,255,255,0.7);">This is what high-performing firms do — consistently.</p>
-            <div class="system-flow-grid">
-                <div class="flow-card intake"><div class="flow-card-number">STEP 1</div><h4>Call comes in</h4><p>INTAKE qualifies the lead</p></div>
-                <div class="flow-card intake"><div class="flow-card-number">STEP 2</div><h4>Firm receives priority alert</h4><p>Respond while the lead is still warm</p></div>
-                <div class="flow-card leverage"><div class="flow-card-number">STEP 3</div><h4>LEVERAGE structures</h4><p>Organize facts, damages, and posture</p></div>
-                <div class="flow-card settle"><div class="flow-card-number">STEP 4</div><h4>SETTLE informs</h4><p>Check the range before deciding</p></div>
+            <h2 class="section-title">ROI Snapshot</h2>
+            <div class="roi-box">
+                <h3>What One Additional Signed Case Means</h3>
+                <div class="roi-numbers">
+                    <div class="roi-stat">
+                        <div class="roi-stat-value">$3K–$10K+</div>
+                        <div class="roi-stat-label">Average PI case value</div>
+                    </div>
+                </div>
+                <div class="roi-conclusion">
+                    One additional signed case per month →<br>Pays for the system multiple times over.
+                </div>
+                <p style="margin-top:20px;font-size:16px;color:#666;">
+                    <a href="profitability.html" style="color:#0A2463;font-weight:700;">Run the ROI Calculator →</a>
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- REAL DIFFERENCE -->
-    <section class="difference-section reveal">
+    <!-- POSITIONING LINE -->
+    <section class="positioning-section reveal">
         <div class="section-container">
-            <h2 class="section-title">The Real Difference</h2>
-            <div class="difference-grid">
-                <div class="difference-card without">
-                    <h3>Without TrueVow</h3>
-                    <ul>
-                        <li>You guess which leads matter</li>
-                        <li>You react instead of respond</li>
-                        <li>You make settlement decisions with limited context</li>
-                    </ul>
-                </div>
-                <div class="difference-card with">
-                    <h3>With TrueVow</h3>
-                    <ul>
-                        <li>You see structured intake opportunities</li>
-                        <li>You respond faster with priority alerts</li>
-                        <li>You decide with clearer context</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="difference-bottom">This is the difference between <strong>running a practice</strong> and <strong>controlling a pipeline</strong>.</div>
-        </div>
-    </section>
-
-    <!-- COMPARISON -->
-    <section class="comparison-section reveal">
-        <div class="comparison-title">What Firms Usually Compare Us Against</div>
-        <div class="comparison-grid">
-            <div class="comparison-item">
-                <div class="comparison-label"><strong>Generic AI Receptionist</strong></div>
-                <div class="comparison-detail">Useful for basic call coverage, FAQs, simple scheduling, and message capture.</div>
-                <div class="comparison-drawbacks"><span>May not support PI-specific qualification</span><span>Lead grading may be limited</span><span>Usually not built around case-value handoff</span></div>
-            </div>
-            <div class="comparison-item">
-                <div class="comparison-label"><strong>Human Answering Service</strong></div>
-                <div class="comparison-detail">Useful for overflow, after-hours support, and human message-taking.</div>
-                <div class="comparison-drawbacks"><span>Qualification depth varies</span><span>Structured scoring may be limited</span><span>Pipeline analytics may require extra workflow</span></div>
-            </div>
-            <div class="comparison-item">
-                <div class="comparison-label"><strong>TrueVow INTAKE</strong></div>
-                <div class="comparison-detail">Built for controlled PI intake, grading, booking, priority alerts, and structured records.</div>
-                <div class="comparison-drawbacks" style="color:#0A2463;"><span>Firm-approved intake paths</span><span>A+ lead prioritization</span><span>Expansion into FOLLOW-UP, LEVERAGE, and SETTLE</span></div>
+            <p class="positioning-line">Turn missed calls into signed cases — without hiring more staff.</p>
+            <div style="margin-top:32px;">
+                <a href="trial.html" style="display:inline-block;background:#0A2463;color:white;padding:20px 48px;border-radius:12px;font-size:20px;font-weight:800;text-decoration:none;box-shadow:0 4px 12px rgba(10,36,99,0.2);">Apply for Access →</a>
             </div>
         </div>
-        <div class="comparison-bottom">AI receptionists answer calls. TrueVow protects the intake pipeline.</div>
     </section>
 
     <!-- ONBOARDING -->
@@ -996,90 +476,48 @@
         </div>
     </section>
 
-    <!-- OBJECTIONS -->
-    <section class="objections-section reveal">
-        <div class="section-container">
-            <h2 class="section-title">Common Concerns (Quick Answers)</h2>
-            <div class="objection-card">
-                <h3>"I've tried legal tech before. It promised the world and didn't work."</h3>
-                <p>Most firms are right to be cautious. TrueVow is designed around controlled intake paths, firm-approved questions, deterministic routing rules, and structured records. Where flexible caller responses or limited AI-assisted processing are used, they do not control legal advice, attorney judgment, or live-call legal decisions.</p>
-            </div>
-            <div class="objection-card">
-                <h3>"I'm not sure our firm is tech-ready for this."</h3>
-                <p>Setup is handled by the TrueVow team during onboarding. If your firm can use email and a calendar, the basic workflow is accessible. Intake paths, routing, and recording settings are configured with you &mdash; not by you alone.</p>
-            </div>
-            <div class="objection-card">
-                <h3>"I can't afford another expense right now."</h3>
-                <p><strong>You're not spending money. You're capturing cases you would have lost.</strong> INTAKE Solo starts at $199/mo. One additional signed case can cover a significant portion of the base subscription cost. <a href="profitability.html" style="color: #0A2463;">Run the Intake Leakage Calculator &rarr;</a></p>
-            </div>
-            <div class="objection-card">
-                <h3>"What if I don't have enough call volume?"</h3>
-                <p>At lower call volumes, each individual call may represent a larger share of potential revenue. INTAKE Solo is designed for firms that want structured handling on every routed call, regardless of volume.</p>
-            </div>
-            <p style="text-align: center; margin-top: 32px; font-size: 16px; color: #666;">
-                <a href="#faq-section" style="color: #0A2463; font-weight: 600;">See all objections answered in our FAQ →</a>
-            </p>
-        </div>
-    </section>
-
     <!-- FAQ -->
     <section class="faq-section reveal" id="faq-section">
         <div class="faq-container">
             <h2 class="section-title">Frequently Asked Questions</h2>
             <div class="faq-category">
-                <div class="faq-category-header">Pricing & Billing</div>
+                <div class="faq-category-header">Pricing &amp; Billing</div>
                 <div class="faq-item">
-                    <div class="faq-question">How does INTAKE pricing work?</div>
+                    <div class="faq-question">How does the pricing model work?</div>
                     <div class="faq-answer">
-                        Routed calls are handled when enabled, and qualified lead records are organized by grade. You see <strong>all leads (A, B, C, D)</strong>. You only pay to <strong>unlock A+ leads</strong> — high-priority opportunities based on injury, treatment, jurisdiction, timing, and liability signals.<br><br>
-                        <strong>Solo ($199/mo):</strong> 3 A+ unlocks included, 500 routed voice minutes, $49/additional A+ unlock<br>
-                        <strong>Growth ($599/mo):</strong> 11 A+ unlocks included, 1,500 routed voice minutes, $39/additional A+ unlock<br>
-                        <strong>Team ($1,499/mo):</strong> 33 A+ unlocks included, 4,500 routed voice minutes, $29/additional A+ unlock<br><br>
-                        <div class="faq-highlight">A, B, C, and D leads are visible without unlock. Only A+ leads require an unlock. Included unlocks reset monthly and do not roll over.</div>
+                        TrueVow uses a simple, transparent pricing model. Choose the plan that matches your volume: <strong>SOLO ($499/mo)</strong> for firms handling 10–30 leads/month, <strong>GROWTH ($1,499/mo)</strong> for 50–150 leads/month, or <strong>TEAM ($3,999/mo)</strong> for 150+ leads/month.<br><br>
+                        SOLO includes everything with no unlocks — simple and straightforward. GROWTH and TEAM include free qualified lead unlocks each month, with additional unlocks available at a per-unlock rate.<br><br>
+                        <div class="faq-highlight">You preview every lead. You only pay to unlock the ones you want to pursue.</div>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">What's the difference between A, B, C, and D leads?</div>
+                    <div class="faq-question">What is a qualified lead unlock?</div>
                     <div class="faq-answer">
-                        <strong>A+ leads:</strong> High-priority opportunities based on injury, treatment, jurisdiction, timing, and liability signals — these require an unlock.<br><br>
-                        <strong>B/C leads:</strong> Lower-value or borderline cases — always visible, always free.<br><br>
-                        <strong>D leads:</strong> Spam, wrong practice area, expired statute — filtered out automatically.<br><br>
-                        <div class="faq-highlight">You see every lead. You only pay to unlock the high-priority opportunities.</div>
+                        Every lead is screened by AI for injury type, liability clarity, and case viability. You can preview the screening results for all leads. When you want full contact details and the ability to book the consultation, you unlock the lead.<br><br>
+                        <strong>SOLO:</strong> No unlock system — all leads are accessible with full details.<br>
+                        <strong>GROWTH:</strong> 40 free unlocks/month, $40 per additional unlock.<br>
+                        <strong>TEAM:</strong> 120 free unlocks/month, $30–$35 per additional unlock (volume discount).<br><br>
+                        <div class="faq-highlight">Included unlocks reset monthly and do not roll over.</div>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">Can I upgrade or downgrade my plan?</div>
-                    <div class="faq-answer">Plan changes can be made through the customer portal after approval. Start with Solo, and request a change when your volume or workflow changes. Availability may depend on onboarding capacity.</div>
+                    <div class="faq-answer">Plan changes can be made through the customer portal after approval. Start with SOLO and upgrade as your volume grows. Availability may depend on onboarding capacity.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Is Spanish really included free?</div>
-                    <div class="faq-answer"><strong>Yes.</strong> Benjamin supports fluent Spanish intake at no additional cost across all INTAKE plans. Spanish is included, not sold separately.</div>
+                    <div class="faq-question">Is Spanish really included?</div>
+                    <div class="faq-answer"><strong>Yes.</strong> Benjamin supports fluent Spanish intake at no additional cost on GROWTH and TEAM plans. Spanish is included, not sold separately.</div>
                 </div>
             </div>
             <div class="faq-category">
                 <div class="faq-category-header">How It Works</div>
                 <div class="faq-item">
                     <div class="faq-question">Is Benjamin a chatbot?</div>
-                    <div class="faq-answer">
-                        No. Benjamin is not a free-form chatbot. Benjamin follows firm-approved intake paths, routing rules, escalation logic, and recording settings. It can support yes/no questions, structured responses, and approved open-ended prompts, but it is not designed to provide legal advice or make attorney judgment calls.
-                    </div>
+                    <div class="faq-answer">No. Benjamin is not a free-form chatbot. Benjamin follows firm-approved intake paths, routing rules, escalation logic, and recording settings. It can support yes/no questions, structured responses, and approved open-ended prompts, but it is not designed to provide legal advice or make attorney judgment calls.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">How does LEVERAGE work?</div>
-                    <div class="faq-answer">
-                        <strong>LEVERAGE structures your case after intake, before settlement.</strong><br><br>
-                        Most firms don't lose cases. They lose value inside the case. LEVERAGE helps you:<br>
-                        • Identify key damages you might miss<br>• Structure your position for clearer negotiation<br>• Prepare for negotiation with data<br><br>
-                        <div class="faq-highlight">If INTAKE helps win the case, LEVERAGE helps structure the value story.</div>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">How does SETTLE work?</div>
-                    <div class="faq-answer">
-                        Enter your case details — injury type, treatment, jurisdiction, surgery, lost wages — and get a settlement range with confidence level and comparable signals.<br><br>
-                        Used only when decisions matter — before demand or settlement.<br><br>
-                        <div class="faq-highlight">See comparable settlement signals before you negotiate. Confidence is clearly labeled.</div>
-                    </div>
+                    <div class="faq-question">What happens when a call comes in?</div>
+                    <div class="faq-answer">Benjamin answers instantly, 24/7. The AI screens the caller for practice area, injury type, liability clarity, and case viability. Qualified leads are routed to you immediately with a summary. You see every lead and decide which to pursue.</div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">What's the onboarding process?</div>
@@ -1088,59 +526,31 @@
                         <div class="faq-highlight">Onboarding is limited to maintain quality and personal attention.</div>
                     </div>
                 </div>
+                <div class="faq-item">
+                    <div class="faq-question">What practice areas does TrueVow support?</div>
+                    <div class="faq-answer">TrueVow is currently positioned for solo and small plaintiff-side PI firms. Additional practice areas may be reviewed during onboarding, but the public product is optimized around PI intake, qualification, and case screening.</div>
+                </div>
             </div>
             <div class="faq-category">
-                <div class="faq-category-header">Compliance & Security</div>
+                <div class="faq-category-header">Compliance &amp; Security</div>
                 <div class="faq-item">
                     <div class="faq-question">What about compliance and data handling?</div>
-                    <div class="faq-answer">
-                        TrueVow is designed for controlled data handling, not zero-knowledge storage. Depending on firm configuration, the system may process contact details, structured intake answers, lead grades, booking details, risk flags, optional recordings, and optional transcripts.<br><br>Recording and transcript generation are optional and controlled by firm policy. Case analysis workflows do not require client identifiers where they are not needed. TrueVow is not a law firm and does not provide legal advice.
-                    </div>
-                </div>
-            </div>
-            <div class="faq-category">
-                <div class="faq-category-header">Add-Ons & Unlocks</div>
-                <div class="faq-item">
-                    <div class="faq-question">Are all leads locked?</div>
-                    <div class="faq-answer">No. A, B, C, and D leads are visible without unlock. Only A+ leads require an unlock.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Do included A+ unlocks roll over?</div>
-                    <div class="faq-answer">No. Included A+ unlocks reset monthly and do not roll over.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Is FOLLOW-UP available on Solo?</div>
-                    <div class="faq-answer">No. FOLLOW-UP is available on Growth and Team plans. Solo is designed for simple one-attorney intake coverage.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Is COMPLETE the same as FOLLOW-UP?</div>
-                    <div class="faq-answer">No. FOLLOW-UP handles outbound callbacks, reminders, and follow-up attempts. COMPLETE is a secure post-call packet for collecting additional details, uploads, and consult-prep information after the live call.</div>
+                    <div class="faq-answer">TrueVow is designed for controlled data handling, not zero-knowledge storage. Depending on firm configuration, the system may process contact details, structured intake answers, lead grades, booking details, risk flags, optional recordings, and optional transcripts.<br><br>Recording and transcript generation are optional and controlled by firm policy. Case analysis workflows do not require client identifiers where they are not needed. TrueVow is not a law firm and does not provide legal advice.</div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">Are recordings and transcripts included?</div>
-                    <div class="faq-answer">No. Recordings and transcripts are optional add-ons for Growth and Team plans. They are configured during onboarding based on firm policy, disclosure requirements, and jurisdiction.</div>
+                    <div class="faq-answer">SOLO includes 7-day call recording storage with the ability to export anytime. GROWTH and TEAM have extended storage options available as add-ons. Recording and transcript features are configured during onboarding based on firm policy, disclosure requirements, and jurisdiction.</div>
                 </div>
             </div>
             <div class="faq-category">
                 <div class="faq-category-header">Who Is This For?</div>
                 <div class="faq-item">
-                    <div class="faq-question">What practice areas does TrueVow support?</div>
-                    <div class="faq-answer">
-                        TrueVow is currently positioned for solo and small plaintiff-side PI firms. Additional practice areas may be reviewed during onboarding, but the public product is optimized around PI intake, qualification, case value structure, and settlement decision support.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Why does TrueVow publish pricing when many legal AI platforms require a demo?</div>
-                    <div class="faq-answer">
-                        TrueVow is built for solo and small PI firms, not enterprise procurement committees. We publish starting prices so firm owners can understand the basic economics before applying. Final activation still happens after approval inside the customer portal because setup, county availability, recording policy, calendar configuration, and product fit must be reviewed first.
-                    </div>
-                </div>
-                <div class="faq-item">
                     <div class="faq-question">Do you serve large firms or enterprise?</div>
-                    <div class="faq-answer">
-                        <strong>No.</strong> TrueVow is built exclusively for solo and small law firms (≤21 attorneys). We don't serve BigLaw or enterprise legal departments.<br><br>
-                        <div class="faq-highlight">Your fight is different. Your tools should be too.</div>
-                    </div>
+                    <div class="faq-answer"><strong>No.</strong> TrueVow is built exclusively for solo and small law firms (≤21 attorneys). We don't serve BigLaw or enterprise legal departments.<br><br><div class="faq-highlight">Your fight is different. Your tools should be too.</div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Why publish pricing instead of requiring a demo?</div>
+                    <div class="faq-answer">TrueVow is built for solo and small PI firms, not enterprise procurement committees. We publish starting prices so firm owners can understand the basic economics before applying. Final activation still happens after approval inside the customer portal because setup, county availability, recording policy, calendar configuration, and product fit must be reviewed first.</div>
                 </div>
             </div>
         </div>
@@ -1148,14 +558,14 @@
 
     <!-- FINAL CTA -->
     <section class="final-cta-section reveal">
-        <h2>Ready to See the Intake System Behind the Pricing?</h2>
+        <h2>Ready to Stop Missing Cases?</h2>
         <p>Apply for access and experience Benjamin live before you commit.</p>
-        <a href="trial.html" class="final-cta-btn">See Benjamin Live (8 min) &rarr;</a>
+        <a href="trial.html" class="final-cta-btn">Apply for Access →</a>
         <div class="final-cta-badges">
-            <span>&check; Approval required</span>
-            <span>&check; Firm-approved intake paths</span>
-            <span>&check; No public checkout</span>
-            <span>&check; Onboarding limited to maintain setup quality</span>
+            <span>✓ Approval required</span>
+            <span>✓ Firm-approved intake paths</span>
+            <span>✓ No public checkout</span>
+            <span>✓ Onboarding limited to maintain setup quality</span>
         </div>
     </section>
 
@@ -1174,38 +584,34 @@
             </div>
         </a>
         <div class="footer-links">
-        <div class="footer-col">
-            <h4>PRODUCT</h4>
-            <a href="pricing.html#intake">INTAKE</a>
-            <a href="leverage.html">LEVERAGE</a>
-            <a href="settle.html">SETTLE</a>
-            <a href="pricing.html">Pricing</a>
-            <a href="profitability.html">ROI Calculator</a>
+            <div class="footer-col">
+                <h4>PRODUCT</h4>
+                <a href="pricing.html">Pricing</a>
+                <a href="how-it-works.html">How It Works</a>
+                <a href="profitability.html">ROI Calculator</a>
+            </div>
+            <div class="footer-col">
+                <h4>RESOURCES</h4>
+                <a href="county-cap.html">County Availability</a>
+                <a href="compliance.html">Data &amp; Compliance</a>
+                <a href="integrations.html">Integrations &amp; Setup</a>
+                <a href="blog.html">Blog</a>
+            </div>
+            <div class="footer-col">
+                <h4>COMPANY</h4>
+                <a href="about.html">About Us</a>
+                <a href="trial.html">Contact</a>
+            </div>
         </div>
-        <div class="footer-col">
-            <h4>RESOURCES</h4>
-            <a href="county-cap.html">County Availability</a>
-            <a href="compliance.html">Data &amp; Compliance</a>
-            <a href="integrations.html">Integrations &amp; Setup</a>
-            <a href="blog.html">Blog</a>
-            
-        </div>
-        <div class="footer-col">
-            <h4>COMPANY</h4>
-            <a href="about.html">About Us</a>
-            <a href="trial.html">Contact</a>
-        </div>
-    </div>
         <div class="footer-legal">
             <a href="legal/privacy.html">Privacy Policy</a>
             <span style="color: #555;">|</span>
             <a href="legal/terms.html">Terms of Service</a>
             <span style="color: #555;">|</span>
             <a href="legal/msa.html">MSA</a>
-    </div>
         </div>
         <p class="footer-disclaimer">
-            © 2026 TrueVow Technologies. All rights reserved. TrueVow is a brand of TrueVow Global Tech FZE LLC (UAE), a subsidiary of TrueVow Global Holdings LLC (Nevis). TrueVow (USA) Inc. (Wyoming) provides passive marketing only and does not handle contracts or operations. All contracts are with TrueVow Global Tech FZE LLC (UAE). Technology and IP held by TrueVow Global Holdings LLC (Nevis). We are not a law firm and do not provide legal advice. By using our services, you acknowledge that TrueVow operates as a technology and services provider only.
+            &copy; 2026 TrueVow Technologies. All rights reserved. TrueVow is a brand of TrueVow Global Tech FZE LLC (UAE), a subsidiary of TrueVow Global Holdings LLC (Nevis). TrueVow (USA) Inc. (Wyoming) provides passive marketing only and does not handle contracts or operations. All contracts are with TrueVow Global Tech FZE LLC (UAE). Technology and IP held by TrueVow Global Holdings LLC (Nevis). We are not a law firm and do not provide legal advice. By using our services, you acknowledge that TrueVow operates as a technology and services provider only.
         </p>
     </footer>
 
@@ -1223,7 +629,7 @@
                 });
             });
 
-            // 1. Scroll reveals
+            // Scroll reveals
             var revealEls = document.querySelectorAll('.reveal');
             var observer = new IntersectionObserver(function(entries) {
                 entries.forEach(function(entry) {
@@ -1235,7 +641,7 @@
             }, { threshold: 0.12 });
             revealEls.forEach(function(el) { observer.observe(el); });
 
-            // 2. Progress bar
+            // Progress bar
             var progressBar = document.getElementById('progressBar');
             window.addEventListener('scroll', function() {
                 var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -1244,24 +650,11 @@
                 progressBar.style.width = progress + '%';
             });
 
-            // 3. Animated cost numbers — subtle pulse on reveal
-            var costEffectEls = document.querySelectorAll('.cost-effect');
-            var costObserver = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animated');
-                        costObserver.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 });
-            costEffectEls.forEach(function(el) { costObserver.observe(el); });
-
-            // 4. Smart sticky CTA — context-aware text based on scroll position
+            // Smart sticky CTA
             var stickyCta = document.getElementById('stickyCta');
             var sections = [
-                { id: 'intake', text: 'Apply for INTAKE →', sub: '$199/mo' },
-                { id: 'leverage', text: 'Request LEVERAGE Access →', sub: 'From $99/mo' },
-                { id: 'settle', text: 'Request SETTLE Access →', sub: 'From $29/report' },
+                { id: 'pricing', text: 'Apply for Access →', sub: 'From $499/mo' },
+                { id: 'addons', text: 'See Add-Ons →', sub: 'Optional enhancements' },
                 { id: 'faq-section', text: 'Apply for Access →', sub: 'Onboarding limited' }
             ];
             var currentSection = '';
@@ -1284,7 +677,7 @@
                 }
             });
 
-            // 5. Exit intent — quiet, one-time
+            // Exit intent
             var exitBanner = document.getElementById('exitBanner');
             var exitShown = false;
             document.addEventListener('mouseout', function(e) {
@@ -1297,19 +690,19 @@
         });
     </script>
 
-<script>
-    // Mobile nav toggle
-    (function() {
-        var hamburger = document.getElementById('navHamburger');
-        var panel = document.getElementById('mobileNavPanel');
-        var overlay = document.getElementById('mobileNavOverlay');
-        var closeBtn = document.getElementById('mobileNavClose');
-        function openNav() { if(hamburger) hamburger.classList.add('active'); if(panel) panel.classList.add('active'); if(overlay) overlay.classList.add('active'); document.body.style.overflow='hidden'; }
-        function closeNav() { if(hamburger) hamburger.classList.remove('active'); if(panel) panel.classList.remove('active'); if(overlay) overlay.classList.remove('active'); document.body.style.overflow=''; }
-        if(hamburger) hamburger.addEventListener('click', openNav);
-        if(closeBtn) closeBtn.addEventListener('click', closeNav);
-        if(overlay) overlay.addEventListener('click', closeNav);
-    })();
-</script>
+    <script>
+        // Mobile nav toggle
+        (function() {
+            var hamburger = document.getElementById('navHamburger');
+            var panel = document.getElementById('mobileNavPanel');
+            var overlay = document.getElementById('mobileNavOverlay');
+            var closeBtn = document.getElementById('mobileNavClose');
+            function openNav() { if(hamburger) hamburger.classList.add('active'); if(panel) panel.classList.add('active'); if(overlay) overlay.classList.add('active'); document.body.style.overflow='hidden'; }
+            function closeNav() { if(hamburger) hamburger.classList.remove('active'); if(panel) panel.classList.remove('active'); if(overlay) overlay.classList.remove('active'); document.body.style.overflow=''; }
+            if(hamburger) hamburger.addEventListener('click', openNav);
+            if(closeBtn) closeBtn.addEventListener('click', closeNav);
+            if(overlay) overlay.addEventListener('click', closeNav);
+        })();
+    </script>
 </body>
 </html>
