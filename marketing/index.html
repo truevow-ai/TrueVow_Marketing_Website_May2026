@@ -1,258 +1,821 @@
-﻿<!DOCTYPE html><html lang="en"><head>    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>TrueVow.law — You're Bleeding $154K/Year. We Stop It — Pay Only When You Win.</title>    <meta name="description" content="Solo PI attorneys lose $154K/year from missed calls, undervalued settlements, and 2 a.m. panic. TrueVow answers calls 24/7, qualifies with practice-specific questions — pay only when you win. No monthly fees. 11 FREE bookings to start.">        <style>        /* RESET & BASE */        * {            margin: 0;            padding: 0;            box-sizing: border-box;        }                body {            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;            line-height: 1.6;            color: #1A1A1A;            background: #FFFFFF;        }                /* NAVIGATION */        nav {            background: #FFFFFF;            border-bottom: 1px solid #E5E5E5;            padding: 20px 0;            position: sticky;            top: 0;            z-index: 1000;            box-shadow: 0 2px 8px rgba(0,0,0,0.05);        }                .nav-container {            max-width: 1200px;            margin: 0 auto;            padding: 0 24px;            display: flex;            justify-content: space-between;            align-items: center;        }                .logo {            display: inline-flex;            align-items: center;            gap: 8px;            text-decoration: none;            font-family: 'Montserrat', sans-serif;        }                .logo-monogram {            position: relative;            width: 38px;            height: 32px;            flex-shrink: 0;        }                .logo-monogram-t1 {            position: absolute;            left: 0;            top: 0;            font-size: 32px;            font-weight: 400;            color: #C0C0C0;            line-height: 1;        }                .logo-monogram-t2 {            position: absolute;            left: 6px;            top: 0;            font-size: 32px;            font-weight: 400;            color: #808080;            line-height: 1;        }                .logo-monogram-v {            position: absolute;            left: 12px;            top: 0;            font-size: 32px;            font-weight: 700;            color: #0A2463;            line-height: 1;        }                .logo-text {            display: flex;            align-items: baseline;            gap: 0;        }                .logo-true {            font-size: 22px;            font-weight: 400;            color: #808080;            letter-spacing: 0.5px;        }                .logo-vow {            font-size: 22px;            font-weight: 700;            color: #0A2463;            letter-spacing: 0.5px;        }                .logo-law {            font-size: 18px;            font-weight: 400;            color: #0A2463;        }                .nav-links {            display: flex;            gap: 32px;            align-items: center;            position: absolute;            left: 50%;            transform: translateX(-50%);        }                .nav-links a {            text-decoration: none;            color: #555555;            font-weight: 500;            font-size: 15px;            transition: color 0.2s;        }                .nav-links a:hover {            color: #0A2463;        }                .nav-cta {            background: #0A2463;            color: white !important;            padding: 12px 24px;            border-radius: 8px;            font-weight: 700;            text-decoration: none !important;            border: none;            cursor: pointer;            transition: all 0.3s;            display: inline-block;        }                .nav-cta:hover {            background: #051533;            transform: translateY(-2px);            text-decoration: none !important;        }                .nav-cta:link,        .nav-cta:visited,        .nav-cta:active,        .nav-cta:focus {            text-decoration: none !important;            border: none;            outline: none;        }                a.nav-cta {            text-decoration: none !important;        }                /* HERO BLACK BAR */        .hero-bar {            background: #000000;            color: #FFFFFF;            padding: 60px 20px;            text-align: center;        }                .hero-bar h1 {            font-family: 'Montserrat', sans-serif;            font-size: 42pt;            font-weight: 700;            margin-bottom: 20px;            letter-spacing: -1px;        }                .hero-bar p {            font-size: 24pt;            color: #CCCCCC;            font-weight: 400;        }                /* SUB-HEADLINE */        .sub-headline {            padding: 60px 20px;            text-align: center;            max-width: 900px;            margin: 0 auto;        }                .sub-headline h2 {            font-family: 'Montserrat', sans-serif;            font-size: 33pt;            font-weight: 400;            color: #555555;            line-height: 1.8;            margin-bottom: 40px;        }                .bleeding-points {            text-align: left;            font-size: 18pt;            color: #555555;            line-height: 1.8;            margin-bottom: 40px;            list-style: none;            padding-left: 0;        }                .bleeding-points li {            margin-bottom: 60px;            padding-bottom: 60px;            border-bottom: 2px solid #E5E5E5;        }                .bleeding-points li:last-child {            border-bottom: none;            padding-bottom: 0;        }                .bleeding-conclusion {            font-size: 24pt;            font-weight: 600;            color: #1A1A1A;            margin-top: 40px;            font-style: italic;        }                /* VOICE OF ATTORNEY */        .voice-of-attorney {            padding: 60px 20px;            background: #F8F9FA;        }                .voice-container {            max-width: 800px;            margin: 0 auto;            font-family: 'Montserrat', sans-serif;            font-size: 21pt;            color: #555555;            line-height: 1.8;            text-align: center;        }                .voice-container p {            margin-bottom: 24px;        }                .voice-strong {            font-weight: 700;            color: #1A1A1A;        }                /* MICRO-MOVIE */        .micro-movie {            background: #F8F9FF;            border-left: 4px solid #000000;            padding: 40px 40px 40px 50px;            margin: 60px auto;            max-width: 800px;            font-family: 'Montserrat', sans-serif;            font-size: 18pt;            color: #333333;            font-style: italic;            line-height: 1.9;        }                .micro-movie p {            margin-bottom: 20px;        }                .micro-movie-highlight {            font-weight: 700;            color: #000000;        }                /* CTA BUTTON */        .cta-button {            display: block;            background: #0A2463;            color: #FFFFFF;            padding: 16px 40px;            border-radius: 8px;            font-family: 'Montserrat', sans-serif;            font-size: 18pt;            font-weight: 700;            text-decoration: none;            text-align: center;            max-width: 700px;            margin: 40px auto;            transition: all 0.3s;            box-shadow: 0 4px 12px rgba(10, 36, 99, 0.3);        }                .cta-button:hover {            background: #051533;            transform: translateY(-2px);            box-shadow: 0 6px 20px rgba(10, 36, 99, 0.4);        }                .cta-subtext {            text-align: center;            font-size: 14pt;            color: #666;            margin-top: -20px;            margin-bottom: 40px;        }                /* SECTION HEADING */        .section-heading {            text-align: center;            font-family: 'Montserrat', sans-serif;            font-size: 28pt;            font-weight: 600;            color: #1A1A1A;            margin: 80px auto 40px;            padding: 0 20px;            max-width: 900px;            line-height: 1.4;        }                /* CONTENT BLOCK */        .content-block {            max-width: 700px;            margin: 0 auto;            padding: 0 20px;            font-family: 'Montserrat', sans-serif;            font-size: 18pt;            color: #333333;            line-height: 1.8;        }                .content-block p {            margin-bottom: 24px;        }                .content-block strong {            color: #1A1A1A;            font-weight: 700;        }                /* STEP FLOW */        .step-flow {            max-width: 800px;            margin: 50px auto;            padding: 40px;            background: #F8F9FA;            border-radius: 12px;        }                .step-flow p {            font-size: 18pt;            color: #333333;            line-height: 1.8;            margin-bottom: 16px;        }                .email-box {            background: #E8F4FD;            border-left: 4px solid #0A2463;            padding: 32px;            margin: 32px 0;            border-radius: 8px;        }                .email-box strong {            color: #0A2463;            font-size: 20pt;        }                /* COMPARISON TABLE */        .comparison-section {            padding: 80px 20px;            background: #FFFFFF;        }                .comparison-table {            max-width: 900px;            margin: 40px auto;            border-collapse: collapse;            background: #FFFFFF;            box-shadow: 0 4px 20px rgba(0,0,0,0.08);            border-radius: 12px;            overflow: hidden;        }                .comparison-table th {            background: #F8F9FA;            padding: 24px;            font-size: 18pt;            font-weight: 700;            text-align: left;            border-bottom: 2px solid #E5E5E5;        }                .comparison-table td {            padding: 24px;            font-size: 16pt;            border-bottom: 1px solid #F0F0F0;        }                .truevow-cell {            background: #F0F7FF;            font-weight: 600;            color: #0A2463;        }                /* PRICING HIGHLIGHT */        .pricing-highlight {            max-width: 700px;            margin: 60px auto;            padding: 48px;            background: #F8F9FA;            border-radius: 16px;            text-align: center;        }                .pricing-amount {            font-size: 56pt;            font-weight: 800;            color: #0A2463;            margin-bottom: 16px;        }                .pricing-detail {            font-size: 18pt;            color: #666;            margin-bottom: 32px;        }                .pricing-features {            text-align: left;            font-size: 16pt;            color: #333;            line-height: 2;        }                /* URGENCY BOX */        .urgency-box {            background: #FFF3E0;            border: 3px solid #FF6B35;            padding: 40px;            text-align: center;            max-width: 800px;            margin: 80px auto;            border-radius: 12px;        }                .urgency-box h3 {            font-size: 28pt;            font-weight: 700;            color: #B91C1C;            margin-bottom: 24px;        }                .urgency-box p {            font-size: 18pt;            color: #666;            margin-bottom: 12px;        }                .urgency-strong {            font-size: 20pt;            font-weight: 700;            color: #1A1A1A;        }                /* FORM SECTION */        .form-section {            padding: 80px 20px;            background: #F8F9FA;        }                .form-container {            max-width: 600px;            margin: 0 auto;            background: #FFFFFF;            padding: 48px;            border-radius: 16px;            box-shadow: 0 4px 20px rgba(0,0,0,0.1);        }                .form-container h3 {            font-size: 28pt;            font-weight: 700;            text-align: center;            margin-bottom: 16px;            color: #1A1A1A;        }                .form-subtext {            text-align: center;            font-size: 16pt;            color: #666;            margin-bottom: 32px;        }                .form-container label {            display: block;            font-size: 14pt;            font-weight: 600;            color: #1A1A1A;            margin-bottom: 8px;            margin-top: 20px;        }                .form-container input,        .form-container select {            width: 100%;            padding: 14px;            font-size: 16pt;            border: 2px solid #E5E5E5;            border-radius: 8px;            transition: border-color 0.3s;        }                .form-container input:focus,        .form-container select:focus {            outline: none;            border-color: #0A2463;        }                .consent-box {            font-size: 11pt;            color: #666;            margin: 24px 0;            line-height: 1.6;        }                .consent-box input[type="checkbox"] {            width: auto;            margin-right: 10px;        }                .form-container button {            width: 100%;            background: #0A2463;            color: #FFFFFF;            padding: 18px;            font-size: 18pt;            font-weight: 700;            border: none;            border-radius: 8px;            cursor: pointer;            margin-top: 24px;            transition: all 0.3s;        }                .form-container button:hover {            background: #051533;            transform: translateY(-2px);            box-shadow: 0 6px 20px rgba(10, 36, 99, 0.4);        }                .form-next-steps {            text-align: center;            font-size: 14pt;            color: #666;            margin-top: 32px;            line-height: 1.8;        }                /* STICKY CTA */        .sticky-cta {            position: fixed;            bottom: -100px;            left: 0;            right: 0;            background: #000000;            color: #FFFFFF;            padding: 20px;            text-align: center;            font-size: 16pt;            font-weight: 700;            z-index: 999;            transition: bottom 0.3s;            box-shadow: 0 -4px 20px rgba(0,0,0,0.3);        }                .sticky-cta.show {            bottom: 0;        }                .sticky-cta a {            color: #FFD700;            text-decoration: none;            margin-left: 20px;            border-bottom: 2px solid #FFD700;        }                                /* RESPONSIVE */        @media (max-width: 768px) {            .hero-bar h1 {                font-size: 28pt;            }                        .hero-bar p {                font-size: 16pt;            }                        .sub-headline h2 {                font-size: 22pt;            }                        .bleeding-points {                font-size: 15pt;            }                        .voice-container {                font-size: 16pt;            }                        .micro-movie {                font-size: 15pt;                padding: 30px 20px;            }                        .nav-links {                display: none;            }                        .comparison-table {                font-size: 13pt;            }        }        /* Success modal styles */        .modal-overlay {            display: none;            position: fixed;            top: 0;            left: 0;            width: 100%;            height: 100%;            background: rgba(0, 0, 0, 0.65);            z-index: 10000;            justify-content: center;            align-items: center;            opacity: 0;            transition: opacity 0.3s ease;        }        .modal-overlay.active {            display: flex;            opacity: 1;        }        .modal-content {            background: #FFFFFF;            border-radius: 16px;            padding: 48px 40px;            max-width: 620px;            width: 90%;            max-height: 90vh;            overflow-y: auto;            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);            position: relative;            transform: scale(0.94);            transition: transform 0.3s ease;            text-align: center;        }        .modal-overlay.active .modal-content {            transform: scale(1);        }        .modal-close {            position: absolute;            top: 20px;            right: 20px;            background: none;            border: none;            font-size: 32px;            color: #999;            cursor: pointer;            width: 40px;            height: 40px;            display: flex;            align-items: center;            justify-content: center;            border-radius: 50%;            transition: all 0.2s ease;        }        .modal-close:hover {            background: #F5F5F5;            color: #333;        }    </style></head><body>    <!-- NAVIGATION -->    <!-- NAVIGATION --><!-- STANDARDIZED NAVIGATION - Embedded for direct file opening -->
-<nav style="position: sticky; top: 0; z-index: 1000; background: white; border-bottom: 1px solid #E5E5E5; padding: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.05); font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center;">
-        <a href="index.html" style="display: flex; align-items: center; text-decoration: none; gap: 12px;">
-            <img src="../assets/logo.svg" alt="TrueVow" style="height: 40px; width: auto;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrueVow — Pipeline Protection for PI Attorneys</title>
+    <meta name="description" content="TrueVow helps solo and small PI firms capture calls, qualify leads, structure case value, and make settlement decisions with clearer signals. From first call to final offer.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* RESET & BASE */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy: #0A2463;
+            --gold: #D6B15A;
+            --green: #10B981;
+            --light: #F8F9FA;
+            --dark: #1A1A1A;
+            --border: #E5E5E5;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: #FFFFFF;
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: sticky; top: 0; z-index: 1000;
+            background: white; border-bottom: 1px solid var(--border);
+            padding: 20px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+            font-family: 'Montserrat', sans-serif;
+        }
+        .nav-container {
+            max-width: 1200px; margin: 0 auto; padding: 0 24px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .logo { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; }
+        .logo-monogram { position: relative; width: 38px; height: 32px; flex-shrink: 0; }
+        .logo-monogram-t1 { position: absolute; left: 0; top: 0; font-size: 32px; font-weight: 400; color: #C0C0C0; line-height: 1; }
+        .logo-monogram-t2 { position: absolute; left: 6px; top: 0; font-size: 32px; font-weight: 400; color: #808080; line-height: 1; }
+        .logo-monogram-v { position: absolute; left: 12px; top: 0; font-size: 32px; font-weight: 700; color: var(--navy); line-height: 1; }
+        .logo-text { display: flex; align-items: baseline; gap: 0; }
+        .logo-true { font-size: 22px; font-weight: 400; color: #808080; letter-spacing: 0.5px; }
+        .logo-vow { font-size: 22px; font-weight: 700; color: var(--navy); letter-spacing: 0.5px; }
+        .logo-law { font-size: 18px; font-weight: 400; color: var(--navy); }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a { color: #555; text-decoration: none; font-size: 16px; font-weight: 500; }
+        .nav-cta {
+            background: var(--navy); color: white; padding: 12px 24px;
+            border-radius: 8px; font-weight: 600; text-decoration: none; transition: background 0.2s;
+        }
+        .nav-cta:hover { background: #0052CC; }
+                .nav-dropdown { position: relative; }
+                .nav-dropdown-toggle { cursor: pointer; display: inline-flex; align-items: center; gap: 4px; background: none; border: none; color: #555; text-decoration: none; font-size: 16px; font-weight: 500; font-family: 'Montserrat', sans-serif; padding: 0; }
+                .nav-dropdown-toggle::after { content: ' ▾'; font-size: 10px; }
+                .nav-dropdown:hover .nav-dropdown-toggle::after { content: ' ▴'; }
+                .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%); background: white; border: 1px solid #E5E5E5; border-radius: 8px; padding: 8px 0; min-width: 210px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); z-index: 1001; }
+                .nav-dropdown-menu a { display: block; padding: 10px 20px; color: #555555 !important; text-decoration: none !important; font-size: 15px; font-weight: 500; white-space: nowrap; }
+                .nav-dropdown-menu a:hover { color: #0A2463 !important; background: #F8F9FA; }
+                .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+
+        /* PROGRESS BAR */
+        .progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: var(--navy); z-index: 9999; transition: width 0.1s; }
+
+        /* HERO */
+        .hero {
+            background: #000; color: #fff; padding: 100px 24px 80px;
+            text-align: center; position: relative; overflow: hidden;
+        }
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif; font-size: 52px; font-weight: 900;
+            line-height: 1.15; margin-bottom: 24px; letter-spacing: -1px;
+        }
+        .hero-sub {
+            font-size: 20px; color: rgba(255,255,255,0.75); max-width: 800px;
+            margin: 0 auto 40px; line-height: 1.7;
+        }
+        .hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn {
+            display: inline-block; padding: 16px 32px; border-radius: 8px;
+            font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 700;
+            text-decoration: none; transition: all 0.3s;
+        }
+        .btn-primary { background: var(--navy); color: #fff; }
+        .btn-primary:hover { background: #0052CC; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(10,36,99,0.4); }
+        .btn-secondary { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.3); }
+        .btn-secondary:hover { border-color: #fff; }
+
+        /* TRUST BAR */
+        .trust-bar {
+            padding: 16px 24px; background: var(--light); border-bottom: 1px solid var(--border);
+        }
+        .trust-inner {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap;
+            font-size: 15px; font-weight: 600; color: var(--dark);
+        }
+        .trust-inner span { white-space: nowrap; }
+
+        /* CONTAINER */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+        /* SECTION HEAD */
+        .section-head { text-align: center; margin-bottom: 48px; }
+        .section-head h2 {
+            font-family: 'Montserrat', sans-serif; font-size: 40px; font-weight: 900;
+            color: var(--dark); margin-bottom: 16px; letter-spacing: -0.5px;
+        }
+        .section-head p { font-size: 18px; color: #666; max-width: 700px; margin: 0 auto; line-height: 1.7; }
+
+        /* PAIN SECTION */
+        .pain-section { padding: 100px 24px; background: #fff; }
+        .pain-box {
+            max-width: 800px; margin: 0 auto; text-align: center;
+            padding: 48px; background: var(--light); border-radius: 16px;
+            border: 1px solid var(--border);
+        }
+        .pain-box h2 {
+            font-family: 'Montserrat', sans-serif; font-size: 36px; font-weight: 900;
+            color: var(--dark); margin-bottom: 20px;
+        }
+        .pain-box p { font-size: 18px; color: #555; line-height: 1.7; margin-bottom: 16px; }
+        .pain-box p:last-child { margin-bottom: 0; }
+
+        /* INTAKE SECTION */
+        .intake-section { padding: 100px 24px; background: var(--light); }
+        .intake-section .section-head h2 { color: var(--navy); }
+        .intake-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+            max-width: 900px; margin: 0 auto 48px;
+        }
+        .intake-feature {
+            background: #fff; padding: 32px 24px; border-radius: 12px;
+            text-align: center; border: 1px solid var(--border);
+        }
+        .intake-feature strong { display: block; font-size: 16px; color: var(--navy); margin-bottom: 8px; }
+        .intake-feature p { font-size: 14px; color: #666; }
+
+        /* COMPARISON SECTION */
+        .comparison-section { padding: 100px 24px; background: #fff; }
+        .compare-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+            max-width: 900px; margin: 0 auto;
+        }
+        .compare-col {
+            padding: 40px; border-radius: 16px;
+        }
+        .compare-col.as-is { background: var(--light); border: 1px solid var(--border); }
+        .compare-col.truevow { background: var(--navy); color: #fff; }
+        .compare-col h3 {
+            font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 700;
+            margin-bottom: 24px;
+        }
+        .compare-col ul { list-style: none; padding: 0; }
+        .compare-col li {
+            padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.08);
+            font-size: 16px; line-height: 1.5;
+        }
+        .compare-col.truevow li { border-bottom-color: rgba(255,255,255,0.15); }
+        .compare-col li:last-child { border-bottom: none; }
+
+        /* PIPELINE SECTION */
+        .pipeline-section { padding: 100px 24px; background: var(--light); }
+        .pipeline-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+            max-width: 900px; margin: 0 auto;
+        }
+        .pipeline-card {
+            background: #fff; padding: 40px 32px; border-radius: 16px;
+            text-align: center; border-top: 4px solid var(--border);
+            transition: transform 0.3s;
+        }
+        .pipeline-card:hover { transform: translateY(-4px); }
+        .pipeline-card.intake { border-top-color: var(--green); }
+        .pipeline-card.leverage { border-top-color: var(--navy); }
+        .pipeline-card.settle { border-top-color: var(--gold); }
+        .pipeline-card .stage-label {
+            display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 1px;
+            text-transform: uppercase; margin-bottom: 12px;
+        }
+        .pipeline-card.intake .stage-label { color: var(--green); }
+        .pipeline-card.leverage .stage-label { color: var(--navy); }
+        .pipeline-card.settle .stage-label { color: var(--gold); }
+        .pipeline-card h3 {
+            font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 700;
+            margin-bottom: 12px; color: var(--dark);
+        }
+        .pipeline-card p { font-size: 15px; color: #666; line-height: 1.6; }
+        .pipeline-card a { display: inline-block; margin-top: 16px; font-size: 14px; font-weight: 600; text-decoration: none; }
+        .pipeline-card.intake a { color: var(--green); }
+        .pipeline-card.leverage a { color: var(--navy); }
+        .pipeline-card.settle a { color: var(--gold); }
+
+        /* MICRO-MOVIE */
+        .movie-section { padding: 100px 24px; background: #fff; }
+        .movie-box {
+            max-width: 700px; margin: 0 auto; padding: 48px;
+            background: var(--light); border-radius: 16px; border-left: 4px solid var(--navy);
+        }
+        .movie-box p {
+            font-family: 'Montserrat', sans-serif; font-size: 18px; color: #333;
+            line-height: 1.8; margin-bottom: 16px;
+        }
+        .movie-box p:last-child { margin-bottom: 0; }
+        .movie-box .highlight { font-weight: 700; color: var(--dark); }
+        .movie-box .result { font-weight: 700; color: var(--navy); }
+
+        /* PRICING TEASER */
+        .pricing-teaser { padding: 80px 24px; background: var(--navy); color: #fff; text-align: center; }
+        .pricing-teaser h2 {
+            font-family: 'Montserrat', sans-serif; font-size: 32px; font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .pricing-teaser p { font-size: 18px; color: rgba(255,255,255,0.8); margin-bottom: 32px; }
+        .pricing-teaser .btn-primary { background: #fff; color: var(--navy); }
+        .pricing-teaser .btn-primary:hover { background: var(--light); }
+
+        /* APPLICATION SECTION */
+        .application-section { padding: 100px 24px; background: var(--light); }
+        .app-steps {
+            display: flex; gap: 24px; max-width: 900px; margin: 32px auto 0;
+            justify-content: center; flex-wrap: wrap;
+        }
+        .app-step {
+            background: #fff; padding: 24px 20px; border-radius: 12px;
+            text-align: center; flex: 1; min-width: 140px;
+            border: 1px solid var(--border);
+        }
+        .app-step .step-num {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 36px; height: 36px; border-radius: 50%; background: var(--navy);
+            color: #fff; font-size: 16px; font-weight: 700; margin-bottom: 12px;
+        }
+        .app-step h4 { font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+        .app-step p { font-size: 13px; color: #666; }
+
+        /* FAQ */
+        .faq-section { padding: 100px 24px; background: #fff; }
+        .faq-list { max-width: 750px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid var(--border); }
+        .faq-question {
+            padding: 24px 0; cursor: pointer; display: flex; justify-content: space-between;
+            align-items: center; font-family: 'Montserrat', sans-serif;
+            font-size: 17px; font-weight: 600; color: var(--dark);
+        }
+        .faq-question::after { content: '+'; font-size: 24px; font-weight: 300; color: #999; transition: transform 0.3s; }
+        .faq-item.active .faq-question::after { content: '−'; }
+        .faq-answer {
+            max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
+            font-size: 15px; color: #555; line-height: 1.7;
+        }
+        .faq-item.active .faq-answer { max-height: 400px; }
+        .faq-answer p { padding-bottom: 24px; }
+
+        /* FINAL CTA */
+        .final-cta {
+            padding: 100px 24px; background: #000; color: #fff; text-align: center;
+        }
+        .final-cta h2 {
+            font-family: 'Montserrat', sans-serif; font-size: 36px; font-weight: 900;
+            margin-bottom: 16px; line-height: 1.3;
+        }
+        .final-cta p { font-size: 18px; color: rgba(255,255,255,0.6); margin-bottom: 32px; }
+        .final-cta .btn-primary { background: var(--navy); }
+        .final-cta .btn-primary:hover { background: #0052CC; }
+        .final-cta-badges {
+            display: flex; gap: 24px; justify-content: center; flex-wrap: wrap;
+            margin-top: 24px; font-size: 14px; color: rgba(255,255,255,0.5);
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 80px 24px; background: #000; color: white; text-align: center;
+        }
+        footer .logo { margin-bottom: 24px; }
+        .footer-links {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;
+            max-width: 900px; margin: 40px auto; text-align: center;
+        }
+        .footer-col h4 { color: #fff; font-size: 16px; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px; }
+        .footer-col a { display: block; color: #999; text-decoration: none; font-size: 15px; margin-bottom: 12px; transition: color 0.3s; }
+        .footer-col a:hover { color: #fff; }
+        .footer-legal { display: flex; justify-content: center; gap: 16px; margin-top: 40px; font-size: 14px; flex-wrap: wrap; }
+        .footer-legal a { color: #999; text-decoration: none; }
+        .footer-legal a:hover { color: #fff; }
+        .footer-disclaimer {
+            font-size: 11pt; color: #555; margin-top: 32px; line-height: 1.8;
+            max-width: 900px; margin-left: auto; margin-right: auto; padding-bottom: 40px;
+        }
+
+        /* STICKY CTA */
+        .sticky-cta {
+            position: fixed; bottom: 24px; right: 24px; z-index: 9999;
+            background: var(--navy); color: #fff; padding: 16px 32px; border-radius: 12px;
+            font-size: 16px; font-weight: 700; text-decoration: none;
+            box-shadow: 0 4px 12px rgba(10,36,99,0.2); transition: all 0.3s;
+            display: none;
+        }
+        .sticky-cta:hover { background: #0052CC; transform: translateY(-2px); }
+
+        /* REVEAL ANIMATION */
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* RESPONSIVE */
+        
+        /* HAMBURGER */
+        .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; gap: 5px; }
+        .nav-hamburger span { display: block; width: 24px; height: 2px; background: #555; border-radius: 2px; transition: all 0.3s; }
+        .nav-hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .nav-hamburger.active span:nth-child(2) { opacity: 0; }
+        .nav-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+        .mobile-nav-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 999; }
+        .mobile-nav-overlay.active { display: block; }
+        .mobile-nav-panel { display: none; position: fixed; top: 0; right: -280px; width: 280px; height: 100vh; background: white; z-index: 1002; padding: 80px 32px 32px; box-shadow: -4px 0 24px rgba(0,0,0,0.1); transition: right 0.3s ease; flex-direction: column; gap: 0; }
+        .mobile-nav-panel.active { display: flex; right: 0; }
+        .mobile-nav-panel a { display: block; padding: 14px 0; color: #555; text-decoration: none; font-size: 17px; font-weight: 500; border-bottom: 1px solid #F0F0F0; font-family: 'Montserrat', sans-serif; }
+        .mobile-nav-panel a:last-child { border-bottom: none; }
+        .mobile-nav-panel .mobile-nav-label { padding: 14px 0 6px; font-size: 12px; font-weight: 600; color: #999; text-transform: uppercase; letter-spacing: 1px; border-bottom: none; font-family: 'Montserrat', sans-serif; }
+        .mobile-nav-panel .mobile-cta { background: var(--navy); color: white !important; text-align: center; border-radius: 8px; padding: 14px; margin-top: 16px; font-weight: 600; border-bottom: none; }
+        .mobile-nav-panel .mobile-cta:hover { background: #0052CC; }
+        .mobile-nav-close { position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 28px; cursor: pointer; color: #999; padding: 4px 8px; }
+        @media (max-width: 768px) { .nav-hamburger { display: flex; } }
+        @media (min-width: 769px) { .nav-hamburger, .mobile-nav-overlay, .mobile-nav-panel { display: none !important; } }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 34px; }
+            .hero-sub { font-size: 16px; }
+            .section-head h2 { font-size: 30px; }
+            .pain-box h2 { font-size: 28px; }
+            .intake-grid, .pipeline-grid { grid-template-columns: 1fr; max-width: 450px; }
+            .compare-grid { grid-template-columns: 1fr; }
+            .app-steps { flex-direction: column; align-items: center; }
+            .nav-links { display: none; }
+            .nav-hamburger { display: flex; }
+            .nav-cta { display: none; }
+            .footer-links { grid-template-columns: 1fr; }
+            .trust-inner { gap: 20px; font-size: 13px; }
+        }
+    </style>
+    <script src="analytics.js"></script>
+</head>
+<body>
+
+<!-- PROGRESS BAR -->
+<div class="progress-bar" id="progressBar" style="width: 0%;"></div>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <div class="logo-monogram">
+                <span class="logo-monogram-t1">T</span>
+                <span class="logo-monogram-t2">T</span>
+                <span class="logo-monogram-v">V</span>
+            </div>
+            <div class="logo-text">
+                <span class="logo-true">True</span>
+                <span class="logo-vow">Vow</span>
+                <span class="logo-law">.law</span>
+            </div>
         </a>
-        <div style="display: flex; gap: 32px; align-items: center;">
-            <a href="index.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500;">Home</a>
-            <a href="how-it-works.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500;">How It Works</a>
-            <a href="pricing.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500;">Pricing</a>
-            <a href="county-cap.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500;">33% Cap</a>
-            <a href="profitability.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500;">ROI</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="pricing.html">Pricing</a>
+            <div class="nav-dropdown">
+                <button class="nav-dropdown-toggle">Resources</button>
+                <div class="nav-dropdown-menu">
+                    <a href="profitability.html">ROI Calculator</a>
+                    <a href="county-cap.html">County Availability</a>
+                    <a href="compliance.html">Data &amp; Compliance</a>
+                    <a href="integrations.html">Integrations &amp; Setup</a>
+                    <a href="blog.html">Blog</a>
+                </div>
+            </div>
         </div>
-        <a href="apply.html" style="background: #0A2463; color: white !important; padding: 12px 24px; border-radius: 8px; font-size: 16px; font-weight: 600; text-decoration: none;">Apply Now →</a>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+        <a href="trial.html" class="nav-cta">See Benjamin Live (8 min) &rarr;</a>
     </div>
-</nav>    <!-- 1. HERO BLACK BAR -->    <div class="hero-bar">        <h1>You're Bleeding $154,500/Year Right Now</h1>        <p>48% of your calls go unanswered → you're bleeding leads, time, justice, and peace</p>    </div>    <!-- 2. SUB-HEADLINE - THE FOUR BLEEDS (DEEP PSYCHOLOGICAL PAIN!) -->    <div class="sub-headline">        <h2>More clients. More money. More time with your family.<br>All without risking your license.</h2>                <ul class="bleeding-points">            <li>                <strong>• You miss 24 calls every month</strong> — not because you're lazy, but because you were in court, with a client, or finally sleeping after a 14-hour day.                <br><br>                <strong>48% of PI attorney calls go straight to voicemail</strong> (Clio Legal Trends Report 2024).                <br><br>                <strong>62% never call back</strong> — they find another attorney within 17 minutes. Gone. Forever.                <br><br>                24 missed calls × 62% lost = <strong>15 cases walking out the door every month</strong>.                <br><br>                15 cases × $5,150 net/case × 12 months = <strong>$154,500/year</strong> in revenue you'll never see.                <br><br>                <strong>After-hours calls (5pm-9am)?</strong> You miss <strong>67% of those</strong> (Clio 2024). That's when the serious cases call — right after the ER visit, when they're scared and need help NOW.                <br><br>                <strong>You're not losing leads. You're bleeding your future — one missed ring at a time.</strong>            </li>                        <li>                <strong>• You spend 12 hours every week</strong> on calls that were dead on arrival.                <br><br>                <em>"The accident was 4 years ago..."</em> (statute expired — you can't help)<br>                <em>"It happened in Georgia..."</em> (wrong jurisdiction — not your license)<br>                <em>"I was backing up..."</em> (no liability — no case)<br>                <em>"It's workers' comp..."</em> (wrong practice area — you don't do that)                <br><br>                <strong>65% of intake calls are unqualified</strong> (industry average). You spend 30-45 minutes per call — listening, asking, documenting — only to say "I'm sorry, I can't help you."                <br><br>                That's <strong>12 hours/week × 48 weeks = 576 hours/year</strong> on calls you can't take.                <br><br>                At your $350/hour rate, that's <strong>$201,600 in lost billable time</strong> — time you could've spent deposing witnesses, negotiating settlements, or just being home for dinner.                <br><br>                <strong>You're not "too busy." You're bleeding time on cases you'll never win — while the good cases slip through your fingers.</strong>            </li>                        <li>                <strong>• The adjuster offers $27,500.</strong>                <br><br>                You counter at $45,000. They pause. Come back at $32,000.                <br><br>                You take it. You need to make payroll. You move on.                <br><br>                <strong>You don't know it was worth $85,000.</strong>                <br><br>                <strong>Why?</strong> Because the adjuster is staring at Colossus — a $2M insurance database with <strong>65 million claims</strong>. They see:                <br><br>                <em>"Broken wrist, rear-end, Miami-Dade, 2024 → Comparable cases settled $52K–$95K, median $78K."</em>                <br><br>                You see: <em>"I hope this is fair. I just want to close this file."</em>                <br><br>                <strong>Solo attorneys leave $18K–$58K on the table, per case</strong> (ATLA Settlement Research 2024).                <br><br>                At 30 cases/year over a 20-year career? That's <strong>$10.8M–$34.8M</strong> in settlements your clients (and you) never saw.                <br><br>                <strong>You're not settling cases. You're bleeding justice — because you don't know your client's (or your) true worth.</strong>            </li>                        <li>                <strong>• 2:47 a.m.</strong> Your eyes snap open.                <br><br>                <em>"Did I miss that call from the 6 p.m. voicemail?"</em><br>                <em>"Did I ask about the statute of limitations?"</em><br>                <em>"Did I document the conflict check?"</em><br>                <em>"What if they recorded the call and I said something wrong?"</em><br>                <em>"What if the Bar audits this file?"</em>                <br><br>                <strong>73% of solo attorneys report sleep disruption from compliance anxiety</strong> (ABA Well-Being Report 2023).                <br><br>                You reach for your phone. Check voicemail. Check email. Check the intake notes from 3 days ago.                <br><br>                Your spouse rolls over. <em>"You okay?"</em>                <br><br>                <em>"Yeah, just... making sure I didn't miss something."</em>                <br><br>                You pretend you were just stretching. But you both know.                <br><br>                <strong>You're not paranoid. You're bleeding peace — because you carry every risk, every secret, every "what if" alone. And no one else understands.</strong>            </li>        </ul>                <p class="bleeding-conclusion">            You didn't fail. The system failed you.        </p>    </div>    <!-- SECTION SEPARATOR -->    <div style="height: 2px; background: linear-gradient(to right, transparent, #E5E5E5, transparent); margin: 60px auto; max-width: 600px;"></div>    <!-- 3. VOICE OF THE ATTORNEY - EMPATHY MIRROR -->    <div class="voice-of-attorney">        <div class="voice-container">            <p>You didn't go to law school to be a phone operator.</p>                        <p>You went to <span class="voice-strong">fight for people who can't fight for themselves.</span></p>                        <p>But somewhere along the way, you stopped fighting for your own worth.</p>                        <p>You answer calls at midnight. Chase voicemails. Waste 30 minutes only to hear: <em>"The accident was 4 years ago..."</em></p>                        <p>You settle for $27K — not because it's fair. <span class="voice-strong">Because you're too exhausted to argue.</span></p>                        <p>And then you watch another firm — the one that answers at 8 p.m., knows case value, never misses deadlines — <span class="voice-strong">walk away with the $85K settlement.</span></p>                        <p>For the same client.<br>The same pain.</p>                        <p style="margin-top: 40px;">You didn't sign up for this.</p>                        <p>You didn't sign up to be a call center.<br>To be the last person standing while everyone else moves on.</p>                        <p style="margin-top: 40px; font-size: 24pt; font-weight: 700; color: #1A1A1A;">                And now?<br>You're not looking for software.<br>You're not looking for automation.            </p>                        <p style="font-size: 28pt; font-weight: 800; color: #0A2463; margin-top: 24px;">                You're looking for someone who says:<br>"Exhale. I've got the wheel now."            </p>        </div>    </div>    <!-- 4. MICRO-MOVIE - THE DREAM STATE -->    <div class="micro-movie">        <p><strong class="micro-movie-highlight">Friday at 5:03 p.m.</strong> — courtroom clock hits 5.</p>                <p>Your opposing counsel is still scrambling (their receptionist went home at 5 p.m.).</p>                <p><strong>You?</strong></p>                <p><strong class="micro-movie-highlight">You're walking out.</strong></p>                <p>Because <strong>Benjamin answered every call</strong> — all 7 of them, even the one at 7:42 p.m. last night.</p>                <p>Benjamin asked all the practice-specific qualifying questions (up to 16 based on case type).</p>                <p>Benjamin rejected the 3 bad leads (statute expired, wrong state, workers' comp).</p>                <p>Benjamin booked the 4 good leads straight into your calendar.</p>                <p><strong class="micro-movie-highlight">You never heard a word.</strong></p>                <p style="margin-top: 32px;">You didn't compromise.</p>                <p>You handed Benjamin the phone — and kept your evening.</p>                <p style="margin-top: 32px; font-size: 22pt; font-weight: 700; color: #000000; font-style: normal;">            "More clients. More money. More time with your family.<br>All without risking your license."        </p>    </div>    <!-- 5. PRIMARY CTA -->    <a href="#form" class="cta-button">        Stop Bleeding. Start Winning. Pay Only When You Win. →    </a>        <p class="cta-subtext">        ✅ 11 FREE bookings to start &nbsp;&nbsp;|&nbsp;&nbsp; ✅ No credit card required &nbsp;&nbsp;|&nbsp;&nbsp; ✅ 5-minute demo    </p>    <!-- 6. THE QUIET PARTNER - CATEGORY OF ONE -->    <div class="micro-movie" style="margin-top: 80px;">        <p style="font-size: 20pt; font-weight: 600; color: #000; font-style: normal;">That's not an app.</p>        <p style="font-size: 20pt; font-weight: 600; color: #000; font-style: normal;">That's not an AI bot.</p>                <p style="margin-top: 24px;"><strong class="micro-movie-highlight">That's your quiet partner</strong> —</p>                <p>who shows up when you're too worn out to ask for more.</p>                <p style="margin-top: 24px;">No risk.<br>No guesswork.<br>No monthly fees.</p>                <p style="margin-top: 24px; font-weight: 700; font-style: normal;">Just results.</p>                <p>And finally — <span class="micro-movie-highlight">the power to capture every case you were meant to win.</span></p>    </div>    <!-- SECTION SEPARATOR -->    <div style="height: 2px; background: linear-gradient(to right, transparent, #E5E5E5, transparent); margin: 60px auto; max-width: 600px;"></div>    <!-- 7. HOW BENJAMIN WORKS -->    <h2 class="section-heading" id="how-it-works">        How Benjamin Works — Without Replacing You    </h2>        <div class="content-block">        <p><strong>Step 1: You Control Everything</strong></p>        <p>Forward your phone to Benjamin (2 minutes!). Set your calendar. Customize script (optional).</p>                <p style="margin-top: 32px;"><strong>Step 2: Benjamin Does the Grind</strong></p>        <p>Answers every call. Asks up to 16 practice-specific qualifying questions. Checks statute, liability, dangerous admissions. Books consults.</p>                <p style="font-weight: 700; color: #0A2463;">All without hearing a single confession.<br>All without storing a single secret.</p>                <p style="margin-top: 32px;"><strong>Step 3: You Get Only the Good Leads</strong></p>        <p>Email alert: <em>"New qualified booking! John Doe, car accident, $50K medical bills, consultation Thursday 2 p.m."</em></p>                <p>Bad leads? Already rejected. You never waste time.</p>                <p style="margin-top: 32px; font-weight: 700; font-size: 20pt; color: #1A1A1A;">            Benjamin doesn't replace you — he protects your time so you can focus on winning cases.        </p>    </div>    <!-- 8. STEP-BY-STEP WORKFLOW - TANGIBLE PROOF -->    <div class="step-flow">        <p><strong> Step-by-Step: What Happens When a Call Comes In</strong></p>                <p style="margin-top: 24px;"><strong>7:42 p.m.:</strong> Call rings (you're at dinner).</p>                <p><strong>Ring 2:</strong> Benjamin answers: <em>"Thank you for calling Rodriguez Law! This is Benjamin How can I help?"</em></p>                <p><strong>Minutes 1–3:</strong> Captures name, phone, email.</p>                <p><strong>Minutes 3–8:</strong> Qualifies:<br>        • "When did it happen?" → <em>"Two weeks ago."</em> ✅<br>        • "Where?" → <em>"Tampa."</em> ✅<br>        • "Who at fault?" → <em>"Ran red light."</em> ✅<br>        • "Injuries?" → <em>"Broken wrist."</em> ✅</p>                <p><strong>Minutes 10–11:</strong> Books: <em>"Thursday at 2 p.m.?"</em> → <em>"Yes!"</em></p>                <div class="email-box">            <p><strong> YOU RECEIVE EMAIL (7:53 p.m.):</strong></p>            <p style="margin-top: 16px; color: #333;">                <strong style="color: #0A2463; font-size: 18pt;">New Qualified Booking!</strong><br>                Client: John Doe<br>                Accident: 2 weeks ago, Tampa<br>                Injury: Broken wrist<br>                Liability: Clear<br>                <strong>Consultation: Thursday 2 p.m.</strong><br>                <strong>Grade: A (QUALIFIED!)</strong><br>                <strong>You owe: $29</strong> (Standard Rate)            </p>        </div>                <p style="margin-top: 32px; font-weight: 700; font-size: 20pt; color: #10B981;">            <strong>7:53 p.m.:</strong> You're still at dinner. You glance at your phone. Smile.<br>            <em>"Another good one. I'll call them tomorrow."</em>        </p>                <p style="margin-top: 16px;">Your daughter doesn't even notice you checked your phone.</p>                <p style="font-weight: 700; color: #1A1A1A; margin-top: 24px; font-size: 20pt;">            That's the difference.        </p>    </div>    <!-- CTA #2 -->    <a href="#form" class="cta-button">        I Want This. Start My Demo Call Now →    </a>    <!-- SECTION SEPARATOR -->    <div style="height: 2px; background: linear-gradient(to right, transparent, #E5E5E5, transparent); margin: 60px auto; max-width: 600px;"></div>    <!-- 9. COMPARISON TABLE (LAYER 1: COMPETITIVE DIFFERENTIATION - EMOTIONAL!) -->    <div class="comparison-section">        <h2 class="section-heading">            Why TrueVow Is Different        </h2>                <table class="comparison-table">            <thead>                <tr>                    <th>What Everyone Else Offers</th>                    <th>The Problem You Still Have</th>                    <th>What TrueVow Actually Does</th>                </tr>            </thead>            <tbody>                <tr>                    <td><strong>Human Receptionist</strong><br><span style="font-size: 14pt; color: #666;">$2,500-3,500/month</span></td>                    <td>"Human receptionists answer calls; Benjamin disqualifies the calls that could sink your licence."<br><span style="font-size: 14pt; color: #666;">You still waste 12 hours/week on dead leads.</span></td>                    <td class="truevow-cell">"Benjamin qualifies like you would — asks up to 16 practice-specific questions, checks statutes, detects liability issues."<br><span style="font-size: 14pt;">You only talk to the good ones.</span></td>                </tr>                <tr>                    <td><strong>AI Answering Services</strong><br><span style="font-size: 14pt; color: #666;">$299-999/month + per-minute fees</span></td>                    <td>"Some services record calls <strong>(including client admissions)</strong>."<br><span style="font-size: 14pt; color: #666;">One Bar audit, one subpoena — you're done.</span></td>                    <td class="truevow-cell">"Zero-knowledge architecture. Benjamin never hears or stores PHI. Ever."<br><span style="font-size: 14pt;">Not AI, so zero hallucinations or improvisation. Bar-compliant.</span></td>                </tr>                <tr>                    <td><strong>Other Legal Tech</strong><br><span style="font-size: 14pt; color: #666;">12-month contracts</span></td>                    <td>"They promise to save you time."<br><span style="font-size: 14pt; color: #666;">You're locked in for a year — even if it doesn't work.</span></td>                    <td class="truevow-cell">"Pay $29 only when you WIN a qualified booking. Cancel anytime. Zero contracts."<br><span style="font-size: 14pt;">No risk. Just results.</span></td>                </tr>            </tbody>        </table>                <div class="content-block" style="margin-top: 60px; text-align: center;">            <p style="font-size: 20pt; font-weight: 600; color: #000;">                TrueVow isn't a receptionist.            </p>            <p style="font-size: 18pt; color: #666; margin-bottom: 16px;">                (They answer calls — but can't stop you from wasting hours on statute-barred cases.)            </p>                        <p style="font-size: 20pt; font-weight: 600; color: #000; margin-top: 24px;">                TrueVow isn't an AI tool.            </p>            <p style="font-size: 18pt; color: #666; margin-bottom: 32px;">                (Those record your clients — and hallucinate about liability.)            </p>                        <p style="font-size: 28pt; font-weight: 800; color: #0A2463; margin-top: 40px; line-height: 1.4;">                TrueVow is your quiet partner who never sleeps —            </p>            <p style="font-size: 22pt; color: #333; margin-top: 16px; line-height: 1.6;">                capturing every case you were meant to win,<br>                while you keep the secrets, keep your evenings,<br>                and finally close the laptop at 5:03 p.m.            </p>                        <p style="font-size: 20pt; font-weight: 700; color: #1A1A1A; margin-top: 40px;">                Pay $29 only when you win.            </p>            <p style="font-size: 20pt; font-weight: 700; color: #1A1A1A;">                No monthly fees. No contracts. No risk.            </p>            <p style="font-size: 24pt; font-weight: 800; color: #0A2463; margin-top: 24px;">                Just results. And your life back.            </p>        </div>                <div class="content-block" style="margin-top: 40px; text-align: center; font-style: italic; color: #666;">            <p>                "ABA Model Rule 1.6 requires attorneys to 'make reasonable efforts to prevent unauthorized access' to client data.                 TrueVow's zero-knowledge design meets that standard."            </p>        </div>    </div>    <!-- SECTION SEPARATOR -->    <div style="height: 2px; background: linear-gradient(to right, transparent, #E5E5E5, transparent); margin: 60px auto; max-width: 600px;"></div>    <!-- 10. WHAT YOU GET - VALUE STACKING -->    <h2 class="section-heading">        What You Get — Value Stacking    </h2>        <div class="pricing-highlight">        <div style="font-size: 18pt; color: #0A2463; font-weight: 700; margin-bottom: 24px;">             INTAKE: Benjamin Answers Every Call        </div>                <div class="pricing-features">            ✅ 24/7 phone answering (even 2:47 a.m.)<br>            ✅ Up to 16 practice-specific qualification questions<br>            ✅ Dangerous admission detection<br>            ✅ Automatic calendar booking<br>            ✅ <strong>Spanish included FREE</strong> (Carmelo voice)<br>            ✅ Real-time dashboard + CRM sync        </div>                <div style="margin-top: 40px; padding-top: 32px; border-top: 2px solid #E5E5E5;">            <div class="pricing-amount">$29</div>            <div class="pricing-detail">per qualified booking (Pay Only When You Win)</div>            <div style="font-size: 14pt; color: #666; margin-bottom: 24px;">                <strong>NOT charged for:</strong> Spam, wrong numbers, expired statutes, unqualified cases            </div>            <div style="font-size: 18pt; font-weight: 700; color: #10B981;">                ✅ 11 FREE qualified bookings to start (all customers!)            </div>        </div>                <div style="margin-top: 32px; padding: 24px; background: #FFF; border-radius: 8px; border: 2px solid #10B981;">            <div style="font-size: 16pt; font-weight: 700; color: #1A1A1A; margin-bottom: 8px;">                ROI Calculation (Realistic!):            </div>            <div style="font-size: 15pt; color: #333;">                Current: <strong>2.5 cases/month</strong> = $154,500/year<br>                With TrueVow: <strong>5 cases/month</strong> = $309,000/year<br>                Net gain: <strong>+$154,500/year</strong><br>                Your cost: <strong>$2,784/year</strong> ($29 × 8 bookings × 12)<br>                <strong style="font-size: 18pt; color: #10B981;">ROI: 5,449% return.</strong>            </div>        </div>    </div>    <!-- 10.5 33% CAP PROTECTION (NEW SECTION - SUBTLE!) -->    <div class="content-block" style="margin-top: 60px;">        <h3 style="font-size: 24pt; font-weight: 700; color: #0A2463; text-align: center; margin-bottom: 24px;">            ️ Protected Competitive Advantage        </h3>                <p>We cap TrueVow at <strong>33% of attorneys per county</strong> to protect your first-mover advantage.</p>                <p><strong>Why?</strong> If ALL attorneys in your county use TrueVow, you're back to 2.5 cases/month (baseline). No advantage = wasted investment.</p>                <p><strong>With our 33% cap:</strong> You maintain +48% case volume vs. competitors. Your competitors will call us, but we'll say: <em>"Sorry, Miami-Dade is at capacity. Join the waitlist."</em></p>                <p style="text-align: center; margin-top: 24px;">            <a href="county-cap.html" style="color: #0A2463; font-weight: 700; text-decoration: underline;">                Learn More About Our 33% Cap Policy →            </a>        </p>    </div>    <!-- SECTION SEPARATOR -->    <div style="height: 2px; background: linear-gradient(to right, transparent, #E5E5E5, transparent); margin: 80px auto 60px; max-width: 600px;"></div>    <!-- 11. SETTLE BONUS -->    <div class="content-block" style="margin-top: 0;">        <h3 style="font-size: 28pt; font-weight: 700; color: #0A2463; text-align: center; margin-bottom: 32px;">             BONUS: Settle™ — Stop Leaving $58K on the Table        </h3>                <div style="background: #FFF1F2; padding: 32px; border-left: 4px solid #DC2626; border-radius: 12px; margin-bottom: 32px; max-width: 900px; margin-left: auto; margin-right: auto;">            <p style="font-size: 18pt; font-weight: 700; color: #B91C1C; margin-bottom: 20px;">                Picture this:            </p>            <p style="font-size: 15pt; color: #666; line-height: 1.8; margin-bottom: 16px;">                You just spent 18 months fighting State Farm on a rear-end collision case. Clear liability. $47K in medical bills. Permanent back injury.            </p>            <p style="font-size: 15pt; color: #B91C1C; font-weight: 700; margin-bottom: 8px;">                The adjuster offers $27,500.            </p>            <p style="font-size: 15pt; color: #666; line-height: 1.8; margin-bottom: 16px;">                You know it's low. Your gut says $70K minimum. But you don't have proof. You counter at $65K. They come back with $32K. You settle at $38,500.            </p>            <p style="font-size: 15pt; color: #666; line-height: 1.8; margin-bottom: 16px;">                <strong style="color: #0A2463;">Your client is thrilled.</strong> You just changed their life.            </p>            <p style="font-size: 16pt; color: #B91C1C; font-weight: 700; line-height: 1.8; text-align: center; margin-top: 24px;">                But you'll never know that 11 weeks ago, State Farm paid $81,000 for an identical case — same injury, same medical bills, same county — because that attorney had access to <em>Colossus</em>.            </p>            <p style="font-size: 15pt; color: #666; line-height: 1.8; text-align: center; margin-top: 20px;">                <strong>They're not smarter than you. They just have a database you don't.</strong>            </p>        </div>                <div style="background: #1A1A1A; color: white; padding: 32px; border-radius: 12px; margin: 32px auto; max-width: 900px;">            <p style="font-size: 18pt; font-weight: 700; margin-bottom: 16px; text-align: center; color: #F59E0B;">                Insurance Companies Have a $50 Billion Head Start            </p>            <p style="font-size: 15pt; line-height: 1.8; margin-bottom: 16px;">                When an adjuster opens your file, they see:            </p>            <ul style="font-size: 14pt; line-height: 2; color: #E5E5E5; margin-left: 24px; margin-bottom: 20px;">                <li>"Rear-end, herniated disc, $47K medicals, Miami-Dade → <strong style="color: #10B981;">Settlement range: $52K-$89K</strong>"</li>                <li>"Offer: $27,500 (low anchor)"</li>                <li>"Max authority: $78,000 (don't exceed unless liability weakens)"</li>            </ul>            <p style="font-size: 15pt; color: #F59E0B; font-weight: 700; text-align: center; margin-top: 20px;">                You walk in with a demand letter and hope. They walk in with 40 years of your colleagues' settlements.            </p>        </div>                <p style="font-size: 20pt; font-weight: 700; text-align: center; max-width: 800px; margin: 0 auto 32px; color: #0A2463;">            Settle™ gives YOU the data insurance companies don't want you to have.        </p>                <div style="background: #F8F9FA; padding: 32px; border-radius: 12px; margin: 32px auto; max-width: 900px; border: 1px solid #E5E5E5;">            <p style="font-size: 18pt; font-weight: 700; margin-bottom: 24px; text-align: center; color: #1A1A1A;">                How It Works (Simple Co-op):            </p>            <div style="display: flex; gap: 20px; align-items: center; justify-content: center; flex-wrap: nowrap; max-width: 800px; margin: 0 auto;">                <div style="text-align: center; flex: 1;">                    <div style="font-size: 32px; margin-bottom: 8px;">1️⃣</div>                    <p style="font-size: 14pt; font-weight: 700; color: #0A2463; margin-bottom: 4px;">Contribute</p>                    <p style="font-size: 13pt; line-height: 1.5; color: #555;">                        Enter 1 settlement<br>(1 min, anonymous)                    </p>                </div>                <div style="font-size: 24px; color: #0A2463; margin-top: -20px;">→</div>                <div style="text-align: center; flex: 1;">                    <div style="font-size: 32px; margin-bottom: 8px;">2️⃣</div>                    <p style="font-size: 14pt; font-weight: 700; color: #0A2463; margin-bottom: 4px;">Earn Credit</p>                    <p style="font-size: 13pt; line-height: 1.5; color: #555;">                        1 entry = 1 query<br>for YOUR cases                    </p>                </div>                <div style="font-size: 24px; color: #0A2463; margin-top: -20px;">→</div>                <div style="text-align: center; flex: 1;">                    <div style="font-size: 32px; margin-bottom: 8px;">3️⃣</div>                    <p style="font-size: 14pt; font-weight: 700; color: #0A2463; margin-bottom: 4px;">Query</p>                    <p style="font-size: 13pt; line-height: 1.5; color: #555;">                        Get settlement<br>averages instantly                    </p>                </div>            </div>            <p style="margin-top: 20px; font-style: italic; text-align: center; font-size: 14pt; color: #666;">                You contribute → You benefit. True co-op model.            </p>        </div>                <div style="background: #FFF9E6; padding: 32px; border-radius: 12px; border-left: 4px solid #F59E0B; margin-top: 32px;">            <p style="font-weight: 700; color: #78350F; font-size: 18pt; margin-bottom: 16px; text-align: center;">                 Why Only Founding Members Can Contribute?            </p>            <p style="color: #666; line-height: 1.8; max-width: 700px; margin: 0 auto;">                <strong>Data quality = trust.</strong> Insurance companies trust Colossus because it's verified, paid data from real claims.                 We use the same principle: Founding Members are <strong>vetted, paying attorneys</strong> — not anonymous internet users.                 This ensures every settlement in our database is <strong>real, accurate, and trustworthy.</strong>            </p>            <p style="color: #666; line-height: 1.8; max-width: 700px; margin: 16px auto 0;">                <strong>Plus:</strong> You're not a customer — you're a co-builder. You invest (contribute data), you earn (query credits).                 Spectators don't build movements. Founding Members do.            </p>        </div>                <div style="text-align: center; margin-top: 40px;">            <p style="font-size: 18pt; font-weight: 700; color: #0A2463; margin-bottom: 16px;">                "I used to guess. Now I walk into negotiations with a number. And I don't budge."            </p>            <p style="font-size: 15pt; color: #999; font-style: italic;">                — Founding Member, Miami-Dade County (anonymized)            </p>        </div>    </div>    <!-- CTA #3 -->    <a href="#form" class="cta-button" style="margin-top: 60px;">        Yes. I Want Benjamin + FREE Settle. Start My Trial →    </a>    <!-- 12. URGENCY BOX -->    <div class="urgency-box">        <h3>️ Founding Member Program</h3>        <p><strong>253 / 2,100 enrolled nationwide</strong> • <strong>1,847 spots remaining</strong></p>        <p><strong>How it works:</strong> Start with 11 FREE bookings → After 1st paid booking → Qualify for FM</p>        <p style="font-size: 20px; font-weight: 700; color: #10B981; margin: 16px 0;">             <strong>3 FREE bookings EVERY month forever</strong> (worth $1,044/year!)        </p>        <p style="font-size: 18px; font-weight: 600; color: #0A2463; margin: 12px 0;">             <strong>$25/booking rate locked forever</strong> (save ~$200/year)        </p>        <p style="font-size: 14px; color: #666; margin-top: 16px;">            Stay active: 1 paid booking/month OR 1 settlement/month OR 3 referrals/year        </p>        <p class="urgency-strong" style="margin-top: 24px;">            <span style="color: #B91C1C;">Limited to 2,100 attorneys • Check FM box on application • True partnership, not membership</span>        </p>    </div>    <!-- SECTION SEPARATOR -->    <div style="height: 2px; background: linear-gradient(to right, transparent, #E5E5E5, transparent); margin: 60px auto; max-width: 600px;"></div>    <!-- 13. COMPLIANCE PROOF -->    <h2 class="section-heading">        Proof You Did It Right — Without Saying a Word    </h2>        <div class="content-block">        <p style="font-size: 22pt; font-weight: 700; color: #0A2463; text-align: center; margin-bottom: 32px;">            "When the Bar asks, 'Did you use AI?' — you show proof, not promises."        </p>                <p>Every action generates a certificate proving:</p>                <p style="font-weight: 700; color: #0A2463; font-size: 20pt; margin: 24px 0; text-align: center;">            "Benjamin is NOT AI — it's a deterministic system, so zero hallucinations or improvisation. Completely Bar-compliant."        </p>                <p>This isn't marketing. <strong>This is malpractice prevention.</strong></p>                <p style="margin-top: 32px;"><strong>Compliance Built In:</strong></p>        <p>✅ Zero-knowledge architecture<br>        ✅ FSM-based (not LLM)<br>        ✅ Bar-reviewed scripts<br>        ✅ Audit trail (exportable PDF)<br>        ✅ You own all data</p>    </div>    <!-- SECTION SEPARATOR -->    <div style="height: 2px; background: linear-gradient(to right, transparent, #E5E5E5, transparent); margin: 100px auto 60px; max-width: 600px;"></div>    <!-- 14. PRICING PREVIEW -->    <h2 class="section-heading" style="margin-top: 0;">        Your Investment: Pay Only When You Win    </h2>        <div class="pricing-highlight">        <div class="pricing-amount">$29</div>        <div class="pricing-detail">per qualified booking (Pay Only When You Win)</div>        <div style="font-size: 16pt; color: #666; margin-bottom: 32px;">            (Avg. attorney: 8 bookings/month = <strong>$232/month</strong>)<br>            vs. $3,000/month human receptionist!        </div>                <div style="text-align: left; background: #FFF; padding: 32px; border-radius: 8px;">            <p style="font-size: 16pt; font-weight: 700; margin-bottom: 16px;">✅ INCLUDED:</p>            <p style="font-size: 15pt; line-height: 2;">                • 11 FREE qualified bookings to start<br>                • 24/7 phone answering (Benjamin deterministic system)<br>                • Up to 16 practice-specific qualification questions<br>                • Dangerous admission detection<br>                • Automatic calendar booking<br>                • Spanish included FREE<br>                • Real-time analytics dashboard<br>                • Website chatbot integration<br>                • CRM integration (Clio, MyCase!)            </p>                        <p style="font-size: 16pt; font-weight: 700; margin: 24px 0 16px;">❌ NEVER PAY FOR:</p>            <p style="font-size: 15pt; line-height: 2;">                • Monthly minimums (ZERO!)<br>                • Setup fees (ZERO!)<br>                • Contracts (Cancel anytime!)<br>                • Spam calls<br>                • Wrong practice areas<br>                • Expired statutes            </p>        </div>    </div>    <!-- SECTION SEPARATOR -->    <div style="height: 2px; background: linear-gradient(to right, transparent, #E5E5E5, transparent); margin: 100px auto 60px; max-width: 600px;"></div>    <!-- 15. WHY NOW - LOSS AMPLIFICATION -->    <div class="micro-movie" style="margin-top: 0;">        <p style="font-size: 22pt; font-weight: 700; color: #B91C1C; font-style: normal;">Why you can't wait another month:</p>                <p style="margin-top: 24px;">Every month you delay = <strong>20 missed calls.</strong></p>                <p>20 missed calls × 35% qualified × 33% sign rate = <strong>2.3 lost cases.</strong></p>                <p>2.3 lost cases × $5,150 net/case = <strong>$12,845 lost revenue.</strong></p>                <p style="margin-top: 24px;"><strong class="micro-movie-highlight">Every month you wait costs you $12,845.</strong></p>                <p style="margin-top: 32px;">Your competitor down the street? They signed up last week.</p>                <p>They're capturing the calls you're missing.</p>                <p>They're signing the cases that should've been yours.</p>                <p style="margin-top: 32px; font-size: 24pt; font-weight: 700; color: #000; font-style: normal;">            Don't let another case slip away.        </p>    </div>    <!-- SECTION SEPARATOR -->    <div style="height: 2px; background: linear-gradient(to right, transparent, #E5E5E5, transparent); margin: 80px auto 60px; max-width: 600px;"></div>    <!-- 16. DEMO FORM -->    <div class="form-section" id="form">        <div class="form-container">            <h3> See Benjamin In Action</h3>            <p class="form-subtext">                Get a live demo call in 8 minutes. Experience Benjamins natural voice, empathy, and intake flow firsthand.            </p>                        <form id="demoForm" style="max-width: 600px; margin: 0 auto;">                <label for="first">First Name</label>                <input type="text" id="first" name="first_name" required placeholder="e.g. John">                                <label for="last">Last Name</label>                <input type="text" id="last" name="last_name" required placeholder="e.g. Smith">                                <label for="phone">Phone Number</label>                <input type="tel" id="phone" name="phone" required placeholder="e.g. (555) 123-4567" oninput="formatDemoPhoneInput(this)" onblur="validateDemoPhone(this)">                                <label for="email">Email Address</label>                <input type="email" id="email" name="email" required placeholder="e.g. you@lawfirm.com">                                <label for="practice">Primary Practice Area</label>                <select id="practice" name="practice_area" required>                    <option value="">Select Practice Area</option>                    <option value="personal-injury">Personal Injury</option>                    <option value="family-law">Family Law</option>                    <option value="immigration">Immigration</option>                    <option value="criminal-defense">Criminal Defense</option>                    <option value="employment-law">Employment Law</option>                    <option value="real-estate">Real Estate</option>                    <option value="bankruptcy">Bankruptcy</option>                    <option value="estate-planning">Estate Planning</option>                    <option value="workers-comp">Workers' Compensation</option>                </select>                                <label for="firm">Law Firm Name</label>                <input type="text" id="firm" name="firm_name" required placeholder="e.g. Smith Law Group">                                <div class="consent-box" style="margin-top: 20px; padding: 16px; background: #F8F9FA; border-radius: 8px;">                    <label style="display: flex; align-items: flex-start; cursor: pointer;">                        <input type="checkbox" id="consent" name="consent" required style="margin-top: 4px; width: 20px; height: 20px; flex-shrink: 0; cursor: pointer;">                        <span style="margin-left: 12px; font-size: 14px; line-height: 1.6;">                            By submitting, I consent to receive automated calls, SMS, and emails from TrueVow at this number for demo, onboarding, and support. Message/data rates may apply. Consent is not required to purchase.                        </span>                    </label>                </div>                                <div class="form-next-steps" style="margin-top: 32px; text-align: left; font-size: 15px; color: #666; background: #E8F4FD; padding: 24px; border-radius: 12px;">                <strong style="color: #0A2463;">✅ What happens next:</strong><br><br>                <strong>1. Whitelist These 3 Numbers</strong> (Benjamin will call from one of them):<br>                 +1 (555) 100-0001 | +1 (555) 100-0002 | +1 (555) 100-0003<br><br>                <strong>2. Benjamin calls within 8 minutes</strong> — Experience the full intake conversation and book consultation<br><br>                <strong>3. Get sample booking Email & SMS</strong> — See the complete client experience<br><br>                <strong>4. Want to replay demo?</strong> We'll email you a unique link (valid to experience the same interactive demo with Benjamin 5 additional times within 30 days)<br><br>                <strong>5. While you wait</strong>, you'll be redirected to the Oakwood Law Firm demo page — try the web chat & voice bot so you can feel the no-drop intake safety net.<br><br>                <em>No credit card required • Takes 5 minutes • Zero risk</em>            </div>                                <button type="submit" style="margin-top: 24px;">
-                    <span style="display: block; font-size: 18pt; font-weight: 700;">Schedule My Live Demo</span>
-                    <span style="display: block; font-size: 14pt; font-weight: 500; opacity: 0.9;">Benjamin will call in ~8 mins</span>
-                </button>            </form>                        <div id="demoFormMessage" style="display: none; margin-top: 24px; padding: 16px; border-radius: 8px; font-size: 14px; line-height: 1.6;"></div>                    </div>    </div>        <div id="demoModal" class="modal-overlay" style="display:none;"></div>    <!-- 17. FINAL CTA - EMOTIONAL CLOSE -->    <h2 class="section-heading" style="margin-top: 100px;">        Ready to Stop Being the Last One Standing?    </h2>        <div class="voice-container" style="padding: 40px 20px;">        <p style="font-size: 22pt; font-weight: 700; color: #0A2463;">            "Exhale. I've got the wheel now."        </p>                <p style="font-size: 20pt; margin-top: 24px;">            Hand us the phone calls. We'll take the intake.<br>            You keep the clients. You keep your life.        </p>                <p style="margin-top: 40px; font-weight: 700; font-size: 24pt; color: #1A1A1A;">            No monthly fees. No contracts. No risk.<br>            Just results — and finally, peace of mind.        </p>                <p style="font-size: 28pt; font-weight: 800; color: #0A2463; margin-top: 24px;">            Just results. Starting today.        </p>    </div>    <!-- FINAL CTA BUTTON -->    <a href="#form" class="cta-button" style="background: #000000; max-width: 700px; padding: 20px 50px; font-size: 20pt; border-radius: 0px;">        Stop Bleeding. Start Winning. I've Got Your Back →    </a>    <!-- 18. STICKY CTA (APPEARS AFTER 50% SCROLL!) -->    <div class="sticky-cta" id="stickyCta">        ️ Founding Members: 1,847 spots left nationwide        <a href="#form">Get Your Demo Call Now →</a>    </div>    <!-- 19. FOOTER -->    <!-- FOOTER -->﻿
+</nav>
+<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+<div class="mobile-nav-panel" id="mobileNavPanel">
+    <button class="mobile-nav-close" id="mobileNavClose">&times;</button>
+    <a href="index.html">Home</a>
+    <a href="how-it-works.html">How It Works</a>
+    <a href="pricing.html">Pricing</a>
+    <div class="mobile-nav-label">Resources</div>
+    <a href="profitability.html">ROI Calculator</a>
+    <a href="county-cap.html">County Availability</a>
+    <a href="compliance.html">Data &amp; Compliance</a>
+    <a href="integrations.html">Integrations &amp; Setup</a>
+    <a href="blog.html">Blog</a>
+    <a href="trial.html" class="mobile-cta">See Benjamin Live (8 min) &rarr;</a>
+</div>
 
-
-
-
-    <script>        // Sticky CTA (appears after 50% scroll!)
-        window.addEventListener('scroll', () => {
-            const sticky = document.getElementById('stickyCta');
-            const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-
-            if (scrollPercent > 50) {
-                sticky.classList.add('show');
-            } else {
-                sticky.classList.remove('show');
-            }
-        });
-
-        // Supabase configuration for demo form
-        const SUPABASE_URL = 'https://napwpkagxzqfpbearkjs.supabase.co';
-        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5hcHdwa2FneHpxZnBiZWFya2pzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI0NDg3ODcsImV4cCI6MjA3ODAyNDc4N30.OSHgEylvGsDBwi4xI7Rs0_hpWtULmqadCr_m_eV_EgE';
-
-        const demoForm = document.getElementById('demoForm');
-        const demoMessage = document.getElementById('demoFormMessage');
-        const demoModal = document.getElementById('demoModal');
-        const demoModalMessage = document.getElementById('demoModalMessage');
-
-        function resetDemoMessage() {
-            if (!demoMessage) return;
-            demoMessage.style.display = 'none';
-            demoMessage.textContent = '';
-            demoMessage.style.background = '';
-            demoMessage.style.color = '';
-            demoMessage.style.borderLeft = '';
-        }
-
-        function showDemoError(message) {
-            if (!demoMessage) return;
-            demoMessage.textContent = `❌ ${message}`;
-            demoMessage.style.display = 'block';
-            demoMessage.style.background = '#FFEBEE';
-            demoMessage.style.color = '#B91C1C';
-            demoMessage.style.borderLeft = '4px solid #B91C1C';
-        }
-
-        function showDemoSuccessModal() {
-            // no-op: legacy modal removed; redirect happens after submission
-        }
-
-        function closeDemoModal() {}
-        window.closeDemoModal = closeDemoModal;
-
-        function normalizePhone(phone) {
-            if (!phone) return null;
-            const digits = phone.replace(/\D/g, '');
-            if (digits.length === 11 && digits.startsWith('1')) {
-                return digits.substring(1);
-            }
-            if (digits.length === 10) {
-                return digits;
-            }
-            return null;
-        }
-
-        function formatDemoPhoneInput(input) {
-            let digits = input.value.replace(/\D/g, '').substring(0, 10);
-            if (digits.length <= 3) {
-                input.value = digits;
-            } else if (digits.length <= 6) {
-                input.value = `(${digits.substring(0,3)}) ${digits.substring(3)}`;
-            } else {
-                input.value = `(${digits.substring(0,3)}) ${digits.substring(3,6)}-${digits.substring(6)}`;
-            }
-            if (demoMessage) demoMessage.style.display = 'none';
-        }
-
-        function validateDemoPhone(input) {
-            const normalized = normalizePhone(input.value);
-            if (!normalized) {
-                showDemoError('Please enter a valid 10-digit US phone number.');
-                input.focus();
-                return false;
-            }
-            return true;
-        }
-
-        async function submitDemoForm(event) {
-            event.preventDefault();
-            resetDemoMessage();
-
-            const button = demoForm.querySelector('button[type="submit"]');
-            const originalText = button.textContent;
-            button.textContent = 'Scheduling Your Demo...';
-            button.disabled = true;
-
-            const firstName = document.getElementById('first')?.value.trim() || '';
-            const lastName = document.getElementById('last')?.value.trim() || '';
-            const email = document.getElementById('email')?.value.trim() || '';
-            const phone = document.getElementById('phone')?.value.trim() || '';
-            const practiceArea = document.getElementById('practice')?.value || '';
-            const firmName = document.getElementById('firm')?.value.trim() || '';
-            const consent = document.getElementById('consent')?.checked || false;
-
-            const normalizedPhone = normalizePhone(phone);
-            if (!normalizedPhone) {
-                showDemoError('Please enter a valid 10-digit US phone number.');
-                button.textContent = originalText;
-                button.disabled = false;
-                return;
-            }
-
-            const submissionData = {
-                first_name: firstName,
-                last_name: lastName,
-                email,
-                phone: normalizedPhone,
-                practice_area: practiceArea,
-                firm_name: firmName,
-                consent,
-                source: 'homepage'
-            };
-
-            try {
-                const response = await fetch(`${SUPABASE_URL}/rest/v1/demo_requests`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'apikey': SUPABASE_ANON_KEY,
-                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
-                        'Prefer': 'return=representation'
-                    },
-                    body: JSON.stringify(submissionData)
-                });
-
-                const responseText = await response.text();
-                if (response.ok) {
-                    try {
-                        const leadPayload = {
-                            first_name: firstName,
-                            last_name: lastName,
-                            email,
-                            phone: normalizedPhone,
-                            practice_area: practiceArea,
-                            firm_name: firmName,
-                            consent,
-                            source: 'homepage',
-                            stored_at: Date.now()
-                        };
-                        localStorage.setItem('truevowDemoLead', JSON.stringify(leadPayload));
-                    } catch (storageErr) {
-                        console.warn('Unable to store demo lead locally:', storageErr);
-                    }
-
-                    demoForm.reset();
-                    window.location.href = 'demo-oakwood.html';
-                } else {
-                    let errorData = null;
-                    try {
-                        errorData = responseText ? JSON.parse(responseText) : null;
-                    } catch (parseErr) {
-                        // ignore parse error, use raw text
-                    }
-                    console.error('Demo form submission failed:', response.status, responseText);
-                    showDemoError(errorData?.message || errorData?.hint || 'Error scheduling demo. Please try again.');
-                }
-            } catch (error) {
-                console.error('Demo form submission error:', error);
-                showDemoError(error.message || 'Unexpected error scheduling demo.');
-            } finally {
-                button.textContent = originalText;
-                button.disabled = false;
-            }
-        }
-
-        if (demoForm) {
-            demoForm.addEventListener('submit', submitDemoForm);
-        }
-    </script>
-
-﻿<!-- STANDARDIZED FOOTER - Apply to all pages -->
-<footer style="background: #1A1A1A; color: white; padding: 60px 20px 120px 20px; text-align: center;">
-    <div style="max-width: 1200px; margin: 0 auto;">
-        <!-- Logo -->
-        <img src="../assets/logo.svg" alt="TrueVow" style="height: 50px; width: auto; margin-bottom: 24px; opacity: 0.9;">
-        
-        <p style="font-size: 16px; color: #999; margin-bottom: 40px; line-height: 1.6;">
-            More clients. More money. More time with your family.<br>
-            All without risking your license.
-        </p>
-        
-        <!-- 3-Column Links -->
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 900px; margin: 40px auto; text-align: center;">
-            <div>
-                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px;">PRODUCT</h4>
-                <div style="display: flex; flex-direction: column; gap: 12px;">
-                    <a href="how-it-works.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">How It Works</a>
-                    <a href="pricing.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Pricing</a>
-                    <a href="profitability.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">ROI &amp; Profitability</a>
-                    <a href="county-cap.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">33% County Cap</a>
-                </div>
-            </div>
-            <div>
-                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px;">RESOURCES</h4>
-                <div style="display: flex; flex-direction: column; gap: 12px;">
-                    <a href="blog.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Blog</a>
-                    <a href="case-studies.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Case Studies</a>
-                    <a href="partner.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Partner Program</a>
-                    <a href="affiliate.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Affiliate Program</a>
-                </div>
-            </div>
-            <div>
-                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px;">COMPANY</h4>
-                <div style="display: flex; flex-direction: column; gap: 12px;">
-                    <a href="about.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">About Us</a>
-                    <a href="careers.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Careers</a>
-                    <a href="press.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Press</a>
-                    <a href="apply.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Contact</a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Legal Links -->
-        <div style="display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 40px; flex-wrap: wrap; font-size: 14px;">
-            <a href="../legal/privacy.html" style="color: #999; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Privacy Policy</a>
-            <span style="color: #555;">|</span>
-            <a href="../legal/terms.html" style="color: #999; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Terms of Service</a>
-            <span style="color: #555;">|</span>
-            <a href="../legal/msa.html" style="color: #999; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">MSA</a>
-            <span style="color: #555;">|</span>
-            <a href="../legal/bar-compliance.html" style="color: #999; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Bar Compliance</a>
-        </div>
-        
-        <!-- Disclaimer -->
-        <p style="font-size: 11pt; color: #555; margin-top: 32px; line-height: 1.8; max-width: 900px; margin-left: auto; margin-right: auto; padding-bottom: 60px;">
-            © 2026 TrueVow Technologies. All rights reserved. TrueVow is a brand of TrueVow Global Technologies FZ-LLC (UAE), a subsidiary of TrueVow Global Holdings LLC (Nevis). TrueVow (USA) Inc. (Wyoming) provides passive marketing only and does not handle contracts or operations. All contracts are with TrueVow Global Technologies FZ-LLC (UAE). Technology and IP held by TrueVow Global Holdings LLC (Nevis). We are not a law firm and do not provide legal advice. By using our services, you acknowledge that TrueVow operates as a technology and services provider only.
-        </p>
+<!-- HERO -->
+<section class="hero">
+    <h1>You Don't Have a Lead Problem.<br>You Have a Pipeline Leak.</h1>
+    <p class="hero-sub">
+        Most solo and small PI firms already pay for leads. The leak happens after the phone rings &mdash; missed calls, slow response, weak qualification, under-structured cases, and settlement decisions made with incomplete information.
+    </p>
+    <div class="hero-actions">
+        <a href="trial.html" class="btn btn-primary">See Benjamin Live (8 min) &rarr;</a>
+        <a href="pricing.html" class="btn btn-secondary">View Pricing &rarr;</a>
     </div>
+    <p style="font-size: 14px; color: rgba(255,255,255,0.35); margin-top: 24px;">A caller who cannot reach your firm may keep searching until someone responds.</p>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+    <div class="trust-inner">
+        <span>Bar-conscious workflows</span>
+        <span>Deterministic intake logic</span>
+        <span>Spanish included</span>
+        <span>Approval required</span>
+    </div>
+</div>
+
+<!-- PAIN -->
+<section class="pain-section reveal">
+    <div class="container">
+        <div class="pain-box">
+            <h2>The expensive case is the one you never knew called.</h2>
+            <p>Missed calls, slow response, weak qualification, under-structured case facts, and blind settlement decisions all create the same problem: money leaks out of the firm before anyone sees it.</p>
+            <p style="font-weight: 700; color: var(--navy); margin-top: 8px;">Missed calls do not look expensive in the moment. They look like voicemail. The cost shows up later &mdash; in cases you never knew you lost.</p>
+        </div>
+    </div>
+</section>
+
+<!-- INTAKE-FIRST -->
+<section class="intake-section reveal">
+    <div class="container">
+        <div class="section-head">
+            <h2>Stage 1 &mdash; INTAKE Captures the Opportunity</h2>
+            <p>Benjamin answers calls, follows deterministic intake logic, asks practice-specific questions, scores viability, sends priority SMS for A+ leads, and books consultations.</p>
+        </div>
+        <div class="intake-grid">
+            <div class="intake-feature">
+                <strong>Routed Calls Answered When Enabled</strong>
+                <p>Calls can route to Benjamin based on your firm's configured schedule, routing rules, and intake setup.</p>
+            </div>
+            <div class="intake-feature">
+                <strong>English + Spanish</strong>
+                <p>Both languages included at no extra cost.</p>
+            </div>
+            <div class="intake-feature">
+                <strong>A/B/C/D Visibility</strong>
+                <p>See every call scored. Know what you're getting.</p>
+            </div>
+            <div class="intake-feature">
+                <strong>A+ Unlock Model</strong>
+                <p>Included A+ unlocks by plan. Additional A+ unlocks only when you choose to pursue.</p>
+            </div>
+            <div class="intake-feature">
+                <strong>Calendar Booking</strong>
+                <p>Consults booked directly into your calendar.</p>
+            </div>
+            <div class="intake-feature">
+                <strong>Priority SMS</strong>
+                <p>A+ leads trigger instant SMS so you see them first.</p>
+            </div>
+        </div>
+        <div style="text-align: center;">
+            <a href="trial.html?product=intake&source=homepage-intake" class="btn btn-primary">Apply for INTAKE &rarr;</a>
+        </div>
+    </div>
+</section>
+
+<!-- NOT AN ANSWERING SERVICE -->
+<section class="comparison-section reveal">
+    <div class="container">
+        <div class="section-head">
+            <h2>Answering Services Take Messages.<br>Benjamin Protects Revenue.</h2>
+        </div>
+        <div class="compare-grid">
+            <div class="compare-col as-is">
+                <h3>Answering Service</h3>
+                <ul>
+                    <li>Answers calls</li>
+                    <li>Takes messages</li>
+                    <li>Shallow intake</li>
+                    <li>No case scoring</li>
+                    <li>No consult booking logic</li>
+                    <li>Charges whether cases convert or not</li>
+                </ul>
+            </div>
+            <div class="compare-col truevow">
+                <h3>TrueVow INTAKE</h3>
+                <ul>
+                    <li>Qualifies by practice area</li>
+                    <li>Detects low-fit calls</li>
+                    <li>Scores case viability (A+ through D)</li>
+                    <li>Books consults</li>
+                    <li>Triggers priority SMS for A+ leads</li>
+                    <li>Feeds structured facts into the pipeline</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PIPELINE REVEAL -->
+<section class="pipeline-section reveal">
+    <div class="container">
+        <div class="section-head">
+            <h2>One System. Three Stages of Control.</h2>
+            <p>INTAKE captures the case. LEVERAGE structures the value. SETTLE supports the settlement decision. Together, they close the gaps most firms never see.</p>
+        </div>
+        <div class="pipeline-grid">
+            <div class="pipeline-card intake">
+                <div class="stage-label">Stage 1</div>
+                <h3>INTAKE</h3>
+                <p>Captures and qualifies the case. Benjamin answers routed calls, scores viability, and books consults.</p>
+                <a href="pricing.html#intake">Learn more &rarr;</a>
+            </div>
+            <div class="pipeline-card leverage">
+                <div class="stage-label">Stage 2</div>
+                <h3>LEVERAGE</h3>
+                <p>Structures the case value story. Damage identification, case structuring, and negotiation positioning.</p>
+                <a href="leverage.html">Learn more &rarr;</a>
+            </div>
+            <div class="pipeline-card settle">
+                <div class="stage-label">Stage 3</div>
+                <h3>SETTLE</h3>
+                <p>Supports settlement decisions with comparable signals and confidence labels.</p>
+                <a href="settle.html">Learn more &rarr;</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTROL vs BLACK BOX -->
+<section class="pipeline-section reveal" style="background: white;">
+    <div class="container">
+        <div class="section-head">
+            <h2>Built for Firms That Want Control, Not an Enterprise AI Rollout</h2>
+            <p style="max-width: 800px; margin: 0 auto;">Some legal AI platforms try to automate the entire case lifecycle at once. TrueVow starts where solo and small PI firms usually leak money first: intake.</p>
+            <p style="max-width: 800px; margin: 16px auto 0;">Begin with routed calls, qualification, priority alerts, calendar booking, and structured intake records. Then expand into FOLLOW-UP, LEVERAGE, or SETTLE only when the pipeline proves value.</p>
+        </div>
+        <div class="pipeline-grid" style="margin-top: 48px;">
+            <div class="pipeline-card intake">
+                <div class="stage-label">Principle 1</div>
+                <h3>Controlled Intake First</h3>
+                <p>Benjamin follows firm-approved intake paths, routing rules, escalation logic, and recording settings. It is not a free-form chatbot improvising legal advice.</p>
+            </div>
+            <div class="pipeline-card leverage">
+                <div class="stage-label">Principle 2</div>
+                <h3>Built for Solo &amp; Small PI Firms</h3>
+                <p>TrueVow is designed for owner-led plaintiff firms that need clear pricing, fast setup, Spanish support, priority alerts, and practical pipeline visibility.</p>
+            </div>
+            <div class="pipeline-card settle">
+                <div class="stage-label">Principle 3</div>
+                <h3>No Platform Migration Required</h3>
+                <p>Start with phone routing, calendar booking, structured intake records, and portal review. Native case-management integrations are added only when approved and real.</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 48px;">
+            <a href="how-it-works.html" style="display: inline-block; background: #0A2463; color: white; padding: 16px 40px; border-radius: 8px; font-size: 18px; font-weight: 700; text-decoration: none;">See How TrueVow Works &rarr;</a>
+        </div>
+    </div>
+</section>
+
+<!-- MICRO-MOVIE -->
+<section class="movie-section reveal">
+    <div class="container">
+        <div class="section-head">
+            <h2>What Happens When the Phone Rings After Hours?</h2>
+        </div>
+        <div class="movie-box">
+            <p>It's 7:42 p.m. You're at dinner.</p>
+            <p>A potential client calls after leaving the ER.</p>
+            <p><span class="highlight">Benjamin answers, qualifies the case, checks the key facts, and books the consult.</span></p>
+            <p>You get the alert. The caller gets help. <span class="result">The case does not disappear into voicemail.</span></p>
+        </div>
+    </div>
+</section>
+
+<!-- HOW BENJAMIN WORKS -->
+<section class="intake-section reveal" id="how-it-works">
+    <div class="container">
+        <div class="section-head">
+            <h2>How Benjamin Works</h2>
+            <p>Benjamin uses deterministic intake logic for live-call decisions &mdash; not generative AI. That keeps the intake path predictable and auditable.</p>
+        </div>
+        <div class="intake-grid" style="grid-template-columns: repeat(3, 1fr);">
+            <div class="intake-feature">
+                <strong>1. Caller Reaches the Firm</strong>
+                <p>Call forwarded or direct dial. Benjamin answers routed calls when enabled.</p>
+            </div>
+            <div class="intake-feature">
+                <strong>2. Benjamin Follows Deterministic Logic</strong>
+                <p>Practice-specific questions. Statute check. Liability screen.</p>
+            </div>
+            <div class="intake-feature">
+                <strong>3. Case Facts Captured &amp; Scored</strong>
+                <p>A+ leads trigger priority SMS. B/C/D visible at no charge.</p>
+            </div>
+            <div class="intake-feature">
+                <strong>4. Consultation Booked</strong>
+                <p>Directly into your calendar. Confirmations sent.</p>
+            </div>
+            <div class="intake-feature">
+                <strong>5. Structured Intake Record</strong>
+                <p>Every call produces a structured intake record with key facts, scores, and risk flags.</p>
+            </div>
+            <div class="intake-feature">
+                <strong>6. Pipeline Flow</strong>
+                <p>Case facts can flow into LEVERAGE and SETTLE when you're ready.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRICING TEASER -->
+<section class="pricing-teaser reveal">
+    <div class="container">
+        <h2>Plans Start at $199/Month for INTAKE</h2>
+        <p>LEVERAGE and SETTLE are available as approved add-ons or standalone access.</p>
+        <a href="pricing.html" class="btn btn-primary">View Full Pricing &rarr;</a>
+    </div>
+</section>
+
+<!-- APPLICATION / APPROVAL -->
+<section class="application-section reveal">
+    <div class="container">
+        <div class="section-head">
+            <h2>Access Is Approved Before Activation</h2>
+            <p>TrueVow is built for solo and small PI firms. Public website visitors apply first. Approved firms complete plan selection, payment, and onboarding inside the customer portal.</p>
+        </div>
+        <div class="app-steps">
+            <div class="app-step">
+                <div class="step-num">1</div>
+                <h4>Apply</h4>
+                <p>Submit firm details</p>
+            </div>
+            <div class="app-step">
+                <div class="step-num">2</div>
+                <h4>Firm Review</h4>
+                <p>Firm fit and county availability reviewed</p>
+            </div>
+            <div class="app-step">
+                <div class="step-num">3</div>
+                <h4>Portal Invite</h4>
+                <p>Plan selection &amp; payment</p>
+            </div>
+            <div class="app-step">
+                <div class="step-num">4</div>
+                <h4>Onboarding</h4>
+                <p>Setup &amp; screenshare</p>
+            </div>
+            <div class="app-step">
+                <div class="step-num">5</div>
+                <h4>Activation</h4>
+                <p>Benjamin goes live</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ PREVIEW -->
+<section class="faq-section reveal">
+    <div class="container">
+        <div class="section-head">
+            <h2>Common Questions</h2>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-question">Is Benjamin an answering service?</div>
+                <div class="faq-answer">
+                    <p>No. Answering services take messages and forward calls. Benjamin qualifies leads by practice area, scores viability, books consults, and triggers priority alerts for strong leads. It follows firm-approved intake paths, routing rules, and escalation logic instead of free-form chatbot behavior.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Is this a chatbot?</div>
+                <div class="faq-answer">
+                    <p>Benjamin uses deterministic intake logic for live-call decisions. It can support approved open-ended responses, but it is not designed to improvise legal advice or make attorney judgment calls.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Do I pay for every lead?</div>
+                <div class="faq-answer">
+                    <p>No. INTAKE shows you all calls with A/B/C/D visibility. You can review all lead summaries. B/C/D leads are available without unlock. A+ leads require an unlock to access contact details and full case information.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Is Spanish included?</div>
+                <div class="faq-answer">
+                    <p>Yes. English and Spanish intake are both included at no extra cost. Callers are served in whichever language they prefer.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Can I use LEVERAGE or SETTLE without INTAKE?</div>
+                <div class="faq-answer">
+                    <p>Yes. Each product works standalone. However, firms using INTAKE benefit from automatic case-data flow into LEVERAGE and SETTLE, plus bundled pricing. If you use INTAKE, case facts flow into LEVERAGE from the first call. If not, you can enter case facts manually &mdash; no client identifiers required.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta reveal">
+    <div class="container">
+        <h2>See what happens when a routed call reaches Benjamin instead of voicemail.</h2>
+        <p>See Benjamin answer a live call. Eight minutes. No public checkout.</p>
+        <a href="trial.html" class="btn btn-primary">See Benjamin Live (8 min) &rarr;</a>
+        <div class="final-cta-badges">
+            <span>Bar-conscious workflows</span>
+            <span>Deterministic intake logic</span>
+            <span>Approval required</span>
+            <span>No public checkout</span>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <a href="index.html" class="logo" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; margin-bottom: 24px;">
+        <div class="logo-monogram">
+            <span class="logo-monogram-t1">T</span>
+            <span class="logo-monogram-t2">T</span>
+            <span class="logo-monogram-v" style="color: #fff;">V</span>
+        </div>
+        <div class="logo-text">
+            <span class="logo-true">True</span>
+            <span class="logo-vow" style="color: #fff;">Vow</span>
+            <span class="logo-law" style="color: #fff;">.law</span>
+        </div>
+    </a>
+    <div class="footer-links">
+        <div class="footer-col">
+            <h4>PRODUCT</h4>
+            <a href="pricing.html#intake">INTAKE</a>
+            <a href="leverage.html">LEVERAGE</a>
+            <a href="settle.html">SETTLE</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="profitability.html">ROI Calculator</a>
+        </div>
+        <div class="footer-col">
+            <h4>RESOURCES</h4>
+            <a href="county-cap.html">County Availability</a>
+            <a href="compliance.html">Data &amp; Compliance</a>
+            <a href="integrations.html">Integrations &amp; Setup</a>
+            <a href="blog.html">Blog</a>
+            
+        </div>
+        <div class="footer-col">
+            <h4>COMPANY</h4>
+            <a href="about.html">About Us</a>
+            <a href="trial.html">Contact</a>
+        </div>
+    </div>
+    <div class="footer-legal">
+        <a href="legal/privacy.html">Privacy Policy</a>
+        <span style="color: #555;">|</span>
+        <a href="legal/terms.html">Terms of Service</a>
+        <span style="color: #555;">|</span>
+        <a href="legal/msa.html">MSA</a>
+    </div>
+    <p class="footer-disclaimer">
+        &copy; 2026 TrueVow Technologies. All rights reserved. TrueVow is a brand of TrueVow Global Tech FZE LLC (UAE), a subsidiary of TrueVow Global Holdings LLC (Nevis). TrueVow (USA) Inc. (Wyoming) provides passive marketing only and does not handle contracts or operations. All contracts are with TrueVow Global Tech FZE LLC (UAE). Technology and IP held by TrueVow Global Holdings LLC (Nevis). We are not a law firm and do not provide legal advice. By using our services, you acknowledge that TrueVow operates as a technology and services provider only.
+    </p>
 </footer>
 
+<!-- STICKY CTA -->
+<a href="trial.html" class="sticky-cta" id="stickyCta">See Benjamin Live (8 min) &rarr;</a>
 
-</body></html>
+<script>
+    // Progress bar
+    window.addEventListener('scroll', function() {
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        document.getElementById('progressBar').style.width = progress + '%';
+    });
+
+    // Scroll reveals
+    var revealObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(function(el) { revealObserver.observe(el); });
+
+    // Sticky CTA
+    var sticky = document.getElementById('stickyCta');
+    window.addEventListener('scroll', function() {
+        var scrollPercent = (window.pageYOffset / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        sticky.style.display = scrollPercent > 15 ? 'block' : 'none';
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-item').forEach(function(item) {
+        item.querySelector('.faq-question').addEventListener('click', function() { item.classList.toggle('active'); });
+    });
+</script>
+
+
+<script>
+    // Mobile nav toggle
+    (function() {
+        var hamburger = document.getElementById('navHamburger');
+        var panel = document.getElementById('mobileNavPanel');
+        var overlay = document.getElementById('mobileNavOverlay');
+        var closeBtn = document.getElementById('mobileNavClose');
+        function openNav() { if(hamburger) hamburger.classList.add('active'); if(panel) panel.classList.add('active'); if(overlay) overlay.classList.add('active'); document.body.style.overflow='hidden'; }
+        function closeNav() { if(hamburger) hamburger.classList.remove('active'); if(panel) panel.classList.remove('active'); if(overlay) overlay.classList.remove('active'); document.body.style.overflow=''; }
+        if(hamburger) hamburger.addEventListener('click', openNav);
+        if(closeBtn) closeBtn.addEventListener('click', closeNav);
+        if(overlay) overlay.addEventListener('click', closeNav);
+    })();
+</script>
+</body>
+</html>

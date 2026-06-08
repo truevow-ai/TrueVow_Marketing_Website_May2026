@@ -1,0 +1,47 @@
+---
+alwaysApply: true
+---
+
+## TrueVow Marketing Website — Project Context
+
+You are working on the TrueVow public marketing website. This is a static HTML site (no frameworks, no build process) deployed to Namecheap.
+
+### Tech Stack
+- Pure HTML/CSS/JavaScript
+- Supabase backend (PostgreSQL + Edge Functions)
+- Google Fonts: Inter + Montserrat
+- Domain: truevow.law
+
+### Current Pages (28 marketing HTML files)
+Key product pages: pricing.html, settle.html, leverage.html, how-it-works.html
+Trial funnel: trial.html (public), trial-onboarding.html (approved firms only)
+Ad landing: benjamin-ad-landing-page-01.html
+Other: index.html, apply.html, blog.html, compliance.html, integrations.html, profitability.html, county-cap.html, about.html, careers.html, press.html, case-studies.html, partner.html, affiliate.html, affiliate-apply.html, founding-members.html, demo-oakwood.html
+
+### Pricing Model (locked)
+- INTAKE: Solo $199/3 A+/500min, Growth $599/11 A+/1,500min, Team $1,499/33 A+/4,500min
+- LEVERAGE: Solo $99/$79(5 active), Growth $349/$279(21 active), Team $899/$699(55 active)
+- SETTLE: $39 single, Ecosystem $29, Pro $299/mo, 11-Pack $385, 25-Pack $750
+- Add-ons: FOLLOW-UP ($149/$299), COMPLETE ($99/$199), Recordings ($49/$199/$399)
+- Add-ons available on Growth and Team only
+
+### Claim-Safety Rules (mandatory)
+Never use: 24/7, guaranteed, priority access, skip the waitlist, exactly, PII ever stored, high-value cases guaranteed, whichever comes first
+Use instead: may, can, is designed to, high-priority opportunity, after-hours, configured hours
+
+### CTA Rules (approval-first)
+Approved: Apply for INTAKE, Request LEVERAGE Access, Request SETTLE Access, Add FOLLOW-UP, Add COMPLETE, Apply for the 90-Day Intake Trial
+Forbidden: Buy Now, Checkout, Subscribe Now, Start Free, Unlock $99, Pay Today
+
+### NO-CACHE RULE
+1. Do not assume access to full project context. Provide all necessary files explicitly.
+2. Treat every request as self-contained. Do not rely on cached embeddings or prior file states unless pasted verbatim.
+3. If context is missing, ASK — do not hallucinate.
+4. Prefer small, incremental diffs over full-file rewrites.
+
+### Service Ownership
+Marketing Website owns: public pages, form UX, non-authenticated submission
+SaaS Admin owns: application review, firm approval, tenant identity, PLG activation
+Billing Service owns: trial entitlement, plan catalog, unlock allowance
+Customer Portal owns: firm-facing dashboard, subscription page, usage, lead review
+Website does NOT create tenants, approve firms, or process payments.

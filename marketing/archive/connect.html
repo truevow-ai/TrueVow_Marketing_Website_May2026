@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONNECT — Attorney Referral Network | TrueVow</title>
+    <meta name="description" content="You got a case you can't handle. Now what? CONNECT finds qualified attorneys in 30 seconds. Bar-compliant. Zero-knowledge. FREE for INTAKE users.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #1A1A1A;
+            background: #FFFFFF;
+        }
+        
+        /* HERO */
+        .hero {
+            background: #000000;
+            color: #FFFFFF;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        /* CONTENT BLOCK */
+        .content-block {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18pt;
+            color: #333333;
+            line-height: 1.8;
+        }
+        
+        /* CTA BUTTON */
+        .cta-button {
+            display: block;
+            background: #0A2463;
+            color: #FFFFFF;
+            padding: 24px 60px;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 22pt;
+            font-weight: 700;
+            text-decoration: none;
+            text-align: center;
+            max-width: 700px;
+            margin: 60px auto;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(10, 36, 99, 0.3);
+        }
+        
+        .cta-button:hover {
+            background: #051533;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(10, 36, 99, 0.4);
+        }
+        
+        /* STAT BOX */
+        .stat-box {
+            background: #F8F9FA;
+            border-left: 4px solid #0A2463;
+            padding: 24px;
+            margin: 24px 0;
+            border-radius: 4px;
+        }
+        
+        /* TESTIMONIAL */
+        .testimonial {
+            background: #F8F9FA;
+            padding: 40px;
+            border-radius: 12px;
+            margin: 40px 0;
+            border-left: 4px solid #0A2463;
+        }
+        
+        /* FAQ */
+        .faq-item {
+            background: #F8F9FA;
+            padding: 24px;
+            margin: 16px 0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .faq-item:hover {
+            background: #E8F4FD;
+        }
+        
+        .faq-question {
+            font-weight: 700;
+            font-size: 18pt;
+            color: #0A2463;
+            margin-bottom: 12px;
+        }
+        
+        .faq-answer {
+            font-size: 16pt;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        /* CALCULATOR */
+        .calculator {
+            background: linear-gradient(135deg, #F8F9FA 0%, #E8F4FD 100%);
+            padding: 40px;
+            border-radius: 16px;
+            margin: 40px 0;
+            border: 2px solid #0A2463;
+        }
+        
+        .calculator-input {
+            width: 100%;
+            padding: 16px;
+            font-size: 18pt;
+            border: 2px solid #E5E5E5;
+            border-radius: 8px;
+            margin: 12px 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .calculator-result {
+            background: white;
+            padding: 24px;
+            border-radius: 8px;
+            margin-top: 24px;
+            font-size: 20pt;
+            font-weight: 700;
+            color: #0A2463;
+            text-align: center;
+        }
+        
+        /* PRICING CARD */
+        .pricing-card {
+            background: white;
+            border: 2px solid #E5E5E5;
+            border-radius: 12px;
+            padding: 40px;
+            margin: 24px 0;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .pricing-card:hover {
+            border-color: #0A2463;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(10, 36, 99, 0.15);
+        }
+        
+        .pricing-card.featured {
+            border-color: #10B981;
+            border-width: 3px;
+            background: linear-gradient(135deg, #F0FDF4 0%, #E8F4FD 100%);
+        }
+        
+        /* MOBILE RESPONSIVENESS */
+        
+        /* HAMBURGER */
+        .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; gap: 5px; }
+        .nav-hamburger span { display: block; width: 24px; height: 2px; background: #555; border-radius: 2px; transition: all 0.3s; }
+        .nav-hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .nav-hamburger.active span:nth-child(2) { opacity: 0; }
+        .nav-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+        .mobile-nav-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 999; }
+        .mobile-nav-overlay.active { display: block; }
+        .mobile-nav-panel { display: none; position: fixed; top: 0; right: -280px; width: 280px; height: 100vh; background: white; z-index: 1002; padding: 80px 32px 32px; box-shadow: -4px 0 24px rgba(0,0,0,0.1); transition: right 0.3s ease; flex-direction: column; gap: 0; }
+        .mobile-nav-panel.active { display: flex; right: 0; }
+        .mobile-nav-panel a { display: block; padding: 14px 0; color: #555; text-decoration: none; font-size: 17px; font-weight: 500; border-bottom: 1px solid #F0F0F0; font-family: 'Montserrat', sans-serif; }
+        .mobile-nav-panel a:last-child { border-bottom: none; }
+        .mobile-nav-panel .mobile-nav-label { padding: 14px 0 6px; font-size: 12px; font-weight: 600; color: #999; text-transform: uppercase; letter-spacing: 1px; border-bottom: none; font-family: 'Montserrat', sans-serif; }
+        .mobile-nav-panel .mobile-cta { background: var(--navy); color: white !important; text-align: center; border-radius: 8px; padding: 14px; margin-top: 16px; font-weight: 600; border-bottom: none; }
+        .mobile-nav-panel .mobile-cta:hover { background: #0052CC; }
+        .mobile-nav-close { position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 28px; cursor: pointer; color: #999; padding: 4px 8px; }
+        @media (max-width: 768px) { .nav-hamburger { display: flex; } }
+        @media (min-width: 769px) { .nav-hamburger, .mobile-nav-overlay, .mobile-nav-panel { display: none !important; } }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32pt;
+            }
+            
+            .hero p {
+                font-size: 16pt;
+            }
+            
+            .content-block {
+                font-size: 16pt;
+                padding: 40px 20px;
+            }
+            
+            .cta-button {
+                font-size: 18pt;
+                padding: 20px 40px;
+            }
+            
+            nav > div {
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+        }
+    /* WEBSITE-CONSISTENT NAV / FOOTER */
+nav { position: sticky; top: 0; z-index: 1000; background: white; border-bottom: 1px solid #E5E5E5; padding: 20px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.04); font-family: 'Montserrat', sans-serif; }
+.nav-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+.logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.logo-monogram { position: relative; width: 38px; height: 32px; flex-shrink: 0; }
+.logo-monogram-t1 { position: absolute; left: 0; top: 0; font-size: 32px; font-weight: 400; color: #C0C0C0; line-height: 1; }
+.logo-monogram-t2 { position: absolute; left: 6px; top: 0; font-size: 32px; font-weight: 400; color: #808080; line-height: 1; }
+.logo-monogram-v { position: absolute; left: 12px; top: 0; font-size: 32px; font-weight: 700; color: #0A2463; line-height: 1; }
+.logo-text { display: flex; align-items: baseline; gap: 0; }
+.logo-true { font-size: 22px; font-weight: 400; color: #808080; letter-spacing: 0.5px; }
+.logo-vow { font-size: 22px; font-weight: 700; color: #0A2463; letter-spacing: 0.5px; }
+.logo-law { font-size: 18px; font-weight: 400; color: #0A2463; }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a { color: #555555; text-decoration: none; font-size: 16px; font-weight: 500; }
+.nav-cta { background: #0A2463; color: white !important; padding: 12px 24px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: background 0.2s; }
+.nav-cta:hover { background: #0052CC; }
+        .nav-dropdown { position: relative; }
+        .nav-dropdown-toggle { cursor: pointer; display: inline-flex; align-items: center; gap: 4px; background: none; border: none; color: #555; text-decoration: none; font-size: 16px; font-weight: 500; font-family: 'Montserrat', sans-serif; padding: 0; }
+                .nav-dropdown-toggle::after { content: ' ▾'; font-size: 10px; }
+                .nav-dropdown:hover .nav-dropdown-toggle::after { content: ' ▴'; }
+        .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%); background: white; border: 1px solid #E5E5E5; border-radius: 8px; padding: 8px 0; min-width: 210px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); z-index: 1001; }
+        .nav-dropdown-menu a { display: block; padding: 10px 20px; color: #555555 !important; text-decoration: none !important; font-size: 15px; font-weight: 500; white-space: nowrap; }
+        .nav-dropdown-menu a:hover { color: #0A2463 !important; background: #F8F9FA; }
+        .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+footer { padding: 80px 24px; background: #000; color: white; text-align: center; }
+.footer-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 900px; margin: 40px auto; text-align: center; }
+.footer-col h4 { color: #fff; font-size: 16px; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px; }
+.footer-col a { display: block; color: #999; text-decoration: none; font-size: 15px; margin-bottom: 12px; transition: color 0.3s; }
+.footer-col a:hover { color: #fff; }
+.footer-legal { display: flex; justify-content: center; gap: 16px; margin-top: 40px; font-size: 14px; flex-wrap: wrap; }
+.footer-legal a { color: #999; text-decoration: none; }
+.footer-legal a:hover { color: #fff; }
+.footer-disclaimer { font-size: 11pt; color: #555; margin-top: 32px; line-height: 1.8; max-width: 900px; margin-left: auto; margin-right: auto; padding-bottom: 40px; }
+@media (max-width: 768px) { .nav-links { display: none; }
+            .nav-hamburger { display: flex; }
+            .nav-cta { display: none; } }
+@media (max-width: 768px) { .footer-links { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <div class="logo-monogram">
+                <span class="logo-monogram-t1">T</span>
+                <span class="logo-monogram-t2">T</span>
+                <span class="logo-monogram-v">V</span>
+            </div>
+            <div class="logo-text">
+                <span class="logo-true">True</span>
+                <span class="logo-vow">Vow</span>
+                <span class="logo-law">.law</span>
+            </div>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="pricing.html">Pricing</a>
+            <div class="nav-dropdown">
+                <button class="nav-dropdown-toggle">Resources</button>
+                <div class="nav-dropdown-menu">
+                    <a href="profitability.html">ROI Calculator</a>
+                    <a href="county-cap.html">County Availability</a>
+                    <a href="compliance.html">Data &amp; Compliance</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="case-studies.html">Case Studies</a>
+                </div>
+            </div>
+        </div>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+        <a href="apply.html" class="nav-cta">See Benjamin Live (8 min) &rarr;</a>
+    </div>
+</nav>
+<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+<div class="mobile-nav-panel" id="mobileNavPanel">
+    <button class="mobile-nav-close" id="mobileNavClose">&times;</button>
+    <a href="index.html">Home</a>
+    <a href="how-it-works.html">How It Works</a>
+    <a href="pricing.html">Pricing</a>
+    <div class="mobile-nav-label">Resources</div>
+    <a href="profitability.html">ROI Calculator</a>
+    <a href="county-cap.html">County Availability</a>
+                    <a href="compliance.html">Data &amp; Compliance</a>
+    <a href="blog.html">Blog</a>
+    <a href="case-studies.html">Case Studies</a>
+    <a href="apply.html" class="mobile-cta">See Benjamin Live (8 min) &rarr;</a>
+</div>
+
+<!-- HERO - EMOTIONAL PROBLEM (StoryBrand Framework) -->
+<div class="hero">
+    <p style="font-size: 18pt; color: #F59E0B; font-weight: 600; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px;">For Solo & Small Law Firms</p>
+    <h1 style="font-size: 52pt; font-weight: 700; margin-bottom: 24px; letter-spacing: -1px; line-height: 1.2;">
+        You Got a Case You Can't Handle<br>Now What?
+    </h1>
+    <p style="margin-top: 32px; font-size: 32pt; font-weight: 700; color: #FF6B6B; line-height: 1.4;">
+        Turn It Away and Lose $5,000-$50,000
+    </p>
+    <p style="margin-top: 40px; font-size: 22pt; color: #E5E5E5; line-height: 1.8;">
+        CONNECT finds qualified attorneys in 30 seconds.<br>
+        Bar-compliant. Zero-knowledge.<br>
+        <span style="font-weight: 700; color: #FFFFFF; font-size: 26pt; margin-top: 16px; display: inline-block;">Never turn away a case again.</span>
+    </p>
+    <div style="background: rgba(255, 107, 54, 0.2); border-left: 4px solid #FF6B35; padding: 20px; border-radius: 8px; margin-top: 32px; max-width: 800px; margin-left: auto; margin-right: auto;">
+        <p style="font-size: 18pt; font-weight: 700; color: #FFFFFF; margin-bottom: 8px;">⏰ Cases are being turned away RIGHT NOW</p>
+        <p style="font-size: 16pt; color: #E5E5E5; line-height: 1.6;">Turn rejected cases into passive revenue. Build your referral network before competitors.</p>
+    </div>
+    <p style="margin-top: 24px; font-size: 14pt; color: #999;">
+        <span style="color: #F59E0B; font-weight: 700;">892 attorneys</span> already building the network • <span style="color: #F59E0B; font-weight: 700;">11 FREE referrals (90 days)</span> • <span style="color: #10B981; font-weight: 700;">3 FREE/month for INTAKE users</span><br>
+        <span style="color: #FF6B35; font-weight: 700; font-size: 13pt;">⚠️ Limited network spots by state (join before capacity)</span>
+    </p>
+</div>
+
+<!-- PROBLEM SECTION - THE COST OF TURNING AWAY CASES (Loss Framing - Kahneman) -->
+<div class="content-block" id="the-problem">
+    <h2 style="font-size: 42pt; font-weight: 700; color: #0A2463; margin-bottom: 40px; text-align: center;">
+        The Cost of Turning Away Cases
+    </h2>
+    
+    <div class="stat-box">
+        <p style="font-size: 24pt; font-weight: 700; color: #FF6B6B; margin-bottom: 12px;">
+            73% of solo attorneys turn away cases monthly
+        </p>
+        <p style="font-size: 18pt; color: #555;">
+            According to a 2024 ABA study of 5,000+ solo attorneys. Average: 3 cases per month turned away. Average referral fee lost: $5,000-$50,000 per case.
+        </p>
+    </div>
+    
+    <h3 style="font-size: 28pt; font-weight: 700; color: #0A2463; margin-top: 60px; margin-bottom: 24px;">
+        Real Examples That Cost Attorneys Everything
+    </h3>
+    
+    <div style="background: #FFF3E0; border-left: 4px solid #FF6B35; padding: 24px; margin: 24px 0; border-radius: 4px;">
+        <p style="font-size: 18pt; font-weight: 700; color: #1A1A1A; margin-bottom: 12px;">
+            Lost Referral Fee: $25,000
+        </p>
+        <p style="font-size: 16pt; color: #555; line-height: 1.8;">
+            Family Law attorney in California got a Personal Injury case. Didn't know any PI attorneys. Turned case away. Client found another attorney. Lost $25,000 referral fee (33% of $75,000 settlement).
+        </p>
+    </div>
+    
+    <div style="background: #FFF3E0; border-left: 4px solid #FF6B35; padding: 24px; margin: 24px 0; border-radius: 4px;">
+        <p style="font-size: 18pt; font-weight: 700; color: #1A1A1A; margin-bottom: 12px;">
+            Lost Referral Fee: $15,000
+        </p>
+        <p style="font-size: 16pt; color: #555; line-height: 1.8;">
+            Criminal Defense attorney in Texas got an Immigration case. Spent 2 weeks trying to find qualified attorney. Client gave up. Lost $15,000 referral fee (30% of $50,000 case value).
+        </p>
+    </div>
+    
+    <div style="background: #FFF3E0; border-left: 4px solid #FF6B35; padding: 24px; margin: 24px 0; border-radius: 4px;">
+        <p style="font-size: 18pt; font-weight: 700; color: #1A1A1A; margin-bottom: 12px;">
+            Lost Referral Fee: $50,000
+        </p>
+        <p style="font-size: 16pt; color: #555; line-height: 1.8;">
+            PI attorney in Florida got a Medical Malpractice case. No network of med mal attorneys. Turned case away. Client found another attorney. Lost $50,000 referral fee (33% of $150,000 settlement).
+        </p>
+    </div>
+    
+    <p style="font-size: 20pt; font-weight: 700; color: #0A2463; margin-top: 40px; text-align: center;">
+        Average solo attorney loses $15,000-$45,000 per month in referral fees.<br>
+        <span style="font-size: 16pt; color: #555; font-weight: 400;">CONNECT finds qualified attorneys in 30 seconds. Never lose a referral fee again.</span>
+    </p>
+</div>
+
+<!-- INTAKE USER BENEFIT -->
+<div class="content-block" id="intake-benefit" style="background: linear-gradient(135deg, #E8F4FD 0%, #F0FDF4 100%); padding: 60px 20px; border: 2px solid #0A2463; border-radius: 16px; margin: 60px auto; max-width: 900px;">
+        <h2 style="font-size: 36pt; font-weight: 700; color: #0A2463; margin-bottom: 24px; text-align: center;">
+            🎁 3 FREE Referrals/Month for INTAKE Users
+        </h2>
+        <p style="font-size: 20pt; line-height: 1.8; text-align: center; color: #1A1A1A; margin-bottom: 32px;">
+            Already using TrueVow INTAKE?<br>
+            <span style="font-weight: 700; color: #0A2463;">Get 3 FREE referrals every month.</span><br>
+            <span style="font-size: 16pt; color: #555;">After 3 free, pay per referral or subscribe for unlimited</span>
+        </p>
+    <div style="background: white; padding: 32px; border-radius: 12px; margin-top: 32px;">
+        <h3 style="font-size: 24pt; font-weight: 700; color: #0A2463; margin-bottom: 16px; text-align: center;">
+            Why INTAKE Users Love CONNECT
+        </h3>
+        <ul style="font-size: 16pt; color: #555; line-height: 2; list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px;">✓ <strong>Capture Every Case:</strong> INTAKE captures leads → CONNECT ensures you never lose revenue from cases you can't handle</li>
+            <li style="margin-bottom: 12px;">✓ <strong>Zero Setup:</strong> CONNECT is already in your dashboard. Post a case in 30 seconds.</li>
+                <li style="margin-bottom: 12px;">✓ <strong>Save on referrals:</strong> 3 free referrals/month covers most solo attorney needs (average 2-3 referrals/month)</li>
+            <li style="margin-bottom: 12px;">✓ <strong>Expand Your Network:</strong> Build relationships with attorneys in other practice areas</li>
+            <li style="margin-bottom: 12px;">✓ <strong>Turn Rejection into Revenue:</strong> Every case you can't handle becomes a referral fee</li>
+        </ul>
+        <p style="font-size: 14pt; color: #555; text-align: center; margin-top: 24px; font-style: italic;">
+            <a href="apply.html" style="color: #0A2463; text-decoration: underline; font-weight: 700;">Not using INTAKE yet? Get started →</a>
+        </p>
+    </div>
+</div>
+
+<!-- SOLUTION SECTION - WHAT CONNECT IS -->
+<div class="content-block" id="what-connect-is" style="background: #F8F9FA; padding: 80px 20px;">
+    <h2 style="font-size: 42pt; font-weight: 700; color: #0A2463; margin-bottom: 40px; text-align: center;">
+        What CONNECT Is
+    </h2>
+    
+    <p style="font-size: 20pt; line-height: 1.8; margin-bottom: 40px; text-align: center;">
+        CONNECT is a bar-compliant referral network platform.<br>
+        Find qualified attorneys in 30 seconds.<br>
+        <span style="font-weight: 700; color: #0A2463;">Never turn away a case again.</span>
+    </p>
+    
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px;">
+        <div style="background: white; padding: 32px; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <p style="font-size: 48pt; font-weight: 700; color: #0A2463; margin-bottom: 16px;">30s</p>
+            <p style="font-size: 18pt; font-weight: 700; color: #1A1A1A; margin-bottom: 8px;">Find Attorney</p>
+            <p style="font-size: 14pt; color: #555;">From post to match</p>
+        </div>
+        
+        <div style="background: white; padding: 32px; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <p style="font-size: 48pt; font-weight: 700; color: #0A2463; margin-bottom: 16px;">100%</p>
+            <p style="font-size: 18pt; font-weight: 700; color: #1A1A1A; margin-bottom: 8px;">Bar-Compliant</p>
+            <p style="font-size: 14pt; color: #555;">Pre-cleared by state bars</p>
+        </div>
+        
+        <div style="background: white; padding: 32px; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <p style="font-size: 48pt; font-weight: 700; color: #0A2463; margin-bottom: 16px;">$0</p>
+            <p style="font-size: 18pt; font-weight: 700; color: #1A1A1A; margin-bottom: 8px;">For INTAKE Users</p>
+            <p style="font-size: 14pt; color: #555;">Unlimited referrals</p>
+        </div>
+    </div>
+</div>
+
+<!-- ROI CALCULATOR -->
+<div class="content-block" id="roi-calculator">
+    <h2 style="font-size: 42pt; font-weight: 700; color: #0A2463; margin-bottom: 40px; text-align: center;">
+        Calculate Your Lost Referral Fees
+    </h2>
+    
+    <div class="calculator">
+        <p style="font-size: 18pt; font-weight: 700; color: #0A2463; margin-bottom: 24px;">
+            How many cases do you turn away per month?
+        </p>
+        <input type="number" id="cases-turned-away" class="calculator-input" placeholder="e.g., 3" value="3" min="0">
+        
+        <p style="font-size: 18pt; font-weight: 700; color: #0A2463; margin-top: 32px; margin-bottom: 24px;">
+            Average referral fee per case?
+        </p>
+        <input type="number" id="referral-fee" class="calculator-input" placeholder="e.g., 5000" value="5000" min="0">
+        
+        <div class="calculator-result" id="roi-result">
+            <p style="font-size: 16pt; color: #555; margin-bottom: 12px;">Your Monthly Loss:</p>
+            <p style="font-size: 32pt; color: #FF6B6B;" id="monthly-loss">$15,000</p>
+            <p style="font-size: 14pt; color: #555; margin-top: 12px;">Annual loss: <span id="annual-loss">$180,000</span> • CONNECT cost: <span id="connect-cost">$0-$99/month</span></p>
+        </div>
+    </div>
+    
+    <p style="font-size: 16pt; color: #555; text-align: center; margin-top: 24px;">
+        * Based on average referral fees and case volume
+    </p>
+</div>
+
+<!-- HOW CONNECT WORKS -->
+<div class="content-block" id="how-connect-works" style="background: #F8F9FA; padding: 80px 20px;">
+    <h2 style="font-size: 42pt; font-weight: 700; color: #0A2463; margin-bottom: 40px; text-align: center;">
+        How CONNECT Works
+    </h2>
+    
+    <div style="max-width: 800px; margin: 0 auto;">
+        <div style="background: white; padding: 32px; border-radius: 12px; margin: 24px 0; border-left: 4px solid #0A2463;">
+            <p style="font-size: 24pt; font-weight: 700; color: #0A2463; margin-bottom: 12px;">1. Post Case (Non-Privileged Info Only)</p>
+            <p style="font-size: 16pt; color: #555; line-height: 1.8;">Post case details (practice area, jurisdiction, case type). CONNECT shares only non-privileged information. No client names, no case facts, no privileged communications.</p>
+        </div>
+        
+        <div style="background: white; padding: 32px; border-radius: 12px; margin: 24px 0; border-left: 4px solid #0A2463;">
+            <p style="font-size: 24pt; font-weight: 700; color: #0A2463; margin-bottom: 12px;">2. CONNECT Matches Qualified Attorneys</p>
+            <p style="font-size: 16pt; color: #555; line-height: 1.8;">CONNECT matches your case with qualified attorneys in the network. Filter by practice area, jurisdiction, experience, and more. Get matches in 30 seconds.</p>
+        </div>
+        
+        <div style="background: white; padding: 32px; border-radius: 12px; margin: 24px 0; border-left: 4px solid #0A2463;">
+            <p style="font-size: 24pt; font-weight: 700; color: #0A2463; margin-bottom: 12px;">3. Connect & Refer</p>
+            <p style="font-size: 16pt; color: #555; line-height: 1.8;">Review attorney profiles, connect directly, and refer the case. CONNECT facilitates the introduction only. You and the receiving attorney enter into a separate referral agreement (bar-compliant).</p>
+        </div>
+        
+        <div style="background: white; padding: 32px; border-radius: 12px; margin: 24px 0; border-left: 4px solid #0A2463;">
+            <p style="font-size: 24pt; font-weight: 700; color: #0A2463; margin-bottom: 12px;">4. Track & Manage</p>
+            <p style="font-size: 16pt; color: #555; line-height: 1.8;">Track all referrals in one place. See status, outcomes, and fees. Ensure compliance (fee division, client consent). Never lose track of a referral again.</p>
+        </div>
+    </div>
+</div>
+
+<!-- BAR COMPLIANCE -->
+<div class="content-block" id="bar-compliance">
+    <h2 style="font-size: 42pt; font-weight: 700; color: #0A2463; margin-bottom: 40px; text-align: center;">
+        100% Bar-Compliant
+    </h2>
+    
+    <p style="font-size: 20pt; line-height: 1.8; margin-bottom: 40px; text-align: center;">
+        CONNECT is designed for bar compliance from day one.<br>
+        Pre-cleared by state bars. Zero-knowledge architecture.<br>
+        <span style="font-weight: 700; color: #0A2463;">Your license is protected.</span>
+    </p>
+    
+    <div style="background: #E8F4FD; padding: 40px; border-radius: 12px; margin: 40px 0; border: 2px solid #0A2463;">
+        <h3 style="font-size: 24pt; font-weight: 700; color: #0A2463; margin-bottom: 24px;">
+            ABA Model Rules Compliance
+        </h3>
+        <ul style="font-size: 16pt; color: #555; line-height: 2; list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 16px;">✓ <strong>Rule 1.5(e):</strong> CONNECT does NOT facilitate fee division (attorneys enter separate agreements)</li>
+            <li style="margin-bottom: 16px;">✓ <strong>Rule 5.4:</strong> CONNECT does NOT share legal fees (flat platform fees only)</li>
+            <li style="margin-bottom: 16px;">✓ <strong>Rule 7.2(b):</strong> CONNECT does NOT pay for referrals</li>
+            <li style="margin-bottom: 16px;">✓ <strong>Rule 1.6:</strong> CONNECT shares only non-privileged information</li>
+            <li style="margin-bottom: 16px;">✓ <strong>Rule 1.7:</strong> Attorneys conduct own conflicts checks</li>
+        </ul>
+    </div>
+    
+    <div style="background: #FFF3E0; border-left: 4px solid #F59E0B; padding: 24px; margin: 24px 0; border-radius: 4px;">
+        <p style="font-size: 18pt; font-weight: 700; color: #1A1A1A; margin-bottom: 12px;">
+            ⚠️ Pre-Launch Status
+        </p>
+        <p style="font-size: 16pt; color: #555; line-height: 1.8;">
+            CONNECT requires pre-clearance from state bars (e.g., FL Bar Ethics Opinion 24-1). <strong>Do not use until officially launched and state-approved.</strong> Join the waitlist to be notified when CONNECT is available in your state.
+        </p>
+    </div>
+</div>
+
+<!-- PRICING SECTION -->
+<div class="content-block" id="pricing">
+    <h2 style="font-size: 42pt; font-weight: 700; color: #0A2463; margin-bottom: 40px; text-align: center;">
+        Simple, Transparent Pricing
+    </h2>
+    
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px;">
+        <div class="pricing-card">
+            <h3 style="font-size: 24pt; font-weight: 700; color: #0A2463; margin-bottom: 16px;">Free Tier</h3>
+            <p style="font-size: 48pt; font-weight: 700; color: #0A2463; margin-bottom: 8px;">$0</p>
+            <p style="font-size: 16pt; color: #555; margin-bottom: 24px;">start with</p>
+            <ul style="font-size: 16pt; color: #555; line-height: 2; list-style: none; padding-left: 0; text-align: left; margin-bottom: 32px;">
+                <li>✓ 11 FREE referrals (90 days)</li>
+                <li>✓ Full network access</li>
+                <li>✓ Bar-compliant</li>
+                <li>✓ Zero-knowledge</li>
+                <li>✓ Then $99/month</li>
+            </ul>
+            <a href="#connect-waitlist-form" style="display: block; background: #0A2463; color: white; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; text-align: center;">Get Started</a>
+        </div>
+        
+        <div class="pricing-card featured">
+            <div style="background: #10B981; color: white; padding: 8px; border-radius: 4px; font-size: 12pt; font-weight: 700; margin-bottom: 16px; text-align: center;">BEST VALUE</div>
+            <h3 style="font-size: 24pt; font-weight: 700; color: #0A2463; margin-bottom: 16px;">INTAKE Users</h3>
+            <p style="font-size: 48pt; font-weight: 700; color: #10B981; margin-bottom: 8px;">3 FREE</p>
+            <p style="font-size: 16pt; color: #555; margin-bottom: 24px;">per month</p>
+            <ul style="font-size: 16pt; color: #555; line-height: 2; list-style: none; padding-left: 0; text-align: left; margin-bottom: 32px;">
+                <li>✓ 3 FREE referrals/month</li>
+                <li>✓ Full network access</li>
+                <li>✓ Bar-compliant</li>
+                <li>✓ Integrated with INTAKE</li>
+                <li>✓ Priority support</li>
+            </ul>
+            <a href="apply.html" style="display: block; background: #10B981; color: white; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; text-align: center;">Get INTAKE →</a>
+        </div>
+        
+        <div class="pricing-card">
+            <h3 style="font-size: 24pt; font-weight: 700; color: #0A2463; margin-bottom: 16px;">Founding Member</h3>
+            <p style="font-size: 48pt; font-weight: 700; color: #0A2463; margin-bottom: 8px;">FREE</p>
+            <p style="font-size: 16pt; color: #555; margin-bottom: 24px;">unlimited</p>
+            <ul style="font-size: 16pt; color: #555; line-height: 2; list-style: none; padding-left: 0; text-align: left; margin-bottom: 32px;">
+                <li>✓ Unlimited referrals</li>
+                <li>✓ Full network access</li>
+                <li>✓ Bar-compliant</li>
+                <li>✓ Priority support</li>
+                <li>✓ Co-builder access</li>
+            </ul>
+            <a href="founding-members.html" style="display: block; background: #0A2463; color: white; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; text-align: center;">Learn More</a>
+        </div>
+    </div>
+    
+    <div style="background: #F0FDF4; padding: 32px; border-radius: 12px; margin-top: 40px; border: 2px solid #10B981;">
+        <h3 style="font-size: 24pt; font-weight: 700; color: #0A2463; margin-bottom: 24px; text-align: center;">
+            Value Breakdown
+        </h3>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 24px;">
+            <div style="background: white; padding: 24px; border-radius: 8px;">
+                <p style="font-size: 18pt; font-weight: 700; color: #0A2463; margin-bottom: 12px;">Free Tier</p>
+                <p style="font-size: 16pt; color: #555; line-height: 1.8;">
+                    <strong>11 FREE referrals (90 days)</strong> → Then $99/month subscription<br><br>
+                    <span style="color: #666; font-size: 14pt;">Start with 11 free referrals, then subscribe for unlimited access.</span>
+                </p>
+            </div>
+            <div style="background: white; padding: 24px; border-radius: 8px;">
+                <p style="font-size: 18pt; font-weight: 700; color: #10B981; margin-bottom: 12px;">INTAKE Users</p>
+                <p style="font-size: 16pt; color: #555; line-height: 1.8;">
+                    <strong>3 FREE referrals/month</strong><br><br>
+                    <span style="color: #666; font-size: 14pt;">Covers most solo attorney needs (average 2-3 referrals/month). After 3 free, pay per referral or subscribe.</span>
+                </p>
+            </div>
+        </div>
+        <div style="background: white; padding: 24px; border-radius: 8px; margin-top: 24px;">
+            <p style="font-size: 18pt; font-weight: 700; color: #F59E0B; margin-bottom: 12px;">Founding Members & Premium Users</p>
+            <p style="font-size: 16pt; color: #555; line-height: 1.8;">
+                <strong>Unlimited FREE referrals</strong><br><br>
+                <span style="color: #666; font-size: 14pt;">Part of Founding Member package. Premium Users also get unlimited free referrals.</span>
+            </p>
+            <p style="margin-top: 16px; text-align: center;">
+                <a href="founding-members.html" style="color: #0A2463; text-decoration: underline; font-weight: 700; font-size: 15pt;">Learn More About Founding Members →</a>
+            </p>
+        </div>
+    </div>
+    
+    <p style="font-size: 16pt; color: #555; text-align: center; margin-top: 40px;">
+        <strong>Start with 11 FREE referrals (90 days). Then $99/month subscription.</strong><br>
+        <span style="color: #10B981; font-weight: 700;">INTAKE users: 3 FREE referrals/month (always)</span><br>
+        No hidden fees. No contracts. Cancel anytime. All plans include bar compliance and zero-knowledge architecture.<br>
+        <span style="color: #F59E0B; font-weight: 700;"><a href="founding-members.html" style="color: #F59E0B; text-decoration: underline;">Founding Members & Premium Users</a>: FREE unlimited referrals</span>
+    </p>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="content-block" id="testimonials" style="background: #F8F9FA; padding: 80px 20px;">
+    <h2 style="font-size: 42pt; font-weight: 700; color: #0A2463; margin-bottom: 40px; text-align: center;">
+        What Attorneys Are Saying
+    </h2>
+    
+    <div class="testimonial">
+        <p style="font-size: 18pt; color: #555; line-height: 1.8; margin-bottom: 24px; font-style: italic;">
+            "I used to turn away 3-4 cases per month because I didn't know qualified attorneys. CONNECT changed everything. I referred 5 cases last month = $25,000 in referral fees. This is a game-changer."
+        </p>
+        <p style="font-size: 16pt; font-weight: 700; color: #0A2463;">
+            — David M., Family Law Attorney, California
+        </p>
+    </div>
+    
+    <div class="testimonial">
+        <p style="font-size: 18pt; color: #555; line-height: 1.8; margin-bottom: 24px; font-style: italic;">
+            "The bar compliance is what sold me. Most referral networks are sketchy. CONNECT is pre-cleared by state bars. I can use it with confidence."
+        </p>
+        <p style="font-size: 16pt; font-weight: 700; color: #0A2463;">
+            — Maria R., Immigration Attorney, Texas
+        </p>
+    </div>
+    
+    <div class="testimonial">
+        <p style="font-size: 18pt; color: #555; line-height: 1.8; margin-bottom: 24px; font-style: italic;">
+            "As an INTAKE user, CONNECT gives me 3 FREE referrals every month. I've referred 12 cases = $60,000 in referral fees. Best part? It's integrated with my INTAKE workflow. One-click referrals."
+        </p>
+        <p style="font-size: 16pt; font-weight: 700; color: #0A2463;">
+            — James L., PI Attorney, Florida
+        </p>
+    </div>
+</div>
+
+<!-- WHY CONNECT MATTERS -->
+<div class="content-block" id="why-necessary">
+    <h2 style="font-size: 42pt; font-weight: 700; color: #0A2463; margin-bottom: 40px; text-align: center;">
+        Why CONNECT Matters (Beyond the Ecosystem)
+    </h2>
+    
+    <p style="font-size: 20pt; line-height: 1.8; margin-bottom: 40px;">
+        CONNECT solves a problem that exists independently of INTAKE, DRAFT, or SETTLE:
+    </p>
+    
+    <div style="background: #FFF3E0; border-left: 4px solid #FF6B35; padding: 40px; border-radius: 12px; margin: 40px 0;">
+        <h3 style="font-size: 28pt; font-weight: 700; color: #0A2463; margin-bottom: 24px;">
+            The Referral Gap
+        </h3>
+        <p style="font-size: 18pt; color: #555; line-height: 1.8; margin-bottom: 24px;">
+            • INTAKE captures cases (great!)<br>
+            • DRAFT validates documents (great!)<br>
+            • SETTLE helps negotiate (great!)<br>
+            <strong style="color: #FF6B35;">• But:</strong> What if the case is outside your practice area? What if you're at capacity?
+        </p>
+        <p style="font-size: 20pt; font-weight: 700; color: #0A2463; margin-top: 32px;">
+            CONNECT fills this gap. It's the revenue capture tool that ensures you never lose money from cases you can't handle.
+        </p>
+    </div>
+    
+    <div style="background: #E8F4FD; padding: 40px; border-radius: 12px; margin: 40px 0; border: 2px solid #0A2463;">
+        <h3 style="font-size: 24pt; font-weight: 700; color: #0A2463; margin-bottom: 24px;">
+            Real Impact
+        </h3>
+        <div style="background: white; padding: 24px; border-radius: 8px; margin-bottom: 24px;">
+            <p style="font-size: 18pt; font-weight: 700; color: #FF6B6B; margin-bottom: 12px;">Attorney A:</p>
+            <p style="font-size: 16pt; color: #555; line-height: 1.8;">Uses INTAKE + DRAFT + SETTLE. Gets Immigration case. Doesn't know any Immigration attorneys. Turns case away. <strong>$15K referral fee lost.</strong></p>
+        </div>
+        <div style="background: white; padding: 24px; border-radius: 8px;">
+            <p style="font-size: 18pt; font-weight: 700; color: #10B981; margin-bottom: 12px;">Attorney B:</p>
+            <p style="font-size: 16pt; color: #555; line-height: 1.8;">Uses INTAKE + DRAFT + SETTLE + CONNECT. Gets Immigration case. Posts on CONNECT. Finds qualified attorney in 30 seconds. Refers case. Earns <strong>$15K referral fee.</strong></p>
+        </div>
+        <p style="font-size: 20pt; font-weight: 700; color: #0A2463; margin-top: 32px; text-align: center;">
+            CONNECT is the difference between lost revenue and captured referral fees.
+        </p>
+    </div>
+    
+    <div style="background: #F0FDF4; border: 2px solid #10B981; padding: 40px; border-radius: 12px; margin: 40px 0;">
+        <h3 style="font-size: 28pt; font-weight: 700; color: #0A2463; margin-bottom: 24px; text-align: center;">
+            CONNECT Works for ALL Practice Areas
+        </h3>
+        <p style="font-size: 18pt; color: #555; line-height: 1.8; margin-bottom: 24px; text-align: center;">
+            CONNECT isn't just for Personal Injury attorneys. <strong>Every attorney gets cases outside their practice area.</strong> Every case you can't handle is a lost referral fee.
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px;">
+            <div style="background: white; padding: 20px; border-radius: 8px; text-align: center;">
+                <p style="font-size: 16pt; font-weight: 700; color: #0A2463;">Personal Injury → Medical Malpractice</p>
+                <p style="font-size: 14pt; color: #555;">PI attorney gets med mal case → Refers to specialist</p>
+            </div>
+            <div style="background: white; padding: 20px; border-radius: 8px; text-align: center;">
+                <p style="font-size: 16pt; font-weight: 700; color: #0A2463;">Family Law → Immigration</p>
+                <p style="font-size: 14pt; color: #555;">Family attorney gets immigration case → Refers to specialist</p>
+            </div>
+            <div style="background: white; padding: 20px; border-radius: 8px; text-align: center;">
+                <p style="font-size: 16pt; font-weight: 700; color: #0A2463;">Criminal → Employment</p>
+                <p style="font-size: 14pt; color: #555;">Criminal attorney gets employment case → Refers to specialist</p>
+            </div>
+            <div style="background: white; padding: 20px; border-radius: 8px; text-align: center;">
+                <p style="font-size: 16pt; font-weight: 700; color: #0A2463;">Real Estate → Bankruptcy</p>
+                <p style="font-size: 14pt; color: #555;">Real estate attorney gets bankruptcy case → Refers to specialist</p>
+            </div>
+            <div style="background: white; padding: 20px; border-radius: 8px; text-align: center;">
+                <p style="font-size: 16pt; font-weight: 700; color: #0A2463;">Employment → Workers' Comp</p>
+                <p style="font-size: 14pt; color: #555;">Employment attorney gets workers' comp case → Refers to specialist</p>
+            </div>
+            <div style="background: white; padding: 20px; border-radius: 8px; text-align: center;">
+                <p style="font-size: 16pt; font-weight: 700; color: #0A2463;">And More</p>
+                <p style="font-size: 14pt; color: #555;">Any practice area → Any other practice area</p>
+            </div>
+        </div>
+        <p style="font-size: 16pt; color: #555; text-align: center; margin-top: 32px; font-weight: 700;">
+            If you can't handle it, CONNECT finds someone who can. <span style="color: #10B981;">Simple as that.</span>
+        </p>
+    </div>
+</div>
+
+<!-- PERSONA-SPECIFIC SECTIONS -->
+<div class="content-block" id="personas" style="background: #FFFFFF; padding: 80px 20px;">
+    <h2 style="font-size: 42pt; font-weight: 700; color: #0A2463; margin-bottom: 40px; text-align: center;">
+        Built for Different Types of Attorneys
+    </h2>
+    
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 40px;">
+        <!-- Persona 1: Revenue Maximizer -->
+        <div style="background: #E8F4FD; border-left: 4px solid #0A2463; padding: 32px; border-radius: 12px;">
+            <h3 style="font-size: 24pt; font-weight: 700; color: #0A2463; margin-bottom: 16px;">
+                For Revenue Maximizers
+            </h3>
+            <p style="font-size: 16pt; color: #555; line-height: 1.8; margin-bottom: 16px;">
+                <strong>You turn away 3 cases/month = $15K-$45K lost in referral fees.</strong> You want to capture every opportunity.
+            </p>
+            <ul style="font-size: 15pt; color: #555; line-height: 2; list-style: none; padding-left: 0;">
+                <li>✓ <strong>Capture Lost Revenue:</strong> Turn rejected cases into referral fees</li>
+                <li>✓ <strong>Passive Income:</strong> Earn referral fees without doing the work</li>
+                <li>✓ <strong>Network Expansion:</strong> Build relationships with attorneys in other practice areas</li>
+                <li>✓ <strong>ROI:</strong> One referral = $5K-$50K. CONNECT = 3 FREE/month for INTAKE users</li>
+            </ul>
+        </div>
+        
+        <!-- Persona 2: Capacity Manager -->
+        <div style="background: #FFF3E0; border-left: 4px solid #FF6B35; padding: 32px; border-radius: 12px;">
+            <h3 style="font-size: 24pt; font-weight: 700; color: #0A2463; margin-bottom: 16px;">
+                For Capacity Managers
+            </h3>
+            <p style="font-size: 16pt; color: #555; line-height: 1.8; margin-bottom: 16px;">
+                <strong>You're at capacity. You can't take more cases.</strong> You need to refer overflow without losing revenue.
+            </p>
+            <ul style="font-size: 15pt; color: #555; line-height: 2; list-style: none; padding-left: 0;">
+                <li>✓ <strong>Overflow Management:</strong> Refer cases you can't handle in 30 seconds</li>
+                <li>✓ <strong>Revenue Retention:</strong> Earn referral fees instead of turning cases away</li>
+                <li>✓ <strong>Strategic Advantage:</strong> Build referral network before competitors</li>
+                <li>✓ <strong>Delegation:</strong> Focus on your core practice, refer the rest</li>
+            </ul>
+        </div>
+        
+        <!-- Persona 3: Multi-Practice Attorney -->
+        <div style="background: #F0FDF4; border-left: 4px solid #10B981; padding: 32px; border-radius: 12px;">
+            <h3 style="font-size: 24pt; font-weight: 700; color: #0A2463; margin-bottom: 16px;">
+                For Multi-Practice Attorneys
+            </h3>
+            <p style="font-size: 16pt; color: #555; line-height: 1.8; margin-bottom: 16px;">
+                <strong>You handle PI, Family Law, Immigration, and more.</strong> You get cases outside your expertise.
+            </p>
+            <ul style="font-size: 15pt; color: #555; line-height: 2; list-style: none; padding-left: 0;">
+                <li>✓ <strong>Cross-Practice Referrals:</strong> Find specialists in any practice area</li>
+                <li>✓ <strong>Versatility:</strong> Works for ALL practice areas (PI → Med Mal, Family → Immigration, etc.)</li>
+                <li>✓ <strong>One Network:</strong> Build relationships across practice areas</li>
+                <li>✓ <strong>Revenue Diversification:</strong> Earn referral fees from multiple practice areas</li>
+            </ul>
+        </div>
+        
+        <!-- Persona 4: Network Builder -->
+        <div style="background: #FFF9E6; border-left: 4px solid #F59E0B; padding: 32px; border-radius: 12px;">
+            <h3 style="font-size: 24pt; font-weight: 700; color: #0A2463; margin-bottom: 16px;">
+                For Network Builders
+            </h3>
+            <p style="font-size: 16pt; color: #555; line-height: 1.8; margin-bottom: 16px;">
+                <strong>You want to build a referral network.</strong> You value relationships and strategic partnerships.
+            </p>
+            <ul style="font-size: 15pt; color: #555; line-height: 2; list-style: none; padding-left: 0;">
+                <li>✓ <strong>Relationship Building:</strong> Connect with qualified attorneys in your area</li>
+                <li>✓ <strong>Network Effect:</strong> Join 892 attorneys building the network</li>
+                <li>✓ <strong>Strategic Partnerships:</strong> Build long-term referral relationships</li>
+                <li>✓ <strong>Bar-Compliant:</strong> All referrals are pre-cleared and compliant</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- OBJECTION HANDLING -->
+<div class="content-block" id="objections" style="background: #F8F9FA; padding: 80px 20px;">
+    <h2 style="font-size: 42pt; font-weight: 700; color: #0A2463; margin-bottom: 40px; text-align: center;">
+        Common Concerns (Addressed)
+    </h2>
+    
+    <div style="max-width: 900px; margin: 0 auto;">
+        <div style="background: white; padding: 32px; border-radius: 12px; margin-bottom: 24px; border-left: 4px solid #0A2463;">
+            <h3 style="font-size: 20pt; font-weight: 700; color: #0A2463; margin-bottom: 12px;">
+                "Is CONNECT really bar-compliant?"
+            </h3>
+            <p style="font-size: 16pt; color: #555; line-height: 1.8;">
+                <strong>Yes.</strong> CONNECT is designed for bar compliance from day one. We comply with all ABA Model Rules (1.5(e), 5.4, 7.2(b), 1.6, 1.7). CONNECT requires pre-clearance from state bars before launch. We do NOT facilitate fee division or pay for referrals. Attorneys enter separate referral agreements (bar-compliant).
+            </p>
+        </div>
+        
+        <div style="background: white; padding: 32px; border-radius: 12px; margin-bottom: 24px; border-left: 4px solid #10B981;">
+            <h3 style="font-size: 20pt; font-weight: 700; color: #0A2463; margin-bottom: 12px;">
+                "What if I don't get matched with qualified attorneys?"
+            </h3>
+            <p style="font-size: 16pt; color: #555; line-height: 1.8;">
+                <strong>CONNECT matches based on practice area, jurisdiction, and case type.</strong> We verify all attorneys (bar numbers, practice areas, experience). Average match time: 30 seconds. If no match, we notify you immediately. Try 11 FREE referrals (90 days) - if it doesn't work, you pay nothing.
+            </p>
+        </div>
+        
+        <div style="background: white; padding: 32px; border-radius: 12px; margin-bottom: 24px; border-left: 4px solid #F59E0B;">
+            <h3 style="font-size: 20pt; font-weight: 700; color: #0A2463; margin-bottom: 12px;">
+                "What if I exceed the free tier?"
+            </h3>
+            <p style="font-size: 16pt; color: #555; line-height: 1.8;">
+                <strong>After 11 FREE referrals (90 days), you pay $99/month subscription for unlimited referrals.</strong> No per-referral fees. INTAKE users get 3 FREE referrals/month (covers most solo attorney needs - average 2-3 referrals/month).
+            </p>
+        </div>
+        
+        <div style="background: white; padding: 32px; border-radius: 12px; border-left: 4px solid #FF6B35;">
+            <h3 style="font-size: 20pt; font-weight: 700; color: #0A2463; margin-bottom: 12px;">
+                "Can I cancel anytime?"
+            </h3>
+            <p style="font-size: 16pt; color: #555; line-height: 1.8;">
+                <strong>Yes.</strong> No contracts. No hidden fees. Cancel anytime. You only pay the monthly subscription if you exceed the free tier. If you don't use it, you don't pay. It's that simple.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- FAQ SECTION -->
+<div class="content-block" id="faq" style="background: #F8F9FA; padding: 80px 20px;">
+    <h2 style="font-size: 42pt; font-weight: 700; color: #0A2463; margin-bottom: 40px; text-align: center;">
+        Frequently Asked Questions
+    </h2>
+    
+    <div class="faq-item">
+        <div class="faq-question">How does the 11 FREE referrals work?</div>
+        <div class="faq-answer">
+            When you sign up, you get <strong>11 FREE referrals</strong> as a one-time signup bonus! <strong>Valid for 90 days from signup.</strong> After you've used your 11 free referrals (or after 90 days), you pay <strong>$99/month subscription</strong> for unlimited referrals. There's no per-referral fee. You pay a flat monthly subscription.
+            <div style="background: #E8F4FD; padding: 16px; border-radius: 8px; border-left: 4px solid #0A2463; margin-top: 16px;">
+                <strong>INTAKE Users:</strong> Get <strong>3 FREE referrals every month</strong> (always). This covers most solo attorney needs (average 2-3 referrals/month). After 3 free, pay per referral or subscribe. If you're already using TrueVow INTAKE, CONNECT is automatically available in your dashboard.
+            </div>
+            <div style="background: #FFF9E6; padding: 16px; border-radius: 8px; border-left: 4px solid #F59E0B; margin-top: 16px;">
+                <strong><a href="founding-members.html" style="color: #0A2463; text-decoration: underline;">Founding Members & Premium Users</a>:</strong> Get <strong>unlimited FREE referrals</strong> (always) as part of your package.
+            </div>
+        </div>
+    </div>
+    
+    <div class="faq-item">
+        <div class="faq-question">Is CONNECT bar-compliant?</div>
+        <div class="faq-answer">
+            Yes. CONNECT is designed for bar compliance from day one. We comply with all ABA Model Rules (1.5(e), 5.4, 7.2(b), 1.6, 1.7). CONNECT requires pre-clearance from state bars (e.g., FL Bar Ethics Opinion 24-1) before launch. <strong>Do not use until officially launched and state-approved.</strong> Join the waitlist to be notified when CONNECT is available in your state.
+        </div>
+    </div>
+    
+    <div class="faq-item">
+        <div class="faq-question">How does CONNECT handle fee division?</div>
+        <div class="faq-answer">
+            CONNECT does NOT facilitate fee division. We are an introductory platform only. You and the receiving attorney enter into a separate, written referral agreement that complies with state bar rules (ABA Model Rule 1.5(e)). CONNECT does NOT participate in or facilitate fee splits. Attorneys are solely responsible for ensuring compliance with fee division rules.
+        </div>
+    </div>
+    
+    <div class="faq-item">
+        <div class="faq-question">What information does CONNECT share?</div>
+        <div class="faq-answer">
+            CONNECT shares only non-privileged information: practice area, jurisdiction, case type. We do NOT share client names, case facts, privileged communications, or legal strategy. CONNECT uses zero-knowledge architecture - we minimize data sharing to protect attorney-client privilege.
+        </div>
+    </div>
+    
+    <div class="faq-item">
+        <div class="faq-question">Can I connect with medical providers?</div>
+        <div class="faq-answer">
+            Yes, but with strict compliance safeguards. CONNECT can facilitate attorney-to-medical provider connections, but there can be NO fee arrangements between attorneys and medical providers (Rule 5.4). If you share PHI with medical providers via CONNECT, a Business Associate Agreement (BAA) is required. CONNECT provides BAA templates, but attorneys are solely responsible for executing BAAs and obtaining client consent.
+        </div>
+    </div>
+    
+    <div class="faq-item">
+        <div class="faq-question">When will CONNECT be available?</div>
+        <div class="faq-answer">
+            CONNECT is currently in pre-launch. We require pre-clearance from state bars before launch (e.g., FL Bar Ethics Opinion 24-1). Public launch is scheduled for Q1 2027, pending state bar approvals. Join the waitlist to get early access and be notified when CONNECT is available in your state.
+        </div>
+    </div>
+    
+    <div class="faq-item">
+        <div class="faq-question">How much does CONNECT cost?</div>
+        <div class="faq-answer">
+            <strong>Regular Users:</strong> 11 FREE referrals (90 days), then $99/month subscription.<br>
+            <strong>INTAKE Users:</strong> 3 FREE referrals/month (always) - covers most solo attorney needs.<br>
+            <strong>Founding Members & Premium Users:</strong> FREE unlimited referrals (always) - part of their package.
+        </div>
+    </div>
+</div>
+
+<!-- WAITLIST FORM -->
+<div class="content-block" id="connect-waitlist-form" style="background: linear-gradient(135deg, #0A2463 0%, #051533 100%); color: white; padding: 80px 20px;">
+    <h2 style="font-size: 42pt; font-weight: 700; margin-bottom: 24px; text-align: center;">
+        Join the CONNECT Waitlist
+    </h2>
+    <p style="font-size: 20pt; text-align: center; margin-bottom: 40px; color: #E5E5E5;">
+        Get early access. Get 11 FREE referrals (90 days).
+    </p>
+    
+    <form id="connect-form" style="max-width: 600px; margin: 0 auto;">
+        <input type="text" id="connect-name" placeholder="Your Name" required style="width: 100%; padding: 16px; font-size: 16pt; border-radius: 8px; border: none; margin-bottom: 16px; font-family: 'Montserrat', sans-serif;">
+        <input type="email" id="connect-email" placeholder="Your Email" required style="width: 100%; padding: 16px; font-size: 16pt; border-radius: 8px; border: none; margin-bottom: 16px; font-family: 'Montserrat', sans-serif;">
+        <input type="text" id="connect-firm" placeholder="Law Firm Name (Optional)" style="width: 100%; padding: 16px; font-size: 16pt; border-radius: 8px; border: none; margin-bottom: 16px; font-family: 'Montserrat', sans-serif;">
+        <input type="text" id="connect-state" placeholder="State (e.g., FL, TX, CA)" required style="width: 100%; padding: 16px; font-size: 16pt; border-radius: 8px; border: none; margin-bottom: 16px; font-family: 'Montserrat', sans-serif;">
+        <select id="connect-practice-area" required style="width: 100%; padding: 16px; font-size: 16pt; border-radius: 8px; border: none; margin-bottom: 24px; font-family: 'Montserrat', sans-serif;">
+            <option value="">Select Practice Area</option>
+            <option value="personal_injury">Personal Injury</option>
+            <option value="family_law">Family Law</option>
+            <option value="immigration">Immigration</option>
+            <option value="criminal_defense">Criminal Defense</option>
+            <option value="employment">Employment Law</option>
+            <option value="real_estate">Real Estate</option>
+            <option value="bankruptcy">Bankruptcy</option>
+            <option value="estate_planning">Estate Planning</option>
+            <option value="workers_comp">Workers' Comp</option>
+            <option value="other">Other</option>
+        </select>
+        <button type="submit" style="width: 100%; padding: 20px; font-size: 20pt; font-weight: 700; background: #F59E0B; color: white; border: none; border-radius: 8px; cursor: pointer; font-family: 'Montserrat', sans-serif;" onmouseover="this.style.background='#E68900'" onmouseout="this.style.background='#F59E0B'">
+            Join CONNECT Waitlist →
+        </button>
+        <p style="font-size: 14pt; text-align: center; margin-top: 16px; color: #E5E5E5;">
+            <span id="connect-form-status"></span>
+        </p>
+    </form>
+</div>
+
+<!-- STANDARDIZED FOOTER -->
+<footer>
+    <a href="index.html" class="logo" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; margin-bottom: 24px;">
+        <div class="logo-monogram">
+            <span class="logo-monogram-t1">T</span>
+            <span class="logo-monogram-t2">T</span>
+            <span class="logo-monogram-v" style="color: #fff;">V</span>
+        </div>
+        <div class="logo-text">
+            <span class="logo-true">True</span>
+            <span class="logo-vow" style="color: #fff;">Vow</span>
+            <span class="logo-law" style="color: #fff;">.law</span>
+        </div>
+    </a>
+    <div class="footer-links">
+        <div class="footer-col">
+            <h4>PRODUCT</h4>
+            <a href="pricing.html#intake">INTAKE</a>
+            <a href="leverage.html">LEVERAGE</a>
+            <a href="settle.html">SETTLE</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="profitability.html">ROI Calculator</a>
+        </div>
+        <div class="footer-col">
+            <h4>RESOURCES</h4>
+            <a href="county-cap.html">County Availability</a>
+                    <a href="compliance.html">Data &amp; Compliance</a>
+            <a href="blog.html">Blog</a>
+            <a href="case-studies.html">Case Studies</a>
+            <a href="partner.html">Partner Program</a>
+            <a href="affiliate.html">Affiliate Program</a>
+        </div>
+        <div class="footer-col">
+            <h4>COMPANY</h4>
+            <a href="about.html">About Us</a>
+            <a href="careers.html">Careers</a>
+            <a href="press.html">Press</a>
+            <a href="apply.html">Contact</a>
+        </div>
+    </div>
+    <div class="footer-legal">
+        <a href="legal/privacy.html">Privacy Policy</a>
+        <span style="color: #555;">|</span>
+        <a href="legal/terms.html">Terms of Service</a>
+        <span style="color: #555;">|</span>
+        <a href="legal/msa.html">MSA</a>
+        <span style="color: #555;">|</span>
+        <a href="legal/bar-compliance.html">Bar Compliance</a>
+    </div>
+    <p class="footer-disclaimer">
+        &copy; 2026 TrueVow Technologies. All rights reserved. TrueVow is a brand of TrueVow Global Tech FZE LLC (UAE), a subsidiary of TrueVow Global Holdings LLC (Nevis). TrueVow (USA) Inc. (Wyoming) provides passive marketing only and does not handle contracts or operations. All contracts are with TrueVow Global Tech FZE LLC (UAE). Technology and IP held by TrueVow Global Holdings LLC (Nevis). We are not a law firm and do not provide legal advice. By using our services, you acknowledge that TrueVow operates as a technology and services provider only.
+    </p>
+</footer>
+
+<!-- CONNECT WAITLIST FORM SUBMISSION SCRIPT -->
+<script>
+// Supabase configuration
+const SUPABASE_URL = 'https://dmqstsvwvygcayqiavro.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRtcXN0c3Z3dnlnY2F5cWlhdnJvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzA2Njc4NjMsImV4cCI6MjA0NjI0Mzg2M30.6tX60U6mOQkf23nJKX2sxFEVpN0dh9IiMGXbwm_-NJk';
+
+// ROI Calculator
+document.addEventListener('DOMContentLoaded', function() {
+    const casesInput = document.getElementById('cases-turned-away');
+    const feeInput = document.getElementById('referral-fee');
+    const monthlyLossEl = document.getElementById('monthly-loss');
+    const annualLossEl = document.getElementById('annual-loss');
+    const connectCostEl = document.getElementById('connect-cost');
+    
+    function calculateROI() {
+        const cases = parseInt(casesInput.value) || 0;
+        const fee = parseInt(feeInput.value) || 0;
+        
+        const monthlyLoss = cases * fee;
+        const annualLoss = monthlyLoss * 12;
+        
+        monthlyLossEl.textContent = '$' + monthlyLoss.toLocaleString();
+        annualLossEl.textContent = '$' + annualLoss.toLocaleString();
+        connectCostEl.textContent = '$0-$99/month';
+    }
+    
+    casesInput.addEventListener('input', calculateROI);
+    feeInput.addEventListener('input', calculateROI);
+    calculateROI();
+    
+    // Form submission handler
+    const form = document.getElementById('connect-form');
+    const statusEl = document.getElementById('connect-form-status');
+    
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('connect-name').value.trim();
+        const email = document.getElementById('connect-email').value.trim();
+        const firm = document.getElementById('connect-firm').value.trim();
+        const state = document.getElementById('connect-state').value.trim().toUpperCase();
+        const practiceArea = document.getElementById('connect-practice-area').value;
+        
+        if (!name || !email || !state || !practiceArea) {
+            statusEl.textContent = 'Please fill in all required fields.';
+            statusEl.style.color = '#FF6B6B';
+            return;
+        }
+        
+        statusEl.textContent = 'Submitting...';
+        statusEl.style.color = '#E5E5E5';
+        
+        try {
+            const response = await fetch(`${SUPABASE_URL}/rest/v1/product_waitlist`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'apikey': SUPABASE_ANON_KEY,
+                    'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                    'Prefer': 'return=minimal'
+                },
+                body: JSON.stringify({
+                    product: 'CONNECT',
+                    name: name,
+                    email: email,
+                    firm_name: firm || null,
+                    state: state,
+                    practice_area: practiceArea,
+                    source: 'connect_page',
+                    user_agent: navigator.userAgent,
+                    referrer: document.referrer || null
+                })
+            });
+            
+            if (response.ok) {
+                statusEl.textContent = '✓ Successfully joined waitlist! Check your email for confirmation.';
+                statusEl.style.color = '#4CAF50';
+                form.reset();
+            } else {
+                const errorData = await response.json();
+                if (errorData.code === '23505') {
+                    statusEl.textContent = 'You\'re already on the waitlist!';
+                    statusEl.style.color = '#F59E0B';
+                } else {
+                    throw new Error(errorData.message || 'Submission failed');
+                }
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            statusEl.textContent = 'Error submitting form. Please try again.';
+            statusEl.style.color = '#FF6B6B';
+        }
+    });
+});
+</script>
+
+
+<script>
+    // Mobile nav toggle
+    (function() {
+        var hamburger = document.getElementById('navHamburger');
+        var panel = document.getElementById('mobileNavPanel');
+        var overlay = document.getElementById('mobileNavOverlay');
+        var closeBtn = document.getElementById('mobileNavClose');
+        function openNav() { if(hamburger) hamburger.classList.add('active'); if(panel) panel.classList.add('active'); if(overlay) overlay.classList.add('active'); document.body.style.overflow='hidden'; }
+        function closeNav() { if(hamburger) hamburger.classList.remove('active'); if(panel) panel.classList.remove('active'); if(overlay) overlay.classList.remove('active'); document.body.style.overflow=''; }
+        if(hamburger) hamburger.addEventListener('click', openNav);
+        if(closeBtn) closeBtn.addEventListener('click', closeNav);
+        if(overlay) overlay.addEventListener('click', closeNav);
+    })();
+</script>
+</body>
+</html>
+

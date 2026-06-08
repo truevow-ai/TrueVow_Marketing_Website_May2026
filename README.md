@@ -1,27 +1,30 @@
-# TrueVow Website - Developer Documentation
+# TrueVow Marketing Website — Developer Documentation
 
-**Purpose:** Public-facing static HTML website for TrueVow (marketing, legal documents, blog)  
-**Architecture:** Static HTML + Supabase Backend (REST API & Edge Functions)  
-**Deployment:** Namecheap Static Hosting  
-**Last Updated:** January 8, 2026
+**Purpose:** Public-facing static HTML website for TrueVow (marketing, legal, trial funnel, ad landing pages)
+**Architecture:** Static HTML + Supabase Backend (REST API & Edge Functions)
+**Deployment:** Namecheap Static Hosting
+**Last Updated:** April 27, 2026
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 1. [Project Overview](#project-overview)
 2. [Directory Structure](#directory-structure)
-3. [What Has Been Built](#what-has-been-built)
-4. [Supabase Backend Integration](#supabase-backend-integration)
-5. [API Endpoints & Supabase Connection](#api-endpoints--supabase-connection)
-6. [Blog Content Engine](#blog-content-engine)
-7. [Deployment Guide](#deployment-guide)
-8. [Development Workflow](#development-workflow)
-9. [Troubleshooting](#troubleshooting)
+3. [Marketing Pages](#marketing-pages)
+4. [Pricing Model (Current)](#pricing-model-current)
+5. [Trial Funnel](#trial-funnel)
+6. [Supabase Backend Integration](#supabase-backend-integration)
+7. [API Endpoints](#api-endpoints)
+8. [Compliance & Claim-Safety Rules](#compliance--claim-safety-rules)
+9. [CTA & Purchase Flow Rules](#cta--purchase-flow-rules)
+10. [Deployment Guide](#deployment-guide)
+11. [Development Workflow](#development-workflow)
+12. [Service Ownership](#service-ownership)
 
 ---
 
-## 🎯 Project Overview
+## Project Overview
 
 ### Architecture
 
@@ -30,37 +33,54 @@ This is a **static HTML website** that connects to **Supabase** for backend func
 - **Frontend:** Pure HTML/CSS/JavaScript (no build process, no frameworks)
 - **Backend:** Supabase (PostgreSQL database + Edge Functions + REST API)
 - **Hosting:** Namecheap Static Hosting (traditional web hosting)
-- **Domain:** truevow.law
+- **Domain:** truevow.law / sales.truevow.com
 
 ### Key Features
 
-✅ **18 Production HTML Pages** (13 marketing + 5 legal)  
-✅ **Automated Blog Hub** (fetches content from Supabase)  
-✅ **Form Submissions** (demo requests, applications, partnerships)  
-✅ **Reusable Components** (navigation, footer, widgets)  
-✅ **Responsive Design** (mobile-first, works on all devices)  
-✅ **Zero-Knowledge Architecture** (compliance-focused design)
+- 28+ production HTML pages (marketing + legal + trial funnel + ad landing pages)
+- 90-Day Intake Trial funnel (trial.html + trial-onboarding.html)
+- Ad landing pages for cold traffic (benjamin-ad-landing-page-01.html)
+- Approval-first purchase flow (no public checkout)
+- Claim-safe legal marketing language across all pages
+- Automated Blog Hub (fetches content from Supabase)
+- Form Submissions (demo requests, applications, trial applications, onboarding)
+- Reusable Components (navigation, footer, widgets)
+- Responsive Design (mobile-first, works on all devices)
+- Analytics tracking (analytics.js)
 
 ---
 
-## 📁 Directory Structure
+## Directory Structure
 
 ```
-2025-TrueVow-Website/
-├── marketing/                    # Marketing pages (13 files)
+2025_TrueVow_Website/
+├── marketing/                    # Marketing pages (28 files)
 │   ├── index.html               # Homepage
-│   ├── pricing.html             # Pricing page
+│   ├── pricing.html             # Full pricing (INTAKE + LEVERAGE + SETTLE + add-ons)
 │   ├── how-it-works.html        # Product explanation
-│   ├── blog.html                # Blog hub (dynamic content)
-│   ├── apply.html               # Application form
-│   ├── partner.html             # Partner program
-│   ├── affiliate.html           # Affiliate program
+│   ├── trial.html               # 90-Day Intake Trial application (public)
+│   ├── trial-onboarding.html    # Onboarding prep form (approved firms only)
+│   ├── benjamin-ad-landing-page-01.html  # Ad landing page (cold traffic)
+│   ├── apply.html               # General application form
+│   ├── settle.html              # SETTLE product page
+│   ├── leverage.html            # LEVERAGE product page
+│   ├── compliance.html          # Compliance page
+│   ├── integrations.html        # Integrations page
+│   ├── profitability.html       # ROI/profitability page
 │   ├── county-cap.html          # 33% County Cap strategy
+│   ├── blog.html                # Blog hub (dynamic content)
 │   ├── about.html               # About page
 │   ├── careers.html             # Careers page
 │   ├── press.html               # Press/media
 │   ├── case-studies.html        # Case studies
-│   └── affiliate-apply.html     # Affiliate application
+│   ├── partner.html             # Partner program
+│   ├── affiliate.html           # Affiliate program
+│   ├── affiliate-apply.html     # Affiliate application
+│   ├── founding-members.html    # Founding members
+│   ├── demo-oakwood.html        # Demo page
+│   ├── analytics.js             # Analytics tracking script
+│   ├── archive/                 # Archived backup files
+│   └── js/                      # Page-specific JS
 │
 ├── legal/                        # Legal documents (5 files)
 │   ├── terms.html               # Terms of Service
@@ -70,573 +90,227 @@ This is a **static HTML website** that connects to **Supabase** for backend func
 │   └── subprocessors.html       # Sub-processors list
 │
 ├── components/                   # Reusable HTML components
-│   ├── STANDARD_NAVIGATION.html # Site navigation
-│   ├── STANDARD_FOOTER.html     # Site footer
-│   ├── exit-intent-popup.html   # Exit intent popup (with inline JS)
-│   ├── live-chat-widget.html    # Chat widget (with inline JS)
-│   ├── phone-call-offer.html    # Phone call CTA (with inline JS)
-│   ├── prefill-indicator.html   # Form prefill widget (with inline JS)
-│   ├── roi-calculator.html      # ROI calculator (with inline JS)
-│   ├── social-proof-notifications.html # Social proof (with inline JS)
-│   ├── trust-badges.html        # Trust badges (with inline JS)
-│   ├── urgency-timer.html       # Urgency timer (with inline JS)
-│   ├── video-testimonial.html   # Video testimonials (with inline JS)
-│   └── admin/                   # Admin components
-│       └── AddContentForm.tsx   # Admin form (React component)
-│
-├── assets/                       # Static assets
-│   ├── logo.svg                 # TrueVow logo
-│   ├── founder-photo.jpg        # Founder photo
-│   └── founder-photo.jpg.png    # Founder photo (PNG)
-│
+├── assets/                       # Static assets (logo, images)
 ├── js/                          # JavaScript modules
 │   └── blog-content.js          # Blog content fetcher (Supabase)
-│
-├── lib/                         # Library files (TypeScript)
-│   └── supabaseClient.ts        # Supabase client configuration
-│
-├── pages/                       # API routes (for Next.js/backend)
-│   └── api/
-│       └── blog/
-│           ├── content.ts       # Blog content API endpoint
-│           └── track.ts         # Analytics tracking endpoint
-│
 ├── scripts/                     # Utility scripts
-│   ├── test-db-connections.js   # Database connection tester
-│   ├── test-db-connections.ts   # Database connection tester (TS)
-│   ├── auto-migrate-database.js # Automated migration
-│   ├── complete-migration.js    # Complete migration script
-│   └── deploy-saas-admin-schema.js # Admin schema deployer
-│
-└── supabase/                    # Database migration files (CRITICAL)
-    ├── migrations/
-    │   ├── 001_phase1_website_schema.sql        # Marketing website schema
-    │   ├── 001_initial_blog_schema.sql          # Blog schema
-    │   ├── 002_phase1_tenant_app_schema.sql     # Tenant app schema
-    │   └── 003_saas_admin_schema.sql            # Admin schema
-    ├── EXPORT_TRUTHLINE_SCHEMA.sql              # Schema export script
-    ├── AUTOMATED_MIGRATION_SCRIPT.sql           # Migration automation
-    └── SIMPLE_MIGRATION.md                      # Migration guide
+├── supabase/                    # Database migration files
+├── rules/                       # Deployment documentation
+├── .qoder/                      # Qoder agent config, skills, repowiki
+└── .cursor/                     # Cursor rules and commands
 ```
 
 ---
 
-## 🏗️ What Has Been Built
+## Marketing Pages
 
-### Marketing Pages (13 files)
+### Core Product & Pricing Pages
 
 | Page | Purpose | Key Features |
 |------|---------|--------------|
 | `index.html` | Homepage | Hero, features, demo form, testimonials |
-| `pricing.html` | Pricing tiers | Predictable vs Growth tiers, ROI calculator |
+| `pricing.html` | Full pricing | INTAKE + LEVERAGE + SETTLE + add-ons + FAQ |
 | `how-it-works.html` | Product explanation | Step-by-step process, features |
-| `blog.html` | **Blog hub** | **Dynamic content from Supabase** |
-| `apply.html` | Application form | Multi-step form, demo session integration |
-| `partner.html` | Partner program | Partner benefits, signup form |
-| `affiliate.html` | Affiliate program | Affiliate info, commission structure |
-| `affiliate-apply.html` | Affiliate application | Application form |
+| `settle.html` | SETTLE product page | Settlement demand reports |
+| `leverage.html` | LEVERAGE product page | Active case management |
+| `integrations.html` | Integrations page | Calendar, phone, CRM connections |
+| `compliance.html` | Compliance page | Claim-safe language, legal positioning |
+| `profitability.html` | ROI/profitability | ROI calculator, value metrics |
 | `county-cap.html` | 33% County Cap | Interactive strategy guide |
-| `about.html` | About TrueVow | Company story, team |
-| `careers.html` | Careers | Job listings, culture |
-| `press.html` | Press/Media | Press releases, media kit |
-| `case-studies.html` | Case studies | Client success stories |
+
+### Trial Funnel Pages
+
+| Page | Purpose | Access |
+|------|---------|--------|
+| `trial.html` | 90-Day Intake Trial application | Public (ads, email, direct links) |
+| `trial-onboarding.html` | Onboarding preparation form | Approved firms only (email link) |
+
+### Ad Landing Pages
+
+| Page | Purpose | Traffic Source |
+|------|---------|---------------|
+| `benjamin-ad-landing-page-01.html` | INTAKE-only ad landing page | Facebook/Instagram/Google ads |
+
+### Other Marketing Pages
+
+| Page | Purpose |
+|------|---------|
+| `apply.html` | General application form |
+| `blog.html` | Blog hub (dynamic Supabase content) |
+| `about.html` | About TrueVow |
+| `careers.html` | Careers |
+| `press.html` | Press/media |
+| `case-studies.html` | Case studies |
+| `partner.html` | Partner program |
+| `affiliate.html` | Affiliate program |
+| `affiliate-apply.html` | Affiliate application |
+| `founding-members.html` | Founding members |
+| `demo-oakwood.html` | Demo page |
 
 ### Legal Pages (5 files)
 
-| Page | Purpose | Word Count |
-|------|---------|------------|
-| `terms.html` | Terms of Service | ~8,500 words |
-| `privacy.html` | Privacy Policy | ~20,000 words |
-| `msa.html` | Master Services Agreement | ~15,000 words |
-| `bar-compliance.html` | Bar compliance | Comprehensive |
-| `subprocessors.html` | Sub-processors list | Vendor list |
-
-### Key Features Implemented
-
-✅ **Standardized Theme:** Black hero backgrounds, consistent navigation  
-✅ **Responsive Design:** Mobile-first, works on all screen sizes  
-✅ **Form Validation:** Client-side validation with error handling  
-✅ **UTM Tracking:** All outbound links include UTM parameters  
-✅ **SEO Optimized:** Meta tags, schema.org markup, semantic HTML  
-✅ **Legal Compliance:** 341 strategic improvements across legal docs  
-✅ **Internal Linking:** All cross-references working correctly  
+| Page | Purpose |
+|------|----------|
+| `terms.html` | Terms of Service |
+| `privacy.html` | Privacy Policy |
+| `msa.html` | Master Services Agreement |
+| `bar-compliance.html` | Bar compliance |
+| `subprocessors.html` | Sub-processors list |
 
 ---
 
-## 🔌 Supabase Backend Integration
+## Pricing Model (Current)
 
-### Architecture
+### INTAKE
 
-The website connects to **Supabase** for backend functionality:
+| Plan | Price | A+ Unlocks | Voice Minutes | Attorneys | Add-ons |
+|------|-------|------------|---------------|-----------|--------|
+| Solo | $199/mo | 3 | 500 | 1 | Core INTAKE only |
+| Growth | $599/mo | 11 | 1,500 | 1 seat | Available |
+| Team | $1,499/mo | 33 | 4,500 | Up to 5 | Available |
 
-```
-┌─────────────────┐         ┌──────────────────┐
-│  Static HTML    │         │   Supabase       │
-│  (Namecheap)    │◄────────┤   Backend        │
-│                 │  REST   │                  │
-│  - HTML Pages   │  API    │  - PostgreSQL    │
-│  - JavaScript   │         │  - Edge Functions│
-│  - CSS          │         │  - Storage       │
-└─────────────────┘         └──────────────────┘
-```
+- A, B, C, D leads visible without unlock. Only A+ requires unlock.
+- Included A+ unlocks reset monthly and do not roll over.
+- Additional A+ unlocks: Solo $49, Growth $39, Team $29.
 
-### Supabase Setup
+### FOLLOW-UP (Add-on, Growth & Team only)
 
-**Required Supabase Project:** `TrueVow-Marketing-Website`
+| Tier | Price | Included |
+|------|-------|----------|
+| Starter | $149/mo | 200 actions + 300 connected voice min |
+| Scale | $299/mo | 600 actions + 750 connected voice min |
 
-**Database Tables:**
-- `content_items` - Blog content (articles, videos)
-- `notify_list` - Newsletter subscribers
-- `firm_applications` - Application form submissions
-- `demo_sessions` - Demo request sessions
-- `content_analytics` - Blog analytics (views, clicks)
+### COMPLETE (Add-on, Growth & Team only)
 
-### Environment Configuration
+| Tier | Price | Included |
+|------|-------|----------|
+| Starter | $99/mo | 15 packets + 250 MB |
+| Scale | $199/mo | 55 packets + 1 GB |
 
-**For Static HTML:** Configure Supabase credentials in JavaScript:
+### Recordings & Transcripts (Add-on, Growth & Team only)
 
-```javascript
-// Configuration (update with your Supabase project)
-const SUPABASE_URL = 'https://your-project.supabase.co';
-const SUPABASE_ANON_KEY = 'your-anon-key-here';
-```
+| Tier | Price | Included |
+|------|-------|----------|
+| Recordings Only | $49/mo | 1,500 recorded min |
+| Rec + Transcripts Starter | $199/mo | 1,500 transcribed min |
+| Rec + Transcripts Scale | $399/mo | 4,500 transcribed min |
 
-**⚠️ Important:** These are public keys (safe for client-side use). Never expose `service_role` keys.
+### LEVERAGE
 
----
+| Plan | Standalone | With INTAKE | Included |
+|------|-----------|-------------|----------|
+| Solo | $99/mo | $79/mo | 5 active cases |
+| Growth | $349/mo | $279/mo | 21 active cases |
+| Team | $899/mo | $699/mo | 55 active cases |
 
-## 🔗 API Endpoints & Supabase Connection
+- Active case capacity, not case credits. Unused capacity does not roll over.
+- Lower ecosystem pricing applies when INTAKE is active.
 
-### Current API Endpoints (in HTML files)
+### SETTLE
 
-The website uses these API endpoints that connect to Supabase:
-
-| Endpoint | Method | Purpose | Supabase Connection |
-|----------|--------|---------|---------------------|
-| `/api/v1/demo-request` | POST | Demo request form | **Supabase Edge Function** |
-| `/api/v1/demo-session/{id}` | GET | Get demo session data | **Supabase Edge Function** |
-| `/api/v1/waitlist` | POST | Application form submission | **Supabase Edge Function** |
-| `/api/v1/affiliate-program/apply` | POST | Affiliate application | **Supabase Edge Function** |
-| `/api/v1/partner-program/signup` | POST | Partner signup | **Supabase Edge Function** |
-| `/api/blog/content` | GET | Fetch blog content | **Supabase REST API** (direct) |
-
-### Implementation Options
-
-#### Option 1: Supabase Edge Functions (Recommended)
-
-Deploy Edge Functions for form submissions:
-
-**Function Structure:**
-```
-supabase/functions/
-├── demo-request/
-│   └── index.ts
-├── demo-session/
-│   └── index.ts
-├── waitlist/
-│   └── index.ts
-└── affiliate-apply/
-    └── index.ts
-```
-
-**Example: `demo-request` Edge Function**
-
-```typescript
-// supabase/functions/demo-request/index.ts
-import { serve } from 'https://deno.land/std@0.168.0/http/server.ts'
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
-
-serve(async (req) => {
-  const { firstName, lastName, email, phone, firmName, practiceArea } = await req.json()
-  
-  const supabase = createClient(
-    Deno.env.get('SUPABASE_URL') ?? '',
-    Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
-  )
-  
-  // Insert into database
-  const { data, error } = await supabase
-    .from('demo_sessions')
-    .insert({
-      first_name: firstName,
-      last_name: lastName,
-      email: email,
-      phone: phone,
-      firm_name: firmName,
-      practice_area: practiceArea,
-      created_at: new Date().toISOString()
-    })
-    .select()
-    .single()
-  
-  if (error) {
-    return new Response(JSON.stringify({ error: error.message }), {
-      status: 500,
-      headers: { 'Content-Type': 'application/json' }
-    })
-  }
-  
-  return new Response(JSON.stringify({
-    success: true,
-    session_id: data.id,
-    redirect_url: `/demo/${data.id}`
-  }), {
-    status: 200,
-    headers: { 'Content-Type': 'application/json' }
-  })
-})
-```
-
-**Deploy Edge Functions:**
-```bash
-supabase functions deploy demo-request
-supabase functions deploy demo-session
-supabase functions deploy waitlist
-supabase functions deploy affiliate-apply
-supabase functions deploy partner-signup
-```
-
-**Update HTML to use Edge Functions:**
-
-```javascript
-// In marketing/index.html (demo form)
-const response = await fetch(
-  'https://your-project.supabase.co/functions/v1/demo-request',
-  {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
-    },
-    body: JSON.stringify(data)
-  }
-);
-```
-
-#### Option 2: Supabase REST API (Direct)
-
-For simple operations, use Supabase REST API directly:
-
-```javascript
-// Fetch blog content directly from Supabase
-const response = await fetch(
-  `${SUPABASE_URL}/rest/v1/content_items?status=eq.published&select=*`,
-  {
-    headers: {
-      'apikey': SUPABASE_ANON_KEY,
-      'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
-    }
-  }
-);
-```
+| Option | Price |
+|--------|-------|
+| Single Report | $39 |
+| 11-Pack | $385 |
+| 25-Pack | $750 |
+| Ecosystem Rate | $29/report (active INTAKE or LEVERAGE) |
+| SETTLE Pro | $299/mo (15 included, $25/report after) |
 
 ---
 
-## 📚 Blog Content Engine
+## Trial Funnel
 
-### Automated Content Fetching
+### Flow
 
-The `blog.html` page automatically fetches content from Supabase and renders it dynamically.
-
-### How It Works
-
-1. **Page Loads** → JavaScript fetches published content from Supabase
-2. **Content Rendered** → Cards are dynamically created from database
-3. **Filtering** → Client-side filtering by type (article/video)
-4. **Analytics** → Click tracking sent to Supabase
-
-### Supabase Database Schema
-
-**Table: `content_items`**
-
-```sql
-CREATE TABLE content_items (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  title TEXT NOT NULL,
-  teaser TEXT NOT NULL,
-  canonical_url TEXT NOT NULL,
-  publish_date DATE NOT NULL,
-  thumbnail_url TEXT,
-  type TEXT CHECK (type IN ('article', 'video')),
-  platform_name TEXT CHECK (platform_name IN ('linkedin', 'youtube')),
-  read_time_minutes INTEGER,
-  watch_time_minutes INTEGER,
-  is_featured BOOLEAN DEFAULT false,
-  status TEXT CHECK (status IN ('draft', 'published', 'archived')) DEFAULT 'draft',
-  view_count INTEGER DEFAULT 0,
-  click_count INTEGER DEFAULT 0,
-  created_at TIMESTAMP DEFAULT NOW(),
-  updated_at TIMESTAMP DEFAULT NOW(),
-  published_at TIMESTAMP
-);
+```
+1. Prospect lands on trial.html
+2. Prospect submits Trial Application (3-step form)
+3. SaaS Admin receives application
+4. SaaS Admin reviews: attorney eligibility, firm size, PI fit, state/county availability
+5. If rejected: polite rejection/waitlist email
+6. If approved: create prospect record, send onboarding form link
+7. Firm submits trial-onboarding.html (8 sections)
+8. Customer Success reviews onboarding form
+9. Firm books onboarding call
+10. CSM creates/configures tenant or triggers PLG activation
+11. Billing Service creates trial subscription (90-day, 11 A+ unlocks)
+12. Test call completed
+13. Trial activated
+14. Customer Portal invite sent
 ```
 
-### JavaScript Implementation
+### trial.html — Public Acquisition Page
 
-**File: `js/blog-content.js`** (see implementation below)
+- Purpose: Convert cold traffic (ads, email) into trial applicants
+- 3-step form: Attorney+Firm → Firm Fit → Trial Confirmation
+- Success message: "We usually review applications within 2 business days."
+- No checkout, no plan selection, no LEVERAGE/SETTLE
 
-**Features:**
-- ✅ Fetches published content from Supabase
-- ✅ Renders content cards dynamically
-- ✅ Handles loading states
-- ✅ Error handling with fallback
-- ✅ Filter functionality (articles/videos/all)
-- ✅ Click tracking for analytics
+### trial-onboarding.html — Approved Firms Only
 
-### Adding New Blog Content
-
-**Via Supabase Dashboard:**
-1. Go to Supabase Dashboard → Table Editor → `blog_content`
-2. Click "Insert" → Add new row
-3. Fill in:
-   - `title` - Article/video title (max 70 chars)
-   - `teaser` - Short description (max 160 chars)
-   - `canonical_url` - LinkedIn/YouTube URL (with UTM: `?utm_source=truevow_blog`)
-   - `publish_date` - Publication date
-   - `type` - `article` or `video`
-   - `platform_name` - `linkedin` or `youtube`
-   - `read_time_minutes` or `watch_time_minutes`
-   - `status` - Set to `published`
-4. Click "Save" → Content appears on blog page automatically
-
-**Via SQL:**
-```sql
-INSERT INTO blog_content (
-  title, teaser, canonical_url, publish_date,
-  type, platform_name, read_time_minutes, status
-) VALUES (
-  'Your Article Title',
-  'Your teaser description here.',
-  'https://linkedin.com/pulse/your-article?utm_source=truevow_blog',
-  '2026-01-08',
-  'article',
-  'linkedin',
-  5,
-  'published'
-);
-```
+- Purpose: Collect setup requirements before onboarding call
+- 8 sections: Firm Setup, Contact Users, Phone Routing, Calendar, Intake Preferences, Alerts, Recording/Transcript Policy, Activation Readiness
+- noindex/nofollow — not discoverable by search engines
+- Sent by email only after approval
 
 ---
 
-## 🚀 Deployment Guide
+## Compliance & Claim-Safety Rules
 
-### Step 1: Prepare Files
+### Banned Language (never use)
 
-**Upload to Namecheap:**
-- `marketing/` folder (all HTML files)
-- `legal/` folder (all HTML files)
-- `components/` folder (reusable components)
-- `assets/` folder (images, logos)
-- `js/` folder (JavaScript files)
+- "24/7", "guaranteed", "priority access", "skip the waitlist"
+- "exactly", "always", "never" (absolute claims)
+- "PII ever stored", "zero PII"
+- "high-value cases guaranteed"
+- "whichever comes first"
 
-### Step 2: Configure Supabase
+### Required Substitutions
 
-1. **Update JavaScript Configuration:**
-   - Open `js/blog-content.js`
-   - Update `SUPABASE_URL` and `SUPABASE_ANON_KEY`
+| Do NOT say | Say instead |
+|-----------|-------------|
+| high-value case | high-priority opportunity |
+| guaranteed | may, can, is designed to |
+| 24/7 | after-hours, configured hours |
+| verified attorney | helps us verify attorney status |
+| exclusive community | practical eligibility verification |
 
-2. **Update API Endpoints in HTML:**
-   - Search for `/api/v1/` in all HTML files
-   - Replace with Supabase Edge Function URLs:
-     ```
-     https://your-project.supabase.co/functions/v1/demo-request
-     ```
+### Bar Number Wording
 
-### Step 3: Upload via FTP/SFTP
+- Placeholder: "Bar Number (optional — helps us verify attorney status)"
+- Note: "Providing your Bar # may help us verify your application faster."
+- Success: "Bar number received. This may help us verify your application faster."
 
-**Namecheap File Manager or FTP Client:**
-```
-/public_html/
-├── marketing/
-├── legal/
-├── components/
-├── assets/
-└── js/
-```
+### Recording/Transcript Stance
 
-### Step 4: Test
-
-1. Visit `https://truevow.law/blog` → Verify blog content loads
-2. Test forms → Verify submissions work
-3. Check browser console → No JavaScript errors
-4. Test on mobile → Responsive design works
+- Always: "optional and configured during onboarding based on firm policy, caller disclosure requirements, and jurisdiction"
+- Never present as default-included in INTAKE plans
 
 ---
 
-## 💻 Development Workflow
+## CTA & Purchase Flow Rules
 
-### Local Development
+The public marketing website does NOT process direct purchases. All CTAs route prospects into application, request-access, or waitlist flow.
 
-**Option 1: Simple HTTP Server**
-   ```bash
-# Python 3
-python -m http.server 8000
+### Approved CTA Language
 
-# Node.js
-npx http-server -p 8000
+| Context | CTA Text |
+|---------|----------|
+| INTAKE | Apply for INTAKE |
+| INTAKE (Growth) | Apply for Growth |
+| INTAKE (Team) | Apply for Team |
+| FOLLOW-UP | Add FOLLOW-UP |
+| COMPLETE | Add COMPLETE |
+| Recordings | Add Recordings |
+| LEVERAGE | Request LEVERAGE Access |
+| SETTLE | Request SETTLE Access |
+| Trial | Apply for the 90-Day Intake Trial |
+| Demo | See Benjamin Live (8 min) |
 
-# PHP
-php -S localhost:8000
-```
+### Forbidden CTA Language
 
-**Option 2: VS Code Live Server**
-- Install "Live Server" extension
-- Right-click `index.html` → "Open with Live Server"
+Buy Now, Checkout, Purchase, Subscribe Now, Add to Cart, Pay Today, Unlock $99, Start Free, Get Started, No monthly fees, Pay only when you win
 
-### Making Changes
+### Application Flow
 
-1. **Edit HTML files** → Save → Refresh browser
-2. **Update blog content** → Add to Supabase → Refresh blog page
-3. **Test forms** → Use Supabase Edge Functions locally or test on staging
-
-### File Organization
-
-- **Marketing pages:** `marketing/*.html`
-- **Legal pages:** `legal/*.html`
-- **Components:** `components/*.html`
-- **JavaScript:** `js/*.js`
-- **Assets:** `assets/*`
-
----
-
-## 🐛 Troubleshooting
-
-### Blog Content Not Loading
-
-**Problem:** Blog page shows "Loading..." or empty
-
-**Solutions:**
-1. Check browser console for errors
-2. Verify Supabase URL and API key in `js/blog-content.js`
-3. Check Supabase table: `content_items` has rows with `status = 'published'`
-4. Verify RLS (Row Level Security) policies allow public read access:
-   ```sql
-   -- Allow public read access to published content
-   CREATE POLICY "Public can view published content"
-   ON content_items FOR SELECT
-   USING (status = 'published');
-   ```
-
-### Forms Not Submitting
-
-**Problem:** Form submission fails with 404 or CORS error
-
-**Solutions:**
-1. Verify Edge Function URLs are correct
-2. Check Edge Functions are deployed: `supabase functions list`
-3. Verify CORS is enabled for Edge Functions:
-   ```typescript
-   // In Edge Function
-   const corsHeaders = {
-     'Access-Control-Allow-Origin': '*',
-     'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-   }
-   ```
-4. Check browser network tab for error details
-
-### Supabase Connection Errors
-
-**Problem:** "Failed to fetch" or "Network error"
-
-**Solutions:**
-1. Verify `SUPABASE_URL` format: `https://xxx.supabase.co` (no trailing slash)
-2. Verify `SUPABASE_ANON_KEY` is correct (starts with `eyJ...`)
-3. Check Supabase project is active (not paused)
-4. Verify API is enabled in Supabase dashboard
-
----
-
-## 📊 Database Schema Reference
-
-### `content_items` Table
-
-Used by blog hub to display articles and videos.
-
-**Key Columns:**
-- `id` - UUID primary key
-- `title` - Article/video title
-- `teaser` - Short description
-- `canonical_url` - LinkedIn/YouTube URL
-- `publish_date` - Publication date
-- `type` - `article` or `video`
-- `platform_name` - `linkedin` or `youtube`
-- `status` - `draft`, `published`, or `archived`
-
-### `demo_sessions` Table
-
-Stores demo request form submissions.
-
-**Key Columns:**
-- `id` - UUID primary key
-- `first_name`, `last_name`, `email`, `phone`
-- `firm_name`, `practice_area`
-- `created_at` - Timestamp
-
-### `firm_applications` Table
-
-Stores application form submissions.
-
-**Key Columns:**
-- `id` - UUID primary key
-- Application data (name, email, firm info, etc.)
-- `created_at` - Timestamp
-
----
-
-## 🔐 Security Notes
-
-### Public Keys
-
-✅ **Safe to expose in client-side code:**
-- `SUPABASE_URL` - Public project URL
-- `SUPABASE_ANON_KEY` - Public anonymous key (with RLS)
-
-❌ **NEVER expose:**
-- `SUPABASE_SERVICE_ROLE_KEY` - Full database access
-- Database passwords
-- API secrets
-
-### Row Level Security (RLS)
-
-All Supabase tables should have RLS enabled:
-
-```sql
--- Enable RLS
-ALTER TABLE content_items ENABLE ROW LEVEL SECURITY;
-
--- Allow public read for published content
-CREATE POLICY "Public can view published content"
-ON content_items FOR SELECT
-USING (status = 'published');
-```
-
----
-
-## 📞 Support & Resources
-
-### Documentation
-
-- **Supabase Docs:** https://supabase.com/docs
-- **Supabase Edge Functions:** https://supabase.com/docs/guides/functions
-- **Supabase REST API:** https://supabase.com/docs/reference/javascript/select
-
-### Project Files
-
-- **Blog Implementation Guide:** `BLOG_HUB_IMPLEMENTATION_GUIDE.md`
-- **Supabase Setup Guide:** `SUPABASE_SETUP_GUIDE.md`
-
----
-
-## ✅ Next Steps
-
-1. **Deploy Supabase Edge Functions** for form submissions
-2. **Update HTML files** with correct Edge Function URLs
-3. **Test all forms** with real submissions
-4. **Add blog content** via Supabase dashboard
-5. **Deploy to Namecheap** and test live site
-
----
-
-**Last Updated:** January 8, 2026  
-**Version:** 1.0.0  
-**Status:** ✅ Production Ready
+Marketing Website → Application/Waitlist → Internal review → Approval email → Customer portal invite → Plan selection → Billing setup → Onboarding/Activation

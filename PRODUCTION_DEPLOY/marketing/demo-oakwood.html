@@ -1,0 +1,2189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oakwood Law Firm • TrueVow Demo Experience</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
+    <link rel="stylesheet" href="../widgets/truevow-chatbot/chatbot.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #F8F9FA;
+            color: #1A1A1A;
+            min-height: 100vh;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #FFFFFF;
+            padding: 16px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        #why,
+        #experience,
+        #applyBanner {
+            scroll-margin-top: 120px;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #0A2463;
+        }
+
+        .cta {
+            background: #0A2463;
+            color: #FFFFFF !important;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .cta:hover {
+            background: #061944;
+        }
+
+        header {
+            position: relative;
+            overflow: hidden;
+            color: #F5F1E8;
+            padding: 110px 24px 100px;
+            text-align: center;
+            background: radial-gradient(circle at 20% 20%, rgba(203,161,93,0.18), transparent 55%),
+                        radial-gradient(circle at 80% 85%, rgba(234,198,130,0.14), transparent 60%),
+                        linear-gradient(120deg, #121212, #1C2536 60%, #111B2A);
+        }
+
+        header h1 {
+            font-size: 46px;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 18px;
+            max-width: 760px;
+            margin: 0 auto;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        header .hero-supporting {
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            font-size: 13px;
+            opacity: 0.8;
+            margin-bottom: 24px;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(18,18,18,0.85);
+            pointer-events: none;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(115deg, rgba(18,18,18,0.9), rgba(17,27,42,0.92));
+            pointer-events: none;
+        }
+
+        header .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        header .hero-divider {
+            width: 90px;
+            height: 3px;
+            border-radius: 999px;
+            background: linear-gradient(to right, rgba(255,215,141,0.95), rgba(255,215,141,0.3));
+            margin: 0 auto 28px;
+        }
+
+        header .hero-highlight {
+            max-width: 760px;
+            margin: 20px auto 0;
+            background: rgba(248, 244, 234, 0.88);
+            border: 1px solid rgba(204, 153, 63, 0.6);
+            border-radius: 16px;
+            padding: 20px 28px;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #1f2a44;
+            box-shadow: 0 18px 32px rgba(10,36,99,0.18);
+        }
+
+        .hero-emblem {
+            width: 220px;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 22px;
+            opacity: 1;
+        }
+
+        .hero-emblem svg {
+            filter: drop-shadow(0 10px 22px rgba(203,161,93,0.35));
+        }
+
+        .page-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 24px 120px;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .card {
+            background: #FFFFFF;
+            border-radius: 16px;
+            box-shadow: 0 12px 32px rgba(10, 36, 99, 0.1);
+            padding: 32px;
+        }
+
+        .card h2 {
+            color: #0A2463;
+            font-size: 26px;
+            margin-bottom: 16px;
+        }
+
+        .card p,
+        .card li {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        .card ul {
+            margin-top: 16px;
+            padding-left: 20px;
+        }
+
+        .oakwood-checklist {
+            list-style: none;
+            padding-left: 0;
+            display: grid;
+            gap: 14px;
+        }
+
+        .oakwood-checklist li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: #1e273a;
+            font-weight: 500;
+        }
+
+        .oakwood-checklist li::before {
+            content: '\2713';
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            border-radius: 6px;
+            background: #121212;
+            color: #d6a657;
+            font-size: 16px;
+            flex-shrink: 0;
+            box-shadow: 0 6px 14px rgba(18,18,18,0.3);
+        }
+
+        .floating-hand {
+            position: fixed;
+            right: 120px;
+            bottom: 180px;
+            width: 72px;
+            height: 72px;
+            background: url('https://cdn.jsdelivr.net/gh/tabler/tabler-icons/icons/hand-click.svg') no-repeat center/contain;
+            animation: pulse 1.8s infinite ease-in-out;
+            z-index: 9999;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+
+        .floating-hand.show {
+            opacity: 1;
+        }
+
+        @keyframes pulse {
+            0% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-10px) scale(1.05); }
+            100% { transform: translateY(0) scale(1); }
+        }
+
+        /* Chat widget */
+        #chatLauncher {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            display: none;
+            align-items: center;
+            gap: 0;
+            background: transparent;
+            border: none;
+            padding: 0;
+            z-index: 9500;
+            animation: pulseWave 2.4s infinite ease-in-out;
+            cursor: pointer;
+        }
+
+        #chatLauncher .launcher-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 32px 16px 22px;
+            border-radius: 999px;
+            background: #060606;
+            border: 1px solid rgba(214,166,87,0.55);
+            box-shadow: 0 18px 32px rgba(0,0,0,0.45);
+        }
+
+        #chatLauncher .launcher-arrow {
+            color: rgba(255,255,255,0.78);
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        #chatLauncher .launcher-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.15;
+        }
+
+        #chatLauncher .launcher-text span:first-child {
+            font-size: 12px;
+            letter-spacing: 0.7px;
+            color: rgba(214,166,87,0.9);
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        #chatLauncher .launcher-text span:last-child {
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffffff;
+            white-space: nowrap;
+        }
+
+        #chatLauncher .launcher-avatar {
+            position: relative;
+            margin-left: -46px;
+            width: 92px;
+            height: 92px;
+            border-radius: 50%;
+            background: url('../assets/benjamin-launcher.jpg.jpeg') center/cover;
+            box-shadow: 0 16px 36px rgba(0,0,0,0.45);
+            border: 4px solid #101010;
+            animation: nodding 2.6s infinite ease-in-out;
+        }
+
+        #chatLauncher.show {
+            display: inline-flex;
+        }
+
+        #chatLauncher:hover .launcher-pill {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 36px rgba(0,0,0,0.55);
+        }
+
+        @keyframes pulseWave {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes nodding {
+            0%, 100% {
+                transform: rotate(0deg) scale(1);
+                filter: brightness(1);
+            }
+            40% {
+                transform: rotate(2deg) scale(1.02);
+                filter: brightness(1.05);
+            }
+            70% {
+                transform: rotate(-1.5deg) scale(0.99);
+                filter: brightness(0.98);
+            }
+        }
+
+        .chat-widget {
+            --widget-bg: #FFFFFF;
+            --header-bg: linear-gradient(120deg, #0A2463, #102B73);
+            --header-text-color: #FFFFFF;
+            --benjamin-bubble-bg: #0A2463;
+            --benjamin-bubble-color: #F5F7FF;
+            --user-bubble-bg: #FFFFFF;
+            --user-bubble-color: #0A2463;
+            --option-default-bg: rgba(18,27,42,0.82);
+            --option-default-color: rgba(255,255,255,0.85);
+            --option-border: rgba(18,27,42,0.25);
+            --option-hover-shadow: 0 16px 28px rgba(10,18,30,0.28);
+            --option-selected-bg: linear-gradient(135deg, #0A2463 0%, #1a3e8f 60%, #0A2463 100%);
+            --option-selected-shadow: 0 18px 32px rgba(10,36,99,0.35);
+            --mic-default-bg: linear-gradient(135deg, #0A2463, #173a82);
+            --mic-default-shadow: 0 12px 24px rgba(10,36,99,0.25);
+            --mic-ready-bg: linear-gradient(135deg, #173a82, #274b9f);
+            --mic-ready-shadow: 0 18px 32px rgba(10,36,99,0.35);
+            --mic-recording-bg: linear-gradient(135deg, #E63946, #FF6B6B);
+            --mic-recording-shadow: 0 18px 32px rgba(230,57,70,0.35);
+            --hint-color: rgba(10,36,99,0.65);
+            --voice-wave-color: rgba(10,36,99,0.6);
+            --voice-switch-bg: rgba(255,255,255,0.3);
+            --voice-switch-off-bg: rgba(255,255,255,0.12);
+            --voice-switch-text-color-on: #0A2463;
+            --voice-switch-text-color-off: rgba(255,255,255,0.9);
+            --body-bg: #F5F7FF;
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            margin-top: 10px;
+            width: 340px;
+            background: var(--widget-bg);
+            border-radius: 18px;
+            box-shadow: 0 20px 50px rgba(12, 35, 99, 0.18);
+            max-height: calc(100vh - 72px);
+            overflow: hidden;
+            display: none;
+            flex-direction: column;
+            transform: translateY(10px);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            z-index: 9400;
+        }
+
+        .chat-widget.active {
+            display: flex;
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .chat-minimize {
+            background: none;
+            border: none;
+            color: rgba(255,255,255,0.85);
+            font-size: 22px;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .chat-header {
+            background: var(--header-bg);
+            color: var(--header-text-color);
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .chat-identity {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1;
+        }
+
+        .chat-identity-avatar {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: url('../assets/benjamin-launcher.jpg.jpeg') center/cover;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.25);
+            border: 2px solid rgba(255,255,255,0.35);
+        }
+
+        .chat-identity-info h3 {
+            font-size: 15px;
+            margin-bottom: 2px;
+        }
+
+        .voice-toggle-group {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .voice-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--header-text-color);
+            letter-spacing: 0.4px;
+        }
+
+        .voice-switch {
+            position: relative;
+            width: 58px;
+            height: 26px;
+            border-radius: 999px;
+            background: var(--voice-switch-bg);
+            border: 1px solid rgba(255,255,255,0.35);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            padding: 0 4px;
+            transition: background 0.2s;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.4px;
+        }
+
+        .voice-switch span {
+            flex: 1;
+            text-align: center;
+            z-index: 2;
+            color: var(--voice-switch-text-color-on);
+            padding: 0 20px 0 8px;
+            font-variant: small-caps;
+        }
+
+        .voice-switch::after {
+            content: '';
+            position: absolute;
+            top: 3px;
+            bottom: 3px;
+            width: 22px;
+            border-radius: 999px;
+            background: #FFFFFF;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease;
+            transform: translateX(0);
+        }
+
+        .voice-switch[aria-pressed="true"]::after {
+            transform: translateX(28px);
+        }
+
+        .voice-switch[aria-pressed="false"] {
+            background: var(--voice-switch-off-bg);
+        }
+
+        .voice-switch[aria-pressed="false"] span {
+            color: var(--voice-switch-text-color-off);
+            padding: 0 8px 0 22px;
+        }
+
+        .voice-switch[aria-pressed="true"] span {
+            padding: 0 24px 0 8px;
+        }
+
+        .chat-body {
+            padding: 20px;
+            background: var(--body-bg);
+            flex: 1;
+            overflow-y: auto;
+            overflow-x: hidden;
+            min-height: 360px;
+        }
+
+        .chat-turn {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+
+        .chat-turn.user {
+            align-items: flex-end;
+        }
+
+        .chat-bubble {
+            max-width: 88%;
+            padding: 14px 16px;
+            border-radius: 18px;
+            line-height: 1.6;
+            font-size: 14px;
+            box-shadow: 0 8px 16px rgba(10,18,30,0.08);
+        }
+
+        .chat-bubble.benjamin {
+            background: var(--benjamin-bubble-bg);
+            color: var(--benjamin-bubble-color);
+        }
+
+        .chat-bubble.user {
+            background: var(--user-bubble-bg);
+            color: var(--user-bubble-color);
+        }
+
+        .chat-turn .voice-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            letter-spacing: 1px;
+            color: rgba(10,36,99,0.65);
+            text-transform: uppercase;
+        }
+
+        .voice-indicator .wave {
+            display: inline-flex;
+            gap: 2px;
+        }
+
+        .voice-indicator .wave span {
+            display: block;
+            width: 3px;
+            height: 10px;
+            border-radius: 999px;
+            background: var(--voice-wave-color);
+            animation: speakWave 1.2s infinite ease-in-out;
+        }
+
+        .voice-indicator .wave span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .voice-indicator .wave span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .voice-indicator.inactive {
+            opacity: 0.4;
+        }
+
+        @keyframes speakWave {
+            0%, 100% { height: 6px; opacity: 0.6; }
+            50% { height: 14px; opacity: 1; }
+        }
+
+        .chat-input-panel {
+            padding: 18px 20px 22px;
+            background: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            border-top: 1px solid rgba(10,36,99,0.08);
+        }
+
+        .chat-input-panel .input-row {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .chat-input-panel .input-row input {
+            height: 48px;
+            border-radius: 999px;
+            border: 1px solid rgba(10,36,99,0.18);
+            padding: 0 18px;
+            font-size: 15px;
+            transition: border 0.2s, box-shadow 0.2s;
+        }
+
+        .chat-input-panel .input-row input:focus {
+            outline: none;
+            border-color: #0A2463;
+            box-shadow: 0 0 0 3px rgba(10,36,99,0.12);
+        }
+
+        .mic-button {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--mic-default-bg);
+            color: #FFFFFF;
+            box-shadow: var(--mic-default-shadow, 0 12px 24px rgba(10,18,30,0.35));
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .mic-button .mic-icon::before {
+            content: '\1F399';
+            font-size: 22px;
+        }
+
+        .mic-button .mic-timer {
+            position: absolute;
+            bottom: -18px;
+            font-size: 11px;
+            letter-spacing: 0.6px;
+            color: var(--hint-color);
+            display: none;
+        }
+
+        .mic-button.recording {
+            background: var(--mic-recording-bg);
+            box-shadow: var(--mic-recording-shadow, 0 18px 32px rgba(198,40,40,0.38));
+            animation: pulse 1.4s infinite ease-in-out;
+        }
+
+        .mic-button.recording .mic-icon::before {
+            content: '\25A0';
+            font-size: 14px;
+        }
+
+        .mic-button.recording .mic-timer {
+            display: block;
+        }
+
+        .mic-button.ready {
+            background: var(--mic-ready-bg);
+            box-shadow: var(--mic-ready-shadow, 0 18px 32px rgba(10,36,99,0.38));
+        }
+
+        .mic-button.ready .mic-icon::before {
+            content: '\27A4';
+            font-size: 22px;
+        }
+
+        .mic-button.disabled {
+            pointer-events: none;
+            opacity: 0.4;
+            box-shadow: none;
+        }
+
+        .chat-input-panel .hint-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .chat-input-panel .hint-row span {
+            font-size: 12px;
+            color: var(--hint-color);
+        }
+
+        .theme-switcher {
+            display: inline-flex;
+            gap: 8px;
+        }
+
+        .theme-switcher .theme-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.6);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
+        }
+
+        .theme-switcher .theme-dot[data-theme="emerald"] {
+            background: linear-gradient(135deg, #075E54, #25D366);
+        }
+
+        .theme-switcher .theme-dot[data-theme="classic"] {
+            background: linear-gradient(135deg, #0A2463, #173a82);
+        }
+
+        .theme-switcher .theme-dot[data-theme="slate"] {
+            background: linear-gradient(135deg, #1f2937, #0f172a);
+        }
+
+        .theme-switcher .theme-dot[data-theme="pastel"] {
+            background: linear-gradient(135deg, #E0EAFC, #CFDEF3);
+        }
+
+        .theme-switcher .theme-dot[data-theme="sand"] {
+            background: linear-gradient(135deg, #E7D7C9, #BAA58A);
+        }
+
+        .theme-switcher .theme-dot.active {
+            transform: scale(1.15);
+            box-shadow: 0 0 0 2px rgba(255,255,255,0.75);
+        }
+
+        .chat-turn .option-group {
+            display: grid;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .chat-turn .option-group.animating .option-button {
+            pointer-events: none;
+        }
+
+        .chat-turn .option-group .option-button {
+            border: 1px solid rgba(18,27,42,0.25);
+            border-radius: 999px;
+            padding: 12px 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.25s, background 0.25s, color 0.25s;
+            background: var(--option-default-bg);
+            color: var(--option-default-color);
+            border-color: var(--option-border);
+            box-shadow: 0 12px 22px rgba(10,18,30,0.2);
+        }
+
+        .chat-turn .option-group .option-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--option-hover-shadow);
+        }
+
+        .chat-turn .option-group .option-button.selected {
+            background: var(--option-selected-bg);
+            color: #ffffff;
+            box-shadow: var(--option-selected-shadow);
+            transform: translateY(-3px);
+        }
+
+        .option-button.fade-out {
+            animation: optionFade 360ms ease forwards;
+            animation-fill-mode: forwards;
+        }
+
+        .option-button.lift {
+            animation: optionLift 520ms cubic-bezier(0.24, 0.82, 0.23, 0.99) forwards;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes optionFade {
+            to {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+        }
+
+        @keyframes optionLift {
+            to {
+                opacity: 0;
+                transform: translateY(-52px) scale(0.9);
+            }
+        }
+
+        .voice-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(10, 36, 99, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9000;
+            color: #FFFFFF;
+        }
+
+        .voice-overlay.active {
+            display: flex;
+        }
+
+        .voice-box {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 18px;
+            padding: 32px;
+            text-align: center;
+            max-width: 420px;
+        }
+
+        .voice-box h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .voice-box p {
+            font-size: 15px;
+            line-height: 1.7;
+            opacity: 0.92;
+        }
+
+        .voice-box button {
+            margin-top: 24px;
+            background: #FFFFFF;
+            color: #0A2463;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .video-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(10, 36, 99, 0.82);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 11000;
+            padding: 24px;
+        }
+
+        .video-overlay.active {
+            display: flex;
+        }
+
+        .video-box {
+            background: #FFFFFF;
+            border-radius: 20px;
+            padding: 32px;
+            max-width: 640px;
+            width: 100%;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+        }
+
+        .video-box h2 {
+            color: #0A2463;
+            font-size: 26px;
+            margin-bottom: 16px;
+        }
+
+        .video-box button {
+            margin-top: 16px;
+            background: #0A2463;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .video-box button:hover {
+            background: #061944;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(10, 36, 99, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 12000;
+            padding: 24px;
+        }
+
+        .modal-content {
+            background: #FFFFFF;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 640px;
+            width: 100%;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+            text-align: left;
+            position: relative;
+        }
+
+        .modal-content h2 {
+            font-size: 28px;
+            color: #0A2463;
+            margin-bottom: 16px;
+        }
+
+        .modal-content p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #444;
+            margin-bottom: 16px;
+        }
+
+        .modal-content ul {
+            padding-left: 20px;
+            margin-bottom: 24px;
+        }
+
+        .modal-content li {
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .modal-content button {
+            background: #0A2463;
+            color: #FFFFFF;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .modal-content button:hover {
+            background: #061944;
+        }
+
+        .experience-steps {
+            margin-top: 40px;
+            display: grid;
+            gap: 24px;
+        }
+
+        .experience-step {
+            background: #FFFFFF;
+            border-radius: 16px;
+            padding: 28px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            box-shadow: 0 12px 32px rgba(10,36,99,0.08);
+        }
+
+        .experience-step span {
+            background: linear-gradient(160deg, #1a1a1a, #0e0e0e);
+            color: #d6a657;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+            box-shadow: 0 16px 28px rgba(18,18,18,0.35);
+        }
+
+        .experience-step h3 {
+            font-size: 18px;
+            color: #0A2463;
+            margin-bottom: 8px;
+        }
+
+        .experience-step p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .apply-banner {
+            margin-top: 60px;
+            background: linear-gradient(135deg, #d6b677 0%, #c2954e 45%, #8c6727 100%);
+            color: #121212;
+            border-radius: 18px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 18px 36px rgba(10,36,99,0.12);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .apply-banner h2 {
+            display: inline-block;
+            background: #121212;
+            color: #ffffff;
+            padding: 12px 32px;
+            border-radius: 999px;
+            font-size: 28px;
+            margin-bottom: 18px;
+            letter-spacing: 0.6px;
+            box-shadow: 0 12px 24px rgba(18,18,18,0.35);
+        }
+
+        .apply-banner p.apply-sub {
+            font-size: 17px;
+            margin-bottom: 22px;
+        }
+
+        .apply-points {
+            list-style: none;
+            margin: 0 0 24px;
+            padding: 0;
+            display: grid;
+            gap: 18px;
+            font-size: 16px;
+            text-align: left;
+            max-width: 620px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .apply-points li {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            column-gap: 12px;
+            align-items: start;
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 18px;
+        }
+
+        .apply-points li::before {
+            content: '\2713';
+            width: 26px;
+            height: 26px;
+            border-radius: 8px;
+            background: #121212;
+            color: #d6a657;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 18px rgba(18,18,18,0.35);
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .apply-points .point-main {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .apply-points .point-detail {
+            font-weight: 400;
+            opacity: 0.92;
+        }
+
+        .apply-points li .point-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .apply-points li:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 36px;
+            right: 0;
+            bottom: 0;
+            height: 1px;
+            background: linear-gradient(to right, rgba(18,18,18,0.1), rgba(18,18,18,0.45), rgba(18,18,18,0.1));
+        }
+
+        .apply-banner .apply-note {
+            font-size: 16px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 26px;
+            opacity: 1;
+        }
+
+        .apply-banner a {
+            display: inline-block;
+            background: #FFFFFF;
+            color: #0A2463;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .apply-banner a:hover {
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 960px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .floating-hand {
+                display: none;
+            }
+
+            .chat-widget {
+                width: 300px;
+                right: 16px;
+                bottom: 16px;
+            }
+
+            #chatLauncher {
+                right: 16px;
+                bottom: 16px;
+                padding: 6px;
+                gap: 0;
+            }
+
+            #chatLauncher .launcher-text {
+                display: none;
+            }
+        }
+
+        .chat-turn.user.fade-in {
+            animation: userReply 240ms cubic-bezier(0.24, 0.82, 0.23, 0.99) forwards;
+            transform: translateY(16px);
+            opacity: 0;
+        }
+
+        @keyframes userReply {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION --><!-- STANDARDIZED NAVIGATION - Embedded for direct file opening -->
+<nav style="position: sticky; top: 0; z-index: 1000; background: white; border-bottom: 1px solid #E5E5E5; padding: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.05); font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center;">
+        <a href="index.html" class="logo" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-family: 'Montserrat', sans-serif;">
+            <div class="logo-monogram" style="position: relative; width: 38px; height: 32px; flex-shrink: 0;">
+                <span class="logo-monogram-t1" style="position: absolute; left: 0; top: 0; font-size: 32px; font-weight: 400; color: #C0C0C0; line-height: 1;">T</span>
+                <span class="logo-monogram-t2" style="position: absolute; left: 6px; top: 0; font-size: 32px; font-weight: 400; color: #808080; line-height: 1;">T</span>
+                <span class="logo-monogram-v" style="position: absolute; left: 12px; top: 0; font-size: 32px; font-weight: 700; color: #0A2463; line-height: 1;">V</span>
+            </div>
+            <div class="logo-text" style="display: flex; align-items: baseline; gap: 0;">
+                <span class="logo-true" style="font-size: 22px; font-weight: 400; color: #808080; letter-spacing: 0.5px;">True</span>
+                <span class="logo-vow" style="font-size: 22px; font-weight: 700; color: #0A2463; letter-spacing: 0.5px;">Vow</span>
+                <span class="logo-law" style="font-size: 18px; font-weight: 400; color: #0A2463;">.law</span>
+            </div>
+        </a>
+        <div style="display: flex; gap: 32px; align-items: center;">
+            <a href="index.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500; letter-spacing: 0; font-family: inherit;">Home</a>
+            <a href="how-it-works.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500; letter-spacing: 0; font-family: inherit;">How It Works</a>
+            <a href="pricing.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500; letter-spacing: 0; font-family: inherit;">Pricing</a>
+            <a href="county-cap.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500; letter-spacing: 0; font-family: inherit;">33% Cap</a>
+            <a href="profitability.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500; letter-spacing: 0; font-family: inherit;">ROI</a>
+        </div>
+        <a href="index.html#form" style="background: #0A2463; color: #FFFFFF !important; padding: 12px 24px; border-radius: 8px; font-size: 16px; font-weight: 600; text-decoration: none; transition: background 0.2s ease; font-family: inherit;" onmouseover="this.style.background='#0052CC'" onmouseout="this.style.background='#0A2463'">See Benjamin Live (8 min) →</a>
+    </div>
+</nav>
+    
+<!-- STANDARDIZED NAVIGATION - Embedded for direct file opening -->
+<nav style="position: sticky; top: 0; z-index: 1000; background: white; border-bottom: 1px solid #E5E5E5; padding: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.05); font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center;">
+        <a href="index.html" class="logo" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-family: 'Montserrat', sans-serif;">
+            <div class="logo-monogram" style="position: relative; width: 38px; height: 32px; flex-shrink: 0;">
+                <span class="logo-monogram-t1" style="position: absolute; left: 0; top: 0; font-size: 32px; font-weight: 400; color: #C0C0C0; line-height: 1;">T</span>
+                <span class="logo-monogram-t2" style="position: absolute; left: 6px; top: 0; font-size: 32px; font-weight: 400; color: #808080; line-height: 1;">T</span>
+                <span class="logo-monogram-v" style="position: absolute; left: 12px; top: 0; font-size: 32px; font-weight: 700; color: #0A2463; line-height: 1;">V</span>
+            </div>
+            <div class="logo-text" style="display: flex; align-items: baseline; gap: 0;">
+                <span class="logo-true" style="font-size: 22px; font-weight: 400; color: #808080; letter-spacing: 0.5px;">True</span>
+                <span class="logo-vow" style="font-size: 22px; font-weight: 700; color: #0A2463; letter-spacing: 0.5px;">Vow</span>
+                <span class="logo-law" style="font-size: 18px; font-weight: 400; color: #0A2463;">.law</span>
+            </div>
+        </a>
+        <div style="display: flex; gap: 32px; align-items: center;">
+            <a href="index.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500;">Home</a>
+            <a href="how-it-works.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500;">How It Works</a>
+            <a href="pricing.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500;">Pricing</a>
+            <a href="county-cap.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500;">33% Cap</a>
+            <a href="profitability.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500;">ROI</a>
+        </div>
+        <a href="index.html#form" style="background: #0A2463; color: #FFFFFF !important; padding: 12px 24px; border-radius: 8px; font-size: 16px; font-weight: 600; text-decoration: none; transition: background 0.2s ease; font-family: inherit;" onmouseover="this.style.background='#0052CC'" onmouseout="this.style.background='#0A2463'">See Benjamin Live (8 min) →</a>
+    </div>
+</nav>
+
+    <nav style="position: sticky; top: 0; z-index: 1000; background: white; border-bottom: 1px solid #E5E5E5; padding: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.05); font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center;">
+        <a href="index.html" class="logo" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-family: 'Montserrat', sans-serif;">
+            <div class="logo-monogram" style="position: relative; width: 38px; height: 32px; flex-shrink: 0;">
+                <span class="logo-monogram-t1" style="position: absolute; left: 0; top: 0; font-size: 32px; font-weight: 400; color: #C0C0C0; line-height: 1;">T</span>
+                <span class="logo-monogram-t2" style="position: absolute; left: 6px; top: 0; font-size: 32px; font-weight: 400; color: #808080; line-height: 1;">T</span>
+                <span class="logo-monogram-v" style="position: absolute; left: 12px; top: 0; font-size: 32px; font-weight: 700; color: #0A2463; line-height: 1;">V</span>
+            </div>
+            <div class="logo-text" style="display: flex; align-items: baseline; gap: 0;">
+                <span class="logo-true" style="font-size: 22px; font-weight: 400; color: #808080; letter-spacing: 0.5px;">True</span>
+                <span class="logo-vow" style="font-size: 22px; font-weight: 700; color: #0A2463; letter-spacing: 0.5px;">Vow</span>
+                <span class="logo-law" style="font-size: 18px; font-weight: 400; color: #0A2463;">.law</span>
+            </div>
+        </a>
+        <div style="display: flex; gap: 32px; align-items: center;">
+            <a href="index.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500;">Home</a>
+            <a href="how-it-works.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500;">How It Works</a>
+            <a href="pricing.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500;">Pricing</a>
+            <a href="county-cap.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500;">33% Cap</a>
+            <a href="profitability.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500;">ROI</a>
+        </div>
+        <a href="index.html#form" style="background: #0A2463; color: #FFFFFF !important; padding: 12px 24px; border-radius: 8px; font-size: 16px; font-weight: 600; text-decoration: none; transition: background 0.2s ease; font-family: inherit;" onmouseover="this.style.background='#0052CC'" onmouseout="this.style.background='#0A2463'">See Benjamin Live (8 min) →</a>
+    </div>
+</nav>
+
+    <header>
+        <div class="hero-content">
+            <div class="hero-supporting">Personal Injury Intake • Oakwood County • Est. 1989</div>
+            <div class="hero-divider"></div>
+            <h1>Welcome to Oakwood Law Firm's Intake Experience</h1>
+            <div class="hero-highlight">
+                Benjamin will ring you within <strong>~8 minutes</strong>. While you wait, use the tools below to see how our Oakwood web intake converts every qualified visitor into a booked consultation.
+            </div>
+        </div>
+    </header>
+
+    <div class="page-container" style="padding-bottom: 24px;">
+        <div class="two-column" id="why">
+            <div class="card">
+                <h2>Why this demo matters</h2>
+                <p>You're moments away from feeling the full intake flow exactly like your prospects will — both on the phone and on your website. This page shows the companion experience that protects the other 62% of leads who prefer web chat or voice chat.</p>
+                <ul>
+                    <li><strong>Benjamin live call:</strong> Within ~8 minutes, Benjamin will dial the number you provided and walk you through a mock intake.</li>
+                    <li><strong>Website intake:</strong> Use the widget in the bottom-right corner to try chat or voice — it's the same deterministic Benjamin, no hallucinations.</li>
+                    <li><strong>No risk, no billing:</strong> Remember, you get 11 free bookings (and 3 months runway). You only pay when Benjamin delivers a qualified booking.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Before Benjamin calls</h2>
+                <ul class="oakwood-checklist">
+                    <li>Put your phone on loud. The call will come from +1 (555) 100-0001 / 0002 / 0003.</li>
+                    <li>Open the widget below. Try both "Chat Intake" and "Voice Intake".</li>
+                    <li>Notice how every answer is captured — no missed opportunities, no human error.</li>
+                </ul>
+                <p style="margin-top: 16px; font-style: italic; color: #0A2463;">Tip: Use the same answers during the phone demo so you can compare the experiences.</p>
+            </div>
+        </div>
+
+        <div class="experience-steps" id="experience">
+            <div class="experience-step">
+                <span>1</span>
+                <div>
+                    <h3>Experience the chat intake</h3>
+                    <p>Click the widget → choose "Chat Intake" → watch how Benjamin qualifies, captures details, and books a consult without ever exposing sensitive information.</p>
+                </div>
+            </div>
+            <div class="experience-step">
+                <span>2</span>
+                <div>
+                    <h3>Try the voice option</h3>
+                    <p>Tap "Voice Intake" to hear Benjamin greet you in-browser. This is the same deterministic voice that will handle your after-hours calls.</p>
+                </div>
+            </div>
+            <div class="experience-step">
+                <span>3</span>
+                <div>
+                    <h3>Secure your seat</h3>
+                    <p>When you're ready to join the curated community, hit "Apply Now". Your demo details are pre-filled — simply confirm the rest and submit.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="apply-banner" id="applyBanner">
+            <h2>Lock Your County Before Someone Else Does</h2>
+            <p class="apply-sub"><span id="applyBannerPersonalization">Your team</span> just spent eight minutes hearing Benjamin convert live. TrueVow caps enrollment at 33% of firms in every county—Sandoval Trial Group claimed their allocation this morning. Benjamin is calling another firm in ~8 minutes; secure your territory before that slot closes.</p>
+            <ul class="apply-points">
+                <li>
+                    <div class="point-wrapper">
+                        <div class="point-main">You just watched Benjamin convert—begin with <strong>11 free qualified bookings</strong></div>
+                        <div class="point-detail">Keep him on your front line immediately with 24/7 coverage—no retainers, no long-term contracts. Prefer a lighter touch? Let Benjamin handle after-hours, weekends, and holidays only.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="point-wrapper">
+                        <div class="point-main">Only pay when Benjamin books: <strong>$29 per consult</strong></div>
+                        <div class="point-detail">Each booking delivers verified contact + intake details to your inbox and dashboard. Full recordings or transcripts are provided only when your firm requests them.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="point-wrapper">
+                        <div class="point-main">Lock Founding Member status on your first paid booking</div>
+                        <div class="point-detail">Stay ahead with <strong>3 free bookings every month</strong> and a <strong>$25</strong> lifetime rate—reserved for the first firms partnering with us to build the SETTLE ecosystem.</div>
+                    </div>
+                </li>
+            </ul>
+            <p class="apply-note">33% territory cap • When the county fills, enrollment closes</p>
+            <a href="apply.html" id="applyBannerButton" style="background: #121212; color: #ffffff; border: 1px solid rgba(18,18,18,0.8);">Yes—Reserve My <span id="applyBannerFirm">TrueVow</span> Intake Coverage →</a>
+        </div>
+    </div>
+
+    <div style="max-width: 1100px; margin: -24px auto 32px; padding: 0 12px; display: flex; flex-direction: column; align-items: flex-start; gap: 6px;">
+        <span style="font-size: 12px; font-weight: 600; color: rgba(10,36,99,0.7); letter-spacing: 0.2px;">Need the numbers before you commit?</span>
+        <a href="profitability.html" style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 999px; background: rgba(10,36,99,0.08); color: #0A2463; font-size: 12px; font-weight: 600; text-decoration: none;">
+             📊 Still weighing it? See the ROI proof →
+        </a>
+    </div>
+
+    <div class="voice-overlay" id="voiceOverlay">
+        <div class="voice-box">
+            <h3>Benjamin • Voice Intake Demo</h3>
+            <p>"Hello, this is Benjamin with Oakwood Law Firm. I'm here 24/7 to make sure every serious case reaches your desk. Go ahead — ask me about availability, share a case detail, or say 'book a consult'. I've got you."</p>
+            <button onclick="closeVoiceOverlay()">End Voice Demo</button>
+        </div>
+    </div>
+
+    <div id="truevow-chatbot-root"></div>
+
+    <div class="video-overlay" id="introVideoOverlay" role="dialog" aria-modal="true" aria-labelledby="introVideoTitle">
+        <div class="video-box">
+            <h2 id="introVideoTitle">Message from Attorney Benjamin McLaster</h2>
+            <video id="introVideo" width="100%" controls preload="auto" poster="https://images.pexels.com/photos/4427811/pexels-photo-4427811.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260">
+                <source src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p style="margin: 16px 0; color: #1A1A1A; line-height: 1.6;">
+                While you're here, complete the website intake by choosing <strong>Chat Intake</strong> or <strong>Voice Intake</strong> below. Benjamin reviews every conversation personally before your consultation, so the more detail you share, the faster we can fight for your case.
+            </p>
+            <button onclick="skipIntroVideo()">Begin Intake & Book Consultation →</button>
+        </div>
+    </div>
+
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header">
+            <div class="chat-identity">
+                <div class="chat-identity-avatar" aria-hidden="true"></div>
+                <div class="chat-identity-info">
+                    <h3>Benjamin</h3>
+                </div>
+            </div>
+            <div class="voice-toggle-group">
+                <span class="voice-label">Voice</span>
+                <button class="voice-switch" id="voiceToggle" aria-pressed="true"><span>On</span></button>
+            </div>
+            <button class="chat-minimize" aria-label="Minimize chat" onclick="minimizeChat()">−</button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="chat-turn benjamin speaking">
+                <div class="voice-indicator" aria-hidden="true">
+                    <div class="wave"><span></span><span></span><span></span></div>
+                    <span>Benjamin is speaking</span>
+                </div>
+                <div class="chat-bubble benjamin">
+                    👋 "Welcome to Oakwood Law Firm! I'm Benjamin. Can I start by confirming the type of matter you're dealing with?"
+                </div>
+            </div>
+        </div>
+        <div class="chat-input-panel">
+            <div class="input-row">
+                <input type="text" id="chatInputField" placeholder="Speak or type your response..." autocomplete="off">
+                <button type="button" class="mic-button" id="chatMicButton" aria-label="Hold to record"><span class="mic-icon" aria-hidden="true"></span><span class="mic-timer" id="micTimer">00:00</span></button>
+            </div>
+            <div class="hint-row">
+                <div class="theme-switcher" id="chatThemeSwitcher" role="group" aria-label="Change chat theme">
+                    <button type="button" class="theme-dot active" data-theme="pastel" aria-label="Pastel theme"></button>
+                    <button type="button" class="theme-dot" data-theme="emerald" aria-label="Emerald theme"></button>
+                    <button type="button" class="theme-dot" data-theme="sand" aria-label="Sand theme"></button>
+                    <button type="button" class="theme-dot" data-theme="slate" aria-label="Slate theme"></button>
+                    <button type="button" class="theme-dot" data-theme="violet" aria-label="Violet theme"></button>
+                </div>
+                <span id="chatHintText">Powered by TrueVow.law</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="introModal">
+        <div class="modal-content">
+            <h2>Your live demo is queued!</h2>
+            <p>Benjamin will call you within ~8 minutes to walk through the intake flow. While you wait, use this Oakwood Law Firm site to experience the full web visitor journey.</p>
+            <ul>
+                <li><strong>Step 1:</strong> Keep your phone ready — the call will come from +1 (555) 100-0001 / 0002 / 0003.</li>
+                <li><strong>Step 2:</strong> Click the widget in the bottom-right corner. Try the chat intake, then the voice intake.</li>
+                <li><strong>Step 3:</strong> When you're convinced, hit "Apply Now" — your details from the demo form are already waiting for you.</li>
+            </ul>
+            <p style="color: #0A2463; font-weight: 600;">Remember: TrueVow is partnership-first. No monthly fees. 11 free bookings. No invoices unless Benjamin delivers.</p>
+            <button onclick="closeIntroModal()">Continue to Demo →</button>
+        </div>
+    </div>
+
+    <script src="../widgets/truevow-chatbot/chatbot.js"></script>
+    <script>
+        TrueVowChatbot.create(document.getElementById('truevow-chatbot-root'), {
+            agentName: 'Benjamin',
+            showLauncher: true,
+            showFloatingHand: true
+        });
+
+        const floatingHand = document.getElementById('floatingHand');
+        const introModal = document.getElementById('introModal');
+        const voiceOverlay = document.getElementById('voiceOverlay');
+        const chatBody = document.getElementById('chatBody');
+        const chatWidget = document.getElementById('chatWidget');
+        const chatLauncher = document.getElementById('chatLauncher');
+        const introVideoOverlay = document.getElementById('introVideoOverlay');
+        const introVideo = document.getElementById('introVideo');
+        const applyBannerPersonalization = document.getElementById('applyBannerPersonalization');
+        const applyBannerFirm = document.getElementById('applyBannerFirm');
+
+        function closeIntroModal() {
+            introModal.style.display = 'none';
+            if (chatLauncher) {
+                chatLauncher.classList.add('show');
+            }
+            window.scrollTo({ top: 0, behavior: 'auto' });
+        }
+
+        function openVoiceOverlay() {
+            voiceOverlay.classList.add('active');
+        }
+
+        function closeVoiceOverlay() {
+            voiceOverlay.classList.remove('active');
+        }
+
+        function openChatFlow() {
+            introVideoOverlay.classList.remove('active');
+            chatWidget.classList.add('active');
+            if (chatLauncher) chatLauncher.style.display = 'none';
+            floatingHand.classList.remove('show');
+        }
+
+        function skipIntroVideo() {
+            if (!introVideo.paused) {
+                introVideo.pause();
+            }
+            openChatFlow();
+        }
+
+        function minimizeChat() {
+            chatWidget.classList.remove('active');
+            if (chatLauncher) {
+                chatLauncher.style.display = 'inline-flex';
+            }
+        }
+
+        if (chatLauncher) {
+            chatLauncher.addEventListener('click', () => {
+                introVideoOverlay.classList.add('active');
+                try {
+                    introVideo.currentTime = 0;
+                    introVideo.play();
+                } catch (err) {
+                    console.warn('Video autoplay blocked:', err);
+                }
+            });
+        }
+
+        introVideo.addEventListener('ended', () => {
+            openChatFlow();
+        });
+
+        window.skipIntroVideo = skipIntroVideo;
+        window.minimizeChat = minimizeChat;
+
+        const voiceToggle = document.getElementById('voiceToggle');
+        const chatInputField = document.getElementById('chatInputField');
+        const micButton = document.getElementById('chatMicButton');
+        const micTimer = document.getElementById('micTimer');
+        const chatHintText = document.getElementById('chatHintText');
+        const themeSwitcher = document.getElementById('chatThemeSwitcher');
+
+        const DEFAULT_HINT = 'Powered by TrueVow.law';
+        let hintTimeout = null;
+        let isVoiceOn = true;
+        let isBenjaminSpeaking = false;
+        let isRecording = false;
+        let micInterval = null;
+        let recordingSeconds = 0;
+        let pendingVoiceTranscript = null;
+        let pendingQuestionTimeout = null;
+
+        const questionQueue = [
+            {
+                question: 'Thank you. Any injuries that required medical attention? This helps our attorneys prepare accurately.',
+                options: [
+                    'No injuries, just soreness',
+                    'Yes, ER visit + wrist fracture',
+                    'Need to share more details'
+                ]
+            },
+            {
+                question: "Understood. I can get you on Attorney Oakwood's calendar. Does tomorrow at 3:30 p.m. work?",
+                options: [
+                    'Yes, lock tomorrow at 3:30 p.m.',
+                    'Prefer a later time this week',
+                    'Send me your booking calendar'
+                ]
+            },
+            {
+                question: "Perfect. Anything else you'd like me to share with Attorney Oakwood before the consult?",
+                options: [
+                    'All set — send confirmation',
+                    'Please email intake summary',
+                    'Need to loop in my paralegal'
+                ]
+            }
+        ];
+
+        const themePresets = {
+            classic: {
+                '--widget-bg': '#FFFFFF',
+                '--header-bg': 'linear-gradient(120deg, #0A2463, #102B73)',
+                '--header-text-color': '#FFFFFF',
+                '--benjamin-bubble-bg': '#0A2463',
+                '--benjamin-bubble-color': '#F5F7FF',
+                '--user-bubble-bg': '#FFFFFF',
+                '--user-bubble-color': '#0A2463',
+                '--option-default-bg': 'rgba(18,27,42,0.82)',
+                '--option-default-color': 'rgba(255,255,255,0.85)',
+                '--option-border': 'rgba(18,27,42,0.25)',
+                '--option-hover-shadow': '0 16px 28px rgba(10,18,30,0.28)',
+                '--option-selected-bg': 'linear-gradient(135deg, #0A2463 0%, #1a3e8f 60%, #0A2463 100%)',
+                '--option-selected-shadow': '0 18px 32px rgba(10,36,99,0.35)',
+                '--mic-default-bg': 'linear-gradient(135deg, #0A2463, #173a82)',
+                '--mic-default-shadow': '0 12px 24px rgba(10,36,99,0.25)',
+                '--mic-ready-bg': 'linear-gradient(135deg, #173a82, #274b9f)',
+                '--mic-ready-shadow': '0 18px 32px rgba(10,36,99,0.35)',
+                '--mic-recording-bg': 'linear-gradient(135deg, #E63946, #FF6B6B)',
+                '--mic-recording-shadow': '0 18px 32px rgba(230,57,70,0.35)',
+                '--hint-color': 'rgba(10,36,99,0.65)',
+                '--voice-wave-color': 'rgba(10,36,99,0.6)',
+                '--voice-switch-bg': 'rgba(255,255,255,0.3)',
+                '--voice-switch-off-bg': 'rgba(255,255,255,0.12)',
+                '--voice-switch-text-color-on': '#0A2463',
+                '--voice-switch-text-color-off': 'rgba(255,255,255,0.9)',
+                '--body-bg': '#F5F7FF'
+            },
+            slate: {
+                '--widget-bg': '#111827',
+                '--header-bg': 'linear-gradient(135deg, #1f2937, #0f172a)',
+                '--header-text-color': '#E5E7EB',
+                '--benjamin-bubble-bg': '#1f2937',
+                '--benjamin-bubble-color': '#E5E7EB',
+                '--user-bubble-bg': '#F9FAFB',
+                '--user-bubble-color': '#0B1120',
+                '--option-default-bg': 'rgba(37, 47, 63, 0.9)',
+                '--option-default-color': '#F3F4F6',
+                '--option-border': 'rgba(148, 163, 184, 0.35)',
+                '--option-hover-shadow': '0 16px 28px rgba(15, 23, 42, 0.35)',
+                '--option-selected-bg': 'linear-gradient(135deg, #2563EB, #1D4ED8)',
+                '--option-selected-shadow': '0 18px 34px rgba(59,130,246,0.35)',
+                '--mic-default-bg': 'linear-gradient(135deg, #1f2937, #111827)',
+                '--mic-default-shadow': '0 12px 24px rgba(15,23,42,0.32)',
+                '--mic-ready-bg': 'linear-gradient(135deg, #2563EB, #1D4ED8)',
+                '--mic-ready-shadow': '0 18px 32px rgba(37, 99, 235, 0.38)',
+                '--mic-recording-bg': 'linear-gradient(135deg, #EF4444, #F87171)',
+                '--mic-recording-shadow': '0 18px 32px rgba(239,68,68,0.38)',
+                '--hint-color': 'rgba(209,213,219,0.85)',
+                '--voice-wave-color': 'rgba(147,197,253,0.75)',
+                '--voice-switch-bg': 'rgba(59,130,246,0.45)',
+                '--voice-switch-off-bg': 'rgba(148,163,184,0.25)',
+                '--voice-switch-text-color-on': '#0B1120',
+                '--voice-switch-text-color-off': '#F9FAFB',
+                '--body-bg': '#0F172A'
+            },
+            dawn: {
+                '--widget-bg': '#FFFBF8',
+                '--header-bg': 'linear-gradient(135deg, #fce7f3, #f4a261)',
+                '--header-text-color': '#4A2C2A',
+                '--benjamin-bubble-bg': '#f4a261',
+                '--benjamin-bubble-color': '#FFF8F0',
+                '--user-bubble-bg': '#FFFFFF',
+                '--user-bubble-color': '#4A2C2A',
+                '--option-default-bg': 'rgba(250, 209, 173, 0.85)',
+                '--option-default-color': '#4A2C2A',
+                '--option-border': 'rgba(236, 179, 144, 0.6)',
+                '--option-hover-shadow': '0 16px 28px rgba(244, 162, 97, 0.32)',
+                '--option-selected-bg': 'linear-gradient(135deg, #f87171, #fbbf24)',
+                '--option-selected-shadow': '0 18px 32px rgba(248, 113, 113, 0.35)',
+                '--mic-default-bg': 'linear-gradient(135deg, #f87171, #f97316)',
+                '--mic-default-shadow': '0 12px 24px rgba(120, 53, 15, 0.25)',
+                '--mic-ready-bg': 'linear-gradient(135deg, #f59e0b, #f97316)',
+                '--mic-ready-shadow': '0 18px 32px rgba(248, 113, 113, 0.35)',
+                '--hint-color': 'rgba(120, 53, 15, 0.75)',
+                '--voice-wave-color': 'rgba(248, 113, 113, 0.7)',
+                '--voice-switch-bg': 'rgba(255, 255, 255, 0.4)',
+                '--voice-switch-off-bg': 'rgba(255,255,255,0.2)',
+                '--voice-switch-text-color-on': '#7C2D12',
+                '--voice-switch-text-color-off': '#7C2D12',
+                '--body-bg': '#FFF5EC'
+            },
+            emerald: {
+                '--widget-bg': '#ECE5DD',
+                '--header-bg': 'linear-gradient(135deg, #075E54, #128C7E)',
+                '--header-text-color': '#E9F5F0',
+                '--benjamin-bubble-bg': '#075E54',
+                '--benjamin-bubble-color': '#E9F5F0',
+                '--user-bubble-bg': '#DCF8C6',
+                '--user-bubble-color': '#064E3B',
+                '--option-default-bg': 'rgba(220, 248, 198, 0.92)',
+                '--option-default-color': '#064E3B',
+                '--option-border': 'rgba(7, 94, 84, 0.25)',
+                '--option-hover-shadow': '0 16px 28px rgba(7, 94, 84, 0.22)',
+                '--option-selected-bg': 'linear-gradient(135deg, #0DCDA5, #25D366)',
+                '--option-selected-shadow': '0 18px 32px rgba(37, 211, 102, 0.35)',
+                '--mic-default-bg': 'linear-gradient(135deg, #25D366, #128C7E)',
+                '--mic-default-shadow': '0 12px 24px rgba(7, 94, 84, 0.25)',
+                '--mic-ready-bg': 'linear-gradient(135deg, #128C7E, #0DCDA5)',
+                '--mic-ready-shadow': '0 18px 32px rgba(37, 211, 102, 0.35)',
+                '--mic-recording-bg': 'linear-gradient(135deg, #F55454, #FF7D7D)',
+                '--mic-recording-shadow': '0 18px 32px rgba(245,84,84,0.35)',
+                '--hint-color': 'rgba(7, 94, 84, 0.75)',
+                '--voice-wave-color': 'rgba(37, 211, 102, 0.8)',
+                '--voice-switch-bg': 'rgba(255, 255, 255, 0.4)',
+                '--voice-switch-off-bg': 'rgba(214, 233, 220, 0.6)',
+                '--voice-switch-text-color-on': '#064E3B',
+                '--voice-switch-text-color-off': '#064E3B',
+                '--body-bg': '#ECE5DD'
+            },
+            lagoon: {
+                '--widget-bg': '#E0F7FA',
+                '--header-bg': 'linear-gradient(135deg, #006064, #0097A7)',
+                '--header-text-color': '#E0F7FA',
+                '--benjamin-bubble-bg': '#006064',
+                '--benjamin-bubble-color': '#E0F7FA',
+                '--user-bubble-bg': '#C8FACD',
+                '--user-bubble-color': '#014451',
+                '--option-default-bg': 'rgba(224, 242, 241, 0.95)',
+                '--option-default-color': '#014451',
+                '--option-border': 'rgba(0, 151, 167, 0.3)',
+                '--option-hover-shadow': '0 16px 28px rgba(0, 151, 167, 0.25)',
+                '--option-selected-bg': 'linear-gradient(135deg, #00ACC1, #4DD0E1)',
+                '--option-selected-shadow': '0 18px 32px rgba(0, 172, 193, 0.35)',
+                '--mic-default-bg': 'linear-gradient(135deg, #00ACC1, #26C6DA)',
+                '--mic-default-shadow': '0 12px 24px rgba(0, 103, 114, 0.25)',
+                '--mic-ready-bg': 'linear-gradient(135deg, #4DD0E1, #26C6DA)',
+                '--mic-ready-shadow': '0 18px 32px rgba(0, 172, 193, 0.35)',
+                '--mic-recording-bg': 'linear-gradient(135deg, #E63946, #FF6B6B)',
+                '--mic-recording-shadow': '0 18px 32px rgba(230,57,70,0.35)',
+                '--hint-color': 'rgba(1, 68, 81, 0.78)',
+                '--voice-wave-color': 'rgba(0, 188, 212, 0.75)',
+                '--voice-switch-bg': 'rgba(255, 255, 255, 0.45)',
+                '--voice-switch-off-bg': 'rgba(224, 242, 241, 0.7)',
+                '--voice-switch-text-color-on': '#014451',
+                '--voice-switch-text-color-off': '#014451',
+                '--body-bg': '#E0F7FA'
+            },
+            sand: {
+                '--widget-bg': '#F5EFE6',
+                '--header-bg': 'linear-gradient(135deg, #BCAAA4, #8D6E63)',
+                '--header-text-color': '#FDF6EC',
+                '--benjamin-bubble-bg': '#8D6E63',
+                '--benjamin-bubble-color': '#FDF6EC',
+                '--user-bubble-bg': '#FBF4E9',
+                '--user-bubble-color': '#5D4037',
+                '--option-default-bg': 'rgba(251, 244, 233, 0.95)',
+                '--option-default-color': '#5D4037',
+                '--option-border': 'rgba(189, 163, 139, 0.45)',
+                '--option-hover-shadow': '0 16px 28px rgba(141, 110, 99, 0.25)',
+                '--option-selected-bg': 'linear-gradient(135deg, #D7CCC8, #BCAAA4)',
+                '--option-selected-shadow': '0 18px 30px rgba(141,110,99,0.28)',
+                '--mic-default-bg': 'linear-gradient(135deg, #BCAAA4, #8D6E63)',
+                '--mic-default-shadow': '0 12px 24px rgba(93, 64, 55, 0.25)',
+                '--mic-ready-bg': 'linear-gradient(135deg, #A1887F, #8D6E63)',
+                '--mic-ready-shadow': '0 18px 30px rgba(93, 64, 55, 0.28)',
+                '--mic-recording-bg': 'linear-gradient(135deg, #E63946, #FF6B6B)',
+                '--mic-recording-shadow': '0 18px 32px rgba(230,57,70,0.35)',
+                '--hint-color': 'rgba(93, 64, 55, 0.78)',
+                '--voice-wave-color': 'rgba(189, 163, 139, 0.7)',
+                '--voice-switch-bg': 'rgba(255, 255, 255, 0.5)',
+                '--voice-switch-off-bg': 'rgba(243, 233, 224, 0.7)',
+                '--voice-switch-text-color-on': '#5D4037',
+                '--voice-switch-text-color-off': '#5D4037',
+                '--body-bg': '#F5EFE6'
+            },
+            pastel: {
+                '--widget-bg': '#F7F9FF',
+                '--header-bg': 'linear-gradient(135deg, #C9D6FF, #E2E2E2)',
+                '--header-text-color': '#1E1E2F',
+                '--benjamin-bubble-bg': '#C9D6FF',
+                '--benjamin-bubble-color': '#1E1E2F',
+                '--user-bubble-bg': '#FFFFFF',
+                '--user-bubble-color': '#2E3A59',
+                '--option-default-bg': 'rgba(233, 238, 255, 0.95)',
+                '--option-default-color': '#2E3A59',
+                '--option-border': 'rgba(201, 214, 255, 0.6)',
+                '--option-hover-shadow': '0 16px 28px rgba(201, 214, 255, 0.35)',
+                '--option-selected-bg': 'linear-gradient(135deg, #A1C4FD, #C2E9FB)',
+                '--option-selected-shadow': '0 18px 32px rgba(161, 196, 253, 0.35)',
+                '--mic-default-bg': 'linear-gradient(135deg, #A1C4FD, #C2E9FB)',
+                '--mic-default-shadow': '0 12px 24px rgba(46, 58, 89, 0.25)',
+                '--mic-ready-bg': 'linear-gradient(135deg, #9CECFB, #65C7F7)',
+                '--mic-ready-shadow': '0 18px 32px rgba(161, 196, 253, 0.35)',
+                '--mic-recording-bg': 'linear-gradient(135deg, #F76E6E, #FF8DA1)',
+                '--mic-recording-shadow': '0 18px 32px rgba(247,110,110,0.32)',
+                '--hint-color': 'rgba(46, 58, 89, 0.78)',
+                '--voice-wave-color': 'rgba(161, 196, 253, 0.8)',
+                '--voice-switch-bg': 'rgba(255, 255, 255, 0.55)',
+                '--voice-switch-off-bg': 'rgba(233, 238, 255, 0.75)',
+                '--voice-switch-text-color-on': '#2E3A59',
+                '--voice-switch-text-color-off': '#2E3A59',
+                '--body-bg': '#F7F9FF'
+            },
+            violet: {
+                '--widget-bg': '#F7F5FF',
+                '--header-bg': 'linear-gradient(135deg, #DDD6FE, #C4B5FD)',
+                '--header-text-color': '#382B5F',
+                '--benjamin-bubble-bg': '#C7B8FF',
+                '--benjamin-bubble-color': '#2F2652',
+                '--user-bubble-bg': '#FFFFFF',
+                '--user-bubble-color': '#3C2F67',
+                '--option-default-bg': 'rgba(235, 229, 255, 0.95)',
+                '--option-default-color': '#382B5F',
+                '--option-border': 'rgba(199, 184, 255, 0.5)',
+                '--option-hover-shadow': '0 16px 28px rgba(199, 184, 255, 0.3)',
+                '--option-selected-bg': 'linear-gradient(135deg, #CABCF8, #E0D9FF)',
+                '--option-selected-shadow': '0 18px 32px rgba(202, 188, 248, 0.35)',
+                '--mic-default-bg': 'linear-gradient(135deg, #CABCF8, #A78BFA)',
+                '--mic-default-shadow': '0 12px 24px rgba(138, 115, 212, 0.28)',
+                '--mic-ready-bg': 'linear-gradient(135deg, #B8A4F6, #8B5CF6)',
+                '--mic-ready-shadow': '0 18px 32px rgba(139, 92, 246, 0.32)',
+                '--mic-recording-bg': 'linear-gradient(135deg, #F76E6E, #FF8DA1)',
+                '--mic-recording-shadow': '0 18px 32px rgba(247,110,110,0.32)',
+                '--hint-color': 'rgba(60, 47, 103, 0.75)',
+                '--voice-wave-color': 'rgba(167, 139, 250, 0.75)',
+                '--voice-switch-bg': 'rgba(255, 255, 255, 0.55)',
+                '--voice-switch-off-bg': 'rgba(233, 224, 255, 0.75)',
+                '--voice-switch-text-color-on': '#3C2F67',
+                '--voice-switch-text-color-off': '#3C2F67',
+                '--body-bg': '#F7F5FF'
+            }
+        };
+
+        function formatTime(seconds) {
+            const mins = String(Math.floor(seconds / 60)).padStart(2, '0');
+            const secs = String(seconds % 60).padStart(2, '0');
+            return `${mins}:${secs}`;
+        }
+
+        function setHint(message, temporary = false) {
+            if (!chatHintText) return;
+            chatHintText.textContent = message;
+            if (temporary) {
+                if (hintTimeout) clearTimeout(hintTimeout);
+                hintTimeout = setTimeout(() => {
+                    chatHintText.textContent = DEFAULT_HINT;
+                    hintTimeout = null;
+                }, 3200);
+            }
+        }
+
+        function resetHint() {
+            if (hintTimeout) {
+                clearTimeout(hintTimeout);
+                hintTimeout = null;
+            }
+            setHint(DEFAULT_HINT);
+        }
+
+        function disableMic() {
+            if (micButton) {
+                micButton.classList.add('disabled');
+            }
+        }
+
+        function enableMic() {
+            if (micButton) {
+                micButton.classList.remove('disabled');
+            }
+        }
+
+        function appendTurn(role, text, options = {}) {
+            if (!chatBody) return {};
+            const turn = document.createElement('div');
+            turn.className = `chat-turn ${role}`;
+            let indicator = null;
+
+            if (role === 'benjamin') {
+                indicator = document.createElement('div');
+                indicator.className = `voice-indicator ${options.active ? '' : 'inactive'}`.trim();
+                indicator.setAttribute('aria-hidden', 'true');
+                const wave = document.createElement('div');
+                wave.className = 'wave';
+                wave.innerHTML = '<span></span><span></span><span></span>';
+                const label = document.createElement('span');
+                label.textContent = options.active ? 'Benjamin is speaking' : 'Voice ready';
+                indicator.appendChild(wave);
+                indicator.appendChild(label);
+                turn.appendChild(indicator);
+            }
+
+            const bubble = document.createElement('div');
+            bubble.className = `chat-bubble ${role === 'user' ? 'user' : 'benjamin'}`;
+            bubble.textContent = text;
+            turn.appendChild(bubble);
+            if (options.animate && role === 'user') {
+                turn.classList.add('fade-in');
+            }
+            chatBody.appendChild(turn);
+            chatBody.scrollTop = chatBody.scrollHeight;
+            return { turn, indicator };
+        }
+
+        function appendBenjaminQuestion(questionObj) {
+            chatBody?.querySelectorAll('.option-group[data-pending-removal="true"]').forEach((group) => group.remove());
+            const { turn, indicator } = appendTurn('benjamin', questionObj.question, { active: isVoiceOn });
+            if (questionObj.options && questionObj.options.length) {
+                const group = document.createElement('div');
+                group.className = 'option-group';
+                questionObj.options.forEach((label) => {
+                    const button = document.createElement('button');
+                    button.type = 'button';
+                    button.className = 'option-button';
+                    button.dataset.action = 'chat';
+                    button.textContent = label;
+                    group.appendChild(button);
+                });
+                turn.appendChild(group);
+            }
+            setBenjaminSpeakingState(true, indicator);
+            turn.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        }
+
+        function appendSystemNote(text) {
+            if (!chatBody) return;
+            const turn = document.createElement('div');
+            turn.className = 'chat-turn system';
+            const bubble = document.createElement('div');
+            bubble.className = 'chat-bubble user';
+            bubble.style.background = '#F0F3FF';
+            bubble.style.color = '#0A2463';
+            bubble.style.fontSize = '13px';
+            bubble.textContent = text;
+            turn.appendChild(bubble);
+            chatBody.appendChild(turn);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function scheduleNextQuestion(delay = 900) {
+            chatBody?.querySelectorAll('.option-group.animating').forEach((group) => group.remove());
+            if (!questionQueue.length) return;
+            if (pendingQuestionTimeout) {
+                clearTimeout(pendingQuestionTimeout);
+            }
+            pendingQuestionTimeout = setTimeout(() => {
+                const next = questionQueue.shift();
+                appendBenjaminQuestion(next);
+            }, delay);
+        }
+
+        function setBenjaminSpeakingState(state, indicator) {
+            isBenjaminSpeaking = state;
+            if (state) {
+                disableMic();
+                setHint(isVoiceOn ? 'Benjamin is narrating this step…' : 'Voice muted — chat continues silently.', true);
+                if (indicator) {
+                    indicator.classList.remove('inactive');
+                }
+                setTimeout(() => {
+                    setBenjaminSpeakingState(false, indicator);
+                }, 2200);
+            } else {
+                enableMic();
+                if (indicator) {
+                    indicator.classList.add('inactive');
+                    indicator.querySelector('span:last-child').textContent = 'Voice ready';
+                }
+                if (!pendingVoiceTranscript) {
+                    resetHint();
+                }
+            }
+        }
+
+        if (voiceToggle) {
+            voiceToggle.addEventListener('click', () => {
+                isVoiceOn = !isVoiceOn;
+                voiceToggle.setAttribute('aria-pressed', isVoiceOn ? 'true' : 'false');
+                const label = voiceToggle.querySelector('span');
+                if (label) {
+                    label.textContent = isVoiceOn ? 'On' : 'Off';
+                }
+                setHint(isVoiceOn ? 'Benjamin will read each step aloud.' : 'Voice muted — chat continues silently.', true);
+            });
+        }
+
+        if (chatBody) {
+            chatBody.addEventListener('click', (event) => {
+                const button = event.target.closest('.option-button');
+                if (!button || isBenjaminSpeaking) return;
+                const group = button.closest('.option-group');
+                if (!group) return;
+
+                if (group.dataset.animating === 'true') return;
+                group.dataset.animating = 'true';
+                group.classList.add('animating');
+
+                const response = button.textContent.trim();
+
+                group.querySelectorAll('.option-button').forEach((btn) => {
+                    btn.disabled = true;
+                    if (btn === button) {
+                        btn.classList.add('lift');
+                    } else {
+                        btn.classList.add('fade-out');
+                    }
+                });
+
+                const finalize = (event) => {
+                    if (event.animationName !== 'tv-optionLift') return;
+                    button.removeEventListener('animationend', finalize);
+                    appendTurn('user', response, { animate: true });
+                    group.remove();
+                    scheduleNextQuestion();
+                };
+                button.addEventListener('animationend', finalize);
+            });
+        }
+
+        if (chatInputField) {
+            chatInputField.addEventListener('input', () => {
+                if (!micButton) return;
+                if (chatInputField.value.trim()) {
+                    micButton.classList.add('ready');
+                } else if (!pendingVoiceTranscript) {
+                    micButton.classList.remove('ready');
+                }
+            });
+
+            chatInputField.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' && chatInputField.value.trim()) {
+                    const message = chatInputField.value.trim();
+                    chatInputField.value = '';
+                    micButton.classList.remove('ready');
+                    appendTurn('user', message, { animate: true });
+                    setHint('Thanks — Benjamin is reviewing your response.', true);
+                    scheduleNextQuestion();
+                }
+            });
+        }
+
+        function startRecording() {
+            if (!micButton || isBenjaminSpeaking) return;
+            isRecording = true;
+            recordingSeconds = 0;
+            micButton.classList.add('recording');
+            micButton.classList.remove('ready');
+            setHint('Listening… release to send or tap again to stop.', true);
+            if (micTimer) {
+                micTimer.textContent = formatTime(recordingSeconds);
+            }
+            micInterval = setInterval(() => {
+                recordingSeconds += 1;
+                if (micTimer) {
+                    micTimer.textContent = formatTime(recordingSeconds);
+                }
+            }, 1000);
+        }
+
+        function stopRecording() {
+            if (!isRecording) return;
+            isRecording = false;
+            micButton.classList.remove('recording');
+            if (micInterval) {
+                clearInterval(micInterval);
+                micInterval = null;
+            }
+            pendingVoiceTranscript = `Voice reply (~${formatTime(recordingSeconds)})`;
+            micButton.classList.add('ready');
+            setHint('Tap arrow to send your voice reply.', false);
+        }
+
+        function sendPendingVoice() {
+            if (!pendingVoiceTranscript) return;
+            appendTurn('user', pendingVoiceTranscript, { animate: true });
+            appendSystemNote(`Benjamin heard: "${pendingVoiceTranscript}". Edit if that's not right.`);
+            pendingVoiceTranscript = null;
+            micButton.classList.remove('ready');
+            if (micTimer) {
+                micTimer.textContent = '00:00';
+            }
+            resetHint();
+            scheduleNextQuestion();
+        }
+
+        if (micButton) {
+            micButton.addEventListener('click', () => {
+                if (micButton.classList.contains('disabled')) {
+                    return;
+                }
+                if (micButton.classList.contains('ready') && chatInputField && chatInputField.value.trim()) {
+                    const message = chatInputField.value.trim();
+                    chatInputField.value = '';
+                    micButton.classList.remove('ready');
+                    appendTurn('user', message, { animate: true });
+                    setHint('Thanks — Benjamin is reviewing your response.', true);
+                    scheduleNextQuestion();
+                    return;
+                }
+                if (!isRecording && !pendingVoiceTranscript) {
+                    startRecording();
+                    return;
+                }
+                if (isRecording) {
+                    stopRecording();
+                    return;
+                }
+                if (pendingVoiceTranscript) {
+                    sendPendingVoice();
+                }
+            });
+        }
+
+        function applyTheme(themeName) {
+            if (!chatWidget) return;
+            const preset = themePresets[themeName] || themePresets.classic;
+            Object.entries(preset).forEach(([key, value]) => {
+                chatWidget.style.setProperty(key, value);
+            });
+            chatWidget.style.setProperty('--voice-switch-bg', 'rgba(255,255,255,0.78)');
+            chatWidget.style.setProperty('--voice-switch-off-bg', 'rgba(12,22,44,0.25)');
+            chatWidget.style.setProperty('--voice-switch-text-color-on', '#0B1633');
+            chatWidget.style.setProperty('--voice-switch-text-color-off', '#0B1633');
+            if (themeSwitcher) {
+                themeSwitcher.querySelectorAll('.theme-dot').forEach((dot) => {
+                    dot.classList.toggle('active', dot.dataset.theme === themeName);
+                });
+            }
+        }
+
+        if (themeSwitcher) {
+            themeSwitcher.addEventListener('click', (event) => {
+                const dot = event.target.closest('.theme-dot');
+                if (!dot) return;
+                applyTheme(dot.dataset.theme);
+            });
+        }
+
+        resetHint();
+        applyTheme('emerald');
+        window.scrollTo({ top: 0, behavior: 'auto' });
+
+        const initialIndicator = chatBody?.querySelector('.chat-turn.benjamin.speaking .voice-indicator');
+        if (initialIndicator) {
+            setBenjaminSpeakingState(true, initialIndicator);
+            scheduleNextQuestion(1600);
+        }
+
+        // Expose for inline button attributes
+        window.closeIntroModal = closeIntroModal;
+        window.openVoiceOverlay = openVoiceOverlay;
+        window.closeVoiceOverlay = closeVoiceOverlay;
+        window.minimizeChat = minimizeChat;
+
+        // Prefill apply CTA if demo data exists
+        const leadDataRaw = localStorage.getItem('truevowDemoLead');
+        if (leadDataRaw) {
+            try {
+                const lead = JSON.parse(leadDataRaw);
+                if (applyBannerPersonalization) {
+                    let label = 'Your team';
+                    if (lead?.first_name && lead?.firm_name) {
+                        label = `${lead.first_name} from ${lead.firm_name}`;
+                    } else if (lead?.firm_name) {
+                        label = lead.firm_name;
+                    } else if (lead?.first_name) {
+                        label = lead.first_name;
+                    }
+                    applyBannerPersonalization.textContent = label;
+                }
+                if (applyBannerFirm) {
+                    if (lead?.firm_name) {
+                        applyBannerFirm.textContent = lead.firm_name;
+                    } else {
+                        applyBannerFirm.textContent = 'TrueVow';
+                    }
+                }
+            } catch (err) {
+                console.warn('Unable to read stored lead data:', err);
+            }
+        }
+
+        // Auto-show hand after a delay if modal already closed
+        setTimeout(() => {
+            if (introModal.style.display === 'none' && chatLauncher?.style.display !== 'none') {
+                floatingHand.classList.add('show');
+            }
+        }, 6000);
+
+        // Ensure floating hand disappears when widget gets focus
+        chatWidget.addEventListener('mouseenter', () => floatingHand.classList.remove('show'));
+    </script>
+
+﻿
+
+﻿<!-- STANDARDIZED FOOTER - Apply to all pages -->
+<footer style="background: #1A1A1A; color: white; padding: 60px 20px 120px 20px; text-align: center;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <!-- Logo -->
+        <a href="index.html" class="logo" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-family: 'Montserrat', sans-serif; margin-bottom: 24px; justify-content: center;">
+            <div class="logo-monogram" style="position: relative; width: 38px; height: 32px; flex-shrink: 0;">
+                <span class="logo-monogram-t1" style="position: absolute; left: 0; top: 0; font-size: 32px; font-weight: 400; color: #666666; line-height: 1;">T</span>
+                <span class="logo-monogram-t2" style="position: absolute; left: 6px; top: 0; font-size: 32px; font-weight: 400; color: #999999; line-height: 1;">T</span>
+                <span class="logo-monogram-v" style="position: absolute; left: 12px; top: 0; font-size: 32px; font-weight: 700; color: #FFFFFF; line-height: 1;">V</span>
+            </div>
+            <div class="logo-text" style="display: flex; align-items: baseline; gap: 0;">
+                <span class="logo-true" style="font-size: 22px; font-weight: 400; color: #999999; letter-spacing: 0.5px;">True</span>
+                <span class="logo-vow" style="font-size: 22px; font-weight: 700; color: #FFFFFF; letter-spacing: 0.5px;">Vow</span>
+                <span class="logo-law" style="font-size: 18px; font-weight: 400; color: #FFFFFF;">.law</span>
+            </div>
+        </a>
+        
+        <p style="font-size: 16px; color: #999; margin-bottom: 40px; line-height: 1.6;">
+            More clients. More money. More time with your family.<br>
+            All without risking your license.
+        </p>
+        
+        <!-- 3-Column Links -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 900px; margin: 40px auto; text-align: center;">
+            <div>
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px;">PRODUCT</h4>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="how-it-works.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">How It Works</a>
+                    <a href="pricing.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Pricing</a>
+                    <a href="profitability.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">ROI &amp; Profitability</a>
+                    <a href="county-cap.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">33% County Cap</a>
+                    <a href="settle.html" style="color: #FFD700; text-decoration: none; font-size: 15px; font-weight: 600; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#FFD700'">🎁 SETTLE (Coming Q3 2026)</a>
+                    <a href="draft.html" style="color: #FFD700; text-decoration: none; font-size: 15px; font-weight: 600; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#FFD700'">📄 DRAFT (Coming Q4 2026)</a>
+                    <a href="connect.html" style="color: #FFD700; text-decoration: none; font-size: 15px; font-weight: 600; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#FFD700'">🔗 CONNECT (Coming Q1 2027)</a>
+                </div>
+            </div>
+            <div>
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px;">RESOURCES</h4>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="blog.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Blog</a>
+                    <a href="case-studies.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Case Studies</a>
+                    <a href="partner.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Partner Program</a>
+                    <a href="affiliate.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Affiliate Program</a>
+                </div>
+            </div>
+            <div>
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px;">COMPANY</h4>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="about.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">About Us</a>
+                    <a href="careers.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Careers</a>
+                    <a href="press.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Press</a>
+                    <a href="apply.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Contact</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Legal Links -->
+        <div style="display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 40px; flex-wrap: wrap; font-size: 14px;">
+            <a href="../legal/privacy.html" style="color: #999; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Privacy Policy</a>
+            <span style="color: #555;">|</span>
+            <a href="../legal/terms.html" style="color: #999; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Terms of Service</a>
+            <span style="color: #555;">|</span>
+            <a href="../legal/msa.html" style="color: #999; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">MSA</a>
+            <span style="color: #555;">|</span>
+            <a href="../legal/bar-compliance.html" style="color: #999; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Bar Compliance</a>
+        </div>
+        
+        <!-- Disclaimer -->
+        <p style="font-size: 11pt; color: #555; margin-top: 32px; line-height: 1.8; max-width: 900px; margin-left: auto; margin-right: auto; padding-bottom: 60px;">
+            © 2026 TrueVow Technologies. All rights reserved. TrueVow is a brand of TrueVow Global Tech FZE LLC (UAE), a subsidiary of TrueVow Global Holdings LLC (Nevis). TrueVow (USA) Inc. (Wyoming) provides passive marketing only and does not handle contracts or operations. All contracts are with TrueVow Global Tech FZE LLC (UAE). Technology and IP held by TrueVow Global Holdings LLC (Nevis). We are not a law firm and do not provide legal advice. By using our services, you acknowledge that TrueVow operates as a technology and services provider only.
+        </p>
+    </div>
+</footer>
+
+
+</body>
+</html>

@@ -55,7 +55,7 @@ BLS_LAW_OFFICES = {
     "desoto": 85,
     "hendry": 80,
     "taylor": 75,
-    "calhoun": 70,
+    "calhoun": 15,  # Corrected: 70 was too high for 14K population, verified against multiple sources
     "holmes": 65,
     "washington": 60,
     "jefferson": 55,

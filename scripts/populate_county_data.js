@@ -8,11 +8,43 @@ const path = require('path');
 const { Client } = require('pg');
 require('dotenv').config({ path: '.env.local' });
 
-const SUPABASE_DB_HOST = process.env.SUPABASE_DB_HOST || process.env.MARKETING_DB_HOST || 'db.napwpkagxzqfpbearkjs.supabase.co';
-const SUPABASE_DB_PORT = parseInt(process.env.SUPABASE_DB_PORT || process.env.MARKETING_DB_PORT || '5432');
-const SUPABASE_DB_NAME = process.env.SUPABASE_DB_NAME || process.env.MARKETING_DB_NAME || 'postgres';
-const SUPABASE_DB_USER = process.env.SUPABASE_DB_USER || process.env.MARKETING_DB_USER || 'postgres';
-const SUPABASE_DB_PASSWORD = process.env.SUPABASE_DB_PASSWORD || process.env.MARKETING_DATABASE_PASSWORD;
+// Try to extract connection details from connection string first
+let SUPABASE_DB_HOST, SUPABASE_DB_PORT, SUPABASE_DB_NAME, SUPABASE_DB_USER, SUPABASE_DB_PASSWORD;
+let decodedPassword = null;
+
+const connectionString = process.env.SUPABASE_DB_URL || process.env.MARKETING_DATABASE_URL;
+if (connectionString && connectionString.startsWith('postgresql://')) {
+    try {
+        const url = new URL(connectionString);
+        SUPABASE_DB_USER = url.username || 'postgres';
+        SUPABASE_DB_PASSWORD = url.password ? decodeURIComponent(url.password) : null;
+        SUPABASE_DB_HOST = url.hostname;
+        SUPABASE_DB_PORT = parseInt(url.port || '5432');
+        SUPABASE_DB_NAME = url.pathname.slice(1) || 'postgres';
+        console.log(`📋 Extracted credentials from connection string`);
+    } catch (e) {
+        console.log(`⚠️  Could not parse connection string, using individual env vars`);
+    }
+}
+
+// Fallback to individual environment variables
+SUPABASE_DB_HOST = SUPABASE_DB_HOST || process.env.SUPABASE_DB_HOST || process.env.MARKETING_DB_HOST || 'db.napwpkagxzqfpbearkjs.supabase.co';
+SUPABASE_DB_PORT = SUPABASE_DB_PORT || parseInt(process.env.SUPABASE_DB_PORT || process.env.MARKETING_DB_PORT || '5432');
+SUPABASE_DB_NAME = SUPABASE_DB_NAME || process.env.SUPABASE_DB_NAME || process.env.MARKETING_DB_NAME || 'postgres';
+SUPABASE_DB_USER = SUPABASE_DB_USER || process.env.SUPABASE_DB_USER || process.env.MARKETING_DB_USER || 'postgres';
+
+// Get password - prefer connection string, then env vars
+const rawPassword = SUPABASE_DB_PASSWORD || process.env.SUPABASE_DB_PASSWORD || process.env.MARKETING_DATABASE_PASSWORD;
+SUPABASE_DB_PASSWORD = rawPassword;
+
+// If password contains URL encoding, try both versions
+if (rawPassword && rawPassword.includes('%')) {
+    try {
+        decodedPassword = decodeURIComponent(rawPassword);
+    } catch (e) {
+        // Decoding failed, keep original
+    }
+}
 
 // Practice area order
 const PRACTICE_AREA_ORDER = {
@@ -76,10 +108,11 @@ function extractPracticeAreaData(htmlContent) {
     }
     
     // Find the end of the object (look for closing brace at same level)
+    // Start from the opening brace after '='
     let braceCount = 0;
     let inString = false;
     let escapeNext = false;
-    let i = startIdx + startMarker.length;
+    let i = startIdx + startMarker.length - 1; // Start from the '{' character
     
     while (i < htmlContent.length) {
         const char = htmlContent[i];
@@ -103,7 +136,8 @@ function extractPracticeAreaData(htmlContent) {
                 braceCount++;
             } else if (char === '}') {
                 braceCount--;
-                if (braceCount === -1) {
+                if (braceCount === 0) {
+                    i++; // Include the closing brace
                     break;
                 }
             }
@@ -112,7 +146,7 @@ function extractPracticeAreaData(htmlContent) {
         i++;
     }
     
-    const objStr = htmlContent.substring(startIdx + startMarker.length, i);
+    const objStr = htmlContent.substring(startIdx + startMarker.length - 1, i);
     
     // Use eval to parse (safe in this context - we control the input)
     // Actually, let's use a safer approach - extract with regex
@@ -120,51 +154,16 @@ function extractPracticeAreaData(htmlContent) {
 }
 
 function parseJSObject(objStr) {
-    const data = {};
-    
-    // Extract county blocks using regex
-    const countyPattern = /"([^"]+)":\s*\{[^}]*"overall":\s*\{([^}]+)\}[^}]*"practiceAreas":\s*\{([^}]+)\}/g;
-    let match;
-    
-    while ((match = countyPattern.exec(objStr)) !== null) {
-        const countySlug = match[1];
-        const overallStr = match[2];
-        const practiceAreasStr = match[3];
-        
-        // Parse overall
-        const overall = {};
-        const overallMatches = overallStr.matchAll(/"([^"]+)":\s*(\d+)/g);
-        for (const m of overallMatches) {
-            overall[m[1]] = parseInt(m[2]);
-        }
-        
-        // Parse practice areas
-        const practiceAreas = {};
-        const paPattern = /"([^"]+)":\s*\{([^}]+)\}/g;
-        let paMatch;
-        
-        while ((paMatch = paPattern.exec(practiceAreasStr)) !== null) {
-            const paSlug = paMatch[1];
-            const paDataStr = paMatch[2];
-            const paData = {};
-            
-            // Extract name
-            const nameMatch = paDataStr.match(/"name":\s*"([^"]+)"/);
-            if (nameMatch) paData.name = nameMatch[1];
-            
-            // Extract numeric fields
-            const numMatches = paDataStr.matchAll(/"([^"]+)":\s*(\d+)/g);
-            for (const m of numMatches) {
-                paData[m[1]] = parseInt(m[2]);
-            }
-            
-            practiceAreas[paSlug] = paData;
-        }
-        
-        data[countySlug] = { overall, practiceAreas };
+    // Use Function constructor to safely evaluate the object (safer than eval)
+    // This handles nested objects correctly
+    try {
+        const data = new Function('return ' + objStr)();
+        return data;
+    } catch (error) {
+        console.error('Error parsing practiceAreaData:', error.message);
+        console.error('First 500 chars of object string:', objStr.substring(0, 500));
+        throw error;
     }
-    
-    return data;
 }
 
 async function populateDatabase(data) {
@@ -173,20 +172,43 @@ async function populateDatabase(data) {
         process.exit(1);
     }
     
-    const client = new Client({
-        host: SUPABASE_DB_HOST,
-        port: SUPABASE_DB_PORT,
-        database: SUPABASE_DB_NAME,
-        user: SUPABASE_DB_USER,
-        password: SUPABASE_DB_PASSWORD,
-        ssl: { rejectUnauthorized: false },
-        connectionTimeoutMillis: 10000,
-    });
+    // Try connection with original password first, then decoded if it fails
+    let client;
+    let passwordToUse = SUPABASE_DB_PASSWORD;
+    
+    const tryConnection = async (password) => {
+        const testClient = new Client({
+            host: SUPABASE_DB_HOST,
+            port: SUPABASE_DB_PORT,
+            database: SUPABASE_DB_NAME,
+            user: SUPABASE_DB_USER,
+            password: password,
+            ssl: { rejectUnauthorized: false },
+            connectionTimeoutMillis: 10000,
+        });
+        
+        await testClient.connect();
+        return testClient;
+    };
     
     try {
         console.log('🔌 Connecting to Supabase...');
-        await client.connect();
-        console.log('✅ Connected\n');
+        
+        // Try original password first
+        try {
+            client = await tryConnection(SUPABASE_DB_PASSWORD);
+            console.log('✅ Connected with original password format\n');
+        } catch (firstError) {
+            // If original fails and we have a decoded version, try that
+            if (decodedPassword && firstError.code === '28P01') {
+                console.log('⚠️  Original password failed, trying decoded version...');
+                client = await tryConnection(decodedPassword);
+                passwordToUse = decodedPassword;
+                console.log('✅ Connected with decoded password format\n');
+            } else {
+                throw firstError;
+            }
+        }
         
         // Insert counties
         console.log(`📝 Inserting ${Object.keys(data).length} counties...`);
@@ -289,7 +311,10 @@ async function populateDatabase(data) {
         
     } catch (error) {
         console.error('❌ Error:', error.message);
-        await client.end().catch(() => {});
+        // Only close connection if it was successfully established
+        if (client) {
+            await client.end().catch(() => {});
+        }
         process.exit(1);
     }
 }

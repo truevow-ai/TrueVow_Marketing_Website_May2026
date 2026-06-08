@@ -3,940 +3,313 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About TrueVow - A Letter from the Founder | Fighting Insurance Hegemony</title>
-    <meta name="description" content="Why we built TrueVow: To give solo and small law firms the tools insurance companies don't want you to have. Zero-knowledge architecture. Bar-compliant. Attorney-first always.">
+    <title>About TrueVow — Founder Letter for Solo &amp; Small Law Firms</title>
+    <meta name="description" content="Why TrueVow was built for solo and small PI firms: reliable intake, deterministic workflows, firm-controlled data handling, and practical tools attorneys can trust.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-            line-height: 1.8;
-            color: #1a1a1a;
-            background: #f8f9fa;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.8; color: #1a1a1a; background: #f8f9fa; }
+        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
+
         /* NAVIGATION */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #e5e5e5;
-            z-index: 1000;
-            padding: 20px 0;
-        }
-        
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 24px;
-        }
-        
-        .logo {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            text-decoration: none;
-            font-family: 'Montserrat', sans-serif;
-        }
-        
-        .logo-text {
-            font-size: 22px;
-            font-weight: 600;
-        }
-        
-        .logo-true {
-            color: #808080;
-            font-weight: 400;
-        }
-        
-        .logo-vow {
-            color: #0A2463;
-            font-weight: 700;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            align-items: center;
-        }
-        
-        .nav-links a {
-            color: #1a1a1a;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 16px;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: #0A2463;
-        }
-        
-        .nav-cta {
-            background: #0A2463;
-            color: white !important;
-            padding: 10px 24px;
-            border-radius: 8px;
-            transition: background 0.3s;
-        }
-        
-        .nav-cta:hover {
-            background: #0A2463;
-        }
-        
+        nav { position: sticky; top: 0; z-index: 1000; background: white; border-bottom: 1px solid #E5E5E5; padding: 20px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.04); font-family: 'Montserrat', sans-serif; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo-monogram { position: relative; width: 38px; height: 32px; flex-shrink: 0; }
+        .logo-monogram-t1 { position: absolute; left: 0; top: 0; font-size: 32px; font-weight: 400; color: #C0C0C0; line-height: 1; }
+        .logo-monogram-t2 { position: absolute; left: 6px; top: 0; font-size: 32px; font-weight: 400; color: #808080; line-height: 1; }
+        .logo-monogram-v { position: absolute; left: 12px; top: 0; font-size: 32px; font-weight: 700; color: #0A2463; line-height: 1; }
+        .logo-text { display: flex; align-items: baseline; gap: 0; }
+        .logo-true { font-size: 22px; font-weight: 400; color: #808080; letter-spacing: 0.5px; }
+        .logo-vow { font-size: 22px; font-weight: 700; color: #0A2463; letter-spacing: 0.5px; }
+        .logo-law { font-size: 18px; font-weight: 400; color: #0A2463; }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a { color: #555555; text-decoration: none; font-size: 16px; font-weight: 500; }
+        .nav-cta { background: #0A2463; color: white !important; padding: 12px 24px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: background 0.2s; }
+        .nav-cta:hover { background: #0052CC; }
+        .nav-dropdown { position: relative; }
+        .nav-dropdown-toggle { cursor: pointer; display: inline-flex; align-items: center; gap: 4px; background: none; border: none; color: #555; text-decoration: none; font-size: 16px; font-weight: 500; font-family: 'Montserrat', sans-serif; padding: 0; }
+        .nav-dropdown-toggle::after { content: ' ▾'; font-size: 10px; }
+        .nav-dropdown:hover .nav-dropdown-toggle::after { content: ' ▴'; }
+        .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%); background: white; border: 1px solid #E5E5E5; border-radius: 8px; padding: 8px 0; min-width: 210px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); z-index: 1001; }
+        .nav-dropdown-menu a { display: block; padding: 10px 20px; color: #555555 !important; text-decoration: none !important; font-size: 15px; font-weight: 500; white-space: nowrap; }
+        .nav-dropdown-menu a:hover { color: #0A2463 !important; background: #F8F9FA; }
+        .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+
+        /* HAMBURGER + MOBILE NAV */
+        .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; gap: 5px; }
+        .nav-hamburger span { display: block; width: 24px; height: 2px; background: #555; border-radius: 2px; transition: all 0.3s; }
+        .nav-hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .nav-hamburger.active span:nth-child(2) { opacity: 0; }
+        .nav-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+        .mobile-nav-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 999; }
+        .mobile-nav-overlay.active { display: block; }
+        .mobile-nav-panel { display: none; position: fixed; top: 0; right: -280px; width: 280px; height: 100vh; background: white; z-index: 1002; padding: 80px 32px 32px; box-shadow: -4px 0 24px rgba(0,0,0,0.1); transition: right 0.3s ease; flex-direction: column; gap: 0; }
+        .mobile-nav-panel.active { display: flex; right: 0; }
+        .mobile-nav-panel a { display: block; padding: 14px 0; color: #555; text-decoration: none; font-size: 17px; font-weight: 500; border-bottom: 1px solid #F0F0F0; font-family: 'Montserrat', sans-serif; }
+        .mobile-nav-panel a:last-child { border-bottom: none; }
+        .mobile-nav-panel .mobile-nav-label { padding: 14px 0 6px; font-size: 12px; font-weight: 600; color: #999; text-transform: uppercase; letter-spacing: 1px; border-bottom: none; font-family: 'Montserrat', sans-serif; }
+        .mobile-nav-panel .mobile-cta { background: #0A2463; color: white !important; text-align: center; border-radius: 8px; padding: 14px; margin-top: 16px; font-weight: 600; border-bottom: none; }
+        .mobile-nav-panel .mobile-cta:hover { background: #0052CC; }
+        .mobile-nav-close { position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 28px; cursor: pointer; color: #999; padding: 4px 8px; }
+
         /* MAIN CONTENT */
-        .container {
-            max-width: 800px;
-            margin: 120px auto 80px;
-            padding: 0 24px;
-        }
-        
-        h1 {
-            font-size: 48px;
-            font-weight: 800;
-            color: #0A2463;
-            margin-bottom: 16px;
-            line-height: 1.2;
-        }
-        
-        .subtitle {
-            font-size: 20px;
-            color: #666;
-            margin-bottom: 48px;
-            font-style: italic;
-        }
-        
-        .letter {
-            background: white;
-            padding: 60px;
-            border-radius: 16px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-        }
-        
-        .letter p {
-            margin-bottom: 24px;
-            font-size: 18px;
-            line-height: 1.8;
-        }
-        
-        .letter h2 {
-            font-size: 32px;
-            font-weight: 700;
-            color: #0A2463;
-            margin: 48px 0 24px;
-        }
-        
-        .letter h3 {
-            font-size: 24px;
-            font-weight: 700;
-            color: #000;
-            margin: 32px 0 16px;
-        }
-        
-        .highlight {
-            background: #FFF9E6;
-            padding: 24px;
-            border-left: 4px solid #F59E0B;
-            border-radius: 8px;
-            margin: 32px 0;
-        }
-        
-        .signature {
-            margin-top: 48px;
-            font-size: 18px;
-            font-style: italic;
-        }
-        
-        .signature strong {
-            display: block;
-            margin-top: 16px;
-            font-style: normal;
-            font-size: 20px;
-        }
-        
+        .container { max-width: 800px; margin: 40px auto 80px; padding: 0 24px; }
+        h1 { font-size: 48px; font-weight: 800; color: #0A2463; margin-bottom: 16px; line-height: 1.2; }
+        .subtitle { font-size: 20px; color: #666; margin-bottom: 48px; font-style: italic; }
+        .letter { background: white; padding: 60px; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+        .letter p { margin-bottom: 24px; font-size: 18px; line-height: 1.8; }
+        .letter h2 { font-size: 32px; font-weight: 700; color: #0A2463; margin: 48px 0 24px; }
+        .highlight { background: #FFF9E6; padding: 24px; border-left: 4px solid #F59E0B; border-radius: 8px; margin: 32px 0; }
+        .signature { margin-top: 48px; font-size: 18px; font-style: italic; }
+        .signature strong { display: block; margin-top: 16px; font-style: normal; font-size: 20px; }
+
+        /* FOUNDER CARD */
+        .founder-card { display: flex; align-items: center; gap: 40px; margin: 48px 0; padding: 32px; background: #F8F9FA; border-radius: 12px; border-left: 4px solid #0A2463; }
+        .founder-card .founder-photo { flex-shrink: 0; width: 160px; height: 160px; border-radius: 50%; background: linear-gradient(135deg, #EFF6FF, #BFDBFE); display: flex; align-items: center; justify-content: center; font-size: 48px; font-weight: 700; color: #0A2463; font-family: 'Montserrat', sans-serif; border: 4px solid #0A2463; }
+        .founder-card .founder-info { flex: 1; }
+        .founder-card .founder-info h3 { font-size: 24px; font-weight: 800; color: #0A2463; margin-bottom: 8px; }
+        .founder-card .founder-info .founder-title { font-size: 17px; font-weight: 600; color: #333; margin-bottom: 12px; }
+        .founder-card .founder-info p { font-size: 15px; color: #666; line-height: 1.6; margin: 0; }
+
+        /* CTA BOX */
+        .cta-box { background: #0A2463; color: white; padding: 32px; border-radius: 12px; margin: 48px 0; text-align: center; }
+        .cta-box p { color: white; }
+        .cta-box a { background: white; color: #0A2463; padding: 16px 40px; border-radius: 8px; font-size: 20px; font-weight: 700; text-decoration: none; display: inline-block; }
+
         /* FOOTER */
-        footer {
-            background: #1a1a1a;
-            color: #999;
-            padding: 60px 24px;
-            text-align: center;
+        footer { padding: 80px 24px; background: #000; color: white; text-align: center; }
+        .footer-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 900px; margin: 40px auto; text-align: center; }
+        .footer-col h4 { color: #fff; font-size: 16px; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px; }
+        .footer-col a { display: block; color: #999; text-decoration: none; font-size: 15px; margin-bottom: 12px; transition: color 0.3s; }
+        .footer-col a:hover { color: #fff; }
+        .footer-legal { display: flex; justify-content: center; gap: 16px; margin-top: 40px; font-size: 14px; flex-wrap: wrap; }
+        .footer-legal a { color: #999; text-decoration: none; }
+        .footer-legal a:hover { color: #fff; }
+        .footer-disclaimer { font-size: 11pt; color: #555; margin-top: 32px; line-height: 1.8; max-width: 900px; margin-left: auto; margin-right: auto; padding-bottom: 40px; }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-cta { display: none; }
+            .nav-hamburger { display: flex; }
+            .footer-links { grid-template-columns: 1fr; }
+            .founder-card { flex-direction: column; text-align: center; }
+            .founder-card .founder-photo { width: 120px; height: 120px; font-size: 36px; }
+            .letter { padding: 32px 24px; }
+            h1 { font-size: 32px; }
         }
-        
-        .footer-title {
-            font-size: 24px;
-            font-weight: 600;
-            color: #FFFFFF;
-            margin-bottom: 16px;
-        }
-        
-        .footer-tagline {
-            font-size: 16px;
-            font-style: italic;
-            margin-bottom: 32px;
-        }
-        
-        .footer-disclaimer {
-            font-size: 14px;
-            color: #555;
-            margin-top: 32px;
-            line-height: 1.6;
+        @media (min-width: 769px) {
+            .nav-hamburger, .mobile-nav-overlay, .mobile-nav-panel { display: none !important; }
         }
     </style>
+    <script src="analytics.js"></script>
 </head>
 <body>
 
-    <!-- NAVIGATION --><!-- STANDARDIZED NAVIGATION - Embedded for direct file opening -->
-<nav style="position: sticky; top: 0; z-index: 1000; background: white; border-bottom: 1px solid #E5E5E5; padding: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.05); font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center;">
-        <a href="index.html" style="display: flex; align-items: center; text-decoration: none; gap: 12px;">
-            <img src="../assets/logo.svg" alt="TrueVow" style="height: 40px; width: auto;">
+<!-- NAVIGATION -->
+<nav>
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <div class="logo-monogram">
+                <span class="logo-monogram-t1">T</span>
+                <span class="logo-monogram-t2">T</span>
+                <span class="logo-monogram-v">V</span>
+            </div>
+            <div class="logo-text">
+                <span class="logo-true">True</span>
+                <span class="logo-vow">Vow</span>
+                <span class="logo-law">.law</span>
+            </div>
         </a>
-        <div style="display: flex; gap: 32px; align-items: center;">
-            <a href="index.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500; letter-spacing: 0; font-family: inherit;">Home</a>
-            <a href="how-it-works.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500; letter-spacing: 0; font-family: inherit;">How It Works</a>
-            <a href="pricing.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500; letter-spacing: 0; font-family: inherit;">Pricing</a>
-            <a href="county-cap.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500; letter-spacing: 0; font-family: inherit;">33% Cap</a>
-            <a href="profitability.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500; letter-spacing: 0; font-family: inherit;">ROI</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="pricing.html">Pricing</a>
+            <div class="nav-dropdown">
+                <button class="nav-dropdown-toggle">Resources</button>
+                <div class="nav-dropdown-menu">
+                    <a href="profitability.html">ROI Calculator</a>
+                    <a href="county-cap.html">County Availability</a>
+                    <a href="compliance.html">Data &amp; Compliance</a>
+                    <a href="integrations.html">Integrations &amp; Setup</a>
+                    <a href="blog.html">Blog</a>
+                </div>
+            </div>
         </div>
-        <a href="apply.html" style="background: #0A2463; color: #FFFFFF !important; padding: 12px 24px; border-radius: 8px; font-size: 16px; font-weight: 600; text-decoration: none; transition: background 0.2s ease; font-family: inherit;" onmouseover="this.style.background='#0052CC'" onmouseout="this.style.background='#0A2463'">Start Capturing Every Call →</a>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+        <a href="trial.html" class="nav-cta">Apply for 90-Day Trial &rarr;</a>
     </div>
 </nav>
+<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+<div class="mobile-nav-panel" id="mobileNavPanel">
+    <button class="mobile-nav-close" id="mobileNavClose">&times;</button>
+    <a href="index.html">Home</a>
+    <a href="how-it-works.html">How It Works</a>
+    <a href="pricing.html">Pricing</a>
+    <div class="mobile-nav-label">Resources</div>
+    <a href="profitability.html">ROI Calculator</a>
+    <a href="county-cap.html">County Availability</a>
+    <a href="compliance.html">Data &amp; Compliance</a>
+    <a href="integrations.html">Integrations &amp; Setup</a>
+    <a href="blog.html">Blog</a>
+    <a href="trial.html" class="mobile-cta">Apply for 90-Day Trial &rarr;</a>
+</div>
 
+<!-- MAIN CONTENT -->
+<div class="container">
+    <h1>Why TrueVow Exists</h1>
+    <p class="subtitle">A founder letter about intake, trust, and building legal technology that small firms can actually defend.</p>
 
-
-
-
-    <!-- MAIN CONTENT -->
-    <div class="container">
-        <h1>I'm Not a Lawyer</h1>
-        <p class="subtitle">I'm a tech guy who's watched solo attorneys bleed for decades.</p>
-        
-        <!-- FOUNDER SECTION WITH PHOTO -->
-        <div style="display: flex; align-items: center; gap: 40px; margin: 48px 0; padding: 32px; background: #F8F9FA; border-radius: 12px; border-left: 4px solid #0A2463;">
-            <div style="flex-shrink: 0;">
-                <img src="../assets/founder-photo.jpg" alt="Afghan S. Yasha Ullah Khan" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 4px solid #0A2463; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-            </div>
-            <div style="flex: 1;">
-                <h3 style="font-size: 28px; font-weight: 800; color: #0A2463; margin-bottom: 8px;">Afghan S. Yasha Ullah Khan</h3>
-                <p style="font-size: 18px; font-weight: 600; color: #333; margin-bottom: 12px;">Founder & Chief Vow Keeper</p>
-                <p style="font-size: 16px; color: #666; line-height: 1.6; margin-bottom: 8px;">
-                    <strong>TrueVow Global Technologies</strong>
-                </p>
-                <p style="font-size: 15px; color: #999; line-height: 1.6;">
-                    Former: Microsoft, Oracle, Cisco<br>
-                    34 years scaling tech companies for Fortune 500
-                </p>
-            </div>
-        </div>
-        
-        <div class="letter">
-            
-            <p>
-                I'm not a lawyer. I'm a small business owner who's built tech for Fortune 500 companies.
-            </p>
-            
-            <p>
-                <strong>But I've always been close to the legal world</strong> — through clients, partners, friends who are solo attorneys.
-            </p>
-            
-            <p>
-                And what I saw broke my heart.
-            </p>
-            
-            <h2>The Breaking Point</h2>
-            
-            <p>
-                Solo attorneys answering calls at 2 a.m. Missing their daughter's recitals. Settling for $27,500 when the case is worth $85,000 — not because they weren't great lawyers, but because <strong>they didn't have the data</strong> the insurance adjuster had.
-            </p>
-            
-            <p>
-                I watched this pattern repeat for years. 70-hour weeks. Calls at 11 PM. Missing family dinners. Settling low because they were guessing and the adjusters were reading from Colossus.
-            </p>
-            
-            <p>
-                <strong>They weren't losing because they were bad attorneys.</strong>
-            </p>
-            
-            <p>
-                <strong>They were losing because the system is rigged.</strong>
-            </p>
-            
-            <div class="highlight">
-                <p style="margin-bottom: 0; font-weight: 700; font-size: 20px; color: #000;">
-                    Insurance companies have a $50 billion head start.<br><br>
-                    Solo attorneys have grit and a cell phone that rings at 2 AM.
-                </p>
-            </div>
-            
-            <h2>So I Built Intakely (And Failed)</h2>
-            
-            <p>
-                My first attempt was <strong>Intakely.ai</strong> — an AI-powered intake tool with "Benjamin" as your voice assistant.
-            </p>
-            
-            <p>
-                I was chasing the AI hype. It was fast. It was smart. It booked consultations automatically.
-            </p>
-            
-            <p>
-                <strong>Attorneys hated it.</strong>
-            </p>
-            
-            <p>
-                Not because it didn't work. Because they didn't trust it.
-            </p>
-            
-            <ul style="margin-left: 24px; margin-bottom: 24px;">
-                <li><em>"I can't risk recording client calls."</em></li>
-                <li><em>"AI hallucinated and told a client the wrong statute deadline."</em></li>
-                <li><em>"I don't trust AI to handle privileged information."</em></li>
-                <li><em>"It started giving fee estimates and legal advice — even with guardrails. That's unauthorized practice of law."</em></li>
-                <li><em>"What happens when the Bar audits me?"</em></li>
-            </ul>
-            
-            <p>
-                <strong>They were right.</strong>
-            </p>
-            
-            <p>
-                AI is a black box. You can't prove what it did or didn't store. You can't audit it. You can't defend it to the Bar.
-            </p>
-            
-            <div class="highlight">
-                <p style="margin-bottom: 0; font-weight: 600; color: #78350F;">
-                    So I did something radical: I shut down Intakely. Cut AI entirely. Rebuilt from scratch.
-                </p>
-            </div>
-            
-            <p>
-                <strong>What emerged is TrueVow:</strong> A deterministic, rule-based system (like following a statute word-for-word, not a judge interpreting it) that vows zero AI, zero PHI storage, zero compromises.
-            </p>
-            
-            <p>
-                <strong>Just a quiet partner who follows your rules.</strong>
-            </p>
-            
-            <h2>Let Me Show You the Real Problem</h2>
-            
-            <p>
-                Picture this: You're a solo PI attorney. You just spent 18 months fighting State Farm on a rear-end collision case. Clear liability. $47K in medical bills. Permanent back injury.
-            </p>
-            
-            <p>
-                The adjuster offers $27,500.
-            </p>
-            
-            <p>
-                You know it's low. Your gut says $70K minimum. But you don't have proof. You counter at $65K. They come back with $32K. You settle at $38,500.
-            </p>
-            
-            <p>
-                <strong>Your client is thrilled.</strong> You just changed their life.
-            </p>
-            
-            <p>
-                <strong>But you'll never know</strong> that 11 weeks ago, State Farm paid $81,000 for an identical case — same injury, same medical bills, same county — because that attorney had access to <em>Colossus</em>.
-            </p>
-            
-            <div class="highlight">
-                <p style="margin-bottom: 12px; font-weight: 700; font-size: 20px; color: #000;">
-                    They're not smarter than you.
-                </p>
-                <p style="margin-bottom: 0; font-weight: 600; color: #78350F;">
-                    They just have a database you don't.
-                </p>
-            </div>
-            
-            <h3>$50 Billion Head Start</h3>
-            
-            <p>
-                Insurance companies have spent 40 years building <strong>Colossus</strong> — 11 million settlement outcomes, indexed by injury type, medical bills, jurisdiction, liability flags, and pre-existing conditions.
-            </p>
-            
-            <p>
-                When an adjuster opens your file, they see:
-            </p>
-            
-            <ul style="margin-left: 24px; margin-bottom: 24px; line-height: 2;">
-                <li>"Rear-end, herniated disc, $47K medicals, Miami-Dade → <strong>Settlement range: $52K-$89K</strong>"</li>
-                <li>"Offer: $27,500 (low anchor)"</li>
-                <li>"Max authority: $78,000 (don't exceed unless liability weakens)"</li>
-            </ul>
-            
-            <p>
-                <strong>You walk in with a demand letter and hope.</strong>
-            </p>
-            
-            <p>
-                They walk in with 40 years of your colleagues' settlements.
-            </p>
-            
-            <h2>Why Doesn't Someone Build One for Attorneys?</h2>
-            
-            <p>
-                Great question. Here's why no one has:
-            </p>
-            
-            <p>
-                <strong>1. Chicken-and-egg problem:</strong> You need 100,000+ settlements to be useful. But attorneys won't contribute until it's useful.
-            </p>
-            
-            <p>
-                <strong>2. Privacy nightmare:</strong> Client names, case details, opposing counsel = privileged. One breach = malpractice lawsuits + Bar sanctions.
-            </p>
-            
-            <p>
-                <strong>3. No one trusts competitors:</strong> "Why would I share my settlements with the firm across the street?"
-            </p>
-            
-            <p>
-                <strong>4. VC-funded = data gets sold:</strong> Every legal tech startup backed by VCs eventually monetizes your data. Always.
-            </p>
-            
-            <div class="highlight">
-                <p style="margin-bottom: 0; font-weight: 600; color: #78350F;">
-                    So I built it differently.
-                </p>
-            </div>
-            
-            <h2>How TrueVow Solves the Impossible</h2>
-            
-            <p>
-                <strong>Problem 1: Chicken-and-egg</strong>
-            </p>
-            
-            <p>
-                <strong>Solution:</strong> Build Benjamin (Intake) first. Give it to attorneys for $29/booking. Make it so good they can't leave. <em>Then</em> introduce Settle as a FREE bonus.
-            </p>
-            
-            <p>
-                Now attorneys have a reason to contribute settlements: <strong>They're already TrueVow customers getting value every day.</strong>
-            </p>
-            
-            <p style="margin-top: 32px;">
-                <strong>Problem 2: Privacy nightmare</strong>
-            </p>
-            
-            <p>
-                <strong>Solution:</strong> Zero-knowledge architecture. Settlements are 100% anonymous:
-            </p>
-            
-            <ul style="margin-left: 24px; margin-bottom: 24px;">
-                <li>No client names</li>
-                <li>No attorney names</li>
-                <li>No case numbers</li>
-                <li>No opposing counsel</li>
-                <li>Only: Injury type, medical bills, jurisdiction, settlement amount, date</li>
-            </ul>
-            
-            <p>
-                <strong>Blockchain-backed.</strong> Auditable. Bar-compliant. Unhackable.
-            </p>
-            
-            <p style="margin-top: 32px;">
-                <strong>Problem 3: Trust</strong>
-            </p>
-            
-            <p>
-                <strong>Solution:</strong> Founding Members are co-builders, not competitors. You contribute settlements, you earn prediction credits. Everyone wins together.
-            </p>
-            
-            <p>
-                <strong>It's not "share your secrets."</strong> It's "let's beat insurance companies together."
-            </p>
-            
-            <p style="margin-top: 32px;">
-                <strong>Problem 4: VC-funded data monetization</strong>
-            </p>
-            
-            <p>
-                <strong>Solution:</strong> We're NOT VC-funded. We're bootstrapped. Founder-owned. No board pressuring us to "monetize user data" or "explore enterprise partnerships with Allstate."
-            </p>
-            
-            <p>
-                <strong>Your data is not for sale.</strong> Our business model is usage-based ($29/booking), not data monetization. We make money when you win cases, not when we sell your information.
-            </p>
-            
-            <h2>But Wait — Why Are You Based in Dubai?</h2>
-            
-            <p>
-                I'm going to be honest here, because I respect your intelligence.
-            </p>
-            
-            <p>
-                <strong>Four reasons:</strong>
-            </p>
-            
-            <p>
-                <strong>1. I couldn't afford Silicon Valley.</strong>
-            </p>
-            
-            <p>
-                Building TrueVow required $180K in runway (engineers, compliance consultants, Bar reviews, infrastructure). Raising VC = giving up control = eventually selling your data to Allstate.
-            </p>
-            
-            <p>
-                Dubai let me bootstrap this without burning $50K/month on rent and payroll taxes. <strong>Those savings? I'm passing them to you.</strong>
-            </p>
-            
-            <p>
-                <strong>You're paying $29/booking (or $25 as a Founding Member) instead of $949/month for a full legal tech stack</strong> — because we're in Dubai, not Palo Alto.
-            </p>
-            
-            <p>
-                You save $7,812-$11,988 per year because of this decision.
-            </p>
-            
-            <p style="margin-top: 32px;">
-                <strong>2. Global talent without H-1B nightmares.</strong>
-            </p>
-            
-            <p>
-                The best legal tech engineer I found is in Pakistan. The best compliance expert is in London. The best customer success manager is in Toronto.
-            </p>
-            
-            <p>
-                <strong>Dubai lets me hire the best, regardless of borders.</strong> You get world-class support. I don't waste 18 months on visa paperwork.
-            </p>
-            
-            <p style="margin-top: 32px;">
-                <strong>3. Global expansion without re-building everything.</strong>
-            </p>
-            
-            <p>
-                Dubai is the crossroads of the world. We can serve U.S. attorneys today, Australian barristers in 2027, and UK solicitors in 2028 — <strong>all from one platform, one infrastructure, one compliance system.</strong>
-            </p>
-            
-            <p>
-                If we were U.S.-only, we'd need separate entities for every country. That's expensive. That cost gets passed to you.
-            </p>
-            
-            <p style="margin-top: 32px;">
-                <strong>4. Zero conflicts of interest.</strong>
-            </p>
-            
-            <p>
-                We're NOT funded by:
-            </p>
-            
-            <ul style="margin-left: 24px; margin-bottom: 24px;">
-                <li>❌ Insurance companies (Allstate, State Farm, GEICO)</li>
-                <li>❌ Litigation funders (Burford Capital, Bentham IMF)</li>
-                <li>❌ VC firms with "strategic partnerships" with insurers</li>
-                <li>❌ Legal tech consolidators (Clio, MyCase acquisition targets)</li>
-            </ul>
-            
-            <p>
-                <strong>We're attorney-first. Always.</strong> Because we're not answering to a board that wants an exit in 5 years.
-            </p>
-            
-            <p>
-                Payments processed through <strong>Mashreq Bank, Emirates NBD, and HSBC</strong> — the same systems trusted by Fortune 500 companies globally. Faster, more secure, lower fees than ACH/checks.
-            </p>
-            
-            <div class="highlight">
-                <p style="margin-bottom: 12px; font-weight: 700; font-size: 20px; color: #000;">
-                    "Okay, but what about U.S. legal compliance?"
-                </p>
-                <p style="margin-bottom: 0; font-weight: 600; color: #78350F;">
-                    Fair question. Here's the structure:
-                </p>
-            </div>
-            
-            <p>
-                <strong>TrueVow (USA) Inc. (Wyoming)</strong> → Handles passive marketing only. Provides U.S. visual validation. Does NOT handle contracts or operations.
-            </p>
-            
-            <p>
-                <strong>TrueVow Global Tech FZE LLC (UAE)</strong> → Parent company. Manages sales, contracts, operations, suppliers, HR, payments, and international expansion.
-            </p>
-            
-            <p>
-                <strong>TrueVow Global Holdings LLC (Nevis)</strong> → Holds all intellectual property and manages technology development for the platform.
-            </p>
-            
-            <p>
-                <strong>Your contract is with TrueVow Global Tech FZE LLC (UAE)</strong>, subject to international commercial law and arbitration in Dubai International Financial Centre (DIFC). Full U.S. legal compliance maintained through adherence to ABA Model Rules.
-            </p>
-            
-            <p>
-                Think Stripe, Zoom, Slack — global tech companies serving U.S. customers. TrueVow is no different.
-            </p>
-            
-            <h2>The Founding Member Movement</h2>
-            
-            <p>
-                I could've launched TrueVow at $949/month (industry standard for a full legal tech stack).
-            </p>
-            
-            <p>
-                I could've raised VC funding and scaled fast.
-            </p>
-            
-            <p>
-                <strong>But that's not the company I want to build.</strong>
-            </p>
-            
-            <p>
-                <strong>TrueVow isn't just software.</strong> It's a co-op. A movement. A tool that insurance companies <strong>hate</strong> because it levels the playing field.
-            </p>
-            
-            <p>
-                Founding Members aren't "early customers." They're co-builders who:
-            </p>
-            
-            <ul style="margin-left: 24px; margin-bottom: 24px; line-height: 2;">
-                <li>🔒 Founding Member rate of $19/booking (vs. $29 standard)</li>
-                <li>🎁 Get 3 FREE bookings every month while your membership remains active (worth $1,044/year at standard pricing)</li>
-                <li>📊 Get FREE access to Settle™ (launching Q3 2026)</li>
-                <li>💬 Direct feedback channel to shape features (you tell us what to build next)</li>
-                <li>⚡ Priority support (dedicated account manager, not a ticket queue)</li>
-                <li>🏆 First access to Connect referral network (2027)</li>
-                <li>📈 Co-ownership mentality (you're building this WITH us, not buying FROM us)</li>
-            </ul>
-            
-            <p>
-                <strong>Stay active requirement:</strong> 1 paid booking/month OR 1 settlement contribution/month OR 3 attorney referrals/year.
-            </p>
-            
-            <p>
-                Why? Because we're building a <strong>movement, not a mailing list.</strong> Active members get lifetime benefits. Inactive members revert to standard pricing.
-            </p>
-            
-            <p style="margin-top: 32px;">
-                <strong>We're capping it at 2,100 Founding Members nationwide.</strong>
-            </p>
-            
-            <p>
-                Not artificial scarcity. Real capacity limits. We want to <strong>know every Founding Member by name</strong>, not manage a customer list of 50,000.
-            </p>
-            
-            <h2>The 5 Promises I'm Making to You</h2>
-            
-            <p style="font-size: 20px; font-weight: 700; color: #0A2463; margin-bottom: 32px;">
-                If we break any of these, cancel immediately and we'll refund your last 3 months. No questions asked.
-            </p>
-            
-            <p>
-                <strong>1. Zero-Knowledge Architecture (By Default)</strong>
-            </p>
-            
-            <p>
-                Benjamin operates in <strong>zero-knowledge mode by default</strong> — no call recordings, no transcripts, no privileged communications stored.
-            </p>
-            
-            <p>
-                <strong>Optional:</strong> You can opt-in to 7-day call recordings for training/quality purposes. This requires explicit written consent and is disabled by default.
-            </p>
-            
-            <p>
-                Every call generates a blockchain certificate proving: "No PHI accessed. No SSN processed. No privileged communication stored" (unless you explicitly enabled recording).
-            </p>
-            
-            <p style="margin-top: 24px;">
-                <strong>2. No AI Hallucinations (Ever)</strong>
-            </p>
-            
-            <p>
-                Benjamin is powered by a <strong>deterministic Finite State Machine (FSM)</strong>, not LLMs. Same input = same output. Every time. No improvisation. No guessing.
-            </p>
-            
-            <p>
-                <strong>When the Bar asks: "Did you use AI?"</strong> → You answer: "No. I use FSM-based automation. Here's my compliance certificate."
-            </p>
-            
-            <p style="margin-top: 24px;">
-                <strong>3. Attorney-First Pricing (Always)</strong>
-            </p>
-            
-            <p>
-                Pay only when you WIN a qualified booking. $0 monthly minimums. $0 setup fees. $0 cancellation penalties.
-            </p>
-            
-            <p>
-                <strong>If Benjamin doesn't deliver value, you don't pay.</strong> Simple.
-            </p>
-            
-            <p style="margin-top: 24px;">
-                <strong>4. Your Data Will NEVER Be Sold</strong>
-            </p>
-            
-            <p>
-                We will <strong>never</strong> sell your client data to insurance companies, litigation funders, lead gen companies, or anyone else.
-            </p>
-            
-            <p>
-                <strong>We're not funded by VCs with hidden agendas.</strong> We're bootstrapped. Founder-owned. You're the customer, not the product.
-            </p>
-            
-            <p style="margin-top: 24px;">
-                <strong>5. Founding Members = Lifetime Benefits</strong>
-            </p>
-            
-            <p>
-                Join as a Founding Member → Get a $19/booking Founding Member rate + 3 FREE bookings every month while you stay active.
-            </p>
-            
-            <p>
-                <strong>This isn't a flash discount. It's a long-term partnership where Founding Members always pay less than our public rate.</strong>
-            </p>
-            
-            <h2>The Real Reason I Built This</h2>
-            
-            <p>
-                Over 34 years working with small businesses and tech companies — from Microsoft to Oracle to Cisco — I kept seeing the same pattern:
-            </p>
-            
-            <p>
-                <strong>Solo attorneys and small firm owners drowning.</strong>
-            </p>
-            
-            <p>
-                70-hour weeks. Calls at 11 PM. Missing family dinners. Settling cases for $38K when they're worth $85K — not because they were bad attorneys, but because <strong>they didn't have the data</strong> the insurance adjuster had.
-            </p>
-            
-            <p>
-                I watched brilliant lawyers — people who could've been BigLaw partners — choosing to serve everyday clients instead. And I watched the system punish them for it.
-            </p>
-            
-            <p>
-                Insurance companies have Colossus. BigLaw has armies of paralegals. Enterprise legal has $50M tech budgets.
-            </p>
-            
-            <p>
-                <strong>Solo and small firms? You have grit, intelligence, and a cell phone that rings at 2 AM.</strong>
-            </p>
-            
-            <p>
-                That's not enough anymore.
-            </p>
-            
-            <div class="highlight">
-                <p style="margin-bottom: 0; font-weight: 700; font-size: 20px; color: #000;">
-                    TrueVow is the tool solo attorneys never had.<br><br>
-                    I'm building it so you don't have to work 70-hour weeks anymore.
-                </p>
-            </div>
-            
-            <h2>Why I'm Confident This Will Work</h2>
-            
-            <p>
-                I've spent 34 years building technology systems for Fortune 500 companies. I know what works and what doesn't.
-            </p>
-            
-            <p>
-                <strong>Here's what I've learned:</strong>
-            </p>
-            
-            <ul style="margin-left: 24px; margin-bottom: 24px; line-height: 2;">
-                <li>✅ <strong>Deterministic systems beat AI</strong> for regulated industries (banking, healthcare, legal)</li>
-                <li>✅ <strong>Pay-per-use beats subscriptions</strong> for small businesses with unpredictable revenue</li>
-                <li>✅ <strong>Zero-knowledge architecture</strong> is the only way to handle privileged information</li>
-                <li>✅ <strong>Co-op models beat monopolies</strong> when you're fighting entrenched power (insurance companies)</li>
-            </ul>
-            
-            <p>
-                TrueVow isn't an experiment. It's 34 years of enterprise technology experience applied to the one industry that needs it most: <strong>solo and small law firms fighting insurance giants.</strong>
-            </p>
-            
-            <h2>Who TrueVow Is Built For</h2>
-            
-            <p>
-                <strong>If you're an overwhelmed solo attorney:</strong>
-            </p>
-            
-            <ul style="margin-left: 24px; margin-bottom: 24px;">
-                <li>✅ Benjamin answers calls while you're in court, at dinner, or sleeping</li>
-                <li>✅ Reclaim 15 hours/week (no more intake drudgery)</li>
-                <li>✅ Pay only when you win ($29/booking, not $949/month minimums)</li>
-                <li>✅ <strong>Get your life back.</strong> Walk out at 5 PM. Your firm runs 24/7.</li>
-            </ul>
-            
-            <p style="margin-top: 32px;">
-                <strong>If you're a growth-oriented small firm owner:</strong>
-            </p>
-            
-            <ul style="margin-left: 24px; margin-bottom: 24px;">
-                <li>✅ Scale without hiring ($48K/year receptionist → $29/booking with TrueVow)</li>
-                <li>✅ Capture 11x more bookings (100% call answer rate vs. 52% human rate)</li>
-                <li>✅ Real-time analytics dashboard (track ROI on every marketing dollar)</li>
-                <li>✅ <strong>Grow revenue without growing headcount.</strong></li>
-            </ul>
-            
-            <p style="margin-top: 32px;">
-                <strong>If you're compliance-worried and tech-hesitant:</strong>
-            </p>
-            
-            <ul style="margin-left: 24px; margin-bottom: 24px;">
-                <li>✅ NOT AI (Finite State Machine = deterministic, no hallucinations)</li>
-                <li>✅ Zero-knowledge architecture (no call recordings, no transcripts, no PHI storage)</li>
-                <li>✅ Blockchain certificate for every call (Bar audit? Show proof, not promises.)</li>
-                <li>✅ <strong>Sleep easy. Zero malpractice risk.</strong></li>
-            </ul>
-            
-            <p style="margin-top: 32px;">
-                <strong>If you're skeptical about "another legal tech tool":</strong>
-            </p>
-            
-            <ul style="margin-left: 24px; margin-bottom: 24px;">
-                <li>✅ I shut down my first company when attorneys said it wasn't safe. <strong>I listen.</strong></li>
-                <li>✅ NOT VC-funded (no board pressuring us to monetize your data)</li>
-                <li>✅ Bootstrapped and founder-owned (you're the customer, not the product)</li>
-                <li>✅ <strong>I've got your back. I vow it.</strong></li>
-            </ul>
-            
-            <h2>The Revolution Starts Now</h2>
-            
-            <p style="font-size: 18px; font-weight: 600; color: #B91C1C; margin-bottom: 24px;">
-                Every lowball settlement funds their empire.<br>
-                Every missed lead steals your time.
-            </p>
-            
-            <p style="font-size: 20px; font-weight: 700; color: #0A2463; margin-bottom: 24px;">
-                TrueVow ends both.
-            </p>
-            
-            <p style="font-size: 18px; margin-bottom: 24px;">
-                <strong>Intake → Draft → Settle™ → Justice.</strong>
-            </p>
-            
-            <p>
-                This isn't just software. <strong>It's a co-op. A movement. A rebellion against insurance hegemony.</strong>
-            </p>
-            
-            <p style="font-size: 18px; margin-top: 32px;">
-                If you're tired of bleeding leads, settling low, and watching insurance companies win — <strong>join us.</strong>
-            </p>
-            
-            <p>
-                If you want tools insurance companies <strong>don't want you to have</strong> — join us.
-            </p>
-            
-            <p>
-                If you're ready to stop guessing and start winning — <strong>join us.</strong>
-            </p>
-            
-            <p style="font-size: 16px; font-style: italic; color: #666; margin-top: 32px;">
-                Starve the insurers. Feed your firm. Rebuild justice—one fair settlement at a time.
-            </p>
-            
-            <div style="background: #0A2463; color: white; padding: 32px; border-radius: 12px; margin: 48px 0; text-align: center;">
-                <p style="font-size: 24px; font-weight: 700; margin-bottom: 16px;">
-                    Founding Member spots: 253/2,100 enrolled
-                </p>
-                <p style="font-size: 18px; margin-bottom: 8px; opacity: 0.9;">
-                    ~11 new members/week. Spots filling fast.
-                </p>
-                <p style="font-size: 14px; margin-bottom: 24px; opacity: 0.7;">
-                    You're not adopting software. You're arming a revolution.
-                </p>
-                <a href="apply.html" style="background: white; color: #0A2463; padding: 16px 40px; border-radius: 8px; font-size: 20px; font-weight: 700; text-decoration: none; display: inline-block;">
-                    Apply for Founding Membership →
-                </a>
-            </div>
-            
-            <p class="signature">
-                <strong style="font-size: 24px; color: #0A2463;">I take the keys. You keep the secrets. You win big.</strong>
-            </p>
-            
-            <p class="signature" style="margin-top: 32px;">
-                That's my vow to you.
-                <strong>— Afghan S. Yasha Ullah Khan<br>Chief Vow Keeper | Founder<br>TrueVow Global Technologies</strong>
-            </p>
-            
-            <p style="margin-top: 24px; font-size: 14px; color: #999; font-style: italic; text-align: center;">
-                Microsoft. Oracle. Cisco. 34 years scaling tech empires.<br>
-                I know chaos. I built TrueVow to end it — for good.
-            </p>
-            
-            <p style="margin-top: 40px; font-size: 16px; color: #666; padding: 24px; background: #F8F9FA; border-radius: 8px;">
-                <strong style="color: #0A2463;">P.S. — Questions about TrueVow?</strong><br><br>
-                Use the contact form on our <a href="apply.html" style="color: #0A2463; font-weight: 700;">application page</a> or reach out through our <a href="partner.html" style="color: #0A2463; font-weight: 700;">partner program page</a>.<br>
-                We respond within 12 hours (real humans, not bots).
-            </p>
-            
-            <p style="margin-top: 24px; font-size: 14px; color: #999; font-style: italic; text-align: center;">
-                <strong>Our sacred promise:</strong> Your secrets stay yours. Your wins multiply. Your license protected. Always.
-            </p>
+    <!-- FOUNDER CARD -->
+    <div class="founder-card">
+        <div class="founder-photo">YK</div>
+        <div class="founder-info">
+            <h3>Afghan S. Yasha Ullah Khan</h3>
+            <p class="founder-title">Founder, TrueVow</p>
+            <p>Technology operator focused on workflow automation, regulated systems, and practical tools for solo and small law firms.</p>
         </div>
     </div>
 
-        <!-- FOOTER -->
-    <!-- FOOTER -->﻿
+    <div class="letter">
+        <p>
+            I am not a lawyer. I built TrueVow because I kept seeing the same operational problem inside solo and small law firms: important intake opportunities were being handled by voicemail, rushed callbacks, overloaded staff, or systems that were not built for legal risk.
+        </p>
 
-﻿<!-- STANDARDIZED FOOTER - Apply to all pages -->
-<footer style="background: #1A1A1A; color: white; padding: 60px 20px 120px 20px; text-align: center;">
-    <div style="max-width: 1200px; margin: 0 auto;">
-        <!-- Logo -->
-        <img src="../assets/logo.svg" alt="TrueVow" style="height: 50px; width: auto; margin-bottom: 24px; opacity: 0.9;">
-        
-        <p style="font-size: 16px; color: #999; margin-bottom: 40px; line-height: 1.6;">
-            More clients. More money. More time with your family.<br>
-            All without risking your license.
+        <p>
+            For personal injury firms especially, the first conversation matters. It is where injury, timing, treatment, liability, jurisdiction, and urgency begin to take shape. If that first call is missed or poorly captured, the firm may never get a second chance.
         </p>
-        
-        <!-- 3-Column Links -->
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 900px; margin: 40px auto; text-align: center;">
-            <div>
-                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px;">PRODUCT</h4>
-                <div style="display: flex; flex-direction: column; gap: 12px;">
-                    <a href="how-it-works.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">How It Works</a>
-                    <a href="pricing.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Pricing</a>
-                    <a href="profitability.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">ROI &amp; Profitability</a>
-                    <a href="county-cap.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">33% County Cap</a>
-                </div>
-            </div>
-            <div>
-                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px;">RESOURCES</h4>
-                <div style="display: flex; flex-direction: column; gap: 12px;">
-                    <a href="blog.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Blog</a>
-                    <a href="case-studies.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Case Studies</a>
-                    <a href="partner.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Partner Program</a>
-                    <a href="affiliate.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Affiliate Program</a>
-                </div>
-            </div>
-            <div>
-                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px;">COMPANY</h4>
-                <div style="display: flex; flex-direction: column; gap: 12px;">
-                    <a href="about.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">About Us</a>
-                    <a href="careers.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Careers</a>
-                    <a href="press.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Press</a>
-                    <a href="apply.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Contact</a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Legal Links -->
-        <div style="display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 40px; flex-wrap: wrap; font-size: 14px;">
-            <a href="../legal/privacy.html" style="color: #999; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Privacy Policy</a>
-            <span style="color: #555;">|</span>
-            <a href="../legal/terms.html" style="color: #999; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Terms of Service</a>
-            <span style="color: #555;">|</span>
-            <a href="../legal/msa.html" style="color: #999; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">MSA</a>
-            <span style="color: #555;">|</span>
-            <a href="../legal/bar-compliance.html" style="color: #999; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Bar Compliance</a>
-        </div>
-        
-        <!-- Disclaimer -->
-        <p style="font-size: 11pt; color: #555; margin-top: 32px; line-height: 1.8; max-width: 900px; margin-left: auto; margin-right: auto; padding-bottom: 60px;">
-            © 2026 TrueVow Technologies. All rights reserved. TrueVow is a brand of TrueVow Global Tech FZE LLC (UAE), a subsidiary of TrueVow Global Holdings LLC (Nevis). TrueVow (USA) Inc. (Wyoming) provides passive marketing only and does not handle contracts or operations. All contracts are with TrueVow Global Tech FZE LLC (UAE). Technology and IP held by TrueVow Global Holdings LLC (Nevis). We are not a law firm and do not provide legal advice. By using our services, you acknowledge that TrueVow operates as a technology and services provider only.
+
+        <h2>The first version was not good enough</h2>
+
+        <p>
+            Our earlier intake work leaned too far into open-ended AI. It was fast, but speed was not the real standard. Attorneys needed predictability, auditability, and control. They needed a system that followed approved intake logic instead of improvising.
         </p>
+
+        <p>
+            That feedback changed the product. TrueVow was rebuilt around deterministic workflows, firm-approved scripts, validation rules, and guardrails. Benjamin is designed to ask the right questions, capture structured facts, route qualified leads, and avoid the areas that belong only to attorneys.
+        </p>
+
+        <h2>What we believe</h2>
+
+        <p>
+            Legal technology should not make a small firm choose between growth and professional responsibility. It should help the firm answer more calls, qualify leads more consistently, and keep the attorney in control of legal judgment.
+        </p>
+
+        <p>
+            That is why TrueVow focuses on controlled intake paths, structured summaries, configurable recording and transcript policies, and clear handoff back to the firm.
+        </p>
+
+        <h2>Why solo and small firms</h2>
+
+        <p>
+            Large organizations can absorb missed calls, extra staff, and expensive software. Solo and small firms cannot. They need tools that are practical, affordable, and respectful of how legal work actually happens.
+        </p>
+
+        <p>
+            TrueVow is built for those firms: the attorney in court when a new caller reaches out, the small team trying to follow up before a lead goes cold, and the owner who wants better intake without adding unnecessary complexity.
+        </p>
+
+        <h2>Our commitments</h2>
+
+        <p>
+            We are not a law firm and we do not provide legal advice. We build technology that supports the firm&rsquo;s intake process.
+        </p>
+
+        <p>
+            Benjamin&rsquo;s live intake flow is controlled by deterministic workflows, not open-ended generative chat. Recording and transcript settings are configured by the firm. Client conversation data is not used to train third-party AI models. Case-management integrations are only claimed when they are real and supported.
+        </p>
+
+        <p>
+            The goal is simple: help small firms respond faster, capture cleaner information, and review qualified opportunities with less chaos.
+        </p>
+
+        <div class="highlight">
+            <p style="margin-bottom: 0; font-weight: 700; font-size: 20px; color: #000;">
+                TrueVow exists to make legal intake more reliable &mdash; without asking attorneys to trust a black box.
+            </p>
+        </div>
+
+        <p class="signature">
+            That is the vow.
+            <strong>&mdash; Afghan S. Yasha Ullah Khan<br>Founder, TrueVow</strong>
+        </p>
+
+        <div class="cta-box">
+            <p style="font-size: 24px; font-weight: 700; margin-bottom: 16px;">
+                Want to evaluate Benjamin for your firm?
+            </p>
+            <p style="font-size: 18px; margin-bottom: 24px; opacity: 0.9;">
+                Apply for the 90-Day Intake Trial and we will review whether your firm is a fit.
+            </p>
+            <a href="trial.html?source=about-founder-letter">Apply for 90-Day Trial &rarr;</a>
+        </div>
     </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <a href="index.html" class="logo" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; margin-bottom: 24px;">
+        <div class="logo-monogram">
+            <span class="logo-monogram-t1">T</span>
+            <span class="logo-monogram-t2">T</span>
+            <span class="logo-monogram-v" style="color: #fff;">V</span>
+        </div>
+        <div class="logo-text">
+            <span class="logo-true">True</span>
+            <span class="logo-vow" style="color: #fff;">Vow</span>
+            <span class="logo-law" style="color: #fff;">.law</span>
+        </div>
+    </a>
+    <div class="footer-links">
+        <div class="footer-col">
+            <h4>PRODUCT</h4>
+            <a href="pricing.html#intake">INTAKE</a>
+            <a href="leverage.html">LEVERAGE</a>
+            <a href="settle.html">SETTLE</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="profitability.html">ROI Calculator</a>
+        </div>
+        <div class="footer-col">
+            <h4>RESOURCES</h4>
+            <a href="county-cap.html">County Availability</a>
+            <a href="compliance.html">Data &amp; Compliance</a>
+            <a href="integrations.html">Integrations &amp; Setup</a>
+            <a href="blog.html">Blog</a>
+        </div>
+        <div class="footer-col">
+            <h4>COMPANY</h4>
+            <a href="about.html">About Us</a>
+            <a href="trial.html">Contact</a>
+        </div>
+    </div>
+    <div class="footer-legal">
+        <a href="legal/privacy.html">Privacy Policy</a>
+        <span style="color: #555;">|</span>
+        <a href="legal/terms.html">Terms of Service</a>
+        <span style="color: #555;">|</span>
+        <a href="legal/msa.html">MSA</a>
+    </div>
+    <p class="footer-disclaimer">
+        &copy; 2026 TrueVow Technologies. All rights reserved. TrueVow is a brand of TrueVow Global Tech FZE LLC (UAE), a subsidiary of TrueVow Global Holdings LLC (Nevis). TrueVow (USA) Inc. (Wyoming) provides passive marketing only and does not handle contracts or operations. All contracts are with TrueVow Global Tech FZE LLC (UAE). Technology and IP held by TrueVow Global Holdings LLC (Nevis). We are not a law firm and do not provide legal advice. By using our services, you acknowledge that TrueVow operates as a technology and services provider only.
+    </p>
 </footer>
 
-
+<script>
+    // Mobile nav toggle
+    (function() {
+        var hamburger = document.getElementById('navHamburger');
+        var panel = document.getElementById('mobileNavPanel');
+        var overlay = document.getElementById('mobileNavOverlay');
+        var closeBtn = document.getElementById('mobileNavClose');
+        function openNav() { if(hamburger) hamburger.classList.add('active'); if(panel) panel.classList.add('active'); if(overlay) overlay.classList.add('active'); document.body.style.overflow='hidden'; }
+        function closeNav() { if(hamburger) hamburger.classList.remove('active'); if(panel) panel.classList.remove('active'); if(overlay) overlay.classList.remove('active'); document.body.style.overflow=''; }
+        if(hamburger) hamburger.addEventListener('click', openNav);
+        if(closeBtn) closeBtn.addEventListener('click', closeNav);
+        if(overlay) overlay.addEventListener('click', closeNav);
+    })();
+</script>
 </body>
 </html>

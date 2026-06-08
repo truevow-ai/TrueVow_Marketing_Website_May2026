@@ -48,7 +48,7 @@
             <a href="/marketing/county-cap.html" style="color: #333; text-decoration: none; font-size: 16px; font-weight: 500; transition: color 0.3s;" onmouseover="this.style.color='#0A2463'" onmouseout="this.style.color='#333'">33% Cap</a>
             <a href="/marketing/profitability.html" style="color: #333; text-decoration: none; font-size: 16px; font-weight: 500; transition: color 0.3s;" onmouseover="this.style.color='#0A2463'" onmouseout="this.style.color='#333'">ROI</a>
         </div>
-        <a href="/marketing/apply.html" style="margin-left: auto; background: #0A2463; color: white; padding: 12px 28px; border-radius: 8px; font-size: 16px; font-weight: 600; text-decoration: none; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px;" onmouseover="this.style.background='#0D2F7E'" onmouseout="this.style.background='#0A2463'">
+        <a href="/marketing/trial.html" style="margin-left: auto; background: #0A2463; color: white; padding: 12px 28px; border-radius: 8px; font-size: 16px; font-weight: 600; text-decoration: none; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px;" onmouseover="this.style.background='#0D2F7E'" onmouseout="this.style.background='#0A2463'">
             Apply Now →
         </a>
     </div>
@@ -178,7 +178,7 @@
         <p>This Privacy Policy applies to:</p>
         <ul>
             <li><strong>TrueVow INTAKE™</strong> - Deterministic FSM-based phone answering and lead qualification</li>
-            <li><strong>TrueVow DRAFT™</strong> - Template-based legal document assembly</li>
+            <li><strong>TrueVow DRAFT™</strong> - Client-side compliance validation tool</li>
             <li><strong>TrueVow SETTLE™</strong> - Historical settlement data visualization (public records only)</li>
             <li><strong>TrueVow CONNECT™</strong> - Referral network and client management</li>
             <li><strong>TrueVow VERIFY™</strong> - Blockchain-anchored compliance certificates</li>
@@ -207,6 +207,12 @@
         <p>By default, TrueVow <strong>does not store</strong> call audio, transcripts, personally identifiable information (PII), protected health information (PHI), Social Security Numbers, financial account details, or other sensitive client data beyond the duration of the session.</p>
         
         <p>Only <strong>anonymized booking metadata</strong> (timestamp, practice area, consent status, phone number in E.164 format) is transmitted to Firm.</p>
+        
+        <div class="info-box">
+            <h4>📋 SETTLE™ Specific Data Collection Model</h4>
+            <p><strong>For TrueVow SETTLE™ specifically:</strong> We collect only generic injury categories, county information (public data), and dollar amounts. We do <strong>NOT</strong> collect case facts, legal strategy, privileged communications, or client identifiers. This minimal data collection ensures compliance with ABA Model Rule 1.6 and state bar ethics opinions.</p>
+            <p><strong>Data Aggregation:</strong> SETTLE contributions are immediately anonymized and aggregated. No individual case data is retained beyond the aggregation process. Minimum 15 cases per query result prevents re-identification of any individual case.</p>
+        </div>
 
         <h3>3.2 Optional 7-Day Retention (Opt-In)</h3>
         <p>Upon Firm's explicit election in account settings ("Retention Toggle"), TrueVow may retain call recordings and machine-generated transcripts for up to <strong>seven (7) calendar days</strong> solely to facilitate export to Firm's secure internal systems.</p>
@@ -229,6 +235,21 @@
             <li><strong>Deletion Standard:</strong> NIST SP 800-88 Rev 1 cryptographic shredding with checksum verification</li>
             <li><strong>Immutable Logging:</strong> CloudTrail + Loki; 365-day retention; logs contain no content, only metadata (timestamp, status codes, latency)</li>
         </ul>
+        
+        <h3>3.4 SETTLE Data Aggregation & Anonymization</h3>
+        <p><strong>TrueVow SETTLE™ employs a multi-layer anonymization and aggregation process:</strong></p>
+        <ul>
+            <li><strong>Immediate Anonymization:</strong> All data contributions are stripped of client identifiers, case facts, legal strategy, and privileged communications before storage</li>
+            <li><strong>Minimum Aggregation Threshold:</strong> Query results require a minimum of 15 cases to prevent re-identification of any individual case</li>
+            <li><strong>Generic Categories Only:</strong> Data is stored using generic injury categories (e.g., "soft tissue injury", "fracture") rather than specific medical diagnoses or detailed narratives</li>
+            <li><strong>No PII/PHI Storage:</strong> No personally identifiable information or protected health information is stored in the SETTLE database</li>
+            <li><strong>Blockchain Verification:</strong> Each contribution generates an OpenTimestamps blockchain hash providing cryptographic proof of anonymization (hash only; no personal data on-chain)</li>
+        </ul>
+        
+        <div class="success-box">
+            <h4>✅ Re-Identification Prevention</h4>
+            <p>The 15-case minimum aggregation threshold ensures that even if an attacker gained access to the SETTLE database, they could not identify any individual case or client. This mathematical guarantee provides structural immunity against privacy violations.</p>
+        </div>
 
         <h2>4. Information We Collect</h2>
 
@@ -305,8 +326,39 @@
                     <td>Machine-generated text from audio</td>
                     <td><strong>NOT STORED</strong> unless Retention Toggle enabled (7-day encrypted storage)</td>
                 </tr>
+                <tr>
+                    <td><strong>CONNECT Referral Data</strong></td>
+                    <td>Case type, jurisdiction, practice area (non-privileged information only)</td>
+                    <td>Optional retention service (if enabled by attorney); duration varies by state requirements. Attorneys responsible for their own record retention per state bar rules. PHI only retained as long as necessary for referral purpose.</td>
+                </tr>
             </tbody>
         </table>
+        
+        <div class="info-box">
+            <h4>📋 CONNECT™ Specific Data Collection Model</h4>
+            <p><strong>For TrueVow CONNECT™ specifically:</strong> We collect only non-privileged information necessary for referral facilitation (case type, jurisdiction, practice area). We do <strong>NOT</strong> collect client names, case facts, privileged communications, or legal strategy.</p>
+            <p><strong>PHI Handling:</strong> If attorneys share PHI with medical providers via CONNECT, a Business Associate Agreement (BAA) is required. CONNECT provides BAA templates and encryption safeguards, but attorneys are solely responsible for executing BAAs and obtaining client consent.</p>
+            <p><strong>Data Minimization:</strong> CONNECT is designed to minimize information sharing. Attorneys control what information is shared via the platform. Only non-privileged information necessary for referral is transmitted.</p>
+        </div>
+        
+        <div class="info-box">
+            <h4>📋 DRAFT™ Specific Data Collection Model</h4>
+            <p><strong>For TrueVow DRAFT™ specifically:</strong> DRAFT is a <strong>client-side compliance validation tool</strong> that runs locally on your device (zero-knowledge architecture). Your document never leaves your system.</p>
+            <p><strong>What DRAFT Collects:</strong></p>
+            <ul>
+                <li><strong>Validation Rules:</strong> Attorney-configured validation rules (synced to your device, encrypted, one-time)</li>
+                <li><strong>Template Library:</strong> Public form templates (if applicable, synced to your device, encrypted)</li>
+                <li><strong>Usage Analytics (Optional):</strong> Validation count, document type, validation status, missing fields list (field names only, not values) - NO document content, NO client data</li>
+            </ul>
+            <p><strong>What DRAFT Does NOT Collect:</strong></p>
+            <ul>
+                <li><strong>Document Content:</strong> Your document never leaves your device (processed locally only)</li>
+                <li><strong>Client Data:</strong> No client PII/PHI is collected or transmitted</li>
+                <li><strong>Case Facts:</strong> No case facts, legal strategy, or privileged communications are collected</li>
+                <li><strong>Document Text:</strong> No document text is collected or transmitted</li>
+            </ul>
+            <p><strong>Zero-Knowledge Architecture:</strong> DRAFT validation runs entirely locally on your device. Validation rules are synced to your device (encrypted, one-time), and validation runs in local memory. Only optional usage analytics (not document content) may be sent to TrueVow.</p>
+        </div>
 
         <h3>4.3 What We Explicitly DO NOT Collect</h3>
         <p><strong>Schedule C: Prohibited Data</strong> (Zero Tolerance)</p>
@@ -323,6 +375,9 @@
             <li><strong>Privileged attorney-client communications</strong> unrelated to the Services</li>
             <li><strong>Immigration or citizenship status</strong> (if not directly relevant to legal intake)</li>
             <li><strong>Criminal background data</strong> (unless required for case qualification)</li>
+            <li><strong>Case facts, legal strategy, or privileged communications</strong> (SETTLE-specific: these are never collected, even for settlement data contributions)</li>
+            <li><strong>Client names, case facts, privileged communications, or legal strategy</strong> (CONNECT-specific: only non-privileged information necessary for referral is collected, and only with client consent)</li>
+            <li><strong>Document content, client data, case facts, or privileged communications</strong> (DRAFT-specific: document content never leaves attorney's device; only validation rules and optional usage analytics are collected)</li>
         </ol>
 
         <div class="warning-box">
@@ -341,10 +396,10 @@
             <li>Route inbound calls to TrueVow INTAKE deterministic engine</li>
             <li>Execute Firm-configured qualification scripts</li>
             <li>Create bookings and transmit to Firm's calendar/CRM</li>
-            <li>Generate initial document drafts (TrueVow DRAFT)</li>
+            <li>Validate completed documents for compliance (TrueVow DRAFT)</li>
             <li>Display historical settlement visualizations (TrueVow SETTLE)</li>
             <li>Issue blockchain compliance certificates (TrueVow VERIFY)</li>
-            <li>Facilitate referrals through TrueVow CONNECT</li>
+            <li>Facilitate referrals through TrueVow CONNECT (directory/platform services only; attorneys make all professional decisions)</li>
         </ul>
 
         <h3>5.2 Operational & Security Purposes</h3>
@@ -515,6 +570,97 @@
             <li><strong>Checksum Verification:</strong> Deletion confirmed via cryptographic checksums</li>
             <li><strong>Backup Recovery Re-Flagging:</strong> Deleted data flagged in backups to prevent restoration</li>
         </ul>
+        
+        <h3>8.4 SETTLE Data Retention (Anonymized & Aggregated)</h3>
+        <p><strong>TrueVow SETTLE™ Data Handling:</strong></p>
+        <ul>
+            <li><strong>Immediate Anonymization:</strong> All contributions are anonymized and aggregated immediately upon submission</li>
+            <li><strong>No Individual Case Retention:</strong> No individual case data is retained beyond the aggregation process</li>
+            <li><strong>Aggregated Statistics Only:</strong> Only aggregated, anonymized statistics are stored (e.g., "Median settlement for soft tissue injury in Cook County: $68K")</li>
+            <li><strong>Blockchain Hash Storage:</strong> OpenTimestamps blockchain hash is stored (immutable, contains no personal data, only cryptographic proof of anonymization)</li>
+            <li><strong>No Deletion Required:</strong> Since no individual case data or PII is stored, there is no personal data to delete from SETTLE contributions</li>
+        </ul>
+        
+        <div class="info-box">
+            <h4>📋 SETTLE Data Lifecycle</h4>
+            <p><strong>Step 1:</strong> Attorney submits anonymized contribution (injury type, county, dollar amount only)</p>
+            <p><strong>Step 2:</strong> System immediately aggregates with existing data</p>
+            <p><strong>Step 3:</strong> Individual contribution data discarded; only aggregated statistics retained</p>
+            <p><strong>Step 4:</strong> Blockchain hash generated (proves anonymization occurred, contains no personal data)</p>
+            <p><strong>Result:</strong> No individual case data ever persists in the SETTLE database</p>
+        </div>
+        
+        <h3>8.5 DRAFT Data Retention (Zero-Knowledge Architecture)</h3>
+        <p><strong>Client-Side Validation (Zero-Knowledge):</strong></p>
+        <p>DRAFT runs <strong>locally on your device</strong> (zero-knowledge architecture). Your document never leaves your system. Validation rules are synced to your device (encrypted, one-time), and validation runs entirely locally in memory.</p>
+        
+        <p><strong>What Gets Stored:</strong></p>
+        <ul>
+            <li><strong>Validation Rules:</strong> Attorney-configured validation rules (stored in TrueVow database, encrypted, synced to your device)</li>
+            <li><strong>Template Library:</strong> Public form templates (if applicable, stored in TrueVow database, encrypted, synced to your device)</li>
+            <li><strong>Usage Analytics (Optional):</strong> Validation count, document type, validation status, missing fields list (field names only, not values) - stored in TrueVow database, NO document content, NO client data</li>
+        </ul>
+        
+        <p><strong>What Does NOT Get Stored:</strong></p>
+        <ul>
+            <li><strong>Document Content:</strong> Your document never leaves your device (processed locally only, never stored by TrueVow)</li>
+            <li><strong>Client Data:</strong> No client PII/PHI is collected or stored</li>
+            <li><strong>Case Facts:</strong> No case facts, legal strategy, or privileged communications are collected or stored</li>
+            <li><strong>Document Text:</strong> No document text is collected or stored</li>
+        </ul>
+        
+        <div class="info-box">
+            <h4>📋 DRAFT Zero-Knowledge Architecture</h4>
+            <p><strong>How It Works:</strong></p>
+            <p><strong>Step 1:</strong> Validation rules synced to your device (encrypted, one-time)</p>
+            <p><strong>Step 2:</strong> You prepare document in your preferred tool (Word, Google Docs, etc.)</p>
+            <p><strong>Step 3:</strong> You run DRAFT validator (browser extension or desktop app)</p>
+            <p><strong>Step 4:</strong> DRAFT validates document locally (in your device's memory, never uploaded)</p>
+            <p><strong>Step 5:</strong> Validation results shown locally (never sent to TrueVow)</p>
+            <p><strong>Step 6:</strong> Optional usage analytics sent (not document content, only metadata)</p>
+            <p><strong>Result:</strong> Your document never leaves your device. TrueVow never sees your document content.</p>
+        </div>
+        
+        <div class="warning-box">
+            <h4>⚠️ Attorney Responsibility</h4>
+            <p><strong>CRITICAL:</strong> Attorneys are solely responsible for maintaining their own document records in compliance with state bar requirements. State retention requirements vary (typically 5-7 years, but varies by jurisdiction). Attorneys must maintain their own records regardless of whether TrueVow offers optional retention services.</p>
+        </div>
+        
+        <h3>8.6 CONNECT Data Retention</h3>
+        <p><strong>Attorney Responsibility for Record Retention:</strong></p>
+        <p>Attorneys are <strong>solely responsible</strong> for maintaining their own referral records in compliance with state bar requirements. State retention requirements vary (typically 5-7 years, but varies by jurisdiction). Attorneys must maintain their own records regardless of whether TrueVow offers optional retention services.</p>
+        
+        <p><strong>TrueVow CONNECT™ Optional Retention Service:</strong></p>
+        <p>TrueVow may offer <strong>optional</strong> record retention services for attorney convenience. If attorneys choose to use this optional service:</p>
+        <ul>
+            <li><strong>Referral Records:</strong> May be retained for attorney convenience (duration varies by state requirements; attorneys must verify their state's requirements)</li>
+            <li><strong>Non-Privileged Information:</strong> Case type, jurisdiction, practice area retained for referral management purposes (if optional service enabled)</li>
+            <li><strong>PHI (if shared):</strong> Retained only as long as necessary for referral purpose; deleted after referral completion (unless longer retention required by law)</li>
+            <li><strong>Client Consent Records:</strong> Attorneys are responsible for maintaining their own consent records; TrueVow may store copies if attorneys choose to use optional service</li>
+            <li><strong>Audit Logs:</strong> Platform activity logs retained for system operation purposes (duration varies)</li>
+            <li><strong>BAA Records:</strong> If PHI is shared, attorneys are responsible for maintaining BAA records; TrueVow may store copies if attorneys choose to use optional service</li>
+        </ul>
+        
+        <div class="warning-box">
+            <h4>⚠️ Attorney Responsibility</h4>
+            <p><strong>CRITICAL:</strong> Attorneys are solely responsible for maintaining their own referral records in compliance with their state bar requirements. TrueVow's optional retention service (if offered) does NOT relieve attorneys of this responsibility. Attorneys must:</p>
+            <ul>
+                <li>Verify their state's specific retention requirements (varies by state)</li>
+                <li>Maintain their own records regardless of TrueVow's optional service</li>
+                <li>Ensure compliance with state bar rules for record retention</li>
+                <li>Not rely solely on TrueVow for record retention compliance</li>
+            </ul>
+        </div>
+        
+        <div class="info-box">
+            <h4>📋 CONNECT Data Lifecycle</h4>
+            <p><strong>Step 1:</strong> Attorney initiates referral via CONNECT platform (shares only non-privileged information: case type, jurisdiction, practice area)</p>
+            <p><strong>Step 2:</strong> Receiving attorney/provider reviews referral information</p>
+            <p><strong>Step 3:</strong> If referral accepted, attorneys enter into separate written referral agreement (outside CONNECT platform)</p>
+            <p><strong>Step 4:</strong> Attorney maintains referral record per state bar requirements (TrueVow may offer optional retention service)</p>
+            <p><strong>Step 5:</strong> If PHI was shared, attorney maintains BAA records per state requirements (TrueVow may offer optional retention service)</p>
+            <p><strong>Result:</strong> Minimal data collection; only non-privileged information necessary for referral facilitation. Attorney retains full responsibility for record retention compliance.</p>
+        </div>
 
         <h2>9. Data Security Measures (SOC 2 Type II Aligned)</h2>
 
@@ -557,6 +703,7 @@
             <li><strong>Anomaly Detection:</strong> ML-based behavior analysis for security events</li>
             <li><strong>Rate Limiting:</strong> Prevents brute-force and API abuse</li>
             <li><strong>Real-Time Alerts:</strong> 24/7 SOC monitoring with PagerDuty escalation</li>
+            <li><strong>Blockchain Verification (SETTLE):</strong> OpenTimestamps blockchain hashing provides cryptographic proof of anonymization and immutable audit trail for SETTLE contributions (hash only; no personal data on-chain)</li>
         </ul>
 
         <h4>Layer 6: Vulnerability Management</h4>
@@ -685,7 +832,7 @@
         <h3>10.2 Firm's Responsibility for Caller/Client Rights</h3>
         <p><strong>IMPORTANT:</strong> For Firm Client Data (intake responses, call audio/transcripts), <strong>Firm is the data controller</strong>. Data subject requests from callers/clients must be directed to the Firm, not TrueVow.</p>
 
-        <p><strong>TrueVow will assist Firm</strong> by providing data export tools and technical support within 72 hours of written notice.</p>
+        <p><strong>TrueVow may assist Firm</strong> by providing data export tools and technical support. TrueVow will use <strong>commercially reasonable efforts</strong> to respond to requests within 72 hours, but makes <strong>no guarantee of response time</strong> and shall <strong>not be liable</strong> for any delay.</p>
 
         <h2>11. California Privacy Rights (CCPA/CPRA)</h2>
 
@@ -1082,7 +1229,7 @@
                         <a href="/marketing/blog.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Blog</a>
                         <a href="/marketing/case-studies.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Case Studies</a>
                         <a href="/marketing/partner.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Partner Program</a>
-                        <a href="/marketing/affiliate.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Affiliate Program</a>
+                        <a href="" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Affiliate Program</a>
                     </div>
                 </div>
                 <div>
@@ -1090,8 +1237,7 @@
                     <div style="display: flex; flex-direction: column; gap: 12px;">
                         <a href="/marketing/about.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">About Us</a>
                         <a href="/marketing/careers.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Careers</a>
-                        <a href="/marketing/press.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Press</a>
-                        <a href="/marketing/apply.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Contact</a>
+                        <a href="/marketing/trial.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Contact</a>
                     </div>
                 </div>
             </div>

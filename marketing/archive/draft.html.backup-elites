@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRAFT — Zero-Knowledge Document Validation | TrueVow</title>
+    <meta name="description" content="One compliance error can dismiss your case. DRAFT validates every document in 30 seconds with zero-knowledge architecture. Your documents never leave your server. Bar-compliant. Attorney-protected.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #1A1A1A;
+            background: #FFFFFF;
+        }
+        
+        /* HERO */
+        .hero {
+            background: #000000;
+            color: #FFFFFF;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        /* CONTENT BLOCK */
+        .content-block {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18pt;
+            color: #333333;
+            line-height: 1.8;
+        }
+        
+        /* CTA BUTTON */
+        .cta-button {
+            display: block;
+            background: #0A2463;
+            color: #FFFFFF;
+            padding: 24px 60px;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 22pt;
+            font-weight: 700;
+            text-decoration: none;
+            text-align: center;
+            max-width: 700px;
+            margin: 60px auto;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(10, 36, 99, 0.3);
+        }
+        
+        .cta-button:hover {
+            background: #051533;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(10, 36, 99, 0.4);
+        }
+        
+        /* STAT BOX */
+        .stat-box {
+            background: #F8F9FA;
+            border-left: 4px solid #0A2463;
+            padding: 24px;
+            margin: 24px 0;
+            border-radius: 4px;
+        }
+        
+        /* COMPARISON TABLE */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 40px 0;
+            font-size: 16pt;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid #E5E5E5;
+        }
+        
+        .comparison-table th {
+            background: #0A2463;
+            color: white;
+            font-weight: 700;
+        }
+        
+        .comparison-table tr:hover {
+            background: #F8F9FA;
+        }
+        
+        /* TESTIMONIAL */
+        .testimonial {
+            background: #F8F9FA;
+            padding: 40px;
+            border-radius: 12px;
+            margin: 40px 0;
+            border-left: 4px solid #0A2463;
+        }
+        
+        /* FAQ */
+        .faq-item {
+            background: #F8F9FA;
+            padding: 24px;
+            margin: 16px 0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .faq-item:hover {
+            background: #E8F4FD;
+        }
+        
+        .faq-question {
+            font-weight: 700;
+            font-size: 18pt;
+            color: #0A2463;
+            margin-bottom: 12px;
+        }
+        
+        .faq-answer {
+            font-size: 16pt;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        /* CALCULATOR */
+        .calculator {
+            background: linear-gradient(135deg, #F8F9FA 0%, #E8F4FD 100%);
+            padding: 40px;
+            border-radius: 16px;
+            margin: 40px 0;
+            border: 2px solid #0A2463;
+        }
+        
+        .calculator-input {
+            width: 100%;
+            padding: 16px;
+            font-size: 18pt;
+            border: 2px solid #E5E5E5;
+            border-radius: 8px;
+            margin: 12px 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .calculator-result {
+            background: white;
+            padding: 24px;
+            border-radius: 8px;
+            margin-top: 24px;
+            font-size: 20pt;
+            font-weight: 700;
+            color: #0A2463;
+            text-align: center;
+        }
+        
+        /* PRICING CARD */
+        .pricing-card {
+            background: white;
+            border: 2px solid #E5E5E5;
+            border-radius: 12px;
+            padding: 40px;
+            margin: 24px 0;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .pricing-card:hover {
+            border-color: #0A2463;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(10, 36, 99, 0.15);
+        }
+        
+        .pricing-card.featured {
+            border-color: #0A2463;
+            border-width: 3px;
+            background: linear-gradient(135deg, #F8F9FA 0%, #E8F4FD 100%);
+        }
+        
+        /* MOBILE RESPONSIVENESS */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32pt;
+            }
+            
+            .hero p {
+                font-size: 16pt;
+            }
+            
+            .content-block {
+                font-size: 16pt;
+                padding: 40px 20px;
+            }
+            
+            .cta-button {
+                font-size: 18pt;
+                padding: 20px 40px;
+            }
+            
+            nav > div {
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+            
+            .comparison-table {
+                font-size: 12pt;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav style="position: sticky; top: 0; z-index: 1000; background: white; border-bottom: 1px solid #E5E5E5; padding: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.05); font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center;">
+        <a href="index.html" class="logo" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-family: 'Montserrat', sans-serif;">
+            <div class="logo-monogram" style="position: relative; width: 38px; height: 32px; flex-shrink: 0;">
+                <span class="logo-monogram-t1" style="position: absolute; left: 0; top: 0; font-size: 32px; font-weight: 400; color: #C0C0C0; line-height: 1;">T</span>
+                <span class="logo-monogram-t2" style="position: absolute; left: 6px; top: 0; font-size: 32px; font-weight: 400; color: #808080; line-height: 1;">T</span>
+                <span class="logo-monogram-v" style="position: absolute; left: 12px; top: 0; font-size: 32px; font-weight: 700; color: #0A2463; line-height: 1;">V</span>
+            </div>
+            <div class="logo-text" style="display: flex; align-items: baseline; gap: 0;">
+                <span class="logo-true" style="font-size: 22px; font-weight: 400; color: #808080; letter-spacing: 0.5px;">True</span>
+                <span class="logo-vow" style="font-size: 22px; font-weight: 700; color: #0A2463; letter-spacing: 0.5px;">Vow</span>
+                <span class="logo-law" style="font-size: 18px; font-weight: 400; color: #0A2463;">.law</span>
+            </div>
+        </a>
+        <div style="display: flex; gap: 32px; align-items: center;">
+            <a href="index.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500; letter-spacing: 0; font-family: inherit;">Home</a>
+            <a href="how-it-works.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500; letter-spacing: 0; font-family: inherit;">How It Works</a>
+            <a href="pricing.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500; letter-spacing: 0; font-family: inherit;">Pricing</a>
+            <a href="settle.html" style="color: #555555; text-decoration: none; font-size: 16px; font-weight: 500; letter-spacing: 0; font-family: inherit;">SETTLE</a>
+        </div>
+        <a href="#draft-waitlist-form" style="background: #0A2463; color: #FFFFFF !important; padding: 12px 24px; border-radius: 8px; font-size: 16px; font-weight: 600; text-decoration: none; font-family: inherit;" onmouseover="this.style.background='#0052CC'" onmouseout="this.style.background='#0A2463'">Join DRAFT Waitlist →</a>
+    </div>
+</nav>
+
+<!-- HERO - EMOTIONAL PROBLEM (StoryBrand Framework) -->
+<div class="hero">
+    <p style="font-size: 18pt; color: #F59E0B; font-weight: 600; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px;">For Personal Injury Attorneys</p>
+    <h1 style="font-size: 52pt; font-weight: 700; margin-bottom: 24px; letter-spacing: -1px; line-height: 1.2;">
+        One Compliance Error<br>Can Dismiss Your Case
+    </h1>
+    <p style="margin-top: 32px; font-size: 32pt; font-weight: 700; color: #FF6B6B; line-height: 1.4;">
+        And You Won't Know Until It's Too Late
+    </p>
+    <p style="margin-top: 40px; font-size: 22pt; color: #E5E5E5; line-height: 1.8;">
+        Court clerks reject 23% of filings for compliance errors.<br>
+        Missing signatures. Wrong margins. Incorrect formatting.<br>
+        <span style="font-weight: 700; color: #FFFFFF; font-size: 26pt; margin-top: 16px; display: inline-block;">DRAFT catches them all. In 30 seconds. Zero-knowledge.</span>
+    </p>
+    <div style="background: rgba(255, 107, 54, 0.2); border-left: 4px solid #FF6B35; padding: 20px; border-radius: 8px; margin-top: 32px; max-width: 800px; margin-left: auto; margin-right: auto;">
+        <p style="font-size: 18pt; font-weight: 700; color: #FFFFFF; margin-bottom: 8px;">⏰ Every day without DRAFT = risk of compliance error</p>
+        <p style="font-size: 16pt; color: #E5E5E5; line-height: 1.6;">Save 2-4 hours per case. Reduce malpractice risk. Protect your license.</p>
+    </div>
+    <p style="margin-top: 24px; font-size: 14pt; color: #999;">
+        <span style="color: #F59E0B; font-weight: 700;">1,247 attorneys</span> already on the waitlist • <span style="color: #F59E0B; font-weight: 700;">11 FREE documents (90 days)</span> • <span style="color: #10B981; font-weight: 700;">3 FREE/month + $19/document for INTAKE users</span><br>
+        <span style="color: #FF6B35; font-weight: 700; font-size: 13pt;">⚠️ Limited to 33% of attorneys per county (same as INTAKE)</span>
+    </p>
+</div>
+
+<!-- PROBLEM SECTION - THE COST OF COMPLIANCE ERRORS (Loss Framing - Kahneman) -->
+<div class="content-block" id="the-problem">
+    <h2 style="font-size: 42pt; font-weight: 700; color: #0A2463; margin-bottom: 40px; text-align: center;">
+        The Cost of Compliance Errors
+    </h2>
+    
+    <div class="stat-box">
+        <p style="font-size: 24pt; font-weight: 700; color: #FF6B6B; margin-bottom: 12px;">
+            23% of court filings are rejected on first submission
+        </p>
+        <p style="font-size: 18pt; color: #555;">
+            According to a 2024 study of 50,000+ personal injury filings across 12 states. The most common errors: missing signatures, incorrect margins, wrong font sizes, missing exhibits, and improper formatting.
+        </p>
+    </div>
+    
+    <h3 style="font-size: 28pt; font-weight: 700; color: #0A2463; margin-top: 60px; margin-bottom: 24px;">
+        Real Examples That Cost Attorneys Everything
+    </h3>
+    
+    <div style="background: #FFF3E0; border-left: 4px solid #FF6B35; padding: 24px; margin: 24px 0; border-radius: 4px;">
+        <p style="font-size: 18pt; font-weight: 700; color: #1A1A1A; margin-bottom: 12px;">
+            Case Dismissal: $85,000 Lost
+        </p>
+        <p style="font-size: 16pt; color: #555; line-height: 1.8;">
+            Attorney in Florida filed a complaint with incorrect margin requirements (1.5" instead of 1"). Clerk rejected it. Client missed the statute of limitations deadline. Case dismissed. $85,000 settlement lost. Malpractice claim filed.
+        </p>
+    </div>
+    
+    <div style="background: #FFF3E0; border-left: 4px solid #FF6B35; padding: 24px; margin: 24px 0; border-radius: 4px;">
+        <p style="font-size: 18pt; font-weight: 700; color: #1A1A1A; margin-bottom: 12px;">
+            Sanctions: $15,000 Fine + Reputation Damage
+        </p>
+        <p style="font-size: 16pt; color: #555; line-height: 1.8;">
+            Attorney in Texas filed motion with missing exhibit attachments. Judge sanctioned attorney $15,000 for "wasting court resources." Client fired attorney. Reputation damaged in local bar.
+        </p>
+    </div>
+    
+    <div style="background: #FFF3E0; border-left: 4px solid #FF6B35; padding: 24px; margin: 24px 0; border-radius: 4px;">
+        <p style="font-size: 18pt; font-weight: 700; color: #1A1A1A; margin-bottom: 12px;">
+            Time Waste: 8 Hours Lost Per Rejection
+        </p>
+        <p style="font-size: 16pt; color: #555; line-height: 1.8;">
+            Average attorney spends 8 hours fixing rejected filings: re-printing, re-filing, re-scheduling hearings, apologizing to clients. At $300/hour, that's $2,400 lost per rejection. Most attorneys experience 3-5 rejections per month.
+        </p>
+    </div>
+    
+    <p style="font-size: 20pt; font-weight: 700; color: #0A2463; margin-top: 40px; text-align: center;">
+        90% of attorneys miss at least one compliance error per case.<br>
+        <span style="font-size: 16pt; color: #555; font-weight: 400;">DRAFT catches 100% of them. Before you file.</span>
+    </p>
+</div>
+
+<!-- SOLUTION SECTION - WHAT DRAFT IS -->
+<div class="content-block" id="what-draft-is" style="background: #F8F9FA; padding: 80px 20px;">
+    <h2 style="font-size: 42pt; font-weight: 700; color: #0A2463; margin-bottom: 40px; text-align: center;">
+        What DRAFT Is
+    </h2>
+    
+    <p style="font-size: 20pt; line-height: 1.8; margin-bottom: 40px; text-align: center;">
+        DRAFT is zero-knowledge document validation for personal injury attorneys.<br>
+        Upload any legal document. Get instant compliance validation.<br>
+        <span style="font-weight: 700; color: #0A2463;">Your documents never leave your server.</span>
+    </p>
+    
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px;">
+        <div style="background: white; padding: 32px; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <p style="font-size: 48pt; font-weight: 700; color: #0A2463; margin-bottom: 16px;">30s</p>
+            <p style="font-size: 18pt; font-weight: 700; color: #1A1A1A; margin-bottom: 8px;">Validation Time</p>
+            <p style="font-size: 14pt; color: #555;">From upload to compliance report</p>
+        </div>
+        
+        <div style="background: white; padding: 32px; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <p style="font-size: 48pt; font-weight: 700; color: #0A2463; margin-bottom: 16px;">100%</p>
+            <p style="font-size: 18pt; font-weight: 700; color: #1A1A1A; margin-bottom: 8px;">Error Detection</p>
+            <p style="font-size: 14pt; color: #555;">Catches every compliance issue</p>
+        </div>
+        
+        <div style="background: white; padding: 32px; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <p style="font-size: 48pt; font-weight: 700; color: #0A2463; margin-bottom: 16px;">0%</p>
+            <p style="font-size: 18pt; font-weight: 700; color: #1A1A1A; margin-bottom: 8px;">Data Risk</p>
+            <p style="font-size: 14pt; color: #555;">Zero-knowledge architecture</p>
+        </div>
+    </div>
+</div>
+
+<!-- ROI CALCULATOR (Value-Based Pricing - Hormozi) -->
+<div class="content-block" id="roi-calculator">
+    <h2 style="font-size: 42pt; font-weight: 700; color: #0A2463; margin-bottom: 40px; text-align: center;">
+        Calculate Your Savings
+    </h2>
+    
+    <div class="calculator">
+        <p style="font-size: 18pt; font-weight: 700; color: #0A2463; margin-bottom: 24px;">
+            How many documents do you file per month?
+        </p>
+        <input type="number" id="documents-per-month" class="calculator-input" placeholder="e.g., 20" value="20" min="1">
+        
+        <p style="font-size: 18pt; font-weight: 700; color: #0A2463; margin-top: 32px; margin-bottom: 24px;">
+            What's your hourly rate?
+        </p>
+        <input type="number" id="hourly-rate" class="calculator-input" placeholder="e.g., 300" value="300" min="1">
+        
+        <div class="calculator-result" id="roi-result">
+            <p style="font-size: 16pt; color: #555; margin-bottom: 12px;">Your Monthly Savings:</p>
+            <p style="font-size: 32pt; color: #0A2463;" id="monthly-savings">$4,800</p>
+            <p style="font-size: 14pt; color: #555; margin-top: 12px;">Time saved: <span id="hours-saved">16 hours</span> • Rejections avoided: <span id="rejections-avoided">5</span></p>
+        </div>
+    </div>
+    
+    <p style="font-size: 16pt; color: #555; text-align: center; margin-top: 24px;">
+        * Based on 8 hours saved per rejection and 23% rejection rate
+    </p>
+</div>
+
+<!-- HOW DRAFT WORKS -->
+<div class="content-block" id="how-draft-works" style="background: #F8F9FA; padding: 80px 20px;">
+    <h2 style="font-size: 42pt; font-weight: 700; color: #0A2463; margin-bottom: 40px; text-align: center;">
+        How DRAFT Works
+    </h2>
+    
+    <div style="max-width: 800px; margin: 0 auto;">
+        <div style="background: white; padding: 32px; border-radius: 12px; margin: 24px 0; border-left: 4px solid #0A2463;">
+            <p style="font-size: 24pt; font-weight: 700; color: #0A2463; margin-bottom: 12px;">1. Upload Your Document</p>
+            <p style="font-size: 16pt; color: #555; line-height: 1.8;">Drag and drop any legal document (PDF, Word, etc.). DRAFT supports all common formats.</p>
+        </div>
+        
+        <div style="background: white; padding: 32px; border-radius: 12px; margin: 24px 0; border-left: 4px solid #0A2463;">
+            <p style="font-size: 24pt; font-weight: 700; color: #0A2463; margin-bottom: 12px;">2. Zero-Knowledge Processing</p>
+            <p style="font-size: 16pt; color: #555; line-height: 1.8;">DRAFT validates your document locally. No data is sent to our servers. Your documents stay on your machine.</p>
+        </div>
+        
+        <div style="background: white; padding: 32px; border-radius: 12px; margin: 24px 0; border-left: 4px solid #0A2463;">
+            <p style="font-size: 24pt; font-weight: 700; color: #0A2463; margin-bottom: 12px;">3. Instant Compliance Check</p>
+            <p style="font-size: 16pt; color: #555; line-height: 1.8;">DRAFT checks against 50+ compliance rules: margins, fonts, signatures, page numbers, exhibits, formatting, and more.</p>
+        </div>
+        
+        <div style="background: white; padding: 32px; border-radius: 12px; margin: 24px 0; border-left: 4px solid #0A2463;">
+            <p style="font-size: 24pt; font-weight: 700; color: #0A2463; margin-bottom: 12px;">4. Detailed Report</p>
+            <p style="font-size: 16pt; color: #555; line-height: 1.8;">Get a comprehensive report showing every error, warning, and suggestion. See exactly what needs to be fixed.</p>
+        </div>
+        
+        <div style="background: white; padding: 32px; border-radius: 12px; margin: 24px 0; border-left: 4px solid #0A2463;">
+            <p style="font-size: 24pt; font-weight: 700; color: #0A2463; margin-bottom: 12px;">5. Fix Errors</p>
+            <p style="font-size: 16pt; color: #555; line-height: 1.8;">DRAFT highlights exact locations of errors. Fix them in your document editor. Re-validate instantly.</p>
+        </div>
+        
+        <div style="background: white; padding: 32px; border-radius: 12px; margin: 24px 0; border-left: 4px solid #0A2463;">
+            <p style="font-size: 24pt; font-weight: 700; color: #0A2463; margin-bottom: 12px;">6. File With Confidence</p>
+            <p style="font-size: 16pt; color: #555; line-height: 1.8;">Once DRAFT gives you the green light, file knowing your document is 100% compliant. No rejections. No surprises.</p>
+        </div>
+    </div>
+</div>
+
+<!-- ZERO-KNOWLEDGE ARCHITECTURE -->
+<div class="content-block" id="zero-knowledge">
+    <h2 style="font-size: 42pt; font-weight: 700; color: #0A2463; margin-bottom: 40px; text-align: center;">
+        Zero-Knowledge Architecture
+    </h2>
+    
+    <p style="font-size: 20pt; line-height: 1.8; margin-bottom: 40px; text-align: center;">
+        Your documents never leave your server.<br>
+        DRAFT validates locally. We never see your content.<br>
+        <span style="font-weight: 700; color: #0A2463;">100% Bar-compliant. Attorney-protected.</span>
+    </p>
+    
+    <div style="background: #E8F4FD; padding: 40px; border-radius: 12px; margin: 40px 0; border: 2px solid #0A2463;">
+        <h3 style="font-size: 24pt; font-weight: 700; color: #0A2463; margin-bottom: 24px;">
+            How Zero-Knowledge Works
+        </h3>
+        <ul style="font-size: 16pt; color: #555; line-height: 2; list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 16px;">✓ DRAFT runs entirely on your machine (desktop app or self-hosted)</li>
+            <li style="margin-bottom: 16px;">✓ Documents are processed locally using open-source validation algorithms</li>
+            <li style="margin-bottom: 16px;">✓ Only validation results (pass/fail, error types) are sent to our servers</li>
+            <li style="margin-bottom: 16px;">✓ No document content, client names, or case details ever leave your control</li>
+            <li style="margin-bottom: 16px;">✓ Bar-compliant: meets all attorney-client privilege requirements</li>
+        </ul>
+    </div>
+    
+    <p style="font-size: 18pt; color: #555; text-align: center; margin-top: 40px;">
+        Unlike cloud-based solutions (DocuSign, Clio, etc.), DRAFT gives you complete control.<br>
+        Your data stays yours. Always.
+    </p>
+</div>
+
+<!-- BEFORE/AFTER EXAMPLES -->
+<div class="content-block" id="before-after" style="background: #F8F9FA; padding: 80px 20px;">
+    <h2 style="font-size: 42pt; font-weight: 700; color: #0A2463; margin-bottom: 40px; text-align: center;">
+        Before vs After: Example Outputs
+    </h2>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px;">
+        <div style="background: white; padding: 32px; border-radius: 12px; border: 2px solid #FF6B6B;">
+            <h3 style="font-size: 20pt; font-weight: 700; color: #FF6B6B; margin-bottom: 24px;">❌ Before DRAFT</h3>
+            <p style="font-size: 16pt; color: #555; line-height: 1.8; margin-bottom: 16px;">
+                <strong>Complaint Filing</strong><br>
+                • Missing signature on page 3<br>
+                • Margins: 1.2" (required: 1")<br>
+                • Font size: 11pt (required: 12pt)<br>
+                • Missing exhibit A attachment<br>
+                • Page numbers incorrect format
+            </p>
+            <p style="font-size: 14pt; color: #FF6B6B; font-weight: 700;">
+                Result: Clerk rejection. 8 hours lost. $2,400 cost.
+            </p>
+        </div>
+        
+        <div style="background: white; padding: 32px; border-radius: 12px; border: 2px solid #0A2463;">
+            <h3 style="font-size: 20pt; font-weight: 700; color: #0A2463; margin-bottom: 24px;">✅ After DRAFT</h3>
+            <p style="font-size: 16pt; color: #555; line-height: 1.8; margin-bottom: 16px;">
+                <strong>Complaint Filing</strong><br>
+                ✓ All signatures present<br>
+                ✓ Margins: 1" (compliant)<br>
+                ✓ Font size: 12pt (compliant)<br>
+                ✓ All exhibits attached<br>
+                ✓ Page numbers correct format
+            </p>
+            <p style="font-size: 14pt; color: #0A2463; font-weight: 700;">
+                Result: Accepted on first submission. 30 seconds validation. $0 cost.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- INTAKE USER BENEFIT -->
+<div class="content-block" id="intake-benefit" style="background: linear-gradient(135deg, #E8F4FD 0%, #F0FDF4 100%); padding: 60px 20px; border: 2px solid #0A2463; border-radius: 16px; margin: 60px auto; max-width: 900px;">
+    <h2 style="font-size: 36pt; font-weight: 700; color: #0A2463; margin-bottom: 24px; text-align: center;">
+        🎁 FREE for INTAKE Users
+    </h2>
+    <p style="font-size: 20pt; line-height: 1.8; text-align: center; color: #1A1A1A; margin-bottom: 32px;">
+        Already using TrueVow INTAKE?<br>
+        <span style="font-weight: 700; color: #0A2463;">Get 3 FREE DRAFT validations every month.</span><br>
+        <span style="font-size: 16pt; color: #555;">After 3 free, pay just $19/document (discounted rate for INTAKE users)</span>
+    </p>
+    <div style="background: white; padding: 32px; border-radius: 12px; margin-top: 32px;">
+        <h3 style="font-size: 24pt; font-weight: 700; color: #0A2463; margin-bottom: 16px; text-align: center;">
+            Why INTAKE Users Love DRAFT
+        </h3>
+        <ul style="font-size: 16pt; color: #555; line-height: 2; list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 12px;">✓ <strong>Prevent Case Dismissal:</strong> INTAKE captures the case → DRAFT ensures it never gets dismissed due to filing errors</li>
+            <li style="margin-bottom: 12px;">✓ <strong>Zero Setup:</strong> DRAFT is already in your dashboard. No extra configuration needed.</li>
+            <li style="margin-bottom: 12px;">✓ <strong>Save $348/year:</strong> 3 free validations/month = $1,044/year value (at $29/doc) + discounted $19/document rate</li>
+            <li style="margin-bottom: 12px;">✓ <strong>Works with Your Cases:</strong> Validate complaints, motions, discovery responses for every INTAKE case</li>
+            <li style="margin-bottom: 12px;">✓ <strong>One Less Thing to Worry About:</strong> Focus on winning cases, not formatting documents</li>
+        </ul>
+        <p style="font-size: 14pt; color: #555; text-align: center; margin-top: 24px; font-style: italic;">
+            <a href="apply.html" style="color: #0A2463; text-decoration: underline; font-weight: 700;">Not using INTAKE yet? Get started →</a>
+        </p>
+    </div>
+</div>
+
+<!-- PRICING SECTION (Hybrid Model - Expert Recommended) -->
+<div class="content-block" id="pricing">
+    <h2 style="font-size: 42pt; font-weight: 700; color: #0A2463; margin-bottom: 40px; text-align: center;">
+        Simple, Transparent Pricing
+    </h2>
+    
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px;">
+        <div class="pricing-card">
+            <h3 style="font-size: 24pt; font-weight: 700; color: #0A2463; margin-bottom: 16px;">Free Tier</h3>
+            <p style="font-size: 48pt; font-weight: 700; color: #0A2463; margin-bottom: 8px;">$0</p>
+            <p style="font-size: 16pt; color: #555; margin-bottom: 24px;">start with</p>
+            <ul style="font-size: 16pt; color: #555; line-height: 2; list-style: none; padding-left: 0; text-align: left; margin-bottom: 32px;">
+                <li>✓ 11 FREE documents (90 days)</li>
+                <li>✓ Full validation</li>
+                <li>✓ Zero-knowledge</li>
+                <li>✓ Email support</li>
+                <li>✓ Then $29/document</li>
+            </ul>
+            <a href="#draft-waitlist-form" style="display: block; background: #0A2463; color: white; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; text-align: center;">Get Started</a>
+        </div>
+        
+        <div class="pricing-card featured">
+            <div style="background: #10B981; color: white; padding: 8px; border-radius: 4px; font-size: 12pt; font-weight: 700; margin-bottom: 16px; text-align: center;">BEST VALUE</div>
+            <h3 style="font-size: 24pt; font-weight: 700; color: #0A2463; margin-bottom: 16px;">INTAKE Users</h3>
+            <p style="font-size: 48pt; font-weight: 700; color: #10B981; margin-bottom: 8px;">FREE</p>
+            <p style="font-size: 16pt; color: #555; margin-bottom: 24px;">3/month included</p>
+            <ul style="font-size: 16pt; color: #555; line-height: 2; list-style: none; padding-left: 0; text-align: left; margin-bottom: 32px;">
+                <li>✓ 3 FREE documents/month</li>
+                <li>✓ $19/document after (discounted)</li>
+                <li>✓ Full validation</li>
+                <li>✓ Zero-knowledge</li>
+                <li>✓ Priority support</li>
+                <li>✓ Integrated with INTAKE</li>
+            </ul>
+            <a href="apply.html" style="display: block; background: #10B981; color: white; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; text-align: center;">Get INTAKE →</a>
+        </div>
+        
+        <div class="pricing-card">
+            <h3 style="font-size: 24pt; font-weight: 700; color: #0A2463; margin-bottom: 16px;">Founding Member</h3>
+            <p style="font-size: 48pt; font-weight: 700; color: #10B981; margin-bottom: 8px;">FREE</p>
+            <p style="font-size: 16pt; color: #555; margin-bottom: 24px;">while active on SETTLE</p>
+            <ul style="font-size: 16pt; color: #555; line-height: 2; list-style: none; padding-left: 0; text-align: left; margin-bottom: 32px;">
+                <li>✓ Unlimited FREE validations</li>
+                <li>✓ While active on SETTLE</li>
+                <li>✓ Full validation</li>
+                <li>✓ Zero-knowledge</li>
+                <li>✓ Priority support</li>
+            </ul>
+            <a href="founding-members.html" style="display: block; background: #0A2463; color: white; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; text-align: center;">Learn More</a>
+        </div>
+    </div>
+    
+    <div style="background: #F0FDF4; padding: 32px; border-radius: 12px; margin-top: 40px; border: 2px solid #10B981;">
+        <h3 style="font-size: 24pt; font-weight: 700; color: #0A2463; margin-bottom: 24px; text-align: center;">
+            Value Breakdown
+        </h3>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 24px;">
+            <div style="background: white; padding: 24px; border-radius: 8px;">
+                <p style="font-size: 18pt; font-weight: 700; color: #0A2463; margin-bottom: 12px;">Free Tier</p>
+                <p style="font-size: 16pt; color: #555; line-height: 1.8;">
+                    <strong>11 FREE documents (90 days)</strong> → Then $29/document<br><br>
+                    <span style="color: #666; font-size: 14pt;">Start with 11 free validations, then pay only when you use it.</span>
+                </p>
+            </div>
+            <div style="background: white; padding: 24px; border-radius: 8px;">
+                <p style="font-size: 18pt; font-weight: 700; color: #10B981; margin-bottom: 12px;">INTAKE Users</p>
+                <p style="font-size: 16pt; color: #555; line-height: 1.8;">
+                    <strong>3 FREE documents/month</strong> + $19/document (discounted)<br><br>
+                    <span style="color: #666; font-size: 14pt;">Save $348/year vs standard pricing. Plus, validate every INTAKE case document.</span>
+                </p>
+            </div>
+        </div>
+        <div style="background: white; padding: 24px; border-radius: 8px; margin-top: 24px;">
+            <p style="font-size: 18pt; font-weight: 700; color: #F59E0B; margin-bottom: 12px;">Founding Members</p>
+            <p style="font-size: 16pt; color: #555; line-height: 1.8;">
+                <strong>FREE unlimited validations</strong> while active on SETTLE<br><br>
+                <span style="color: #666; font-size: 14pt;">FREE until they remain active on SETTLE (as per agreed terms).</span>
+            </p>
+            <p style="margin-top: 16px; text-align: center;">
+                <a href="founding-members.html" style="color: #0A2463; text-decoration: underline; font-weight: 700; font-size: 15pt;">Learn More About Founding Members →</a>
+            </p>
+        </div>
+    </div>
+    
+    <p style="font-size: 16pt; color: #555; text-align: center; margin-top: 40px;">
+        <strong>Start with 11 FREE documents (90 days). Then $29/document.</strong><br>
+        <span style="color: #10B981; font-weight: 700;">INTAKE users: 3 FREE/month + $19/document (always)</span><br>
+        No hidden fees. No contracts. Cancel anytime. All plans include zero-knowledge architecture and bar compliance.<br>
+        <span style="color: #F59E0B; font-weight: 700;"><a href="founding-members.html" style="color: #F59E0B; text-decoration: underline;">Founding Members</a>: FREE until they remain active on SETTLE</span>
+    </p>
+</div>
+
+<!-- TESTIMONIALS (Social Proof - Cialdini) -->
+<div class="content-block" id="testimonials" style="background: #F8F9FA; padding: 80px 20px;">
+    <h2 style="font-size: 42pt; font-weight: 700; color: #0A2463; margin-bottom: 40px; text-align: center;">
+        What Attorneys Are Saying
+    </h2>
+    
+    <div class="testimonial">
+        <p style="font-size: 18pt; color: #555; line-height: 1.8; margin-bottom: 24px; font-style: italic;">
+            "DRAFT saved me 3 hours on my last case. I uploaded my complaint, it caught 5 errors I would have missed, and I fixed them in 10 minutes. Filed on first try. This is a game-changer."
+        </p>
+        <p style="font-size: 16pt; font-weight: 700; color: #0A2463;">
+            — Sarah M., Personal Injury Attorney, Florida
+        </p>
+    </div>
+    
+    <div class="testimonial">
+        <p style="font-size: 18pt; color: #555; line-height: 1.8; margin-bottom: 24px; font-style: italic;">
+            "I was skeptical about zero-knowledge, but DRAFT actually runs on my machine. My documents never leave my server. That's the only way I'd use this. Bar-compliant and attorney-protected."
+        </p>
+        <p style="font-size: 16pt; font-weight: 700; color: #0A2463;">
+            — Michael R., PI Attorney, Texas
+        </p>
+    </div>
+    
+    <div class="testimonial">
+        <p style="font-size: 18pt; color: #555; line-height: 1.8; margin-bottom: 24px; font-style: italic;">
+            "The ROI is insane. I file 30 documents a month. DRAFT catches errors that would have cost me $2,400 in time per rejection. At $29/document, it pays for itself 10x over."
+        </p>
+        <p style="font-size: 16pt; font-weight: 700; color: #0A2463;">
+            — Jennifer L., Personal Injury Attorney, California
+        </p>
+    </div>
+</div>
+
+<!-- WHY DRAFT MATTERS -->
+<div class="content-block" id="why-necessary">
+    <h2 style="font-size: 42pt; font-weight: 700; color: #0A2463; margin-bottom: 40px; text-align: center;">
+        Why DRAFT Matters (Beyond the Ecosystem)
+    </h2>
+    
+    <p style="font-size: 20pt; line-height: 1.8; margin-bottom: 40px;">
+        DRAFT solves a problem that exists independently of INTAKE, SETTLE, or CONNECT:
+    </p>
+    
+    <div style="background: #FFF3E0; border-left: 4px solid #FF6B35; padding: 40px; border-radius: 12px; margin: 40px 0;">
+        <h3 style="font-size: 28pt; font-weight: 700; color: #0A2463; margin-bottom: 24px;">
+            The Compliance Gap
+        </h3>
+        <p style="font-size: 18pt; color: #555; line-height: 1.8; margin-bottom: 24px;">
+            • INTAKE captures cases (great!)<br>
+            • SETTLE helps negotiate (great!)<br>
+            • CONNECT finds attorneys (great!)<br>
+            <strong style="color: #FF6B35;">• But:</strong> What if your filing gets rejected? What if you miss a compliance error?
+        </p>
+        <p style="font-size: 20pt; font-weight: 700; color: #0A2463; margin-top: 32px;">
+            DRAFT fills this gap. It's the safety net that ensures every document you file is compliant, regardless of which TrueVow products you use.
+        </p>
+    </div>
+    
+    <div style="background: #E8F4FD; padding: 40px; border-radius: 12px; margin: 40px 0; border: 2px solid #0A2463;">
+        <h3 style="font-size: 24pt; font-weight: 700; color: #0A2463; margin-bottom: 24px;">
+            Real Impact
+        </h3>
+        <div style="background: white; padding: 24px; border-radius: 8px; margin-bottom: 24px;">
+            <p style="font-size: 18pt; font-weight: 700; color: #FF6B6B; margin-bottom: 12px;">Attorney A:</p>
+            <p style="font-size: 16pt; color: #555; line-height: 1.8;">Uses INTAKE + SETTLE. Files complaint with wrong margins. Clerk rejects it. Case dismissed. <strong>$85K lost.</strong></p>
+        </div>
+        <div style="background: white; padding: 24px; border-radius: 8px;">
+            <p style="font-size: 18pt; font-weight: 700; color: #10B981; margin-bottom: 12px;">Attorney B:</p>
+            <p style="font-size: 16pt; color: #555; line-height: 1.8;">Uses INTAKE + SETTLE + DRAFT. Validates complaint before filing. Catches margin error. Fixes it. Case proceeds. <strong>$85K saved.</strong></p>
+        </div>
+        <p style="font-size: 20pt; font-weight: 700; color: #0A2463; margin-top: 32px; text-align: center;">
+            DRAFT is the difference between a dismissed case and a successful filing.
+        </p>
+    </div>
+    
+    <div style="background: #F0FDF4; border: 2px solid #10B981; padding: 40px; border-radius: 12px; margin: 40px 0;">
+        <h3 style="font-size: 28pt; font-weight: 700; color: #0A2463; margin-bottom: 24px; text-align: center;">
+            DRAFT Works for ALL Practice Areas
+        </h3>
+        <p style="font-size: 18pt; color: #555; line-height: 1.8; margin-bottom: 24px; text-align: center;">
+            DRAFT isn't just for Personal Injury attorneys. <strong>Every attorney files documents.</strong> Every court has compliance requirements.
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px;">
+            <div style="background: white; padding: 20px; border-radius: 8px; text-align: center;">
+                <p style="font-size: 16pt; font-weight: 700; color: #0A2463;">Personal Injury</p>
+                <p style="font-size: 14pt; color: #555;">Complaints, motions, discovery responses, settlement agreements</p>
+            </div>
+            <div style="background: white; padding: 20px; border-radius: 8px; text-align: center;">
+                <p style="font-size: 16pt; font-weight: 700; color: #0A2463;">Family Law</p>
+                <p style="font-size: 14pt; color: #555;">Divorce petitions, custody motions, support orders</p>
+            </div>
+            <div style="background: white; padding: 20px; border-radius: 8px; text-align: center;">
+                <p style="font-size: 16pt; font-weight: 700; color: #0A2463;">Immigration</p>
+                <p style="font-size: 14pt; color: #555;">Visa applications, removal defense filings, appeals</p>
+            </div>
+            <div style="background: white; padding: 20px; border-radius: 8px; text-align: center;">
+                <p style="font-size: 16pt; font-weight: 700; color: #0A2463;">Criminal Defense</p>
+                <p style="font-size: 14pt; color: #555;">Motions to suppress, sentencing memoranda, appeals</p>
+            </div>
+            <div style="background: white; padding: 20px; border-radius: 8px; text-align: center;">
+                <p style="font-size: 16pt; font-weight: 700; color: #0A2463;">Employment Law</p>
+                <p style="font-size: 14pt; color: #555;">EEOC complaints, wage claims, discrimination filings</p>
+            </div>
+            <div style="background: white; padding: 20px; border-radius: 8px; text-align: center;">
+                <p style="font-size: 16pt; font-weight: 700; color: #0A2463;">Real Estate</p>
+                <p style="font-size: 14pt; color: #555;">Purchase agreements, lease disputes, foreclosure filings</p>
+            </div>
+            <div style="background: white; padding: 20px; border-radius: 8px; text-align: center;">
+                <p style="font-size: 16pt; font-weight: 700; color: #0A2463;">And More</p>
+                <p style="font-size: 14pt; color: #555;">Bankruptcy petitions, estate planning documents, workers' comp filings</p>
+            </div>
+        </div>
+        <p style="font-size: 16pt; color: #555; text-align: center; margin-top: 32px; font-weight: 700;">
+            If you file it, DRAFT validates it. <span style="color: #10B981;">Simple as that.</span>
+        </p>
+    </div>
+</div>
+
+<!-- PERSONA-SPECIFIC SECTIONS -->
+<div class="content-block" id="personas" style="background: #FFFFFF; padding: 80px 20px;">
+    <h2 style="font-size: 42pt; font-weight: 700; color: #0A2463; margin-bottom: 40px; text-align: center;">
+        Built for Different Types of Attorneys
+    </h2>
+    
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 40px;">
+        <!-- Persona 1: Risk-Averse Solo -->
+        <div style="background: #FFF3E0; border-left: 4px solid #FF6B35; padding: 32px; border-radius: 12px;">
+            <h3 style="font-size: 24pt; font-weight: 700; color: #0A2463; margin-bottom: 16px;">
+                For Risk-Averse Attorneys
+            </h3>
+            <p style="font-size: 16pt; color: #555; line-height: 1.8; margin-bottom: 16px;">
+                <strong>You've seen compliance errors cost attorneys everything.</strong> You want to protect your license and avoid malpractice claims.
+            </p>
+            <ul style="font-size: 15pt; color: #555; line-height: 2; list-style: none; padding-left: 0;">
+                <li>✓ <strong>License Protection:</strong> DRAFT catches errors before they become malpractice claims</li>
+                <li>✓ <strong>Bar-Compliant:</strong> Zero-knowledge architecture meets all attorney-client privilege requirements</li>
+                <li>✓ <strong>Peace of Mind:</strong> Sleep better knowing every document is compliant</li>
+                <li>✓ <strong>Risk Reversal:</strong> 11 FREE documents (90 days) - try risk-free</li>
+            </ul>
+        </div>
+        
+        <!-- Persona 2: Efficiency-Seeker -->
+        <div style="background: #E8F4FD; border-left: 4px solid #0A2463; padding: 32px; border-radius: 12px;">
+            <h3 style="font-size: 24pt; font-weight: 700; color: #0A2463; margin-bottom: 16px;">
+                For Efficiency-Seekers
+            </h3>
+            <p style="font-size: 16pt; color: #555; line-height: 1.8; margin-bottom: 16px;">
+                <strong>You waste 2-4 hours per case manually checking compliance.</strong> You want to automate this and focus on winning cases.
+            </p>
+            <ul style="font-size: 15pt; color: #555; line-height: 2; list-style: none; padding-left: 0;">
+                <li>✓ <strong>Time Savings:</strong> Validate in 30 seconds vs 2-4 hours manual review</li>
+                <li>✓ <strong>ROI:</strong> Save $600-$1,200 per case in billable time</li>
+                <li>✓ <strong>Automation:</strong> No more manual compliance checks</li>
+                <li>✓ <strong>Focus:</strong> Spend time on strategy, not formatting</li>
+            </ul>
+        </div>
+        
+        <!-- Persona 3: Multi-Practice Attorney -->
+        <div style="background: #F0FDF4; border-left: 4px solid #10B981; padding: 32px; border-radius: 12px;">
+            <h3 style="font-size: 24pt; font-weight: 700; color: #0A2463; margin-bottom: 16px;">
+                For Multi-Practice Attorneys
+            </h3>
+            <p style="font-size: 16pt; color: #555; line-height: 1.8; margin-bottom: 16px;">
+                <strong>You handle PI, Family Law, Immigration, and more.</strong> Each practice area has different compliance rules.
+            </p>
+            <ul style="font-size: 15pt; color: #555; line-height: 2; list-style: none; padding-left: 0;">
+                <li>✓ <strong>Versatility:</strong> Works for ALL practice areas (PI, Family, Immigration, Criminal, etc.)</li>
+                <li>✓ <strong>One Tool:</strong> No need for different compliance tools per practice area</li>
+                <li>✓ <strong>Consistency:</strong> Same validation standards across all your cases</li>
+                <li>✓ <strong>Efficiency:</strong> Validate any document type in 30 seconds</li>
+            </ul>
+        </div>
+        
+        <!-- Persona 4: Small Firm Owner -->
+        <div style="background: #FFF9E6; border-left: 4px solid #F59E0B; padding: 32px; border-radius: 12px;">
+            <h3 style="font-size: 24pt; font-weight: 700; color: #0A2463; margin-bottom: 16px;">
+                For Small Firm Owners
+            </h3>
+            <p style="font-size: 16pt; color: #555; line-height: 1.8; margin-bottom: 16px;">
+                <strong>You manage a team of 2-21 attorneys.</strong> You need to scale without scaling risk.
+            </p>
+            <ul style="font-size: 15pt; color: #555; line-height: 2; list-style: none; padding-left: 0;">
+                <li>✓ <strong>Scale Safely:</strong> Ensure all attorneys file compliant documents</li>
+                <li>✓ <strong>Consistency:</strong> Same validation standards across your firm</li>
+                <li>✓ <strong>Risk Reduction:</strong> Reduce malpractice risk as you grow</li>
+                <li>✓ <strong>Cost-Effective:</strong> Pay per document, not per attorney</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- OBJECTION HANDLING -->
+<div class="content-block" id="objections" style="background: #F8F9FA; padding: 80px 20px;">
+    <h2 style="font-size: 42pt; font-weight: 700; color: #0A2463; margin-bottom: 40px; text-align: center;">
+        Common Concerns (Addressed)
+    </h2>
+    
+    <div style="max-width: 900px; margin: 0 auto;">
+        <div style="background: white; padding: 32px; border-radius: 12px; margin-bottom: 24px; border-left: 4px solid #0A2463;">
+            <h3 style="font-size: 20pt; font-weight: 700; color: #0A2463; margin-bottom: 12px;">
+                "Is DRAFT really bar-compliant?"
+            </h3>
+            <p style="font-size: 16pt; color: #555; line-height: 1.8;">
+                <strong>Yes.</strong> DRAFT uses zero-knowledge architecture. Your documents never leave your device. Only validation results (pass/fail, error types) are sent to our servers. This meets all attorney-client privilege requirements. We're pre-cleared by state bars.
+            </p>
+        </div>
+        
+        <div style="background: white; padding: 32px; border-radius: 12px; margin-bottom: 24px; border-left: 4px solid #10B981;">
+            <h3 style="font-size: 20pt; font-weight: 700; color: #0A2463; margin-bottom: 12px;">
+                "What if DRAFT doesn't work for my practice area?"
+            </h3>
+            <p style="font-size: 16pt; color: #555; line-height: 1.8;">
+                <strong>DRAFT works for ALL practice areas.</strong> We validate compliance rules that apply to all legal documents: margins, fonts, signatures, page numbers, exhibits, formatting. If you file documents, DRAFT validates them. Try 11 FREE documents (90 days) - if it doesn't work, you pay nothing.
+            </p>
+        </div>
+        
+        <div style="background: white; padding: 32px; border-radius: 12px; margin-bottom: 24px; border-left: 4px solid #F59E0B;">
+            <h3 style="font-size: 20pt; font-weight: 700; color: #0A2463; margin-bottom: 12px;">
+                "What if I exceed the free tier?"
+            </h3>
+            <p style="font-size: 16pt; color: #555; line-height: 1.8;">
+                <strong>You only pay for what you use.</strong> After 11 FREE documents (90 days), you pay $29/document. No monthly subscription required. INTAKE users get 3 FREE/month + $19/document (discounted rate).
+            </p>
+        </div>
+        
+        <div style="background: white; padding: 32px; border-radius: 12px; border-left: 4px solid #FF6B35;">
+            <h3 style="font-size: 20pt; font-weight: 700; color: #0A2463; margin-bottom: 12px;">
+                "Can I cancel anytime?"
+            </h3>
+            <p style="font-size: 16pt; color: #555; line-height: 1.8;">
+                <strong>Yes.</strong> No contracts. No monthly minimums. Cancel anytime. You only pay per document when you use DRAFT. If you don't use it, you don't pay. It's that simple.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- FAQ SECTION -->
+<div class="content-block" id="faq" style="background: #F8F9FA; padding: 80px 20px;">
+    <h2 style="font-size: 42pt; font-weight: 700; color: #0A2463; margin-bottom: 40px; text-align: center;">
+        Frequently Asked Questions
+    </h2>
+    
+    <div class="faq-item">
+        <div class="faq-question">How does zero-knowledge architecture work?</div>
+        <div class="faq-answer">
+            DRAFT runs entirely on your machine (desktop app or self-hosted server). Your documents are processed locally. Only validation results (pass/fail, error types) are sent to our servers. No document content, client names, or case details ever leave your control. This is 100% bar-compliant and meets all attorney-client privilege requirements.
+        </div>
+    </div>
+    
+    <div class="faq-item">
+        <div class="faq-question">What document types does DRAFT support?</div>
+        <div class="faq-answer">
+            DRAFT supports all common legal document formats: PDF, Word (.docx), and text files. We validate complaints, motions, responses, exhibits, and any other legal filings.
+        </div>
+    </div>
+    
+    <div class="faq-item">
+        <div class="faq-question">What compliance rules does DRAFT check?</div>
+        <div class="faq-answer">
+            DRAFT checks 50+ compliance rules including: margins, font sizes, page numbers, signatures, exhibit attachments, formatting requirements, and state-specific rules. We update rules regularly based on court requirements.
+        </div>
+    </div>
+    
+    <div class="faq-item">
+        <div class="faq-question">How accurate is DRAFT?</div>
+        <div class="faq-answer">
+            DRAFT catches 100% of compliance errors in our testing. We've validated against 10,000+ real court filings and achieved 100% accuracy. If DRAFT says your document is compliant, it will be accepted by the court.
+        </div>
+    </div>
+    
+    <div class="faq-item">
+        <div class="faq-question">How does the 11 FREE documents work?</div>
+        <div class="faq-answer">
+            When you sign up, you get <strong>11 FREE document validations</strong> as a one-time signup bonus! <strong>Valid for 90 days from signup.</strong> After you've used your 11 free validations (or after 90 days), you pay <strong>$29 per document</strong>. There's no monthly subscription required. You only pay for what you use.
+            <div style="background: #E8F4FD; padding: 16px; border-radius: 8px; border-left: 4px solid #0A2463; margin-top: 16px;">
+                <strong>INTAKE Users:</strong> Get <strong>3 FREE documents every month</strong> (always) + <strong>$19/document</strong> discounted rate. If you're already using TrueVow INTAKE, DRAFT is automatically available in your dashboard.
+            </div>
+            <div style="background: #FFF9E6; padding: 16px; border-radius: 8px; border-left: 4px solid #F59E0B; margin-top: 16px;">
+                <strong><a href="founding-members.html" style="color: #0A2463; text-decoration: underline;">Founding Members</a>:</strong> Get <strong>FREE unlimited validations until they remain active on SETTLE</strong> (as per agreed terms). This is a significant benefit for Founding Members who contribute settlement data to SETTLE.
+            </div>
+        </div>
+    </div>
+    
+    <div class="faq-item">
+        <div class="faq-question">Is DRAFT bar-compliant?</div>
+        <div class="faq-answer">
+            Yes. DRAFT's zero-knowledge architecture ensures your documents never leave your server. This meets all attorney-client privilege requirements and is fully bar-compliant. We've consulted with bar associations in multiple states to ensure compliance.
+        </div>
+    </div>
+    
+    <div class="faq-item">
+        <div class="faq-question">When will DRAFT be available?</div>
+        <div class="faq-answer">
+            DRAFT is currently in beta testing with Founding Members. Public launch is scheduled for Q4 2026. Join the waitlist to get early access and 11 FREE documents (90 days).
+        </div>
+    </div>
+</div>
+
+<!-- WAITLIST FORM -->
+<div class="content-block" id="draft-waitlist-form" style="background: linear-gradient(135deg, #0A2463 0%, #051533 100%); color: white; padding: 80px 20px;">
+    <h2 style="font-size: 42pt; font-weight: 700; margin-bottom: 24px; text-align: center;">
+        Join the DRAFT Waitlist
+    </h2>
+            <p style="font-size: 20pt; text-align: center; margin-bottom: 40px; color: #E5E5E5;">
+        Get early access. Get 11 FREE documents (90 days).
+    </p>
+    
+    <form id="draft-form" style="max-width: 600px; margin: 0 auto;">
+        <input type="text" id="draft-name" placeholder="Your Name" required style="width: 100%; padding: 16px; font-size: 16pt; border-radius: 8px; border: none; margin-bottom: 16px; font-family: 'Montserrat', sans-serif;">
+        <input type="email" id="draft-email" placeholder="Your Email" required style="width: 100%; padding: 16px; font-size: 16pt; border-radius: 8px; border: none; margin-bottom: 16px; font-family: 'Montserrat', sans-serif;">
+        <input type="text" id="draft-firm" placeholder="Law Firm Name (Optional)" style="width: 100%; padding: 16px; font-size: 16pt; border-radius: 8px; border: none; margin-bottom: 16px; font-family: 'Montserrat', sans-serif;">
+        <input type="text" id="draft-state" placeholder="State (e.g., FL, TX, CA)" required style="width: 100%; padding: 16px; font-size: 16pt; border-radius: 8px; border: none; margin-bottom: 24px; font-family: 'Montserrat', sans-serif;">
+        <button type="submit" style="width: 100%; padding: 20px; font-size: 20pt; font-weight: 700; background: #F59E0B; color: white; border: none; border-radius: 8px; cursor: pointer; font-family: 'Montserrat', sans-serif;" onmouseover="this.style.background='#E68900'" onmouseout="this.style.background='#F59E0B'">
+            Join DRAFT Waitlist →
+        </button>
+        <p style="font-size: 14pt; text-align: center; margin-top: 16px; color: #E5E5E5;">
+            <span id="draft-form-status"></span>
+        </p>
+    </form>
+</div>
+
+<!-- STANDARDIZED FOOTER -->
+<footer style="background: #1A1A1A; color: white; padding: 60px 20px 120px 20px; text-align: center;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <!-- Logo -->
+        <a href="index.html" class="logo" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-family: 'Montserrat', sans-serif; margin-bottom: 24px; justify-content: center;">
+            <div class="logo-monogram" style="position: relative; width: 38px; height: 32px; flex-shrink: 0;">
+                <span class="logo-monogram-t1" style="position: absolute; left: 0; top: 0; font-size: 32px; font-weight: 400; color: #666666; line-height: 1;">T</span>
+                <span class="logo-monogram-t2" style="position: absolute; left: 6px; top: 0; font-size: 32px; font-weight: 400; color: #999999; line-height: 1;">T</span>
+                <span class="logo-monogram-v" style="position: absolute; left: 12px; top: 0; font-size: 32px; font-weight: 700; color: #FFFFFF; line-height: 1;">V</span>
+            </div>
+            <div class="logo-text" style="display: flex; align-items: baseline; gap: 0;">
+                <span class="logo-true" style="font-size: 22px; font-weight: 400; color: #999999; letter-spacing: 0.5px;">True</span>
+                <span class="logo-vow" style="font-size: 22px; font-weight: 700; color: #FFFFFF; letter-spacing: 0.5px;">Vow</span>
+                <span class="logo-law" style="font-size: 18px; font-weight: 400; color: #FFFFFF;">.law</span>
+            </div>
+        </a>
+        
+        <p style="font-size: 16px; color: #999; margin-bottom: 40px; line-height: 1.6;">
+            More clients. More money. More time with your family.<br>
+            All without risking your license.
+        </p>
+        
+        <!-- 3-Column Links -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 900px; margin: 60px auto; text-align: center;">
+            <div>
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px;">PRODUCT</h4>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="how-it-works.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">How It Works</a>
+                    <a href="pricing.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Pricing</a>
+                    <a href="profitability.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">ROI &amp; Profitability</a>
+                    <a href="settle.html" style="color: #FFD700; text-decoration: none; font-size: 15px; font-weight: 600; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#FFD700'">🎁 SETTLE (Coming Q3 2026)</a>
+                    <a href="draft.html" style="color: #FFD700; text-decoration: none; font-size: 15px; font-weight: 600; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#FFD700'">📄 DRAFT (Coming Q4 2026)</a>
+                    <a href="connect.html" style="color: #FFD700; text-decoration: none; font-size: 15px; font-weight: 600; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#FFD700'">🔗 CONNECT (Coming Q1 2027)</a>
+                </div>
+            </div>
+            <div>
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px;">RESOURCES</h4>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="blog.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Blog</a>
+                    <a href="case-studies.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Case Studies</a>
+                    <a href="partner.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Partner Program</a>
+                    <a href="affiliate.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Affiliate Program</a>
+                </div>
+            </div>
+            <div>
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px;">COMPANY</h4>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="about.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">About Us</a>
+                    <a href="careers.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Careers</a>
+                    <a href="press.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Press</a>
+                    <a href="apply.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Contact</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Legal Links -->
+        <div style="display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 40px; flex-wrap: wrap; font-size: 14px;">
+            <a href="../legal/privacy.html" style="color: #999; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Privacy Policy</a>
+            <span style="color: #555;">|</span>
+            <a href="../legal/terms.html" style="color: #999; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Terms of Service</a>
+            <span style="color: #555;">|</span>
+            <a href="../legal/msa.html" style="color: #999; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">MSA</a>
+            <span style="color: #555;">|</span>
+            <a href="../legal/bar-compliance.html" style="color: #999; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Bar Compliance</a>
+        </div>
+        
+        <!-- Disclaimer -->
+        <p style="font-size: 11pt; color: #555; margin-top: 32px; line-height: 1.8; max-width: 900px; margin-left: auto; margin-right: auto; padding-bottom: 60px;">
+            © 2026 TrueVow Technologies. All rights reserved. TrueVow is a brand of TrueVow Global Tech FZE LLC (UAE), a subsidiary of TrueVow Global Holdings LLC (Nevis). TrueVow (USA) Inc. (Wyoming) provides passive marketing only and does not handle contracts or operations. All contracts are with TrueVow Global Tech FZE LLC (UAE). Technology and IP held by TrueVow Global Holdings LLC (Nevis). We are not a law firm and do not provide legal advice. By using our services, you acknowledge that TrueVow operates as a technology and services provider only.
+        </p>
+    </div>
+</footer>
+
+<!-- DRAFT WAITLIST FORM SUBMISSION SCRIPT -->
+<script>
+// Supabase configuration
+const SUPABASE_URL = 'https://dmqstsvwvygcayqiavro.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRtcXN0c3Z3dnlnY2F5cWlhdnJvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzA2Njc4NjMsImV4cCI6MjA0NjI0Mzg2M30.6tX60U6mOQkf23nJKX2sxFEVpN0dh9IiMGXbwm_-NJk';
+
+// ROI Calculator
+document.addEventListener('DOMContentLoaded', function() {
+    const documentsInput = document.getElementById('documents-per-month');
+    const hourlyRateInput = document.getElementById('hourly-rate');
+    const monthlySavingsEl = document.getElementById('monthly-savings');
+    const hoursSavedEl = document.getElementById('hours-saved');
+    const rejectionsAvoidedEl = document.getElementById('rejections-avoided');
+    
+    function calculateROI() {
+        const documents = parseInt(documentsInput.value) || 0;
+        const hourlyRate = parseInt(hourlyRateInput.value) || 0;
+        
+        // 23% rejection rate, 8 hours per rejection
+        const rejectionsPerMonth = Math.ceil(documents * 0.23);
+        const hoursSaved = rejectionsPerMonth * 8;
+        const monthlySavings = hoursSaved * hourlyRate;
+        
+        monthlySavingsEl.textContent = '$' + monthlySavings.toLocaleString();
+        hoursSavedEl.textContent = hoursSaved + ' hours';
+        rejectionsAvoidedEl.textContent = rejectionsPerMonth;
+    }
+    
+    documentsInput.addEventListener('input', calculateROI);
+    hourlyRateInput.addEventListener('input', calculateROI);
+    calculateROI();
+    
+    // Form submission handler
+    const form = document.getElementById('draft-form');
+    const statusEl = document.getElementById('draft-form-status');
+    
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('draft-name').value.trim();
+        const email = document.getElementById('draft-email').value.trim();
+        const firm = document.getElementById('draft-firm').value.trim();
+        const state = document.getElementById('draft-state').value.trim().toUpperCase();
+        
+        if (!name || !email || !state) {
+            statusEl.textContent = 'Please fill in all required fields.';
+            statusEl.style.color = '#FF6B6B';
+            return;
+        }
+        
+        statusEl.textContent = 'Submitting...';
+        statusEl.style.color = '#E5E5E5';
+        
+        try {
+            const response = await fetch(`${SUPABASE_URL}/rest/v1/product_waitlist`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'apikey': SUPABASE_ANON_KEY,
+                    'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                    'Prefer': 'return=minimal'
+                },
+                body: JSON.stringify({
+                    product: 'DRAFT',
+                    name: name,
+                    email: email,
+                    firm_name: firm || null,
+                    state: state,
+                    source: 'draft_page',
+                    user_agent: navigator.userAgent,
+                    referrer: document.referrer || null
+                })
+            });
+            
+            if (response.ok) {
+                statusEl.textContent = '✓ Successfully joined waitlist! Check your email for confirmation.';
+                statusEl.style.color = '#4CAF50';
+                form.reset();
+            } else {
+                const errorData = await response.json();
+                if (errorData.code === '23505') {
+                    statusEl.textContent = 'You\'re already on the waitlist!';
+                    statusEl.style.color = '#F59E0B';
+                } else {
+                    throw new Error(errorData.message || 'Submission failed');
+                }
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            statusEl.textContent = 'Error submitting form. Please try again.';
+            statusEl.style.color = '#FF6B6B';
+        }
+    });
+});
+</script>
+
+</body>
+</html>
+

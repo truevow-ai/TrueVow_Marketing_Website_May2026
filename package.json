@@ -5,7 +5,21 @@
   "scripts": {
     "db:execute": "node scripts/execute_sql_to_supabase.js",
     "db:populate": "node scripts/populate_county_data.js",
-    "db:test": "node scripts/test-db-connections.js"
+    "db:calculate-all-states": "node scripts/calculate_all_states_county_data.js",
+    "db:validate": "node scripts/validate_law_firm_data.js",
+    "db:validate-fix": "node scripts/auto_validate_and_fix.js",
+    "db:validate-florida": "node scripts/validate_all_florida_counties.js",
+    "db:validate-before-proceed": "node scripts/validate_before_proceed.js",
+    "db:find-critical-errors": "node scripts/find_all_critical_errors.js",
+    "db:test": "node scripts/test-db-connections.js",
+    "db:florida-comprehensive": "node scripts/comprehensive_florida_validation_and_update.js",
+    "db:texas-comprehensive": "node scripts/comprehensive_texas_validation_and_update.js",
+    "db:texas-populate": "bash scripts/run_texas_population.sh",
+    "db:texas-simple": "node scripts/populate_texas_simple.js",
+    "db:texas-practice-areas": "node scripts/populate_practice_areas_for_state.js TX",
+    "db:practice-areas": "node scripts/populate_practice_areas_for_state.js",
+    "db:fix-baker": "node scripts/fix_baker_immediate.js",
+    "db:remove-small-counties": "node scripts/force_delete_small_counties.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.39.0",

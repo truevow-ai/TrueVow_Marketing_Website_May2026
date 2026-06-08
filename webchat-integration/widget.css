@@ -1,0 +1,345 @@
+/**
+ * TrueVow Sales WebChat Widget Styles
+ */
+
+:root {
+  --truevow-chat-primary: #2563eb;
+  --truevow-chat-primary-hover: #1d4ed8;
+  --truevow-chat-bg: #ffffff;
+  --truevow-chat-text: #1f2937;
+  --truevow-chat-border: #e5e7eb;
+  --truevow-chat-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Floating Button */
+#truevow-sales-chat-button {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--truevow-chat-primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--truevow-chat-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: all 0.3s ease;
+}
+
+#truevow-sales-chat-button:hover {
+  background: var(--truevow-chat-primary-hover);
+  transform: scale(1.05);
+}
+
+#truevow-sales-chat-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Widget Container */
+#truevow-sales-chat-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 384px;
+  height: 500px;
+  z-index: 9999;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.truevow-chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--truevow-chat-bg);
+  border-radius: 8px;
+  box-shadow: var(--truevow-chat-shadow);
+  overflow: hidden;
+}
+
+.truevow-chat-container.minimized {
+  height: 64px;
+}
+
+/* Header */
+.truevow-chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background: var(--truevow-chat-primary);
+  color: white;
+}
+
+.truevow-chat-header-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.truevow-chat-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.truevow-chat-title {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.truevow-chat-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.truevow-chat-actions button {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.truevow-chat-actions button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.truevow-chat-actions button svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Customer Redirect */
+.truevow-chat-customer-redirect {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+}
+
+.truevow-chat-customer-content h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--truevow-chat-text);
+}
+
+.truevow-chat-customer-content p {
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+.truevow-chat-alert-icon {
+  width: 48px;
+  height: 48px;
+  color: var(--truevow-chat-primary);
+  margin: 0 auto 16px;
+}
+
+.truevow-chat-redirect-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: var(--truevow-chat-primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.truevow-chat-redirect-btn:hover {
+  background: var(--truevow-chat-primary-hover);
+}
+
+/* Email Prompt */
+.truevow-chat-email-prompt {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.truevow-chat-email-content {
+  text-align: center;
+  width: 100%;
+}
+
+.truevow-chat-email-content h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--truevow-chat-text);
+}
+
+.truevow-chat-email-content p {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+.truevow-chat-email-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.truevow-chat-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--truevow-chat-border);
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.truevow-chat-submit-btn {
+  padding: 12px;
+  background: var(--truevow-chat-primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.truevow-chat-submit-btn:hover {
+  background: var(--truevow-chat-primary-hover);
+}
+
+.truevow-chat-submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Messages */
+.truevow-chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: none;
+}
+
+.truevow-chat-message {
+  margin-bottom: 12px;
+  max-width: 80%;
+}
+
+.truevow-chat-message.prospect {
+  margin-left: auto;
+  text-align: right;
+}
+
+.truevow-chat-message.agent {
+  margin-right: auto;
+}
+
+.truevow-chat-message-content {
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.truevow-chat-message.prospect .truevow-chat-message-content {
+  background: #e5e7eb;
+  color: var(--truevow-chat-text);
+}
+
+.truevow-chat-message.agent .truevow-chat-message-content {
+  background: #dbeafe;
+  color: var(--truevow-chat-text);
+}
+
+.truevow-chat-message-time {
+  font-size: 11px;
+  color: #9ca3af;
+  margin-top: 4px;
+}
+
+.truevow-chat-empty {
+  text-align: center;
+  color: #6b7280;
+  padding: 32px;
+}
+
+/* Input Container */
+.truevow-chat-input-container {
+  display: flex;
+  gap: 8px;
+  padding: 16px;
+  border-top: 1px solid var(--truevow-chat-border);
+  background: #f9fafb;
+}
+
+.truevow-chat-message-input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid var(--truevow-chat-border);
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.truevow-chat-message-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.truevow-chat-send-btn {
+  padding: 12px;
+  background: var(--truevow-chat-primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.truevow-chat-send-btn:hover:not(:disabled) {
+  background: var(--truevow-chat-primary-hover);
+}
+
+.truevow-chat-send-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.truevow-chat-send-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Position Variants */
+#truevow-sales-chat-widget[data-position="bottom-left"] {
+  right: auto;
+  left: 24px;
+}
+
+#truevow-sales-chat-button[data-position="bottom-left"] {
+  right: auto;
+  left: 24px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+  #truevow-sales-chat-widget {
+    width: calc(100vw - 48px);
+    height: calc(100vh - 48px);
+    max-height: 500px;
+    bottom: 24px;
+    right: 24px;
+    left: 24px;
+  }
+}

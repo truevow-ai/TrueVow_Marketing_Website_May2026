@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TrueVow Practice Growth Calculator — See Your Uplift</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+  body{background:#f8fafc;color:#1e293b}
+  .container{max-width:900px;margin:0 auto;padding:40px 20px}
+  h1{font-size:28px;font-weight:700;margin-bottom:8px}
+  .subtitle{color:#64748b;margin-bottom:32px;font-size:15px}
+  .card{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+  .card h2{font-size:17px;font-weight:600;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th{text-align:left;font-weight:500;color:#64748b;font-size:12px;text-transform:uppercase;letter-spacing:.5px;padding:8px 12px;border-bottom:1px solid #e2e8f0}
+  td{padding:8px 12px;border-bottom:1px solid #f1f5f9;vertical-align:middle}
+  td input{width:100%;padding:8px 10px;border:1px solid #e2e8f0;border-radius:6px;font-size:14px;outline:none;text-align:right}
+  td input:focus{border-color:#1a56db}
+  td input[type=number]{-moz-appearance:textfield}
+  td .short-input{width:70px}
+  td .call-input{width:50px}
+  td .spend-input{width:90px}
+  .totals-row{font-weight:600;background:#f8fafc}
+  .totals-row td{border-top:2px solid #e2e8f0;padding:10px 12px}
+  .note{font-size:11px;color:#94a3b8;margin-top:4px;line-height:1.4}
+  button{width:100%;padding:14px;background:#1a56db;color:#fff;border:none;border-radius:10px;font-size:16px;font-weight:600;cursor:pointer;margin-top:20px}
+  button:hover{background:#1e40af}
+  .result{display:none;margin-top:24px}
+  .result.show{display:block}
+  .scenarios{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:20px}
+  .scenario{border-radius:12px;padding:20px}
+  .scenario h4{font-size:13px;font-weight:600;margin-bottom:12px;text-transform:uppercase;letter-spacing:.5px}
+  .scenario .row{font-size:13px;padding:4px 0;display:flex;justify-content:space-between}
+  .scenario .row span:last-child{font-weight:600}
+  .scenario .big-number{font-size:32px;font-weight:800;margin:8px 0 4px}
+  .loss{background:#fef2f2;border:1px solid #fecaca}
+  .loss h4{color:#991b1b}
+  .intake{background:#f0fdf4;border:1px solid #bbf7d0}
+  .intake h4{color:#166534}
+  .partnership{background:#eff6ff;border:1px solid #bfdbfe}
+  .partnership h4{color:#1e40af}
+  .highlight-bar{background:linear-gradient(135deg,#1a56db,#1e40af);color:#fff;border-radius:10px;padding:20px;margin-bottom:16px}
+  .highlight-bar h3{font-size:20px;font-weight:700;margin-bottom:4px}
+  .highlight-bar p{font-size:14px;opacity:.9}
+  .detail-card{background:#fff;border-radius:10px;padding:20px;border:1px solid #e2e8f0;margin-bottom:12px}
+  .detail-card h3{font-size:15px;font-weight:600;margin-bottom:12px}
+  .detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .detail-grid .item{font-size:13px;display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #f8fafc}
+  .detail-grid .item span:last-child{font-weight:500}
+  .badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600}
+  .badge-red{background:#fee2e2;color:#991b1b}
+  .badge-green{background:#dcfce7;color:#166534}
+  .badge-blue{background:#dbeafe;color:#1e40af}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Practice Growth Calculator</h1>
+  <p class="subtitle">Enter your numbers per lead source. We'll show you the loss, the uplift with intake only, and the full partnership.</p>
+
+  <form id="calcForm">
+    <div class="card">
+      <h2>Your Lead Sources &amp; Results</h2>
+      <table>
+        <thead><tr>
+          <th>Lead Source</th><th style="text-align:right">Monthly Spend</th><th style="text-align:right">Calls /mo</th><th style="text-align:right">Answered</th><th style="text-align:right">Signed /mo</th>
+        </tr></thead>
+        <tbody>
+          <tr><td>Google Ads</td><td style="text-align:right"><input class="spend-input" type="number" id="gSpend" value="3000" min="0" step="100"> $</td><td style="text-align:right"><input class="call-input" type="number" id="gCalls" value="24" min="0"></td><td style="text-align:right"><input class="call-input" type="number" id="gAns" value="8" min="0"></td><td style="text-align:right"><input class="short-input" type="number" id="gSigned" value="1" min="0"></td></tr>
+          <tr><td>LSA (Local Service Ads)</td><td style="text-align:right"><input class="spend-input" type="number" id="lSpend" value="0" min="0" step="100"> $</td><td style="text-align:right"><input class="call-input" type="number" id="lCalls" value="0" min="0"></td><td style="text-align:right"><input class="call-input" type="number" id="lAns" value="0" min="0"></td><td style="text-align:right"><input class="short-input" type="number" id="lSigned" value="0" min="0"></td></tr>
+          <tr><td>Facebook / Meta Ads</td><td style="text-align:right"><input class="spend-input" type="number" id="fSpend" value="0" min="0" step="100"> $</td><td style="text-align:right"><input class="call-input" type="number" id="fCalls" value="0" min="0"></td><td style="text-align:right"><input class="call-input" type="number" id="fAns" value="0" min="0"></td><td style="text-align:right"><input class="short-input" type="number" id="fSigned" value="0" min="0"></td></tr>
+          <tr><td>Website / SEO / Organic</td><td style="text-align:right"><input class="spend-input" type="number" id="wSpend" value="0" min="0" step="100"> $</td><td style="text-align:right"><input class="call-input" type="number" id="wCalls" value="8" min="0"></td><td style="text-align:right"><input class="call-input" type="number" id="wAns" value="5" min="0"></td><td style="text-align:right"><input class="short-input" type="number" id="wSigned" value="1" min="0"></td></tr>
+          <tr><td>Referrals / Word of Mouth</td><td style="text-align:right">—</td><td style="text-align:right">—</td><td style="text-align:right">—</td><td style="text-align:right"><input class="short-input" type="number" id="rSigned" value="3" min="0"></td></tr>
+          <tr><td>Walk-in / Repeat / Other</td><td style="text-align:right">—</td><td style="text-align:right">—</td><td style="text-align:right">—</td><td style="text-align:right"><input class="short-input" type="number" id="oSigned" value="0" min="0"></td></tr>
+          <tr class="totals-row">
+            <td>TOTALS</td>
+            <td style="text-align:right" id="totSpend">—</td>
+            <td style="text-align:right" id="totCalls">—</td>
+            <td style="text-align:right" id="totAns">—</td>
+            <td style="text-align:right" id="totSigned">—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>Additional Costs &amp; Case Details</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px">
+        <div>
+          <label style="font-size:13px;font-weight:500;display:block;margin-bottom:4px">Marketing agency / manager fee</label>
+          <input type="number" id="agencyFee" value="0" min="0" step="100" style="width:100%;padding:10px;border:1px solid #e2e8f0;border-radius:8px;font-size:15px">
+          <div class="note">If someone runs your ads for you — monthly retainer or management fee</div>
+        </div>
+        <div>
+          <label style="font-size:13px;font-weight:500;display:block;margin-bottom:4px">Average case value</label>
+          <input type="number" id="caseValue" value="8000" min="1000" step="500" style="width:100%;padding:10px;border:1px solid #e2e8f0;border-radius:8px;font-size:15px">
+          <div class="note">Your typical fee per signed PI case</div>
+        </div>
+        <div>
+          <label style="font-size:13px;font-weight:500;display:block;margin-bottom:4px">Voicemails / missed calls /mo</label>
+          <input type="number" id="voiceMails" value="0" min="0" style="width:100%;padding:10px;border:1px solid #e2e8f0;border-radius:8px;font-size:15px">
+          <div class="note">How many calls go to voicemail or get callbacks per month (across all sources)</div>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit">Generate Report</button>
+  </form>
+
+  <div class="result" id="result"></div>
+</div>
+
+<script>
+document.getElementById('calcForm').addEventListener('submit',function(e){
+  e.preventDefault()
+
+  function v(id){return parseInt(document.getElementById(id).value)||0}
+
+  var gSpend=v('gSpend'),gCalls=v('gCalls'),gAns=v('gAns'),gSigned=v('gSigned')
+  var lSpend=v('lSpend'),lCalls=v('lCalls'),lAns=v('lAns'),lSigned=v('lSigned')
+  var fSpend=v('fSpend'),fCalls=v('fCalls'),fAns=v('fAns'),fSigned=v('fSigned')
+  var wSpend=v('wSpend'),wCalls=v('wCalls'),wAns=v('wAns'),wSigned=v('wSigned')
+  var rSigned=v('rSigned'),oSigned=v('oSigned')
+  var agencyFee=v('agencyFee'),caseValue=v('caseValue'),voiceMails=v('voiceMails')
+
+  var totSpend=gSpend+lSpend+fSpend+wSpend
+  var totCalls=gCalls+lCalls+fCalls+wCalls
+  var totAns=gAns+lAns+fAns+wAns
+  var adSigned=gSigned+lSigned+fSigned+wSigned
+  var totSigned=adSigned+rSigned+oSigned
+  var missedCalls=totCalls-totAns
+  var allMissed=missedCalls+voiceMails
+  var totalMarketing=totSpend+agencyFee
+
+  document.getElementById('totSpend').textContent='$'+totSpend.toLocaleString()
+  document.getElementById('totCalls').textContent=totCalls
+  document.getElementById('totAns').textContent=totAns
+  document.getElementById('totSigned').textContent=totSigned
+
+  // Scenario 1: Current Loss
+  var currentRevenue=adSigned*caseValue
+  var currentCPS=adSigned>0?Math.round(totalMarketing/adSigned):totalMarketing
+  var lostRevenue=allMissed>0&&totCalls>0?Math.round((allMissed/totCalls)*currentRevenue*0.5):0
+  var wastedSpend=allMissed>0&&totCalls>0?Math.round((allMissed/totCalls)*totalMarketing):0
+
+  // Scenario 2: With Intake Only (Benjamin handles after-hours, $299/mo)
+  var benCost=299
+  var intakeAdditionalSigned=Math.round(allMissed*0.06)
+  var intakeTotalSigned=adSigned+intakeAdditionalSigned
+  var intakeRevenue=intakeTotalSigned*caseValue
+  var intakeUplift=intakeRevenue-currentRevenue
+  var intakeCost=totalMarketing+benCost
+  var intakeCPS=intakeTotalSigned>0?Math.round(intakeCost/intakeTotalSigned):intakeCost
+
+  // Scenario 3: Full Partnership (Growth plan $499 + ad management at 15% of ad spend)
+  var growthPlan=499
+  var adMgmt=Math.round(totSpend*0.15)
+  var partnershipCost=totalMarketing+growthPlan+adMgmt
+  var partnershipAdditionalSigned=Math.round(allMissed*0.12)
+  var partnershipTotalSigned=adSigned+partnershipAdditionalSigned
+  var partnershipRevenue=partnershipTotalSigned*caseValue
+  var partnershipUplift=partnershipRevenue-currentRevenue
+  var partnershipCPS=partnershipTotalSigned>0?Math.round(partnershipCost/partnershipTotalSigned):partnershipCost
+
+  var html=''
+
+  // Verdict bar
+  var vText='',vSub=''
+  if(intakeUplift>=caseValue){vText='STRONG RECOMMENDATION';vSub='Benjamin would add approx $'+intakeUplift.toLocaleString()+'/mo in revenue from calls you\'re currently losing to voicemail.'}
+  else if(intakeUplift>=benCost*3){vText='WORTH IMPLEMENTING';vSub='Benjamin would add $'+intakeUplift.toLocaleString()+'/mo. Cost per signed case drops significantly.'}
+  else if(intakeUplift>=benCost){vText='BREAKEVEN';vSub='Benjamin covers its cost. A 14-day free trial would give you real data from your actual calls.'}
+  else{vText='INCREASE CALL VOLUME FIRST';vSub='Your ad spend generates too few after-hours calls for Benjamin to make a meaningful difference. Consider increasing budget.'}
+  html+='<div class="highlight-bar"><h3>'+vText+'</h3><p>'+vSub+'</p></div>'
+
+  // Three scenarios
+  html+='<div class="scenarios">'
+
+  html+='<div class="scenario loss"><h4>&#x1F6A8; Current Loss</h4>'
+  html+='<div class="row"><span>Total marketing</span><span>$'+totalMarketing.toLocaleString()+'/mo</span></div>'
+  html+='<div class="row"><span>Ad calls answered</span><span>'+totAns+' of '+totCalls+'</span></div>'
+  html+='<div class="row"><span>Missed / voicemail</span><span>'+allMissed+' calls</span></div>'
+  html+='<div class="row"><span>Signed from ads</span><span>'+adSigned+'/mo</span></div>'
+  html+='<div class="row"><span>Revenue from ads</span><span>$'+currentRevenue.toLocaleString()+'/mo</span></div>'
+  html+='<div class="row"><span>Cost per signed case</span><span>$'+currentCPS.toLocaleString()+'</span></div>'
+  html+='<div class="row"><span style="color:#991b1b">Wasted on unreachable calls</span><span style="color:#991b1b">~$'+wastedSpend.toLocaleString()+'/mo</span></div>'
+  html+='<div class="big-number" style="color:#991b1b">$'+lostRevenue.toLocaleString()+'</div><div style="font-size:12px;color:#991b1b">est. monthly revenue lost</div>'
+  html+='</div>'
+
+  html+='<div class="scenario intake"><h4>&#x2705; With Intake Only</h4>'
+  html+='<div class="row"><span>Marketing + Benjamin</span><span>$'+intakeCost.toLocaleString()+'/mo</span></div>'
+  html+='<div class="row"><span>All calls answered</span><span>'+totCalls+' of '+totCalls+' (100%)</span></div>'
+  html+='<div class="row"><span>Additional signed</span><span>+'+intakeAdditionalSigned+'/mo</span></div>'
+  html+='<div class="row"><span>Total signed from ads</span><span>'+intakeTotalSigned+'/mo</span></div>'
+  html+='<div class="row"><span>Revenue from ads</span><span>$'+intakeRevenue.toLocaleString()+'/mo</span></div>'
+  html+='<div class="row"><span>Cost per signed case</span><span>$'+intakeCPS.toLocaleString()+'</span></div>'
+  html+='<div class="big-number" style="color:#166534">+$'+intakeUplift.toLocaleString()+'</div><div style="font-size:12px;color:#166534">monthly uplift</div>'
+  html+='</div>'
+
+  html+='<div class="scenario partnership"><h4>&#x1F91D; Full Partnership</h4>'
+  html+='<div class="row"><span>Growth plan (Benjamin)</span><span>$'+growthPlan.toLocaleString()+'/mo</span></div>'
+  html+='<div class="row"><span>Ad management (15% of spend)</span><span>$'+adMgmt.toLocaleString()+'/mo</span></div>'
+  html+='<div class="row"><span>Total investment</span><span>$'+partnershipCost.toLocaleString()+'/mo</span></div>'
+  html+='<div class="row"><span>All calls answered + optimized</span><span>'+totCalls+' of '+totCalls+'</span></div>'
+  html+='<div class="row"><span>Additional signed</span><span>+'+partnershipAdditionalSigned+'/mo</span></div>'
+  html+='<div class="row"><span>Total signed from ads</span><span>'+partnershipTotalSigned+'/mo</span></div>'
+  html+='<div class="row"><span>Revenue from ads</span><span>$'+partnershipRevenue.toLocaleString()+'/mo</span></div>'
+  html+='<div class="row"><span>Cost per signed case</span><span>$'+partnershipCPS.toLocaleString()+'</span></div>'
+  html+='<div class="big-number" style="color:#1e40af">+$'+partnershipUplift.toLocaleString()+'</div><div style="font-size:12px;color:#1e40af">monthly uplift</div>'
+  html+='</div>'
+
+  html+='</div>'
+
+  // Detail section
+  html+='<div class="detail-card"><h3>What These Numbers Mean</h3>'
+  html+='<div class="detail-grid">'
+  html+='<div class="item"><span>Referral clients (no ad cost)</span><span>'+rSigned+'/mo | $'+(rSigned*caseValue).toLocaleString()+'</span></div>'
+  html+='<div class="item"><span>Walk-in / other</span><span>'+oSigned+'/mo | $'+(oSigned*caseValue).toLocaleString()+'</span></div>'
+  html+='<div class="item"><span>Total signed (all sources)</span><span>'+totSigned+'/mo</span></div>'
+  html+='<div class="item"><span>Total practice revenue</span><span>$'+(totSigned*caseValue).toLocaleString()+'/mo</span></div>'
+  html+='<div class="item"><span>With intake: new practice total</span><span>$'+((totSigned+intakeAdditionalSigned)*caseValue).toLocaleString()+'/mo</span></div>'
+  html+='<div class="item"><span>With partnership: new total</span><span>$'+((totSigned+partnershipAdditionalSigned)*caseValue).toLocaleString()+'/mo</span></div>'
+  html+='</div>'
+  html+='</div>'
+
+  document.getElementById('result').innerHTML=html
+  document.getElementById('result').classList.add('show')
+  document.getElementById('result').scrollIntoView({behavior:'smooth'})
+})
+</script>
+</body>
+</html>

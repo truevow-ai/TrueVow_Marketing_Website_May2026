@@ -1,0 +1,674 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sub-Processors | TrueVow</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1A1A1A;
+            background: #FFFFFF;
+        }
+        
+        .header {
+            background: #1A1A1A;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+        
+        .header p {
+            font-size: 18px;
+            color: #999;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .last-updated {
+            background: #E3F2FD;
+            border-left: 4px solid #0A2463;
+            padding: 16px 20px;
+            margin: 40px auto;
+            max-width: 1200px;
+            border-radius: 8px;
+        }
+        
+        .last-updated strong {
+            color: #0A2463;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .intro {
+            background: #F8F9FA;
+            border-left: 4px solid #0A2463;
+            padding: 24px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+        }
+        
+        .intro h2 {
+            color: #0A2463;
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+        
+        .intro p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+        
+        .intro ul {
+            margin-left: 24px;
+            margin-top: 12px;
+        }
+        
+        .intro li {
+            margin-bottom: 8px;
+        }
+        
+        .disclaimer {
+            background: #FFF9E6;
+            border-left: 4px solid #FFA500;
+            padding: 20px;
+            margin: 40px 0;
+            border-radius: 8px;
+        }
+        
+        .disclaimer strong {
+            color: #D97706;
+            font-size: 18px;
+        }
+        
+        .category-section {
+            margin-bottom: 48px;
+        }
+        
+        .category-section h2 {
+            font-size: 28px;
+            color: #0A2463;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #0A2463;
+        }
+        
+        .processor-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 32px;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .processor-table thead {
+            background: #1A1A1A;
+            color: white;
+        }
+        
+        .processor-table th {
+            padding: 16px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+        
+        .processor-table td {
+            padding: 16px;
+            border-bottom: 1px solid #E5E5E5;
+            font-size: 15px;
+        }
+        
+        .processor-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .processor-table tr:hover {
+            background: #F8F9FA;
+        }
+        
+        .processor-name {
+            font-weight: 600;
+            color: #0A2463;
+        }
+        
+        .legal-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .legal-link {
+            display: inline-block;
+            padding: 6px 12px;
+            background: #E3F2FD;
+            color: #0A2463;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .legal-link:hover {
+            background: #1A1A1A;
+            color: white;
+        }
+        
+        .notice-period {
+            background: #E8F5E9;
+            border-left: 4px solid #4CAF50;
+            padding: 20px;
+            margin: 40px 0;
+            border-radius: 8px;
+        }
+        
+        .notice-period h3 {
+            color: #2E7D32;
+            margin-bottom: 12px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 32px;
+            }
+            
+            .processor-table {
+                font-size: 13px;
+            }
+            
+            .processor-table th,
+            .processor-table td {
+                padding: 12px 8px;
+            }
+            
+            .legal-links {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>TrueVow Sub-Processors</h1>
+    <p>Complete list of third-party service providers used for operational and infrastructure purposes</p>
+</div>
+
+<div class="last-updated">
+    <strong>Last Updated:</strong> November 4, 2025 | <strong>Schedule A Reference:</strong> Master Services Agreement v3.0
+</div>
+
+<div class="container">
+    
+    <div class="intro">
+        <h2>📋 About This List</h2>
+        <p><strong>⚠️ IMPORTANT: This list is INDICATIVE and NON-EXHAUSTIVE.</strong> It reflects vendors actively processing Customer Data as of the last update date. TrueVow maintains operational flexibility to engage unlisted vendors for operational, emergency, or pre-authorized category purposes without violating the Master Services Agreement.</p>
+        
+        <p>This page lists third-party sub-processors that TrueVow uses to deliver the Services. These vendors provide <strong>operational, infrastructural, and developmental support</strong> and are used exclusively for <strong>non-legal purposes</strong>.</p>
+        
+        <p><strong>What Are Sub-Processors?</strong></p>
+        <ul>
+            <li><strong>Speech AI:</strong> Convert audio to text (STT) or text to audio (TTS) for intake calls</li>
+            <li><strong>Authentication:</strong> Manage secure login and access control</li>
+            <li><strong>Database & Caching:</strong> Store and retrieve data efficiently</li>
+            <li><strong>CDN & Edge:</strong> Deliver content quickly worldwide</li>
+            <li><strong>Monitoring:</strong> Track system performance and errors</li>
+            <li><strong>Hosting & Infrastructure:</strong> Cloud hosting, edge computing, container orchestration</li>
+        </ul>
+        
+        <p><strong>Important:</strong> None of these vendors influence TrueVow's deterministic, rule-based legal intake logic. They process <strong>non-substantive inputs</strong> only (e.g., audio streams, system logs, authentication tokens).</p>
+        
+        <p><strong>Pre-Authorized Categories (No Notice Required):</strong> TrueVow may engage additional vendors in these categories without prior notice: Development tools, Infrastructure management, Monitoring and logging, Internal operations, Network security. See Section 6.6(b) of the MSA for details.</p>
+    </div>
+    
+    <div class="disclaimer">
+        <strong>⚠️ Disclaimer:</strong> All vendors listed below are used <strong>solely for non-legal, operational, or infrastructural purposes</strong>. None participate in, influence, or affect any legal or quasi-legal determination, including lead qualification, case merit assessment, document drafting logic, or settlement data interpretation.
+    </div>
+    
+    <!-- SPEECH AI -->
+    <div class="category-section">
+        <h2>🎙️ Speech AI & Voice Processing</h2>
+        <table class="processor-table">
+            <thead>
+                <tr>
+                    <th>Provider</th>
+                    <th>Function</th>
+                    <th>Data Processed</th>
+                    <th>Jurisdiction</th>
+                    <th>Legal Terms</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="processor-name">ElevenLabs</td>
+                    <td>Neural voice synthesis (TTS)</td>
+                    <td>Text scripts → audio output</td>
+                    <td>USA</td>
+                    <td>
+                        <div class="legal-links">
+                            <a href="https://elevenlabs.io/terms" target="_blank" class="legal-link">Terms</a>
+                            <a href="https://elevenlabs.io/privacy" target="_blank" class="legal-link">Privacy</a>
+                            <a href="https://elevenlabs.io/subprocessors" target="_blank" class="legal-link">Sub-Processors</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="processor-name">Cartesia</td>
+                    <td>Real-time audio generation</td>
+                    <td>Text → streaming audio</td>
+                    <td>USA</td>
+                    <td>
+                        <div class="legal-links">
+                            <a href="https://cartesia.ai/legal" target="_blank" class="legal-link">Legal</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="processor-name">DeepGram</td>
+                    <td>Speech-to-text (STT)</td>
+                    <td>Audio → text transcripts</td>
+                    <td>USA</td>
+                    <td>
+                        <div class="legal-links">
+                            <a href="https://deepgram.com/terms" target="_blank" class="legal-link">Terms</a>
+                            <a href="https://deepgram.com/privacy" target="_blank" class="legal-link">Privacy</a>
+                            <a href="https://deepgram.com/subprocessors" target="_blank" class="legal-link">Sub-Processors</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="processor-name">Silero VAD</td>
+                    <td>Voice activity detection (VAD) & ASR</td>
+                    <td>Audio analysis, speaker detection</td>
+                    <td>Open Source</td>
+                    <td>
+                        <div class="legal-links">
+                            <a href="https://github.com/snakers4/silero-models" target="_blank" class="legal-link">GitHub</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="processor-name">Fast Whisper</td>
+                    <td>Accelerated speech-to-text (STT)</td>
+                    <td>Audio → text transcripts (optimized)</td>
+                    <td>Open Source</td>
+                    <td>
+                        <div class="legal-links">
+                            <a href="https://github.com/guillaumekln/faster-whisper" target="_blank" class="legal-link">GitHub</a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- TELEPHONY -->
+    <div class="category-section">
+        <h2>📞 Telephony & Communications</h2>
+        <table class="processor-table">
+            <thead>
+                <tr>
+                    <th>Provider</th>
+                    <th>Function</th>
+                    <th>Data Processed</th>
+                    <th>Jurisdiction</th>
+                    <th>Legal Terms</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="processor-name">Twilio</td>
+                    <td>Voice calls, SMS, telephony infrastructure</td>
+                    <td>Call audio, phone numbers, SMS content</td>
+                    <td>USA</td>
+                    <td>
+                        <div class="legal-links">
+                            <a href="https://www.twilio.com/legal/tos" target="_blank" class="legal-link">Terms</a>
+                            <a href="https://www.twilio.com/legal/privacy" target="_blank" class="legal-link">Privacy</a>
+                            <a href="https://www.twilio.com/legal/subprocessors" target="_blank" class="legal-link">Sub-Processors</a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- AUTHENTICATION -->
+    <div class="category-section">
+        <h2>🔐 Authentication & Identity Management</h2>
+        <table class="processor-table">
+            <thead>
+                <tr>
+                    <th>Provider</th>
+                    <th>Function</th>
+                    <th>Data Processed</th>
+                    <th>Jurisdiction</th>
+                    <th>Legal Terms</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="processor-name">Auth0</td>
+                    <td>OAuth 2.0, SAML, MFA, user authentication</td>
+                    <td>User credentials, auth tokens</td>
+                    <td>USA</td>
+                    <td>
+                        <div class="legal-links">
+                            <a href="https://auth0.com/legal" target="_blank" class="legal-link">Terms</a>
+                            <a href="https://auth0.com/privacy" target="_blank" class="legal-link">Privacy</a>
+                            <a href="https://auth0.com/docs/security/subprocessors" target="_blank" class="legal-link">Sub-Processors</a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- DATABASE -->
+    <div class="category-section">
+        <h2>🗄️ Database & Caching</h2>
+        <table class="processor-table">
+            <thead>
+                <tr>
+                    <th>Provider</th>
+                    <th>Function</th>
+                    <th>Data Processed</th>
+                    <th>Jurisdiction</th>
+                    <th>Legal Terms</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="processor-name">Supabase</td>
+                    <td>Managed PostgreSQL database</td>
+                    <td>Booking metadata, user settings</td>
+                    <td>USA</td>
+                    <td>
+                        <div class="legal-links">
+                            <a href="https://supabase.com/terms" target="_blank" class="legal-link">Terms</a>
+                            <a href="https://supabase.com/privacy" target="_blank" class="legal-link">Privacy</a>
+                            <a href="https://supabase.com/security" target="_blank" class="legal-link">Security</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="processor-name">PlanetScale</td>
+                    <td>Serverless MySQL (scaling, sharding)</td>
+                    <td>Application data, queries</td>
+                    <td>USA</td>
+                    <td>
+                        <div class="legal-links">
+                            <a href="https://planetscale.com/legal/terms" target="_blank" class="legal-link">Terms</a>
+                            <a href="https://planetscale.com/legal/privacy" target="_blank" class="legal-link">Privacy</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="processor-name">Redis Labs</td>
+                    <td>In-memory caching (Redis Cloud)</td>
+                    <td>SHA-256 hashed keys, session data</td>
+                    <td>USA</td>
+                    <td>
+                        <div class="legal-links">
+                            <a href="https://redis.com/legal/terms-of-use/" target="_blank" class="legal-link">Terms</a>
+                            <a href="https://redis.com/legal/privacy-policy/" target="_blank" class="legal-link">Privacy</a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- CLOUD INFRASTRUCTURE -->
+    <div class="category-section">
+        <h2>☁️ Cloud Infrastructure & Hosting</h2>
+        <table class="processor-table">
+            <thead>
+                <tr>
+                    <th>Provider</th>
+                    <th>Function</th>
+                    <th>Data Processed</th>
+                    <th>Jurisdiction</th>
+                    <th>Legal Terms</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="processor-name">Google Cloud Platform</td>
+                    <td>Cloud hosting, compute, storage</td>
+                    <td>Application data, infrastructure logs</td>
+                    <td>Global</td>
+                    <td>
+                        <div class="legal-links">
+                            <a href="https://cloud.google.com/terms" target="_blank" class="legal-link">Terms</a>
+                            <a href="https://cloud.google.com/terms/privacy" target="_blank" class="legal-link">Privacy</a>
+                            <a href="https://cloud.google.com/terms/subprocessors" target="_blank" class="legal-link">Sub-Processors</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="processor-name">Hetzner</td>
+                    <td>Cloud hosting, dedicated servers</td>
+                    <td>Infrastructure data, application logs</td>
+                    <td>Germany / Finland</td>
+                    <td>
+                        <div class="legal-links">
+                            <a href="https://www.hetzner.com/legal/terms" target="_blank" class="legal-link">Terms</a>
+                            <a href="https://www.hetzner.com/legal/privacy" target="_blank" class="legal-link">Privacy</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="processor-name">Fly.io</td>
+                    <td>Edge computing, container hosting</td>
+                    <td>Application containers, runtime data</td>
+                    <td>Global</td>
+                    <td>
+                        <div class="legal-links">
+                            <a href="https://fly.io/legal/terms" target="_blank" class="legal-link">Terms</a>
+                            <a href="https://fly.io/legal/privacy" target="_blank" class="legal-link">Privacy</a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- CDN & EDGE -->
+    <div class="category-section">
+        <h2>🌐 CDN, Edge Computing & Network</h2>
+        <table class="processor-table">
+            <thead>
+                <tr>
+                    <th>Provider</th>
+                    <th>Function</th>
+                    <th>Data Processed</th>
+                    <th>Jurisdiction</th>
+                    <th>Legal Terms</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="processor-name">Cloudflare</td>
+                    <td>CDN, WAF, DDoS protection, DNS</td>
+                    <td>IP addresses, request logs</td>
+                    <td>Global</td>
+                    <td>
+                        <div class="legal-links">
+                            <a href="https://www.cloudflare.com/terms/" target="_blank" class="legal-link">Terms</a>
+                            <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" class="legal-link">Privacy</a>
+                            <a href="https://www.cloudflare.com/trusted-infrastructure/subprocessors/" target="_blank" class="legal-link">Sub-Processors</a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- MONITORING -->
+    <div class="category-section">
+        <h2>📊 Monitoring, Logging & Observability</h2>
+        <table class="processor-table">
+            <thead>
+                <tr>
+                    <th>Provider</th>
+                    <th>Function</th>
+                    <th>Data Processed</th>
+                    <th>Jurisdiction</th>
+                    <th>Legal Terms</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="processor-name">Grafana</td>
+                    <td>Metrics visualization, dashboards, observability</td>
+                    <td>System metrics, performance data</td>
+                    <td>USA</td>
+                    <td>
+                        <div class="legal-links">
+                            <a href="https://grafana.com/legal/terms" target="_blank" class="legal-link">Terms</a>
+                            <a href="https://grafana.com/legal/privacy" target="_blank" class="legal-link">Privacy</a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="notice-period">
+        <h3>📢 Change Notification & Operational Flexibility</h3>
+        <p><strong>⚠️ IMPORTANT:</strong> This list is <strong>indicative and non-exhaustive</strong>. TrueVow maintains operational flexibility to engage unlisted vendors for operational, emergency, or pre-authorized category purposes without violating the Master Services Agreement.</p>
+        
+        <p><strong>30-Day Notice (High-Risk Vendors Only):</strong> TrueVow will use commercially reasonable efforts to provide 30 days' written notice before adding new sub-processors that: (i) process call audio or transcripts; (ii) process customer PII beyond ephemeral routing; (iii) store customer data >24 hours; (iv) have access to unencrypted customer data.</p>
+        
+        <p><strong>Pre-Authorized Categories (No Notice Required):</strong> TrueVow may engage additional vendors in these categories <strong>without prior notice</strong>: Development tools, Infrastructure management, Monitoring and logging, Internal operations, Network security. See Section 6.6(b) of the MSA for details.</p>
+        
+        <p><strong>Customer Objection Right:</strong> Customers may object to new high-risk sub-processors within <strong>15 days</strong> of notice. If TrueVow cannot accommodate the objection, Customer's <strong>exclusive remedy</strong> is to terminate the Agreement upon 30 days' written notice.</p>
+        
+        <p><strong>No Breach for Unlisted Vendors:</strong> Failure to list a vendor does <strong>NOT</strong> constitute a breach of the MSA and does <strong>NOT</strong> create any liability. TrueVow will use commercially reasonable efforts to keep the list current, but operational flexibility is preserved.</p>
+        
+        <p><strong>Email notifications sent to:</strong> Primary contact email address provided in Order Form.</p>
+    </div>
+    
+    <div class="intro">
+        <h2>📜 Governance & Compliance</h2>
+        <p><strong>Vendor Pass-Through Terms:</strong> All sub-processors (listed or unlisted) are governed by their respective terms of service, privacy policies, data processing agreements, and service level agreements, which are <strong>incorporated by reference</strong> into the TrueVow Master Services Agreement v3.0.</p>
+        
+        <p><strong>TrueVow's Obligations:</strong></p>
+        <ul>
+            <li>Maintain this list as <strong>indicative and non-exhaustive</strong></li>
+            <li>Use commercially reasonable efforts to keep the list current</li>
+            <li>Provide 30-day notice for high-risk vendors (best efforts)</li>
+            <li>Ensure all sub-processors meet security standards (SOC 2 Type II, ISO 27001, or equivalent)</li>
+        </ul>
+        
+        <p><strong>⚠️ TrueVow's Liability Limitations:</strong></p>
+        <ul>
+            <li><strong>TRUEVOW SHALL NOT BE LIABLE</strong> for any act, omission, error, breach, data loss, security incident, outage, or failure of any Sub-Processor (listed or unlisted)</li>
+            <li>Customer's <strong>exclusive remedy</strong> for Sub-Processor failures lies <strong>directly against the Sub-Processor</strong> under their own terms and limitations of liability</li>
+            <li>TrueVow does <strong>not control</strong> the Sub-Processors' systems, security practices, or operations</li>
+            <li>TrueVow is a <strong>customer</strong> of the Sub-Processors, not their owner, controller, or parent company</li>
+        </ul>
+        
+        <p><strong>Customer's Rights:</strong></p>
+        <ul>
+            <li>Object to new high-risk sub-processors (15-day window)</li>
+            <li>Terminate the Agreement if objection cannot be accommodated (exclusive remedy)</li>
+            <li>Request DPAs directly from sub-processors (where applicable)</li>
+            <li>Audit sub-processor compliance documentation (upon reasonable notice)</li>
+        </ul>
+        
+        <p><strong>Operational Flexibility:</strong> TrueVow may engage unlisted vendors for: (i) emergency purposes (failover, incident response, disaster recovery); (ii) operational purposes within pre-authorized categories; (iii) vendors that do NOT process customer data. <strong>Using an unlisted vendor does NOT violate the MSA</strong> and does NOT constitute a breach.</p>
+    </div>
+    
+    <div class="disclaimer">
+        <strong>⚖️ Legal Reference:</strong> This page fulfills the obligations set forth in Section 6 (Data Security) and Schedule A of the <a href="msa.html" style="color: #0A2463; text-decoration: underline;">Master Services Agreement v3.0</a>.
+    </div>
+    
+</div>
+
+<!-- STANDARD FOOTER -->
+<footer style="background: #1A1A1A; color: white; padding: 60px 20px 120px 20px; text-align: center;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <!-- Logo -->
+        <img src="../assets/logo.svg" alt="TrueVow" style="height: 50px; width: auto; margin-bottom: 24px; opacity: 0.9;">
+        
+        <p style="font-size: 16px; color: #999; margin-bottom: 40px; line-height: 1.6;">
+            More clients. More money. More time with your family.<br>
+            All without risking your license.
+        </p>
+        
+        <!-- 3-Column Links -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 900px; margin: 40px auto; text-align: center;">
+            <div>
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px;">PRODUCT</h4>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="how-it-works.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">How It Works</a>
+                    <a href="pricing.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Pricing</a>
+                    <a href="county-cap.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">33% County Cap</a>
+                </div>
+            </div>
+            <div>
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px;">RESOURCES</h4>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="blog.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Blog</a>
+                    <a href="case-studies.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Case Studies</a>
+                    <a href="partner.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Partner Program</a>
+                    <a href="affiliate.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Affiliate Program</a>
+                </div>
+            </div>
+            <div>
+                <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px;">COMPANY</h4>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="about.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">About Us</a>
+                    <a href="careers.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Careers</a>
+                    <a href="press.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Press</a>
+                    <a href="apply.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Contact</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Legal Links -->
+        <div style="display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 40px; flex-wrap: wrap; font-size: 14px;">
+            <a href="privacy.html" style="color: #999; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Privacy Policy</a>
+            <span style="color: #555;">|</span>
+            <a href="terms.html" style="color: #999; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Terms of Service</a>
+            <span style="color: #555;">|</span>
+            <a href="msa.html" style="color: #999; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">MSA</a>
+            <span style="color: #555;">|</span>
+            <a href="bar-compliance.html" style="color: #999; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Bar Compliance</a>
+        </div>
+        
+        <!-- Disclaimer -->
+        <p style="font-size: 11pt; color: #555; margin-top: 32px; line-height: 1.8; max-width: 900px; margin-left: auto; margin-right: auto; padding-bottom: 60px;">
+            © 2026 TrueVow Technologies. All rights reserved. TrueVow is a brand of TrueVow Global Tech FZE LLC (UAE), a subsidiary of TrueVow Global Technologies Holdings Ltd. (Nevis). TrueVow Global Technologies (USA) Inc. (Wyoming) provides passive marketing only and does not handle contracts or operations. All contracts are with TrueVow Global Tech FZE LLC (UAE). Technology and IP held by TrueVow Global Technologies Holdings Ltd. (Nevis). We are not a law firm and do not provide legal advice. By using our services, you acknowledge that TrueVow operates as a technology and services provider only.
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>
+

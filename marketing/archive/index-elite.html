@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrueVow.law — Paid Lead Revenue Protection for Solo Law Firms</title>
+    <meta name="description" content="TrueVow is a Paid Lead Revenue Protection System for solo & small law firms. Protect $154K/year in lost revenue from missed calls. Pay only when you unlock a protected prospect.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* RESET & BASE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #1A1A1A;
+            background: #FFFFFF;
+        }
+        
+        /* NAVIGATION */
+        nav {
+            background: #FFFFFF;
+            border-bottom: 1px solid #E5E5E5;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .logo-monogram {
+            position: relative;
+            width: 38px;
+            height: 32px;
+            flex-shrink: 0;
+        }
+        
+        .logo-monogram-t1 {
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 32px;
+            font-weight: 400;
+            color: #C0C0C0;
+            line-height: 1;
+        }
+        
+        .logo-monogram-t2 {
+            position: absolute;
+            left: 6px;
+            top: 0;
+            font-size: 32px;
+            font-weight: 400;
+            color: #808080;
+            line-height: 1;
+        }
+        
+        .logo-monogram-v {
+            position: absolute;
+            left: 12px;
+            top: 0;
+            font-size: 32px;
+            font-weight: 700;
+            color: #0A2463;
+            line-height: 1;
+        }
+        
+        .logo-text {
+            display: flex;
+            align-items: baseline;
+            gap: 0;
+        }
+        
+        .logo-true {
+            font-size: 22px;
+            font-weight: 400;
+            color: #808080;
+            letter-spacing: 0.5px;
+        }
+        
+        .logo-vow {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0A2463;
+            letter-spacing: 0.5px;
+        }
+        
+        .logo-law {
+            font-size: 18px;
+            font-weight: 400;
+            color: #0A2463;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #555555;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+        
+        .nav-links a:hover {
+            color: #0A2463;
+        }
+        
+        .nav-cta {
+            background: #0A2463;
+            color: white !important;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none !important;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .nav-cta:hover {
+            background: #051533;
+            transform: translateY(-2px);
+            text-decoration: none !important;
+        }
+        
+        /* HERO SECTION */
+        .hero {
+            background: #000000;
+            color: #FFFFFF;
+            padding: 100px 24px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48pt;
+            font-weight: 900;
+            margin-bottom: 24px;
+            letter-spacing: -2px;
+            line-height: 1.1;
+        }
+        
+        .hero-subtitle {
+            font-size: 20pt;
+            color: #CCCCCC;
+            font-weight: 400;
+            max-width: 900px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+        
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 900px;
+            margin: 60px auto 0;
+            padding: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 16px;
+        }
+        
+        .hero-stat {
+            text-align: center;
+        }
+        
+        .hero-stat-number {
+            font-size: 48pt;
+            font-weight: 900;
+            color: #FFFFFF;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .hero-stat-label {
+            font-size: 14pt;
+            color: #999999;
+            font-weight: 400;
+        }
+        
+        /* TRUST BADGES */
+        .trust-section {
+            padding: 24px;
+            background: #F8F9FA;
+            border-bottom: 1px solid #E5E5E5;
+        }
+        
+        .trust-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #1A1A1A;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .trust-check {
+            color: #10B981;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        
+        /* VALUE PROP */
+        .value-prop {
+            padding: 60px 24px;
+            background: #FFFFFF;
+            text-align: center;
+        }
+        
+        .value-box {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            background: #F0F7FF;
+            border-radius: 16px;
+            border: 2px solid #CBD5E1;
+        }
+        
+        .value-box p {
+            font-size: 24px;
+            color: #1A1A1A;
+            font-weight: 800;
+            line-height: 1.5;
+        }
+        
+        /* HOW IT WORKS */
+        .how-it-works {
+            padding: 80px 24px;
+            background: #FFFFFF;
+        }
+        
+        .hiw-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hiw-title {
+            font-size: 36pt;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #1A1A1A;
+        }
+        
+        .hiw-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+        
+        .hiw-step {
+            padding: 32px;
+            background: #F8F9FA;
+            border-radius: 12px;
+            border-left: 4px solid #0A2463;
+        }
+        
+        .hiw-step-number {
+            font-size: 48pt;
+            font-weight: 900;
+            color: #0A2463;
+            opacity: 0.2;
+            margin-bottom: 16px;
+        }
+        
+        .hiw-step-title {
+            font-size: 20pt;
+            font-weight: 700;
+            color: #1A1A1A;
+            margin-bottom: 16px;
+        }
+        
+        .hiw-step-desc {
+            font-size: 16pt;
+            color: #555555;
+            line-height: 1.6;
+        }
+        
+        /* COMPLIANCE */
+        .compliance {
+            padding: 80px 24px;
+            background: #F8F9FA;
+        }
+        
+        .compliance-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .compliance-title {
+            font-size: 36pt;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 24px;
+            color: #1A1A1A;
+        }
+        
+        .compliance-subtitle {
+            font-size: 22pt;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #555555;
+        }
+        
+        .compliance-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+        
+        .compliance-item {
+            padding: 32px;
+            background: #FFFFFF;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .compliance-item h3 {
+            font-size: 20pt;
+            font-weight: 700;
+            color: #0A2463;
+            margin-bottom: 16px;
+        }
+        
+        .compliance-item p {
+            font-size: 16pt;
+            color: #555555;
+            line-height: 1.6;
+        }
+        
+        /* PRICING PREVIEW */
+        .pricing-preview {
+            padding: 80px 24px;
+            background: #FFFFFF;
+            text-align: center;
+        }
+        
+        .pricing-container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 48px;
+            background: #F8F9FA;
+            border-radius: 16px;
+        }
+        
+        .pricing-price {
+            font-size: 56pt;
+            font-weight: 900;
+            color: #0A2463;
+            margin-bottom: 16px;
+        }
+        
+        .pricing-desc {
+            font-size: 18pt;
+            color: #555555;
+            margin-bottom: 32px;
+        }
+        
+        /* CTA BUTTONS */
+        .cta-button {
+            display: inline-block;
+            background: #0A2463;
+            color: #FFFFFF;
+            padding: 20px 48px;
+            border-radius: 12px;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(10,36,99,0.25);
+            margin: 40px 0;
+        }
+        
+        .cta-button:hover {
+            background: #051533;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(10,36,99,0.35);
+        }
+        
+        .cta-subtext {
+            font-size: 14px;
+            color: #666666;
+            margin-top: 16px;
+        }
+        
+        /* FINAL CTA */
+        .final-cta {
+            padding: 100px 24px;
+            background: #000000;
+            color: #FFFFFF;
+            text-align: center;
+        }
+        
+        .final-cta h2 {
+            font-size: 42pt;
+            font-weight: 900;
+            margin-bottom: 24px;
+        }
+        
+        .final-cta p {
+            font-size: 20pt;
+            color: #CCCCCC;
+            margin-bottom: 40px;
+        }
+        
+        .final-benefits {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 40px;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        /* FOOTER */
+        footer {
+            background: #1A1A1A;
+            color: #FFFFFF;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            margin-bottom: 24px;
+        }
+        
+        .footer-tagline {
+            font-size: 16px;
+            color: #999999;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 900px;
+            margin: 60px auto;
+            text-align: center;
+        }
+        
+        .footer-column h4 {
+            color: #FFFFFF;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+        }
+        
+        .footer-column a {
+            color: #999999;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s;
+            display: block;
+            margin-bottom: 12px;
+        }
+        
+        .footer-column a:hover {
+            color: #FFFFFF;
+        }
+        
+        .footer-legal {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+        
+        .footer-legal a {
+            color: #999999;
+            text-decoration: none;
+        }
+        
+        .footer-disclaimer {
+            font-size: 11px;
+            color: #555555;
+            margin-top: 32px;
+            line-height: 1.8;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 60px;
+        }
+        
+        /* RESPONSIVE */
+        
+        /* HAMBURGER */
+        .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; gap: 5px; }
+        .nav-hamburger span { display: block; width: 24px; height: 2px; background: #555; border-radius: 2px; transition: all 0.3s; }
+        .nav-hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .nav-hamburger.active span:nth-child(2) { opacity: 0; }
+        .nav-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+        .mobile-nav-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 999; }
+        .mobile-nav-overlay.active { display: block; }
+        .mobile-nav-panel { display: none; position: fixed; top: 0; right: -280px; width: 280px; height: 100vh; background: white; z-index: 1002; padding: 80px 32px 32px; box-shadow: -4px 0 24px rgba(0,0,0,0.1); transition: right 0.3s ease; flex-direction: column; gap: 0; }
+        .mobile-nav-panel.active { display: flex; right: 0; }
+        .mobile-nav-panel a { display: block; padding: 14px 0; color: #555; text-decoration: none; font-size: 17px; font-weight: 500; border-bottom: 1px solid #F0F0F0; font-family: 'Montserrat', sans-serif; }
+        .mobile-nav-panel a:last-child { border-bottom: none; }
+        .mobile-nav-panel .mobile-nav-label { padding: 14px 0 6px; font-size: 12px; font-weight: 600; color: #999; text-transform: uppercase; letter-spacing: 1px; border-bottom: none; font-family: 'Montserrat', sans-serif; }
+        .mobile-nav-panel .mobile-cta { background: var(--navy); color: white !important; text-align: center; border-radius: 8px; padding: 14px; margin-top: 16px; font-weight: 600; border-bottom: none; }
+        .mobile-nav-panel .mobile-cta:hover { background: #0052CC; }
+        .mobile-nav-close { position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 28px; cursor: pointer; color: #999; padding: 4px 8px; }
+        @media (max-width: 640px) { .nav-hamburger { display: flex !important; } }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 28pt;
+            }
+            
+            .hero-stats,
+            .hiw-grid,
+            .compliance-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .footer-links {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-monogram">
+                    <span class="logo-monogram-t1">T</span>
+                    <span class="logo-monogram-t2">T</span>
+                    <span class="logo-monogram-v">V</span>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-true">True</span>
+                    <span class="logo-vow">Vow</span>
+                    <span class="logo-law">.law</span>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="how-it-works.html">How It Works</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="county-cap.html">33% Cap</a>
+                <a href="profitability.html">ROI</a>
+            </div>
+            <a href="#demo" class="nav-cta">See Benjamin Live →</a>
+        </div>
+    </nav>
+<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+<div class="mobile-nav-panel" id="mobileNavPanel">
+    <button class="mobile-nav-close" id="mobileNavClose">&times;</button>
+    <a href="index.html">Home</a>
+    <a href="how-it-works.html">How It Works</a>
+    <a href="pricing.html">Pricing</a>
+    <div class="mobile-nav-label">Resources</div>
+    <a href="profitability.html">ROI Calculator</a>
+    <a href="county-cap.html">County Availability</a>
+    <a href="blog.html">Blog</a>
+    <a href="case-studies.html">Case Studies</a>
+    <a href="apply.html" class="mobile-cta">See Benjamin Live (8 min) &rarr;</a>
+</div>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1 style="font-size: 42pt; margin-bottom: 32px;">You Don't Have a Lead Problem.<br>You Have a Paid Lead<br>Revenue Protection Problem.</h1>
+        <p class="hero-subtitle" style="font-size: 18pt; line-height: 1.8;">
+            Most solo PI firms lose <strong>$154,500/year</strong>, not because they lack leads…<br>
+            …but because half of the calls go unanswered, unqualified, or lost to voicemail.<br>
+            <br>
+            <strong>TrueVow is a Paid Lead Revenue Protection System for Law Firms<br>that already invest in marketing.</strong><br>
+            <br>
+            You forward your number.<br>
+            We capture, qualify, and book the cases you already paid for.<br>
+            <br>
+            Pay Only When You Unlock a Qualified Prospect Info,<br>
+            (Reveals phone, email, intake transcript, and booking details)<br>
+            fully compliant with your state Bar rules.<br>
+            <br>
+            <strong>✓ No monthly fees &nbsp;&nbsp;&nbsp; ✓ No contracts &nbsp;&nbsp;&nbsp; ✓ No risk</strong>
+        </p>
+        
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <span class="hero-stat-number">$154K</span>
+                <span class="hero-stat-label">Lost Revenue/Year</span>
+            </div>
+            <div class="hero-stat">
+                <span class="hero-stat-number">38%</span>
+                <span class="hero-stat-label">Calls to Voicemail</span>
+            </div>
+            <div class="hero-stat">
+                <span class="hero-stat-number">62%</span>
+                <span class="hero-stat-label">Never Call Back</span>
+            </div>
+        </div>
+        
+        <a href="#demo" class="cta-button" style="margin-top: 40px;">Claim Your 11 Releases at $0 Cost to You</a>
+    </section>
+
+    <!-- WHAT PAID LEAD REVENUE PROTECTION MEANS -->
+    <section style="padding: 80px 24px; background: #FFFFFF;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2 style="font-size: 36pt; font-weight: 700; text-align: center; margin-bottom: 40px; color: #1A1A1A;">What "Paid Lead Revenue Protection" Means</h2>
+            
+            <p style="font-size: 20pt; color: #555555; line-height: 1.8; margin-bottom: 32px; text-align: center;">
+                You're already spending <strong>$4,900/month on marketing</strong>.<br>
+                But:
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 40px;">
+                <div style="padding: 24px; background: #F8F9FA; border-radius: 12px; border-left: 4px solid #B91C1C;">
+                    <p style="font-size: 18pt; color: #B91C1C; font-weight: 700; margin-bottom: 8px;">✗ 48% of calls go to voicemail</p>
+                    <p style="font-size: 16pt; color: #555555; line-height: 1.6;">62% never call back</p>
+                </div>
+                <div style="padding: 24px; background: #F8F9FA; border-radius: 12px; border-left: 4px solid #B91C1C;">
+                    <p style="font-size: 18pt; color: #B91C1C; font-weight: 700; margin-bottom: 8px;">✗ 65% of intake calls are unqualified</p>
+                    <p style="font-size: 16pt; color: #555555; line-height: 1.6;">After-hours cases go to competitors</p>
+                </div>
+            </div>
+            
+            <p style="font-size: 22pt; text-align: center; color: #555555; line-height: 1.8; margin-bottom: 24px;">
+                That's not a marketing issue.<br>
+                <strong style="color: #1A1A1A;">That's broken revenue capture.</strong>
+            </p>
+            
+            <p style="font-size: 20pt; text-align: center; color: #0A2463; font-weight: 700;">
+                TrueVow fixes the leak between advertising and signed cases.
+            </p>
+        </div>
+    </section>
+
+    <!-- THE COST OF A LEAK -->
+    <section style="padding: 80px 24px; background: #F8F9FA;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2 style="font-size: 36pt; font-weight: 700; text-align: center; margin-bottom: 40px; color: #1A1A1A;">The Cost of a Leak</h2>
+            
+            <div style="text-align: center; margin-bottom: 40px;">
+                <p style="font-size: 24pt; color: #555555; margin-bottom: 16px;">You miss <strong>24 calls per month</strong></p>
+                <p style="font-size: 24pt; color: #555555; margin-bottom: 32px;">62% don't call back</p>
+                
+                <div style="font-size: 48pt; font-weight: 900; color: #B91C1C; margin-bottom: 32px;">
+                    = 15 lost cases
+                </div>
+                
+                <p style="font-size: 56pt; font-weight: 900; color: #0A2463; margin-bottom: 16px;">
+                    15 × $5,150 = $154,500/year
+                </p>
+                
+                <p style="font-size: 22pt; color: #555555; margin-top: 40px; line-height: 1.8;">
+                    Over 20 years? <strong style="color: #1A1A1A;">$3.09M in revenue you already paid to generate — but never recovered</strong>.<br>
+                    <br>
+                    This isn't a new expense.<br>
+                    <strong style="color: #0A2463;">It's protecting what you already earned.</strong>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- VALUE PROPOSITION -->
+    <section class="value-prop">
+        <div class="value-box">
+            <p>More clients. More money. More time with your family.<br>All without risking your license.</p>
+        </div>
+    </section>
+
+    <!-- HOW PAID LEAD REVENUE PROTECTION WORKS -->
+    <section style="padding: 80px 24px; background: #FFFFFF;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2 style="font-size: 36pt; font-weight: 700; text-align: center; margin-bottom: 40px; color: #1A1A1A;">How Paid Lead Revenue Protection Works</h2>
+            
+            <p style="font-size: 20pt; color: #555555; line-height: 1.8; margin-bottom: 40px; text-align: center;">
+                You forward your number.<br>
+                Benjamin answers every call — 24/7.
+            </p>
+            
+            <div style="padding: 40px; background: #F0F7FF; border-radius: 16px; border: 2px solid #0A2463; margin-bottom: 40px;">
+                <p style="font-size: 18pt; color: #0A2463; font-weight: 700; margin-bottom: 24px;">He:</p>
+                <ul style="list-style: none; padding: 0; font-size: 18pt; line-height: 2.2; color: #333333;">
+                    <li style="margin-bottom: 16px;">• Captures contact info</li>
+                    <li style="margin-bottom: 16px;">• Asks up to 16 PI-specific qualifying questions</li>
+                    <li style="margin-bottom: 16px;">• Filters out expired, wrong state, wrong practice area</li>
+                    <li style="margin-bottom: 16px;">• Detects dangerous admissions</li>
+                    <li style="margin-bottom: 16px;">• Books consults or sends LOE</li>
+                </ul>
+                
+                <p style="font-size: 18pt; color: #555555; line-height: 1.8; margin-top: 32px; margin-bottom: 24px;">
+                    <strong style="color: #0A2463;">You See a Tokenized Mini Case File — No PII Exposed:</strong>
+                </p>
+                
+                <div style="background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 8px; padding: 24px; font-size: 14pt; line-height: 1.8;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px;">
+                        <div><strong>Practice Area:</strong> Personal Injury – Motor Vehicle</div>
+                        <div><strong>Jurisdiction:</strong> Los Angeles County, CA</div>
+                        <div><strong>Statute Check:</strong> ✓ Accident 2 weeks ago (Within 2-year limit)</div>
+                        <div><strong>Liability:</strong> Other driver ran red light → Clear liability</div>
+                        <div><strong>Injury Severity:</strong> Broken wrist, ER visit, cast applied</div>
+                        <div><strong>Treatment:</strong> Seen by ortho, MRI scheduled</div>
+                        <div><strong>Intake Grade:</strong> <span style="color: #10B981; font-weight: 700;">Qualified</span></div>
+                        <div><strong>Dangerous Admission:</strong> None detected</div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 32px; padding: 24px; background: #FFFFFF; border: 2px dashed #0A2463; border-radius: 8px;">
+                    <p style="font-size: 16pt; color: #0A2463; font-weight: 700; margin-bottom: 16px;">
+                        🔓 Unlock Contact Info for $99
+                    </p>
+                    <p style="font-size: 14pt; color: #555555; margin-bottom: 0;">
+                        Reveals: Phone, Email, Full Intake Transcript, Booking Details
+                    </p>
+                </div>
+                
+                <p style="font-size: 16pt; color: #555555; line-height: 1.8; margin-top: 24px; text-align: center;">
+                    <strong style="color: #0A2463;">You unlock only when you choose to pursue.</strong><br>
+                    Fully compliant with your state Bar rules.
+                </p>
+                
+                <p style="font-size: 22pt; color: #0A2463; font-weight: 700; text-align: center; margin-top: 32px;">
+                    That's Paid Lead Revenue Protection.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOT AN ANSWERING SERVICE -->
+    <section style="padding: 80px 24px; background: #F8F9FA;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2 style="font-size: 36pt; font-weight: 700; text-align: center; margin-bottom: 40px; color: #1A1A1A;">Not an Answering Service</h2>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px;">
+                <div>
+                    <p style="font-size: 18pt; color: #555555; line-height: 2.2; margin-bottom: 16px;">Answering services answer phones.</p>
+                    <p style="font-size: 18pt; color: #555555; line-height: 2.2; margin-bottom: 16px;">They take messages.</p>
+                    <p style="font-size: 18pt; color: #555555; line-height: 2.2; margin-bottom: 16px;">They charge monthly.</p>
+                    <p style="font-size: 18pt; color: #555555; line-height: 2.2;">They cover calls.</p>
+                </div>
+                
+                <div>
+                    <p style="font-size: 18pt; color: #0A2463; font-weight: 700; line-height: 2.2; margin-bottom: 16px;">We protect revenue.</p>
+                    <p style="font-size: 18pt; color: #0A2463; font-weight: 700; line-height: 2.2; margin-bottom: 16px;">We filter and qualify.</p>
+                    <p style="font-size: 18pt; color: #0A2463; font-weight: 700; line-height: 2.2; margin-bottom: 16px;">We charge per protected prospect — only when you unlock.</p>
+                    <p style="font-size: 18pt; color: #0A2463; font-weight: 700; line-height: 2.2;">We protect your marketing investment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SIMPLE PRICING -->
+    <section style="padding: 80px 24px; background: #FFFFFF;">
+        <div style="max-width: 700px; margin: 0 auto;">
+            <h2 style="font-size: 36pt; font-weight: 700; text-align: center; margin-bottom: 40px; color: #1A1A1A;">Simple Pricing</h2>
+            
+            <div class="pricing-container">
+                <div class="pricing-price">$99</div>
+                <p class="pricing-desc">per protected prospect — Your first 11 are on us</p>
+                <p style="font-size: 20pt; color: #10B981; font-weight: 700; margin-bottom: 32px; text-align: center;">
+                    If you never unlock, you never pay.
+                </p>
+                <div style="text-align: left; margin-top: 32px;">
+                    <p style="font-size: 18pt; font-weight: 700; color: #0A2463; margin-bottom: 16px;">
+                        What's Included:
+                    </p>
+                    <ul style="list-style: none; padding: 0; font-size: 16pt; line-height: 2; color: #333333;">
+                        <li style="margin-bottom: 12px;">✓ No monthly fees</li>
+                        <li style="margin-bottom: 12px;">✓ No per-minute charges</li>
+                        <li style="margin-bottom: 12px;">✓ No setup costs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY THIS MATTERS FOR SOLO FIRMS -->
+    <section style="padding: 80px 24px; background: #F8F9FA;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2 style="font-size: 36pt; font-weight: 700; text-align: center; margin-bottom: 40px; color: #1A1A1A;">Why This Matters for Solo Firms</h2>
+            
+            <p style="font-size: 20pt; color: #555555; line-height: 1.8; margin-bottom: 40px; text-align: center;">
+                You didn't start your practice to:
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 40px;">
+                <div style="padding: 24px; background: #FFFFFF; border-radius: 12px; border-left: 4px solid #B91C1C;">
+                    <p style="font-size: 16pt; color: #B91C1C; font-weight: 700; margin-bottom: 8px;">✗ Answer phones at 9 p.m.</p>
+                    <p style="font-size: 16pt; color: #555555; line-height: 1.6;">Screen workers' comp calls</p>
+                </div>
+                <div style="padding: 24px; background: #FFFFFF; border-radius: 12px; border-left: 4px solid #B91C1C;">
+                    <p style="font-size: 16pt; color: #B91C1C; font-weight: 700; margin-bottom: 8px;">✗ Chase voicemails</p>
+                    <p style="font-size: 16pt; color: #555555; line-height: 1.6;">Worry about compliance gaps</p>
+                </div>
+            </div>
+            
+            <p style="font-size: 20pt; color: #555555; line-height: 1.8; margin-bottom: 40px; text-align: center;">
+                You started it to win cases.
+            </p>
+            
+            <div style="padding: 40px; background: #FFFFFF; border-radius: 16px; border: 2px solid #0A2463;">
+                <p style="font-size: 22pt; color: #0A2463; font-weight: 700; margin-bottom: 24px; text-align: center;">
+                    Paid Lead Revenue Protection Gives You:
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+                    <div style="text-align: center;">
+                        <p style="font-size: 18pt; font-weight: 700; color: #10B981; margin-bottom: 8px;">✓ More clients</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <p style="font-size: 18pt; font-weight: 700; color: #10B981; margin-bottom: 8px;">✓ More control</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <p style="font-size: 18pt; font-weight: 700; color: #10B981; margin-bottom: 8px;">✓ More evenings back</p>
+                    </div>
+                </div>
+                <p style="font-size: 18pt; color: #555555; text-align: center; margin-top: 24px;">
+                    Without risking your license.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPLIANCE BUILT IN -->
+    <section style="padding: 80px 24px; background: #F8F9FA;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2 style="font-size: 36pt; font-weight: 700; text-align: center; margin-bottom: 40px; color: #1A1A1A;">Compliance Built In</h2>
+            
+            <p style="font-size: 22pt; color: #555555; line-height: 1.8; text-align: center; margin-bottom: 40px;">
+                Benjamin is <strong>not AI</strong>.<br>
+                It's a <strong>deterministic, rules-based system</strong>:
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 40px;">
+                <div style="padding: 24px; background: #FFFFFF; border-radius: 12px; border-left: 4px solid #10B981;">
+                    <p style="font-size: 16pt; color: #10B981; font-weight: 700; margin-bottom: 8px;">✓ No hallucinations</p>
+                    <p style="font-size: 16pt; color: #555555; line-height: 1.6;">No improvisation</p>
+                </div>
+                <div style="padding: 24px; background: #FFFFFF; border-radius: 12px; border-left: 4px solid #10B981;">
+                    <p style="font-size: 16pt; color: #10B981; font-weight: 700; margin-bottom: 8px;">✓ Full interaction records</p>
+                    <p style="font-size: 16pt; color: #555555; line-height: 1.6;">Bar-compliant structure</p>
+                </div>
+            </div>
+            
+            <p style="font-size: 20pt; color: #0A2463; font-weight: 700; text-align: center; margin-bottom: 24px;">
+                Your client data stays yours.
+            </p>
+            
+            <p style="font-size: 22pt; color: #555555; text-align: center; line-height: 1.8;">
+                This isn't automation.<br>
+                <strong style="color: #1A1A1A;">It's protection.</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- COMPETITIVE ADVANTAGE -->
+    <section style="padding: 80px 24px; background: #FFFFFF;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2 style="font-size: 36pt; font-weight: 700; text-align: center; margin-bottom: 40px; color: #1A1A1A;">Competitive Advantage</h2>
+            
+            <p style="font-size: 22pt; color: #555555; line-height: 1.8; text-align: center; margin-bottom: 40px;">
+                We cap TrueVow at <strong>33% of attorneys per county</strong>.
+            </p>
+            
+            <div style="padding: 40px; background: #F0F7FF; border-radius: 12px; border: 2px solid #0A2463;">
+                <p style="font-size: 18pt; color: #333333; line-height: 1.8; margin-bottom: 24px;">
+                    If everyone captures 100% of calls, no one has an edge.
+                </p>
+                <p style="font-size: 20pt; color: #0A2463; font-weight: 700; text-align: center;">
+                    Early adopters keep the advantage.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPETITIVE ADVANTAGE -->
+    <section style="padding: 80px 24px; background: #F8F9FA;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2 style="font-size: 36pt; font-weight: 700; text-align: center; margin-bottom: 40px; color: #1A1A1A;">Your First-Mover Advantage</h2>
+            
+            <p style="font-size: 22pt; color: #555555; line-height: 1.8; text-align: center; margin-bottom: 40px;">
+                We cap TrueVow at <strong>33% of attorneys per county</strong>.
+            </p>
+            
+            <div style="padding: 40px; background: #FFFFFF; border-radius: 12px; border-left: 4px solid #0A2463;">
+                <p style="font-size: 18pt; color: #333333; line-height: 1.8; margin-bottom: 24px;">
+                    If ALL attorneys in your county use TrueVow, you're back to baseline—no advantage.
+                </p>
+                <p style="font-size: 18pt; color: #333333; line-height: 1.8; margin-bottom: 24px;">
+                    <strong>With our 33% cap:</strong><br>
+                    You maintain your competitive edge. Your competitors will call us, but we'll say:
+                </p>
+                <p style="font-size: 20pt; color: #0A2463; font-style: italic; text-align: center; padding: 24px; background: #F0F7FF; border-radius: 8px;">
+                    "Sorry, your county is at capacity. Join the waitlist."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING PREVIEW -->
+    <section class="pricing-preview">
+        <div class="pricing-container">
+            <h2 style="font-size: 36pt; font-weight: 700; text-align: center; margin-bottom: 40px; color: #1A1A1A;">Simple, Performance-Based Pricing</h2>
+            <div class="pricing-price">$99</div>
+            <p class="pricing-desc">per recovered prospect — Your first 11 are on us</p>
+            <p style="font-size: 20pt; color: #10B981; font-weight: 700; margin-bottom: 32px; text-align: center;">
+                If you never unlock, you never pay.
+            </p>
+            <div style="text-align: left; margin-top: 32px;">
+                <p style="font-size: 18pt; font-weight: 700; color: #0A2463; margin-bottom: 16px;">
+                    What You Get:
+                </p>
+                <ul style="list-style: none; padding: 0; font-size: 16pt; line-height: 2; color: #333333;">
+                    <li style="margin-bottom: 12px;">✓ 24/7 phone answering</li>
+                    <li style="margin-bottom: 12px;">✓ Up to 16 qualification questions</li>
+                    <li style="margin-bottom: 12px;">✓ Dangerous admission detection</li>
+                    <li style="margin-bottom: 12px;">✓ Automatic calendar booking or LOE</li>
+                    <li style="margin-bottom: 12px;">✓ Spanish included FREE</li>
+                    <li style="margin-bottom: 12px;">✓ Real-time analytics dashboard</li>
+                    <li style="margin-bottom: 12px;">✓ CRM integration (Clio, MyCase + more)</li>
+                </ul>
+                
+                <p style="font-size: 18pt; font-weight: 700; color: #B91C1C; margin-top: 32px; margin-bottom: 16px;">
+                    What You NEVER Pay:
+                </p>
+                <ul style="list-style: none; padding: 0; font-size: 16pt; line-height: 2; color: #555555;">
+                    <li style="margin-bottom: 12px;">✗ Monthly minimums</li>
+                    <li style="margin-bottom: 12px;">✗ Setup fees</li>
+                    <li style="margin-bottom: 12px;">✗ Contracts</li>
+                    <li style="margin-bottom: 12px;">✗ Per-minute charges</li>
+                    <li style="margin-bottom: 12px;">✗ Spam calls</li>
+                    <li style="margin-bottom: 12px;">✗ Wrong practice areas</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta" id="demo">
+        <h2 style="font-size: 42pt; margin-bottom: 24px;">You're Already Paying for the Leads.<br>Stop Letting Them Leak.</h2>
+        <p style="font-size: 22pt; color: #CCCCCC; margin-bottom: 40px;">
+            Get 11 FREE Protected Prospects.<br>
+            No credit card. No contract. No risk.
+        </p>
+        
+        <a href="apply.html" class="cta-button">Protect the Revenue You Already Earned →</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <a href="index.html" class="logo footer-logo">
+                <div class="logo-monogram">
+                    <span class="logo-monogram-t1">T</span>
+                    <span class="logo-monogram-t2">T</span>
+                    <span class="logo-monogram-v">V</span>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-true">True</span>
+                    <span class="logo-vow">Vow</span>
+                    <span class="logo-law">.law</span>
+                </div>
+            </a>
+            
+            <p class="footer-tagline">
+                More clients. More money. More time with your family.<br>
+                All without risking your license.
+            </p>
+            
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>PRODUCT</h4>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="profitability.html">ROI & Profitability</a>
+                    <a href="county-cap.html">33% County Cap</a>
+                </div>
+                <div class="footer-column">
+                    <h4>RESOURCES</h4>
+                    <a href="blog.html">Blog</a>
+                    <a href="case-studies.html">Case Studies</a>
+                    <a href="partner.html">Partner Program</a>
+                </div>
+                <div class="footer-column">
+                    <h4>COMPANY</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="careers.html">Careers</a>
+                    <a href="press.html">Press</a>
+                    <a href="apply.html">Contact</a>
+                </div>
+            </div>
+            
+            <div class="footer-legal">
+                <a href="../legal/privacy.html">Privacy Policy</a>
+                <span>|</span>
+                <a href="../legal/terms.html">Terms of Service</a>
+                <span>|</span>
+                <a href="../legal/msa.html">MSA</a>
+                <span>|</span>
+                <a href="../legal/bar-compliance.html">Bar Compliance</a>
+            </div>
+            
+            <p class="footer-disclaimer">
+                © 2026 TrueVow Technologies. All rights reserved. TrueVow is a brand of TrueVow Global Tech FZE LLC (UAE), a subsidiary of TrueVow Global Holdings LLC (Nevis). TrueVow (USA) Inc. (Wyoming) provides passive marketing only and does not handle contracts or operations. All contracts are with TrueVow Global Tech FZE LLC (UAE). Technology and IP held by TrueVow Global Holdings LLC (Nevis). We are not a law firm and do not provide legal advice.
+            </p>
+        </div>
+    </footer>
+
+    <!-- STICKY CTA BAR -->
+    <div style="position: fixed; bottom: 0; left: 0; right: 0; background: #0A2463; color: #FFFFFF; padding: 16px 24px; text-align: center; font-size: 16px; font-weight: 600; box-shadow: 0 -4px 20px rgba(0,0,0,0.3); z-index: 999;">
+        Limited to solo and small firm attorneys who want to stop losing new cases
+    </div>
+
+<script>
+    // Mobile nav toggle
+    (function() {
+        var hamburger = document.getElementById('navHamburger');
+        var panel = document.getElementById('mobileNavPanel');
+        var overlay = document.getElementById('mobileNavOverlay');
+        var closeBtn = document.getElementById('mobileNavClose');
+        function openNav() { if(hamburger) hamburger.classList.add('active'); if(panel) panel.classList.add('active'); if(overlay) overlay.classList.add('active'); document.body.style.overflow='hidden'; }
+        function closeNav() { if(hamburger) hamburger.classList.remove('active'); if(panel) panel.classList.remove('active'); if(overlay) overlay.classList.remove('active'); document.body.style.overflow=''; }
+        if(hamburger) hamburger.addEventListener('click', openNav);
+        if(closeBtn) closeBtn.addEventListener('click', closeNav);
+        if(overlay) overlay.addEventListener('click', closeNav);
+    })();
+</script>
+</body>
+</html>

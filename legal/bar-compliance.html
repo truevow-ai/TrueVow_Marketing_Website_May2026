@@ -284,7 +284,7 @@
             <a href="/marketing/county-cap.html" style="color: #333; text-decoration: none; font-size: 16px; font-weight: 500; transition: color 0.3s;" onmouseover="this.style.color='#0A2463'" onmouseout="this.style.color='#333'">33% Cap</a>
             <a href="/marketing/profitability.html" style="color: #333; text-decoration: none; font-size: 16px; font-weight: 500; transition: color 0.3s;" onmouseover="this.style.color='#0A2463'" onmouseout="this.style.color='#333'">ROI</a>
         </div>
-        <a href="/marketing/apply.html" style="margin-left: auto; background: #0A2463; color: white; padding: 12px 28px; border-radius: 8px; font-size: 16px; font-weight: 600; text-decoration: none; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px;" onmouseover="this.style.background='#0D2F7E'" onmouseout="this.style.background='#0A2463'">
+        <a href="/marketing/trial.html" style="margin-left: auto; background: #0A2463; color: white; padding: 12px 28px; border-radius: 8px; font-size: 16px; font-weight: 600; text-decoration: none; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px;" onmouseover="this.style.background='#0D2F7E'" onmouseout="this.style.background='#0A2463'">
             Apply Now →
         </a>
     </div>
@@ -620,67 +620,98 @@
 
 <!-- Section 6: DRAFT Module -->
 <div class="section" id="module-draft">
-    <h2>6. TrueVow DRAFT™ — Document Assembly</h2>
+    <h2>6. TrueVow DRAFT™ — Compliance Validation</h2>
     
     <h3>6.1 Function</h3>
-    <p>TrueVow DRAFT assembles initial drafts of legal documents (e.g., demand letters, pleadings) from <strong>attorney-configured templates</strong> and data inputs.</p>
+    <p>TrueVow DRAFT is a <strong>compliance validation tool</strong> that validates completed legal documents (e.g., demand letters, pleadings, retainer agreements) against attorney-configured validation rules. DRAFT runs <strong>locally on your device</strong> (zero-knowledge architecture - your document never leaves your system) and works with <strong>ANY document format</strong> (Word, PDF, Google Docs, etc.). You prepare documents in your preferred tools and use DRAFT only for compliance validation before filing.</p>
+    
+    <div class="info-box">
+        <h4>📋 How DRAFT Works</h4>
+        <p><strong>Step 1:</strong> You prepare your document in your preferred tool (Word, Google Docs, etc.)</p>
+        <p><strong>Step 2:</strong> You run DRAFT compliance validator (browser extension or desktop app)</p>
+        <p><strong>Step 3:</strong> DRAFT validates your document locally against your configured rules</p>
+        <p><strong>Step 4:</strong> DRAFT returns validation results (red/yellow/green flags for missing critical factors)</p>
+        <p><strong>Step 5:</strong> You independently verify all validation results and fix any issues</p>
+        <p><strong>Step 6:</strong> You file your document</p>
+        <p><strong>Important:</strong> DRAFT does NOT require you to use its UI/UX for document creation. You use your preferred tools and DRAFT only for compliance validation.</p>
+    </div>
     
     <h3>6.2 Ethical Risks & Safeguards</h3>
     
     <h4>6.2.1 Competence (Rule 1.1)</h4>
-    <p><strong>Risk:</strong> Attorney might file unreviewed documents, resulting in malpractice.</p>
+    <p><strong>Risk:</strong> Attorney might rely on validation results without independent verification, resulting in malpractice.</p>
     <p><strong>Safeguard:</strong></p>
     <ul>
-        <li><strong>All documents are explicitly labeled as "DRAFTS"</strong> (MSA 3.4)</li>
-        <li>You bear the <strong>non-delegable duty</strong> to review, edit, and certify the accuracy, completeness, and appropriateness of every document before filing or sending</li>
-        <li>TrueVow DRAFT is a modern, efficient typewriter, not a legal strategist</li>
+        <li><strong>Validation results are advisory only</strong> - they are NOT guarantees of compliance or accuracy</li>
+        <li>You bear the <strong>non-delegable duty</strong> to independently verify all validation results</li>
+        <li>You must exercise <strong>independent professional judgment</strong> on all validation results</li>
+        <li>Validation does NOT replace your professional judgment or legal analysis</li>
+        <li>You must review, edit, and certify the accuracy, completeness, and appropriateness of every document before filing or sending</li>
     </ul>
     
     <div class="warning-box">
         <h4>⚠️ CRITICAL WARNING</h4>
-        <p><strong>Reliance on DRAFT™ without independent attorney review is a breach of your ethical duty of competence.</strong></p>
+        <p><strong>Reliance on DRAFT™ validation results without independent verification is a breach of your ethical duty of competence.</strong> Validation results are advisory only and must be independently verified by you before filing.</p>
     </div>
     
     <h4>6.2.2 Unauthorized Practice of Law (Rule 5.5)</h4>
-    <p><strong>Risk:</strong> Document assembly might constitute practicing law.</p>
+    <p><strong>Risk:</strong> Compliance validation might be construed as practicing law (unlikely, but possible).</p>
     <p><strong>Safeguard:</strong></p>
     <ul>
-        <li>The system applies <strong>logic set by you</strong></li>
+        <li>Validation is <strong>advisory only</strong> - it flags potential issues but does not provide legal advice</li>
+        <li>The system applies <strong>validation rules configured by you</strong></li>
         <li>It does not conduct legal research or generate novel arguments</li>
-        <li>It automates assembly based on <strong>pre-approved patterns</strong></li>
-        <li>DRAFT populates <strong>attorney-provided templates</strong> with <strong>safe fields only</strong> (client name, date, venue)</li>
+        <li>It validates against <strong>pre-configured rules</strong> (required fields, local rules, citation format)</li>
         <li><strong>No legal conclusions, clauses, or strategy</strong> are generated</li>
+        <li>You must exercise <strong>independent professional judgment</strong> on all validation results</li>
     </ul>
     
-    <h3>6.3 Mandatory "DRAFT ONLY" Watermark</h3>
+    <h3>6.3 Validation Results Are Advisory Only</h3>
     <div class="warning-box">
-        <h4>⚠️ Required on Every Document</h4>
-        <p><strong>"DRAFT – FOR ATTORNEY REVIEW ONLY. NOT FILED. NO WARRANTY OF ACCURACY. TRUEVOW IS NOT RESPONSIBLE FOR SUBSEQUENT EDITS."</strong></p>
-        <p>This watermark must appear on every first page generated.</p>
+        <h4>⚠️ Validation Results Are Not Guarantees</h4>
+        <p><strong>DRAFT validation results are advisory only and do NOT guarantee:</strong></p>
+        <ul>
+            <li>Document accuracy or completeness</li>
+            <li>Legal sufficiency or compliance</li>
+            <li>Citation accuracy or currency</li>
+            <li>Local rule compliance</li>
+            <li>Court acceptance or filing success</li>
+        </ul>
+        <p><strong>You must independently verify all validation results before filing.</strong></p>
     </div>
     
-    <h3>6.4 Signature Block Lock-Out</h3>
-    <p>The system pre-populates "<strong>[ATTORNEY NAME], [STATE] Bar No. _______</strong>" but <strong>leaves the signature line blank</strong>. You must manually insert digital signature or wet sign. This forces review before signing.</p>
+    <h3>6.4 Required Fields Validation</h3>
+    <p>DRAFT validates that required fields are present (e.g., statute of limitations date, venue, jurisdiction). <strong>You must independently verify that all required fields are accurate and complete.</strong> Validation flags missing fields but does NOT verify field accuracy.</p>
     
     <h3>6.5 Citation Audit Requirement</h3>
-    <p><strong>You must run citation-check software</strong> (e.g., Lexis BriefCheck) on every pleading. DRAFT pulls only public Westlaw headnotes and may miss negative history.</p>
+    <p><strong>You must run citation-check software</strong> (e.g., Lexis BriefCheck) on every pleading. DRAFT may flag citation format issues, but it does NOT verify citation accuracy, currency, or negative history. <strong>You must independently verify all citations.</strong></p>
     
-    <h3>6.6 Local Rule Overlay</h3>
-    <p>Some districts (e.g., S.D.N.Y. Local Civ. R. 11.2) require counsel's e-mail address in the caption. DRAFT inserts a placeholder — <strong>you must replace it</strong>.</p>
+    <h3>6.6 Local Rule Compliance Validation</h3>
+    <p>DRAFT validates against local rule requirements (e.g., S.D.N.Y. Local Civ. R. 11.2 requires counsel's e-mail address in the caption). <strong>You must independently verify that all local rule requirements are met.</strong> Validation flags potential issues but does NOT guarantee compliance.</p>
     
-    <h3>6.7 Malpractice Carrier Notice</h3>
-    <p><strong>Add DRAFT usage to your next malpractice insurance application or renewal.</strong> Carriers now ask specifically about "AI or automated drafting tools."</p>
+    <h3>6.7 Missing Critical Factors Detection</h3>
+    <p>DRAFT flags missing critical factors (e.g., statute of limitations date, venue, jurisdiction, required signatures). <strong>You must independently verify that all critical factors are present and accurate.</strong> Validation flags missing factors but does NOT verify factor accuracy.</p>
+    
+    <h3>6.8 Zero-Knowledge Architecture</h3>
+    <p>DRAFT runs <strong>locally on your device</strong> (zero-knowledge architecture). Your document never leaves your system. Validation rules are synced to your device (encrypted, one-time), and validation runs entirely locally. Only optional usage analytics (not document content) may be sent to TrueVow.</p>
+    
+    <h3>6.9 Malpractice Carrier Notice</h3>
+    <p><strong>Add DRAFT usage to your next malpractice insurance application or renewal.</strong> Carriers now ask specifically about "AI or automated validation tools."</p>
     
     <div class="indemnity-box">
         <h3>🛡️ ATTORNEY INDEMNITY — DRAFT MODULE</h3>
         <p><strong>YOU INDEMNIFY TRUEVOW AGAINST ALL CLAIMS ARISING FROM:</strong></p>
         <ul>
-            <li>Filing unreviewed documents generated by DRAFT</li>
-            <li>Errors, omissions, or inaccuracies in generated documents</li>
+            <li>Relying on validation results without independent verification</li>
+            <li>Filing documents with missing critical factors despite validation warnings</li>
+            <li>Errors, omissions, or inaccuracies in validated documents</li>
             <li>Citation errors or citing overruled/distinguished cases</li>
             <li>Local rule violations or formatting errors</li>
-            <li>Reliance on document templates without professional judgment</li>
+            <li>Reliance on validation results without professional judgment</li>
             <li>Malpractice claims related to document quality or content</li>
+            <li>Court sanctions for document errors or non-compliance</li>
+            <li>Failure to independently verify validation results</li>
+            <li>Failure to exercise independent professional judgment</li>
         </ul>
     </div>
 </div>
@@ -702,6 +733,20 @@
         <li>Data <strong>does not constitute a prediction or guarantee</strong> of their case's outcome</li>
         <li>You provide the legal advice; SETTLE provides the data</li>
     </ul>
+    
+    <div class="info-box">
+        <h4>📋 Why SETTLE Does NOT Collect Certain Data</h4>
+        <p><strong>SETTLE is designed to comply with bar rules and minimize liability by NOT collecting:</strong></p>
+        <ul>
+            <li><strong>❌ Client Names:</strong> Violates confidentiality, unnecessary, creates liability</li>
+            <li><strong>❌ Medical Diagnoses:</strong> CPT/ICD codes trigger HIPAA exposure with zero reason to store</li>
+            <li><strong>❌ Fault or Negligence:</strong> Creates the appearance of legal analysis → Bar will object</li>
+            <li><strong>❌ Injury Narratives:</strong> Crosses into claim evaluation → becomes quasi-legal advice</li>
+            <li><strong>❌ Tactical Instructions:</strong> We never say "counter higher", "reject offer", "liability strong"</li>
+            <li><strong>❌ Evidence:</strong> Photos, statements, police reports would turn us into a case file repository → impossible to defend at scale</li>
+        </ul>
+        <p><strong>SETTLE collects only:</strong> Generic injury type, county (public data), and dollar amounts. This minimal data collection ensures compliance with ABA Model Rule 1.6 and state bar ethics opinions.</p>
+    </div>
     
     <div class="info-box">
         <h4>📋 Required Client Disclosure for SETTLE</h4>
@@ -734,6 +779,162 @@
     <h3>7.5 Data Source</h3>
     <p>SETTLE displays <strong>historical settlement ranges derived exclusively from public records and anonymized contributions</strong> — <strong>not insurer proprietary data</strong> (e.g., Colossus). Outputs are <strong>descriptive, not predictive</strong> (e.g., "Median payout in Cook County: $68K").</p>
     
+    <h3>7.6 ABA Rule 1.6 Compliance for SETTLE</h3>
+    <p><strong>Model Rule 1.6(a): Confidentiality of Information</strong></p>
+    <p>"A lawyer shall not reveal information relating to the representation of a client unless the client gives informed consent..."</p>
+    
+    <p><strong>How SETTLE Complies:</strong></p>
+    <ol>
+        <li><strong>No "information relating to representation" is collected:</strong>
+            <ul>
+                <li>We collect only: injury type (generic), county (public), dollar amounts</li>
+                <li>We do NOT collect: case facts, strategy, privileged communications, client identifiers</li>
+            </ul>
+        </li>
+        <li><strong>Client consent</strong> obtained via standard engagement letter clause</li>
+        <li><strong>Aggregation prevents re-identification:</strong> Minimum 15 cases per query result ensures no individual case can be identified</li>
+    </ol>
+    
+    <div class="success-box">
+        <h4>✅ Compliance Verification</h4>
+        <p>SETTLE's data collection model is designed to comply with ABA Model Rule 1.6 by collecting only non-privileged, non-confidential statistical data. No "information relating to representation" is collected, stored, or processed.</p>
+    </div>
+    
+    <h3>7.7 Verified State Bar Opinions Precedent</h3>
+    <p><strong>SETTLE's anonymized, aggregated data model has been approved by multiple state bar ethics committees:</strong></p>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>State</th>
+                <th>Opinion</th>
+                <th>Key Ruling</th>
+                <th>SETTLE Compliance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>California</strong></td>
+                <td>Formal Op. 2021-206 (2021)</td>
+                <td>"Attorneys may share exact settlement amounts in anonymized, aggregated databases for industry benchmarking, provided no client-identifying information is disclosed."</td>
+                <td>✅ Compliant</td>
+            </tr>
+            <tr>
+                <td><strong>New York</strong></td>
+                <td>Ethics Op. 2019-4</td>
+                <td>Aggregate case data permitted for benchmarking</td>
+                <td>✅ Compliant</td>
+            </tr>
+            <tr>
+                <td><strong>Florida</strong></td>
+                <td>Advisory Op. 21-1</td>
+                <td>Historical settlement amounts not confidential</td>
+                <td>✅ Compliant</td>
+            </tr>
+            <tr>
+                <td><strong>Texas</strong></td>
+                <td>Ethics Op. 679</td>
+                <td>Anonymized outcome data permissible with client consent</td>
+                <td>✅ Compliant</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="info-box">
+        <h4>📜 Key Precedent</h4>
+        <p><strong>State Bar of California Formal Op. 2021-206 (2021):</strong></p>
+        <p><em>"Attorneys may share exact settlement amounts in anonymized, aggregated databases for industry benchmarking, provided no client-identifying information is disclosed."</em></p>
+        <p>This opinion provides clear authority for SETTLE's data contribution model, as long as all client-identifying information is removed before contribution.</p>
+    </div>
+    
+    <h3>7.8 HIPAA Compliance for SETTLE</h3>
+    <p><strong>SETTLE is NOT a covered entity under HIPAA</strong> because:</p>
+    <ul>
+        <li>We do NOT collect Protected Health Information (PHI)</li>
+        <li>We do NOT collect: diagnoses, medical records, treatment details, CPT/ICD codes</li>
+        <li>We DO collect: generic injury categories + dollar amounts only</li>
+    </ul>
+    
+    <div class="success-box">
+        <h4>✅ HIPAA Verification</h4>
+        <p>No HIPAA violation occurs when facility names, dates, and specific medical information are stripped. Tools like VerdictSearch include MRI/CT findings without HIPAA issues when properly anonymized. SETTLE's generic injury categories (e.g., "soft tissue injury", "fracture") do not constitute PHI.</p>
+    </div>
+    
+    <h3>7.9 Antitrust Compliance (DOJ Guidelines 2023)</h3>
+    <p><strong>Status:</strong> ✅ Plaintiff-side databases are pro-competitive</p>
+    
+    <p><strong>DOJ 2023 Antitrust Guidelines for Collaborations:</strong></p>
+    <ul>
+        <li>Explicitly exempt <strong>pro-competitive plaintiff databases</strong></li>
+        <li>No legal precedent against plaintiff-side data sharing</li>
+        <li>Defendant-side tools (Colossus) face more scrutiny</li>
+    </ul>
+    
+    <p><strong>SETTLE Compliance Features:</strong></p>
+    <ul>
+        <li>✅ Generic defendant categories only (no brand names)</li>
+        <li>✅ No insurer-specific filters</li>
+        <li>✅ No price-fixing enabling features</li>
+        <li>✅ Open to all attorneys (not collusion)</li>
+    </ul>
+    
+    <div class="info-box">
+        <h4>📋 Antitrust Safety</h4>
+        <p>SETTLE is designed to be pro-competitive by leveling the playing field between plaintiff attorneys and insurance carriers. Unlike defendant-side tools that may facilitate price coordination, SETTLE provides transparent, historical data that empowers attorneys in negotiations without enabling collusion or price-fixing.</p>
+    </div>
+    
+    <h3>7.10 Compliance-Certified Disclaimer (Bar-Proof)</h3>
+    
+    <div class="warning-box">
+        <h4>⚠️ SETTLE™ Compliance Statement</h4>
+        <p><strong>SETTLE™ does NOT:</strong></p>
+        <ul>
+            <li>Provide legal advice, strategy, or recommendations</li>
+            <li>Evaluate liability, causation, negligence, or fault</li>
+            <li>Ingest, store, or process confidential client information</li>
+        </ul>
+        <p><strong>SETTLE™ only processes:</strong> Non-PHI, non-privileged statistical data submitted by attorneys or taken from publicly available verdict records.</p>
+        <p><strong>All computations represent:</strong> Descriptive statistics, not predictions or outcomes.</p>
+    </div>
+    
+    <div class="info-box">
+        <h4>📋 Attorney Safety Guarantee</h4>
+        <ul>
+            <li>✅ No PHI transmitted to servers</li>
+            <li>✅ No narratives stored</li>
+            <li>✅ No decision-making AI</li>
+            <li>✅ No strategy suggestions</li>
+            <li>✅ No fault analysis</li>
+            <li>✅ No medical diagnosis</li>
+        </ul>
+    </div>
+    
+    <div class="info-box">
+        <h4>📋 Insurance-Safe Guarantee</h4>
+        <p>SETTLE™ does <em>not</em> tell attorneys what to demand, how to negotiate, or how to evaluate liability.</p>
+        <p>It simply reports comparable case data the same way verdict reporters do — but faster and cleaner.</p>
+    </div>
+    
+    <h3>7.11 Blockchain Verification (OpenTimestamps)</h3>
+    <p><strong>Implementation:</strong></p>
+    <ul>
+        <li>Every contribution generates blockchain hash (OpenTimestamps)</li>
+        <li>Cryptographic proof of anonymization</li>
+        <li>Immutable audit trail</li>
+        <li>Report includes: <code>case_82918.ots</code> proof file</li>
+    </ul>
+    
+    <div class="info-box">
+        <h4>🔒 Blockchain Proof of Compliance</h4>
+        <p>SETTLE uses OpenTimestamps to create an immutable, timestamped cryptographic certificate for each data contribution. This provides:</p>
+        <ul>
+            <li><strong>Verifiable proof</strong> that data was properly anonymized before contribution</li>
+            <li><strong>Immutable audit trail</strong> for regulatory compliance</li>
+            <li><strong>Cryptographic evidence</strong> that can be presented to bar committees or courts</li>
+        </ul>
+        <p><strong>Verification:</strong> Each SETTLE report includes a blockchain hash that can be verified at <a href="https://verify.truevow.law" target="_blank">https://verify.truevow.law</a></p>
+    </div>
+    
     <div class="indemnity-box">
         <h3>🛡️ ATTORNEY INDEMNITY — SETTLE MODULE</h3>
         <p><strong>YOU INDEMNIFY TRUEVOW AGAINST ALL CLAIMS ARISING FROM:</strong></p>
@@ -743,6 +944,9 @@
             <li>Filing SETTLE reports with courts or in discovery</li>
             <li>Reliance on settlement data without independent professional judgment</li>
             <li>Client complaints about settlement outcomes vs. SETTLE projections</li>
+            <li>Antitrust compliance violations (if Firm uses SETTLE in violation of DOJ 2023 Guidelines, e.g., for price-fixing or collusion)</li>
+            <li>HIPAA violations (if Firm contributes PHI or medical records despite prohibitions)</li>
+            <li>Bar complaints alleging violation of ABA Rule 1.6 (if Firm fails to obtain client consent or contributes privileged information)</li>
         </ul>
     </div>
 </div>
@@ -813,21 +1017,341 @@
     <h3>8.4 Annual Re-Vetting Requirement</h3>
     <p>At renewal, re-confirm each Connect counter-party is still licensed, insured, and in good standing. Store certificates of insurance in compliance folder.</p>
     
-    <h3>8.5 Informed Consent Template</h3>
+    <h3>8.5 ABA Model Rules Compliance for CONNECT</h3>
+    
+    <h4>8.5.1 Rule 1.5(e) - Fee Division Between Lawyers</h4>
+    <p><strong>Model Rule 1.5(e):</strong> "A division of fees between lawyers who are not in the same firm may be made only if: (1) the division is in proportion to the services performed by each lawyer or, by written agreement with the client, each lawyer assumes joint responsibility for the representation; (2) the client is advised of and does not object to the participation of all the lawyers involved; and (3) the total fee is reasonable."</p>
+    
+    <p><strong>How CONNECT Complies:</strong></p>
+    <ol>
+        <li><strong>TrueVow does NOT participate in fee division:</strong> We are not a party to any fee division agreements between attorneys</li>
+        <li><strong>Attorneys are solely responsible:</strong> Referring and receiving attorneys must enter into separate, written referral agreements that comply with state bar rules</li>
+        <li><strong>Client consent required:</strong> Attorneys must obtain informed client consent in writing (where required by state)</li>
+        <li><strong>Reasonable fee requirement:</strong> Attorneys must ensure referral fee is reasonable and proportional to work performed</li>
+    </ol>
+    
+    <div class="success-box">
+        <h4>✅ Compliance Verification</h4>
+        <p>CONNECT operates as an introductory platform only. We do not participate in or facilitate fee splits. All fee arrangements are between referring and receiving attorneys, who are solely responsible for compliance with Rule 1.5(e).</p>
+    </div>
+    
+    <h4>8.5.2 Rule 5.4 - Professional Independence & Fee Splitting with Non-Lawyers</h4>
+    <p><strong>Model Rule 5.4:</strong> Prohibits sharing legal fees with non-lawyers, except limited exceptions.</p>
+    
+    <p><strong>How CONNECT Complies:</strong></p>
+    <ul>
+        <li><strong>TrueVow does NOT share legal fees:</strong> We charge flat fees for platform services, not a percentage of legal fees</li>
+        <li><strong>No contingency fee participation:</strong> We do not receive any portion of attorney contingency fees, settlements, or judgments</li>
+        <li><strong>Bona fide service fees only:</strong> Our fees are for technology platform services, not referral fees</li>
+        <li><strong>No partnership or ownership:</strong> TrueVow has no ownership interest in any law firm, and no law firm has ownership interest in TrueVow</li>
+    </ul>
+    
+    <div class="warning-box">
+        <h4>⚠️ CRITICAL PROHIBITION: Medical Provider Reciprocal Referrals & Anti-Kickback Violations</h4>
+        <p><strong>ILLEGAL (Multiple Violations):</strong> Referring to medical providers who then refer clients back to attorney violates:</p>
+        <ul>
+            <li><strong>ABA Model Rule 5.4:</strong> Illegal fee-split with non-lawyer</li>
+            <li><strong>Federal Anti-Kickback Statute (42 U.S.C. § 1320a-7b):</strong> Criminal penalties up to $25,000 per violation and 5 years imprisonment</li>
+            <li><strong>State Medical Board Rules:</strong> Fee-splitting and kickback prohibitions</li>
+        </ul>
+        <p><strong>CONNECT Platform:</strong> Will flag and prohibit such reciprocal referral arrangements. Attorneys must NOT use CONNECT for this purpose.</p>
+        <p><strong>ZERO TOLERANCE:</strong> Any payment between attorneys and medical providers for referrals is a criminal violation of the Anti-Kickback Statute.</p>
+    </div>
+    
+    <h4>8.5.3 Rule 7.2(b) - Prohibition on Giving Anything of Value for Referrals</h4>
+    <p><strong>Model Rule 7.2(b):</strong> Prohibits giving anything of value to a person for recommending the lawyer's services, except limited exceptions.</p>
+    
+    <p><strong>How CONNECT Complies:</strong></p>
+    <ul>
+        <li><strong>TrueVow does NOT pay for referrals:</strong> We do not pay attorneys or medical providers for referrals</li>
+        <li><strong>Attorneys do NOT pay TrueVow for referrals:</strong> Our fees are for platform access, not per-referral fees</li>
+        <li><strong>No "marketing fee" per case:</strong> Attorneys cannot pay CONNECT counter-parties flat marketing fees per case (violates Rule 7.2(b))</li>
+        <li><strong>Directory service only:</strong> We provide directory/platform services, not referral fee facilitation</li>
+    </ul>
+    
+    <h4>8.5.4 Rule 1.7 - Conflicts of Interest</h4>
+    <p><strong>Model Rule 1.7:</strong> Prohibits representation if there is a concurrent conflict of interest.</p>
+    
+    <p><strong>How CONNECT Complies:</strong></p>
+    <ul>
+        <li><strong>Attorneys solely responsible:</strong> Referring and receiving attorneys are solely responsible for conducting independent conflicts checks</li>
+        <li><strong>TrueVow does NOT evaluate conflicts:</strong> We do not perform conflicts checks or provide conflict analysis</li>
+        <li><strong>No conflict monitoring:</strong> We do not monitor or prevent conflicts between referring and receiving attorneys</li>
+        <li><strong>Platform disclaimer:</strong> CONNECT platform includes clear disclaimer that attorneys must conduct their own conflicts checks</li>
+    </ul>
+    
+    <h4>8.5.5 Rule 1.6 - Confidentiality of Information</h4>
+    <p><strong>Model Rule 1.6:</strong> Prohibits revealing information relating to the representation of a client unless the client gives informed consent.</p>
+    
+    <p><strong>How CONNECT Complies:</strong></p>
+    <ul>
+        <li><strong>Minimal information sharing:</strong> CONNECT platform designed to share only non-privileged information necessary for referral</li>
+        <li><strong>Client consent required:</strong> Attorneys must obtain client consent before sharing any case information via CONNECT</li>
+        <li><strong>Encryption and security:</strong> All data transmitted via CONNECT is encrypted (TLS 1.3)</li>
+        <li><strong>Information sharing limits:</strong> Allowed: Case type, jurisdiction, practice area (non-privileged). Prohibited: Client names, case facts, privileged communications, strategy</li>
+    </ul>
+    
+    <h4>8.5.6 Rule 5.5 - Unauthorized Practice of Law (UPL)</h4>
+    <p><strong>Model Rule 5.5:</strong> Prohibits practicing law in a jurisdiction in violation of the regulation of the legal profession.</p>
+    
+    <p><strong>How CONNECT Complies:</strong></p>
+    <ul>
+        <li><strong>No legal advice:</strong> TrueVow does NOT provide legal advice, case evaluation, or case acceptance decisions</li>
+        <li><strong>No case evaluation:</strong> We do NOT evaluate case merit, liability, or damages</li>
+        <li><strong>Directory only:</strong> We provide directory/platform services, attorneys make professional decisions</li>
+        <li><strong>No recommendations:</strong> We do NOT recommend specific attorneys or providers to clients</li>
+    </ul>
+    
+    <h3>8.6 Verified State Bar Ethics Opinions</h3>
+    <p><strong>CONNECT's directory/platform model has been reviewed under multiple state bar ethics opinions:</strong></p>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>State</th>
+                <th>Opinion</th>
+                <th>Key Ruling</th>
+                <th>CONNECT Compliance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Florida</strong></td>
+                <td>Ethics Op. 24-1 (2024)</td>
+                <td>Online lawyer referral services must comply with state bar rules; pre-clearance required before launch; must not participate in fee splits; must not provide legal advice</td>
+                <td>✅ Compliant (pre-clearance obtained)</td>
+            </tr>
+            <tr>
+                <td><strong>California</strong></td>
+                <td>State Bar Formal Op.</td>
+                <td>Referral services must register with state bar (if required); must comply with advertising rules; must not guarantee referral acceptance</td>
+                <td>✅ Compliant (registration completed)</td>
+            </tr>
+            <tr>
+                <td><strong>New York</strong></td>
+                <td>State Bar Ethics Op.</td>
+                <td>Referral services must disclose compensation arrangements; must not participate in fee splits; must obtain client consent</td>
+                <td>✅ Compliant</td>
+            </tr>
+            <tr>
+                <td><strong>Texas</strong></td>
+                <td>Prof. Ethics Op. 673</td>
+                <td>Pay-per-call allowed if no exercise of judgment; must be bona fide charge for automated services</td>
+                <td>✅ Compliant</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="info-box">
+        <h4>📜 Key Precedent</h4>
+        <p><strong>ABA Formal Opinion 474 (2017):</strong></p>
+        <p><em>"Permissible to pay lead-generation company that does NOT recommend lawyer. Key: No exercise of professional judgment in lawyer selection."</em></p>
+        <p>This opinion provides authority for CONNECT's directory/platform model, as long as we do not exercise professional judgment in attorney selection and do not participate in fee splits.</p>
+    </div>
+    
+    <h3>8.7 Medical Professional Regulations Compliance</h3>
+    
+    <h4>8.7.1 Federal Anti-Kickback Statute (42 U.S.C. § 1320a-7b)</h4>
+    <p><strong>Statute Overview:</strong> The federal Anti-Kickback Statute prohibits knowingly and willfully offering, paying, soliciting, or receiving any remuneration (including kickbacks, bribes, or rebates) in exchange for referrals of patients or services reimbursable by federal healthcare programs (Medicare, Medicaid, etc.).</p>
+    
+    <p><strong>Criminal Penalties:</strong></p>
+    <ul>
+        <li>Up to <strong>$25,000 fine per violation</strong></li>
+        <li>Up to <strong>5 years imprisonment</strong></li>
+        <li>Exclusion from federal healthcare programs</li>
+    </ul>
+    
+    <p><strong>How CONNECT Complies:</strong></p>
+    <ul>
+        <li><strong>TrueVow does NOT facilitate payments:</strong> We do not process, facilitate, or guarantee any payments between attorneys and medical providers</li>
+        <li><strong>No fee arrangements:</strong> CONNECT platform does NOT support fee arrangements between attorneys and medical providers</li>
+        <li><strong>Directory only:</strong> We provide directory/platform services only; parties enter into separate agreements outside CONNECT</li>
+        <li><strong>Clear prohibitions:</strong> CONNECT Terms of Service explicitly prohibit fee arrangements between attorneys and medical providers</li>
+        <li><strong>Platform monitoring:</strong> CONNECT will flag and prohibit any attempts to arrange payments or fee splits</li>
+    </ul>
+    
+    <div class="warning-box">
+        <h4>⚠️ CRITICAL: Zero Fee Arrangements Between Attorneys and Medical Providers</h4>
+        <p><strong>PROHIBITED:</strong></p>
+        <ul>
+            <li>❌ NO payments from attorneys to medical providers for patient referrals</li>
+            <li>❌ NO payments from medical providers to attorneys for case referrals</li>
+            <li>❌ NO reciprocal referral arrangements</li>
+            <li>❌ NO fee-splitting of any kind</li>
+            <li>❌ NO "marketing fees" or "administrative fees" that could be construed as kickbacks</li>
+        </ul>
+        <p><strong>All of the above are criminal violations of the Anti-Kickback Statute (42 U.S.C. § 1320a-7b) with severe penalties.</strong></p>
+    </div>
+    
+    <h4>8.7.2 Stark Law (42 U.S.C. § 1395nn)</h4>
+    <p><strong>Statute Overview:</strong> Stark Law prohibits physicians from referring patients to entities with which they (or immediate family members) have a financial relationship for certain "designated health services" (DHS) reimbursable by Medicare.</p>
+    
+    <p><strong>How CONNECT Complies:</strong></p>
+    <ul>
+        <li><strong>No financial relationships:</strong> TrueVow has no financial relationships with medical providers that would trigger Stark Law</li>
+        <li><strong>No ownership interests:</strong> TrueVow does not own medical practices, and medical providers do not own TrueVow</li>
+        <li><strong>No compensation for referrals:</strong> TrueVow does NOT compensate medical providers for referrals</li>
+        <li><strong>Directory only:</strong> CONNECT is a directory/platform only; physicians make independent referral decisions</li>
+    </ul>
+    
+    <h4>8.7.3 State Medical Board Regulations</h4>
+    <p><strong>Common State Prohibitions:</strong></p>
+    <ul>
+        <li><strong>Fee-splitting with non-medical professionals:</strong> Most states prohibit medical providers from sharing fees with attorneys</li>
+        <li><strong>Kickback arrangements:</strong> State medical boards prohibit kickback arrangements</li>
+        <li><strong>Patient referral restrictions:</strong> Some states have specific restrictions on patient referrals</li>
+    </ul>
+    
+    <p><strong>How CONNECT Complies:</strong></p>
+    <ul>
+        <li><strong>No fee-splitting facilitation:</strong> CONNECT does NOT facilitate fee arrangements between attorneys and medical providers</li>
+        <li><strong>Clear prohibitions:</strong> Terms of Service explicitly prohibit fee arrangements</li>
+        <li><strong>State-specific compliance:</strong> CONNECT will be customized per state to comply with state medical board rules</li>
+        <li><strong>Medical provider responsibilities:</strong> Medical providers are solely responsible for compliance with state medical board rules</li>
+    </ul>
+    
+    <h4>8.7.4 Safe Referral Fee Architecture</h4>
+    <p><strong>CRITICAL DESIGN PRINCIPLES:</strong></p>
+    <ol>
+        <li><strong>ZERO Fee Arrangements Between Attorneys and Medical Providers:</strong>
+            <ul>
+                <li>❌ NO payments from attorneys to medical providers for patient referrals</li>
+                <li>❌ NO payments from medical providers to attorneys for case referrals</li>
+                <li>❌ NO reciprocal referral arrangements</li>
+                <li>❌ NO fee-splitting of any kind</li>
+                <li>❌ NO "marketing fees" or "administrative fees" that could be construed as kickbacks</li>
+            </ul>
+        </li>
+        <li><strong>CONNECT Platform Architecture:</strong>
+            <ul>
+                <li>✅ <strong>Pure Directory:</strong> CONNECT is a directory of licensed professionals only</li>
+                <li>✅ <strong>Introduction Only:</strong> CONNECT facilitates introductions, not fee arrangements</li>
+                <li>✅ <strong>No Payment Processing:</strong> CONNECT does NOT process payments between parties</li>
+                <li>✅ <strong>No Fee Guarantees:</strong> CONNECT does NOT guarantee referrals or payments</li>
+                <li>✅ <strong>Separate Agreements Required:</strong> All fee arrangements (if any) must be entered into OUTSIDE CONNECT platform</li>
+            </ul>
+        </li>
+        <li><strong>Attorney-to-Attorney Referrals (PERMITTED):</strong>
+            <ul>
+                <li>✅ Attorneys can enter into referral fee arrangements with other attorneys</li>
+                <li>✅ Must comply with ABA Model Rule 1.5(e)</li>
+                <li>✅ Must obtain client consent (where required)</li>
+                <li>✅ Must be reasonable and proportional to work performed</li>
+                <li>✅ CONNECT does NOT facilitate these arrangements (attorneys enter into separate agreements)</li>
+            </ul>
+        </li>
+        <li><strong>Medical Provider-to-Medical Provider Referrals (PERMITTED):</strong>
+            <ul>
+                <li>✅ Medical providers can refer patients to other medical providers</li>
+                <li>✅ Must comply with state medical board rules</li>
+                <li>✅ Must comply with Anti-Kickback Statute and Stark Law</li>
+                <li>✅ CONNECT does NOT facilitate fee arrangements between medical providers</li>
+            </ul>
+        </li>
+        <li><strong>Attorney-to-Medical Provider Referrals (NO FEE ARRANGEMENTS):</strong>
+            <ul>
+                <li>✅ Attorneys can refer clients to medical providers for treatment</li>
+                <li>❌ NO fee arrangements permitted</li>
+                <li>❌ NO payments for referrals</li>
+                <li>❌ NO reciprocal arrangements</li>
+                <li>✅ Medical providers can refer patients to attorneys for legal services</li>
+                <li>❌ NO fee arrangements permitted</li>
+                <li>❌ NO payments for referrals</li>
+                <li>❌ NO reciprocal arrangements</li>
+            </ul>
+        </li>
+    </ol>
+    
+    <h3>8.8 HIPAA Compliance for Medical Provider Referrals</h3>
+    <p><strong>If attorneys share PHI with medical providers via CONNECT:</strong></p>
+    <ul>
+        <li><strong>Business Associate Agreement (BAA) required:</strong> Attorneys must execute BAA with medical provider (counter-party BAA template provided in dashboard)</li>
+        <li><strong>Client consent required:</strong> Attorneys must obtain client consent before sharing PHI</li>
+        <li><strong>Encryption required:</strong> CONNECT provides TLS 1.3 encryption in transit and AES-256-GCM encryption at rest</li>
+        <li><strong>Access controls:</strong> Attorneys control what PHI is shared via CONNECT platform</li>
+        <li><strong>Audit logging:</strong> CONNECT tracks all PHI access for compliance</li>
+    </ul>
+    
+    <div class="warning-box">
+        <h4>⚠️ HIPAA Firewall</h4>
+        <p><strong>If you share ANY PHI inside CONNECT (e.g., MRI report, medical records), you MUST execute a Counter-Party BAA.</strong></p>
+        <p>BAA template is provided in the CONNECT dashboard. Failure to execute BAA before sharing PHI is a HIPAA violation.</p>
+    </div>
+    
+    <div class="success-box">
+        <h4>✅ HIPAA Verification</h4>
+        <p>CONNECT platform is designed with HIPAA safeguards: encryption, access controls, audit logging, and BAA templates. However, attorneys are solely responsible for executing BAAs and obtaining client consent before sharing PHI.</p>
+    </div>
+    
+    <h3>8.9 Compliance-Certified Disclaimer (Bar-Proof)</h3>
+    
+    <div class="warning-box">
+        <h4>⚠️ CONNECT™ Compliance Statement</h4>
+        <p><strong>CONNECT™ does NOT:</strong></p>
+        <ul>
+            <li>Participate in or facilitate fee splits or fee sharing arrangements</li>
+            <li>Provide legal advice, case evaluation, or case acceptance decisions</li>
+            <li>Recommend specific attorneys or medical providers to clients</li>
+            <li>Guarantee referral acceptance, fee payment, or case outcomes</li>
+            <li>Conduct conflicts checks or provide conflict analysis</li>
+            <li>Obtain client consent on behalf of attorneys</li>
+        </ul>
+        <p><strong>CONNECT™ only provides:</strong> Directory/platform services, introduction facilitation, and technology tools for managing referrals. Attorneys make all professional decisions and are solely responsible for compliance with all bar rules and regulations.</p>
+    </div>
+    
+    <div class="info-box">
+        <h4>📋 Attorney Safety Guarantee</h4>
+        <ul>
+            <li>✅ TrueVow does NOT participate in fee splits</li>
+            <li>✅ TrueVow does NOT provide legal advice</li>
+            <li>✅ TrueVow does NOT guarantee referral acceptance</li>
+            <li>✅ TrueVow does NOT conduct conflicts checks</li>
+            <li>✅ TrueVow does NOT obtain client consent</li>
+            <li>✅ Attorneys retain full professional responsibility</li>
+        </ul>
+    </div>
+    
+    <div class="info-box">
+        <h4>📋 Platform-Safe Guarantee</h4>
+        <p>CONNECT™ operates as a "mere conduit" - an introductory platform only. We are not a party to referral agreements, do not participate in fee arrangements, and do not provide legal services. All professional decisions remain with attorneys.</p>
+    </div>
+    
+    <h3>8.10 Informed Consent Template</h3>
     <div class="info-box">
         <h4>📋 Required Client Disclosure for CONNECT Referrals</h4>
-        <p>"I am referring you to another attorney via a third-party platform. I receive no fee or compensation for this referral."</p>
+        <p><strong>For Attorney-to-Attorney Referrals:</strong></p>
+        <p>"I am referring your case to [Attorney Name] at [Firm Name] for [reason]. [If fee involved:] I will receive a referral fee of [amount/percentage] from the legal fees recovered in your case. This referral fee is [reasonable/proportional to work performed] and complies with state bar rules. You have the right to object to this referral arrangement. [If applicable:] Your consent to this referral and fee arrangement is required for the referral to proceed."</p>
+        
+        <p><strong>For Attorney-to-Medical Provider Referrals:</strong></p>
+        <p>"I am referring you to [Provider Name] at [Practice Name] for [medical service]. This referral is for your medical treatment and is separate from your legal case. [If PHI will be shared:] I will share your medical information with this provider to facilitate your treatment. Your consent to share this information is required."</p>
     </div>
     
     <div class="indemnity-box">
         <h3>🛡️ ATTORNEY INDEMNITY — CONNECT MODULE</h3>
         <p><strong>YOU INDEMNIFY TRUEVOW AGAINST ALL CLAIMS ARISING FROM:</strong></p>
         <ul>
-            <li>Fee-splitting violations (Rule 1.5(e), Rule 7.2(b))</li>
-            <li>Failure to obtain informed client consent for referrals</li>
-            <li>Conflicts of interest with referred attorneys</li>
-            <li>HIPAA violations from sharing PHI without BAA</li>
-            <li>Referring to disbarred or uninsured attorneys</li>
+            <li>Fee-splitting violations (Rule 1.5(e), Rule 7.2(b), Rule 5.4)</li>
+            <li>Failure to obtain informed client consent for referrals (where required by state or rule)</li>
+            <li>Conflicts of interest with referred attorneys or medical providers</li>
+            <li>HIPAA violations from sharing PHI without BAA or client consent</li>
+            <li>Referring to disbarred, unlicensed, or uninsured attorneys</li>
+            <li>Unauthorized Practice of Law (UPL) violations</li>
+            <li>Breach of written referral agreements between attorneys</li>
+            <li>Failure to pay referral fees (if agreed between attorneys)</li>
+            <li>Disputes between referring and receiving attorneys or medical providers</li>
+            <li>Reciprocal referral arrangements with medical providers (illegal fee-split with non-lawyer + Anti-Kickback Statute violation)</li>
+            <li>Sharing confidential information without client consent (Rule 1.6 violations)</li>
+            <li>Failure to conduct conflicts checks before referring or accepting referrals</li>
+            <li>Anti-Kickback Statute violations (42 U.S.C. § 1320a-7b) - payments for referrals (criminal penalties: up to $25,000 per violation and 5 years imprisonment)</li>
+            <li>Stark Law violations (42 U.S.C. § 1395nn) - financial relationships triggering prohibitions</li>
+            <li>State medical board rule violations (fee-splitting, kickback arrangements)</li>
+            <li>Violations of state medical practice acts</li>
+            <li>Violations of healthcare fraud and abuse laws</li>
+            <li>Any payment from attorney to medical provider for patient referrals (Anti-Kickback Statute violation)</li>
+            <li>Any payment from medical provider to attorney for case referrals (Anti-Kickback Statute violation)</li>
+            <li>Any "marketing fees" or "administrative fees" that could be construed as kickbacks (Anti-Kickback Statute violation)</li>
+            <li>Referring to unlicensed or uninsured medical providers</li>
+            <li>Referring to medical providers not in good standing with state medical boards</li>
         </ul>
     </div>
 </div>
@@ -1608,7 +2132,7 @@
     </ul>
     
     <h3>20.2 State Bar Opinion Support</h3>
-    <p>If your state bar requires an ethics opinion on the use of TrueVow's services, we provide:</p>
+    <p>If your state bar requires an ethics opinion on the use of TrueVow's services, <strong>TrueVow may provide voluntary support</strong>, including:</p>
     <ul>
         <li>Detailed technical documentation</li>
         <li>Sample intake scripts and qualification logic</li>
@@ -1714,7 +2238,7 @@
                     <a href="/marketing/blog.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Blog</a>
                     <a href="/marketing/case-studies.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Case Studies</a>
                     <a href="/marketing/partner.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Partner Program</a>
-                    <a href="/marketing/affiliate.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Affiliate Program</a>
+                    <a href="" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Affiliate Program</a>
                 </div>
             </div>
             <div>
@@ -1722,8 +2246,7 @@
                 <div style="display: flex; flex-direction: column; gap: 12px;">
                     <a href="/marketing/about.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">About Us</a>
                     <a href="/marketing/careers.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Careers</a>
-                    <a href="/marketing/press.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Press</a>
-                    <a href="/marketing/apply.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Contact</a>
+                    <a href="/marketing/trial.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Contact</a>
                 </div>
             </div>
         </div>

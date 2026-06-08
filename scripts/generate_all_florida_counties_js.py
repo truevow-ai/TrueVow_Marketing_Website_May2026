@@ -42,7 +42,7 @@ BLS_DATA = {
     "citrus": 190, "hernando": 180, "martin": 170, "charlotte": 160,
     "monroe": 150, "highlands": 140, "walton": 130, "columbia": 120,
     "putnam": 110, "gadsden": 100, "sumter": 95, "flagler": 90, "desoto": 85,
-    "hendry": 80, "taylor": 75, "calhoun": 70, "holmes": 65, "washington": 60,
+    "hendry": 80, "taylor": 75, "calhoun": 15, "holmes": 65, "washington": 60,  # Calhoun corrected: 70→15
     "jefferson": 55, "madison": 50, "liberty": 45, "dixie": 40, "gilchrist": 35,
     "union": 30, "franklin": 25, "lafayette": 20, "wakulla": 18, "hamilton": 15,
     "baker": 12, "glades": 10, "hardee": 8, "bradford": 8, "levy": 8,

@@ -1,0 +1,967 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SETTLE — Settlement Intelligence for PI Attorneys | TrueVow</title>
+  <meta name="description" content="Settlement range context before demand or settlement. SETTLE gives PI attorneys structured settlement ranges, confidence signals, and comparable case signals with data limitation disclosures." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #080808;
+      --dark: #111111;
+      --navy: #0A2463;
+      --navy-2: #081737;
+      --gold: #B8860B;
+      --gold-soft: #FFFBEB;
+      --green: #10B981;
+      --red: #B91C1C;
+      --text: #171717;
+      --muted: #666666;
+      --light: #F8F9FA;
+      --border: #E5E7EB;
+      --blue-soft: #EFF6FF;
+      --red-soft: #FEF2F2;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text); line-height: 1.65; background: white; }
+    h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; line-height: 1.15; letter-spacing: -0.6px; }
+    a { color: inherit; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+    /* NAV */
+    nav { position: sticky; top: 0; z-index: 1000; background: white; border-bottom: 1px solid #E5E5E5; padding: 20px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.04); font-family: 'Montserrat', sans-serif; }
+    .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-monogram { position: relative; width: 38px; height: 32px; flex-shrink: 0; }
+    .logo-monogram-t1 { position: absolute; left: 0; top: 0; font-size: 32px; font-weight: 400; color: #C0C0C0; line-height: 1; }
+    .logo-monogram-t2 { position: absolute; left: 6px; top: 0; font-size: 32px; font-weight: 400; color: #808080; line-height: 1; }
+    .logo-monogram-v { position: absolute; left: 12px; top: 0; font-size: 32px; font-weight: 700; color: #0A2463; line-height: 1; }
+    .logo-text { display: flex; align-items: baseline; gap: 0; }
+    .logo-true { font-size: 22px; font-weight: 400; color: #808080; letter-spacing: 0.5px; }
+    .logo-vow { font-size: 22px; font-weight: 700; color: #0A2463; letter-spacing: 0.5px; }
+    .logo-law { font-size: 18px; font-weight: 400; color: #0A2463; }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a { color: #555555; text-decoration: none; font-size: 16px; font-weight: 500; }
+    .nav-cta { background: #0A2463; color: white !important; padding: 12px 24px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: background 0.2s; }
+    .nav-cta:hover { background: #0052CC; }
+        .nav-dropdown { position: relative; }
+        .nav-dropdown-toggle { cursor: pointer; display: inline-flex; align-items: center; gap: 4px; background: none; border: none; color: #555; text-decoration: none; font-size: 16px; font-weight: 500; font-family: 'Montserrat', sans-serif; padding: 0; }
+                .nav-dropdown-toggle::after { content: ' ▾'; font-size: 10px; }
+                .nav-dropdown:hover .nav-dropdown-toggle::after { content: ' ▴'; }
+        .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%); background: white; border: 1px solid #E5E5E5; border-radius: 8px; padding: 8px 0; min-width: 210px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); z-index: 1001; }
+        .nav-dropdown-menu a { display: block; padding: 10px 20px; color: #555555 !important; text-decoration: none !important; font-size: 15px; font-weight: 500; white-space: nowrap; }
+        .nav-dropdown-menu a:hover { color: #0A2463 !important; background: #F8F9FA; }
+        .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+
+    /* PROGRESS BAR */
+    .progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: linear-gradient(90deg, var(--navy), var(--gold)); z-index: 10000; transition: width 0.1s linear; }
+
+    /* HERO */
+    .hero { padding: 72px 24px 70px; background: #000000; color: white; text-align: center; }
+    .eyebrow { display: block; color: #F59E0B; text-transform: uppercase; letter-spacing: 2px; font-size: clamp(18px, 2.4vw, 32px); line-height: 1.25; font-weight: 900; margin-bottom: 38px; }
+    .hero h1 { max-width: 1060px; margin: 0 auto 34px; font-size: clamp(52px, 8.5vw, 96px); font-weight: 900; letter-spacing: -3.5px; line-height: 1.18; color: #FFFFFF; }
+    .hero-pain { max-width: 1080px; margin: 0 auto 30px; color: #FF6B6B; font-family: 'Montserrat', sans-serif; font-size: clamp(32px, 5.3vw, 62px); font-weight: 900; line-height: 1.32; letter-spacing: -1.6px; }
+    .hero-sub { max-width: 820px; margin: 0 auto; font-size: clamp(18px, 2vw, 22px); color: rgba(255,255,255,0.82); }
+    .hero-sub strong { color: white; }
+    .hero-actions { margin-top: 36px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .btn { display: inline-block; padding: 17px 28px; border-radius: 10px; text-decoration: none; font-weight: 900; transition: 0.2s ease; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: white; color: var(--navy); }
+    .btn-secondary { color: white; border: 1px solid rgba(255,255,255,0.28); background: rgba(255,255,255,0.08); }
+    .hero-note { margin-top: 22px; color: rgba(255,255,255,0.66); font-size: 14px; font-weight: 700; }
+
+    /* TRUST BAR */
+    .trust-bar { background: var(--light); border-bottom: 1px solid var(--border); }
+    .trust-inner { display: flex; justify-content: center; gap: 28px; padding: 18px 24px; flex-wrap: wrap; font-weight: 800; font-size: 14px; }
+    .trust-inner span::before { content: '✓'; color: var(--green); margin-right: 8px; }
+
+    /* SECTIONS */
+    section { padding: 82px 0; }
+    .section-head { text-align: center; max-width: 840px; margin: 0 auto 48px; }
+    .section-head h2 { font-size: clamp(32px, 4vw, 48px); margin-bottom: 16px; font-weight: 900; }
+    .section-head p { font-size: 20px; color: var(--muted); }
+
+    /* PAIN */
+    .pain-section { background: white; }
+    .pain-box { max-width: 900px; margin: 0 auto; background: #E2E8F0; border: 1px solid #CBD5E1; border-radius: 18px; padding: 44px; text-align: center; }
+    .pain-box h2 { font-size: clamp(28px, 3.5vw, 42px); margin-bottom: 18px; }
+    .pain-box strong { color: var(--red); }
+    .pain-box p { color: #555; font-size: 19px; }
+
+    /* DECISION */
+    .decision-section { background: var(--light); }
+    .decision-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+    .decision-card { background: white; border: 1px solid var(--border); border-radius: 16px; padding: 34px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+    .decision-card .label { text-transform: uppercase; letter-spacing: 1px; font-size: 13px; font-weight: 900; color: var(--gold); margin-bottom: 10px; }
+    .decision-card h3 { font-size: 24px; margin-bottom: 12px; }
+    .decision-card p { color: #555; }
+
+    /* HOW IT WORKS */
+    .how-section { background: white; }
+    .how-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+    .how-card { border: 1px solid var(--border); border-radius: 16px; padding: 28px; background: white; }
+    .how-num { color: var(--navy); font-weight: 900; font-size: 14px; margin-bottom: 8px; }
+    .how-card h3 { font-size: 20px; margin-bottom: 10px; }
+    .how-card p { color: var(--muted); font-size: 15px; }
+
+    /* EXAMPLE */
+    .example-section { background: var(--light); }
+    .example-card { max-width: 900px; margin: 0 auto; background: white; border: 1px solid var(--border); border-radius: 20px; overflow: hidden; box-shadow: 0 8px 28px rgba(0,0,0,0.06); }
+    .example-header { background: #111827; color: white; padding: 28px; text-align: center; }
+    .example-header h3 { font-size: 26px; }
+    .example-body { padding: 34px; }
+    .example-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 28px; }
+    .stat-card { border: 1px solid var(--border); border-left: 4px solid var(--gold); padding: 22px; border-radius: 12px; background: #fff; }
+    .stat-card span { display: block; color: var(--muted); font-size: 13px; text-transform: uppercase; font-weight: 800; letter-spacing: 0.8px; margin-bottom: 8px; }
+    .stat-card strong { font-size: 28px; color: var(--navy); }
+    .settle-output { background: linear-gradient(135deg, #F5F5F5, #ECECEC); border: 1px solid #D0D0D0; border-radius: 14px; padding: 28px; text-align: center; }
+    .settle-output .range { font-size: clamp(28px, 4vw, 44px); color: var(--green); font-family: Montserrat, sans-serif; font-weight: 900; margin: 12px 0; }
+    .signal-list { max-width: 620px; margin: 22px auto 0; text-align: left; background: rgba(16,185,129,0.08); border-left: 4px solid var(--green); padding: 20px; border-radius: 10px; color: #222; }
+    .confidence-badge { display: inline-block; background: var(--navy); color: white; padding: 6px 16px; border-radius: 6px; font-size: 13px; font-weight: 700; margin-top: 18px; }
+
+    /* DATA / CONFIDENCE / ETHICS */
+    .ethics-section { background: white; }
+    .ethics-box { background: #111; color: white; border-radius: 20px; padding: 44px; }
+    .ethics-box h2 { color: #D6B15A; text-align: center; margin-bottom: 18px; }
+    .ethics-box > p { color: #E5E5E5; text-align: center; max-width: 800px; margin: 0 auto 34px; font-size: 18px; }
+    .ethics-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+    .ethics-card { background: #F5F5F5; color: #1a1a1a; border: 1px solid #A0A0A0; border-radius: 14px; padding: 24px; }
+    .ethics-card h3 { font-size: 20px; margin-bottom: 10px; }
+    .ethics-card p { color: #444; }
+
+    /* CONFIDENCE BILLING TABLE */
+    .confidence-table-wrap { margin-top: 28px; }
+    .confidence-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+    .confidence-table th { background: #222; color: #D6B15A; padding: 14px 16px; text-align: left; font-size: 13px; text-transform: uppercase; letter-spacing: 0.8px; }
+    .confidence-table td { padding: 14px 16px; border-bottom: 1px solid #333; color: #ddd; }
+    .confidence-table tr:last-child td { border-bottom: none; }
+    .confidence-table .yes { color: #10B981; font-weight: 700; }
+    .confidence-table .confirm { color: #F59E0B; font-weight: 700; }
+    .confidence-table .no { color: #FF6B6B; font-weight: 700; }
+
+    .ethics-note { background: #333; padding: 24px; border-radius: 12px; margin-top: 28px; border-left: 4px solid #D6B15A; }
+    .ethics-note strong { color: #D6B15A; }
+    .ethics-note p { color: #E5E5E5; }
+
+    /* PRICING */
+    .pricing-section { background: var(--light); }
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1200px; margin: 0 auto; }
+    .pricing-card { position: relative; background: white; border: 1px solid var(--border); border-radius: 18px; padding: 36px; box-shadow: 0 3px 16px rgba(0,0,0,0.04); transition: all 0.3s; }
+    .pricing-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .pricing-card.featured { border: 2px solid var(--gold); box-shadow: 0 10px 34px rgba(184,134,11,0.12); }
+    .badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: #111; color: white; padding: 8px 18px; border-radius: 999px; font-size: 12px; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; }
+    .pricing-card h3 { font-size: 27px; margin-bottom: 8px; }
+    .price { font-family: Montserrat, sans-serif; font-size: 48px; color: var(--navy); font-weight: 900; margin: 18px 0 8px; }
+    .price small { font-family: Inter, sans-serif; font-size: 16px; color: var(--muted); font-weight: 600; }
+    .pricing-card ul { list-style: none; margin: 26px 0; }
+    .pricing-card li { margin-bottom: 12px; color: #333; font-size: 15px; }
+    .pricing-card li::before { content: '✓'; color: var(--green); margin-right: 8px; font-weight: 900; }
+    .card-cta { display: block; text-align: center; background: var(--navy); color: white; padding: 16px 28px; border-radius: 10px; font-weight: 800; text-decoration: none; transition: 0.2s; box-shadow: 0 4px 12px rgba(10,36,99,0.2); }
+    .card-cta:hover { background: #0052CC; transform: translateY(-2px); }
+    .card-cta.gold { background: var(--gold); color: white; box-shadow: 0 4px 12px rgba(184,134,11,0.2); }
+    .card-cta.gold:hover { background: #996F09; }
+    .card-fine { font-size: 13px; color: var(--muted); margin-top: 18px; text-align: center; }
+    .price-save { font-size: 14px; color: var(--green); font-weight: 700; margin-top: 6px; }
+    .pricing-note { text-align: center; margin-top: 40px; font-size: 17px; color: var(--muted); max-width: 750px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+    .pricing-note strong { color: var(--text); }
+
+    /* PRO TERMS */
+    .pro-terms { margin-top: 32px; background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 14px; padding: 28px; max-width: 800px; margin-left: auto; margin-right: auto; }
+    .pro-terms h4 { font-size: 18px; font-weight: 800; color: var(--gold); margin-bottom: 12px; }
+    .pro-terms p { font-size: 15px; color: #555; line-height: 1.7; }
+    .pro-terms ul { list-style: none; margin-top: 12px; }
+    .pro-terms li { font-size: 14px; color: #555; padding: 4px 0; padding-left: 20px; position: relative; }
+    .pro-terms li::before { content: '→'; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+
+    /* CALCULATOR */
+    .calc-section { background: white; }
+    .calc-box { max-width: 600px; margin: 0 auto; background: linear-gradient(135deg, #FFF9E6 0%, #FFFBF0 100%); padding: 40px; border-radius: 18px; border: 2px solid var(--gold); }
+    .calc-box label { font-size: 16px; font-weight: 700; color: var(--text); display: block; margin-bottom: 8px; }
+    .calc-box input { width: 100%; padding: 14px; font-size: 16px; border: 2px solid var(--border); border-radius: 8px; margin-bottom: 20px; }
+    .calc-box button { width: 100%; background: var(--navy); color: white; padding: 16px; font-size: 18px; font-weight: 700; border: none; border-radius: 8px; cursor: pointer; transition: 0.2s; }
+    .calc-box button:hover { background: #0052CC; }
+    .calc-result { display: none; margin-top: 24px; background: rgba(16,185,129,0.08); border: 2px solid var(--green); border-radius: 14px; padding: 28px; text-align: center; }
+    .calc-result .label { font-size: 14px; color: var(--muted); margin-bottom: 16px; text-transform: uppercase; font-weight: 800; letter-spacing: 1px; }
+    .calc-result .row { font-size: 18px; color: var(--muted); margin-bottom: 6px; }
+    .calc-result .val { font-size: 24px; }
+    .calc-result .val.green { color: var(--green); }
+    .calc-result .val.navy { color: var(--navy); }
+    .calc-disclaimer { font-size: 12px; color: var(--muted); margin-top: 16px; font-style: italic; line-height: 1.5; }
+
+    /* FAQ */
+    .faq-section { padding: 100px 24px; background: var(--light); }
+    .faq-container { max-width: 800px; margin: 0 auto; }
+    .faq-category-header { font-size: 28px; font-weight: 800; color: var(--navy); margin-bottom: 24px; padding: 16px 24px; background: linear-gradient(135deg, #E8F4FD 0%, #F0F8FF 100%); border-radius: 8px; border-left: 4px solid var(--navy); }
+    .faq-item { margin-bottom: 16px; border: 1px solid #e5e5e5; border-radius: 8px; overflow: hidden; background: white; }
+    .faq-question { font-size: 20px; font-weight: 700; color: #1a1a1a; padding: 20px 60px 20px 24px; cursor: pointer; position: relative; background: #fafafa; }
+    .faq-question::after { content: '+'; position: absolute; right: 24px; top: 50%; transform: translateY(-50%); font-size: 28px; color: var(--navy); }
+    .faq-item.active .faq-question::after { content: '−'; }
+    .faq-answer { font-size: 16px; color: #666; line-height: 1.8; padding: 0 24px; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; }
+    .faq-item.active .faq-answer { max-height: 2000px; padding: 24px; }
+    .faq-highlight { background: #E8F4FD; padding: 16px; border-radius: 8px; margin-top: 12px; color: var(--navy); font-weight: 600; }
+
+    /* FINAL CTA */
+    .final-cta { padding: 80px 24px; background: linear-gradient(135deg, var(--navy), var(--navy-2)); color: white; text-align: center; }
+    .final-cta h2 { font-size: clamp(36px, 5vw, 56px); font-weight: 900; margin-bottom: 20px; }
+    .final-cta p { font-size: 22px; margin-bottom: 36px; opacity: 0.95; }
+    .final-cta .btn { background: var(--gold); color: white; font-size: 20px; padding: 20px 48px; border-radius: 12px; box-shadow: 0 4px 20px rgba(184,134,11,0.3); }
+    .final-cta .btn:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(184,134,11,0.4); }
+    .final-cta-badges { margin-top: 28px; display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; font-size: 14px; opacity: 0.9; }
+    .final-cta-badges span::before { content: '✓'; margin-right: 6px; color: var(--green); }
+
+    /* SCROLL REVEAL */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* FOOTER */
+    footer { padding: 80px 24px; background: #000; color: white; text-align: center; }
+    .footer-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 900px; margin: 40px auto; text-align: center; }
+    .footer-col h4 { color: #fff; font-size: 16px; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px; }
+    .footer-col a { display: block; color: #999; text-decoration: none; font-size: 15px; margin-bottom: 12px; transition: color 0.3s; }
+    .footer-col a:hover { color: #fff; }
+    .footer-legal { display: flex; justify-content: center; gap: 16px; margin-top: 40px; font-size: 14px; flex-wrap: wrap; }
+    .footer-legal a { color: #999; text-decoration: none; }
+    .footer-legal a:hover { color: #fff; }
+    .footer-disclaimer { font-size: 11pt; color: #555; margin-top: 32px; line-height: 1.8; max-width: 900px; margin-left: auto; margin-right: auto; padding-bottom: 40px; }
+
+    /* STICKY CTA */
+    .sticky-cta { position: fixed; bottom: 24px; right: 24px; z-index: 9999; background: var(--navy); color: #fff; padding: 16px 32px; border-radius: 12px; font-size: 16px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 12px rgba(10,36,99,0.2); transition: all 0.3s; }
+    .sticky-cta:hover { background: #0052CC; transform: translateY(-2px); }
+    .sticky-cta .cta-sub { font-size: 12px; opacity: 0.8; font-weight: 500; display: block; margin-top: 2px; }
+
+    /* RESPONSIVE */
+    @media (max-width: 968px) {
+      .decision-grid, .pricing-grid { grid-template-columns: 1fr; max-width: 450px; margin-left: auto; margin-right: auto; }
+      .how-grid { grid-template-columns: repeat(2, 1fr); }
+      .ethics-grid { grid-template-columns: 1fr; }
+      .example-stats { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 42px; letter-spacing: -2px; }
+      .hero-pain { font-size: 28px; }
+      .confidence-table { font-size: 13px; }
+      .confidence-table th, .confidence-table td { padding: 10px 10px; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+            .nav-hamburger { display: flex; }
+            .nav-cta { display: none; }
+      .how-grid { grid-template-columns: 1fr; }
+      .footer-links { grid-template-columns: 1fr; }
+    }
+  
+        /* HAMBURGER */
+        .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; gap: 5px; }
+        .nav-hamburger span { display: block; width: 24px; height: 2px; background: #555; border-radius: 2px; transition: all 0.3s; }
+        .nav-hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .nav-hamburger.active span:nth-child(2) { opacity: 0; }
+        .nav-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+        .mobile-nav-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 999; }
+        .mobile-nav-overlay.active { display: block; }
+        .mobile-nav-panel { display: none; position: fixed; top: 0; right: -280px; width: 280px; height: 100vh; background: white; z-index: 1002; padding: 80px 32px 32px; box-shadow: -4px 0 24px rgba(0,0,0,0.1); transition: right 0.3s ease; flex-direction: column; gap: 0; }
+        .mobile-nav-panel.active { display: flex; right: 0; }
+        .mobile-nav-panel a { display: block; padding: 14px 0; color: #555; text-decoration: none; font-size: 17px; font-weight: 500; border-bottom: 1px solid #F0F0F0; font-family: 'Montserrat', sans-serif; }
+        .mobile-nav-panel a:last-child { border-bottom: none; }
+        .mobile-nav-panel .mobile-nav-label { padding: 14px 0 6px; font-size: 12px; font-weight: 600; color: #999; text-transform: uppercase; letter-spacing: 1px; border-bottom: none; font-family: 'Montserrat', sans-serif; }
+        .mobile-nav-panel .mobile-cta { background: var(--navy); color: white !important; text-align: center; border-radius: 8px; padding: 14px; margin-top: 16px; font-weight: 600; border-bottom: none; }
+        .mobile-nav-panel .mobile-cta:hover { background: #0052CC; }
+        .mobile-nav-close { position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 28px; cursor: pointer; color: #999; padding: 4px 8px; }
+        @media (max-width: 768px) { .nav-hamburger { display: flex; } }
+        @media (min-width: 769px) { .nav-hamburger, .mobile-nav-overlay, .mobile-nav-panel { display: none !important; } }
+    </style>
+  <script src="analytics.js"></script>
+</head>
+<body>
+
+<!-- PROGRESS BAR -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <div class="logo-monogram">
+                <span class="logo-monogram-t1">T</span>
+                <span class="logo-monogram-t2">T</span>
+                <span class="logo-monogram-v">V</span>
+            </div>
+            <div class="logo-text">
+                <span class="logo-true">True</span>
+                <span class="logo-vow">Vow</span>
+                <span class="logo-law">.law</span>
+            </div>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="pricing.html">Pricing</a>
+            <div class="nav-dropdown">
+                <button class="nav-dropdown-toggle">Resources</button>
+                <div class="nav-dropdown-menu">
+                    <a href="profitability.html">ROI Calculator</a>
+                    <a href="county-cap.html">County Availability</a>
+                    <a href="compliance.html">Data &amp; Compliance</a>
+                    <a href="integrations.html">Integrations &amp; Setup</a>
+                    <a href="blog.html">Blog</a>
+                </div>
+            </div>
+        </div>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+        <a href="trial.html" class="nav-cta">See Benjamin Live (8 min) →</a>
+    </div>
+</nav>
+<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+<div class="mobile-nav-panel" id="mobileNavPanel">
+    <button class="mobile-nav-close" id="mobileNavClose">&times;</button>
+    <a href="index.html">Home</a>
+    <a href="how-it-works.html">How It Works</a>
+    <a href="pricing.html">Pricing</a>
+    <div class="mobile-nav-label">Resources</div>
+    <a href="profitability.html">ROI Calculator</a>
+    <a href="county-cap.html">County Availability</a>
+    <a href="compliance.html">Data &amp; Compliance</a>
+    <a href="integrations.html">Integrations &amp; Setup</a>
+    <a href="blog.html">Blog</a>
+    <a href="trial.html" class="mobile-cta">See Benjamin Live (8 min) &rarr;</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="eyebrow">Stage 3 &mdash; SETTLE</span>
+  <h1>The Insurer Knows<br>Its Range.<br>Do You Know<br>Yours?</h1>
+  <p class="hero-pain">Settlement Range Context Before Demand or Resolution.</p>
+  <p class="hero-sub">
+    SETTLE gives you structured settlement ranges,<br>confidence signals, and comparable case signals<br>before demand or settlement.
+  </p>
+  <div class="hero-actions">
+    <a href="#pricing" class="btn btn-primary">See SETTLE Pricing →</a>
+    <a href="#example" class="btn btn-secondary">View Example Report →</a>
+  </div>
+  <p class="hero-note">No legal advice • No client identifiers • Built for attorney-controlled decision support</p>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <span>Built for Bar-Conscious Workflows</span>
+    <span>No Client Identifiers</span>
+    <span>Attorney-Controlled</span>
+    <span>Independent Decision Support</span>
+  </div>
+</div>
+
+<!-- PAIN -->
+<section class="pain-section reveal">
+  <div class="container">
+    <div class="pain-box">
+      <h2>The Dangerous Settlement Is the Offer You <strong>Cannot Disprove</strong></h2>
+      <p style="margin-top: 18px;">Before you accept the offer, check the range. The expensive mistake is the settlement you never questioned.</p>
+      <p style="margin-top: 18px; font-weight: 700; color: var(--navy);">SETTLE gives you decision support. You stay in control.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DECISION MOMENTS -->
+<section class="decision-section reveal">
+  <div class="container">
+    <div class="section-head">
+      <h2>When SETTLE Matters Most</h2>
+      <p>Three critical decision moments where settlement data changes everything.</p>
+    </div>
+    <div class="decision-grid">
+      <div class="decision-card">
+        <div class="label">Before Demand</div>
+        <h3>Know Your Range</h3>
+        <p>You can't demand what you can't justify. SETTLE gives you the comparable range before you ever send a demand letter.</p>
+      </div>
+      <div class="decision-card">
+        <div class="label">Before Accepting</div>
+        <h3>Verify the Offer</h3>
+        <p>When the adjuster says "that's our best offer," SETTLE helps show where the offer appears to fall within available comparable signals.</p>
+      </div>
+      <div class="decision-card">
+        <div class="label">During Negotiation</div>
+        <h3>Negotiate With Proof</h3>
+        <p>Mediation without data is just asking. SETTLE gives you range context and comparable signals you can review before mediation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONFIDENCE-LABELED DECISION SUPPORT -->
+<section class="decision-section reveal" style="background: #F8F9FA;">
+  <div class="container" style="max-width: 800px;">
+    <div class="section-head">
+      <h2>Confidence-Labeled Decision Support</h2>
+    </div>
+    <p style="font-size: 18px; color: #555; line-height: 1.7; text-align: center; margin-bottom: 20px;">SETTLE does not tell you what a case is worth with certainty. It provides settlement range context using available comparable signals, confidence labels, and data limitation disclosures.</p>
+    <p style="font-size: 18px; color: #555; line-height: 1.7; text-align: center;">If there is not enough data to generate a meaningful report, the report should not be charged.</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section reveal">
+  <div class="container">
+    <div class="section-head">
+      <h2>How SETTLE Works</h2>
+      <p>From case facts to confidence signals in minutes.</p>
+    </div>
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="how-num">STEP 1</div>
+        <h3>Enter Case Details</h3>
+        <p>Injury type, medical bills, county, insurance company — no client identifiers ever.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">STEP 2</div>
+        <h3>Get Settlement Range</h3>
+        <p>See the closest available comparable range based on county, state, regional, injury, treatment, and liability signals.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">STEP 3</div>
+        <h3>See Confidence Signals</h3>
+        <p>See the probability the offer may be below comparable range. Review confidence level and data depth.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">STEP 4</div>
+        <h3>Decide With Data</h3>
+        <p>Walk into your next negotiation with settlement range context and confidence-labeled signals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXAMPLE REPORT -->
+<section class="example-section reveal" id="example">
+  <div class="container">
+    <div class="section-head">
+      <h2>See What a SETTLE Report Looks Like</h2>
+      <p style="font-style: italic; color: var(--gold); font-weight: 700; margin-bottom: 8px;">Illustrative example report — not actual output</p>
+      <p>SETTLE compares the offer against the strongest available comparable settlement signals and clearly labels confidence.</p>
+    </div>
+    <div class="example-card">
+      <div class="example-header">
+        <h3>Miami-Dade County, FL — Rear-End Collision — Herniated Disc</h3>
+      </div>
+      <div class="example-body">
+        <div class="example-stats">
+          <div class="stat-card">
+            <span>Medical Bills</span>
+            <strong>$41,200</strong>
+          </div>
+          <div class="stat-card">
+            <span>Their Offer</span>
+            <strong style="color: #FF6B6B;">$62,000</strong>
+          </div>
+          <div class="stat-card">
+            <span>SETTLE Comparable Range</span>
+            <strong style="color: var(--green);">$75K – $200K</strong>
+          </div>
+        </div>
+        <div class="settle-output">
+          <p style="font-size: 16px; color: var(--gold); font-weight: 800;">Illustrative SETTLE Report Output:</p>
+          <div class="range">$75,000 – $200,000</div>
+          <div class="signal-list">
+            <p>• Example confidence signal: 93% likelihood offer is below comparable median</p>
+            <p>• Moderate herniated disc cases (injections, no surgery)</p>
+            <p>• Example comparable range: 1.8x – 4.9x medical bill multipliers</p>
+            <p>• Example comparable sample: 94 similar cases</p>
+          </div>
+          <div class="confidence-badge">Illustrative confidence: High — County-specific data available</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DATA / CONFIDENCE / ETHICS -->
+<section class="ethics-section reveal">
+  <div class="container">
+    <div class="ethics-box">
+      <h2>Data, Confidence, and Ethics</h2>
+      <p>When data is thin, confidence is labeled clearly. SETTLE never charges for reports it cannot meaningfully produce.</p>
+      <div class="ethics-grid">
+        <div class="ethics-card">
+          <h3>Public Data Sources</h3>
+          <p>State bar jury verdict reports, published court records, government FOIA releases. Never confidential settlements.</p>
+        </div>
+        <div class="ethics-card">
+          <h3>Attorney Contributions</h3>
+          <p>Attorney contributions require appropriate client consent, anonymization, and firm-controlled submission practices. No client identifiers are required for SETTLE case analysis.</p>
+        </div>
+        <div class="ethics-card">
+          <h3>No Client Identifiers Policy</h3>
+          <p>No names, addresses, or case numbers. County-level location only. Bucketed ranges, not exact amounts.</p>
+        </div>
+        <div class="ethics-card">
+          <h3>Compliance Controls</h3>
+          <p>Audit trail for every query. Attorney attestation required. Data access controls. Compliance reports available for internal review.</p>
+        </div>
+      </div>
+      <div class="confidence-table-wrap">
+        <table class="confidence-table">
+          <thead>
+            <tr><th>Data Availability</th><th>User Pays?</th><th>Product Behavior</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>County-specific data available</td><td class="yes">Yes</td><td>Full report</td></tr>
+            <tr><td>State/regional comparable data available</td><td class="yes">Yes</td><td>Report with limitation note</td></tr>
+            <tr><td>Low-confidence directional report available</td><td class="confirm">Only after user confirms</td><td>Show confidence warning before charging</td></tr>
+            <tr><td>Not enough meaningful data</td><td class="no">No</td><td>No charge</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ethics-note">
+        <p><strong>Honest billing:</strong> If SETTLE can generate a useful directional report, you may choose to run it. If there isn't enough data to produce a meaningful report, you are not charged.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section reveal" id="pricing">
+  <div class="container">
+    <div class="section-head">
+      <h2>Simple SETTLE Pricing</h2>
+      <p>Use SETTLE only when decisions matter. No subscription required for occasional use.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Single Report</h3>
+        <div class="price">$39 <small>/report</small></div>
+        <p style="color: var(--muted); font-size: 15px; margin-bottom: 4px;">Best for one-off demand or offer checks.</p>
+        <ul>
+          <li>Settlement range</li>
+          <li>Confidence level</li>
+          <li>Comparable signals</li>
+          <li>No subscription</li>
+        </ul>
+        <a href="#waitlist" class="card-cta">Request SETTLE Access →</a>
+        <div class="card-fine">Pay only when you use it</div>
+      </div>
+      <div class="pricing-card">
+        <h3>11-Pack</h3>
+        <div class="price">$385</div>
+        <div class="price-save">11 reports at $35/report</div>
+        <p style="color: var(--muted); font-size: 15px; margin-bottom: 4px;">Best for light repeat use.</p>
+        <ul>
+          <li>Everything in Single Report</li>
+          <li><strong>11 reports per pack</strong></li>
+          <li><strong>Valid for 24 months</strong></li>
+          <li><strong>Use across all cases</strong></li>
+        </ul>
+        <a href="#waitlist" class="card-cta">Request SETTLE Access →</a>
+        <div class="card-fine">No subscription • Unused pack reports expire after 24 months</div>
+      </div>
+      <div class="pricing-card">
+        <h3>25-Pack</h3>
+        <div class="price">$750</div>
+        <div class="price-save">25 reports at $30/report</div>
+        <p style="color: var(--muted); font-size: 15px; margin-bottom: 4px;">Best for occasional spikes in settlement review volume.</p>
+        <ul>
+          <li>Everything in 11-Pack</li>
+          <li><strong>25 reports per pack</strong></li>
+          <li><strong>Best prepaid standalone rate</strong></li>
+        </ul>
+        <a href="#waitlist" class="card-cta">Request SETTLE Access →</a>
+        <div class="card-fine">No subscription • Unused pack reports expire after 24 months</div>
+      </div>
+      <div class="pricing-card">
+        <h3>TrueVow Ecosystem Rate</h3>
+        <div class="price">$29 <small>/report</small></div>
+        <p style="color: var(--muted); font-size: 15px; margin-bottom: 4px;">For firms using active INTAKE or LEVERAGE.</p>
+        <ul>
+          <li>Everything in Single Report</li>
+          <li><strong>Auto-populate from INTAKE</strong></li>
+          <li><strong>LEVERAGE insights included</strong></li>
+          <li><strong>Added to monthly invoice</strong></li>
+        </ul>
+        <a href="pricing.html" class="card-cta">See TrueVow Pricing →</a>
+        <div class="card-fine">Billed monthly in arrears • No bundles or prepayment</div>
+      </div>
+      <div class="pricing-card featured">
+        <div class="badge">Monthly</div>
+        <h3>SETTLE Pro</h3>
+        <div class="price">$299 <small>/month</small></div>
+        <div class="price-save">15 included • $25/report after • Rollover capped at 63</div>
+        <p style="color: var(--muted); font-size: 15px; margin-bottom: 4px;">For high-volume firms.</p>
+        <ul>
+          <li>Everything in 25-Pack</li>
+          <li><strong>15 reports/month included</strong></li>
+          <li><strong>$25 per additional report</strong></li>
+          <li><strong>Rollover bank while active</strong></li>
+        </ul>
+        <a href="#waitlist" class="card-cta gold">Apply for SETTLE Pro →</a>
+        <div class="card-fine">Cancel anytime • No charge if data insufficient</div>
+      </div>
+    </div>
+    <div class="pricing-note">
+      Firms using <strong>active INTAKE or LEVERAGE</strong> get SETTLE reports at <strong>$29/report</strong>, automatically added to the monthly invoice. No bundles, credits, or prepayment required.<br><br>
+      Reviewing <strong>11+ cases per month</strong>? SETTLE Pro usually makes more sense.<br><br>
+      If SETTLE does not have enough data to generate a meaningful report, you are not charged.
+    </div>
+    <div class="pro-terms">
+      <h4>SETTLE Pro — $299/month</h4>
+      <p>Includes 15 reports/month. Unused included reports roll into your Pro rollover bank while your subscription remains active, capped at <strong>63 reports</strong>. Your rollover bank resets to zero at each annual subscription anniversary and does not carry over after cancellation. Additional reports beyond your monthly allocation and rollover balance are <strong>$25 each</strong>.</p>
+      <p style="margin-top: 12px; font-weight: 700; color: var(--text);">Usage order:</p>
+      <ul>
+        <li>Current monthly included reports</li>
+        <li>Rollover bank</li>
+        <li>Paid overage at $25/report</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="calc-section reveal">
+  <div class="container">
+    <div class="section-head">
+      <h2>Settlement Opportunity Estimate</h2>
+      <p>Directional estimate based on a 5% hypothetical settlement improvement assumption. Not a prediction or guarantee.</p>
+    </div>
+    <div class="calc-box">
+      <label>PI cases settled per year</label>
+      <input type="number" id="casesPerYear" placeholder="30" min="1">
+      <label>Average settlement amount</label>
+      <input type="number" id="avgSettlement" placeholder="45000" min="1000" step="1000">
+      <button onclick="calculateValue()">Calculate Opportunity →</button>
+      <div id="calculatorResult" class="calc-result">
+        <p class="label">Estimated Annual Opportunity</p>
+        <p class="row">Estimated client settlement value at stake: <strong id="clientValue" class="val green"></strong></p>
+        <p class="row">Potential attorney fee impact at 33%: <strong id="attorneyValue" class="val navy"></strong></p>
+        <p class="calc-disclaimer">Directional model only. This is not a promise, prediction, legal advice, or guarantee of settlement outcome.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section reveal" id="faq">
+  <div class="faq-container">
+    <div class="faq-category-header">Frequently Asked Questions</div>
+
+    <div class="faq-item">
+      <div class="faq-question">What if SETTLE does not have data for my county or injury type?</div>
+      <div class="faq-answer">
+        <p>When county-specific data is limited, SETTLE uses the closest available comparable signals, including state, region, injury type, treatment pattern, medical bill range, and liability profile. The report clearly labels confidence.</p>
+        <p style="margin-top: 12px;">If SETTLE can generate a useful directional report, you may choose to run it. If there is not enough data to produce a meaningful report, you are not charged.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Do I pay if the confidence is low?</div>
+      <div class="faq-answer">
+        <p>High and medium confidence reports are charged normally. For low-confidence directional reports, SETTLE shows you the confidence level and limitation note first — you choose whether to proceed. If there isn't enough data to produce a useful report, you pay nothing.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Is SETTLE independent? Or is it controlled by insurers?</div>
+      <div class="faq-answer">
+        <p>SETTLE is designed as attorney-controlled decision support. It is not an insurer-controlled product. Settlement intelligence is built from public sources and permissioned attorney contributions where available. SETTLE provides structured range context and confidence labels; attorneys remain responsible for settlement judgment and client advice.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Can I cancel anytime?</div>
+      <div class="faq-answer">
+        <p>Yes. No contracts. Pay per report when you use it. If you don't use it, you don't pay. If SETTLE can't produce a meaningful report, you're not charged.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">How does SETTLE Pro rollover work?</div>
+      <div class="faq-answer">
+        <p>Unused included reports roll into your Pro rollover bank while your subscription remains active, capped at 63 reports. Your rollover bank resets to zero at each annual subscription anniversary and does not carry over after cancellation.</p>
+        <p style="margin-top: 12px;">Usage order: (1) current monthly included reports, (2) rollover bank, (3) paid overage at $25/report.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">What does a SETTLE report include?</div>
+      <div class="faq-answer">
+        <p>Every SETTLE report includes: settlement range, confidence level, comparable case signals (injury type, treatment pattern, medical bill range, liability profile), and data limitation disclosure. County-specific data when available; closest comparable signals otherwise.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Is SETTLE legal advice?</div>
+      <div class="faq-answer">
+        <p>No. SETTLE outputs are decision-support tools, not settlement guarantees or legal advice. You stay in control of every negotiation and settlement decision. SETTLE gives you data. You make the call.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">How is the Ecosystem Rate billed?</div>
+      <div class="faq-answer">
+        <p>Firms using active INTAKE or LEVERAGE get SETTLE reports at $29/report, automatically added to the monthly invoice. No bundles, credits, or prepayment required. Reports are billed monthly in arrears — you only pay for what you actually use.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta reveal">
+  <h2>Before You Accept the Offer, Check the Range.</h2>
+  <p>Review the available range context before making a settlement decision.</p>
+  <a href="#waitlist" class="btn">Join SETTLE Waitlist →</a>
+  <div class="final-cta-badges">
+    <span>No charge if data insufficient</span>
+    <span>Standalone packs or monthly plan</span>
+    <span>Bar-conscious design</span>
+    <span>No client identifiers</span>
+  </div>
+</section>
+
+<!-- WAITLIST -->
+<section id="waitlist" style="padding: 80px 24px; background: linear-gradient(135deg, var(--navy), var(--navy-2)); color: white; text-align: center;">
+  <div style="max-width: 600px; margin: 0 auto;">
+    <h2 style="font-size: 36px; font-weight: 900; margin-bottom: 16px;">Join the SETTLE Waitlist</h2>
+    <p style="font-size: 18px; color: #F59E0B; font-weight: 700; margin-bottom: 8px;">Be First in Line for SETTLE (Q3 2026)</p>
+    <p style="font-size: 14px; color: rgba(255,255,255,0.7); margin-bottom: 32px;">We prioritize PI attorneys at firms with ≤21 attorneys.</p>
+    <form id="settle-waitlist-form">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+        <input type="text" id="first_name" name="first_name" placeholder="First Name *" required style="padding: 16px; font-size: 16px; border: none; border-radius: 8px; width: 100%;">
+        <input type="email" id="email" name="email" placeholder="Email *" required style="padding: 16px; font-size: 16px; border: none; border-radius: 8px; width: 100%;">
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+        <input type="text" id="firm_name" name="firm_name" placeholder="Law Firm Name *" required style="padding: 16px; font-size: 16px; border: none; border-radius: 8px; width: 100%;">
+        <select id="state" name="state" required style="padding: 16px; font-size: 16px; border: none; border-radius: 8px; width: 100%; background: white;">
+          <option value="">Select State *</option>
+          <option value="AL">Alabama</option><option value="AK">Alaska</option><option value="AZ">Arizona</option><option value="AR">Arkansas</option><option value="CA">California</option><option value="CO">Colorado</option><option value="CT">Connecticut</option><option value="DE">Delaware</option><option value="FL">Florida</option><option value="GA">Georgia</option><option value="HI">Hawaii</option><option value="ID">Idaho</option><option value="IL">Illinois</option><option value="IN">Indiana</option><option value="IA">Iowa</option><option value="KS">Kansas</option><option value="KY">Kentucky</option><option value="LA">Louisiana</option><option value="ME">Maine</option><option value="MD">Maryland</option><option value="MA">Massachusetts</option><option value="MI">Michigan</option><option value="MN">Minnesota</option><option value="MS">Mississippi</option><option value="MO">Missouri</option><option value="MT">Montana</option><option value="NE">Nebraska</option><option value="NV">Nevada</option><option value="NH">New Hampshire</option><option value="NJ">New Jersey</option><option value="NM">New Mexico</option><option value="NY">New York</option><option value="NC">North Carolina</option><option value="ND">North Dakota</option><option value="OH">Ohio</option><option value="OK">Oklahoma</option><option value="OR">Oregon</option><option value="PA">Pennsylvania</option><option value="RI">Rhode Island</option><option value="SC">South Carolina</option><option value="SD">South Dakota</option><option value="TN">Tennessee</option><option value="TX">Texas</option><option value="UT">Utah</option><option value="VT">Vermont</option><option value="VA">Virginia</option><option value="WA">Washington</option><option value="WV">West Virginia</option><option value="WI">Wisconsin</option><option value="WY">Wyoming</option><option value="DC">Washington DC</option>
+        </select>
+      </div>
+      <div style="margin-bottom: 16px;">
+        <input type="text" id="bar_number" name="bar_number" placeholder="Bar Number (optional — helps us verify attorney status)" style="padding: 16px; font-size: 16px; border: 2px solid #F59E0B; border-radius: 8px; width: 100%;">
+        <p style="font-size: 12px; color: #F59E0B; margin-top: 8px; text-align: left;">Providing your Bar # may help us verify your application faster.</p>
+      </div>
+      <div style="margin-bottom: 24px; text-align: left;">
+        <label style="display: flex; align-items: center; color: white; font-size: 14px; cursor: pointer;">
+          <input type="checkbox" id="is_pi_attorney" name="is_pi_attorney" required style="width: 20px; height: 20px; margin-right: 12px; cursor: pointer;">
+          <span>I'm a plaintiff attorney fighting for my clients *</span>
+        </label>
+      </div>
+      <button type="submit" id="submit-btn" style="background: #F59E0B; color: white; padding: 18px 32px; font-size: 18px; font-weight: 700; border: none; border-radius: 8px; cursor: pointer; width: 100%; transition: all 0.3s;">Join SETTLE Waitlist →</button>
+      <div id="waitlist-message" style="margin-top: 20px; padding: 16px; border-radius: 8px; display: none;"></div>
+    </form>
+    <p style="font-size: 14px; color: rgba(255,255,255,0.5); margin-top: 24px; font-style: italic;">Launching Q3 2026. We'll email you when SETTLE is ready for your cases.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <a href="index.html" class="logo" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; margin-bottom: 24px;">
+        <div class="logo-monogram">
+            <span class="logo-monogram-t1">T</span>
+            <span class="logo-monogram-t2">T</span>
+            <span class="logo-monogram-v" style="color: #fff;">V</span>
+        </div>
+        <div class="logo-text">
+            <span class="logo-true">True</span>
+            <span class="logo-vow" style="color: #fff;">Vow</span>
+            <span class="logo-law" style="color: #fff;">.law</span>
+        </div>
+    </a>
+    <div class="footer-links">
+        <div class="footer-col">
+            <h4>PRODUCT</h4>
+            <a href="pricing.html#intake">INTAKE</a>
+            <a href="leverage.html">LEVERAGE</a>
+            <a href="settle.html">SETTLE</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="profitability.html">ROI Calculator</a>
+        </div>
+        <div class="footer-col">
+            <h4>RESOURCES</h4>
+            <a href="county-cap.html">County Availability</a>
+            <a href="compliance.html">Data &amp; Compliance</a>
+            <a href="integrations.html">Integrations &amp; Setup</a>
+            <a href="blog.html">Blog</a>
+            
+        </div>
+        <div class="footer-col">
+            <h4>COMPANY</h4>
+            <a href="about.html">About Us</a>
+            <a href="trial.html">Contact</a>
+        </div>
+    </div>
+    <div class="footer-legal">
+        <a href="legal/privacy.html">Privacy Policy</a>
+        <span style="color: #555;">|</span>
+        <a href="legal/terms.html">Terms of Service</a>
+        <span style="color: #555;">|</span>
+        <a href="legal/msa.html">MSA</a>
+    </div>
+    <p class="footer-disclaimer">
+        © 2026 TrueVow Technologies. All rights reserved. TrueVow is a brand of TrueVow Global Tech FZE LLC (UAE), a subsidiary of TrueVow Global Holdings LLC (Nevis). TrueVow (USA) Inc. (Wyoming) provides passive marketing only and does not handle contracts or operations. All contracts are with TrueVow Global Tech FZE LLC (UAE). Technology and IP held by TrueVow Global Holdings LLC (Nevis). We are not a law firm and do not provide legal advice. By using our services, you acknowledge that TrueVow operates as a technology and services provider only.
+    </p>
+</footer>
+
+<!-- STICKY CTA -->
+<a href="#pricing" class="sticky-cta" id="stickyCta">See SETTLE Pricing →</a>
+
+<script>
+  // Progress bar
+  window.addEventListener('scroll', function() {
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    document.getElementById('progressBar').style.width = progress + '%';
+  });
+
+  // Scroll reveals
+  var revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(function(el) { revealObserver.observe(el); });
+
+  // Sticky CTA — changes by section
+  var sticky = document.getElementById('stickyCta');
+  var pricing = document.getElementById('pricing');
+  var waitlist = document.getElementById('waitlist');
+  window.addEventListener('scroll', function() {
+    var y = window.pageYOffset + window.innerHeight * 0.45;
+    if (waitlist && y >= waitlist.offsetTop) {
+      sticky.textContent = 'Join SETTLE Waitlist →';
+      sticky.href = '#waitlist';
+    } else if (pricing && y >= pricing.offsetTop) {
+      sticky.textContent = 'Check SETTLE Availability →';
+      sticky.href = '#waitlist';
+    } else {
+      sticky.textContent = 'See SETTLE Pricing →';
+      sticky.href = '#pricing';
+    }
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(function(item) {
+    item.querySelector('.faq-question').addEventListener('click', function() { item.classList.toggle('active'); });
+  });
+
+  // Conservative calculator — 5% improvement assumption
+  function calculateValue() {
+    var cases = parseFloat(document.getElementById('casesPerYear').value);
+    var avg = parseFloat(document.getElementById('avgSettlement').value);
+    if (!cases || !avg) { alert('Please enter both values.'); return; }
+    var clientOpportunity = cases * avg * 0.05;
+    var attorneyOpportunity = clientOpportunity * 0.33;
+    var fmt = function(n) { return '$' + Math.round(n).toLocaleString('en-US'); };
+    document.getElementById('clientValue').textContent = fmt(clientOpportunity) + ' / year';
+    document.getElementById('attorneyValue').textContent = fmt(attorneyOpportunity) + ' / year';
+    document.getElementById('calculatorResult').style.display = 'block';
+    document.getElementById('calculatorResult').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  // Waitlist form submission
+  // SECURITY TODO before production traffic:
+  //   - Verify RLS is enabled on the waitlist table
+  //   - Insert policy only allows expected fields (no select from public anon)
+  //   - Rate-limit form submissions (e.g. per IP, per email)
+  //   - Add CAPTCHA or Cloudflare Turnstile
+  //   - Prevent spam/duplicate abuse
+  //   - Move to backend/serverless function if possible
+  var form = document.getElementById('settle-waitlist-form');
+  var submitBtn = document.getElementById('submit-btn');
+  var messageDiv = document.getElementById('waitlist-message');
+
+  if (form) {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = '0.6';
+      submitBtn.style.cursor = 'not-allowed';
+      submitBtn.textContent = 'Joining Waitlist...';
+
+      var formData = {
+        product: 'SETTLE',
+        name: document.getElementById('first_name').value.trim(),
+        email: document.getElementById('email').value.trim().toLowerCase(),
+        firm_name: document.getElementById('firm_name').value.trim(),
+        state: document.getElementById('state').value,
+        bar_number: document.getElementById('bar_number').value.trim() || null,
+        is_pi_attorney: document.getElementById('is_pi_attorney').checked,
+        source: 'settle_page',
+        ip_addr: null,
+        user_agent: navigator.userAgent,
+        referrer: document.referrer || null
+      };
+
+      try {
+        var response = await fetch('/api/waitlist', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        });
+
+        if (response.ok || response.status === 201) {
+          messageDiv.style.display = 'block';
+          messageDiv.style.background = 'rgba(16, 185, 129, 0.1)';
+          messageDiv.style.border = '2px solid #10B981';
+          messageDiv.style.color = '#10B981';
+          messageDiv.innerHTML = '<p style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">You\'re on the list!</p><p style="font-size: 14px; margin-bottom: 8px;">We\'ll email you when SETTLE is ready for your cases (Q3 2026).</p>' + (formData.bar_number ? '<p style="font-size: 14px; color: #F59E0B; font-weight: 600;">Bar number received. This may help us verify your application faster.</p>' : '<p style="font-size: 12px; color: rgba(255,255,255,0.5);">You may add your Bar # later if we request it during verification.</p>');
+          form.reset();
+        } else {
+          var errorData = await response.json();
+          if (response.status === 409 || (errorData.message && errorData.message.includes('duplicate'))) {
+            messageDiv.style.display = 'block';
+            messageDiv.style.background = 'rgba(245, 158, 11, 0.1)';
+            messageDiv.style.border = '2px solid #F59E0B';
+            messageDiv.style.color = '#F59E0B';
+            messageDiv.innerHTML = '<p style="font-size: 16px; font-weight: 700; margin-bottom: 8px;">You\'re already on the waitlist!</p><p style="font-size: 14px;">We\'ll email you when SETTLE launches in Q3 2026.</p>';
+          } else {
+            throw new Error(errorData.message || 'Submission failed');
+          }
+          submitBtn.disabled = false;
+          submitBtn.style.opacity = '1';
+          submitBtn.style.cursor = 'pointer';
+          submitBtn.textContent = 'Join SETTLE Waitlist →';
+        }
+      } catch (error) {
+        messageDiv.style.display = 'block';
+        messageDiv.style.background = 'rgba(239, 68, 68, 0.1)';
+        messageDiv.style.border = '2px solid #EF4444';
+        messageDiv.style.color = '#EF4444';
+        messageDiv.innerHTML = '<p style="font-size: 16px; font-weight: 700; margin-bottom: 8px;">Something went wrong</p><p style="font-size: 14px; margin-bottom: 8px;">Please try again or email us at support@truevow.law</p>';
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = '1';
+        submitBtn.style.cursor = 'pointer';
+        submitBtn.textContent = 'Join SETTLE Waitlist →';
+      }
+    });
+  }
+
+  // Hover effect for submit button
+  if (submitBtn) {
+    submitBtn.addEventListener('mouseenter', function() {
+      if (!this.disabled) { this.style.background = '#D97706'; this.style.transform = 'translateY(-2px)'; }
+    });
+    submitBtn.addEventListener('mouseleave', function() {
+      if (!this.disabled) { this.style.background = '#F59E0B'; this.style.transform = 'translateY(0)'; }
+    });
+  }
+</script>
+
+
+<script>
+    // Mobile nav toggle
+    (function() {
+        var hamburger = document.getElementById('navHamburger');
+        var panel = document.getElementById('mobileNavPanel');
+        var overlay = document.getElementById('mobileNavOverlay');
+        var closeBtn = document.getElementById('mobileNavClose');
+        function openNav() { if(hamburger) hamburger.classList.add('active'); if(panel) panel.classList.add('active'); if(overlay) overlay.classList.add('active'); document.body.style.overflow='hidden'; }
+        function closeNav() { if(hamburger) hamburger.classList.remove('active'); if(panel) panel.classList.remove('active'); if(overlay) overlay.classList.remove('active'); document.body.style.overflow=''; }
+        if(hamburger) hamburger.addEventListener('click', openNav);
+        if(closeBtn) closeBtn.addEventListener('click', closeNav);
+        if(overlay) overlay.addEventListener('click', closeNav);
+    })();
+</script>
+</body>
+</html>
