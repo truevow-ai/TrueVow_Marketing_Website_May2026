@@ -1,0 +1,710 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrueVow Pricing — AI Intake for Personal Injury Law Firms</title>
+    <meta name="description" content="Simple intake pricing for solo and small PI firms. Benjamin answers routed calls, follows firm-approved intake workflows, flags high-priority opportunities, books consultations, and creates structured intake records for attorney review.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; color: #1a1a1a; background: white; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; }
+        nav { position: sticky; top: 0; z-index: 1000; background: white; border-bottom: 1px solid #E5E5E5; padding: 20px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.04); font-family: 'Montserrat', sans-serif; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo-monogram { position: relative; width: 38px; height: 32px; flex-shrink: 0; }
+        .logo-monogram-t1 { position: absolute; left: 0; top: 0; font-size: 32px; font-weight: 400; color: #C0C0C0; line-height: 1; }
+        .logo-monogram-t2 { position: absolute; left: 6px; top: 0; font-size: 32px; font-weight: 400; color: #808080; line-height: 1; }
+        .logo-monogram-v { position: absolute; left: 12px; top: 0; font-size: 32px; font-weight: 700; color: #0A2463; line-height: 1; }
+        .logo-text { display: flex; align-items: baseline; gap: 0; }
+        .logo-true { font-size: 22px; font-weight: 400; color: #808080; letter-spacing: 0.5px; }
+        .logo-vow { font-size: 22px; font-weight: 700; color: #0A2463; letter-spacing: 0.5px; }
+        .logo-law { font-size: 18px; font-weight: 400; color: #0A2463; }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a { color: #555555; text-decoration: none; font-size: 16px; font-weight: 500; }
+        .nav-cta { background: #0A2463; color: white !important; padding: 12px 24px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: background 0.2s; }
+        .nav-cta:hover { background: #0052CC; }
+        .nav-dropdown { position: relative; }
+        .nav-dropdown-toggle { cursor: pointer; display: inline-flex; align-items: center; gap: 4px; background: none; border: none; color: #555; text-decoration: none; font-size: 16px; font-weight: 500; font-family: 'Montserrat', sans-serif; padding: 0; }
+        .nav-dropdown-toggle::after { content: ' ▾'; font-size: 10px; }
+        .nav-dropdown:hover .nav-dropdown-toggle::after { content: ' ▴'; }
+        .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%); background: white; border: 1px solid #E5E5E5; border-radius: 8px; padding: 8px 0; min-width: 210px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); z-index: 1001; }
+        .nav-dropdown-menu a { display: block; padding: 10px 20px; color: #555555 !important; text-decoration: none !important; font-size: 15px; font-weight: 500; white-space: nowrap; }
+        .nav-dropdown-menu a:hover { color: #0A2463 !important; background: #F8F9FA; }
+        .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+        .hero { padding: 80px 24px; background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%); color: white; text-align: center; }
+        .hero h1 { font-size: 52px; font-weight: 800; margin-bottom: 24px; color: white; line-height: 1.2; max-width: 900px; margin-left: auto; margin-right: auto; }
+        .hero-subtitle { font-size: 22px; color: #E5E5E5; margin-bottom: 32px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.8; }
+        .hero-cta { margin-top: 40px; }
+        .hero-cta a { display: inline-block; background: white; color: #0A2463; padding: 20px 48px; border-radius: 12px; font-size: 20px; font-weight: 800; text-decoration: none; transition: all 0.2s; box-shadow: 0 4px 20px rgba(255,255,255,0.2); }
+        .hero-cta a:hover { background: #0A2463; color: white; transform: translateY(-3px); box-shadow: 0 8px 30px rgba(255,255,255,0.15); }
+        .hero-anchor { margin-top: 20px; font-size: 16px; color: rgba(255,255,255,0.7); font-weight: 600; }
+        .trust-bar { padding: 20px 24px; background: #F8F9FA; border-bottom: 1px solid #E5E5E5; }
+        .trust-bar-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; }
+        .trust-item { display: flex; align-items: center; gap: 8px; }
+        .trust-icon { color: #10B981; font-size: 20px; font-weight: 700; }
+        .trust-text { font-size: 16px; font-weight: 600; }
+        .section-container { max-width: 1000px; margin: 0 auto; }
+        .section-title { font-size: 42px; font-weight: 800; text-align: center; margin-bottom: 16px; color: #1A1A1A; }
+        .section-subtitle { font-size: 20px; text-align: center; color: #666; margin-bottom: 48px; }
+        .pricing-section { padding: 80px 24px; background: white; }
+        .pricing-section.alt { background: #F8F9FA; }
+        .pricing-header { text-align: center; margin-bottom: 48px; }
+        .pricing-header h2 { font-size: 42px; font-weight: 800; margin-bottom: 16px; color: #1A1A1A; }
+        .pricing-header p { font-size: 20px; color: #666; max-width: 700px; margin: 0 auto; line-height: 1.8; }
+        .pricing-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 1100px; margin: 0 auto; }
+        .pricing-card { background: white; border: 1px solid #e5e5e5; border-radius: 16px; padding: 40px; position: relative; transition: all 0.3s; }
+        .pricing-card:hover { transform: translateY(-6px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+        .pricing-card.popular { border-width: 2px; }
+        .pricing-badge { position: absolute; top: -16px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #000; padding: 8px 20px; border-radius: 20px; font-size: 12px; font-weight: 800; }
+        .tier-name { font-size: 28px; font-weight: 800; margin-bottom: 8px; color: #1a1a1a; }
+        .tier-tagline { font-size: 16px; color: #666; margin-bottom: 24px; }
+        .tier-price { margin-bottom: 24px; }
+        .price-main { font-size: 48px; font-weight: 800; }
+        .price-period { font-size: 18px; color: #666; }
+        .price-included { font-size: 14px; font-weight: 600; margin-top: 8px; }
+        .price-note { font-size: 14px; color: #888; margin-top: 6px; font-style: italic; }
+        .intake-color { color: #10B981; }
+        .tier-features { list-style: none; margin-bottom: 40px; }
+        .tier-features li { display: flex; align-items: flex-start; margin-bottom: 12px; font-size: 15px; color: #1a1a1a; }
+        .feature-check { color: #10B981; margin-right: 8px; font-size: 18px; flex-shrink: 0; }
+        .tier-cta { display: block; text-align: center; background: #0A2463; color: white; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: all 0.2s; box-shadow: 0 4px 12px rgba(10,36,99,0.2); margin-top: 8px; }
+        .tier-cta:hover { background: #0052CC; transform: translateY(-2px); }
+        .tier-cta.green { background: #10B981; box-shadow: 0 4px 12px rgba(16,185,129,0.2); }
+        .tier-cta.green:hover { background: #059669; }
+        .tier-fine-print { font-size: 13px; color: #666; margin-top: 20px; text-align: center; }
+        .tier-best-for { text-align: center; margin-top: 16px; font-size: 14px; color: #0A2463; font-weight: 600; font-style: italic; }
+        .how-it-works-section { padding: 80px 24px; background: #F8F9FA; }
+        .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 1000px; margin: 48px auto 0; }
+        .step-card { background: white; border-radius: 16px; padding: 40px 32px; text-align: center; box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: all 0.3s; }
+        .step-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+        .step-number { width: 56px; height: 56px; background: linear-gradient(135deg, #0A2463, #0052CC); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: white; font-size: 24px; font-weight: 800; }
+        .step-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 12px; color: #1A1A1A; }
+        .step-card p { font-size: 15px; color: #666; line-height: 1.7; }
+        .step-qualification { margin-top: 16px; }
+        .step-qualification span { display: block; font-size: 14px; color: #10B981; font-weight: 600; margin-bottom: 4px; }
+        .addons-section { padding: 80px 24px; background: white; }
+        .addons-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 900px; margin: 48px auto 0; }
+        .addon-card { background: #F8F9FA; border: 1px solid #E5E5E5; border-radius: 12px; padding: 32px; transition: all 0.2s; }
+        .addon-card:hover { border-color: #0A2463; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+        .addon-icon { font-size: 24px; margin-bottom: 12px; }
+        .addon-card h4 { font-size: 18px; font-weight: 700; color: #1A1A1A; margin-bottom: 8px; }
+        .addon-card p { font-size: 14px; color: #666; line-height: 1.6; }
+        .why-section { padding: 80px 24px; background: linear-gradient(135deg, #0A2463, #081737); color: white; }
+        .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 800px; margin: 48px auto 0; }
+        .why-card { display: flex; align-items: flex-start; gap: 16px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 28px; }
+        .why-icon { font-size: 28px; flex-shrink: 0; }
+        .why-text h4 { font-size: 18px; font-weight: 700; color: white; margin-bottom: 4px; }
+        .why-text p { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.5; }
+        .roi-section { padding: 80px 24px; background: #F8F9FA; }
+        .roi-box { background: white; max-width: 700px; margin: 0 auto; border-radius: 16px; padding: 48px; text-align: center; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #E5E5E5; }
+        .roi-box h3 { font-size: 28px; font-weight: 800; color: #10B981; margin-bottom: 20px; }
+        .roi-numbers { display: flex; justify-content: center; gap: 48px; margin: 32px 0; flex-wrap: wrap; }
+        .roi-stat { text-align: center; }
+        .roi-stat-value { font-size: 36px; font-weight: 800; color: #0A2463; }
+        .roi-stat-label { font-size: 14px; color: #666; margin-top: 4px; }
+        .roi-conclusion { font-size: 20px; font-weight: 700; color: #10B981; margin-top: 24px; }
+        .positioning-section { padding: 80px 24px; background: white; text-align: center; }
+        .positioning-line { font-size: 36px; font-weight: 800; color: #0A2463; max-width: 800px; margin: 0 auto; line-height: 1.3; }
+        .onboarding-section { padding: 80px 24px; background: #F8F9FA; }
+        .onboarding-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; max-width: 1000px; margin: 48px auto 0; }
+        .onboarding-step { text-align: center; }
+        .onboarding-number { width: 60px; height: 60px; background: linear-gradient(135deg, #0A2463 0%, #0052CC 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 24px; font-weight: 700; color: white; }
+        .onboarding-step h4 { font-size: 20px; font-weight: 700; margin-bottom: 8px; color: #1A1A1A; }
+        .onboarding-step p { font-size: 16px; color: #666; }
+        .faq-section { padding: 100px 24px; background: white; }
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-category { margin-bottom: 48px; }
+        .faq-category-header { font-size: 28px; font-weight: 800; color: #0A2463; margin-bottom: 24px; padding: 16px 24px; background: linear-gradient(135deg, #E8F4FD 0%, #F0F8FF 100%); border-radius: 8px; border-left: 4px solid #0A2463; }
+        .faq-item { margin-bottom: 16px; border: 1px solid #e5e5e5; border-radius: 8px; overflow: hidden; background: white; }
+        .faq-question { font-size: 20px; font-weight: 700; color: #1a1a1a; padding: 20px 60px 20px 24px; cursor: pointer; position: relative; background: #fafafa; }
+        .faq-question::after { content: '+'; position: absolute; right: 24px; top: 50%; transform: translateY(-50%); font-size: 28px; color: #0A2463; }
+        .faq-item.active .faq-question::after { content: '-'; }
+        .faq-answer { font-size: 16px; color: #666; line-height: 1.8; padding: 0 24px; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; }
+        .faq-item.active .faq-answer { max-height: 2000px; padding: 24px; }
+        .faq-highlight { background: #E8F4FD; padding: 16px; border-radius: 8px; margin-top: 12px; color: #0A2463; font-weight: 600; }
+        .final-cta-section { padding: 80px 24px; background: linear-gradient(135deg, #0A2463, #081737); color: white; text-align: center; }
+        .final-cta-section h2 { font-size: 48px; font-weight: 800; margin-bottom: 24px; }
+        .final-cta-section p { font-size: 22px; margin-bottom: 40px; opacity: 0.95; }
+        .final-cta-btn { display: inline-block; background: #FFD700; color: #000; padding: 20px 48px; border-radius: 12px; font-size: 20px; font-weight: 800; text-decoration: none; box-shadow: 0 4px 20px rgba(255,215,0,0.3); transition: all 0.2s; }
+        .final-cta-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(255,215,0,0.4); }
+        .final-cta-badges { margin-top: 32px; display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; font-size: 14px; opacity: 0.9; }
+        .pricing-disclaimer { max-width: 700px; margin: 32px auto 0; font-size: 14px; color: #666; line-height: 1.7; text-align: center; }
+        footer { padding: 80px 24px; background: #000; color: white; text-align: center; }
+        .footer-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 900px; margin: 40px auto; text-align: center; }
+        .footer-col h4 { color: #fff; font-size: 16px; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px; }
+        .footer-col a { display: block; color: #999; text-decoration: none; font-size: 15px; margin-bottom: 12px; transition: color 0.3s; }
+        .footer-col a:hover { color: #fff; }
+        .footer-legal { display: flex; justify-content: center; gap: 16px; margin-top: 40px; font-size: 14px; flex-wrap: wrap; }
+        .footer-legal a { color: #999; text-decoration: none; }
+        .footer-legal a:hover { color: #fff; }
+        .footer-disclaimer { font-size: 11pt; color: #555; margin-top: 32px; line-height: 1.8; max-width: 900px; margin-left: auto; margin-right: auto; padding-bottom: 40px; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, #10B981, #0A2463, #0052CC); z-index: 10000; width: 0%; transition: width 0.1s linear; }
+        .sticky-cta { position: fixed; bottom: 24px; right: 24px; z-index: 9999; background: #0A2463; color: #fff; padding: 16px 32px; border-radius: 12px; font-size: 16px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 12px rgba(10,36,99,0.2); display: flex; align-items: center; gap: 8px; border: none; transition: all 0.3s; }
+        .sticky-cta:hover { background: #0052CC; transform: translateY(-2px); }
+        .sticky-cta .cta-sub { font-size: 12px; opacity: 0.8; font-weight: 500; display: block; margin-top: 2px; }
+        .exit-banner { position: fixed; top: -60px; left: 0; right: 0; background: #0A2463; color: white; text-align: center; padding: 14px 24px; font-size: 15px; font-weight: 600; z-index: 10001; transition: top 0.4s ease; }
+        .exit-banner.show { top: 0; }
+        .exit-banner a { color: #FFD700; text-decoration: none; font-weight: 700; margin-left: 12px; }
+        @media (max-width: 968px) { .pricing-grid-3, .steps-grid, .addons-grid, .why-grid { grid-template-columns: 1fr; } .pricing-grid-3 { max-width: 450px; } .onboarding-grid { grid-template-columns: repeat(2, 1fr); } .hero h1 { font-size: 36px; } .section-title { font-size: 32px; } .positioning-line { font-size: 28px; } .footer-links { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { .nav-links { display: none; } .nav-cta { display: none; } .onboarding-grid { grid-template-columns: 1fr; } .roi-numbers { flex-direction: column; gap: 24px; } }
+        .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; gap: 5px; }
+        .nav-hamburger span { display: block; width: 24px; height: 2px; background: #555; border-radius: 2px; transition: all 0.3s; }
+        .nav-hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .nav-hamburger.active span:nth-child(2) { opacity: 0; }
+        .nav-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+        .mobile-nav-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 999; }
+        .mobile-nav-overlay.active { display: block; }
+        .mobile-nav-panel { display: none; position: fixed; top: 0; right: -280px; width: 280px; height: 100vh; background: white; z-index: 1002; padding: 80px 32px 32px; box-shadow: -4px 0 24px rgba(0,0,0,0.1); transition: right 0.3s ease; flex-direction: column; gap: 0; }
+        .mobile-nav-panel.active { display: flex; right: 0; }
+        .mobile-nav-panel a { display: block; padding: 14px 0; color: #555; text-decoration: none; font-size: 17px; font-weight: 500; border-bottom: 1px solid #F0F0F0; font-family: 'Montserrat', sans-serif; }
+        .mobile-nav-panel a:last-child { border-bottom: none; }
+        .mobile-nav-panel .mobile-nav-label { padding: 14px 0 6px; font-size: 12px; font-weight: 600; color: #999; text-transform: uppercase; letter-spacing: 1px; border-bottom: none; font-family: 'Montserrat', sans-serif; }
+        .mobile-nav-panel .mobile-cta { background: #0A2463; color: white !important; text-align: center; border-radius: 8px; padding: 14px; margin-top: 16px; font-weight: 600; border-bottom: none; }
+        .mobile-nav-panel .mobile-cta:hover { background: #0052CC; }
+        .mobile-nav-close { position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 28px; cursor: pointer; color: #999; padding: 4px 8px; }
+        @media (max-width: 768px) { .nav-hamburger { display: flex; } }
+        @media (min-width: 769px) { .nav-hamburger, .mobile-nav-overlay, .mobile-nav-panel { display: none !important; } }
+    </style>
+    <script src="analytics.js"></script>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="exit-banner" id="exitBanner">Still deciding? <a href="trial.html">Apply for Access →</a></div>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-monogram">
+                    <span class="logo-monogram-t1">T</span>
+                    <span class="logo-monogram-t2">T</span>
+                    <span class="logo-monogram-v">V</span>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-true">True</span>
+                    <span class="logo-vow">Vow</span>
+                    <span class="logo-law">.law</span>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="how-it-works.html">How It Works</a>
+                <a href="pricing.html">Pricing</a>
+                <div class="nav-dropdown">
+                    <button class="nav-dropdown-toggle">Resources</button>
+                    <div class="nav-dropdown-menu">
+                        <a href="profitability.html">ROI Calculator</a>
+                        <a href="county-cap.html">County Availability</a>
+                        <a href="compliance.html">Data &amp; Compliance</a>
+                        <a href="integrations.html">Integrations &amp; Setup</a>
+                        <a href="blog.html">Blog</a>
+                    </div>
+                </div>
+            </div>
+            <button class="nav-hamburger" id="navHamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+            <a href="trial.html" class="nav-cta">Apply for Access →</a>
+        </div>
+    </nav>
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <div class="mobile-nav-panel" id="mobileNavPanel">
+        <button class="mobile-nav-close" id="mobileNavClose">&times;</button>
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="pricing.html">Pricing</a>
+        <div class="mobile-nav-label">Resources</div>
+        <a href="profitability.html">ROI Calculator</a>
+        <a href="county-cap.html">County Availability</a>
+        <a href="compliance.html">Data &amp; Compliance</a>
+        <a href="integrations.html">Integrations &amp; Setup</a>
+        <a href="blog.html">Blog</a>
+        <a href="trial.html" class="mobile-cta">Apply for Access &rarr;</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>AI Intake Pricing for PI Firms That Cannot Afford Missed Calls</h1>
+        <p class="hero-subtitle">
+            Benjamin answers routed calls, follows your firm-approved intake workflow, flags high-priority opportunities, books consultations, and creates structured intake records for attorney review.
+        </p>
+        <div class="hero-cta">
+            <a href="trial.html">Apply for Access →</a>
+        </div>
+        <div class="hero-anchor">Plans start at $499/month</div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <section class="trust-bar reveal">
+        <div class="trust-bar-inner">
+            <div class="trust-item"><span class="trust-icon">✓</span><span class="trust-text">Firm-approved intake workflows</span></div>
+            <div class="trust-item"><span class="trust-icon">✓</span><span class="trust-text">Spanish intake support available</span></div>
+            <div class="trust-item"><span class="trust-icon">✓</span><span class="trust-text">Recording/transcripts optional</span></div>
+            <div class="trust-item"><span class="trust-icon">✓</span><span class="trust-text">Approval-first onboarding</span></div>
+        </div>
+    </section>
+
+    <!-- PRICING TIERS -->
+    <section class="pricing-section reveal" id="pricing">
+        <div class="section-container">
+            <div class="pricing-header">
+                <h2>Simple Pricing That Scales With Intake Volume</h2>
+                <p>Start with simple intake coverage. Scale when your call volume, marketing spend, or A+ opportunity flow increases.</p>
+            </div>
+            <div class="pricing-grid-3">
+                <!-- SOLO -->
+                <div class="pricing-card">
+                    <div class="tier-name">SOLO</div>
+                    <div class="tier-tagline">For solo PI firms that want reliable intake coverage without per-lead billing anxiety.</div>
+                    <div class="tier-price">
+                        <span class="price-main intake-color">$499</span><span class="price-period">/month</span>
+                        <div class="price-included">Simple subscription. All intake records visible. No per-lead unlock fees.</div>
+                    </div>
+                    <ul class="tier-features">
+                        <li><span class="feature-check">✓</span> Up to 100 routed intake calls OR 1,100 minutes/month, whichever comes first</li>
+                        <li><span class="feature-check">✓</span> 24/7 Benjamin intake coverage when enabled</li>
+                        <li><span class="feature-check">✓</span> Firm-approved PI intake workflow</li>
+                        <li><span class="feature-check">✓</span> All intake records visible inside the portal</li>
+                        <li><span class="feature-check">✓</span> No per-lead unlock fees</li>
+                        <li><span class="feature-check">✓</span> Up to 5 A+ priority opportunities/month</li>
+                        <li><span class="feature-check">✓</span> SMS and email alerts</li>
+                        <li><span class="feature-check">✓</span> Consultation booking</li>
+                        <li><span class="feature-check">✓</span> Basic intake dashboard</li>
+                        <li><span class="feature-check">✓</span> Spanish intake support</li>
+                        <li><span class="feature-check">✓</span> 7-day recording/transcript storage, if enabled</li>
+                    </ul>
+                    <p style="font-size:14px;color:#10B981;font-weight:600;text-align:center;margin-bottom:16px;">All Solo intake records remain visible. No per-lead unlock billing.</p>
+                    <a href="trial.html?plan=solo" class="tier-cta green">Apply for SOLO →</a>
+                    <div class="tier-fine-print">Month-to-month &bull; Approval required</div>
+                    <div class="tier-best-for">Best for solo firms and light marketing volume</div>
+                </div>
+
+                <!-- GROWTH -->
+                <div class="pricing-card popular" style="border-color: #10B981;">
+                    <div class="pricing-badge">⭐ MOST POPULAR</div>
+                    <div class="tier-name">GROWTH</div>
+                    <div class="tier-tagline">For PI firms investing in marketing and needing stronger intake conversion, follow-up, and reporting.</div>
+                    <div class="tier-price">
+                        <span class="price-main intake-color">$1,499</span><span class="price-period">/month</span>
+                        <div class="price-included">Built for active marketing volume and higher intake conversion.</div>
+                    </div>
+                    <ul class="tier-features">
+                        <li><span class="feature-check">✓</span> Everything in SOLO, plus:</li>
+                        <li><span class="feature-check">✓</span> Up to 250 routed intake calls OR 2,750 minutes/month</li>
+                        <li><span class="feature-check">✓</span> 21 included A+ lead unlocks/month</li>
+                        <li><span class="feature-check">✓</span> Additional A+ unlocks: $39 each</li>
+                        <li><span class="feature-check">✓</span> Missed-call recovery and outbound follow-up workflows</li>
+                        <li><span class="feature-check">✓</span> Website intake/chat widget</li>
+                        <li><span class="feature-check">✓</span> Advanced lead source and conversion reporting</li>
+                        <li><span class="feature-check">✓</span> Priority SMS alerts for A+ opportunities</li>
+                        <li><span class="feature-check">✓</span> Spanish intake support</li>
+                        <li><span class="feature-check">✓</span> 30–90 day recording/transcript retention, if enabled and approved</li>
+                    </ul>
+                    <a href="trial.html?plan=growth" class="tier-cta green">Apply for GROWTH →</a>
+                    <div class="tier-fine-print">Month-to-month &bull; Approval required</div>
+                    <div class="tier-best-for">Best for firms with active marketing and consistent lead flow</div>
+                </div>
+
+                <!-- TEAM -->
+                <div class="pricing-card">
+                    <div class="tier-name">TEAM</div>
+                    <div class="tier-tagline">For higher-volume small PI firms with multiple attorneys, staff, or heavier call flow.</div>
+                    <div class="tier-price">
+                        <span class="price-main intake-color">$2,999</span><span class="price-period">/month</span>
+                        <div class="price-included">For firms that need higher volume, reporting, automation, and control.</div>
+                    </div>
+                    <ul class="tier-features">
+                        <li><span class="feature-check">✓</span> Everything in GROWTH, plus:</li>
+                        <li><span class="feature-check">✓</span> Up to 500 routed intake calls OR 5,500 minutes/month</li>
+                        <li><span class="feature-check">✓</span> 55 included A+ lead unlocks/month</li>
+                        <li><span class="feature-check">✓</span> Additional A+ unlocks: $29 each</li>
+                        <li><span class="feature-check">✓</span> Auto-unlock rules approved by the firm</li>
+                        <li><span class="feature-check">✓</span> Advanced reporting by source, lead grade, call outcome, and booked consultation</li>
+                        <li><span class="feature-check">✓</span> API/webhook support where available</li>
+                        <li><span class="feature-check">✓</span> Priority onboarding and support</li>
+                        <li><span class="feature-check">✓</span> 90–180 day retention option, if enabled and plan-approved</li>
+                    </ul>
+                    <a href="trial.html?plan=team" class="tier-cta green">Apply for TEAM →</a>
+                    <div class="tier-fine-print">Month-to-month &bull; Approval required</div>
+                    <div class="tier-best-for">Best for high-volume small PI firms</div>
+                </div>
+            </div>
+            <div class="pricing-disclaimer">
+                <p>Included A+ unlocks reset monthly and do not roll over. Voice minute or call-volume overages are reviewed before additional charges apply. Recording and transcript options depend on firm policy, jurisdiction, and selected retention settings. All plans require approval, onboarding configuration, and a successful test call before activation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-it-works-section reveal">
+        <div class="section-container">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-subtitle">Three simple steps from routed call to structured intake record.</p>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Routed Calls Are Answered When Benjamin Is Enabled</h3>
+                    <p>Benjamin answers routed calls according to your firm's approved coverage rules, intake workflow, and escalation settings.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>High-Priority Opportunities Are Flagged</h3>
+                    <p>Benjamin collects structured intake details and flags opportunities based on your firm-approved criteria.</p>
+                    <div class="step-qualification">
+                        <span>✓ Injury type</span>
+                        <span>✓ Location/jurisdiction</span>
+                        <span>✓ Treatment and urgency signals</span>
+                        <span>✓ Liability indicators</span>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Your Firm Reviews and Acts</h3>
+                    <p>Your team receives summaries, alerts, booking details, and structured records for attorney review. Growth and Team plans include A+ unlock rules for priority opportunities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADD-ONS -->
+    <section class="addons-section reveal" id="addons">
+        <div class="section-container">
+            <div class="pricing-header">
+                <h2>Add-Ons (Optional)</h2>
+                <p>Enhance your intake system as you grow.</p>
+            </div>
+            <div class="addons-grid">
+                <div class="addon-card">
+                    <div class="addon-icon">📞</div>
+                    <h4>Outbound AI Follow-Up Agent</h4>
+                    <p>Automate missed-call recovery, callback attempts, lead nurturing, and reminder workflows when enabled by the firm.</p>
+                </div>
+                <div class="addon-card">
+                    <div class="addon-icon">💾</div>
+                    <h4>Extended Recording &amp; Transcript Retention</h4>
+                    <p>30, 90, or 180-day retention options depending on plan, firm policy, disclosure requirements, and jurisdiction.</p>
+                </div>
+                <div class="addon-card">
+                    <div class="addon-icon">📊</div>
+                    <h4>Advanced Reporting Suite</h4>
+                    <p>Deeper reporting on lead sources, booked consultations, call outcomes, intake quality, and conversion trends.</p>
+                </div>
+                <div class="addon-card">
+                    <div class="addon-icon">🔗</div>
+                    <h4>Custom CRM / Case Management Integrations</h4>
+                    <p>API, webhook, or structured export support where available. Native case-management integrations are added only when supported and approved.</p>
+                </div>
+                <div class="addon-card">
+                    <div class="addon-icon">📈</div>
+                    <h4>Managed Growth — Application Only</h4>
+                    <p>Optional Google/Meta campaign coordination, tracking setup, and campaign-to-intake reporting. Ad spend is separate and paid directly by the firm.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY FIRMS CHOOSE THIS MODEL -->
+    <section class="why-section reveal">
+        <div class="section-container">
+            <h2 class="section-title" style="color: white;">Why Firms Choose This Model</h2>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">📞</div>
+                    <div class="why-text">
+                        <h4>More calls handled when your team is busy</h4>
+                        <p>Benjamin can answer routed calls after hours, during overflow, or when staff are unavailable.</p>
+                    </div>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">📊</div>
+                    <div class="why-text">
+                        <h4>Better visibility into intake quality</h4>
+                        <p>Your firm sees structured summaries, lead grades, booking status, and source information.</p>
+                    </div>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">✅</div>
+                    <div class="why-text">
+                        <h4>Simple starting plan for solo firms</h4>
+                        <p>Solo includes visible intake records and no per-lead unlock billing.</p>
+                    </div>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">📈</div>
+                    <div class="why-text">
+                        <h4>Scales with marketing volume</h4>
+                        <p>Growth and Team add A+ unlocks, follow-up workflows, reporting, and higher volume limits.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI SNAPSHOT -->
+    <section class="roi-section reveal">
+        <div class="section-container">
+            <h2 class="section-title">ROI Snapshot</h2>
+            <div class="roi-box">
+                <h3>What One Additional Signed Matter Can Mean</h3>
+                <p style="font-size:18px;color:#1A1A1A;margin-top:16px;line-height:1.7;">For many PI firms, even one additional signed matter can justify a month of better intake coverage. Use the calculator to model your own numbers based on your fees, call volume, and conversion assumptions.</p>
+                <p style="margin-top:24px;font-size:16px;color:#666;">
+                    <a href="profitability.html" style="color:#0A2463;font-weight:700;">Run the ROI Calculator →</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- POSITIONING LINE -->
+    <section class="positioning-section reveal">
+        <div class="section-container">
+            <p class="positioning-line">Answer more PI calls. Screen faster. Book the right opportunities.</p>
+            <div style="margin-top:32px;">
+                <a href="trial.html" style="display:inline-block;background:#0A2463;color:white;padding:20px 48px;border-radius:12px;font-size:20px;font-weight:800;text-decoration:none;box-shadow:0 4px 12px rgba(10,36,99,0.2);">Apply for Access →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ONBOARDING -->
+    <section class="onboarding-section reveal">
+        <div class="section-container">
+            <h2 class="section-title">What Happens After You Apply?</h2>
+            <p class="section-subtitle">Approval-first setup. Timing depends on firm readiness, routing, calendar access, and intake configuration.</p>
+            <div class="onboarding-grid">
+                <div class="onboarding-step"><div class="onboarding-number">1</div><h4>Apply</h4><p>Submit firm details</p></div>
+                <div class="onboarding-step"><div class="onboarding-number">2</div><h4>Review</h4><p>Application and county availability reviewed</p></div>
+                <div class="onboarding-step"><div class="onboarding-number">3</div><h4>Onboard</h4><p>Intake path, calendar, routing, and recording settings configured</p></div>
+                <div class="onboarding-step"><div class="onboarding-number">4</div><h4>Go Live</h4><p>Test call completed before activation</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section reveal" id="faq-section">
+        <div class="faq-container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-category">
+                <div class="faq-category-header">Pricing &amp; Billing</div>
+                <div class="faq-item">
+                    <div class="faq-question">How does the pricing model work?</div>
+                    <div class="faq-answer">
+                        TrueVow has three public plans. SOLO is a simple subscription at $499/month with all intake records visible and no per-lead unlock fees. GROWTH is $1,499/month and includes 21 A+ lead unlocks. TEAM is $2,999/month and includes 55 A+ lead unlocks.<br><br>
+                        All plans include usage limits based on routed intake calls or voice minutes, whichever comes first. All plans require approval, onboarding configuration, and a successful test call before activation.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What is a qualified lead unlock?</div>
+                    <div class="faq-answer">
+                        An A+ lead unlock applies to a high-priority opportunity flagged by Benjamin under your firm-approved intake criteria. Growth and Team plans include monthly A+ unlocks. Additional A+ unlocks are billed only after included unlocks are used.<br><br>
+                        SOLO does not use per-lead unlock billing. All Solo intake records remain visible, with up to 5 A+ priority opportunities included before an upgrade review may be recommended.<br><br>
+                        <div class="faq-highlight">Benjamin flags intake priority for attorney review. TrueVow does not determine legal merit.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I upgrade or downgrade my plan?</div>
+                    <div class="faq-answer">Plan changes can be made through the customer portal after approval. Start with SOLO and upgrade as your volume grows. Availability may depend on onboarding capacity.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Is Spanish really included?</div>
+                    <div class="faq-answer">                        <strong>Yes.</strong> Spanish intake support is included. During onboarding, the firm confirms when Spanish intake should be offered and how Spanish-language callers should be routed, booked, or escalated.</div>
+                </div>
+            </div>
+            <div class="faq-category">
+                <div class="faq-category-header">How It Works</div>
+                <div class="faq-item">
+                    <div class="faq-question">Is Benjamin a chatbot?</div>
+                    <div class="faq-answer">No. Benjamin is not a free-form chatbot. Benjamin follows firm-approved intake paths, routing rules, escalation logic, and recording settings. It can support yes/no questions, structured responses, and approved open-ended prompts, but it is not designed to provide legal advice or make attorney judgment calls.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What happens when a call comes in?</div>
+                    <div class="faq-answer">                        When Benjamin is enabled for a routed call, it follows the firm's approved greeting, screening questions, escalation rules, booking rules, and recording/transcript settings. Benjamin creates a structured intake record and alerts the firm according to the plan and configuration.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What's the onboarding process?</div>
+                    <div class="faq-answer">
+                        1. Apply — Submit firm details<br>2. Review — Application and county availability reviewed<br>3. Onboard — Intake path, calendar, routing, and recording settings configured<br>4. Go Live — Test call completed before activation<br><br>
+                        <div class="faq-highlight">Onboarding is limited to maintain quality and personal attention.</div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What practice areas does TrueVow support?</div>
+                    <div class="faq-answer">TrueVow is currently positioned for solo and small plaintiff-side PI firms. Additional practice areas may be reviewed during onboarding, but the public product is optimized around PI intake, qualification, and case screening.</div>
+                </div>
+            </div>
+            <div class="faq-category">
+                <div class="faq-category-header">Compliance &amp; Security</div>
+                <div class="faq-item">
+                    <div class="faq-question">What about compliance and data handling?</div>
+                    <div class="faq-answer">TrueVow is designed for controlled data handling, not zero-knowledge storage. Depending on firm configuration, the system may process contact details, structured intake answers, lead grades, booking details, risk flags, optional recordings, and optional transcripts.<br><br>Recording and transcript generation are optional and controlled by firm policy. Case analysis workflows do not require client identifiers where they are not needed. TrueVow is not a law firm and does not provide legal advice.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Are recordings and transcripts included?</div>
+                    <div class="faq-answer">                        Recording and transcript features are optional and configured during onboarding based on firm policy, disclosure requirements, and jurisdiction. Solo includes short-term retention if enabled. Growth and Team may support extended retention options depending on plan and approval.</div>
+                </div>
+            </div>
+            <div class="faq-category">
+                <div class="faq-category-header">Who Is This For?</div>
+                <div class="faq-item">
+                    <div class="faq-question">Do you serve large firms or enterprise?</div>
+                    <div class="faq-answer">TrueVow is built for solo and small PI firms. Larger firms or unusual workflows may be reviewed separately, but the public product is designed for small firm intake, booking, and lead-review workflows.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Why publish pricing instead of requiring a demo?</div>
+                    <div class="faq-answer">TrueVow is built for solo and small PI firms, not enterprise procurement committees. We publish starting prices so firm owners can understand the basic economics before applying. Final activation still happens after approval inside the customer portal because setup, county availability, recording policy, calendar configuration, and product fit must be reviewed first.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta-section reveal">
+        <h2>Ready to See Benjamin Handle a PI Intake Call?</h2>
+        <p>Apply for access, see Benjamin live, and review whether TrueVow fits your firm's intake volume, county availability, and workflow.</p>
+        <a href="trial.html" class="final-cta-btn">Apply for Access →</a>
+        <div class="final-cta-badges">
+            <span>✓ Approval required</span>
+            <span>✓ Firm-approved intake paths</span>
+            <span>✓ Onboarding configuration required</span>
+            <span>✓ Test call before activation</span>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <a href="index.html" class="logo" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; margin-bottom: 24px;">
+            <div class="logo-monogram">
+                <span class="logo-monogram-t1">T</span>
+                <span class="logo-monogram-t2">T</span>
+                <span class="logo-monogram-v" style="color: #fff;">V</span>
+            </div>
+            <div class="logo-text">
+                <span class="logo-true">True</span>
+                <span class="logo-vow" style="color: #fff;">Vow</span>
+                <span class="logo-law" style="color: #fff;">.law</span>
+            </div>
+        </a>
+        <div class="footer-links">
+            <div class="footer-col">
+                <h4>PRODUCT</h4>
+                <a href="pricing.html">Pricing</a>
+                <a href="how-it-works.html">How It Works</a>
+                <a href="profitability.html">ROI Calculator</a>
+            </div>
+            <div class="footer-col">
+                <h4>RESOURCES</h4>
+                <a href="county-cap.html">County Availability</a>
+                <a href="compliance.html">Data &amp; Compliance</a>
+                <a href="integrations.html">Integrations &amp; Setup</a>
+                <a href="blog.html">Blog</a>
+            </div>
+            <div class="footer-col">
+                <h4>COMPANY</h4>
+                <a href="about.html">About Us</a>
+                <a href="trial.html">Contact</a>
+            </div>
+        </div>
+        <div class="footer-legal">
+            <a href="legal/privacy.html">Privacy Policy</a>
+            <span style="color: #555;">|</span>
+            <a href="legal/terms.html">Terms of Service</a>
+            <span style="color: #555;">|</span>
+            <a href="legal/msa.html">MSA</a>
+        </div>
+        <p class="footer-disclaimer">
+            &copy; 2026 TrueVow Technologies. All rights reserved. TrueVow is a brand of TrueVow Global Tech FZE LLC (UAE), a subsidiary of TrueVow Global Holdings LLC (Nevis). TrueVow (USA) Inc. (Wyoming) provides passive marketing only and does not handle contracts or operations. All contracts are with TrueVow Global Tech FZE LLC (UAE). Technology and IP held by TrueVow Global Holdings LLC (Nevis). We are not a law firm and do not provide legal advice. By using our services, you acknowledge that TrueVow operates as a technology and services provider only.
+        </p>
+    </footer>
+
+    <!-- STICKY CTA -->
+    <a href="trial.html" class="sticky-cta" id="stickyCta">
+        <span>Apply for Access →</span>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ toggles
+            document.querySelectorAll('.faq-item').forEach(function(item) {
+                item.querySelector('.faq-question').addEventListener('click', function() {
+                    item.classList.toggle('active');
+                });
+            });
+
+            // Scroll reveals
+            var revealEls = document.querySelectorAll('.reveal');
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+            revealEls.forEach(function(el) { observer.observe(el); });
+
+            // Progress bar
+            var progressBar = document.getElementById('progressBar');
+            window.addEventListener('scroll', function() {
+                var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                var scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                var progress = (scrollTop / scrollHeight) * 100;
+                progressBar.style.width = progress + '%';
+            });
+
+            // Smart sticky CTA
+            var stickyCta = document.getElementById('stickyCta');
+            var sections = [
+                { id: 'pricing', text: 'Apply for Access →', sub: 'From $499/mo' },
+                { id: 'addons', text: 'See Add-Ons →', sub: 'Optional enhancements' },
+                { id: 'faq-section', text: 'Apply for Access →', sub: 'Onboarding limited' }
+            ];
+            var currentSection = '';
+            window.addEventListener('scroll', function() {
+                var scrollPos = window.pageYOffset + window.innerHeight * 0.5;
+                var newText = 'Apply for Access →';
+                var newSub = '';
+                for (var i = sections.length - 1; i >= 0; i--) {
+                    var sec = document.getElementById(sections[i].id);
+                    if (sec && sec.offsetTop <= scrollPos) {
+                        newText = sections[i].text;
+                        newSub = sections[i].sub;
+                        break;
+                    }
+                }
+                if (newText !== currentSection) {
+                    currentSection = newText;
+                    var spanEl = stickyCta.querySelector('span');
+                    spanEl.innerHTML = newText + (newSub ? '<span class="cta-sub">' + newSub + '</span>' : '');
+                }
+            });
+
+            // Exit intent
+            var exitBanner = document.getElementById('exitBanner');
+            var exitShown = false;
+            document.addEventListener('mouseout', function(e) {
+                if (!exitShown && e.clientY < 5) {
+                    exitBanner.classList.add('show');
+                    exitShown = true;
+                    setTimeout(function() { exitBanner.classList.remove('show'); }, 6000);
+                }
+            });
+        });
+    </script>
+
+    <script>
+        // Mobile nav toggle
+        (function() {
+            var hamburger = document.getElementById('navHamburger');
+            var panel = document.getElementById('mobileNavPanel');
+            var overlay = document.getElementById('mobileNavOverlay');
+            var closeBtn = document.getElementById('mobileNavClose');
+            function openNav() { if(hamburger) hamburger.classList.add('active'); if(panel) panel.classList.add('active'); if(overlay) overlay.classList.add('active'); document.body.style.overflow='hidden'; }
+            function closeNav() { if(hamburger) hamburger.classList.remove('active'); if(panel) panel.classList.remove('active'); if(overlay) overlay.classList.remove('active'); document.body.style.overflow=''; }
+            if(hamburger) hamburger.addEventListener('click', openNav);
+            if(closeBtn) closeBtn.addEventListener('click', closeNav);
+            if(overlay) overlay.addEventListener('click', closeNav);
+        })();
+    </script>
+</body>
+</html>
