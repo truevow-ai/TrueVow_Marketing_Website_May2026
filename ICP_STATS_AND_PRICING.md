@@ -892,4 +892,419 @@ Never use these on public-facing pages, pricing cards, or website copy:
 
 ---
 
-*This document supersedes all prior ICP, pricing, and competitor documents. Use as single source for all TrueVow marketing and pricing decisions.*
+## SECTION V: LEVERAGE — COMPETITOR ANALYSIS, USE CASES & TIER STRUCTURE
+
+**Date:** June 17, 2026  
+**Status:** Finalized — 1-tier pricing with ecosystem discount  
+**Source Repo:** `TrueVow_Tenant_LEVERAGE_Service` — fully built, 34 API endpoints, 7 test suites
+
+---
+
+### A. WHAT LEVERAGE ACTUALLY IS (Built, Not Planned)
+
+LEVERAGE is a **50-state PI Case Intelligence Service** running as a separate FastAPI service on port 3036. It provides:
+
+| Module | What It Does | Key Endpoint |
+|---|---|---|
+| **Damages Calculator** | Medicals + lost income + pain & suffering (1-10x multiplier). Settlement range: 60%-85% of gross. Warnings on high multipliers. | `POST /leverage/damages` |
+| **Disbursement Calculator** | Filing fees, records, experts, contingency fee (33.33%), net-to-client, break-even | `POST /leverage/disbursement` |
+| **Jurisdiction Valuation** | 50-state valuation multipliers. Comparative fault adjustment. After-contingency projection. | `GET /leverage/valuation/multiplier/{state}` |
+| **SOL Deadline Tracker** | Statute of limitations for all 50 states. Days remaining. Urgency: safe/warning/critical/overdue. | `POST /deadlines/sol` |
+| **Upcoming Deadlines** | All cases with deadlines within N days. Filterable by urgency. | `GET /deadlines/upcoming` |
+| **Demand Letter Check** | Validates medical summary, injury description, liability statement present. Flags missing items. | `POST /leverage/case/{id}/compliance` |
+| **Compliance Risk Flags** | STATUTE_CRITICAL, DEMAND_LETTER_INCOMPLETE, LIABILITY_CONTESTED, POLICY_LIMIT_UNKNOWN, etc. | Same endpoint |
+| **Case Lifecycle** | Lead → consult → retained → active → negotiation → settled → closed. Append-only event log. | `POST /leverage/case/open` |
+| **Settlement Nudge** | Lists cases past estimated settlement window. Manual nudge triggers notification. | `GET /leverage/case/nudge-pending` |
+| **Notification Engine** | Webhook + in-app alerts. Event types: deadline.critical, deadline.overdue, compliance.flag_added, settlement.nudge | `POST /leverage/notifications/subscribe` |
+| **Analytics Dashboard** | Per-tenant aggregate: cases, compliance health, economics, settlement windows | `GET /leverage/analytics` |
+
+**Total: 34 API endpoints across case lifecycle, economics, deadlines, notifications, and valuation.** The LEVERAGE service is a complete product — not a billing meter. The billing service (`TrueVow-Tenant_Billing-Service`) charges for access but does not implement any LEVERAGE features.
+
+---
+
+### B. THE REAL COMPETITOR — It's Not Software
+
+LEVERAGE does not compete with Clio, Filevine, or any case management software. It works alongside them. LEVERAGE competes with what PI attorneys do **right now** to value a case:
+
+| Current Method | Monthly Cost | Accuracy | Who Uses It |
+|---|---|---|---|
+| Gut feel / experience | $0 | Varies wildly — same attorney, different day, different number | Most solos. "20 years doing this. I just know." |
+| Paralegal + spreadsheet | Included in salary ($35K-$50K/yr) | Better than gut, inconsistent across cases | Small firms with staff |
+| Medical record review service | $500-$2,000 **per case** | Good for medicals, silent on non-economic damages | Firms with serious injury cases |
+| Demand package service | $300-$1,000 **per case** | Writes the letter, doesn't calculate value | Firms that outsource demand writing |
+| Free online settlement calculator | $0 | Garbage in, garbage out. No attorney trusts them | Nobody serious |
+
+**No SaaS competitor exists in the "PI case intelligence" category.** Nobody has built a tool that structures damages, tracks 50-state SOL deadlines, validates demand letters, and provides settlement range estimation in one workflow. This is an uncrowded category.
+
+---
+
+### C. THREE USE CASES — HOW ATTORNEYS ACTUALLY USE LEVERAGE
+
+Each use case references real API endpoints and features that exist in `TrueVow_Tenant_LEVERAGE_Service`.
+
+#### Use Case 1: The SOL You Almost Missed
+
+**What happens:** Attorney has 18 active PI cases. One slip-and-fall from January 2024 has a statute of limitations in 14 days. The case hasn't been touched in months because the client was slow providing medical records.
+
+**What LEVERAGE does:**
+
+1. Attorney calls `POST /deadlines/sol` when opening the case — LEVERAGE looks up the state's SOL rule from `leverage.validation_rules`, computes the filing deadline, and stores it via `POST /deadlines/case/{id}/save`.
+
+2. Attorney subscribes to notifications via `POST /leverage/notifications/subscribe` with event type `deadline.critical`. LEVERAGE fires a webhook when a deadline enters the critical zone (1-30 days).
+
+3. Attorney calls `GET /deadlines/upcoming?days=30` every Monday morning. Returns: *"Smith v. Walmart: SOL in 14 days. Urgency: CRITICAL. Estimated case value: $45K-$65K."*
+
+**The aha moment:** The SOL countdown is red. The case hasn't had a demand letter drafted yet. LEVERAGE caught it with 14 days to spare — enough time to draft a demand letter, file a complaint, or at minimum toll the SOL. The attorney just avoided a malpractice exposure on a $50K+ case.
+
+**Hook:** This attorney now opens LEVERAGE every Monday morning like checking email. `GET /deadlines/upcoming` is the first API call of the week. It's a habit — not a feature they evaluate.
+
+#### Use Case 2: The Demand Letter That Asked for Too Little
+
+**What happens:** Attorney prepares a demand letter for a rear-end collision case. They type "$45,000" based on gut feel — $22K medicals + $8.4K lost wages + some pain & suffering.
+
+**What LEVERAGE does:**
+
+1. Attorney calls `POST /leverage/damages` with structured inputs: medical bills ($22K), lost wages ($8.4K), pain & suffering multiplier (2x the medicals). LEVERAGE computes: economic damages = $30.4K, non-economic = $44K, gross damages = $74.4K. Settlement range: $44.6K-$63.2K (60%-85% of gross).
+
+2. Attorney saves the worksheet via `POST /leverage/case/{id}/damages/save`. The worksheet is versioned and append-only.
+
+3. Attorney calls `POST /leverage/case/{id}/compliance`. LEVERAGE checks: medical summary present? Yes. Injury description present? Yes. Liability statement present? No — returns `DEMAND_LETTER_INCOMPLETE` flag.
+
+**The aha moment:** The attorney originally planned to demand $45,000. LEVERAGE's structured estimate is $74,400 — a $29,400 difference. The demand letter is also missing a liability statement. The attorney revises the demand to $72,000 and adds the liability section. The insurance adjuster counters at $58,000 and they settle at $64,000 — $19,000 more than the original $45,000 gut-feel number.
+
+**Hook:** The attorney paid $99 for LEVERAGE this month and potentially added $19,000 to a single settlement. They will run `POST /leverage/damages` on every demand letter from now on.
+
+#### Use Case 3: The Settlement Decision With Data
+
+**What happens:** Insurance adjuster offers $38,000 on a case. The attorney thinks it's low but isn't sure by how much. The client wants to settle. Three months of negotiation fatigue is setting in.
+
+**What LEVERAGE does:**
+
+1. Attorney calls `POST /leverage/valuation/calculate` with the case state (Texas), saved damages, and settlement offer ($38,000). LEVERAGE applies the Texas multiplier config, adjusts for comparative fault (if applicable), and computes a projected after-contingency range.
+
+2. Attorney calls `GET /leverage/case/nudge-pending` to see if this case is past its estimated settlement window.
+
+3. Attorney calls `POST /leverage/case/{id}/settle` to record the outcome, then `PUT /leverage/case/{id}/settlement-details` to capture the full negotiation history (demand, offer, counter amounts, rounds, final amount, fault %, consent for intelligence network).
+
+**The aha moment:** LEVERAGE shows a projected settlement range based on comparable cases in the same jurisdiction. The adjuster's $38K offer is below the low end. The attorney counters at $62K with data — not with "I feel like it should be more." They're negotiating with structure, not emotion.
+
+**Hook:** That one valuation helped the attorney counter with confidence. They'll run `POST /leverage/valuation/calculate` before accepting any settlement offer going forward. The `settlement-details` capture feeds the SETTLE intelligence network, making future valuations more accurate for every attorney on the platform.
+
+---
+
+### D. THE HOOK PATTERN — Habit, Not Feature Adoption
+
+| Week | Trigger (Real API) | Dopamine Hit |
+|---|---|---|
+| Week 1 | `GET /deadlines/upcoming` — "Smith v. Walmart: SOL in 14 days" | "I almost missed a deadline. LEVERAGE caught it." |
+| Week 2 | `POST /leverage/damages` returns $74K vs typed $45K | "I nearly under-demanded by $29K." |
+| Week 3 | `POST /leverage/valuation/calculate` returns range above adjuster's offer | "I'm countering at $62K with data, not gut feel." |
+| Week 4 | `GET /leverage/analytics` — "3 cases analyzed. 2 demands sent. 1 settled." | "I used LEVERAGE 8 times this month. It cost me $99." |
+
+The loop isn't a scroll. It's a **Monday morning habit**: open LEVERAGE → check deadlines → check pending settlements → push one button on a case → get a number that makes you smarter than you were 60 seconds ago. Every hit produces a concrete financial outcome (dollars saved, deadline avoided, settlement improved). No abstract value proposition — just "here's what it found this week."
+
+---
+
+### E. PRICING: 1-Tier with Ecosystem Discount
+
+**Why one tier:** The TAM for LEVERAGE overlaps nearly perfectly with INTAKE's TAM. 90%+ of LEVERAGE users will come through INTAKE. Nobody searches "PI case intelligence service." They search "legal intake AI" and discover LEVERAGE after. A single tier with an aggressive ecosystem discount is simpler and converts better than three tiers for a product nobody is searching for independently.
+
+| | LEVERAGE |
+|---|---|
+| **Standalone price** | $349/mo |
+| **With INTAKE (ecosystem)** | $99/mo |
+| **Active cases** | 21 |
+| **Overage** | None — hard gate at 22 cases |
+| **Ecosystem discount** | 72% ($250/mo off) |
+| **Active case gate** | 2+ consecutive months over 21 → custom review |
+
+**Psychological anchor:** $349 signals "this is a serious tool." The $99 actual price says "but because you already use INTAKE, you get it for what a solo tier costs." The $250 discount feels earned — not discounted, but rewarded. Both ICP personas respond to "you're already getting value from INTAKE, so LEVERAGE is $50 off the standard price" — but the $349 → $99 jump is more powerful on the checkout screen.
+
+---
+
+### F. REVENUE IMPACT: 3-Tier vs 1-Tier
+
+| | Old (3-tier) | New (1-tier) |
+|---|---|---|
+| Year 1 | $217K | $96K |
+| Year 2 | $772K | $323K |
+| Year 3 | $1,590K | $649K |
+| **3-Year Total** | **$2,580K** | **$1,067K** |
+| Revenue sacrificed | — | **-$1,512K (59%)** |
+
+**Counterfactual:** If the lower price ($99 vs $99/$349/$899) drives 1.5x more LEVERAGE adoption (more INTAKE customers add LEVERAGE because it's cheaper), 3-year revenue reaches $1.6M — still 38% below the 3-tier model. Break-even requires 2.4x higher adoption.
+
+**Why this sacrifice is acceptable:**
+
+1. **The 3-tier model's revenue was theoretical.** A solo PI signing 3-5 cases/mo won't pay $349 for LEVERAGE. The 3-tier pricing assumed adoption rates that likely overstated actual conversion.
+2. **LEVERAGE is a retention tool, not a revenue driver.** 59% don't budget for tech. They budget for INTAKE because missed calls = lost cases (immediate pain). They buy LEVERAGE because their INTAKE experience was good. LEVERAGE deepens the ecosystem relationship and reduces INTAKE churn.
+3. **The $349 anchor price protects the category.** Even though most pay $99, the $349 standalone price prevents LEVERAGE from being perceived as a cheap add-on. A $99 tool is questioned; a $349 tool discounted to $99 is trusted.
+4. **Pricing can ratchet up.** If attachment rates exceed 50% of INTAKE customers, the ecosystem price can be adjusted. The architecture supports it.
+
+---
+
+### G. LEVERAGE IN THE REVENUE MODEL
+
+Add to Section M (3-Year Revenue Projection), Model 3:
+
+| Metric | Year 1 | Year 2 | Year 3 |
+|---|---|---|---|
+| INTAKE customers | 151 | 497 | 1,012 |
+| LEVERAGE attach rate | 30% | 40% | 50% |
+| LEVERAGE customers | 45 | 199 | 506 |
+| LEVERAGE revenue ($99/mo ecosystem) | $54K | $236K | $601K |
+| **Combined INTAKE + LEVERAGE** | **$1,783K** | **$5,893K** | **$12,459K** |
+
+---
+
+## SECTION W: THE FULL PIPELINE — 5-Stage Attorney Journey
+
+**Date:** June 17, 2026  
+**Status:** Internal reference — maps what each service delivers at each stage  
+**Audit notes:** Stages 2-4 verified against `TrueVow_Tenant_LEVERAGE_Service` codebase. Stage 1 verified against INTAKE product specification. Stage 5 depends on SETTLE service comparable engine — not yet verified.
+
+---
+
+### STAGE 1: INTAKE — Tuesday 7:42pm. The Call Comes In.
+
+**Product:** INTAKE (Benjamin)  
+**What happens:** Benjamin answers the routed call, follows deterministic PI intake logic, collects structured case data, A/B/C/D scores the lead, books consultation, fires priority SMS for A+ leads.
+
+**Data flow:** Structured intake record created. Case profile pre-populated in LEVERAGE (not yet activated — ready for attorney review). Zero attorney effort at this stage.
+
+**Deliverable:** Attorney gets a text at dinner with enough detail to know what the case is worth before the consultation happens.
+
+---
+
+### STAGE 2: LEVERAGE — Thursday 10am. Consult to Case Activation.
+
+**Product:** LEVERAGE Case Lifecycle + Compliance Intelligence  
+**What happens:** Attorney meets client. Client signs. Case retained. Attorney opens LEVERAGE dashboard. Pre-populated case from Tuesday's intake is waiting.
+
+**Attorney actions (real API calls):**
+
+1. Clicks "Activate LEVERAGE" → `POST /leverage/case/open` — Billing service charges tenant ($99/mo ecosystem). Idempotent. Case status: `retained`.
+
+2. `POST /leverage/case/{id}/compliance` — LEVERAGE returns:
+
+```
+SOL Status: SAFE — 679 days remaining
+            Filing deadline: August 15, 2028
+
+Demand Letter Completeness:
+  ✓ Medical summary present
+  ✓ Injury description present
+  ✗ Liability statement MISSING
+
+Risk Flags:
+  ⚠ POLICY_LIMIT_UNKNOWN
+  ⚠ INSURER_UNKNOWN
+```
+
+**Aha moment:** The attorney hasn't drafted the demand letter yet, and LEVERAGE is already flagging a missing liability statement — the exact gap an insurance adjuster would exploit. LEVERAGE caught it before the adjuster did.
+
+**Precision audit:** SOL status comes from `leverage.validation_rules` (seeded state-specific data). Demand letter completeness is a deterministic checklist — not LLM-generated. Risk flags are rule-based from structured signals. **No hallucination risk at this stage.**
+
+---
+
+### STAGE 3: LEVERAGE — Weeks 2-3. Preparing the Demand Letter.
+
+**Product:** LEVERAGE Economics (Damages + Disbursement)  
+**What happens:** Medical records arrive. $22K ER + surgery + PT. Client missed 6 weeks at $1,400/week. Attorney enters structured numbers.
+
+**Attorney actions (real API calls):**
+
+1. `POST /leverage/damages` with inputs: medicals ($22K), lost wages ($8.4K), multiplier (3x), future medical ($5K).
+
+LEVERAGE computes:
+
+```
+ECONOMIC:    $35,400
+NON-ECONOMIC: $66,000 (3.0x medicals)
+GROSS:       $101,400
+
+SETTLEMENT RANGE:
+  Low (60%):  $60,840
+  High (85%): $86,190
+```
+
+2. `POST /leverage/case/{id}/damages/save` — versioned, append-only worksheet persisted.
+
+**Aha moment:** Attorney was going to demand $45,000 on gut feel. LEVERAGE structured it at $101,400 with a $60K-$86K settlement range. They now have a defensible number.
+
+**Precision audit:** The damages calculator is **deterministic math, not LLM**. Medicals + lost wages + (multiplier × medicals) + future costs. The settlement range is 60%-85% of gross — a standard PI formula, not AI-generated. Warnings fire when multiplier ≥ 5x or when future estimates are used without documentation. **No hallucination risk. The math is auditable.**
+
+---
+
+### STAGE 4: LEVERAGE + SETTLE — Weeks 3-12. Negotiation.
+
+**Product:** LEVERAGE Jurisdiction Valuation + SETTLE Comparable Engine  
+**What happens:** Demand goes out at $85,000. Adjuster counters at $38,000 six weeks later. Attorney needs to know: is my demand realistic?
+
+**Attorney actions:**
+
+1. `POST /leverage/valuation/calculate` — LEVERAGE applies Texas jurisdiction multiplier, adjusts for comparative fault. Returns after-contingency projection.
+
+2. Attorney pushes LEVERAGE → SETTLE. SETTLE returns:
+
+```
+47 comparable rear-end cases in Harris County
+with $15K-$25K medicals settled between $48K-$72K.
+Your $85K demand is above the comparable high end.
+```
+
+3. Attorney adjusts. Counters at $68,000. Settles at $64,000.
+
+4. `POST /leverage/case/{id}/settle` records the outcome. `PUT /leverage/case/{id}/settlement-details` captures: demand ($85K), offer ($38K), counter ($75K), adjuster counter ($58K), final ($64K), rounds (3), fault (0%), consent flag (yes).
+
+**Aha moment:** Attorney settled at $64,000 — $19,000 above the original $45,000 gut-feel. LEVERAGE cost $99 this month. The settlement data now feeds the network.
+
+**Precision audit:** LEVERAGE jurisdiction valuation uses state-specific multiplier configs from `leverage.leverage_valuation_multipliers` — seeded data, not LLM. The SETTLE comparable engine returns "47 cases" — whether that number is real or generated depends on SETTLE's data. **This is the honesty boundary: the comparable case count and range accuracy depend on real settlement data in the SETTLE database, not on an LLM generating plausible-sounding numbers.** If the SETTLE database has 47 real settled cases in Harris County with similar medicals, the output is precise. If it has 3, the confidence should drop to "Low" and the attorney should be told. The confidence-based billing in the SETTLE strategy doc ("if we can't generate a meaningful report, you don't pay") must be enforced here.
+
+---
+
+### STAGE 5: The Network Effect — Month 6.
+
+**Product:** SETTLE Intelligence Network  
+**What happens:** Same attorney. Different case. Similar rear-end, $18K medicals. When they run valuation, SETTLE now has more data:
+
+```
+Comparable settlements in Texas (rear-end, $15K-$25K medicals):
+  Case #487: Settled $64,000 (3 rounds, 0% fault)
+  Case #512: Settled $52,000 (2 rounds, 10% fault)
+  Case #601: Settled $71,000 (4 rounds, 0% fault)
+  Case #718: Settled $58,000 (3 rounds, 15% fault)
+
+Your projected range: $55,000 - $72,000
+Confidence: MODERATE (4 comparable cases)
+```
+
+**Aha moment:** The attorney is no longer relying on their own experience. They're relying on every attorney on the platform. Each settled case makes the network smarter. Month 1: 0 cases. Month 6: 4 cases. Month 24: 50+ cases.
+
+**Precision audit:** This is the stage where precision depends entirely on data volume. **The math is simple — comparable case matching by injury type, jurisdiction, medical range, and liability profile. But the output is only as good as the input.** With 4 comparable cases and a "Moderate" confidence label, the attorney is aware of the limitation. With 50+ cases and "High" confidence, it's reliable. The SETTLE strategy doc explicitly requires: "When county-specific data is limited, SETTLE uses the closest available comparable signals — state, region, injury type — and clearly labels confidence." **This must be enforced in the SETTLE service code, not just the strategy doc.**
+
+---
+
+### Summary: Precision by Stage
+
+| Stage | Product | Deterministic or AI? | Hallucination Risk | Verified Against Code? |
+|---|---|---|---|---|
+| 1 — Intake | INTAKE | Deterministic intake logic + AI voice | Low (deterministic path for qualification; AI for conversation but not for legal conclusions) | INTAKE spec |
+| 2 — Compliance | LEVERAGE | **Fully deterministic** (SOL rules, checklist validation) | **None** | Yes — `leverage_case.py`, `deadlines.py` |
+| 3 — Damages | LEVERAGE | **Fully deterministic** (math formula) | **None** | Yes — `leverage_economics.py` |
+| 4 — Valuation + Settlement | LEVERAGE + SETTLE | LEVERAGE: deterministic (state multipliers). SETTLE: depends on real settlement data volume | **Depends on SETTLE data quality** | LEVERAGE: yes. SETTLE: not yet verified |
+| 5 — Network Effect | SETTLE | Comparable case matching — deterministic algorithm | **Depends on data volume + confidence labeling** | Not yet verified |
+
+**The honesty boundary:** Stages 1-3 are deterministic — math, rules, checklists. They will return the same answer every time for the same inputs. Stages 4-5 depend on SETTLE's actual settlement data. If the SETTLE database has real data, the output is reliable. If it has sparse data and the confidence label says "Low" or "Moderate," the attorney is warned. If it has sparse data and the confidence label says "High" falsely, that IS a problem. The confidence-based billing rule ("if we can't generate a meaningful report, you don't pay") is the safety net.
+
+---
+
+### WHO PROVIDES WHAT — Attorney vs TrueVow
+
+**Critical positioning point:** The attorney never writes rules, configures multipliers, or sets formulas. They provide case facts. TrueVow provides the methodology. This is intentional — it positions LEVERAGE as a trusted tool, not a configurable platform that requires the attorney to become a data scientist.
+
+#### What the Attorney Provides (Per-Case, Through the UI)
+
+These change per case — the attorney enters them each time:
+
+| Input | Example | Where |
+|---|---|---|
+| Medical bills | $22,000 (ER + surgery + PT) | `POST /leverage/damages` |
+| Lost wages | $8,400 (6 wks × $1,400) | Same |
+| Pain & suffering multiplier | 3x (attorney's sole judgment call) | Same |
+| Future medical estimate | $5,000 | Same |
+| Incident type | "rear-end collision" | `POST /leverage/case/open` |
+| State / jurisdiction | "TX" | Same |
+| Insurer | "State Farm" (if known) | Same |
+
+The attorney controls exactly one subjective input: the **pain & suffering multiplier**. A 3x multiplier vs a 5x multiplier on the same $22K medicals produces $66K vs $110K in non-economic damages. That judgment call is exclusively theirs. LEVERAGE warns when the multiplier exceeds 2.5x but does not block it.
+
+#### What TrueVow Provides (Pre-Seeded, Not Attorney-Editable)
+
+These are seeded into `leverage.validation_rules` and `leverage.leverage_valuation_multipliers` by TrueVow administrators. The attorney does not create, edit, or configure these:
+
+| Rule | Example | Source |
+|---|---|---|
+| SOL deadline per state | Texas PI = 2 years from incident date | `leverage.validation_rules` |
+| Valuation multiplier range per state | Texas: low 1.0x, high 5.0x. Comparative fault: modified (51% bar) | `leverage.leverage_valuation_multipliers` |
+| Contingency fee default per state | Texas: 33.33% | Same table |
+| Demand letter required items | Medical summary, injury description, liability statement | `POST /leverage/case/{id}/compliance` (hardcoded checklist) |
+| Settlement range formula | 60%-85% of gross damages | `POST /leverage/damages` (hardcoded math) |
+| Compliance risk flag triggers | Multiplier ≥ 5.0x → warning. Missing liability statement → DEMAND_LETTER_INCOMPLETE flag | Hardcoded thresholds in compliance engine |
+
+#### Why This Distinction Matters
+
+An attorney evaluating LEVERAGE vs. "I'll just keep doing this in my head" needs to know two things:
+
+1. **They are not buying a DIY tool.** They are not expected to configure damages formulas, set up SOL rules for 50 states, or calibrate multipliers. TrueVow already did that. The system works out of the box — the same way an attorney who buys a legal research tool doesn't configure the case law database.
+
+2. **Their judgment still matters.** The multiplier is theirs. The decision to settle or not is theirs. LEVERAGE provides structure and reference points — it does not make the decision. This addresses ICP Fear #3 (bar complaint / malpractice anxiety about AI tools): the attorney remains in control of every outcome. LEVERAGE is a calculator, not a decision-maker.
+
+**Implication for onboarding:** The attorney should be able to open LEVERAGE, enter one case, and see a damages estimate and SOL deadline immediately — without configuration, without training, without setup. If the first experience requires "please configure your state rules" or "please set up your multiplier preferences," the product has failed the ICP. Attorneys do not configure tools. They use tools that are already configured.
+
+---
+
+## SECTION X: COMPETITOR ANALYSIS — LEVERAGE CATEGORY
+
+**Date:** June 17, 2026  
+**Source:** Competitor websites (evenuplaw.com), ICP research, LEVERAGE service codebase audit
+
+### EvenUp — The $2B Direct Competitor
+
+| | EvenUp | LEVERAGE |
+|---|---|---|
+| **What it does** | AI reads medical records and case files. Generates demand letters in minutes with ICD codes, pain & suffering calculations, and verdict analyses. Team of 150+ legal professionals review AI output. | Attorney enters structured numbers. Calculator returns damages, settlement range, SOL deadline, and compliance checks. Deterministic math — no AI-generated content. |
+| **Data source** | Ingests actual medical records and CMS data. AI extracts dollar amounts, injury codes, and timeline. | Attorney reviews records themselves and enters structured inputs. No document ingestion. |
+| **Pricing** | "All-in-one, case-based pricing." No public pricing page. Schedule a Call CTA. Enterprise sales motion. | $99/mo ecosystem. $349/mo standalone. Flat subscription. Self-serve. |
+| **Scale** | $10B+ damages claimed. 10,000 cases/week. 2,000+ firms. $2B valuation. $150M Series E. | Pre-launch. |
+| **Target ICP** | Mid-to-large PI firms. Direct sales. "75% faster attorney review." | Solo and small PI firms (1-5 attorneys). Self-serve. |
+| **Demand letter** | AI generates the entire demand letter. Attorney reviews and finalizes. | Does NOT generate demand letters. Validates completeness (medical summary present? liability statement present?) before the attorney sends their own letter. |
+| **Damages** | AI extracts medical costs from records. Calculates pain & suffering. Generates ICD-coded injury summaries. | Attorney enters total medicals, lost wages, multiplier. Calculator returns gross damages and settlement range. Math is auditable and reproducible. |
+| **Risk** | AI hallucination — fabricated verdicts, wrong dollar amounts from misread records. Line-level citations attempt to mitigate but don't eliminate. | No hallucination risk in calculation path (deterministic math). Compliance checks are boolean. SOL lookup is a date comparison. |
+| **Medical records** | Requires medical records to produce value. Cannot generate demand without them. | Works immediately with structured numbers. No waiting for records. Attorney can run damages estimate on day one of retention. |
+| **SOL tracking** | Not marketed as a core feature. Appears in Treatment and Trial products, not as standalone deadline tracker. | Core feature. 50-state SOL rules from `leverage.validation_rules`. Returns exact days until filing deadline. |
+| **GTM** | Enterprise direct sales. Customer stories featuring firm names. "Schedule a Call" CTA. | Self-serve public pricing. "Apply for Access" CTA. Approval-first onboarding. |
+
+### Five Strategic Differentiators (Where LEVERAGE Wins)
+
+**1. Deterministic accuracy > AI generation for this buyer.** Solo PI attorneys fear malpractice above almost everything (ICP Fear #3). An AI-generated demand letter could contain a fabricated verdict or misread dollar amount — and the attorney who signs it is liable. LEVERAGE's damages calculator produces the same output for the same input every time. The math is auditable. The compliance checklist is a boolean. The SOL deadline is a subtraction. **No attorney gets sued because a calculator was wrong.** They can get sued because an AI-generated demand letter cited a verdict that doesn't exist.
+
+**2. Subscription economics beat per-case pricing for this ICP.** A solo doing 3-5 cases/month would pay EvenUp per case (likely $500-1,500/case based on market signals). LEVERAGE is $99 flat. For a solo PI doing $150K-$500K revenue with 59% not budgeting for technology, per-case billing is a non-starter. Flat subscription is the ICP's demand (ICP Fear #2: unpredictable billing).
+
+**3. Self-serve beats enterprise sales for this buyer.** EvenUp requires a call. A demo. A sales process. The ICP (solo PI, 50-60 hour weeks, answers their own phone) does not do enterprise procurement. They need to sign up, enter a case, and see a number. LEVERAGE is self-serve with public pricing.
+
+**4. No document dependency means immediate value.** EvenUp cannot produce a demand letter without medical records. If records take 6 weeks to arrive, EvenUp produces zero value for 6 weeks. LEVERAGE works on day one of retention — the attorney already knows the medical bill total, lost wages, and wants a damages estimate before records arrive.
+
+**5. SOL tracking is a separate category.** EvenUp doesn't market SOL tracking as standalone. LEVERAGE's 50-state SOL rules with exact days-until-filing-deadline is a different value proposition. An attorney doesn't buy LEVERAGE for SOL tracking alone — but once they have it, they won't leave because "it caught a deadline I would have missed."
+
+### Where EvenUp Wins (Don't Fight Here)
+
+- **Demand letter generation**: EvenUp writes the letter. LEVERAGE doesn't. Don't try to match this.
+- **Medical record ingestion**: EvenUp reads records. LEVERAGE takes structured inputs. Don't try to match this.
+- **Brand and scale**: EvenUp has 2,000+ firms, $150M in funding, and customer testimonials from named firms. LEVERAGE has zero. Don't compete on brand.
+- **Mid-to-large firm market**: EvenUp's direct sales model serves firms that LEVERAGE's self-serve model cannot reach. This is not LEVERAGE's ICP anyway.
+
+### Other Competitors
+
+| Competitor | What They Do | Pricing | ICP Overlap |
+|---|---|---|---|
+| **TOME.ai** | AI demand letters and case valuation. Similar model to EvenUp. | Not public. Quote-based. | High. Same space as EvenUp. |
+| **Medical Record Review Services** | Human reviewers summarize medical records. No damages math. No SOL. No demand letter. | $500-2,000/case | Partial. LEVERAGE competes on price (flat monthly vs per-case) and scope (math + SOL + compliance vs just summary). |
+| **Demand Letter Services** | Human writers draft demand letters. No structured damages. No SOL tracking. | $300-1,000/letter | Partial. LEVERAGE does not write letters. Competes as a pre-send validation tool — catches what the letter service missed. |
+| **Free Online Settlement Calculators** | Enter medicals, get a number. No state rules. No compliance. No attorney trusts them. | $0 | None. Not a real competitor. |
+
+### LEVERAGE's Uncrowded Whitespace
+
+No competitor does all five:
+
+| Capability | EvenUp | Med Record Svc | Demand Svc | Free Calc | **LEVERAGE** |
+|---|---|---|---|---|---|
+| Damages calculation | ✓ (AI) | ✗ | ✗ | ~ (basic) | **✓ (deterministic)** |
+| SOL deadline tracking | ~ (partial) | ✗ | ✗ | ✗ | **✓ (50-state)** |
+| Demand letter validation | ✗ (generates, doesn't validate) | ✗ | ✗ | ✗ | **✓ (compliance checklist)** |
+| Settlement range | ✓ (AI) | ✗ | ✗ | ~ (basic) | **✓ (formula)** |
+| Flat subscription pricing | ✗ (per-case) | ✗ (per-case) | ✗ (per-letter) | ✓ (free) | **✓ ($99/mo)** |
+| Self-serve | ✗ (enterprise sales) | ✗ (service) | ✗ (service) | ✓ | **✓** |
+| Medical record ingestion | ✓ | ✓ | ~ | ✗ | ✗ |
+
+The whitespace is: **a deterministic, self-serve, flat-subscription tool that calculates damages, tracks SOL deadlines, and validates demand letters — without ingesting medical records or AI-generating content.**
