@@ -19,7 +19,8 @@
     "db:texas-practice-areas": "node scripts/populate_practice_areas_for_state.js TX",
     "db:practice-areas": "node scripts/populate_practice_areas_for_state.js",
     "db:fix-baker": "node scripts/fix_baker_immediate.js",
-    "db:remove-small-counties": "node scripts/force_delete_small_counties.js"
+    "db:remove-small-counties": "node scripts/force_delete_small_counties.js",
+    "dev": "npx http-server -p 8083"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.39.0",
