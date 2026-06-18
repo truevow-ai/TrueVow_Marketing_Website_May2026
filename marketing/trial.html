@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>90-Day Intake Trial — TrueVow INTAKE for PI Attorneys</title>
     <meta name="description" content="Apply for the 90-Day Intake Trial. Benjamin answers routed PI intake calls, grades leads, and sends structured summaries for attorney review. Approval required.">
+    <meta name="robots" content="noindex,nofollow">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
@@ -261,7 +262,7 @@
             </div>
             <div class="faq-item">
                 <div class="faq-q">Is the trial free?</div>
-                <div class="faq-a"><p>The 90-day trial includes intake coverage with all records visible. Every plan keeps intake records visible. TrueVow INTAKE does not use public per-lead unlock fees. Trial terms and conversion details are confirmed during onboarding.</p></div>
+                <div class="faq-a"><p>The 90-day intake trial is approval-based. Trial pricing, pilot terms, and conversion details are confirmed during onboarding. No payment is collected on this page.</p></div>
             </div>
             <div class="faq-item">
                 <div class="faq-q">Do I need to forward my calls?</div>
@@ -340,7 +341,8 @@
                     <option value="solo">Solo (1 attorney)</option>
                     <option value="2-3">2&ndash;3 attorneys</option>
                     <option value="4-10">4&ndash;10 attorneys</option>
-                    <option value="11-21">11&ndash;21 attorneys</option>
+                    <option value="11">11 attorneys</option>
+                    <option value="12+">12+ attorneys / Enterprise review</option>
                 </select>
                 <select id="monthly_inbound_calls" name="monthly_inbound_calls" required style="background:#fff">
                     <option value="">Approx. Monthly Inbound Lead Calls *</option>
@@ -451,7 +453,19 @@
 
     // Multi-step form
     var currentStep=1;
+    function validateCurrentStep(){
+        var stepEl=document.getElementById('step'+currentStep);
+        var fields=stepEl.querySelectorAll('input[required], select[required]');
+        for(var i=0;i<fields.length;i++){
+            if(!fields[i].checkValidity()){
+                fields[i].reportValidity();
+                return false;
+            }
+        }
+        return true;
+    }
     function goStep(n){
+        if(n>currentStep&&!validateCurrentStep())return;
         document.getElementById('step'+currentStep).classList.remove('active');
         document.getElementById('dot'+currentStep).classList.remove('active');
         document.getElementById('dot'+currentStep).classList.add('done');
@@ -478,6 +492,17 @@
             var formData={
                 product:'INTAKE_TRIAL',
                 source:'trial-page',
+                landing_page:window.location.pathname,
+                query_string:window.location.search||null,
+                utm_source:new URLSearchParams(window.location.search).get('utm_source')||null,
+                utm_medium:new URLSearchParams(window.location.search).get('utm_medium')||null,
+                utm_campaign:new URLSearchParams(window.location.search).get('utm_campaign')||null,
+                utm_content:new URLSearchParams(window.location.search).get('utm_content')||null,
+                utm_term:new URLSearchParams(window.location.search).get('utm_term')||null,
+                gclid:new URLSearchParams(window.location.search).get('gclid')||null,
+                fbclid:new URLSearchParams(window.location.search).get('fbclid')||null,
+                msclkid:new URLSearchParams(window.location.search).get('msclkid')||null,
+                submitted_at:new Date().toISOString(),
                 first_name:document.getElementById('first_name').value.trim(),
                 last_name:document.getElementById('last_name').value.trim(),
                 email:document.getElementById('email').value.trim().toLowerCase(),
@@ -518,7 +543,8 @@
                     messageDiv.innerHTML='<p style="font-size:18px;font-weight:700;margin-bottom:12px">Application received.</p><p style="font-size:14px;margin-bottom:8px">We\'ll review your firm fit, practice area, and county availability. If approved, we\'ll send you the onboarding preparation form before your onboarding call.</p><p style="font-size:14px;margin-bottom:8px">Benjamin is activated only after setup, script review, calendar/routing configuration, and a successful test call.</p>'+(formData.bar_number?'<p style="font-size:14px;color:#F59E0B;font-weight:600">Bar number received. This may help us verify your application faster.</p>':'');
                     form.style.display='none';
                 }else{
-                    var errorData=await response.json();
+                    var errorData={};
+                    try{errorData=await response.json();}catch(_){errorData={message:'Submission failed'};}
                     if(response.status===409||(errorData.message&&errorData.message.includes('duplicate'))){
                         messageDiv.style.display='block';
                         messageDiv.style.background='rgba(245,158,11,0.1)';
