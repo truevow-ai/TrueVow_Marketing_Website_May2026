@@ -173,7 +173,14 @@
   if (micBtn) micBtn.onclick = toggleMic
 
   // ── Send ──────────────────────────────────────────────────────────
+  var tenantUnavailable = false
+
   async function send(text) {
+    if (tenantUnavailable) {
+      addMsg('system', 'Benjamin is not available for this demo right now.')
+      return
+    }
+
     var container = document.getElementById('tvwMessages')
     var typing = el('div', 'tvw-message tvw-typing agent',
       '<div class="tvw-dot"></div><div class="tvw-dot"></div><div class="tvw-dot"></div>')
@@ -190,6 +197,11 @@
         body: JSON.stringify(payload),
       })
       var data = await res.json()
+
+      if (data.unavailable) {
+        tenantUnavailable = true
+      }
+
       var response = data.response || 'I didn\'t catch that.'
 
       if (typing) typing.remove()
