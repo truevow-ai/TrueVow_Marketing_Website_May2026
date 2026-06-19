@@ -31,6 +31,7 @@
     tenantId:     script.getAttribute('data-tenant-id')      || null,
     displayMode:  script.getAttribute('data-display-mode')   || 'bottom-right',
     targetElement: script.getAttribute('data-target-element') || null,
+    showHeader:   script.getAttribute('data-show-header')    !== 'false',
     endpoint:     script.getAttribute('data-endpoint')       || '/api/v1/widget/chat',
     agentName:    script.getAttribute('data-agent-name')     || 'Benjamin',
     primaryColor: script.getAttribute('data-primary-color')  || '#1a56db',
@@ -117,13 +118,16 @@
   }
 
   // Chat panel
+  var showHeader = CONFIG.showHeader !== false
   var chat = el('div', 'tvw-chat' + (isCentered ? ' open' : ''))
   chat.innerHTML =
-    '<div class="tvw-chat-header">' +
-      '<div><h3>' + CONFIG.agentName + '</h3></div>' +
-      (isCentered ? '' : '<button onclick="this.closest(\'.tvw-chat\').classList.remove(\'open\')">&times;</button>') +
-    '</div>' +
-    '<div class="tvw-chat-messages" id="tvwMessages"></div>' +
+    (showHeader
+      ? '<div class="tvw-chat-header">' +
+          '<div><h3>' + CONFIG.agentName + '</h3></div>' +
+          (isCentered ? '' : '<button onclick="this.closest(\'.tvw-chat\').classList.remove(\'open\')">&times;</button>') +
+        '</div>'
+      : '') +
+    '<div class="tvw-chat-messages" id="tvwMessages"' + (!showHeader ? ' style="max-height:400px"' : '') + '></div>' +
     '<div class="tvw-input-row">' +
       '<button class="tvw-mic-btn" id="tvwMic" title="Voice input">🎤</button>' +
       '<input id="tvwInput" type="text" placeholder="Type your message..." autocomplete="off">' +
