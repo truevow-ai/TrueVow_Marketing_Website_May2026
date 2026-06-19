@@ -159,137 +159,6 @@
             min-height: 200px;
         }
 
-        .status-pill {
-            display: inline-flex;
-            align-items: center;
-            padding: 7px 13px;
-            border-radius: 999px;
-            background: #EFF6FF;
-            color: #0A2463;
-            font-size: 12px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            margin-bottom: 22px;
-        }
-
-        .avatar-shell {
-            position: relative;
-            width: 190px;
-            height: 190px;
-            margin: 0 auto 26px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .avatar-ring {
-            position: absolute;
-            inset: 0;
-            border-radius: 50%;
-            border: 2px solid rgba(10,36,99,0.18);
-        }
-
-        .benjamin-panel.is-speaking .avatar-ring,
-        .benjamin-panel.is-listening .avatar-ring {
-            animation: avatarPulse 1.5s infinite ease-in-out;
-            border-color: rgba(16,185,129,0.75);
-            box-shadow: 0 0 0 12px rgba(16,185,129,0.08);
-        }
-
-        .avatar-image {
-            width: 148px;
-            height: 148px;
-            border-radius: 50%;
-            overflow: hidden;
-            background: linear-gradient(135deg, #0A2463, #101827);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 5px solid white;
-            box-shadow: 0 14px 32px rgba(10,36,99,0.28);
-        }
-
-        .avatar-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .avatar-fallback {
-            display: none;
-            color: white;
-            font-size: 64px;
-            font-weight: 900;
-            font-family: Montserrat, sans-serif;
-        }
-
-        .avatar-image.fallback .avatar-fallback {
-            display: block;
-        }
-
-        .waveform {
-            position: absolute;
-            bottom: -4px;
-            display: flex;
-            gap: 4px;
-            align-items: center;
-            justify-content: center;
-            height: 28px;
-        }
-
-        .waveform span {
-            width: 5px;
-            height: 10px;
-            border-radius: 999px;
-            background: #0A2463;
-            opacity: 0.35;
-        }
-
-        .benjamin-panel.is-speaking .waveform span,
-        .benjamin-panel.is-listening .waveform span {
-            animation: wave 1s infinite ease-in-out;
-            opacity: 0.9;
-        }
-
-        .waveform span:nth-child(2) { animation-delay: 0.12s; }
-        .waveform span:nth-child(3) { animation-delay: 0.24s; }
-        .waveform span:nth-child(4) { animation-delay: 0.36s; }
-        .waveform span:nth-child(5) { animation-delay: 0.48s; }
-
-        .benjamin-message {
-            text-align: center;
-        }
-
-        .benjamin-message strong {
-            display: block;
-            color: #0A2463;
-            font-size: 20px;
-            margin-bottom: 8px;
-        }
-
-        .benjamin-message p {
-            color: #444;
-            font-size: 15px;
-            line-height: 1.65;
-        }
-
-        @keyframes avatarPulse {
-            0%, 100% {
-                transform: scale(1);
-                box-shadow: 0 0 0 6px rgba(16,185,129,0.08);
-            }
-            50% {
-                transform: scale(1.04);
-                box-shadow: 0 0 0 18px rgba(16,185,129,0.02);
-            }
-        }
-
-        @keyframes wave {
-            0%, 100% { height: 8px; }
-            50% { height: 24px; }
-        }
-
         .page-container {
             max-width: 1100px;
             margin: 40px auto;
@@ -671,37 +540,9 @@ footer { padding: 80px 24px; background: #000; color: white; text-align: center;
                 based on TrueVow&rsquo;s template-based intake flow and onboarding settings.
                 Oakwood Law Firm is not a real TrueVow customer.
             </p>
-
-            <div class="hero-actions">
-                <button class="primary-btn" id="startVoiceDemo">Start Voice Demo</button>
-                <button class="secondary-btn" id="startChatDemo">Type Instead</button>
-            </div>
         </div>
 
-        <div class="benjamin-panel" id="benjaminPanel">
-            <div class="status-pill">Demo mode</div>
-
-            <div class="avatar-shell">
-                <div class="avatar-ring"></div>
-
-                <div class="avatar-image" aria-label="Benjamin intake assistant">
-                    <img src="../assets/benjamin-avatar.jpeg" alt="Benjamin intake assistant"
-                         onerror="this.style.display='none'; this.parentElement.classList.add('fallback');">
-                    <span class="avatar-fallback">B</span>
-                </div>
-
-                <div class="waveform" aria-hidden="true">
-                    <span></span><span></span><span></span><span></span><span></span>
-                </div>
-            </div>
-
-            <div class="benjamin-message">
-                <strong>Benjamin</strong>
-                <p>Hi, I&rsquo;m Benjamin. I can show you how TrueVow&rsquo;s template-based intake flow works on a law firm website. You can speak to me or type.</p>
-            </div>
-
-            <div class="tvw-chat-target" id="benjaminChat"></div>
-        </div>
+        <div class="benjamin-panel" id="benjaminPanel"></div>
     </section>
 
     <div class="page-container" style="padding-bottom: 24px;">
@@ -789,61 +630,11 @@ footer { padding: 80px 24px; background: #000; color: white; text-align: center;
     <script src="../widgets/truevow-chatbot/widget.js"
         data-tenant-id="oakwood-injury-law"
         data-display-mode="centered"
-        data-target-element="benjaminChat"
-        data-show-header="false"
+        data-visual-mode="avatar"
+        data-target-element="benjaminPanel"
+        data-api-base="http://localhost:3056"
         data-agent-name="Benjamin"
         data-primary-color="#0A2463">
-    </script>
-
-    <script>
-        // Wire hero buttons to live widget + avatar animation
-        (function() {
-            var startVoice = document.getElementById('startVoiceDemo');
-            var startChat = document.getElementById('startChatDemo');
-            var panel = document.getElementById('benjaminPanel');
-            var statusPill = document.querySelector('.status-pill');
-
-            function setPanelState(state) {
-                panel.classList.remove('is-speaking', 'is-listening');
-                if (state === 'speaking') {
-                    panel.classList.add('is-speaking');
-                    if (statusPill) statusPill.textContent = 'Benjamin speaking';
-                } else if (state === 'listening') {
-                    panel.classList.add('is-listening');
-                    if (statusPill) statusPill.textContent = 'Listening';
-                } else {
-                    if (statusPill) statusPill.textContent = 'Demo mode';
-                }
-            }
-
-            function waitForWidget(cb) {
-                if (window.TrueVowWidget) { cb(); return; }
-                var check = setInterval(function() {
-                    if (window.TrueVowWidget) { clearInterval(check); cb(); }
-                }, 100);
-            }
-
-            if (startVoice) {
-                startVoice.addEventListener('click', function() {
-                    setPanelState('speaking');
-                    waitForWidget(function() {
-                        window.TrueVowWidget.open();
-                        window.TrueVowWidget.focusInput();
-                    });
-                    setTimeout(function() { setPanelState('listening'); }, 2200);
-                });
-            }
-
-            if (startChat) {
-                startChat.addEventListener('click', function() {
-                    setPanelState('ready');
-                    waitForWidget(function() {
-                        window.TrueVowWidget.open();
-                        window.TrueVowWidget.focusInput();
-                    });
-                });
-            }
-        })();
     </script>
 
 ﻿
