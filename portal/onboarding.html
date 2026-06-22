@@ -347,6 +347,9 @@
 
             var formData={
                 form_type:'onboarding_preparation',
+                landing_page:window.location.pathname,
+                query_string:window.location.search||null,
+                submitted_at:new Date().toISOString(),
                 legal_firm_name:document.getElementById('legal_firm_name').value.trim(),
                 display_name:document.getElementById('display_name').value.trim(),
                 office_address:document.getElementById('office_address').value.trim(),
@@ -397,7 +400,7 @@
             };
 
             try{
-                var response=await fetch('/api/onboarding',{
+                var response=await fetch('https://sales.truevow.com/api/onboarding',{
                     method:'POST',
                     headers:{'Content-Type':'application/json'},
                     body:JSON.stringify(formData)
@@ -410,8 +413,9 @@
                     messageDiv.innerHTML='<h3 style="color:#10B981">Onboarding form received.</h3><p>We\'ll review your setup details and send you the onboarding call link to schedule your 30-minute session.</p><p>Benjamin is activated only after onboarding, script review, calendar/routing configuration, and a successful test call.</p>';
                     form.style.display='none';
                 }else{
-                    var errorData=await response.json();
-                    if(response.status===409||(errorData.message&&errorData.message.includes('duplicate'))){
+                    var errorData={};
+                    try{errorData=await response.json();}catch(_){errorData={message:'Submission failed'};}
+                    if(response.status===409||(errorData.message&&errorData.message.includes('already exists'))){
                         messageDiv.style.display='block';
                         messageDiv.style.background='rgba(245,158,11,0.1)';
                         messageDiv.style.border='2px solid #F59E0B';
