@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /marketing/
+Allow: /legal/
+Allow: /assets/
+Allow: /widgets/
+Disallow: /demo/
+Disallow: /portal/
+Disallow: /archive/
+Disallow: /admin/
+Disallow: /legacy/
+Disallow: /webchat-integration/
+Disallow: /components/
+Disallow: /scripts/
+Disallow: /rules/
+Disallow: /js/
+
+Sitemap: https://truevow.com/sitemap.xml
