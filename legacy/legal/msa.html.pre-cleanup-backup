@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -169,6 +169,8 @@
             <a href="/marketing/index.html" style="color: #333; text-decoration: none; font-size: 16px; font-weight: 500; transition: color 0.3s;" onmouseover="this.style.color='#0A2463'" onmouseout="this.style.color='#333'">Home</a>
             <a href="/marketing/how-it-works.html" style="color: #333; text-decoration: none; font-size: 16px; font-weight: 500; transition: color 0.3s;" onmouseover="this.style.color='#0A2463'" onmouseout="this.style.color='#333'">How It Works</a>
             <a href="/marketing/pricing.html" style="color: #333; text-decoration: none; font-size: 16px; font-weight: 500; transition: color 0.3s;" onmouseover="this.style.color='#0A2463'" onmouseout="this.style.color='#333'">Pricing</a>
+            <a href="/marketing/county-cap.html" style="color: #333; text-decoration: none; font-size: 16px; font-weight: 500; transition: color 0.3s;" onmouseover="this.style.color='#0A2463'" onmouseout="this.style.color='#333'">33% Cap</a>
+            <a href="/marketing/profitability.html" style="color: #333; text-decoration: none; font-size: 16px; font-weight: 500; transition: color 0.3s;" onmouseover="this.style.color='#0A2463'" onmouseout="this.style.color='#333'">ROI</a>
         </div>
         <a href="/marketing/trial.html" style="margin-left: auto; background: #0A2463; color: white; padding: 12px 28px; border-radius: 8px; font-size: 16px; font-weight: 600; text-decoration: none; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px;" onmouseover="this.style.background='#0D2F7E'" onmouseout="this.style.background='#0A2463'">
             Apply Now →
@@ -179,8 +181,8 @@
 <div class="container">
     
     <h1>Master Services Agreement</h1>
-    <p class="version-line"><strong>Version 4.0</strong> — Effective June 25, 2026</p>
-    <p class="last-updated">Last Updated: June 25, 2026</p>
+    <p class="version-line"><strong>Version 3.0</strong> — Effective November 4, 2025</p>
+    <p class="last-updated">Last Updated: November 4, 2025 | Incorporating 86 Best-Practice Improvements</p>
     
     <div class="warning-box">
         <p style="margin: 0; font-weight: 700; margin-bottom: 12px;">⚠️ IMPORTANT LEGAL AGREEMENT</p>
@@ -190,7 +192,7 @@
     <!-- RECITALS -->
     <div class="recitals">
         <h3>RECITALS</h3>
-        <p>WHEREAS, <strong>TrueVow Global Tech FZE LLC (UAE)</strong>, a limited liability company organized under the laws of the United Arab Emirates, with its registered office at Dubai South, Dubai, UAE ("Provider" or "TrueVow"), offers proprietary technology services for legal intake automation, case workflow support, and settlement data visualization;</p>
+        <p>WHEREAS, <strong>TrueVow Global Tech FZE LLC (UAE)</strong>, a limited liability company organized under the laws of the United Arab Emirates, with its registered office at Dubai South, Dubai, UAE ("Provider" or "TrueVow"), offers proprietary technology services for legal intake automation, document assembly, and settlement data visualization;</p>
         
         <p>WHEREAS, <strong>TrueVow Global Technologies Holdings Ltd. (Nevis)</strong> owns all intellectual property rights in and to the Services and has granted Provider an exclusive, worldwide license to commercialize such intellectual property;</p>
         
@@ -206,11 +208,11 @@
     
     <p><strong>1.1 "Agreement"</strong> means this Master Services Agreement, together with all Order Forms, Schedules, and the incorporated Terms of Service.</p>
     
-    <p><strong>1.2 "Ancillary ML Tools"</strong> means third-party software components, libraries, APIs, or microservices used to support delivery of the Services, including for speech-to-text transcription (Fast Whisper, DeepGram), text-to-speech synthesis (ElevenLabs, Cartesia), voice activity detection (Silero VAD), authentication flows (OAuth providers), database operations (Supabase, Redis), messaging, infrastructure, and system monitoring. Data handling for such tools is governed by vendor terms, security controls, and TrueVow's configuration.</p>
+    <p><strong>1.2 "Ancillary ML Tools"</strong> means third-party software components, libraries, APIs, or microservices that employ machine learning, statistical models, heuristic algorithms, or rule-based automation <strong>exclusively for non-legal, operational, infrastructural, or developmental purposes</strong>, including but not limited to speech-to-text transcription (Fast Whisper, DeepGram), text-to-speech synthesis (ElevenLabs, Cartesia), voice activity detection (Silero VAD), authentication flows (OAuth providers), database operations (Supabase, Redis), and system monitoring.</p>
     
     <p><strong>1.3 "Authorized User"</strong> means any attorney, paralegal, or staff member authorized by Customer to access the Services.</p>
     
-    <p><strong>1.4 "Benjamin"</strong> means TrueVow's controlled, template-based intake automation that follows firm-approved intake paths, routing rules, and configuration.</p>
+    <p><strong>1.4 "Benjamin"</strong> means the deterministic, Finite State Machine (FSM)-based intake automation engine.</p>
     
     <p><strong>1.5 "Booking"</strong> means a client consultation scheduled through TrueVow Intake™.</p>
     
@@ -218,20 +220,21 @@
     
     <p><strong>1.7 "Confidential Information"</strong> means any non-public information disclosed by one party to the other.</p>
     
-    <p><strong>1.8 "Core Logic"</strong> means TrueVow's controlled, template-based workflow architecture that powers intake routing, qualification, validation rules, and settlement data visualization, together with limited third-party processing for speech, messaging, infrastructure, and operational support. The Services follow firm-approved intake paths and configuration and are not designed to provide legal advice or make attorney judgment calls.</p>
+    <p><strong>1.8 "Core Logic"</strong> means the deterministic, rule-based, finite-state machine (FSM) architecture that powers TrueVow's legal intake qualification, document assembly, and settlement data visualization. Core Logic <strong>does not employ generative artificial intelligence, large language models (LLMs), probabilistic inference engines, or machine learning models</strong> for legal decision-making, case assessment, or document content generation.</p>
     
     <p><strong>1.9 "Customer Data"</strong> means all data input, uploaded, or transmitted by Customer through the Services.</p>
     
     <p><strong>1.10 "Effective Date"</strong> means the date Customer first accesses the Services or the date of execution, whichever is earlier.</p>
     
-
+    <p><strong>1.11 "Founding Member"</strong> means a Customer who: (i) is in good standing (no suspension or breach); (ii) has exhausted the 11 free bookings; (iii) has paid for ≥1 booking at standard rate; (iv) is manually approved by TrueVow.</p>
+    
     <p><strong>1.12 "Order Form"</strong> means a written or electronic order specifying Services, pricing, and term, executed by both parties.</p>
     
     <p><strong>1.13 "PE" or "Permanent Establishment"</strong> has the meaning ascribed in the OECD Model Tax Convention and the U.S.–UAE Income-Tax Treaty.</p>
     
     <p><strong>1.14 "Protected Data"</strong> means any data input into the Services that constitutes PII, PHI, or is covered by the attorney-client privilege, work product doctrine, or other professional confidentiality rules.</p>
     
-    <p><strong>1.15 "Services"</strong> means TrueVow INTAKE, LEVERAGE, and SETTLE, together with related features (including VERIFY compliance certificates) and any additional modules specified in an Order Form.</p>
+    <p><strong>1.15 "Services"</strong> means TrueVow Intake™, Draft™, Settle™, Verify™, Connect™, and any future modules as specified in an Order Form.</p>
     
     <p><strong>1.16 "SLA"</strong> means the Service Level Agreement set forth in Schedule A.</p>
     
@@ -241,7 +244,7 @@
     
     <p><strong>1.19 "U.S. Person"</strong> means any natural or legal person subject to U.S. federal income-tax jurisdiction.</p>
     
-    <p><strong>1.20 "Controlled Data Handling"</strong> means TrueVow's approach of applying firm-configured retention, structured records, and vendor-governed processing, and limiting access to and storage of Protected Data to what is reasonably necessary to provide the Services.</p>
+    <p><strong>1.20 "Zero-Knowledge Architecture"</strong> means the technical design warranted by Provider that minimizes the Provider's access to or storage of Protected Data in a readable format, processing data locally or in ephemeral environments.</p>
     
     <p><strong>1.21 Interpretation.</strong> Headings are for convenience only. "Including" means "including without limitation." Customer acknowledges and covenants that all obligations, representations, warranties, indemnities, and limitations of liability set forth in this Agreement shall <strong>survive the termination or expiration of this Agreement to the maximum extent permitted by Swiss law</strong>, and any such survival shall be perpetual unless explicitly stated otherwise herein.</p>
     
@@ -279,52 +282,74 @@
     </div>
     
     <p><strong>Customer Acknowledgments:</strong></p>
-    <p>Customer expressly acknowledges that TrueVow provides controlled, template-based intake workflows with deterministic routing, validation rules, and limited third-party processing for speech, messaging, infrastructure, and operational support. The Services follow firm-approved intake paths and configuration and are not designed to provide legal advice or make attorney judgment calls.</p>
+    <p>Customer expressly acknowledges that TrueVow's <strong>Core Logic operates via deterministic, rule-based finite-state machines</strong> and <strong>does not employ generative AI, large language models, or probabilistic inference</strong> for legal qualification, case assessment, or document content generation.</p>
     
-    <p>Customer further acknowledges that the Services rely on <strong>Ancillary ML Tools</strong> (e.g., Fast Whisper, Silero VAD, ElevenLabs, OAuth providers, database systems) for functions such as speech processing, messaging, infrastructure, and operational support, and that data handling for such tools is governed by vendor terms, security controls, and TrueVow's configuration.</p>
+    <p>Customer further acknowledges that <strong>Ancillary ML Tools</strong> (e.g., Fast Whisper, Silero VAD, ElevenLabs, OAuth providers, database systems) are used <strong>solely for non-legal, operational purposes</strong> and <strong>do not influence legal qualification, document content, or case strategy</strong>.</p>
     
     <h3>3.1 Services Provided</h3>
     
     <p>Provider shall deliver the following services to Customer:</p>
     
-    <p><strong>(a) TrueVow INTAKE</strong></p>
+    <p><strong>(a) TrueVow Intake™</strong></p>
     <ul>
-        <li>When enabled and available, answers routed calls and follows a firm-approved intake path</li>
-        <li>Template-based qualification using firm-approved intake paths and configuration</li>
+        <li>24/7/365 live phone answering by trained intake specialists</li>
+        <li>Deterministic FSM-based qualification (no AI/ML in decision logic)</li>
         <li>Calendar integration and consultation booking</li>
         <li>Bilingual support (English/Spanish)</li>
         <li>SMS/email confirmation to qualified leads</li>
-        <li>Real-time dashboard notifications and structured intake records</li>
+        <li>Real-time dashboard notifications</li>
     </ul>
     
-    <p><strong>(b) TrueVow LEVERAGE</strong></p>
+    <p><strong>(b) TrueVow Draft™</strong></p>
     <ul>
-        <li>Case workflow support: damages calculation, deadline and statute tracking, and structured case records</li>
-        <li>Optional pre-send review of demand figures and case data</li>
-        <li>Available standalone or, with an active INTAKE subscription, at the ecosystem price with structured data flowing between products</li>
-        <li>Outputs are advisory only; the attorney remains responsible for independent review and verification</li>
+        <li>Client-side compliance validation tool</li>
+        <li>Validates completed documents against attorney-configured rules</li>
+        <li>Works with ANY document format (Word, PDF, Google Docs, etc.)</li>
+        <li>Zero-knowledge architecture (document never leaves attorney's device)</li>
+        <li>Required fields validation (statute of limitations, venue, jurisdiction)</li>
+        <li>Local rule compliance checks</li>
+        <li>Citation format verification</li>
+        <li>Missing critical factors detection</li>
+        <li>Pre-filing checklist (red/yellow/green flags)</li>
     </ul>
+    <div class="info-box">
+        <h4>📋 How DRAFT Works</h4>
+        <p><strong>Step 1:</strong> Attorney prepares document in preferred tool (Word, Google Docs, etc.)</p>
+        <p><strong>Step 2:</strong> Attorney runs DRAFT compliance validator (browser extension or desktop app)</p>
+        <p><strong>Step 3:</strong> DRAFT validates document locally against configured rules</p>
+        <p><strong>Step 4:</strong> DRAFT returns validation results (red/yellow/green flags)</p>
+        <p><strong>Step 5:</strong> Attorney independently verifies all validation results and fixes any issues</p>
+        <p><strong>Step 6:</strong> Attorney files document</p>
+        <p><strong>Important:</strong> DRAFT does NOT require attorneys to use its UI/UX for document creation. Attorneys use their preferred tools and DRAFT only for compliance validation.</p>
+    </div>
     
-    <p><strong>(c) TrueVow SETTLE</strong></p>
+    <p><strong>(c) TrueVow Settle™</strong></p>
     <ul>
-        <li>Historical and aggregated settlement data visualization</li>
+        <li>Historical settlement data visualization</li>
         <li>Jurisdiction-specific insights</li>
         <li>Injury type and case value filters</li>
-        <li>Data derived from public court records and anonymized contributions</li>
-        <li>Descriptive statistics only — no predictive modeling, case valuation, or legal advice</li>
-        <li>Designed with reference to ABA Model Rule 1.6, HIPAA, and applicable antitrust and state bar guidance</li>
-        <li>Optional OpenTimestamps blockchain timestamp (VERIFY) for each contribution</li>
+        <li>Data derived exclusively from public court records and anonymized contributions</li>
+        <li>No predictive modeling or case valuation</li>
+        <li>Compliance with ABA Model Rule 1.6, HIPAA, DOJ 2023 Antitrust Guidelines, and state bar ethics opinions</li>
+        <li>Blockchain verification (OpenTimestamps) for each contribution</li>
     </ul>
     
-    <p><strong>(d) TrueVow VERIFY</strong></p>
+    <p><strong>(d) TrueVow Verify™</strong></p>
     <ul>
-        <li>Blockchain-anchored (OpenTimestamps) compliance certificates</li>
-        <li>Cryptographic timestamp and integrity proof for covered actions</li>
+        <li>Blockchain-anchored compliance certificates</li>
+        <li>OpenTimestamps proof of zero-knowledge architecture</li>
         <li>Immutable audit trail for regulatory compliance</li>
         <li>Shareable verification URLs</li>
     </ul>
     
-
+    <p><strong>(e) TrueVow Connect™</strong></p>
+    <ul>
+        <li>Professional referral network for attorneys and medical providers</li>
+        <li>Directory/platform services only ("mere conduit")</li>
+        <li>Pre-clearance required from state bars before launch (e.g., FL Bar Ethics Opinion 24-1)</li>
+        <li>Compliance with ABA Model Rules 1.5(e), 5.4, 7.2(b), 1.7, 1.6, 5.5</li>
+        <li>HIPAA compliance for medical provider referrals (BAA required if PHI shared)</li>
+    </ul>
     
     <h3>3.2 Service Delivery Standards (Subject to Limitations)</h3>
     
@@ -333,8 +358,8 @@
         <li>Maintain 99.5% uptime <strong>(excluding all events listed in Section 3.2(b))</strong></li>
         <li>Answer inbound calls within 30 seconds (90th percentile) <strong>(best efforts only)</strong></li>
         <li>Complete intake qualification within 10 minutes average <strong>(no guarantee)</strong></li>
-        <li>Deliver qualified intake records to Customer dashboard within 60 seconds <strong>(subject to network latency)</strong></li>
-        <li>Provide technical support via email and chat during published support hours <strong>(best efforts only)</strong></li>
+        <li>Deliver Qualified Bookings to Customer dashboard within 60 seconds <strong>(subject to network latency)</strong></li>
+        <li>Provide 24/7 technical support via email and chat <strong>(best efforts only)</strong></li>
         <li>Conduct scheduled maintenance during non-peak hours (2-6 AM ET) with 48-hour notice <strong>(when feasible)</strong></li>
     </ul>
     
@@ -379,28 +404,41 @@
         <li>Guarantee any specific revenue, case outcome, or business result</li>
     </ul>
     
-    <p><strong>Call Handling:</strong> Call duration, handling time, and outcomes vary by matter, caller, and configuration. Provider does not promise any specific call duration, handling time, or qualification time.</p>
+    <p><strong>Average Call Duration:</strong> Intake calls average <strong>7.4 minutes</strong>; no 90-second qualification is promised.</p>
     
     <p><strong>Fair-Use Caps:</strong> All "unlimited" features are subject to fair-use caps (currently 5,000 telephony minutes per seat per month) and computational resource constraints. Provider reserves the right to adjust these limits or impose overage fees (at pass-through vendor cost plus 10%) upon 30 days' notice.</p>
     
-    <!-- Section 4: Products & Plans -->
-    <h2>4. Products &amp; Plans</h2>
+    <!-- Section 4: Service Tiers -->
+    <h2>4. Service Tiers</h2>
     
-    <h3>4.1 INTAKE Plans (Subscription)</h3>
+    <h3>4.1 Predictable Tier (Pay-Per-Use)</h3>
     
-    <p>INTAKE is offered as a monthly subscription in three plans &mdash; Solo, Growth, and Team &mdash; each including a monthly allotment of routed calls or minutes as set out in Schedule B and on the current Pricing page. All INTAKE plans keep intake records visible and do not use public per-lead unlock fees or per-lead billing.</p>
+    <p>A pay-per-use tier where Customer incurs fees for Qualified Bookings, drafted documents, and settlement reports.</p>
     
-    <h3>4.2 LEVERAGE</h3>
+    <p><strong>Included:</strong></p>
+    <ul>
+        <li>Free website chatbot for lead capture</li>
+        <li>TrueVow Verify™ blockchain certificates</li>
+        <li>TrueVow Connect™ access</li>
+    </ul>
     
-    <p>LEVERAGE is offered as a monthly subscription, available standalone or at the ecosystem price with an active INTAKE subscription.</p>
+    <p><strong>Optional Add-On:</strong></p>
+    <ul>
+        <li>Priority Onboarding (separate fee)</li>
+    </ul>
     
-    <h3>4.3 SETTLE</h3>
+    <h3>4.2 Growth Tier (Unlimited Subscription)</h3>
     
-    <p>SETTLE is available per report or as a monthly SETTLE Pro subscription (which requires an active INTAKE or LEVERAGE subscription), as set out in Section 9 and on the current Pricing page.</p>
+    <p>A subscription tier providing unlimited access to TrueVow Intake™, Draft™, Settle™, and Connect™ for a fixed monthly fee, subject to fair use policy.</p>
     
-    <h3>4.4 Order Form Controls</h3>
-    
-    <p>The specific products, plan, included allotments, fees, and term applicable to Customer are set out in the Order Form or plan terms selected in the customer portal, which control over any summary in this Agreement.</p>
+    <p><strong>Included:</strong></p>
+    <ul>
+        <li>Custom intake scripts</li>
+        <li>Dedicated compliance onboarding</li>
+        <li>Bar audit defense support</li>
+        <li>Priority Onboarding</li>
+        <li>TrueVow Verify™ blockchain certificates</li>
+    </ul>
     
     <!-- Section 5: Customer Obligations -->
     <h2>5. Customer Obligations</h2>
@@ -420,11 +458,11 @@
     <ul>
         <li>Provide accurate practice area, jurisdiction, and intake criteria</li>
         <li>Maintain active calendar integration for appointment booking</li>
-        <li>Respond to qualified intake records and booked consultations within 24 hours</li>
+        <li>Respond to Qualified Bookings within 24 hours</li>
         <li>Review and customize document templates</li>
         <li>Maintain current bar licenses and good standing</li>
         <li>Comply with all applicable rules of professional conduct</li>
-        <li>Not upload Prohibited Data (special-category personal data beyond standard intake fields)</li>
+        <li>Not upload Prohibited Data (see Schedule C of Terms of Service)</li>
     </ul>
     
     <h3>5.2 Authorized Users</h3>
@@ -446,7 +484,7 @@
     
     <p>Customer shall not:</p>
     <ul>
-        <li><strong>Reverse-engineer</strong> the Services or underlying system architecture</li>
+        <li><strong>Reverse-engineer</strong> FSM logic or system architecture</li>
         <li><strong>Game or spoof</strong> the qualification logic</li>
         <li>Resell or sublicense the Services without authorization</li>
         <li>Upload <strong>CORE (special-category) personal data</strong> beyond standard intake fields (e.g., handwritten medical charts)</li>
@@ -467,9 +505,9 @@
         <p style="margin: 0;">The Parties acknowledge and agree that this section is intended to provide a comprehensive allocation of rights, responsibilities, disclaimers, and obligations. The Parties further agree that repetition and emphasis of certain provisions are intentional to avoid ambiguity or limitation of interpretation by any court or tribunal.</p>
     </div>
     
-    <h3>6.1 Default Minimal-Retention Policy</h3>
+    <h3>6.1 Default Zero-Retention Policy</h3>
     
-    <p>By default, and subject to Customer's configured retention settings and vendor-governed processing, Provider does not retain:</p>
+    <p>By default, Provider does NOT store:</p>
     <ul>
         <li>Call audio recordings</li>
         <li>Transcripts of conversations</li>
@@ -496,7 +534,7 @@
         </ul>
     </div>
     
-    <h3>6.3 Ephemeral Keyword Cache</h3>
+    <h3>6.3 Zero-Knowledge Cache</h3>
     
     <p>For performance, Provider may temporarily cache keywords or phrases using:</p>
     <ul>
@@ -555,10 +593,10 @@
     
     <p>All intellectual property in the Services is owned by <strong>TrueVow Global Technologies Holdings Ltd. (Nevis)</strong> and licensed exclusively to Provider. This includes:</p>
     <ul>
-        <li><strong>Workflow logic, templates, and algorithms</strong></li>
+        <li><strong>Finite-state-machine (FSM) logic and algorithms</strong></li>
         <li><strong>Keyword dictionaries and regex patterns</strong></li>
         <li><strong>UI, design, and branding</strong></li>
-        <li><strong>Settlement data-visualization and data-analysis tools</strong></li>
+        <li><strong>Settlement-prediction models and data-analysis tools</strong></li>
         <li><strong>Aggregated Statistics</strong></li>
         <li><strong>Any code, architecture, or trade secrets</strong> used to operate the Services</li>
     </ul>
@@ -612,45 +650,75 @@
     <!-- Section 9: Pricing & Payments -->
     <h2>9. Pricing, Payments & Fees</h2>
     
-    <h3>9.1 Fees</h3>
+    <h3>9.1 Fee Schedule</h3>
     
-    <p>Customer shall pay the fees for the products and plan selected in the Order Form or customer portal. Current plans and pricing are published on the <a href="/marketing/pricing.html" style="color: #0A2463;">Pricing page</a>. A summary of current pricing is provided below for convenience; the Order Form or plan terms control.</p>
+    <p>Customer shall pay Provider the following fees:</p>
     
     <table>
         <thead>
             <tr>
-                <th>Product</th>
-                <th>Plan</th>
+                <th>Service</th>
+                <th>Unit</th>
                 <th>Price (USD)</th>
+                <th>Billing Trigger</th>
             </tr>
         </thead>
         <tbody>
-            <tr><td><strong>INTAKE</strong></td><td>Solo</td><td>$499 / month</td></tr>
-            <tr><td><strong>INTAKE</strong></td><td>Growth</td><td>$1,299 / month</td></tr>
-            <tr><td><strong>INTAKE</strong></td><td>Team</td><td>$1,999 / month</td></tr>
-            <tr><td><strong>LEVERAGE</strong></td><td>With active INTAKE (ecosystem)</td><td>$99 / month</td></tr>
-            <tr><td><strong>LEVERAGE</strong></td><td>Standalone</td><td>$349 / month</td></tr>
-            <tr><td><strong>SETTLE</strong></td><td>Per report</td><td>$79 / report</td></tr>
-            <tr><td><strong>SETTLE</strong></td><td>Pro (requires active INTAKE or LEVERAGE)</td><td>$299 / month</td></tr>
+            <tr>
+                <td><strong>Intake™</strong></td>
+                <td>Per Qualified Booking</td>
+                <td>$29.00</td>
+                <td>Upon delivery to dashboard</td>
+            </tr>
+            <tr>
+                <td><strong>Settle™</strong></td>
+                <td>Per Report</td>
+                <td>$49.00</td>
+                <td>Upon report generation</td>
+            </tr>
+            <tr>
+                <td><strong>Draft™</strong></td>
+                <td>% of Customer's list price</td>
+                <td>19%</td>
+                <td>Upon document delivery</td>
+            </tr>
+            <tr>
+                <td><strong>Verify™</strong></td>
+                <td>Per Certificate</td>
+                <td>$15.00</td>
+                <td>Upon blockchain anchor</td>
+            </tr>
         </tbody>
     </table>
     
-    <p>All INTAKE plans keep intake records visible and do not use public per-lead unlock fees or per-lead billing. Included allotments, overage handling, minimum terms, and cancellation rights are described in the applicable plan terms or Order Form. Provider may change pricing prospectively on reasonable notice; changes do not affect a current paid term already in effect.</p>
+    <h3>9.2 What is NOT Charged</h3>
     
-    <h3>9.2 What is NOT Separately Charged</h3>
-    
-    <p>Within an active INTAKE subscription, Provider does not apply separate per-lead fees for:</p>
+    <p>Provider does NOT charge for:</p>
     <ul>
         <li>Unqualified calls (wrong practice area, out-of-jurisdiction, spam, etc.)</li>
         <li>System downtime or technical failures</li>
-        <li>Duplicate records or errors</li>
+        <li>Customer-initiated cancellations before service delivery</li>
+        <li>Duplicates or errors</li>
+        <li>Duplicate bookings (same caller within 30 days)</li>
     </ul>
-    <p>Subscription fees apply regardless of usage up to the plan allotment; usage beyond the plan allotment is handled as set out in the plan terms or Order Form.</p>
+    
+    <h3>9.3 Qualified Booking Criteria</h3>
+    
+    <p>A Booking is "Qualified" only if ALL of the following are met:</p>
+    <ol>
+        <li>Caller answers <strong>≥ 8 of 16</strong> pre-defined qualification questions</li>
+        <li>Caller provides valid consent to book consultation</li>
+        <li>Valid contact information (name, phone, email) provided</li>
+        <li>Appointment confirmed via SMS</li>
+        <li>Incident within statute of limitations for Customer's jurisdiction</li>
+        <li>Not a duplicate of existing lead within <strong>30 days</strong></li>
+        <li>Practice area matches Customer's designated practice areas</li>
+    </ol>
     
     <h3>9.4 Invoicing and Payment</h3>
     
     <ul>
-        <li><strong>Billing Cycle:</strong> Monthly, in advance for subscriptions; per-report and overage fees charged upon the chargeable event</li>
+        <li><strong>Billing Cycle:</strong> Monthly, in arrears (Predictable Tier) or in advance (Growth Tier)</li>
         <li><strong>Invoice Date:</strong> 1st business day of each month for prior month's usage</li>
         <li><strong>Payment Terms:</strong> Net 15 days from invoice date</li>
         <li><strong>Payment Method:</strong> ACH, wire transfer, or credit card</li>
@@ -675,17 +743,54 @@
     <ol>
         <li><strong>Systematic technical failure</strong> (multiple missed calls/booking errors)</li>
         <li><strong>Billing error or duplicate charge</strong></li>
-        <li><strong>Charge applied in error or outside the agreed plan terms</strong></li>
+        <li><strong>Non-qualified booking incorrectly charged</strong></li>
     </ol>
     
     <h3>9.8 Taxes</h3>
     
     <p>All fees are exclusive of taxes. Customer is responsible for all sales, use, VAT, GST, or similar taxes (excluding Provider's net income taxes).</p>
     
-    <!-- Section 10: Reserved -->
-    <h2>10. Reserved</h2>
+    <!-- Section 10: Founding Member Program -->
+    <h2>10. Founding Member Program</h2>
     
-    <p>This section is intentionally reserved.</p>
+    <h3>10.1 Founding Member Definition</h3>
+    
+    <p>A Customer qualifies as a "Founding Member" if ALL of the following criteria are met:</p>
+    <ol>
+        <li>Customer is in <strong>good standing</strong> (no suspension or breach)</li>
+        <li>Customer has <strong>exhausted the 11 free bookings</strong></li>
+        <li>Customer has <strong>paid for ≥ 1 booking at standard rate</strong></li>
+        <li>Customer is <strong>manually approved</strong> by TrueVow</li>
+    </ol>
+    
+    <h3>10.2 Founding Member Pricing Lock</h3>
+    
+    <p><strong>Rate:</strong> $25 per Qualified Booking (vs. standard $29)</p>
+    <p><strong>Lock Period:</strong> Until July 4, 2026 (minimum), may be extended at Provider's discretion</p>
+    <p><strong>Free Monthly Bookings:</strong> 3 Qualified Bookings per month</p>
+    
+    <h3>10.3 Founding Member Activity Gates</h3>
+    
+    <p>To retain 3 free monthly bookings and $25 rate, Customer must satisfy <strong>ONE</strong> of the following each month:</p>
+    
+    <ol>
+        <li>Generate <strong>≥ 1 paid booking</strong>, OR</li>
+        <li>Submit <strong>≥ 1 settlement data point</strong> to TrueVow SETTLE (once launched), OR</li>
+        <li>Generate <strong>≥ 3 qualified attorney referrals</strong> per year</li>
+    </ol>
+    
+    <div class="warning-box">
+        <p style="margin: 0; font-weight: 700; margin-bottom: 12px;">⚠️ ACTIVITY GATE FAILURE:</p>
+        <p style="margin: 0;">3 consecutive months of failure → <strong>permanent loss</strong> of free bookings + $25 rate reverts to standard $29 after 12-month grace period. <strong>Status cannot be reinstated.</strong></p>
+    </div>
+    
+    <h3>10.4 Free Bookings (Standard - All Customers)</h3>
+    
+    <ul>
+        <li><strong>Quantity:</strong> 11 free Qualified Bookings for new customers</li>
+        <li><strong>Expiry:</strong> Must be used within 12 months</li>
+        <li><strong>Restrictions:</strong> Non-transferable, non-refundable, non-cashable</li>
+    </ul>
     
     <!-- Section 11: Warranties -->
     <h2>11. Warranties & Disclaimers</h2>
@@ -696,9 +801,9 @@
     </div>
     
     <p><strong>Customer Acknowledgments:</strong></p>
-    <p>Customer expressly acknowledges that TrueVow provides controlled, template-based intake workflows with deterministic routing, validation rules, and limited third-party processing for speech, messaging, infrastructure, and operational support, and is not designed to provide legal advice or make attorney judgment calls.</p>
+    <p>Customer expressly acknowledges that TrueVow's <strong>Core Logic operates via deterministic, rule-based finite-state machines</strong> and <strong>does not employ generative AI, large language models, or probabilistic inference</strong>.</p>
     
-    <p>Customer further acknowledges that the Services rely on <strong>Ancillary ML Tools</strong> for functions such as speech processing, messaging, infrastructure, and operational support, and that data handling for such tools is governed by vendor terms, security controls, and TrueVow's configuration.</p>
+    <p>Customer further acknowledges that <strong>Ancillary ML Tools</strong> are used <strong>solely for non-legal, operational purposes</strong> and <strong>do not influence legal qualification, document content, or case strategy</strong>.</p>
     
     <p><strong>Full Responsibility Transfer:</strong> Customer agrees to assume full responsibility for all reliance, decisions, or legal actions based on outputs from the Services.</p>
     
@@ -739,10 +844,55 @@
         <li><strong>Attorney Responsibility:</strong> Customer retains full professional responsibility to exercise independent professional judgment in settlement negotiations. SETTLE is a tool to inform judgment, not replace it.</li>
     </ul>
     
-    <h3>11.4.2 LEVERAGE-Specific Disclaimers</h3>
-    <p><strong>Advisory Only:</strong> LEVERAGE outputs (including damages calculations, deadline and statute tracking, and demand or case-data checks) are <strong>advisory only</strong> and do NOT guarantee accuracy, completeness, legal sufficiency, or compliance.</p>
+    <h3>11.4.2 CONNECT-Specific Disclaimers</h3>
     
-    <p><strong>Attorney Responsibility:</strong> Customer bears the <strong>non-delegable duty</strong> to independently verify all outputs, exercise independent professional judgment, and confirm all dates, figures, and deadlines before relying on them. Reliance on LEVERAGE outputs without independent verification may breach the attorney's duty of competence (ABA Model Rule 1.1).</p>
+    <h3>11.4.3 DRAFT-Specific Disclaimers</h3>
+    <p><strong>Validation Results Are Advisory Only:</strong> DRAFT validation results are <strong>advisory only</strong> and do NOT guarantee:</p>
+    <ul>
+        <li>Document accuracy or completeness</li>
+        <li>Legal sufficiency or compliance</li>
+        <li>Citation accuracy or currency</li>
+        <li>Local rule compliance</li>
+        <li>Court acceptance or filing success</li>
+    </ul>
+    
+    <p><strong>Attorney Responsibility:</strong> Customer bears the <strong>non-delegable duty</strong> to:</p>
+    <ul>
+        <li>Independently verify all validation results before filing</li>
+        <li>Exercise independent professional judgment on all validation results</li>
+        <li>Review, edit, and certify the accuracy, completeness, and appropriateness of every document before filing</li>
+        <li>Run citation-check software (e.g., Lexis BriefCheck) independently</li>
+        <li>Independently verify local rule compliance</li>
+        <li>Not rely on validation results as a substitute for professional judgment</li>
+    </ul>
+    
+    <p><strong>Zero-Knowledge Architecture:</strong> DRAFT runs locally on Customer's device (zero-knowledge architecture). Customer's document never leaves Customer's system. Validation rules are synced to Customer's device (encrypted, one-time), and validation runs entirely locally. Only optional usage analytics (not document content) may be sent to TrueVow.</p>
+    
+    <p><strong>No Warranty:</strong> TrueVow makes NO warranty, representation, or guarantee regarding:</p>
+    <ul>
+        <li>Validation accuracy or completeness</li>
+        <li>Detection of all missing critical factors</li>
+        <li>Citation format or accuracy</li>
+        <li>Local rule compliance</li>
+        <li>Court acceptance or filing success</li>
+    </ul>
+    
+    <div class="warning-box">
+        <h4>⚠️ CRITICAL WARNING</h4>
+        <p><strong>Reliance on DRAFT™ validation results without independent verification is a breach of Customer's ethical duty of competence (ABA Model Rule 1.1).</strong> Validation results are advisory only and must be independently verified by Customer before filing.</p>
+    </div>
+    
+    <p><strong>With respect to TrueVow CONNECT™ specifically:</strong></p>
+    <ul>
+        <li><strong>No Fee Split Participation:</strong> Provider does NOT participate in or facilitate fee splits, fee sharing, or referral fee arrangements. Provider charges flat fees for platform services only, not a percentage of legal fees.</li>
+        <li><strong>No Legal Advice:</strong> CONNECT does NOT provide legal advice, case evaluation, or case acceptance decisions. CONNECT does NOT recommend specific attorneys or medical providers to clients.</li>
+        <li><strong>No Guarantees:</strong> Provider does NOT guarantee referral acceptance, fee payment, case outcomes, attorney/provider quality, or conflicts checks. Provider does NOT guarantee that referrals will comply with state bar rules.</li>
+        <li><strong>No Conflict Analysis:</strong> Provider does NOT conduct conflicts checks or provide conflict analysis. Customer is solely responsible for conducting conflicts checks before referring or accepting referrals.</li>
+        <li><strong>No Client Consent Management:</strong> Provider does NOT obtain client consent on behalf of Customer. Customer is solely responsible for obtaining required client consents and ensuring consents comply with state bar rules.</li>
+        <li><strong>No Compliance Guarantee:</strong> While CONNECT is designed to comply with ABA Model Rules 1.5(e), 5.4, 7.2(b), 1.7, 1.6, 5.5, and HIPAA, Provider does NOT warrant or guarantee that Customer's use of CONNECT will comply with any specific bar rule, ethics opinion, or regulatory requirement in any jurisdiction.</li>
+        <li><strong>Not a Party to Referral Agreements:</strong> Provider is NOT a party to referral agreements between attorneys or between attorneys and medical providers. Provider has no responsibility for fee payment, fee disputes, or referral agreement breaches.</li>
+        <li><strong>Attorney Responsibility:</strong> Customer retains full professional responsibility for all referrals made via CONNECT, including compliance with fee splitting rules, conflicts checks, client consent, HIPAA, and all other bar rules and regulations.</li>
+    </ul>
     
     <h3>11.5 No-Conversion Disclaimer</h3>
     
@@ -801,9 +951,9 @@
     </div>
     
     <p><strong>Customer Acknowledgments:</strong></p>
-    <p>Customer expressly acknowledges that TrueVow provides controlled, template-based intake workflows with deterministic routing, validation rules, and limited third-party processing for speech, messaging, infrastructure, and operational support, and is not designed to provide legal advice or make attorney judgment calls.</p>
+    <p>Customer expressly acknowledges that TrueVow's <strong>Core Logic operates via deterministic, rule-based finite-state machines</strong> and <strong>does not employ generative AI, large language models, or probabilistic inference</strong>.</p>
     
-    <p>Customer further acknowledges that the Services rely on <strong>Ancillary ML Tools</strong> for functions such as speech processing, messaging, infrastructure, and operational support, and that data handling for such tools is governed by vendor terms, security controls, and TrueVow's configuration.</p>
+    <p>Customer further acknowledges that <strong>Ancillary ML Tools</strong> are used <strong>solely for non-legal, operational purposes</strong> and <strong>do not influence legal qualification, document content, or case strategy</strong>.</p>
     
     <p><strong>Preemptive Indemnification Acknowledgment:</strong> Customer indemnifies Provider against all claims, damages, and liabilities arising from Customer's use of the Services, including claims alleging malpractice, compliance failures, or ethical breaches.</p>
     
@@ -827,14 +977,16 @@
         <li>Malpractice, negligence, or ethics violations</li>
         <li>Breach of this Agreement</li>
         <li>Reliance on or use of any output, recommendation, or data provided by the Services</li>
-        <li><strong>Failure to disclose</strong> the use of automation, AI-assisted, or agentic tools to the client where required by ethical rules</li>
+        <li><strong>Failure to disclose</strong> the use of non-legal ML or agentic tools to the client where required by ethical rules</li>
         <li>Violation of law or third-party rights</li>
         <li>Export or sanctions violations</li>
         <li>Bar rules, UPL, conflicts of interest, or recording-consent violations</li>
+        <li>Referrals made through TrueVow CONNECT (including violations of fee splitting, client consent, or UPL rules)</li>
         <li>Contribution of non-anonymized data to TrueVow SETTLE</li>
         <li>Failure to independently verify, review, or validate any output from the Services</li>
         <li><strong>SETTLE-specific violations:</strong> (a) misrepresenting settlement data to clients as predictions or guarantees; (b) inputting confidential client data into SETTLE; (c) filing SETTLE reports with courts or in discovery; (d) reliance on settlement data without independent professional judgment; (e) client complaints about settlement outcomes vs. SETTLE projections; (f) antitrust compliance violations (if Customer uses SETTLE in violation of DOJ 2023 Guidelines, e.g., for price-fixing or collusion); (g) HIPAA violations (if Customer contributes PHI or medical records despite prohibitions); (h) bar complaints alleging violation of ABA Rule 1.6 (if Customer fails to obtain client consent or contributes privileged information)</li>
-        <li><strong>LEVERAGE-specific violations:</strong> (a) relying on LEVERAGE outputs (e.g., damages calculations, deadline or statute tracking, demand or case-data checks) without independent verification; (b) errors, omissions, or inaccuracies in case data, figures, or deadlines; (c) reliance on outputs without independent professional judgment; (d) malpractice claims related to reliance on outputs; (e) breach of ABA Model Rule 1.1 (Competence) from reliance without verification</li>
+        <li><strong>CONNECT-specific violations:</strong> (a) fee-splitting violations (Rule 1.5(e), Rule 7.2(b), Rule 5.4); (b) failure to obtain informed client consent for referrals (where required by state or rule); (c) conflicts of interest with referred attorneys or medical providers; (d) HIPAA violations from sharing PHI without BAA or client consent; (e) referring to disbarred, unlicensed, or uninsured attorneys; (f) Unauthorized Practice of Law (UPL) violations; (g) breach of written referral agreements between attorneys; (h) failure to pay referral fees (if agreed between attorneys); (i) disputes between referring and receiving attorneys or medical providers; (j) reciprocal referral arrangements with medical providers (illegal fee-split with non-lawyer); (k) sharing confidential information without client consent (Rule 1.6 violations); (l) failure to conduct conflicts checks before referring or accepting referrals</li>
+        <li><strong>DRAFT-specific violations:</strong> (a) relying on validation results without independent verification; (b) filing documents with missing critical factors despite validation warnings; (c) errors, omissions, or inaccuracies in validated documents; (d) citation errors or citing overruled/distinguished cases; (e) local rule violations or formatting errors; (f) reliance on validation results without professional judgment; (g) malpractice claims related to document quality or content; (h) court sanctions for document errors or non-compliance; (i) failure to independently verify validation results; (j) failure to exercise independent professional judgment; (k) failure to run citation-check software independently; (l) failure to independently verify local rule compliance; (m) breach of ABA Model Rule 1.1 (Competence) from reliance on validation without verification</li>
     </ul>
     
     <h3>13.3 Multi-Tier Bar-Rules Indemnity</h3>
@@ -1042,15 +1194,21 @@
     
     <p>Customer acknowledges that Provider is not a law firm, does not practice law, and does not provide legal advice. Customer remains solely responsible for compliance with all applicable state bar rules, ABA Model Rules, advertising regulations, conflict-of-interest checks, client-intake standards, and professional-liability requirements.</p>
     
-    <p>Any output from the Services, including LEVERAGE outputs and SETTLE data, is <strong>advisory only</strong> and must be independently verified before use. Outputs do NOT guarantee accuracy, completeness, legal sufficiency, or compliance, and Customer must exercise independent professional judgment before relying on them.</p>
+    <p>Any output from the Services is a <strong>draft suggestion only</strong> and must be independently verified before use. With respect to TrueVow DRAFT™ specifically, validation results are <strong>advisory only</strong> and do NOT guarantee document accuracy, completeness, legal sufficiency, citation accuracy, local rule compliance, or court acceptance. Customer must independently verify all validation results before filing.</p>
     
     <h3>17.14 Survival of Representations</h3>
     
     <p>All representations, warranties, covenants, and obligations contained in this Agreement shall survive execution, delivery, termination, or expiration of this Agreement to the maximum extent permitted by law.</p>
     
-    <h3>17.15 Reserved</h3>
+    <h3>17.15 Partner & Affiliate Programs</h3>
     
-    <p>This subsection is intentionally reserved.</p>
+    <p><strong>Independent Contractors:</strong> Partners and Affiliates are independent contractors, not employees, agents, or representatives of Provider. They have no binding authority.</p>
+    
+    <p><strong>Week-11 Commission Gate:</strong> Commissions are paid only after the referred customer completes the first paid month.</p>
+    
+    <p><strong>Commission Denial:</strong> For fraud, self-referral, or chargeback</p>
+    
+    <p><strong>Tax Reporting:</strong> Form 1099-NEC (U.S.) or Form 1042-S (non-U.S.) for commissions exceeding $600/year</p>
     
     <!-- Section 18: Survival & Blue-Pencil -->
     <h2>18. Survival & Blue-Pencil Authority</h2>
@@ -1130,16 +1288,118 @@
     <!-- Schedules -->
     <h2>SCHEDULE A: Sub-Processors (Living Document)</h2>
     
-    <p>The current, authoritative list of Sub-Processors is the living list maintained at <a href="https://truevow.law/subprocessors" target="_blank" style="color: #0A2463;">https://truevow.law/subprocessors</a>. That page is the <strong>single source of truth</strong> for Sub-Processors and is incorporated into this Schedule by reference. To avoid divergence from the maintained list, this Schedule does not restate a fixed vendor table.</p>
+    <p><strong>URL:</strong> <a href="https://truevow.law/subprocessors" target="_blank" style="color: #0A2463;">https://truevow.law/subprocessors</a><br>
+    <strong>Last Updated:</strong> November 4, 2025</p>
     
-    <p>Sub-Processors are engaged across categories that may include speech processing (speech-to-text and text-to-speech), telephony and messaging, authentication, database and cache, infrastructure and CDN, monitoring and logging, development tooling, and optional storage. The maintained list reflects the providers, functions, and jurisdictions in effect as of its last update date.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Provider</th>
+                <th>Function</th>
+                <th>Jurisdiction</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Speech AI</strong></td>
+                <td>ElevenLabs</td>
+                <td>Neural voice synthesis</td>
+                <td>USA</td>
+            </tr>
+            <tr>
+                <td><strong>Speech AI</strong></td>
+                <td>Cartesia</td>
+                <td>Audio generation</td>
+                <td>USA</td>
+            </tr>
+            <tr>
+                <td><strong>Speech AI</strong></td>
+                <td>DeepGram</td>
+                <td>Speech-to-text</td>
+                <td>USA</td>
+            </tr>
+            <tr>
+                <td><strong>VAD/ASR</strong></td>
+                <td>Silero</td>
+                <td>Voice activity detection</td>
+                <td>USA</td>
+            </tr>
+            <tr>
+                <td><strong>STT</strong></td>
+                <td>Faster-Whisper</td>
+                <td>Accelerated transcription</td>
+                <td>USA</td>
+            </tr>
+            <tr>
+                <td><strong>Auth</strong></td>
+                <td>Auth0/Okta</td>
+                <td>OAuth 2.0, SAML, MFA</td>
+                <td>USA</td>
+            </tr>
+            <tr>
+                <td><strong>Database</strong></td>
+                <td>Supabase</td>
+                <td>Managed PostgreSQL</td>
+                <td>USA</td>
+            </tr>
+            <tr>
+                <td><strong>Database</strong></td>
+                <td>PlanetScale</td>
+                <td>Serverless MySQL</td>
+                <td>USA</td>
+            </tr>
+            <tr>
+                <td><strong>Cache</strong></td>
+                <td>Redis Labs</td>
+                <td>Redis cloud</td>
+                <td>USA</td>
+            </tr>
+            <tr>
+                <td><strong>Workflow</strong></td>
+                <td>n8n</td>
+                <td>Low-code automation</td>
+                <td>Germany/USA</td>
+            </tr>
+            <tr>
+                <td><strong>CDN/Edge</strong></td>
+                <td>Cloudflare</td>
+                <td>CDN, WAF, DNS</td>
+                <td>Global</td>
+            </tr>
+            <tr>
+                <td><strong>Monitoring</strong></td>
+                <td>Sentry</td>
+                <td>Error tracking</td>
+                <td>USA</td>
+            </tr>
+            <tr>
+                <td><strong>Monitoring</strong></td>
+                <td>Datadog</td>
+                <td>Logs, metrics, APM</td>
+                <td>USA</td>
+            </tr>
+            <tr>
+                <td><strong>DevOps</strong></td>
+                <td>GitHub</td>
+                <td>Source code hosting</td>
+                <td>USA</td>
+            </tr>
+            <tr>
+                <td><strong>Storage</strong></td>
+                <td>Backblaze B2</td>
+                <td>Object store (opt-in)</td>
+                <td>USA</td>
+            </tr>
+        </tbody>
+    </table>
     
-    <p><strong>Disclaimer:</strong> Vendors are used to support delivery of the Services, including speech processing, messaging, infrastructure, and operational support, as configured for the applicable plan.</p>
+    <p><strong>Disclaimer:</strong> All vendors used solely for non-legal, operational, or infrastructural purposes. None influence TrueVow's deterministic legal-intake logic.</p>
     
     <p><strong>30-Day Notice:</strong> Provider shall provide 30 days' written notice before adding new Sub-Processors. Customer may object within 15 days.</p>
     
     <!-- Schedule B -->
-    <h2>SCHEDULE B: Plan Allotments &amp; Qualified Booking Criteria</h2>
+    <h2>SCHEDULE B: Qualified Booking Criteria & Founding Member Program</h2>
     
     <h3>B.1 Qualified Booking Criteria</h3>
     
@@ -1155,7 +1415,7 @@
         <li><strong>Practice Area Match:</strong> Matter within Customer's designated practice areas</li>
     </ol>
     
-    <h3>B.2 Records That Do Not Count as Qualified Bookings</h3>
+    <h3>B.2 What Customer Does NOT Pay For</h3>
     
     <ul>
         <li>Spam calls or robocalls</li>
@@ -1166,33 +1426,179 @@
         <li>Duplicate bookings (same caller within 30 days)</li>
     </ul>
     
-    <h3>B.3 INTAKE Plan Allotments</h3>
+    <h3>B.3 Founding Member Pricing Lock</h3>
     
-    <table>
-        <thead>
-            <tr>
-                <th>Plan</th>
-                <th>Monthly Price</th>
-                <th>Included Allotment</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td>Solo</td><td>$499 / month</td><td>40 routed calls or 440 minutes</td></tr>
-            <tr><td>Growth</td><td>$1,299 / month</td><td>100 routed calls or 1,100 minutes</td></tr>
-            <tr><td>Team</td><td>$1,999 / month</td><td>200 routed calls or 2,200 minutes</td></tr>
-        </tbody>
-    </table>
+    <p><strong>Rate:</strong> $25 per Qualified Booking (vs. standard $29)<br>
+    <strong>Lock Period:</strong> Until July 4, 2026 (minimum), may be extended at Provider's discretion</p>
     
-    <p>Overage beyond the included allotment is handled as set out in the applicable plan terms or Order Form. LEVERAGE and SETTLE fees are set out in Section 9.</p>
+    <h3>B.4 Founding Member Activity Gates</h3>
     
-    <!-- Schedule C: Reserved -->
-    <h2>SCHEDULE C: Reserved</h2>
+    <p>To retain 3 free monthly bookings and $25 rate, Customer must satisfy ONE of the following each month:</p>
     
-    <p>This schedule is intentionally reserved.</p>
+    <ol>
+        <li>Generate ≥ 1 paid booking, OR</li>
+        <li>Submit ≥ 1 settlement data point to TrueVow SETTLE, OR</li>
+        <li>Generate ≥ 3 qualified attorney referrals per year</li>
+    </ol>
     
-
+    <p><strong>Failure Consequence:</strong> 3 consecutive months → permanent loss of free bookings + rate reverts to $29 after 12-month grace. Status cannot be reinstated.</p>
     
-
+    <h3>B.5 Free Bookings (Standard)</h3>
+    
+    <ul>
+        <li><strong>Quantity:</strong> 11 free Qualified Bookings for new customers</li>
+        <li><strong>Expiry:</strong> Must be used within 12 months</li>
+        <li><strong>Restrictions:</strong> Non-transferable, non-refundable, non-cashable</li>
+    </ul>
+    
+    <!-- Schedule C -->
+    <h2>SCHEDULE C: Partner & Affiliate Program Rules</h2>
+    
+    <h3>C.1 Independent Contractor Status</h3>
+    
+    <p>Partners and Affiliates are <strong>independent contractors</strong>, not employees, agents, or representatives of Provider.</p>
+    
+    <h3>C.2 No Binding Authority</h3>
+    
+    <p>Partners/Affiliates may NOT:</p>
+    <ul>
+        <li>Negotiate pricing or amend terms</li>
+        <li>Collect payments on Provider's behalf</li>
+        <li>Make binding representations</li>
+        <li>Create obligations for Provider</li>
+    </ul>
+    
+    <h3>C.3 Commission Rules</h3>
+    
+    <p><strong>Payment Trigger:</strong> Week-11 gate — commission paid only after referred customer completes first paid month</p>
+    
+    <p><strong>Denial Triggers:</strong></p>
+    <ul>
+        <li>Fraud or misrepresentation</li>
+        <li>Self-referral</li>
+        <li>Chargeback or payment reversal</li>
+    </ul>
+    
+    <h3>C.4 Tax Reporting</h3>
+    
+    <p><strong>U.S. Partners/Affiliates:</strong> Form 1099-NEC for commissions >$600/year<br>
+    <strong>Non-U.S. Partners/Affiliates:</strong> Form 1042-S for commissions >$600/year</p>
+    
+    <h3>C.5 TrueVow CONNECT Referral Network</h3>
+    
+    <p><strong>Service Definition:</strong> CONNECT is a professional referral network platform that facilitates connections between attorneys (attorney-to-attorney referrals) and between attorneys and medical providers (attorney-to-medical-provider referrals). CONNECT operates as an introductory platform only ("mere conduit").</p>
+    
+    <h4>C.5.1 CONNECT Compliance Framework</h4>
+    
+    <p><strong>ABA Model Rules Compliance:</strong></p>
+    <ul>
+        <li><strong>Rule 1.5(e):</strong> TrueVow does NOT participate in fee division between attorneys. Attorneys are solely responsible for entering into separate, written referral agreements that comply with state bar rules.</li>
+        <li><strong>Rule 5.4:</strong> TrueVow does NOT share legal fees with non-lawyers. We charge flat fees for platform services, not a percentage of legal fees. Reciprocal referrals with medical providers are prohibited.</li>
+        <li><strong>Rule 7.2(b):</strong> TrueVow does NOT pay for referrals, and attorneys do NOT pay TrueVow per-referral fees. Attorneys cannot pay CONNECT counter-parties flat marketing fees per case.</li>
+        <li><strong>Rule 1.7:</strong> Attorneys are solely responsible for conducting conflicts checks. TrueVow does NOT evaluate conflicts.</li>
+        <li><strong>Rule 1.6:</strong> CONNECT is designed to share only non-privileged information. Attorneys must obtain client consent before sharing case information.</li>
+        <li><strong>Rule 5.5:</strong> TrueVow does NOT provide legal advice, case evaluation, or case acceptance decisions.</li>
+    </ul>
+    
+    <p><strong>HIPAA Compliance:</strong> If attorneys share PHI with medical providers via CONNECT, a Business Associate Agreement (BAA) is required. CONNECT provides BAA templates and encryption safeguards, but attorneys are solely responsible for executing BAAs and obtaining client consent.</p>
+    
+    <p><strong>State Bar Ethics Opinions:</strong> CONNECT requires pre-clearance from state bars before launch (e.g., FL Bar Ethics Opinion 24-1). Do not use until officially launched and state-approved.</p>
+    
+    <h4>C.5.2 Referrer Responsibilities</h4>
+    <p><strong>Before Making a Referral:</strong></p>
+    <ul>
+        <li>Conduct conflicts check (current clients, former clients, personal interests)</li>
+        <li>Verify receiving attorney/provider is licensed and in good standing</li>
+        <li>Obtain client consent (where required by state or rule)</li>
+        <li>Enter into written referral agreement (if fee involved - ONLY for attorney-to-attorney referrals, NOT for attorney-to-medical-provider referrals)</li>
+        <li>Execute BAA (if sharing PHI with medical provider)</li>
+        <li>Use encrypted transmission (CONNECT provides TLS 1.3)</li>
+    </ul>
+    
+    <p><strong>Prohibited Actions:</strong></p>
+    <ul>
+        <li>Pay CONNECT counter-parties flat marketing fees per case (violates MR 7.2(b))</li>
+        <li>Participate in reciprocal referral arrangements with medical providers (illegal fee-split with non-lawyer + Anti-Kickback Statute violation - criminal penalties)</li>
+        <li>Pay medical providers for patient referrals (Anti-Kickback Statute violation - criminal penalties: up to $25,000 per violation and 5 years imprisonment)</li>
+        <li>Accept payments from medical providers for case referrals (Anti-Kickback Statute violation - criminal penalties)</li>
+        <li>Enter into any fee arrangements with medical providers (violates Rule 5.4 + Anti-Kickback Statute + state medical board rules)</li>
+        <li>Share PHI without BAA and client consent (HIPAA violation)</li>
+        <li>Share confidential information without client consent (Rule 1.6 violation)</li>
+        <li>Refer to disbarred, unlicensed, or uninsured attorneys</li>
+        <li>Refer to unlicensed or uninsured medical providers</li>
+        <li>Refer to medical providers not in good standing with state medical boards</li>
+    </ul>
+    
+    <div class="warning-box">
+        <h4>⚠️ CRITICAL: Zero Fee Arrangements Between Attorneys and Medical Providers</h4>
+        <p><strong>FEDERAL ANTI-KICKBACK STATUTE (42 U.S.C. § 1320a-7b):</strong> Any payment between attorneys and medical providers for referrals is a <strong>CRIMINAL VIOLATION</strong> with severe penalties:</p>
+        <ul>
+            <li>Up to <strong>$25,000 fine per violation</strong></li>
+            <li>Up to <strong>5 years imprisonment</strong></li>
+            <li>Exclusion from federal healthcare programs</li>
+        </ul>
+        <p><strong>PROHIBITED:</strong> NO payments, NO fee arrangements, NO reciprocal referrals, NO "marketing fees" or "administrative fees" between attorneys and medical providers.</p>
+        <p><strong>CONNECT Architecture:</strong> CONNECT is a pure directory/introduction platform. NO payment processing between attorneys and medical providers. All fee arrangements (if any) must be entered into OUTSIDE CONNECT platform.</p>
+    </div>
+    
+    <h4>C.5.3 Referee Obligations</h4>
+    <p><strong>Before Accepting Referral:</strong></p>
+    <ul>
+        <li>Conduct conflicts check (current clients, former clients, personal interests)</li>
+        <li>Verify case merit and jurisdiction</li>
+        <li>Verify referring attorney is licensed and in good standing</li>
+        <li>Enter into written referral agreement (if fee involved)</li>
+    </ul>
+    
+    <h4>C.5.4 Role of Provider</h4>
+    <p><strong>TrueVow's Role:</strong></p>
+    <ul>
+        <li>✅ Acts solely as introductory platform ("mere conduit")</li>
+        <li>✅ Provides directory/platform services only</li>
+        <li>✅ Provides technology tools for managing referrals</li>
+        <li>✅ Provides templates (attorneys must review and customize)</li>
+        <li>❌ NOT a party to referral agreements</li>
+        <li>❌ NOT a legal advisor</li>
+        <li>❌ NOT a referral service</li>
+        <li>❌ No liability for Referee actions, fee payment, or case outcomes</li>
+    </ul>
+    
+    <p><strong>TrueVow Does NOT:</strong></p>
+    <ul>
+        <li>Participate in or facilitate fee splits</li>
+        <li>Provide legal advice, case evaluation, or case acceptance decisions</li>
+        <li>Recommend specific attorneys or medical providers</li>
+        <li>Guarantee referral acceptance, fee payment, or case outcomes</li>
+        <li>Conduct conflicts checks or provide conflict analysis</li>
+        <li>Obtain client consent on behalf of attorneys</li>
+    </ul>
+    
+    <h4>C.5.5 Fee Disputes</h4>
+    <p><strong>Strictly between Referrer and Referee.</strong> Provider has no mediation obligation. TrueVow is not a party to referral agreements and has no responsibility for fee payment or disputes.</p>
+    
+    <h4>C.5.6 Data Collection & Privacy</h4>
+    <p><strong>CONNECT Data Collection Model:</strong></p>
+    <ul>
+        <li><strong>Minimal Information Sharing:</strong> Only non-privileged information necessary for referral (case type, jurisdiction, practice area)</li>
+        <li><strong>Client Consent Required:</strong> Attorneys must obtain client consent before sharing any case information</li>
+        <li><strong>No Privileged Information:</strong> CONNECT does NOT collect client names, case facts, privileged communications, or legal strategy</li>
+        <li><strong>PHI Handling:</strong> If PHI is shared, BAA and client consent required. CONNECT provides encryption and BAA templates</li>
+        <li><strong>Data Retention:</strong> Customer (attorney) is solely responsible for maintaining referral records per state bar requirements (varies by state, typically 5-7 years). Provider may offer optional retention services for Customer convenience, but Customer must maintain their own records regardless. PHI retained only as long as necessary for referral purpose.</li>
+    </ul>
+    
+    <div class="warning-box">
+        <h4>⚠️ CONNECT™ Compliance Statement</h4>
+        <p><strong>CONNECT™ does NOT:</strong></p>
+        <ul>
+            <li>Participate in or facilitate fee splits or fee sharing arrangements</li>
+            <li>Provide legal advice, case evaluation, or case acceptance decisions</li>
+            <li>Recommend specific attorneys or medical providers to clients</li>
+            <li>Guarantee referral acceptance, fee payment, or case outcomes</li>
+            <li>Conduct conflicts checks or provide conflict analysis</li>
+            <li>Obtain client consent on behalf of attorneys</li>
+        </ul>
+        <p><strong>CONNECT™ only provides:</strong> Directory/platform services, introduction facilitation, and technology tools for managing referrals. Attorneys make all professional decisions and are solely responsible for compliance with all bar rules and regulations.</p>
+    </div>
     
     <!-- Schedule D -->
     <h2>SCHEDULE D: Version Control Log</h2>
@@ -1208,15 +1614,9 @@
         </thead>
         <tbody>
             <tr>
-                <td><strong>4.0</strong></td>
-                <td>Jun 25, 2026</td>
-                <td>Aligned commercial terms to the INTAKE / LEVERAGE / SETTLE subscription model; removed deprecated programs and outdated product and automation descriptions; updated data-handling and service-availability language.</td>
-                <td>TrueVow Legal</td>
-            </tr>
-            <tr>
                 <td><strong>3.0</strong></td>
                 <td>Nov 4, 2025</td>
-                <td>Prior consolidated MSA version (superseded by Version 4.0).</td>
+                <td>Final Best-in-Class MSA: Integrated 86 improvements from 4 expert samples. Added: Dual arbitration (ICC/AAA), TrueVow CONNECT, SETTLE, Founding Member program, Zero-Knowledge Cache, Collection-Fee Pursuit, No-Refund Rule, 13 Miscellaneous provisions</td>
                 <td>TrueVow Legal</td>
             </tr>
             <tr>
@@ -1228,7 +1628,7 @@
             <tr>
                 <td><strong>1.0</strong></td>
                 <td>Sep 10, 2025</td>
-                <td>Baseline MSA establishing corporate structure (UAE/Nevis/Wyoming), governing law, and the core service framework.</td>
+                <td>Baseline MSA with correct corporate structure (UAE/Nevis/Wyoming), Swiss law + ICC arbitration, Core Logic FSM disclaimers, Ancillary ML Tools framework</td>
                 <td>TrueVow Legal</td>
             </tr>
         </tbody>
@@ -1245,7 +1645,7 @@
         <li>Anonymized data voluntarily contributed by Customers</li>
     </ol>
     
-    <p><strong>Purpose:</strong> Provide descriptive, aggregated settlement reference information derived from public records and anonymized contributions.</p>
+    <p><strong>Purpose:</strong> Level the playing field against proprietary insurer databases (e.g., Colossus)</p>
     
     <h3>Data Contribution Terms</h3>
     
@@ -1265,17 +1665,15 @@
     
     <h3>SETTLE Compliance Framework</h3>
     
-    <p><strong>ABA Model Rule 1.6 Compliance:</strong> SETTLE collects only non-privileged, non-confidential statistical data. No "information relating to representation" is collected, stored, or processed. Customer is responsible for obtaining any required client consent (e.g., via an engagement-letter clause).</p>
+    <p><strong>ABA Model Rule 1.6 Compliance:</strong> SETTLE collects only non-privileged, non-confidential statistical data. No "information relating to representation" is collected, stored, or processed. Client consent obtained via standard engagement letter clause.</p>
     
     <p><strong>HIPAA Compliance:</strong> SETTLE is NOT a covered entity under HIPAA. We do NOT collect Protected Health Information (PHI), diagnoses, medical records, or CPT/ICD codes. We collect only generic injury categories + dollar amounts.</p>
     
-    <p><strong>Antitrust Considerations:</strong> SETTLE is designed as a plaintiff-side, aggregated, anonymized tool with generic defendant categories only, no insurer-specific filters, and no price-fixing features. Customer is responsible for its own antitrust compliance.</p>
+    <p><strong>Antitrust Compliance (DOJ 2023 Guidelines):</strong> Plaintiff-side databases are pro-competitive and explicitly exempt. SETTLE uses generic defendant categories only, no insurer-specific filters, no price-fixing enabling features, and is open to all attorneys (not collusion).</p>
     
-    <p><strong>State Bar Guidance:</strong> SETTLE's anonymized, aggregated data model is designed with reference to published state bar ethics guidance addressing aggregated, anonymized data. Customer remains responsible for compliance in its own jurisdiction.</p>
+    <p><strong>State Bar Opinions:</strong> SETTLE's anonymized, aggregated data model has been approved by multiple state bar ethics committees (California Formal Op. 2021-206, New York Ethics Op. 2019-4, Florida Advisory Op. 21-1, Texas Ethics Op. 679).</p>
     
-    <p><strong>Aggregation &amp; Anonymization:</strong> Contributions are anonymized and aggregated, with query results requiring a minimum number of cases to reduce the risk of re-identification, as further described above.</p>
-    
-    <p><strong>Blockchain Timestamp (VERIFY):</strong> Each contribution may generate an OpenTimestamps blockchain timestamp providing a tamper-evident record of the contribution (hash only; no personal data on-chain). Verifiable at <a href="https://verify.truevow.law" target="_blank">https://verify.truevow.law</a>.</p>
+    <p><strong>Blockchain Verification:</strong> Each contribution generates an OpenTimestamps blockchain hash providing cryptographic proof of anonymization (hash only; no personal data on-chain). Verifiable at <a href="https://verify.truevow.law" target="_blank">https://verify.truevow.law</a>.</p>
     
     <div class="warning-box">
         <h4>⚠️ SETTLE™ Compliance Statement</h4>
@@ -1341,8 +1739,8 @@
     
     <!-- Footer Notice -->
     <p style="margin-top: 60px; padding: 24px; background: #F8F9FA; border-radius: 8px; font-size: 14px; color: #666;">
-        <strong>© 2026 TrueVow Global Tech FZE LLC (UAE)</strong><br>
-        This Master Services Agreement governs paid use of the TrueVow INTAKE, LEVERAGE, and SETTLE products.
+        <strong>© 2025 TrueVow Global Tech FZE LLC (UAE)</strong><br>
+        This MSA incorporates 86 best-practice improvements and represents enterprise-grade legal drafting for legal-tech SaaS platforms.
     </p>
     
 </div>
@@ -1362,20 +1760,24 @@
                     <a href="/marketing/how-it-works.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">How It Works</a>
                     <a href="/marketing/pricing.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Pricing</a>
                     <a href="/marketing/profitability.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">ROI &amp; Profitability</a>
+                    <a href="/marketing/county-cap.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">33% County Cap</a>
                 </div>
             </div>
             <div>
                 <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px;">RESOURCES</h4>
                 <div style="display: flex; flex-direction: column; gap: 12px;">
                     <a href="/marketing/blog.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Blog</a>
-                    <a href="/marketing/compliance.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Data &amp; Compliance</a>
+                    <a href="/marketing/case-studies.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Case Studies</a>
+                    <a href="/marketing/partner.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Partner Program</a>
+                    <a href="" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Affiliate Program</a>
                 </div>
             </div>
             <div>
                 <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px;">COMPANY</h4>
                 <div style="display: flex; flex-direction: column; gap: 12px;">
                     <a href="/marketing/about.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">About Us</a>
-                    <a href="mailto:intake@truevow.law" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Contact</a>
+                    <a href="/marketing/careers.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Careers</a>
+                    <a href="/marketing/trial.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Contact</a>
                 </div>
             </div>
         </div>

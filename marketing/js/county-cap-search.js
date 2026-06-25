@@ -330,7 +330,7 @@ function renderCountyResults(countyData, practiceAreas, selectedOption, stateCod
                 </div>
                 <div style="background: white; padding: 24px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
                     <div style="font-size: 36px; font-weight: 800; color: #0A2463;">${overall.totalSeats.toLocaleString()}</div>
-                    <div style="font-size: 14px; color: #666; margin-top: 8px;">Total Seats (33% Cap)</div>
+                    <div style="font-size: 14px; color: #666; margin-top: 8px;">Total Seats</div>
                 </div>
             </div>
             

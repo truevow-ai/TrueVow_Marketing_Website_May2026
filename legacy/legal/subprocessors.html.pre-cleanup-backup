@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -239,13 +239,13 @@
             <li><strong>Hosting & Infrastructure:</strong> Cloud hosting, edge computing, container orchestration</li>
         </ul>
         
-        <p><strong>Important:</strong> These vendors support delivery of the Services (e.g., speech processing, messaging, infrastructure, authentication, and operational support). Data handling for these vendors is governed by vendor terms, security controls, and TrueVow's configuration.</p>
+        <p><strong>Important:</strong> None of these vendors influence TrueVow's deterministic, rule-based legal intake logic. They process <strong>non-substantive inputs</strong> only (e.g., audio streams, system logs, authentication tokens).</p>
         
         <p><strong>Pre-Authorized Categories (No Notice Required):</strong> TrueVow may engage additional vendors in these categories without prior notice: Development tools, Infrastructure management, Monitoring and logging, Internal operations, Network security. See Section 6.6(b) of the MSA for details.</p>
     </div>
     
     <div class="disclaimer">
-        <strong>⚠️ Disclaimer:</strong> All vendors listed below are used to support delivery of the Services (e.g., speech processing, messaging, infrastructure, authentication, and operational support). Data handling for these vendors is governed by vendor terms, security controls, and TrueVow's configuration.
+        <strong>⚠️ Disclaimer:</strong> All vendors listed below are used <strong>solely for non-legal, operational, or infrastructural purposes</strong>. None participate in, influence, or affect any legal or quasi-legal determination, including lead qualification, case merit assessment, document drafting logic, or settlement data interpretation.
     </div>
     
     <!-- SPEECH AI -->
@@ -605,7 +605,7 @@
     </div>
     
     <div class="disclaimer">
-        <strong>⚖️ Legal Reference:</strong> This page fulfills the obligations set forth in Section 6 (Data Security) and Schedule A of the <a href="msa.html" style="color: #0A2463; text-decoration: underline;">Master Services Agreement</a>.
+        <strong>⚖️ Legal Reference:</strong> This page fulfills the obligations set forth in Section 6 (Data Security) and Schedule A of the <a href="msa.html" style="color: #0A2463; text-decoration: underline;">Master Services Agreement v3.0</a>.
     </div>
     
 </div>
@@ -628,19 +628,21 @@
                 <div style="display: flex; flex-direction: column; gap: 12px;">
                     <a href="how-it-works.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">How It Works</a>
                     <a href="pricing.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Pricing</a>
+                    <a href="county-cap.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">33% County Cap</a>
                 </div>
             </div>
             <div>
                 <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px;">RESOURCES</h4>
                 <div style="display: flex; flex-direction: column; gap: 12px;">
                     <a href="blog.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Blog</a>
+                    <a href="" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Affiliate Program</a>
                 </div>
             </div>
             <div>
                 <h4 style="color: #FFFFFF; font-size: 16px; font-weight: 700; margin-bottom: 16px; letter-spacing: 1px;">COMPANY</h4>
                 <div style="display: flex; flex-direction: column; gap: 12px;">
                     <a href="about.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">About Us</a>
-                    <a href="mailto:intake@truevow.law" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Contact</a>
+                    <a href="trial.html" style="color: #999; text-decoration: none; font-size: 15px; transition: color 0.3s;" onmouseover="this.style.color='#FFFFFF'" onmouseout="this.style.color='#999'">Contact</a>
                 </div>
             </div>
         </div>

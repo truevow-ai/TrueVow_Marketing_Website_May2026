@@ -486,6 +486,18 @@
                     <input type="checkbox" id="consent_communications" name="consent_communications" required>
                     <span>I consent to receive calls/SMS/email from TrueVow for application and onboarding purposes. *</span>
                 </label>
+                <label class="cb-label">
+                    <input type="checkbox" id="agree_terms_privacy" name="agree_terms_privacy" required>
+                    <span>I have read and agree to TrueVow&rsquo;s <a href="../legal/terms.html" target="_blank" rel="noopener" style="color:#F59E0B;text-decoration:underline">Terms of Service</a> and <a href="../legal/privacy.html" target="_blank" rel="noopener" style="color:#F59E0B;text-decoration:underline">Privacy Policy</a> (including the <a href="../legal/subprocessors.html" target="_blank" rel="noopener" style="color:#F59E0B;text-decoration:underline">Sub-Processors</a> disclosure), and acknowledge that the <a href="../legal/msa.html" target="_blank" rel="noopener" style="color:#F59E0B;text-decoration:underline">Master Services Agreement</a> will govern any services if my firm is approved. *</span>
+                </label>
+                <label class="cb-label">
+                    <input type="checkbox" id="acknowledges_bar_compliance" name="acknowledges_bar_compliance" required>
+                    <span>I acknowledge that my firm remains solely responsible for compliance with all applicable state bar rules, professional-responsibility, and legal-advertising regulations, as described in TrueVow&rsquo;s <a href="../legal/bar-compliance.html" target="_blank" rel="noopener" style="color:#F59E0B;text-decoration:underline">Bar Compliance</a> notice. *</span>
+                </label>
+                <label class="cb-label">
+                    <input type="checkbox" id="confirm_accuracy_authority" name="confirm_accuracy_authority" required>
+                    <span>I confirm that I am authorized to submit this application on behalf of my firm and that all information provided is accurate. *</span>
+                </label>
                 <div class="step-nav">
                     <button type="button" class="step-back" onclick="goStep(2)">&larr; Back</button>
                     <button type="submit" id="submit-btn" class="form-submit">Apply for the 90-Day Intake Trial &rarr;</button>
@@ -516,11 +528,15 @@
         <div class="logo-text"><span class="logo-true">True</span><span class="logo-vow" style="color:#fff">Vow</span><span class="logo-law" style="color:#fff">.law</span></div>
     </a>
     <div class="footer-legal">
-        <a href="legal/privacy.html">Privacy Policy</a>
+        <a href="../legal/privacy.html">Privacy Policy</a>
         <span style="color:#555">|</span>
-        <a href="legal/terms.html">Terms of Service</a>
+        <a href="../legal/terms.html">Terms of Service</a>
         <span style="color:#555">|</span>
-        <a href="legal/msa.html">MSA</a>
+        <a href="../legal/msa.html">MSA</a>
+        <span style="color:#555">|</span>
+        <a href="../legal/bar-compliance.html">Bar Compliance</a>
+        <span style="color:#555">|</span>
+        <a href="../legal/subprocessors.html">Sub-Processors</a>
     </div>
     <p class="footer-disclaimer">&copy; 2026 TrueVow Technologies. All rights reserved. TrueVow is a brand of TrueVow Global Tech FZE LLC (UAE), a subsidiary of TrueVow Global Holdings LLC (Nevis). TrueVow (USA) Inc. (Wyoming) provides passive marketing only and does not handle contracts or operations. All contracts are with TrueVow Global Tech FZE LLC (UAE). Technology and IP held by TrueVow Global Holdings LLC (Nevis). We are not a law firm and do not provide legal advice. By using our services, you acknowledge that TrueVow operates as a technology and services provider only.</p>
 </footer>
@@ -604,6 +620,9 @@
                 understands_onboarding_required:document.getElementById('understands_onboarding_required').checked,
                 understands_not_law_firm:document.getElementById('understands_not_law_firm').checked,
                 consent_communications:document.getElementById('consent_communications').checked,
+                agree_terms_privacy:document.getElementById('agree_terms_privacy').checked,
+                acknowledges_bar_compliance:document.getElementById('acknowledges_bar_compliance').checked,
+                confirm_accuracy_authority:document.getElementById('confirm_accuracy_authority').checked,
                 ip_addr:null,
                 user_agent:navigator.userAgent,
                 referrer:document.referrer||null

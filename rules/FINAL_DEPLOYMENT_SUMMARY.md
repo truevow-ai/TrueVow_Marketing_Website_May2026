@@ -1,5 +1,8 @@
 # 🎉 TrueVow Website - Final Deployment Summary
 
+> **⚠️ SUPERSEDED — DO NOT RELY ON FOR CURRENT STATE (updated June 25, 2026).**
+> The product line has been realigned to **INTAKE, LEVERAGE, and SETTLE** (with **VERIFY** as a compliance feature). Archived / no longer offered: the **Founding Member** program, **Partner/Affiliate** programs, **DRAFT**, and **CONNECT**. The "33% county cap" is now positioned as **County Availability**. Pay-per-booking / **$29-per-booking** pricing is replaced by current **subscription pricing** (INTAKE $499 / $1,299 / $1,999; LEVERAGE $99 / $349; SETTLE $79/report or $299/mo Pro). The following marketing widgets were moved to `legacy/components/`: exit-intent-popup, live-chat-widget, roi-calculator, social-proof-notifications, urgency-timer, video-testimonial, prefill-indicator, phone-call-offer. Refer to the current legal docs and the live site for the current state.
+
 **Date:** December 23, 2025  
 **Status:** ✅ **PRODUCTION-READY - DEPLOY IMMEDIATELY**
 
