@@ -320,7 +320,7 @@
         <li><a href="#rule-53">ABA Model Rule 5.3: Non-Lawyer Assistance</a></li>
         <li><a href="#module-intake">TrueVow INTAKE™ — Client Qualification</a></li>
         <li><a href="#module-settle">TrueVow SETTLE™ — Settlement Data</a></li>
-        <li><a href="#module-verify">TrueVow VERIFY™ — Blockchain Proof</a></li>
+        <li><a href="#module-verify">TrueVow VERIFY™ — Tamper-Evident Audit Records</a></li>
         <li><a href="#technology">Technology Safeguards</a></li>
         <li><a href="#confidentiality">Confidentiality & Privilege Preservation</a></li>
         <li><a href="#recording-consent">Recording Consent (Two-Party States)</a></li>
@@ -865,16 +865,16 @@
 
 <!-- Section 9: VERIFY Module -->
 <div class="section" id="module-verify">
-    <h2>9. TrueVow VERIFY™ — Blockchain Compliance Proof</h2>
+    <h2>9. TrueVow VERIFY™ — Tamper-Evident Audit Records</h2>
     
     <h3>9.1 Function</h3>
-    <p>TrueVow VERIFY generates an immutable, timestamped, cryptographic certificate (via OpenTimestamps) for key actions within the platform.</p>
+    <p>TrueVow VERIFY provides tamper-evident records of covered platform actions for audit and review purposes. It generates an immutable, timestamped, cryptographic certificate (via OpenTimestamps) for covered actions. VERIFY does not provide legal advice, does not guarantee compliance, and does not replace firm review or professional judgment.</p>
     
     <h3>9.2 Ethical Value & Application</h3>
     <ul>
-        <li><strong>Demonstration of Due Diligence:</strong> Provides verifiable, third-party proof that an action (intake, settlement report generation) occurred at a specific time</li>
-        <li><strong>Compliance & Malpractice Defense:</strong> The certificate can show that a record was created at a specific time, or that specific intake questions were asked</li>
-        <li><strong>Bar Investigation Support:</strong> Can be presented to a court or bar committee to demonstrate adherence to processes and timelines</li>
+        <li><strong>Demonstration of Due Diligence:</strong> Provides a tamper-evident, third-party record that an action (intake, settlement report generation) occurred at a specific time</li>
+        <li><strong>Recordkeeping & Defense Support:</strong> The record can show that a record was created at a specific time, or that specific intake questions were asked</li>
+        <li><strong>Bar Investigation Support:</strong> A tamper-evident record can be presented to a court or bar committee to show the existence and timing of recorded actions</li>
     </ul>
     
     <h3>9.3 Litigation Hold Protocol</h3>
@@ -891,10 +891,10 @@
         <li>TrueVow affidavit of authenticity (request from compliance@truevow.law)</li>
     </ol>
     
-    <h3>9.5 Limitation of Blockchain Proof</h3>
+    <h3>9.5 Limitations of VERIFY</h3>
     <div class="warning-box">
         <h4>⚠️ VERIFY Does NOT Guarantee Compliance</h4>
-        <p>VERIFY proves the <strong>technical integrity</strong> of the <em>exact fields that were hashed</em>, but <strong>does not absolve you</strong> of your primary ethical duty to maintain confidentiality and professional privilege.</p>
+        <p>VERIFY provides a tamper-evident record of the <strong>technical integrity</strong> of the <em>exact fields that were hashed</em>, but <strong>does not absolve you</strong> of your primary ethical duty to maintain confidentiality and professional privilege.</p>
         <p>Do <strong>not</strong> represent to a tribunal that the certificate proves "no tampering" beyond the <strong>exact JSON fields</strong> that were hashed. It does <strong>not</strong> vouch for upstream data accuracy.</p>
     </div>
     
@@ -903,7 +903,7 @@
         <p><strong>YOU INDEMNIFY TRUEVOW AGAINST ALL CLAIMS ARISING FROM:</strong></p>
         <ul>
             <li>Spoliation (failure to preserve VERIFY hashes)</li>
-            <li>Misrepresentation of blockchain proof scope or accuracy</li>
+            <li>Misrepresentation of VERIFY record scope or accuracy</li>
             <li>Over-reliance on VERIFY as substitute for professional judgment</li>
             <li>Admissibility challenges in court proceedings</li>
         </ul>
