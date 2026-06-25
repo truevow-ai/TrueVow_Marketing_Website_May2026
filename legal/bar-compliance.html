@@ -349,7 +349,7 @@
         <li>✅ <strong>Provide</strong> phone answering and intake qualification services</li>
         <li>✅ <strong>Provide</strong> case workflow support software tools</li>
         <li>✅ <strong>Provide</strong> settlement data visualization services</li>
-        <li>✅ <strong>Provide</strong> blockchain compliance verification</li>
+        <li>✅ <strong>Provide</strong> tamper-evident audit records (VERIFY)</li>
     </ul>
     
     <p>TrueVow does <strong>NOT</strong>:</p>
@@ -826,7 +826,7 @@
         <li>Each contribution can generate a blockchain timestamp (OpenTimestamps)</li>
         <li>Tamper-evident cryptographic record of the contribution</li>
         <li>Immutable audit trail</li>
-        <li>Report includes: <code>case_82918.ots</code> proof file</li>
+        <li>Report includes: <code>case_82918.ots</code> timestamp file</li>
     </ul>
     
     <div class="info-box">
@@ -867,36 +867,11 @@
 <div class="section" id="module-verify">
     <h2>9. TrueVow VERIFY™ — Tamper-Evident Audit Records</h2>
     
-    <h3>9.1 Function</h3>
-    <p>TrueVow VERIFY provides tamper-evident records of covered platform actions for audit and review purposes. It generates an immutable, timestamped, cryptographic certificate (via OpenTimestamps) for covered actions. VERIFY does not provide legal advice, does not guarantee compliance, and does not replace firm review or professional judgment.</p>
+    <p>Where enabled, VERIFY may generate tamper-evident audit records for covered platform actions, including timestamps, selected field values, event metadata, and record hashes. These records are designed to help firms review what occurred in the platform and support internal audit documentation.</p>
     
-    <h3>9.2 Ethical Value & Application</h3>
-    <ul>
-        <li><strong>Demonstration of Due Diligence:</strong> Provides a tamper-evident, third-party record that an action (intake, settlement report generation) occurred at a specific time</li>
-        <li><strong>Recordkeeping & Defense Support:</strong> The record can show that a record was created at a specific time, or that specific intake questions were asked</li>
-        <li><strong>Bar Investigation Support:</strong> A tamper-evident record can be presented to a court or bar committee to show the existence and timing of recorded actions</li>
-    </ul>
+    <p>VERIFY records do not prove legal compliance, bar compliance, ethical compliance, privacy compliance, or regulatory compliance. They do not establish that a firm satisfied its professional duties, obtained required consent, completed attorney review, or complied with any jurisdiction-specific rule.</p>
     
-    <h3>9.3 Litigation Hold Protocol</h3>
-    <div class="warning-box">
-        <h4>⚠️ Spoliation Prevention</h4>
-        <p>Once you download a VERIFY hash, <strong>preserve it like any ESI</strong>. Do <strong>not</strong> rely on TrueVow to re-issue (we have no copy).</p>
-    </div>
-    
-    <h3>9.4 Admissibility Package</h3>
-    <p>For each hash, export:</p>
-    <ol>
-        <li>.ots proof file</li>
-        <li>Bitcoin block header</li>
-        <li>TrueVow affidavit of authenticity (request from compliance@truevow.law)</li>
-    </ol>
-    
-    <h3>9.5 Limitations of VERIFY</h3>
-    <div class="warning-box">
-        <h4>⚠️ VERIFY Does NOT Guarantee Compliance</h4>
-        <p>VERIFY provides a tamper-evident record of the <strong>technical integrity</strong> of the <em>exact fields that were hashed</em>, but <strong>does not absolve you</strong> of your primary ethical duty to maintain confidentiality and professional privilege.</p>
-        <p>Do <strong>not</strong> represent to a tribunal that the certificate proves "no tampering" beyond the <strong>exact JSON fields</strong> that were hashed. It does <strong>not</strong> vouch for upstream data accuracy.</p>
-    </div>
+    <p>The firm remains responsible for attorney supervision, professional judgment, client communications, consent practices, record review, and compliance with applicable bar, privacy, advertising, and professional-responsibility rules.</p>
     
     <div class="indemnity-box">
         <h3>🛡️ ATTORNEY INDEMNITY — VERIFY MODULE</h3>
