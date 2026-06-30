@@ -292,19 +292,17 @@
 <div class="header">
     <h1>⚖️ Bar Compliance & Ethical Usage Guide</h1>
     <p class="subtitle">Comprehensive guidance for licensed U.S. attorneys using TrueVow Services</p>
-    <div class="version-badge">Version 2.0 — Effective January 8, 2026</div>
+    <div class="version-badge">Version 2.1 — Effective July 1, 2026</div>
 </div>
 
 <!-- Critical Warning -->
 <div class="critical-warning">
-    <h2>⚠️ CRITICAL: ATTORNEY ASSUMES ALL BAR COMPLIANCE RISK</h2>
-    <p><strong>BY USING TRUEVOW SERVICES, YOU IRREVOCABLY ACKNOWLEDGE AND AGREE THAT:</strong></p>
+    <h2>⚠️ Attorney Responsibility Notice</h2>
+    <p><strong>This Guide is informational only. TrueVow is not a law firm and does not provide legal advice. Each firm remains responsible for reviewing applicable bar rules, supervising use of the Services, obtaining required consents, and exercising independent professional judgment.</strong></p>
     <ul style="margin-left: 24px; margin-top: 12px;">
-        <li><strong>YOU ARE SOLELY RESPONSIBLE</strong> for compliance with all state bar rules, ethics opinions, and professional conduct obligations in your jurisdiction(s).</li>
-        <li><strong>TRUEVOW DOES NOT GUARANTEE</strong> that your use of the Services will comply with any particular state's bar rules or receive bar approval.</li>
-        <li><strong>YOU INDEMNIFY TRUEVOW</strong> against all claims, damages, costs, and liabilities arising from: (a) ethics complaints; (b) bar grievances; (c) UPL allegations; (d) malpractice claims; (e) conflicts of interest; (f) recording-consent violations; (g) failure to supervise; (h) reliance on any output; (i) any other violation of professional conduct rules.</li>
-        <li><strong>THIS GUIDE IS INFORMATIONAL ONLY</strong> and does not constitute legal advice. Consult your state bar or ethics counsel before using TrueVow.</li>
-        <li><strong>USE OF TRUEVOW IS CONDITIONAL</strong> upon your acceptance of this explicit assumption of all professional and ethical liability.</li>
+        <li><strong>You are responsible</strong> for compliance with all state bar rules, ethics opinions, and professional conduct obligations in your jurisdiction(s).</li>
+        <li><strong>TrueVow does not guarantee</strong> that your use of the Services will comply with any particular state's bar rules or receive bar approval.</li>
+        <li><strong>This Guide is informational only</strong> and does not constitute legal advice. Consult your state bar or ethics counsel before using TrueVow.</li>
     </ul>
 </div>
 
@@ -326,10 +324,10 @@
         <li><a href="#recording-consent">Recording Consent (Two-Party States)</a></li>
         <li><a href="#fee-compliance">Fee Arrangements & No Fee-Splitting</a></li>
         <li><a href="#state-specific">State-Specific Compliance Requirements</a></li>
-        <li><a href="#client-disclosure">Mandatory Client Disclosure & Consent</a></li>
+        <li><a href="#client-disclosure">Client Disclosure & Consent</a></li>
         <li><a href="#operational">Operational Compliance Procedures</a></li>
         <li><a href="#emergency">Emergency Procedures (Subpoena, Bar Grievance)</a></li>
-        <li><a href="#indemnification">Final Liability Transfer & Indemnification</a></li>
+        <li><a href="#indemnification">Indemnification Summary (MSA Section 13)</a></li>
     </ol>
 </div>
 
@@ -390,7 +388,7 @@
     <p><strong>TrueVow Global Tech FZE LLC (UAE)</strong> is the <strong>sole contracting party</strong> for all customer agreements. This entity:</p>
     <ul>
         <li>Is organized under the laws of the United Arab Emirates</li>
-        <li>Has its principal place of business in Dubai Silicon Oasis, Dubai, UAE</li>
+        <li>Has its principal place of business in Dubai South, Dubai, UAE</li>
         <li>Enters into all Master Services Agreements with U.S. law firms</li>
         <li>Provides all services described herein</li>
     </ul>
@@ -467,7 +465,7 @@
             </tr>
             <tr>
                 <td>Fee-split / referral rules</td>
-                <td>Pay-per-booking (service fee, not referral fee)</td>
+                <td>Subscription, usage, and product fees</td>
                 <td>Ensure compliance with your state's fee-sharing rules</td>
                 <td><a href="#fee-compliance">§ 13</a></td>
             </tr>
@@ -649,7 +647,7 @@
             <li><strong>❌ Tactical Instructions:</strong> We never say "counter higher", "reject offer", "liability strong"</li>
             <li><strong>❌ Evidence:</strong> Photos, statements, police reports would turn us into a case file repository → impossible to defend at scale</li>
         </ul>
-        <p><strong>SETTLE collects only:</strong> Generic injury type, county (public data), and dollar amounts. This minimal data collection ensures compliance with ABA Model Rule 1.6 and state bar ethics opinions.</p>
+        <p><strong>SETTLE collects only:</strong> Generic injury type, county (public data), and dollar amounts. This minimal data collection is designed to reduce privacy and confidentiality risk, but the Firm remains responsible for compliance with applicable bar, privacy, consent, and professional-responsibility obligations.</p>
     </div>
     
     <div class="info-box">
@@ -683,11 +681,11 @@
     <h3>7.5 Data Source</h3>
     <p>SETTLE displays <strong>historical settlement ranges derived from public records and anonymized contributions</strong>. Outputs are <strong>descriptive, not predictive</strong> (e.g., "Median payout in Cook County: $68K").</p>
     
-    <h3>7.6 ABA Rule 1.6 Compliance for SETTLE</h3>
+    <h3>7.6 ABA Rule 1.6 Considerations for SETTLE</h3>
     <p><strong>Model Rule 1.6(a): Confidentiality of Information</strong></p>
     <p>"A lawyer shall not reveal information relating to the representation of a client unless the client gives informed consent..."</p>
     
-    <p><strong>How SETTLE Complies:</strong></p>
+    <p><strong>Design approach:</strong></p>
     <ol>
         <li><strong>No "information relating to representation" is collected:</strong>
             <ul>
@@ -696,12 +694,12 @@
             </ul>
         </li>
         <li><strong>Client consent</strong> obtained via standard engagement letter clause</li>
-        <li><strong>Aggregation prevents re-identification:</strong> Minimum 15 cases per query result ensures no individual case can be identified</li>
+        <li>The minimum aggregation threshold is designed to reduce re-identification risk, but no anonymization or aggregation method can guarantee that re-identification is impossible in every circumstance.</li>
     </ol>
     
-    <div class="success-box">
-        <h4>✅ Compliance Verification</h4>
-        <p>SETTLE's data collection model is designed to comply with ABA Model Rule 1.6 by collecting only non-privileged, non-confidential statistical data. No "information relating to representation" is collected, stored, or processed.</p>
+    <div class="info-box">
+        <h4>📋 Risk-Reduction Design Notes</h4>
+        <p>SETTLE's data collection model is designed to collect only non-privileged, non-confidential statistical data. The Firm remains responsible for ensuring that its use of SETTLE complies with applicable bar, privacy, consent, and professional-responsibility obligations.</p>
     </div>
     
     <h3>7.7 Relevant State Bar Ethics Guidance</h3>
@@ -713,7 +711,7 @@
                 <th>State</th>
                 <th>Opinion</th>
                 <th>Key Ruling</th>
-                <th>SETTLE Compliance</th>
+                <th>Design Notes</th>
             </tr>
         </thead>
         <tbody>
@@ -721,25 +719,25 @@
                 <td><strong>California</strong></td>
                 <td>Formal Op. 2021-206 (2021)</td>
                 <td>"Attorneys may share exact settlement amounts in anonymized, aggregated databases for industry benchmarking, provided no client-identifying information is disclosed."</td>
-                <td>✅ Compliant</td>
+                <td>Design aligned</td>
             </tr>
             <tr>
                 <td><strong>New York</strong></td>
                 <td>Ethics Op. 2019-4</td>
                 <td>Aggregate case data permitted for benchmarking</td>
-                <td>✅ Compliant</td>
+                <td>Design aligned</td>
             </tr>
             <tr>
                 <td><strong>Florida</strong></td>
                 <td>Advisory Op. 21-1</td>
                 <td>Historical settlement amounts not confidential</td>
-                <td>✅ Compliant</td>
+                <td>Design aligned</td>
             </tr>
             <tr>
                 <td><strong>Texas</strong></td>
                 <td>Ethics Op. 679</td>
                 <td>Anonymized outcome data permissible with client consent</td>
-                <td>✅ Compliant</td>
+                <td>Design aligned</td>
             </tr>
         </tbody>
     </table>
@@ -759,9 +757,9 @@
         <li>We DO collect: generic injury categories + dollar amounts only</li>
     </ul>
     
-    <div class="success-box">
-        <h4>✅ HIPAA Verification</h4>
-        <p>No HIPAA violation occurs when facility names, dates, and specific medical information are stripped. Tools like VerdictSearch include MRI/CT findings without HIPAA issues when properly anonymized. SETTLE's generic injury categories (e.g., "soft tissue injury", "fracture") do not constitute PHI.</p>
+    <div class="info-box">
+        <h4>📋 HIPAA Design Notes</h4>
+        <p>SETTLE's design avoids collecting Protected Health Information (PHI). Generic injury categories (e.g., "soft tissue injury", "fracture") are not designed to include PHI. The Firm remains responsible for HIPAA compliance and should not submit PHI.</p>
     </div>
     
     <h3>7.9 Antitrust Considerations</h3>
@@ -788,7 +786,7 @@
         <p>SETTLE is designed to be pro-competitive by leveling the playing field between plaintiff attorneys and insurance carriers. Unlike defendant-side tools that may facilitate price coordination, SETTLE provides transparent, historical data that empowers attorneys in negotiations without enabling collusion or price-fixing.</p>
     </div>
     
-    <h3>7.10 Compliance-Certified Disclaimer (Bar-Proof)</h3>
+    <h3>7.10 Risk-Reduction Design Notes</h3>
     
     <div class="warning-box">
         <h4>⚠️ SETTLE™ Compliance Statement</h4>
@@ -803,21 +801,13 @@
     </div>
     
     <div class="info-box">
-        <h4>📋 Attorney Safety Guarantee</h4>
-        <ul>
-            <li>✅ No PHI transmitted to servers</li>
-            <li>✅ No narratives stored</li>
-            <li>✅ No decision-making AI</li>
-            <li>✅ No strategy suggestions</li>
-            <li>✅ No fault analysis</li>
-            <li>✅ No medical diagnosis</li>
-        </ul>
+        <h4>📋 Attorney Review Reminder</h4>
+        <p>SETTLE is designed to avoid storing PHI, narratives, decision-making outputs, strategy suggestions, fault analysis, or medical diagnoses. The Firm remains responsible for reviewing all outputs and exercising independent professional judgment.</p>
     </div>
     
     <div class="info-box">
-        <h4>📋 Insurance-Safe Guarantee</h4>
-        <p>SETTLE™ does <em>not</em> tell attorneys what to demand, how to negotiate, or how to evaluate liability.</p>
-        <p>It simply reports comparable case data the same way verdict reporters do — but faster and cleaner.</p>
+        <h4>📋 Settlement Data Limitation</h4>
+        <p>SETTLE™ does <em>not</em> tell attorneys what to demand, how to negotiate, or how to evaluate liability. It reports comparable case data for reference only. The Firm is responsible for all negotiation strategy and settlement decisions.</p>
     </div>
     
     <h3>7.11 Blockchain Verification (OpenTimestamps)</h3>
@@ -825,16 +815,16 @@
     <ul>
         <li>Each contribution can generate a blockchain timestamp (OpenTimestamps)</li>
         <li>Tamper-evident cryptographic record of the contribution</li>
-        <li>Immutable audit trail</li>
+        <li>Tamper-evident audit record for review and documentation</li>
         <li>Report includes: <code>case_82918.ots</code> timestamp file</li>
     </ul>
     
     <div class="info-box">
         <h4>🔒 Blockchain Timestamp</h4>
-        <p>SETTLE can use OpenTimestamps to create an immutable, timestamped cryptographic record for each data contribution. This provides:</p>
+        <p>SETTLE can use OpenTimestamps to create a tamper-evident timestamp record for each data contribution. This provides:</p>
         <ul>
             <li><strong>Tamper-evident timestamp</strong> of the contribution record</li>
-            <li><strong>Immutable audit trail</strong> for recordkeeping</li>
+            <li><strong>Tamper-evident audit record</strong> for recordkeeping</li>
             <li><strong>Cryptographic evidence</strong> of when the contribution was made</li>
         </ul>
         <p><strong>Verification:</strong> Each SETTLE report includes a blockchain hash that can be verified at <a href="https://verify.truevow.law" target="_blank">https://verify.truevow.law</a></p>
@@ -926,13 +916,7 @@
     <p>Under the <strong>common-interest doctrine</strong>, disclosure of privileged information to TrueVow (as your agent) <strong>does not waive privilege</strong> because the disclosure is made solely to facilitate legal representation.</p>
     
     <h3>11.3 Subpoena Response Protocol</h3>
-    <p>If TrueVow receives a subpoena or legal process demanding disclosure of attorney-client privileged information, TrueVow will:</p>
-    <ol>
-        <li><strong>Promptly notify</strong> you (within 24 hours)</li>
-        <li><strong>Assert all applicable privileges</strong> on your behalf</li>
-        <li><strong>Provide you with a reasonable opportunity</strong> to oppose the disclosure</li>
-        <li><strong>Not disclose</strong> privileged information without a court order or your consent</li>
-    </ol>
+    <p>If TrueVow receives legal process seeking Customer information, TrueVow will use commercially reasonable efforts to notify the Firm where legally permitted and provide a reasonable opportunity to object. TrueVow is not a law firm and does not provide legal advice or guarantee the success of any privilege assertion.</p>
     
     <h3>11.4 Controlled Data Handling</h3>
     <p>By default, and subject to configured retention settings and vendor-governed processing, TrueVow keeps retention to a minimum (as described in the Terms of Service and Privacy Policy):</p>
@@ -992,9 +976,8 @@
 <div class="section" id="recording-consent">
     <h2>12. Recording Consent (Two-Party States)</h2>
     
-    <h3>12.1 Two-Party Consent State Map</h3>
-    <p><strong>The following 13 states + D.C. require two-party consent for call recording:</strong></p>
-    <p>California, Connecticut, Delaware, Florida, Illinois, Maryland, Massachusetts, Montana, New Hampshire, Pennsylvania, Washington, Nevada, + District of Columbia</p>
+    <h3>12.1 Recording Consent Overview</h3>
+    <p>Some U.S. jurisdictions require all-party consent for call recording. Firms are responsible for determining the applicable consent rule based on caller location, firm location, call routing, and applicable law. If unsure, keep recording/transcript retention disabled unless affirmative consent has been obtained.</p>
     
     <h3>12.2 TrueVow Default Disclosure</h3>
     <p>TrueVow's default intake script includes:</p>
@@ -1003,14 +986,9 @@
         <p>"If you proceed, this call may be recorded for quality purposes."</p>
     </div>
     
-    <p>This <strong>disclosure</strong> satisfies most jurisdictions' notice requirements, but:</p>
-    <ul>
-        <li><strong>California:</strong> Requires <strong>affirmative consent</strong> (Cal. Penal Code § 632)</li>
-        <li><strong>Pennsylvania:</strong> Same</li>
-        <li><strong>Illinois:</strong> Two-party + BIPA if biometric voiceprint stored (we do <strong>not</strong> store)</li>
-    </ul>
+    <p>This <strong>disclosure</strong> is a default notice only. Firms are responsible for determining whether additional consent is required in their jurisdiction.</p>
     
-    <h3>12.3 Best Practice: Website Consent Checkbox</h3>
+    <h3>12.3 Recommended Website Consent Checkbox</h3>
     <div class="info-box">
         <h4>📋 Recommended Website Form Language</h4>
         <p>Append this checkbox to your website intake form:</p>
@@ -1018,27 +996,7 @@
     </div>
     
     <h3>12.4 Recording Consent State-by-State Table</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>State</th>
-                <th>TrueVow Default Script</th>
-                <th>Your Extra Step</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>CA, CT, DE, FL, IL, MD, MA, MT, NH, PA, WA, NV</td>
-                <td>Disclosure + opt-in</td>
-                <td>Keep toggle OFF unless you obtain <strong>written</strong> two-party consent</td>
-            </tr>
-            <tr>
-                <td>All others</td>
-                <td>Disclosure only</td>
-                <td>Toggle permitted</td>
-            </tr>
-        </tbody>
-    </table>
+    <p>The Firm is responsible for determining whether its jurisdiction requires all-party consent and for obtaining appropriate consent before enabling recording or transcript retention. When in doubt, keep the retention toggle disabled.</p>
     
     <div class="indemnity-box">
         <h3>🛡️ ATTORNEY INDEMNITY — RECORDING CONSENT</h3>
@@ -1068,7 +1026,7 @@
     </ul>
     
     <h3>13.3 Not a Referral Fee</h3>
-    <p>TrueVow's pay-per-qualified-booking model is <strong>not a referral fee</strong>; it is a <strong>bona fide charge for automated clerical services</strong>.</p>
+    <p>TrueVow charges subscription fees, usage fees, and product fees for software and services. TrueVow does not receive a percentage of legal fees, settlements, judgments, retainers, or client recoveries.</p>
     
     <div class="info-box">
         <h4>📜 Analogous Bar Approvals</h4>
@@ -1172,18 +1130,17 @@
 
 <!-- Section 15: Client Disclosure -->
 <div class="section" id="client-disclosure">
-    <h2>15. Mandatory Client Disclosure & Consent</h2>
+    <h2>15. Client Disclosure & Consent</h2>
     
-    <div class="critical-warning">
-        <h2>⚠️ MANDATORY: YOU MUST PROVIDE THIS DISCLOSURE TO ALL CLIENTS</h2>
-        <p><strong>To comply with ABA Model Rule 1.4 (Communication) and Rule 5.3 (Non-Lawyer Assistance), you MUST ensure all prospective and retained clients receive and acknowledge the following statement.</strong></p>
-        <p>This disclosure clarifies the role of TrueVow Services and satisfies your professional obligation to communicate clearly with clients.</p>
+    <div class="warning-box">
+        <h4>📋 Recommended Client Disclosure Template</h4>
+        <p>Firms should consult applicable bar rules and ethics counsel to determine whether, when, and how to disclose use of technology vendors, automated intake tools, third-party processors, or optional recording/transcript retention. The template below is provided for informational purposes only.</p>
     </div>
     
     <h3>15.1 Client Disclosure Template (Ready to Use)</h3>
     
     <div class="info-box">
-        <h4>📋 MANDATORY CLIENT DISCLOSURE AND CONSENT STATEMENT</h4>
+        <h4>📋 Client Disclosure and Consent Statement</h4>
         <p><em>Insert this into your engagement letter, retainer agreement, or initial client communication:</em></p>
         
         <hr style="margin: 20px 0;">
@@ -1310,9 +1267,9 @@
     <h3>17.1 If You Receive a Subpoena</h3>
     <p>If you receive a subpoena, court order, or discovery request seeking TrueVow data:</p>
     <ol>
-        <li><strong>Immediately notify TrueVow:</strong> compliance@truevow.law</li>
+        <li><strong>Notify TrueVow:</strong> compliance@truevow.law</li>
         <li><strong>Provide:</strong> Jurisdiction, case name, deadline, specific data requested</li>
-        <li><strong>TrueVow will:</strong> Assert privilege, coordinate with your counsel, provide data only if court-ordered</li>
+        <li><strong>TrueVow will:</strong> Use commercially reasonable efforts to respond, coordinate with your counsel, and assert available protections where legally permitted. TrueVow does not guarantee the success of any privilege assertion and does not provide legal advice.</li>
     </ol>
     
     <h3>17.2 If You Receive a Bar Grievance</h3>
@@ -1358,15 +1315,12 @@
 
 <!-- Section 18: Final Indemnification -->
 <div class="section" id="indemnification">
-    <h2>18. Final Liability Transfer & Comprehensive Indemnification</h2>
+    <h2>18. Indemnification Summary (MSA Section 13)</h2>
     
-    <div class="indemnity-box" style="border: 4px solid #D32F2F; background: #FFEBEE;">
-        <h3 style="color: #B71C1C; font-size: 32px;">⚖️ CONDITIONAL USE: ATTORNEY ASSUMES ALL LIABILITY</h3>
+    <div class="indemnity-box" style="border: 4px solid #F57C00; background: #FFF3E0;">
+        <h3 style="color: #E65100; font-size: 28px;">Indemnification Obligations</h3>
         
-        <p style="font-size: 18px; color: #B71C1C;"><strong>THE USE OF THE TRUEVOW PLATFORM IS CONDITIONAL UPON YOUR ACCEPTANCE OF THIS EXPLICIT ASSUMPTION OF ALL PROFESSIONAL AND ETHICAL LIABILITY.</strong></p>
-        
-        <h4 style="color: #B71C1C; margin-top: 24px;">Comprehensive Indemnification (MSA Section 13)</h4>
-        <p><strong>YOU SHALL DEFEND, INDEMNIFY, AND HOLD HARMLESS TRUEVOW AGAINST ALL CLAIMS, DAMAGES, COSTS, AND LIABILITIES ARISING FROM:</strong></p>
+        <p><strong>Per the MSA, the Firm indemnifies TrueVow for certain claims. The following is a summary of indemnification categories. Refer to MSA Section 13 for the full contractual terms.</strong></p>
         
         <h4 style="color: #B71C1C; margin-top: 20px;">Ethics & Compliance Claims:</h4>
         <ul>
@@ -1441,9 +1395,7 @@
         
         <hr style="border: 2px solid #D32F2F; margin: 24px 0;">
         
-        <p style="font-size: 18px; color: #B71C1C; margin-top: 24px;"><strong>TRUEVOW ASSUMES ZERO LIABILITY FOR YOUR PROFESSIONAL CONDUCT, ETHICAL COMPLIANCE, OR CLIENT OUTCOMES.</strong></p>
-        
-        <p style="font-size: 18px; color: #B71C1C;"><strong>ALL RISK RESTS WITH YOU, THE ATTORNEY.</strong></p>
+        <p style="margin-top: 24px;"><strong>The Firm retains full professional and ethical responsibility for all aspects of client representation.</strong></p>
     </div>
     
     <h3>18.1 No Guarantee of Bar Approval</h3>
@@ -1583,18 +1535,16 @@
 
 <!-- Final Disclaimer -->
 <div class="section">
-    <div class="critical-warning">
-        <h2>📜 FINAL DISCLAIMER</h2>
-        <p><strong>THIS BAR COMPLIANCE GUIDE IS FOR INFORMATIONAL PURPOSES ONLY AND DOES NOT CONSTITUTE LEGAL ADVICE.</strong></p>
+    <div class="warning-box">
+        <h4>📜 Disclaimer</h4>
+        <p><strong>This Bar Compliance Guide is for informational purposes only and does not constitute legal advice.</strong></p>
         <p>Each law firm is responsible for:</p>
         <ul style="margin-left: 24px; margin-top: 12px;">
             <li>Reviewing the specific rules and opinions of its jurisdiction's bar association</li>
             <li>Consulting with ethics counsel regarding TrueVow usage</li>
             <li>Ensuring its use of technology complies with all applicable rules</li>
-            <li>Obtaining bar approval where required</li>
         </ul>
-        <p style="margin-top: 20px;"><strong>TRUEVOW MAKES NO REPRESENTATION OR WARRANTY THAT YOUR USE OF THE SERVICES WILL COMPLY WITH ANY PARTICULAR STATE'S BAR RULES OR RECEIVE BAR APPROVAL.</strong></p>
-        <p><strong>YOU ASSUME ALL RISK.</strong></p>
+        <p style="margin-top: 20px;"><strong>TrueVow makes no representation or warranty that your use of the Services will comply with any particular state's bar rules or receive bar approval.</strong></p>
     </div>
 </div>
 
