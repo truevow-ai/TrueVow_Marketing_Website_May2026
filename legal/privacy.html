@@ -20,6 +20,7 @@
         li { margin-bottom: 8px; }
         strong { font-weight: 700; color: #0A2463; }
         .warning-box { background: #FFF3CD; border-left: 6px solid #FF6B35; padding: 24px; margin: 32px 0; border-radius: 8px; }
+        .success-box { background: #D4EDDA; border-left: 6px solid #28A745; padding: 24px; margin: 32px 0; border-radius: 8px; }
         .info-box { background: #E3F2FD; border-left: 6px solid #0A2463; padding: 24px; margin: 32px 0; border-radius: 8px; }
         .version-info { background: #F5F5F5; padding: 16px; border-radius: 8px; margin-bottom: 32px; font-size: 14px; color: #666; }
         table { width: 100%; border-collapse: collapse; margin: 24px 0; }
@@ -57,8 +58,8 @@
         
         <div class="version-info">
             <strong>Version 3.0</strong><br>
-            <strong>Effective Date:</strong> June 25, 2026<br>
-            <strong>Last Updated:</strong> June 25, 2026<br>
+            <strong>Effective Date:</strong> July 1, 2026<br>
+            <strong>Last Updated:</strong> July 1, 2026<br>
             <strong>Controller:</strong> TrueVow Global Tech FZE LLC (UAE)<br>
             <strong>Contact:</strong> privacy@truevow.law | dpo@truevow.law
         </div>
@@ -202,8 +203,8 @@
         
         <div class="info-box">
             <h4>📋 SETTLE™ Specific Data Collection Model</h4>
-            <p><strong>For TrueVow SETTLE™ specifically:</strong> We collect only generic injury categories, county information (public data), and dollar amounts. We do <strong>NOT</strong> collect case facts, legal strategy, privileged communications, or client identifiers. This minimal data collection ensures compliance with ABA Model Rule 1.6 and state bar ethics opinions.</p>
-            <p><strong>Data Aggregation:</strong> SETTLE contributions are immediately anonymized and aggregated. No individual case data is retained beyond the aggregation process. Minimum 15 cases per query result prevents re-identification of any individual case.</p>
+            <p><strong>For TrueVow SETTLE™ specifically:</strong> We collect only generic injury categories, county information, and dollar amounts. We do <strong>not</strong> collect case facts, legal strategy, privileged communications, or client identifiers. This minimal data collection is designed to reduce privacy and confidentiality risk, but the Firm remains responsible for compliance with applicable bar, privacy, consent, and professional-responsibility obligations.</p>
+            <p><strong>Data Aggregation:</strong> SETTLE contributions are designed to be anonymized and aggregated. The minimum 15-case query threshold is designed to reduce re-identification risk, but no anonymization or aggregation method can guarantee that re-identification is impossible in every circumstance.</p>
         </div>
 
         <h3>3.2 Optional 7-Day Retention (Opt-In)</h3>
@@ -225,7 +226,7 @@
             <li><strong>In-RAM Processing:</strong> Audio streams processed in memory only; never written to persistent disk during active call</li>
             <li><strong>SHA-256 Hash-Based Caching:</strong> Temporary performance caching uses truncated cryptographic hashes as keys; raw text never stored in cache; TTL ≤ 900 seconds; allkeys-lru eviction; purged before call termination</li>
             <li><strong>Deletion Standard:</strong> NIST SP 800-88 Rev 1 cryptographic shredding with checksum verification</li>
-            <li><strong>Immutable Logging:</strong> CloudTrail + Loki; 365-day retention; logs contain no content, only metadata (timestamp, status codes, latency)</li>
+            <li><strong>Audit Logging:</strong> Technical logs may include metadata such as timestamps, status codes, latency, and system events, subject to applicable retention settings.</li>
         </ul>
         
         <h3>3.4 SETTLE Data Aggregation & Anonymization</h3>
@@ -540,8 +541,8 @@
             <li><strong>Immediate Anonymization:</strong> All contributions are anonymized and aggregated immediately upon submission</li>
             <li><strong>No Individual Case Retention:</strong> No individual case data is retained beyond the aggregation process</li>
             <li><strong>Aggregated Statistics Only:</strong> Only aggregated, anonymized statistics are stored (e.g., "Median settlement for soft tissue injury in Cook County: $68K")</li>
-            <li><strong>Blockchain Timestamp (VERIFY):</strong> An OpenTimestamps blockchain timestamp may be stored (immutable, contains no personal data, only a tamper-evident record)</li>
-            <li><strong>No Deletion Required:</strong> Since no individual case data or PII is stored, there is no personal data to delete from SETTLE contributions</li>
+            <li><strong>Blockchain Timestamp (VERIFY):</strong> An OpenTimestamps blockchain timestamp may be generated or stored as a tamper-evident record. No personal data should be placed on-chain.</li>
+            <li><strong>Deletion:</strong> SETTLE is designed to retain aggregated statistics rather than identifiable individual case records. If identifiable personal data is inadvertently submitted, Firm should notify TrueVow so appropriate review and deletion steps can be taken.</li>
         </ul>
         
         <div class="info-box">
@@ -550,7 +551,7 @@
             <p><strong>Step 2:</strong> System immediately aggregates with existing data</p>
             <p><strong>Step 3:</strong> Individual contribution data discarded; only aggregated statistics retained</p>
             <p><strong>Step 4:</strong> Blockchain hash generated (a tamper-evident timestamp of the contribution; contains no personal data)</p>
-            <p><strong>Result:</strong> No individual case data ever persists in the SETTLE database</p>
+            <p><strong>Result:</strong> SETTLE is designed to retain aggregated statistics rather than identifiable individual case records.</p>
         </div>
         
         <h3>8.5 LEVERAGE Data Handling</h3>
@@ -680,7 +681,7 @@
             <li><strong>Art. 6(1)(f):</strong> Legitimate interests (security, fraud prevention, service improvement)</li>
             <li><strong>Art. 6(1)(a):</strong> Consent (Retention Toggle, marketing)</li>
             <li><strong>Art. 6(1)(c):</strong> Legal obligations</li>
-            <li><strong>Art. 9(2)(h):</strong> Health data for healthcare purposes by health professional</li>
+            <li><strong>Special-category or health-related data:</strong> Where such data is processed, the Firm is responsible for identifying the applicable legal basis and obtaining any required consent or authorization. TrueVow processes such data only as instructed by the Firm and only to provide the Services.</li>
         </ul>
 
         <h3>12.2 EU/UK Representative (GDPR Art. 27)</h3>
@@ -980,8 +981,8 @@
 
         <div class="version-info">
             <p><strong>Document Version:</strong> 3.0<br>
-            <strong>Effective Date:</strong> June 25, 2026<br>
-            <strong>Last Revised:</strong> June 25, 2026<br>
+            <strong>Effective Date:</strong> July 1, 2026<br>
+            <strong>Last Revised:</strong> July 1, 2026<br>
             <strong>Compliance Frameworks:</strong> This Policy is designed with reference to certain privacy frameworks; firm obligations depend on applicable law and configuration.</p>
         </div>
 
