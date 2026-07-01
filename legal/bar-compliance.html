@@ -703,7 +703,7 @@
     </div>
     
     <h3>7.7 Relevant State Bar Ethics Guidance</h3>
-    <p><strong>SETTLE's anonymized, aggregated data model is designed with reference to published state bar ethics guidance addressing aggregated, anonymized data:</strong></p>
+    <p><strong>SETTLE's anonymized, aggregated data model is intended to be reviewed against applicable ethics guidance addressing confidentiality, benchmarking, technology use, and client consent. The examples below should be verified by counsel before reliance.</strong></p>
     
     <table>
         <thead>
@@ -719,25 +719,25 @@
                 <td><strong>California</strong></td>
                 <td>Formal Op. 2021-206 (2021)</td>
                 <td>"Attorneys may share exact settlement amounts in anonymized, aggregated databases for industry benchmarking, provided no client-identifying information is disclosed."</td>
-                <td>Design aligned</td>
+                <td>Counsel review recommended</td>
             </tr>
             <tr>
                 <td><strong>New York</strong></td>
                 <td>Ethics Op. 2019-4</td>
                 <td>Aggregate case data permitted for benchmarking</td>
-                <td>Design aligned</td>
+                <td>Counsel review recommended</td>
             </tr>
             <tr>
                 <td><strong>Florida</strong></td>
                 <td>Advisory Op. 21-1</td>
                 <td>Historical settlement amounts not confidential</td>
-                <td>Design aligned</td>
+                <td>Counsel review recommended</td>
             </tr>
             <tr>
                 <td><strong>Texas</strong></td>
                 <td>Ethics Op. 679</td>
                 <td>Anonymized outcome data permissible with client consent</td>
-                <td>Design aligned</td>
+                <td>Counsel review recommended</td>
             </tr>
         </tbody>
     </table>
@@ -746,7 +746,7 @@
         <h4>📜 Key Precedent</h4>
         <p><strong>State Bar of California Formal Op. 2021-206 (2021):</strong></p>
         <p><em>"Attorneys may share exact settlement amounts in anonymized, aggregated databases for industry benchmarking, provided no client-identifying information is disclosed."</em></p>
-        <p>This opinion provides clear authority for SETTLE's data contribution model, as long as all client-identifying information is removed before contribution.</p>
+        <p>This type of guidance may be relevant when evaluating anonymized or aggregated data-sharing practices, but firms should consult ethics counsel before relying on it.</p>
     </div>
     
     <h3>7.8 HIPAA Compliance for SETTLE</h3>
@@ -782,8 +782,8 @@
     </ul>
     
     <div class="info-box">
-        <h4>📋 Antitrust Safety</h4>
-        <p>SETTLE is designed to be pro-competitive by leveling the playing field between plaintiff attorneys and insurance carriers. Unlike defendant-side tools that may facilitate price coordination, SETTLE provides transparent, historical data that empowers attorneys in negotiations without enabling collusion or price-fixing.</p>
+        <h4>📋 Antitrust Risk Notes</h4>
+        <p>SETTLE is designed as an aggregated, historical reference tool. It is not intended to support price coordination, collective negotiation strategy, or collusion. Firms remain responsible for their own antitrust compliance and should not use SETTLE outputs to coordinate pricing, settlement positions, or negotiation conduct with other firms.</p>
     </div>
     
     <h3>7.10 Risk-Reduction Design Notes</h3>
@@ -921,11 +921,9 @@
     <h3>11.4 Controlled Data Handling</h3>
     <p>By default, and subject to configured retention settings and vendor-governed processing, TrueVow keeps retention to a minimum (as described in the Terms of Service and Privacy Policy):</p>
     <ul>
-        <li>No call audio or transcripts stored post-session</li>
-        <li>No personally identifiable information (PII)</li>
-        <li>No protected health information (PHI)</li>
-        <li>No Social Security Numbers</li>
-        <li>No financial account details</li>
+        <li>Call audio and transcripts are not stored unless optional retention is enabled</li>
+        <li>Structured intake records, contact information, booking details, and metadata may be processed or stored according to Firm configuration, portal settings, integrations, and applicable retention settings</li>
+        <li>Prohibited data such as Social Security Numbers, full medical records, payment credentials, and similar high-risk data should not be submitted</li>
     </ul>
     
     <p><strong>This architecture mitigates the risk of accidental privilege waiver due to data persistence.</strong></p>
@@ -945,7 +943,7 @@
     </div>
     
     <h3>11.6 HIPAA & Business Associate Agreements</h3>
-    <p>TrueVow is <strong>not a "Business Associate" under HIPAA by default</strong> because we store <strong>no PHI</strong>.</p>
+    <p>TrueVow is not intended to receive or store PHI by default. If a Firm expects PHI to be processed, stored, or retained through the Services, the Firm is responsible for determining whether HIPAA applies and whether a Business Associate Agreement or other safeguards are required.</p>
     <p><strong>If you enable retention toggle AND the recording contains PHI, you must execute our BAA.</strong> Without a signed BAA, you warrant that no PHI will be uploaded. Violation triggers indemnity under MSA § 12.2(vi).</p>
     
     <h3>11.7 Prohibited Data (Schedule C)</h3>
@@ -1244,11 +1242,11 @@
         <li>Automatic 30-minute calendar hold</li>
         <li><strong>Run conflict check in your system</strong></li>
         <li>If cleared: Send confirmation SMS</li>
-        <li>If conflict: Decline booking (no charge)</li>
+        <li>If conflict: decline or cancel the consultation according to Firm procedure</li>
     </ol>
     
     <h3>16.6 Duplicate Detection</h3>
-    <p>If the same phone number calls twice within 30 days, we flag "possible existing client" and <strong>do not</strong> charge you (avoids inadvertent adverse intake).</p>
+    <p>If the same phone number calls twice within 30 days, the system may flag "possible existing client" or "possible duplicate" to help the Firm review the intake appropriately.</p>
     
     <h3>16.7 CLE Documentation</h3>
     <p>Document CLE attendance on technology competence (MR 1.1 comment 8). Recommended topics:</p>
