@@ -225,204 +225,107 @@
     
     <div class="intro">
         <h2>📋 About This List</h2>
-        <p><strong>Important:</strong> This list identifies sub-processors and vendor categories that TrueVow uses to support delivery of the Services. Some operational vendors may change over time. TrueVow will use commercially reasonable efforts to keep this page current, subject to the notice rules in the MSA.</p>
+        <p>This page identifies material third-party service providers and vendor categories that TrueVow currently uses or may use to support delivery, security, analytics, communications, billing, infrastructure, and operations for the Services. The specific providers used for a Customer may vary depending on product configuration, enabled features, tenant settings, integrations, failover routing, and deployment environment.</p>
         
-        <p>This page lists third-party sub-processors that TrueVow uses to deliver the Services across testing, staging, and production environments. These vendors provide <strong>operational, infrastructural, and developmental support</strong> and are used exclusively for <strong>non-legal purposes</strong>.</p>
+        <p>TrueVow uses commercially reasonable efforts to keep this list current. New high-risk sub-processors that materially process Customer Data are handled according to the notice and objection process described in the applicable Master Services Agreement.</p>
         
-        <p><strong>Important:</strong> These vendors support delivery of the Services (e.g., speech processing, messaging, infrastructure, authentication, and operational support). Data handling for these vendors is governed by vendor terms, security controls, and TrueVow's configuration.</p>
+        <p>Some tools listed below are operational vendors or self-hosted open-source components rather than external hosted sub-processors. Where a tool is operated entirely within TrueVow-controlled infrastructure and does not receive Customer Data as an external service provider, it is identified separately.</p>
         
         <p><strong>Pre-Authorized Categories (No Notice Required):</strong> TrueVow may engage additional vendors in these categories without prior notice: Development tools, Infrastructure management, Monitoring and logging, Internal operations, Network security. See Section 6.6(b) of the MSA for details.</p>
     </div>
     
     <div class="disclaimer">
-        <strong>⚠️ Disclaimer:</strong> All vendors listed below are used to support delivery of the Services. Data handling for these vendors is governed by vendor terms, security controls, and TrueVow's configuration.
+        <strong>⚠️ Disclaimer:</strong> All vendors listed below are used to support delivery of the Services. Data handling for these vendors is governed by vendor terms, security controls, and TrueVow's configuration. Provider use depends on product configuration, enabled features, tenant settings, integrations, failover routing, and deployment environment.
     </div>
     
-    <!-- HOSTING & INFRASTRUCTURE -->
+    <!-- SECTION 1: MATERIAL SUB-PROCESSORS -->
     <div class="category-section">
-        <h2>☁️ Hosting & Infrastructure</h2>
+        <h2>🔒 Material Sub-Processors</h2>
+        <p>The following providers process Customer Data as core sub-processors for the Services. These vendors touch platform, tenant, voice, payment, identity, communications, analytics, or customer data flows.</p>
         <table class="processor-table">
             <thead>
                 <tr>
                     <th>Provider</th>
-                    <th>Function</th>
-                    <th>Jurisdiction</th>
-                    <th>Legal Terms</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="processor-name">Google Cloud Platform</td>
-                    <td>Application hosting, GKE, Cloud SQL, CI/CD</td>
-                    <td>Global</td>
-                    <td><div class="legal-links"><a href="https://cloud.google.com/terms" target="_blank" class="legal-link">Terms</a><a href="https://cloud.google.com/terms/privacy" target="_blank" class="legal-link">Privacy</a></div></td>
-                </tr>
-                <tr>
-                    <td class="processor-name">Fly.io</td>
-                    <td>Edge hosting for voice bridges</td>
-                    <td>Global</td>
-                    <td><div class="legal-links"><a href="https://fly.io/legal/terms" target="_blank" class="legal-link">Terms</a><a href="https://fly.io/legal/privacy" target="_blank" class="legal-link">Privacy</a></div></td>
-                </tr>
-                <tr>
-                    <td class="processor-name">Cloudflare Workers</td>
-                    <td>Edge compute</td>
-                    <td>Global</td>
-                    <td><div class="legal-links"><a href="https://www.cloudflare.com/terms/" target="_blank" class="legal-link">Terms</a><a href="https://www.cloudflare.com/privacypolicy/" target="_blank" class="legal-link">Privacy</a></div></td>
-                </tr>
-                <tr>
-                    <td class="processor-name">Docker Hub / GitHub Container Registry</td>
-                    <td>Container image registry</td>
-                    <td>USA</td>
-                    <td><div class="legal-links"><a href="https://www.docker.com/legal" target="_blank" class="legal-link">Terms</a></div></td>
-                </tr>
-                <tr>
-                    <td class="processor-name">GitHub</td>
-                    <td>Source code hosting, CI/CD</td>
-                    <td>USA</td>
-                    <td><div class="legal-links"><a href="https://docs.github.com/en/site-policy/github-terms" target="_blank" class="legal-link">Terms</a><a href="https://docs.github.com/en/site-policy/privacy-policies" target="_blank" class="legal-link">Privacy</a></div></td>
-                </tr>
-                <tr>
-                    <td class="processor-name">Ngrok</td>
-                    <td>HTTPS tunneling (development)</td>
-                    <td>USA</td>
-                    <td><div class="legal-links"><a href="https://ngrok.com/legal" target="_blank" class="legal-link">Terms</a></div></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    
-    <!-- DATABASE & STORAGE -->
-    <div class="category-section">
-        <h2>🗄️ Database & Storage</h2>
-        <table class="processor-table">
-            <thead>
-                <tr>
-                    <th>Provider</th>
-                    <th>Function</th>
-                    <th>Jurisdiction</th>
+                    <th>Purpose</th>
+                    <th>Data Types / Access</th>
                     <th>Legal Terms</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td class="processor-name">Supabase</td>
-                    <td>PostgreSQL — all tenant, admin, billing, CRM, and analytics data</td>
-                    <td>USA</td>
+                    <td>PostgreSQL database — tenant, admin, billing, CRM, analytics data</td>
+                    <td>Account data, portal data, structured intake records, booking metadata, configuration data, logs</td>
                     <td><div class="legal-links"><a href="https://supabase.com/terms" target="_blank" class="legal-link">Terms</a><a href="https://supabase.com/privacy" target="_blank" class="legal-link">Privacy</a></div></td>
                 </tr>
                 <tr>
-                    <td class="processor-name">AWS (via Supabase Pooler)</td>
-                    <td>Connection pooling</td>
-                    <td>USA</td>
-                    <td><div class="legal-links"><a href="https://aws.amazon.com/legal/" target="_blank" class="legal-link">Terms</a></div></td>
+                    <td class="processor-name">Clerk</td>
+                    <td>User authentication — Platform Operators, Sales/Support, Tenants</td>
+                    <td>User credentials, auth tokens, session data</td>
+                    <td><div class="legal-links"><a href="https://clerk.com/legal/terms" target="_blank" class="legal-link">Terms</a><a href="https://clerk.com/legal/privacy" target="_blank" class="legal-link">Privacy</a></div></td>
+                </tr>
+                <tr>
+                    <td class="processor-name">Twilio</td>
+                    <td>Voice calls + SMS infrastructure</td>
+                    <td>Call audio, phone numbers, SMS content</td>
+                    <td><div class="legal-links"><a href="https://www.twilio.com/legal/tos" target="_blank" class="legal-link">Terms</a><a href="https://www.twilio.com/legal/privacy" target="_blank" class="legal-link">Privacy</a></div></td>
+                </tr>
+                <tr>
+                    <td class="processor-name">Stripe</td>
+                    <td>Subscription billing, payment processing</td>
+                    <td>Payment details, billing metadata, transaction records</td>
+                    <td><div class="legal-links"><a href="https://stripe.com/legal" target="_blank" class="legal-link">Terms</a><a href="https://stripe.com/privacy" target="_blank" class="legal-link">Privacy</a></div></td>
+                </tr>
+                <tr>
+                    <td class="processor-name">LiveKit Cloud</td>
+                    <td>Real-time voice/video agent platform, SIP trunking</td>
+                    <td>Voice media streams, SIP metadata, room events</td>
+                    <td><div class="legal-links"><a href="https://livekit.io/legal" target="_blank" class="legal-link">Terms</a><a href="https://livekit.io/privacy" target="_blank" class="legal-link">Privacy</a></div></td>
+                </tr>
+                <tr>
+                    <td class="processor-name">Google Cloud Platform</td>
+                    <td>Application hosting, GKE, Cloud SQL, CI/CD</td>
+                    <td>Application data, infrastructure logs, runtime data</td>
+                    <td><div class="legal-links"><a href="https://cloud.google.com/terms" target="_blank" class="legal-link">Terms</a><a href="https://cloud.google.com/terms/privacy" target="_blank" class="legal-link">Privacy</a></div></td>
+                </tr>
+                <tr>
+                    <td class="processor-name">Cloudflare / Cloudflare Workers</td>
+                    <td>Edge compute, CDN, WAF, DNS</td>
+                    <td>IP addresses, request logs, edge compute data</td>
+                    <td><div class="legal-links"><a href="https://www.cloudflare.com/terms/" target="_blank" class="legal-link">Terms</a><a href="https://www.cloudflare.com/privacypolicy/" target="_blank" class="legal-link">Privacy</a></div></td>
                 </tr>
                 <tr>
                     <td class="processor-name">Redis</td>
-                    <td>Caching, rate limiting, sessions</td>
-                    <td>USA</td>
+                    <td>Caching, rate limiting, session management</td>
+                    <td>Session tokens, cache keys, temporary routing data</td>
                     <td><div class="legal-links"><a href="https://redis.com/legal/terms-of-use/" target="_blank" class="legal-link">Terms</a><a href="https://redis.com/legal/privacy-policy/" target="_blank" class="legal-link">Privacy</a></div></td>
                 </tr>
                 <tr>
-                    <td class="processor-name">MongoDB</td>
-                    <td>Novu notification data</td>
-                    <td>USA</td>
-                    <td><div class="legal-links"><a href="https://www.mongodb.com/legal" target="_blank" class="legal-link">Terms</a></div></td>
-                </tr>
-                <tr>
-                    <td class="processor-name">ClickHouse</td>
-                    <td>PostHog analytics events</td>
-                    <td>USA</td>
-                    <td><div class="legal-links"><a href="https://clickhouse.com/legal" target="_blank" class="legal-link">Terms</a></div></td>
-                </tr>
-                <tr>
-                    <td class="processor-name">AWS S3</td>
-                    <td>Document/evidence file storage</td>
-                    <td>USA</td>
+                    <td class="processor-name">AWS (S3 + Supabase Pooler)</td>
+                    <td>Document/evidence file storage, connection pooling</td>
+                    <td>Files, documents, database connection metadata</td>
                     <td><div class="legal-links"><a href="https://aws.amazon.com/legal/" target="_blank" class="legal-link">Terms</a></div></td>
                 </tr>
                 <tr>
                     <td class="processor-name">Supabase Storage</td>
                     <td>User uploads, tenant files</td>
-                    <td>USA</td>
+                    <td>Uploaded files, documents, media</td>
                     <td><div class="legal-links"><a href="https://supabase.com/terms" target="_blank" class="legal-link">Terms</a></div></td>
                 </tr>
             </tbody>
         </table>
     </div>
     
-    <!-- AUTHENTICATION -->
+    <!-- SECTION 2: AI / SPEECH / VOICE PROVIDERS -->
     <div class="category-section">
-        <h2>🔐 Authentication</h2>
+        <h2>🤖 AI / Speech / Voice Providers</h2>
+        <p>Depending on product configuration, availability, tenant settings, failover routing, and enabled workflows, TrueVow may use one or more AI, speech, transcription, or reasoning providers to support intake, enrichment, voice processing, transcription, summarization, routing, or operational tasks.</p>
         <table class="processor-table">
             <thead>
                 <tr>
                     <th>Provider</th>
-                    <th>Function</th>
-                    <th>Jurisdiction</th>
-                    <th>Legal Terms</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="processor-name">Clerk</td>
-                    <td>User authentication — Platform Operators, Sales/Support, Tenants</td>
-                    <td>USA</td>
-                    <td><div class="legal-links"><a href="https://clerk.com/legal/terms" target="_blank" class="legal-link">Terms</a><a href="https://clerk.com/legal/privacy" target="_blank" class="legal-link">Privacy</a></div></td>
-                </tr>
-                <tr>
-                    <td class="processor-name">JWT / jose</td>
-                    <td>Service-to-service token signing</td>
-                    <td>N/A (Library)</td>
-                    <td>—</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    
-    <!-- MONITORING & OBSERVABILITY -->
-    <div class="category-section">
-        <h2>📊 Monitoring & Observability</h2>
-        <table class="processor-table">
-            <thead>
-                <tr>
-                    <th>Provider</th>
-                    <th>Function</th>
-                    <th>Jurisdiction</th>
-                    <th>Legal Terms</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="processor-name">Sentry</td>
-                    <td>Error tracking and crash reporting</td>
-                    <td>USA</td>
-                    <td><div class="legal-links"><a href="https://sentry.io/terms/" target="_blank" class="legal-link">Terms</a><a href="https://sentry.io/privacy/" target="_blank" class="legal-link">Privacy</a></div></td>
-                </tr>
-                <tr>
-                    <td class="processor-name">Grafana Cloud</td>
-                    <td>Metrics visualization</td>
-                    <td>USA</td>
-                    <td><div class="legal-links"><a href="https://grafana.com/legal/terms" target="_blank" class="legal-link">Terms</a><a href="https://grafana.com/legal/privacy" target="_blank" class="legal-link">Privacy</a></div></td>
-                </tr>
-                <tr>
-                    <td class="processor-name">PostHog</td>
-                    <td>Product analytics, session recording</td>
-                    <td>USA</td>
-                    <td><div class="legal-links"><a href="https://posthog.com/terms" target="_blank" class="legal-link">Terms</a><a href="https://posthog.com/privacy" target="_blank" class="legal-link">Privacy</a></div></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    
-    <!-- AI / LLM -->
-    <div class="category-section">
-        <h2>🤖 AI / LLM</h2>
-        <table class="processor-table">
-            <thead>
-                <tr>
-                    <th>Provider</th>
-                    <th>Function</th>
-                    <th>Jurisdiction</th>
+                    <th>Purpose</th>
+                    <th>Data Types / Access</th>
                     <th>Legal Terms</th>
                 </tr>
             </thead>
@@ -430,135 +333,123 @@
                 <tr>
                     <td class="processor-name">OpenAI</td>
                     <td>LLM inference, transcription</td>
-                    <td>USA</td>
+                    <td>Text prompts, audio for transcription — per configuration</td>
                     <td><div class="legal-links"><a href="https://openai.com/policies/terms-of-use" target="_blank" class="legal-link">Terms</a><a href="https://openai.com/policies/privacy-policy" target="_blank" class="legal-link">Privacy</a></div></td>
                 </tr>
                 <tr>
                     <td class="processor-name">Anthropic (Claude)</td>
-                    <td>Sales lead enrichment</td>
-                    <td>USA</td>
+                    <td>Sales lead enrichment, reasoning</td>
+                    <td>Text prompts — per configuration</td>
                     <td><div class="legal-links"><a href="https://www.anthropic.com/legal" target="_blank" class="legal-link">Terms</a></div></td>
                 </tr>
                 <tr>
                     <td class="processor-name">Google Gemini / GenAI</td>
                     <td>Voice agent reasoning, SaaS Admin tasks</td>
-                    <td>Global</td>
+                    <td>Text prompts, transcribed audio — per configuration</td>
                     <td><div class="legal-links"><a href="https://cloud.google.com/terms" target="_blank" class="legal-link">Terms</a></div></td>
                 </tr>
                 <tr>
                     <td class="processor-name">DeepSeek</td>
                     <td>Lead enrichment pipeline</td>
-                    <td>Global</td>
+                    <td>Text prompts — per configuration</td>
                     <td><div class="legal-links"><a href="https://deepseek.com/legal" target="_blank" class="legal-link">Terms</a></div></td>
                 </tr>
                 <tr>
                     <td class="processor-name">xAI / Grok</td>
                     <td>Voice bridge AI reasoning</td>
-                    <td>USA</td>
+                    <td>Text prompts — per configuration</td>
                     <td><div class="legal-links"><a href="https://x.ai/legal" target="_blank" class="legal-link">Terms</a></div></td>
                 </tr>
                 <tr>
                     <td class="processor-name">Groq</td>
                     <td>LLM inference + Whisper transcription</td>
-                    <td>USA</td>
+                    <td>Text prompts, audio for transcription — per configuration</td>
                     <td><div class="legal-links"><a href="https://console.groq.com/docs/terms" target="_blank" class="legal-link">Terms</a></div></td>
                 </tr>
                 <tr>
                     <td class="processor-name">Cartesia</td>
                     <td>Text-to-Speech (TTS)</td>
-                    <td>USA</td>
+                    <td>Text scripts → audio output</td>
                     <td><div class="legal-links"><a href="https://cartesia.ai/legal" target="_blank" class="legal-link">Legal</a></div></td>
                 </tr>
                 <tr>
                     <td class="processor-name">Deepgram</td>
                     <td>Speech-to-Text (STT) — primary</td>
-                    <td>USA</td>
+                    <td>Audio → text transcripts</td>
                     <td><div class="legal-links"><a href="https://deepgram.com/terms" target="_blank" class="legal-link">Terms</a><a href="https://deepgram.com/privacy" target="_blank" class="legal-link">Privacy</a></div></td>
                 </tr>
                 <tr>
                     <td class="processor-name">AssemblyAI</td>
                     <td>Speech-to-Text (STT) — backup</td>
-                    <td>USA</td>
+                    <td>Audio → text transcripts</td>
                     <td><div class="legal-links"><a href="https://www.assemblyai.com/legal" target="_blank" class="legal-link">Terms</a></div></td>
                 </tr>
                 <tr>
                     <td class="processor-name">Xenova Transformers</td>
                     <td>Local ML embeddings (ONNX)</td>
-                    <td>N/A (Library)</td>
-                    <td>—</td>
-                </tr>
-                <tr>
-                    <td class="processor-name">LiveKit Cloud</td>
-                    <td>Real-time voice/video agent platform, SIP trunking</td>
-                    <td>USA</td>
-                    <td><div class="legal-links"><a href="https://livekit.io/legal" target="_blank" class="legal-link">Terms</a><a href="https://livekit.io/privacy" target="_blank" class="legal-link">Privacy</a></div></td>
+                    <td>Text embeddings — processed on TrueVow infrastructure</td>
+                    <td><em>Self-hosted library; not an external sub-processor</em></td>
                 </tr>
             </tbody>
         </table>
     </div>
     
-    <!-- COMMUNICATION -->
+    <!-- SECTION 3: COMMUNICATIONS & CALENDAR INTEGRATIONS -->
     <div class="category-section">
-        <h2>📞 Communication</h2>
+        <h2>📞 Communications & Calendar Integrations</h2>
         <table class="processor-table">
             <thead>
                 <tr>
                     <th>Provider</th>
-                    <th>Function</th>
-                    <th>Jurisdiction</th>
+                    <th>Purpose</th>
+                    <th>Data Types / Access</th>
                     <th>Legal Terms</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td class="processor-name">Twilio</td>
-                    <td>Voice calls + SMS (production)</td>
-                    <td>USA</td>
-                    <td><div class="legal-links"><a href="https://www.twilio.com/legal/tos" target="_blank" class="legal-link">Terms</a><a href="https://www.twilio.com/legal/privacy" target="_blank" class="legal-link">Privacy</a></div></td>
+                    <td class="processor-name">Resend</td>
+                    <td>Email delivery — primary</td>
+                    <td>Email content, recipient addresses</td>
+                    <td><div class="legal-links"><a href="https://resend.com/legal" target="_blank" class="legal-link">Terms</a></div></td>
                 </tr>
                 <tr>
                     <td class="processor-name">SendGrid</td>
-                    <td>Email (backup)</td>
-                    <td>USA</td>
+                    <td>Email delivery — backup</td>
+                    <td>Email content, recipient addresses</td>
                     <td><div class="legal-links"><a href="https://www.twilio.com/legal/sendgrid" target="_blank" class="legal-link">Terms</a></div></td>
-                </tr>
-                <tr>
-                    <td class="processor-name">Resend</td>
-                    <td>Email (primary)</td>
-                    <td>USA</td>
-                    <td><div class="legal-links"><a href="https://resend.com/legal" target="_blank" class="legal-link">Terms</a></div></td>
                 </tr>
                 <tr>
                     <td class="processor-name">UseBouncer</td>
                     <td>Email verification</td>
-                    <td>USA</td>
+                    <td>Email addresses</td>
                     <td><div class="legal-links"><a href="https://www.usebouncer.com/legal" target="_blank" class="legal-link">Terms</a></div></td>
                 </tr>
                 <tr>
                     <td class="processor-name">Google Calendar API</td>
                     <td>Calendar integration</td>
-                    <td>Global</td>
+                    <td>Calendar events, scheduling metadata</td>
                     <td><div class="legal-links"><a href="https://cloud.google.com/terms" target="_blank" class="legal-link">Terms</a></div></td>
                 </tr>
                 <tr>
                     <td class="processor-name">Microsoft Graph</td>
                     <td>Outlook/365 calendar integration</td>
-                    <td>Global</td>
+                    <td>Calendar events, scheduling metadata</td>
                     <td><div class="legal-links"><a href="https://www.microsoft.com/en-us/legal" target="_blank" class="legal-link">Terms</a></div></td>
                 </tr>
             </tbody>
         </table>
     </div>
     
-    <!-- PAYMENTS -->
+    <!-- SECTION 4: PAYMENTS -->
     <div class="category-section">
         <h2>💳 Payments</h2>
         <table class="processor-table">
             <thead>
                 <tr>
                     <th>Provider</th>
-                    <th>Function</th>
-                    <th>Jurisdiction</th>
+                    <th>Purpose</th>
+                    <th>Data Types / Access</th>
                     <th>Legal Terms</th>
                 </tr>
             </thead>
@@ -566,22 +457,70 @@
                 <tr>
                     <td class="processor-name">Stripe</td>
                     <td>Subscription billing, payment processing</td>
-                    <td>USA</td>
+                    <td>Payment details, billing metadata, transaction records</td>
                     <td><div class="legal-links"><a href="https://stripe.com/legal" target="_blank" class="legal-link">Terms</a><a href="https://stripe.com/privacy" target="_blank" class="legal-link">Privacy</a></div></td>
                 </tr>
             </tbody>
         </table>
     </div>
     
-    <!-- LEAD GENERATION & ENRICHMENT -->
+    <!-- SECTION 5: ANALYTICS, MONITORING & OBSERVABILITY -->
     <div class="category-section">
-        <h2>🔍 Lead Generation & Enrichment</h2>
+        <h2>📊 Analytics, Monitoring & Observability</h2>
         <table class="processor-table">
             <thead>
                 <tr>
                     <th>Provider</th>
-                    <th>Function</th>
-                    <th>Jurisdiction</th>
+                    <th>Purpose</th>
+                    <th>Data Types / Access</th>
+                    <th>Legal Terms</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="processor-name">Sentry</td>
+                    <td>Error tracking and crash reporting</td>
+                    <td>Error logs, stack traces, technical metadata</td>
+                    <td><div class="legal-links"><a href="https://sentry.io/terms/" target="_blank" class="legal-link">Terms</a><a href="https://sentry.io/privacy/" target="_blank" class="legal-link">Privacy</a></div></td>
+                </tr>
+                <tr>
+                    <td class="processor-name">Grafana Cloud</td>
+                    <td>Metrics visualization</td>
+                    <td>System metrics, performance data</td>
+                    <td><div class="legal-links"><a href="https://grafana.com/legal/terms" target="_blank" class="legal-link">Terms</a><a href="https://grafana.com/legal/privacy" target="_blank" class="legal-link">Privacy</a></div></td>
+                </tr>
+                <tr>
+                    <td class="processor-name">PostHog</td>
+                    <td>Product analytics, session recording</td>
+                    <td>Usage analytics, session metadata</td>
+                    <td><div class="legal-links"><a href="https://posthog.com/terms" target="_blank" class="legal-link">Terms</a><a href="https://posthog.com/privacy" target="_blank" class="legal-link">Privacy</a></div></td>
+                </tr>
+                <tr>
+                    <td class="processor-name">ClickHouse</td>
+                    <td>Analytics event storage</td>
+                    <td>Aggregated analytics events</td>
+                    <td><div class="legal-links"><a href="https://clickhouse.com/legal" target="_blank" class="legal-link">Terms</a></div></td>
+                </tr>
+                <tr>
+                    <td class="processor-name">MongoDB</td>
+                    <td>Notification data storage</td>
+                    <td>Notification metadata, delivery status</td>
+                    <td><div class="legal-links"><a href="https://www.mongodb.com/legal" target="_blank" class="legal-link">Terms</a></div></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- SECTION 6: LEAD GENERATION & ENRICHMENT VENDORS -->
+    <div class="category-section">
+        <h2>🔍 Lead Generation & Enrichment Vendors</h2>
+        <p>Used for business lead discovery, firmographic enrichment, public web research, or sales operations. These vendors should not receive Firm Client Data unless separately configured and approved.</p>
+        <table class="processor-table">
+            <thead>
+                <tr>
+                    <th>Provider</th>
+                    <th>Purpose</th>
+                    <th>Data Types / Access</th>
                     <th>Legal Terms</th>
                 </tr>
             </thead>
@@ -589,75 +528,95 @@
                 <tr>
                     <td class="processor-name">Google Maps API</td>
                     <td>Law firm location data</td>
-                    <td>Global</td>
+                    <td>Public business data, geocoding</td>
                     <td><div class="legal-links"><a href="https://cloud.google.com/maps-platform/terms" target="_blank" class="legal-link">Terms</a></div></td>
                 </tr>
                 <tr>
                     <td class="processor-name">Exa.ai</td>
                     <td>Semantic web search</td>
-                    <td>USA</td>
+                    <td>Public web data, search queries</td>
                     <td><div class="legal-links"><a href="https://exa.ai/legal" target="_blank" class="legal-link">Terms</a></div></td>
                 </tr>
                 <tr>
                     <td class="processor-name">Apify</td>
                     <td>Web scraping</td>
-                    <td>Global</td>
+                    <td>Public web data</td>
                     <td><div class="legal-links"><a href="https://apify.com/legal" target="_blank" class="legal-link">Terms</a></div></td>
                 </tr>
                 <tr>
                     <td class="processor-name">Apollo.io</td>
                     <td>Business contact data</td>
-                    <td>USA</td>
+                    <td>Public business contact information</td>
                     <td><div class="legal-links"><a href="https://www.apollo.io/legal" target="_blank" class="legal-link">Terms</a></div></td>
                 </tr>
                 <tr>
                     <td class="processor-name">2Captcha</td>
-                    <td>State bar CAPTCHA solving</td>
-                    <td>Global</td>
+                    <td>Automation support for public-source data retrieval workflows</td>
+                    <td>Public web data retrieval</td>
                     <td><div class="legal-links"><a href="https://2captcha.com/legal" target="_blank" class="legal-link">Terms</a></div></td>
                 </tr>
             </tbody>
         </table>
     </div>
     
-    <!-- CI/CD -->
+    <!-- SECTION 7: DEVELOPMENT, CI/CD & INFRASTRUCTURE VENDORS -->
     <div class="category-section">
-        <h2>🔄 CI/CD</h2>
+        <h2>🔄 Development, CI/CD & Infrastructure Vendors</h2>
+        <p>Operational and development vendors that support build, deployment, and infrastructure operations. These vendors generally do not receive production Customer Data.</p>
         <table class="processor-table">
             <thead>
                 <tr>
                     <th>Provider</th>
-                    <th>Function</th>
-                    <th>Jurisdiction</th>
+                    <th>Purpose</th>
+                    <th>Data Types / Access</th>
                     <th>Legal Terms</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td class="processor-name">GitHub Actions</td>
-                    <td>CI/CD pipelines</td>
-                    <td>USA</td>
-                    <td><div class="legal-links"><a href="https://docs.github.com/en/site-policy/github-terms" target="_blank" class="legal-link">Terms</a></div></td>
+                    <td class="processor-name">GitHub / GitHub Actions</td>
+                    <td>Source code hosting, CI/CD pipelines</td>
+                    <td>Source code, build artifacts, deployment metadata</td>
+                    <td><div class="legal-links"><a href="https://docs.github.com/en/site-policy/github-terms" target="_blank" class="legal-link">Terms</a><a href="https://docs.github.com/en/site-policy/privacy-policies" target="_blank" class="legal-link">Privacy</a></div></td>
                 </tr>
                 <tr>
                     <td class="processor-name">Google Cloud Build / Deploy</td>
                     <td>Cloud-native deployment</td>
-                    <td>Global</td>
+                    <td>Build artifacts, deployment metadata</td>
                     <td><div class="legal-links"><a href="https://cloud.google.com/terms" target="_blank" class="legal-link">Terms</a></div></td>
+                </tr>
+                <tr>
+                    <td class="processor-name">Fly.io</td>
+                    <td>Edge hosting for voice bridges</td>
+                    <td>Application containers, runtime data</td>
+                    <td><div class="legal-links"><a href="https://fly.io/legal/terms" target="_blank" class="legal-link">Terms</a><a href="https://fly.io/legal/privacy" target="_blank" class="legal-link">Privacy</a></div></td>
+                </tr>
+                <tr>
+                    <td class="processor-name">Docker Hub / GitHub Container Registry</td>
+                    <td>Container image registry</td>
+                    <td>Container images</td>
+                    <td><div class="legal-links"><a href="https://www.docker.com/legal" target="_blank" class="legal-link">Terms</a></div></td>
+                </tr>
+                <tr>
+                    <td class="processor-name">Ngrok</td>
+                    <td>HTTPS tunneling (development)</td>
+                    <td>Development tunnel traffic</td>
+                    <td><div class="legal-links"><a href="https://ngrok.com/legal" target="_blank" class="legal-link">Terms</a></div></td>
                 </tr>
             </tbody>
         </table>
     </div>
     
-    <!-- SELF-HOSTED INFRASTRUCTURE -->
+    <!-- SECTION 8: SELF-HOSTED OPEN-SOURCE COMPONENTS -->
     <div class="category-section">
-        <h2>🔧 Self-Hosted Infrastructure (Open-Source)</h2>
-        <p>The following tools are open-source software operated on TrueVow-controlled infrastructure. They are not external hosted sub-processors and do not receive Customer Data through a third-party service.</p>
+        <h2>🔧 Self-Hosted Open-Source Components</h2>
+        <p>The following tools are open-source software operated on TrueVow-controlled infrastructure. They are not external hosted sub-processors and do not receive Customer Data as a third-party service. These components run within TrueVow's own infrastructure.</p>
         <table class="processor-table">
             <thead>
                 <tr>
                     <th>Component</th>
-                    <th>Function</th>
+                    <th>Purpose</th>
+                    <th>Data Types / Access</th>
                     <th>Source</th>
                 </tr>
             </thead>
@@ -665,39 +624,51 @@
                 <tr>
                     <td class="processor-name">Jaeger</td>
                     <td>Distributed trace visualization</td>
+                    <td>Trace data — on TrueVow infrastructure</td>
                     <td><div class="legal-links"><a href="https://www.jaegertracing.io/" target="_blank" class="legal-link">Website</a></div></td>
                 </tr>
                 <tr>
                     <td class="processor-name">OpenTelemetry Collector</td>
                     <td>Telemetry aggregation</td>
+                    <td>Telemetry data — on TrueVow infrastructure</td>
                     <td><div class="legal-links"><a href="https://opentelemetry.io/" target="_blank" class="legal-link">Website</a></div></td>
                 </tr>
                 <tr>
                     <td class="processor-name">Chatwoot</td>
                     <td>Customer support inbox</td>
+                    <td>Support messages — on TrueVow infrastructure</td>
                     <td><div class="legal-links"><a href="https://www.chatwoot.com/" target="_blank" class="legal-link">Website</a></div></td>
                 </tr>
                 <tr>
                     <td class="processor-name">Mattermost</td>
                     <td>Internal team chat</td>
+                    <td>Internal messages — on TrueVow infrastructure</td>
                     <td><div class="legal-links"><a href="https://mattermost.com/" target="_blank" class="legal-link">Website</a></div></td>
                 </tr>
                 <tr>
                     <td class="processor-name">Novu</td>
                     <td>Cross-service notifications</td>
+                    <td>Notification events — on TrueVow infrastructure</td>
                     <td><div class="legal-links"><a href="https://novu.co/" target="_blank" class="legal-link">Website</a></div></td>
                 </tr>
                 <tr>
                     <td class="processor-name">Obsidian</td>
                     <td>Knowledge management vault</td>
+                    <td>Internal documentation — on TrueVow infrastructure</td>
                     <td><div class="legal-links"><a href="https://obsidian.md/" target="_blank" class="legal-link">Website</a></div></td>
+                </tr>
+                <tr>
+                    <td class="processor-name">JWT / jose</td>
+                    <td>Service-to-service token signing</td>
+                    <td>Auth tokens — processed on TrueVow infrastructure</td>
+                    <td><em>Library; not an external service</em></td>
                 </tr>
             </tbody>
         </table>
     </div>
     
     <div class="notice-period">
-        <h3>📢 Change Notification & Operational Flexibility</h3>
+        <h3>📢 Change Notice & Objection Process</h3>
         <p><strong>Updates:</strong> TrueVow will use commercially reasonable efforts to keep this list current. Operational vendors within pre-authorized categories may be added as described in the MSA.</p>
         
         <p><strong>30-Day Notice (High-Risk Vendors Only):</strong> TrueVow will use commercially reasonable efforts to provide 30 days' written notice before adding new sub-processors that: (i) process call audio or transcripts; (ii) process customer PII beyond ephemeral routing; (iii) store customer data >24 hours; (iv) have access to unencrypted customer data.</p>
@@ -711,7 +682,7 @@
     
     <div class="intro">
         <h2>📜 Governance & Compliance</h2>
-        <p><strong>Vendor Pass-Through Terms:</strong> All sub-processors (listed or unlisted) are governed by their respective terms of service, privacy policies, data processing agreements, and service level agreements, which are <strong>incorporated by reference</strong> into the TrueVow Master Services Agreement v4.0.</p>
+        <p><strong>Vendor Pass-Through Terms:</strong> All sub-processors are governed by their respective terms of service, privacy policies, data processing agreements, and service level agreements, which are <strong>incorporated by reference</strong> into the TrueVow Master Services Agreement v4.0.</p>
         
         <p><strong>TrueVow's Obligations:</strong></p>
         <ul>
