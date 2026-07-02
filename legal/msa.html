@@ -206,7 +206,7 @@
     
     <p><strong>1.1 "Agreement"</strong> means this Master Services Agreement, together with all Order Forms, Schedules, and the incorporated Terms of Service.</p>
     
-    <p><strong>1.2 "Ancillary ML Tools"</strong> means third-party software components, libraries, APIs, or microservices used to support delivery of the Services, including for speech-to-text transcription (Fast Whisper, DeepGram), text-to-speech synthesis (ElevenLabs, Cartesia), voice activity detection (Silero VAD), authentication flows (OAuth providers), database operations (Supabase, Redis), messaging, infrastructure, and system monitoring. Data handling for such tools is governed by vendor terms, security controls, and TrueVow's configuration.</p>
+    <p><strong>1.2 "Ancillary ML Tools"</strong> means third-party software components, libraries, APIs, or microservices used to support delivery of the Services, including for speech-to-text transcription (Deepgram, AssemblyAI), text-to-speech synthesis (Cartesia), LLM inference (OpenAI, Anthropic, Google Gemini, DeepSeek, xAI Grok, Groq), voice agent platforms (LiveKit Cloud), authentication (Clerk), database operations (Supabase, Redis), messaging, infrastructure, and system monitoring. Data handling for such tools is governed by vendor terms, security controls, and TrueVow's configuration.</p>
     
     <p><strong>1.3 "Authorized User"</strong> means any attorney, paralegal, or staff member authorized by Customer to access the Services.</p>
     
@@ -280,7 +280,7 @@
     <p><strong>Customer Acknowledgments:</strong></p>
     <p>Customer expressly acknowledges that TrueVow provides controlled, template-based intake workflows with deterministic routing, validation rules, and limited third-party processing for speech, messaging, infrastructure, and operational support. The Services follow selected intake templates, onboarding settings, and firm configuration and are not designed to provide legal advice or make attorney judgment calls.</p>
     
-    <p>Customer further acknowledges that the Services rely on <strong>Ancillary ML Tools</strong> (e.g., Fast Whisper, Silero VAD, ElevenLabs, OAuth providers, database systems) for functions such as speech processing, messaging, infrastructure, and operational support, and that data handling for such tools is governed by vendor terms, security controls, and TrueVow's configuration.</p>
+    <p>Customer further acknowledges that the Services rely on <strong>Ancillary ML Tools</strong> (e.g., Deepgram, Cartesia, OpenAI, Google Gemini, Groq, LiveKit Cloud, Clerk, Supabase) for functions such as speech processing, LLM inference, voice agents, authentication, messaging, infrastructure, and operational support, and that data handling for such tools is governed by vendor terms, security controls, and TrueVow's configuration.</p>
     
     <h3>3.1 Services Provided</h3>
     
@@ -340,7 +340,7 @@
     
     <p><strong>(b) SLA Exclusions (No Liability):</strong> The 99.5% uptime commitment <strong>excludes and does not apply</strong> to any downtime, outage, degradation, or unavailability caused by or resulting from:</p>
     <ul>
-        <li>Sub-Processor outages (AWS, GCP, Twilio, Stripe, Cloudflare, etc.)</li>
+        <li>Sub-Processor outages (GCP, Twilio, Stripe, Cloudflare, etc.)</li>
         <li>Hosting or infrastructure provider failures</li>
         <li>Internet, ISP, or telecommunications carrier issues</li>
         <li>DDoS attacks, security incidents, or malicious traffic</li>
@@ -803,7 +803,7 @@
     
     <p><strong>(a) Scope:</strong> Provider shall defend Customer against third-party claims that the <strong>Core Logic</strong> of the Services (excluding Ancillary ML Tools, Sub-Processor services, third-party integrations, and all Output) infringes a <strong>valid, enforceable U.S. patent, registered U.S. copyright, or registered U.S. trademark</strong>, provided that Customer: gives prompt written notice (within 10 business days of receiving the claim); grants Provider <strong>sole and exclusive control</strong> of the defense and all settlement negotiations; provides full cooperation at Provider's expense; makes no admissions, settlements, or agreements without Provider's prior written consent.</p>
     
-    <p><strong>(b) Exclusions (No Indemnity):</strong> Provider has <strong>no indemnity obligation</strong> for claims arising from: Ancillary ML Tools (ElevenLabs, Cartesia, DeepGram, Fast Whisper, Silero, etc.); Sub-Processor services (AWS, Twilio, Stripe, Auth0, GitHub, etc.); third-party data sources, APIs, or integrations; Customer Data, Customer configurations, or custom scripts; modifications, combinations, or uses of the Services not authorized by Provider; use of the Services in violation of this Agreement; compliance with Customer's specifications or requests; use of the Services after Provider notifies Customer to cease due to infringement; or settlement or admission made without Provider's written consent.</p>
+    <p><strong>(b) Exclusions (No Indemnity):</strong> Provider has <strong>no indemnity obligation</strong> for claims arising from: Ancillary ML Tools (Cartesia, Deepgram, AssemblyAI, OpenAI, Anthropic, Google Gemini, DeepSeek, xAI Grok, Groq, LiveKit Cloud, etc.); Sub-Processor services (Twilio, Stripe, Clerk, SendGrid, Resend, GitHub, etc.); third-party data sources, APIs, or integrations; Customer Data, Customer configurations, or custom scripts; modifications, combinations, or uses of the Services not authorized by Provider; use of the Services in violation of this Agreement; compliance with Customer's specifications or requests; use of the Services after Provider notifies Customer to cease due to infringement; or settlement or admission made without Provider's written consent.</p>
     
     <p><strong>(c) Liability Cap:</strong> Provider's <strong>aggregate liability</strong> under this Section 13.1, including all defense costs, settlements, and damages, <strong>shall not exceed</strong> the <strong>greater of</strong>: the fees paid by Customer in the <strong>three (3) months</strong> preceding the claim, <strong>OR</strong> <strong>Five Hundred U.S. Dollars ($500 USD) one-time per year</strong>.</p>
     
@@ -1061,7 +1061,7 @@
     
     <h3>19.2 No Liability for Hosting, Infrastructure, or Network Providers</h3>
     
-    <p><strong>(a) Third-Party Infrastructure:</strong> The Services are hosted on and transmitted through infrastructure owned and operated by third parties, including but not limited to: <strong>Cloud providers:</strong> Amazon Web Services (AWS), Google Cloud Platform (GCP), Microsoft Azure; <strong>Content delivery networks (CDNs):</strong> Cloudflare, Fastly, Akamai; <strong>Database providers:</strong> Supabase, PlanetScale, AWS RDS; <strong>Telephony providers:</strong> Twilio, Bandwidth, SignalWire; <strong>Internet backbone providers, ISPs, and telecommunications carriers.</strong></p>
+    <p><strong>(a) Third-Party Infrastructure:</strong> The Services are hosted on and transmitted through infrastructure owned and operated by third parties, including: <strong>Cloud providers:</strong> Google Cloud Platform (GCP), Fly.io, Cloudflare Workers; <strong>Database providers:</strong> Supabase, Redis, MongoDB, ClickHouse; <strong>Storage providers:</strong> AWS S3, Supabase Storage; <strong>Telephony providers:</strong> Twilio, LiveKit Cloud; <strong>Email providers:</strong> Resend, SendGrid; <strong>Payment providers:</strong> Stripe; <strong>Authentication:</strong> Clerk; <strong>Source control & CI/CD:</strong> GitHub; <strong>Internet backbone providers, ISPs, and telecommunications carriers.</strong></p>
     
     <p><strong>(b) No Control or Liability:</strong> Provider <strong>does not own, operate, or control</strong> any of the foregoing infrastructure and shall <strong>not be liable</strong> for: outages, downtime, or service degradation; data loss, corruption, or unavailability; security breaches, DDoS attacks, or unauthorized access; routing errors, packet loss, or latency; force majeure events (natural disasters, power failures, fiber cuts, etc.); compliance failures, regulatory violations, or legal process affecting infrastructure providers.</p>
     
