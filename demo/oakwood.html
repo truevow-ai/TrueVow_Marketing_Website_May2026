@@ -548,7 +548,26 @@ footer { padding: 80px 24px; background: #000; color: white; text-align: center;
             </p>
         </div>
 
-        <div class="benjamin-panel" id="benjaminPanel"></div>
+        <div class="benjamin-panel" id="benjaminPanel">
+            <div role="img" aria-label="Preview of the Benjamin website intake widget" style="width:100%;max-width:520px;margin:0 auto;border-radius:28px;background:rgba(255,255,255,0.96);box-shadow:0 28px 80px rgba(0,0,0,0.38);border:1px solid rgba(214,177,90,0.35);overflow:hidden;">
+                <div style="padding:36px 28px 30px;text-align:center;">
+                    <div style="display:inline-flex;align-items:center;padding:7px 13px;border-radius:999px;background:#EFF6FF;color:#0A2463;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:22px;">Interactive demo coming soon</div>
+                    <div style="position:relative;width:190px;height:190px;margin:0 auto 22px;display:flex;align-items:center;justify-content:center;">
+                        <div style="position:absolute;inset:0;border-radius:50%;border:2px solid rgba(10,36,99,0.18);"></div>
+                        <div style="width:148px;height:148px;border-radius:50%;overflow:hidden;background:linear-gradient(135deg,#0A2463,#101827);display:flex;align-items:center;justify-content:center;border:5px solid #fff;box-shadow:0 14px 32px rgba(10,36,99,0.28);">
+                            <img src="../assets/benjamin-avatar.jpeg" alt="Benjamin" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                    <strong style="display:block;color:#0A2463;font-size:20px;margin-bottom:8px;">Benjamin</strong>
+                    <p style="color:#444;font-size:15px;line-height:1.65;max-width:380px;margin:0 auto;">This is a static preview of how Benjamin can appear on a PI firm website. In the live product, Benjamin can support controlled chat or voice-state intake flows for approved firms.</p>
+                    <div style="display:flex;gap:10px;justify-content:center;margin-top:22px;flex-wrap:wrap;">
+                        <button type="button" disabled style="border:none;border-radius:10px;padding:12px 20px;font-weight:800;font-size:14px;cursor:not-allowed;opacity:0.6;background:#0A2463;color:#fff;">Start Voice Demo</button>
+                        <button type="button" disabled style="border-radius:10px;padding:12px 20px;font-weight:800;font-size:14px;cursor:not-allowed;opacity:0.6;background:rgba(10,36,99,0.08);color:#0A2463;border:1px solid rgba(10,36,99,0.15);">Type Instead</button>
+                    </div>
+                    <p style="margin-top:18px;font-size:12px;color:#8a94a6;line-height:1.5;">Static preview. The live in-browser widget is enabled for approved firms.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <div class="page-container" style="padding-bottom: 24px;">
@@ -633,15 +652,19 @@ footer { padding: 80px 24px; background: #000; color: white; text-align: center;
     </div>
 
     <!-- TrueVow Widget � tenant-aware centered mode -->
-    <script src="../widgets/truevow-chatbot/widget.js"
-        data-tenant-id="oakwood-injury-law"
-        data-display-mode="centered"
-        data-visual-mode="avatar"
-        data-target-element="benjaminPanel"
-        data-api-base="http://localhost:3056"
-        data-agent-name="Benjamin"
-        data-primary-color="#0A2463">
-    </script>
+    <!-- TrueVow Widget: live in-browser widget disabled for deploy.
+         The panel above is a static, non-functional preview.
+         Re-enable only with a CONFIRMED widget backend base URL (never localhost):
+         <script src="../widgets/truevow-chatbot/widget.js"
+             data-tenant-id="oakwood-injury-law"
+             data-display-mode="centered"
+             data-visual-mode="avatar"
+             data-target-element="benjaminPanel"
+             data-api-base="https://REPLACE-WITH-REAL-WIDGET-BACKEND"
+             data-agent-name="Benjamin"
+             data-primary-color="#0A2463">
+         </script>
+    -->
 
 ?
 
@@ -663,7 +686,7 @@ footer { padding: 80px 24px; background: #000; color: white; text-align: center;
         <div class="footer-col">
             <h4>PRODUCT</h4>
             <a href="pricing.html">INTAKE</a>
-            <a href="leverage.html">LEVERAGE</a>
+            <a href="trace.html">TRACE</a>
             <a href="settle.html">SETTLE</a>
             <a href="pricing.html">Pricing</a>
             <a href="profitability.html">ROI Calculator</a>
