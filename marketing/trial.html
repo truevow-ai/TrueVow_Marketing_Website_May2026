@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>90-Day Intake Trial — TrueVow INTAKE for PI Attorneys</title>
-    <meta name="description" content="Apply for the 90-Day Intake Trial. Benjamin answers routed PI intake calls, grades leads, and sends structured summaries for attorney review. Approval required.">
+    <title>Start Your 90-Day Intake Trial — TrueVow INTAKE for PI Attorneys</title>
+    <meta name="description" content="Start your 90-day intake trial. Benjamin answers routed PI intake calls, grades leads, and sends structured summaries for attorney review. We&rsquo;ll confirm your firm&rsquo;s setup and get you ready.">
     <meta name="robots" content="noindex,nofollow">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -83,7 +83,12 @@
         .step-dot.active+.step-label,.step-dot.done+.step-label{color:rgba(255,255,255,.85)}
         .form-c input[type="text"],.form-c input[type="email"],.form-c input[type="tel"],.form-c input[type="url"],.form-c select{width:100%;padding:16px;font-size:16px;border:none;border-radius:8px;margin-bottom:14px}
         .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-        .bar-note{font-size:12px;color:#F59E0B;margin-top:8px;text-align:left}
+        .bar-note{font-size:12px;color:rgba(255,255,255,.5);margin-top:4px;text-align:left;line-height:1.5}
+        .field-hint{font-size:13px;color:rgba(255,255,255,.45);margin-top:-8px;margin-bottom:14px;text-align:left;line-height:1.5}
+        .section-label{font-size:12px;font-weight:800;color:#F59E0B;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px;text-align:left}
+        .same-as-row{display:flex;align-items:center;gap:10px;margin-top:-6px;margin-bottom:14px}
+        .same-as-check{display:flex;align-items:center;gap:6px;font-size:13px;color:rgba(255,255,255,.55);cursor:pointer;white-space:nowrap}
+        .same-as-check input{width:16px;height:16px;cursor:pointer;margin:0;accent-color:#F59E0B}
         .cb-label{display:flex;align-items:flex-start;color:#fff;font-size:14px;cursor:pointer;text-align:left;margin-bottom:16px;line-height:1.6}
         .cb-label input{width:20px;height:20px;margin-right:12px;cursor:pointer;margin-top:2px;flex-shrink:0}
         .step-nav{display:flex;justify-content:space-between;margin-top:24px}
@@ -129,10 +134,10 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What happens after I apply?",
+      "name": "What happens after I get started?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We review your firm fit, practice area, and county availability. If approved, we send you the onboarding preparation form before your onboarding call. Benjamin is activated only after setup, script review, calendar/routing configuration, and a successful test call."
+        "text": "We review your firm details, practice area, and county availability. If everything looks good, we send you the onboarding preparation form before your onboarding call. Benjamin is activated only after setup, script review, calendar/routing configuration, and a successful test call."
       }
     },
     {
@@ -140,7 +145,7 @@
       "name": "Is the trial free?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The 90-day intake trial is approval-based. Trial pricing, pilot terms, and conversion details are confirmed during onboarding. No payment is collected on this page."
+        "text": "No payment is collected on this page. Once your trial is activated, you can choose a paid INTAKE plan from the Customer Portal at any time. Your remaining trial continues normally and the paid plan begins automatically when your 12-intake or 90-day trial ends, whichever comes first. You do not need to choose a paid plan before starting the trial."
       }
     },
     {
@@ -156,7 +161,7 @@
       "name": "Is Benjamin a chatbot?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Benjamin is not a free-form chatbot. Benjamin follows selected intake templates and onboarding settings, routing rules, escalation logic, and recording settings. It can support yes/no questions, structured responses, and approved open-ended prompts, but it is not designed to provide legal advice or make attorney judgm"
+        "text": "No. Benjamin is not a free-form chatbot. Benjamin follows selected intake templates and onboarding settings, routing rules, escalation logic, and recording settings. It can support yes/no questions, structured responses, and approved open-ended prompts, but it is not designed to provide legal advice or make attorney judgment calls."
       }
     },
     {
@@ -164,7 +169,7 @@
       "name": "What if my county is not available?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "County availability is reviewed during the application process. If your county is not yet supported, you may be placed on a waitlist and notified when availability opens."
+        "text": "County availability is confirmed during setup review. If your county is not yet supported, you may be placed on a waitlist and notified when availability opens."
       }
     },
     {
@@ -172,7 +177,7 @@
       "name": "Is payment collected on this page?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. No payment is collected on this page. If approved, plan selection and billing happen inside the customer portal after onboarding."
+        "text": "No. No payment is collected on this page. Once your trial is activated, you can choose a paid INTAKE plan from the Customer Portal at any time. If you choose a plan during your trial, your remaining trial continues normally and the paid plan begins automatically when your trial ends. You do not need to choose a paid plan before starting the trial."
       }
     },
     {
@@ -180,7 +185,7 @@
       "name": "Can I buy directly from this page?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. TrueVow uses an approval-first process. Apply first, get reviewed, then activate and pay inside the customer portal if approved."
+        "text": "No. TrueVow operates on a trial-first model. Start by telling us about your firm. After setup confirmation, onboarding, and test call, your 12-intake / 90-day trial begins. At any point during the trial, you can choose a paid INTAKE plan from the Customer Portal. Your trial continues unchanged and the paid plan activates automatically when the trial ends — no interruption."
       }
     }
   ]
@@ -200,7 +205,7 @@
         </a>
         <div class="nav-r">
             <a href="pricing.html" class="nav-link">Pricing</a>
-            <a href="#trial-form" class="nav-cta">Apply for the 90-Day Trial &rarr;</a>
+            <a href="#trial-form" class="nav-cta">Start Your 90-Day Trial &rarr;</a>
         </div>
     </div>
 </nav>
@@ -208,16 +213,16 @@
 <!-- HERO -->
 <section class="hero">
     <span class="hero-eyebrow">TrueVow Intake Trial for Solo &amp; Small PI Firms</span>
-    <h1>90-Day Intake Trial for Solo &amp; Small PI Firms</h1>
-    <p class="hero-sub">Benjamin answers routed intake calls, follows a selected intake template and onboarding settings, grades leads A+/A/B/C/D, and sends structured summaries for attorney review.</p>
+    <h1>See TrueVow in Your Firm for 90 Days</h1>
+    <p class="hero-sub">Benjamin answers routed intake calls, follows a selected intake template and onboarding settings, grades leads A+/A/B/C/D, and sends structured summaries for attorney review.<br><br>Tell us a little about your firm. We&rsquo;ll review your intake setup and confirm the right configuration before activation.</p>
     <div class="hero-actions">
-        <a href="#trial-form" class="btn btn-primary">Apply for the 90-Day Intake Trial &rarr;</a>
+        <a href="#trial-form" class="btn btn-primary">Start Your 90-Day Intake Trial &rarr;</a>
         <a href="pricing.html" class="btn btn-secondary">View INTAKE Pricing</a>
     </div>
     <div class="hero-badges">
-        <span>Approval required</span>
         <span>90-day trial</span>
         <span>All intake records visible</span>
+        <span>Test call before activation</span>
         <span>No public checkout</span>
     </div>
     <p class="hero-sub-note">Selected firms complete onboarding before Benjamin goes live.</p>
@@ -276,16 +281,17 @@
     <div class="si" style="text-align:center">
         <h2 class="st">What the 90-Day Trial Includes</h2>
         <div class="spec-list" style="max-width:600px;margin:24px auto 0;text-align:left">
-            <li>90-day intake trial</li>
+            <li>90 days or 12 completed intake sessions (whichever comes first)</li>
             <li>Routed intake calls handled by Benjamin after onboarding</li>
             <li>A+/A/B/C/D lead grading</li>
             <li>Structured attorney summaries</li>
             <li>Callback and consult outcome tracking</li>
             <li>Test call before live activation</li>
             <li>All intake records visible — no unlock fees</li>
+            <li>Choose a paid plan at any time — trial continues unchanged</li>
         </div>
         <div class="hl-box" style="max-width:600px;margin:32px auto 0;text-align:left">
-            <p>The trial runs for 90 days. Every plan keeps intake records visible. TrueVow INTAKE does not use public per-lead unlock fees. Benjamin is activated only after onboarding, script review, calendar/routing configuration, and a successful test call. Final activation happens after approval inside the customer portal.</p>
+            <p>Your trial runs for 12 completed intake sessions or 90 days, whichever comes first. If you choose a paid INTAKE plan during the trial, your trial continues normally. The paid plan begins automatically when your 12th intake completes or your 90th day arrives — no interruption, no pressure. Benjamin is activated only after onboarding, script review, calendar/routing configuration, and a successful test call.</p>
         </div>
     </div>
 </section>
@@ -293,7 +299,7 @@
 <!-- SECTION 4 — WHO QUALIFIES -->
 <section class="section section-alt">
     <div class="si">
-        <h2 class="st">Who Qualifies for the Trial</h2>
+        <h2 class="st">Is TrueVow Right for Your Firm?</h2>
         <div class="g2" style="max-width:800px;margin:0 auto">
             <div class="card">
                 <h3>Firm profile</h3>
@@ -318,15 +324,15 @@
 <!-- SECTION 5 — HOW APPROVAL AND ONBOARDING WORK -->
 <section class="section">
     <div class="si">
-        <h2 class="st">How Approval and Onboarding Work</h2>
+        <h2 class="st">How Setup and Onboarding Work</h2>
         <div class="setup-steps">
-            <div class="setup-step"><span class="sn">Step 1</span><h4>Apply</h4><p>Submit firm details and trial readiness.</p></div>
-            <div class="setup-step"><span class="sn">Step 2</span><h4>Review</h4><p>Firm fit, county availability, and trial readiness are reviewed.</p></div>
+            <div class="setup-step"><span class="sn">Step 1</span><h4>Tell us about your firm</h4><p>Share your firm details and current intake setup.</p></div>
+            <div class="setup-step"><span class="sn">Step 2</span><h4>We confirm your setup</h4><p>We review your intake workflow and prepare the right configuration.</p></div>
             <div class="setup-step"><span class="sn">Step 3</span><h4>Onboard</h4><p>Routing, intake path, calendar, recording policy, and alerts are configured.</p></div>
-            <div class="setup-step"><span class="sn">Step 4</span><h4>Test Call</h4><p>A test call is completed before activation.</p></div>
+            <div class="setup-step"><span class="sn">Step 4</span><h4>Test Call &amp; Go Live</h4><p>A test call is completed, then your 12-intake / 90-day trial begins.</p></div>
         </div>
         <div class="hl-box" style="max-width:700px;margin:32px auto 0;text-align:center">
-            <p>Benjamin is activated only after setup, script review, calendar/routing configuration, and a successful test call. We usually review applications within 2 business days.</p>
+            <p>Your trial gives you 12 completed intake sessions or 90 days, whichever comes first. At any point during the trial, you can choose a paid INTAKE plan from the Customer Portal — your trial continues unchanged and the paid plan activates automatically when the trial ends. Most firms hear from us within one business day.</p>
         </div>
     </div>
 </section>
@@ -337,12 +343,12 @@
         <h2 class="st" style="margin-bottom:48px">Frequently Asked Questions</h2>
         <div class="faq-c">
             <div class="faq-item">
-                <div class="faq-q">What happens after I apply?</div>
-                <div class="faq-a"><p>We review your firm fit, practice area, and county availability. If approved, we send you the onboarding preparation form before your onboarding call. Benjamin is activated only after setup, script review, calendar/routing configuration, and a successful test call.</p></div>
+                <div class="faq-q">What happens after I get started?</div>
+                <div class="faq-a"><p>We review your firm details, practice area, and county availability. If everything looks good, we send you the onboarding preparation form before your onboarding call. Benjamin is activated only after setup, script review, calendar/routing configuration, and a successful test call.</p></div>
             </div>
             <div class="faq-item">
                 <div class="faq-q">Is the trial free?</div>
-                <div class="faq-a"><p>The 90-day intake trial is approval-based. Trial pricing, pilot terms, and conversion details are confirmed during onboarding. No payment is collected on this page.</p></div>
+                <div class="faq-a"><p>No payment is collected on this page. Once your trial is activated, you can choose a paid INTAKE plan from the Customer Portal at any time. Your remaining trial continues normally and the paid plan begins automatically when your 12-intake or 90-day trial ends, whichever comes first. You do not need to choose a paid plan before starting the trial.</p></div>
             </div>
             <div class="faq-item">
                 <div class="faq-q">Do I need to forward my calls?</div>
@@ -354,15 +360,15 @@
             </div>
             <div class="faq-item">
                 <div class="faq-q">What if my county is not available?</div>
-                <div class="faq-a"><p>County availability is reviewed during the application process. If your county is not yet supported, you may be placed on a waitlist and notified when availability opens.</p></div>
+                <div class="faq-a"><p>County availability is confirmed during setup review. If your county is not yet supported, you may be placed on a waitlist and notified when availability opens.</p></div>
             </div>
             <div class="faq-item">
                 <div class="faq-q">Is payment collected on this page?</div>
-                <div class="faq-a"><p>No. No payment is collected on this page. If approved, plan selection and billing happen inside the customer portal after onboarding.</p></div>
+                <div class="faq-a"><p>No. No payment is collected on this page. Once your trial is activated, you can choose a paid INTAKE plan from the Customer Portal at any time. If you choose a plan during your trial, your remaining trial continues normally and the paid plan begins automatically when your trial ends. You do not need to choose a paid plan before starting the trial.</p></div>
             </div>
             <div class="faq-item">
                 <div class="faq-q">Can I buy directly from this page?</div>
-                <div class="faq-a"><p>No. TrueVow uses an approval-first process. Apply first, get reviewed, then activate and pay inside the customer portal if approved.</p></div>
+                <div class="faq-a"><p>No. TrueVow operates on a trial-first model. Start by telling us about your firm. After setup confirmation, onboarding, and test call, your 12-intake / 90-day trial begins. At any point during the trial, you can choose a paid INTAKE plan from the Customer Portal. Your trial continues unchanged and the paid plan activates automatically when the trial ends — no interruption.</p></div>
             </div>
         </div>
     </div>
@@ -371,87 +377,138 @@
 <!-- TRIAL APPLICATION FORM -->
 <section id="trial-form" class="form-section">
     <div class="form-c">
-        <h2>Apply for the 90-Day Intake Trial</h2>
-        <p class="form-sub">Approval required &bull; 90-day trial &bull; All intake records visible &bull; No public checkout</p>
+        <h2>Start Your 90-Day Intake Trial</h2>
+        <p class="form-sub">Tell us a little about your firm and current intake volume. We&rsquo;ll use this information to verify your practice and prepare the right TrueVow setup.</p>
 
         <!-- Step indicator -->
         <div class="step-indicator">
-            <div style="text-align:center"><div class="step-dot active" id="dot1">1</div><div class="step-label">Firm</div></div>
-            <div style="text-align:center"><div class="step-dot" id="dot2">2</div><div class="step-label">Fit</div></div>
+            <div style="text-align:center"><div class="step-dot active" id="dot1">1</div><div class="step-label">You &amp; Your Firm</div></div>
+            <div style="text-align:center"><div class="step-dot" id="dot2">2</div><div class="step-label">Setup</div></div>
             <div style="text-align:center"><div class="step-dot" id="dot3">3</div><div class="step-label">Confirm</div></div>
         </div>
 
         <form id="trial-form-form">
-            <!-- STEP 1 — Attorney + Firm -->
+            <!-- STEP 1 — You & Your Firm -->
             <div class="form-step active" id="step1">
+                <p style="color:rgba(255,255,255,.65);font-size:15px;margin-bottom:28px;line-height:1.6">Tell us about yourself and your firm. We&rsquo;ll use this information to verify your practice and prepare the right TrueVow setup.</p>
+
+                <!-- Attorney Information -->
+                <div class="section-label">Attorney Information</div>
                 <div class="form-row">
                     <input type="text" id="first_name" name="first_name" placeholder="First Name *" required>
                     <input type="text" id="last_name" name="last_name" placeholder="Last Name *" required>
                 </div>
+                <input type="email" id="attorney_email" name="attorney_email" placeholder="Attorney Email *" required>
+                <p class="field-hint">Use an email you personally monitor. We&rsquo;ll use this for important account and onboarding communications.</p>
+                <input type="tel" id="attorney_mobile" name="attorney_mobile" placeholder="Attorney Mobile Number *" required>
+                <p class="field-hint">Used for account-related SMS, onboarding coordination, and important service notifications.</p>
                 <div class="form-row">
-                    <input type="email" id="email" name="email" placeholder="Work Email *" required>
-                    <input type="tel" id="phone" name="phone" placeholder="Mobile Phone *" required>
-                </div>
-                <input type="text" id="firm_name" name="firm_name" placeholder="Law Firm Name *" required>
-                <div class="form-row">
-                    <input type="url" id="firm_website" name="firm_website" placeholder="Firm Website">
-                    <select id="state" name="state" required style="background:#fff">
-                        <option value="">State *</option>
+                    <select id="bar_state" name="bar_state" required style="background:#fff">
+                        <option value="">State of Bar Admission *</option>
                         <option value="AL">Alabama</option><option value="AK">Alaska</option><option value="AZ">Arizona</option><option value="AR">Arkansas</option><option value="CA">California</option><option value="CO">Colorado</option><option value="CT">Connecticut</option><option value="DE">Delaware</option><option value="FL">Florida</option><option value="GA">Georgia</option><option value="HI">Hawaii</option><option value="ID">Idaho</option><option value="IL">Illinois</option><option value="IN">Indiana</option><option value="IA">Iowa</option><option value="KS">Kansas</option><option value="KY">Kentucky</option><option value="LA">Louisiana</option><option value="ME">Maine</option><option value="MD">Maryland</option><option value="MA">Massachusetts</option><option value="MI">Michigan</option><option value="MN">Minnesota</option><option value="MS">Mississippi</option><option value="MO">Missouri</option><option value="MT">Montana</option><option value="NE">Nebraska</option><option value="NV">Nevada</option><option value="NH">New Hampshire</option><option value="NJ">New Jersey</option><option value="NM">New Mexico</option><option value="NY">New York</option><option value="NC">North Carolina</option><option value="ND">North Dakota</option><option value="OH">Ohio</option><option value="OK">Oklahoma</option><option value="OR">Oregon</option><option value="PA">Pennsylvania</option><option value="RI">Rhode Island</option><option value="SC">South Carolina</option><option value="SD">South Dakota</option><option value="TN">Tennessee</option><option value="TX">Texas</option><option value="UT">Utah</option><option value="VT">Vermont</option><option value="VA">Virginia</option><option value="WA">Washington</option><option value="WV">West Virginia</option><option value="WI">Wisconsin</option><option value="WY">Wyoming</option><option value="DC">Washington DC</option>
                     </select>
+                    <input type="text" id="bar_number" name="bar_number" placeholder="Bar Number *" required>
                 </div>
-                <input type="text" id="primary_county" name="primary_county" placeholder="Primary County *" required>
-                <input type="text" id="bar_number" name="bar_number" placeholder="Bar Number (optional — helps us verify attorney status)" style="border:2px solid #F59E0B">
-                <p class="bar-note">Providing your Bar # may help us verify your application faster.</p>
+                <p class="field-hint">We use this information to verify that the account is being requested by or on behalf of a licensed law firm.</p>
+
+                <!-- Firm Information -->
+                <div class="section-label" style="margin-top:8px">Firm Information</div>
+                <input type="text" id="firm_name" name="firm_name" placeholder="Law Firm Name *" required>
+                <input type="url" id="firm_website" name="firm_website" placeholder="Firm Website (optional)">
+                <p class="field-hint">Optional if your firm does not currently maintain a website.</p>
+                <div>
+                    <input type="email" id="firm_email" name="firm_email" placeholder="Firm Work Email *" required>
+                    <div class="same-as-row">
+                        <label class="same-as-check">
+                            <input type="checkbox" id="same_as_attorney_email" onchange="toggleSameAs('same_as_attorney_email','attorney_email','firm_email')">
+                            <span>Same as my attorney email</span>
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <input type="tel" id="firm_phone" name="firm_phone" placeholder="Firm Phone Number *" required>
+                    <div class="same-as-row">
+                        <label class="same-as-check">
+                            <input type="checkbox" id="same_as_mobile" onchange="toggleSameAs('same_as_mobile','attorney_mobile','firm_phone')">
+                            <span>Same as my mobile number</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <select id="state" name="state" required style="background:#fff">
+                        <option value="">Primary State *</option>
+                        <option value="AL">Alabama</option><option value="AK">Alaska</option><option value="AZ">Arizona</option><option value="AR">Arkansas</option><option value="CA">California</option><option value="CO">Colorado</option><option value="CT">Connecticut</option><option value="DE">Delaware</option><option value="FL">Florida</option><option value="GA">Georgia</option><option value="HI">Hawaii</option><option value="ID">Idaho</option><option value="IL">Illinois</option><option value="IN">Indiana</option><option value="IA">Iowa</option><option value="KS">Kansas</option><option value="KY">Kentucky</option><option value="LA">Louisiana</option><option value="ME">Maine</option><option value="MD">Maryland</option><option value="MA">Massachusetts</option><option value="MI">Michigan</option><option value="MN">Minnesota</option><option value="MS">Mississippi</option><option value="MO">Missouri</option><option value="MT">Montana</option><option value="NE">Nebraska</option><option value="NV">Nevada</option><option value="NH">New Hampshire</option><option value="NJ">New Jersey</option><option value="NM">New Mexico</option><option value="NY">New York</option><option value="NC">North Carolina</option><option value="ND">North Dakota</option><option value="OH">Ohio</option><option value="OK">Oklahoma</option><option value="OR">Oregon</option><option value="PA">Pennsylvania</option><option value="RI">Rhode Island</option><option value="SC">South Carolina</option><option value="SD">South Dakota</option><option value="TN">Tennessee</option><option value="TX">Texas</option><option value="UT">Utah</option><option value="VT">Vermont</option><option value="VA">Virginia</option><option value="WA">Washington</option><option value="WV">West Virginia</option><option value="WI">Wisconsin</option><option value="WY">Wyoming</option><option value="DC">Washington DC</option>
+                    </select>
+                    <input type="text" id="primary_county" name="primary_county" placeholder="Primary County *" required>
+                </div>
                 <div class="step-nav" style="justify-content:flex-end">
-                    <button type="button" class="step-next" onclick="goStep(2)">Next: Firm Fit &rarr;</button>
+                    <button type="button" class="step-next" onclick="goStep(2)">Continue &rarr;</button>
                 </div>
             </div>
 
-            <!-- STEP 2 — Firm Fit -->
+            <!-- STEP 2 — Your Current Intake Setup -->
             <div class="form-step" id="step2">
+                <p style="color:rgba(255,255,255,.65);font-size:15px;margin-bottom:28px;line-height:1.6">This helps us understand how your firm currently handles new calls and prepare the appropriate TrueVow setup.</p>
+
+                <div class="section-label">Primary Practice Area *</div>
                 <select id="primary_practice_area" name="primary_practice_area" required style="background:#fff">
-                    <option value="Personal Injury" selected>Primary Practice Area: Personal Injury</option>
+                    <option value="">Select practice area</option>
+                    <option value="Personal Injury" selected>Personal Injury</option>
                     <option value="Medical Malpractice">Medical Malpractice</option>
                     <option value="Workers Compensation">Workers&rsquo; Compensation</option>
-                    <option value="Other">Other (describe in notes)</option>
+                    <option value="Other">Other</option>
                 </select>
+
+                <div class="section-label">Firm Size *</div>
                 <select id="firm_size" name="firm_size" required style="background:#fff">
-                    <option value="">Firm Size *</option>
-                    <option value="solo">Solo (1 attorney)</option>
+                    <option value="">Select firm size</option>
+                    <option value="solo">Solo attorney</option>
                     <option value="2-3">2&ndash;3 attorneys</option>
-                    <option value="4-10">4&ndash;10 attorneys</option>
-                    <option value="11">11 attorneys</option>
-                    <option value="12+">12+ attorneys / Enterprise review</option>
+                    <option value="4-7">4&ndash;7 attorneys</option>
+                    <option value="8-15">8&ndash;15 attorneys</option>
                 </select>
+
+                <div class="section-label">Approximately how many new inbound calls does your firm receive each month? *</div>
                 <select id="monthly_inbound_calls" name="monthly_inbound_calls" required style="background:#fff">
-                    <option value="">Approx. Monthly Inbound Lead Calls *</option>
-                    <option value="1-10">1&ndash;10</option>
-                    <option value="11-25">11&ndash;25</option>
-                    <option value="26-50">26&ndash;50</option>
-                    <option value="51-100">51&ndash;100</option>
+                    <option value="">Select call volume</option>
+                    <option value="1-40">1&ndash;40</option>
+                    <option value="41-100">41&ndash;100</option>
                     <option value="101-200">101&ndash;200</option>
-                    <option value="200+">200+</option>
+                    <option value="200+">More than 200</option>
+                    <option value="not-sure">Not sure</option>
                 </select>
+
+                <div class="section-label">How are after-hours calls currently handled?</div>
                 <select id="current_after_hours_process" name="current_after_hours_process" style="background:#fff">
-                    <option value="">Do you currently miss calls after hours?</option>
-                    <option value="yes-most">Yes, most after-hours calls go to voicemail</option>
-                    <option value="yes-some">Yes, some after-hours calls are missed</option>
-                    <option value="no-service">No, we use an answering service</option>
-                    <option value="no-staff">No, staff covers after-hours</option>
+                    <option value="">Select (optional)</option>
+                    <option value="voicemail">Voicemail</option>
+                    <option value="answering-service">Answering service</option>
+                    <option value="attorney-staff-mobile">Attorney or staff mobile phone</option>
+                    <option value="receptionist">Receptionist</option>
+                    <option value="another-intake-provider">Another intake provider</option>
+                    <option value="no-formal-process">No formal process</option>
+                    <option value="other">Other</option>
                 </select>
+
+                <div class="section-label">Can prospective clients currently book consultations directly on your calendar?</div>
                 <select id="calendar_booking_available" name="calendar_booking_available" style="background:#fff">
-                    <option value="">Do you currently book consultations by calendar?</option>
-                    <option value="yes">Yes, we use a calendar booking tool</option>
-                    <option value="manual">Manually, we schedule over the phone</option>
-                    <option value="no">No, we do not have a booking system</option>
+                    <option value="">Select</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                    <option value="not-yet-but-want">Not currently, but we would like to</option>
                 </select>
-                <label class="cb-label">
-                    <input type="checkbox" id="willing_to_forward_calls" name="willing_to_forward_calls">
-                    <span>Are you willing to forward/reroute calls during the trial?</span>
-                </label>
+
+                <div class="section-label">Would your firm be comfortable forwarding intake calls to a dedicated TrueVow number?</div>
+                <select id="willing_to_forward_calls" name="willing_to_forward_calls" style="background:#fff">
+                    <option value="">Select</option>
+                    <option value="yes">Yes</option>
+                    <option value="possibly">Possibly &mdash; I&rsquo;d like to discuss it</option>
+                    <option value="no">No / not currently</option>
+                </select>
+
+                <div class="section-label">How did you hear about TrueVow?</div>
                 <select id="referral_source" name="referral_source" style="background:#fff">
-                    <option value="">How did you hear about TrueVow?</option>
+                    <option value="">Select (optional)</option>
                     <option value="google">Google Search</option>
                     <option value="facebook">Facebook / Instagram Ad</option>
                     <option value="email">Email from TrueVow</option>
@@ -460,47 +517,31 @@
                 </select>
                 <div class="step-nav">
                     <button type="button" class="step-back" onclick="goStep(1)">&larr; Back</button>
-                    <button type="button" class="step-next" onclick="goStep(3)">Next: Confirm &rarr;</button>
+                    <button type="button" class="step-next" onclick="goStep(3)">Continue &rarr;</button>
                 </div>
             </div>
 
-            <!-- STEP 3 — Trial Confirmation -->
+            <!-- STEP 3 — Confirm Your Setup -->
             <div class="form-step" id="step3">
+                <p style="color:rgba(255,255,255,.75);font-size:15px;margin-bottom:24px;line-height:1.6">We&rsquo;ll use the information you provided to verify your firm, confirm that TrueVow supports your intake requirements, and prepare the appropriate 90-day trial setup.</p>
                 <label class="cb-label">
-                    <input type="checkbox" id="understands_approval_required" name="understands_approval_required" required>
-                    <span>I understand this is an approval-based 90-day intake trial. *</span>
+                    <input type="checkbox" id="agree_terms" name="agree_terms" required>
+                    <span>I agree to the TrueVow <a href="../legal/terms.html" target="_blank" rel="noopener" style="color:#F59E0B;text-decoration:underline">Terms of Service</a> and <a href="../legal/privacy.html" target="_blank" rel="noopener" style="color:#F59E0B;text-decoration:underline">Privacy Policy</a>. *</span>
                 </label>
                 <label class="cb-label">
-                    <input type="checkbox" id="understands_90_day_trial" name="understands_90_day_trial" required>
-                    <span>I understand the trial runs for 90 days and all intake records are visible. *</span>
+                    <input type="checkbox" id="confirm_authority" name="confirm_authority" required>
+                    <span>I confirm that I am authorized to provide this information on behalf of the firm and that the information submitted is accurate. *</span>
                 </label>
                 <label class="cb-label">
-                    <input type="checkbox" id="understands_onboarding_required" name="understands_onboarding_required" required>
-                    <span>I understand Benjamin goes live only after onboarding and a test call. *</span>
+                    <input type="checkbox" id="acknowledge_trial" name="acknowledge_trial" required>
+                    <span>I understand that TrueVow will verify our firm and confirm our setup requirements before the 90-day trial is activated. *</span>
                 </label>
-                <label class="cb-label">
-                    <input type="checkbox" id="understands_not_law_firm" name="understands_not_law_firm" required>
-                    <span>I understand TrueVow is not a law firm and does not provide legal advice. *</span>
-                </label>
-                <label class="cb-label">
-                    <input type="checkbox" id="consent_communications" name="consent_communications" required>
-                    <span>I consent to receive calls/SMS/email from TrueVow for application and onboarding purposes. *</span>
-                </label>
-                <label class="cb-label">
-                    <input type="checkbox" id="agree_terms_privacy" name="agree_terms_privacy" required>
-                    <span>I have read and agree to TrueVow&rsquo;s <a href="../legal/terms.html" target="_blank" rel="noopener" style="color:#F59E0B;text-decoration:underline">Terms of Service</a> and <a href="../legal/privacy.html" target="_blank" rel="noopener" style="color:#F59E0B;text-decoration:underline">Privacy Policy</a> (including the <a href="../legal/subprocessors.html" target="_blank" rel="noopener" style="color:#F59E0B;text-decoration:underline">Sub-Processors</a> disclosure), and acknowledge that the <a href="../legal/msa.html" target="_blank" rel="noopener" style="color:#F59E0B;text-decoration:underline">Master Services Agreement</a> will govern any services if my firm is approved. *</span>
-                </label>
-                <label class="cb-label">
-                    <input type="checkbox" id="acknowledges_bar_compliance" name="acknowledges_bar_compliance" required>
-                    <span>I acknowledge that my firm remains solely responsible for compliance with all applicable state bar rules, professional-responsibility, and legal-advertising regulations, as described in TrueVow&rsquo;s <a href="../legal/bar-compliance.html" target="_blank" rel="noopener" style="color:#F59E0B;text-decoration:underline">Bar Compliance</a> notice. *</span>
-                </label>
-                <label class="cb-label">
-                    <input type="checkbox" id="confirm_accuracy_authority" name="confirm_accuracy_authority" required>
-                    <span>I confirm that I am authorized to submit this application on behalf of my firm and that all information provided is accurate. *</span>
-                </label>
+                <div style="margin-top:24px;padding:18px;background:rgba(255,255,255,.06);border-radius:8px;text-align:left;font-size:13px;color:rgba(255,255,255,.55);line-height:1.7">
+                    <p>TrueVow is a legal technology provider and is not a law firm. TrueVow does not provide legal advice. Your firm remains responsible for its professional and regulatory obligations.<br><br>By starting your setup, you agree to receive communications necessary to administer your TrueVow account, trial, onboarding, and service.</p>
+                </div>
                 <div class="step-nav">
                     <button type="button" class="step-back" onclick="goStep(2)">&larr; Back</button>
-                    <button type="submit" id="submit-btn" class="form-submit">Apply for the 90-Day Intake Trial &rarr;</button>
+                    <button type="submit" id="submit-btn" class="form-submit">Start My Setup &rarr;</button>
                 </div>
             </div>
         </form>
@@ -511,13 +552,12 @@
 <!-- FINAL CTA -->
 <section class="final-cta">
     <h2>See What Happens When a Routed Call Reaches Benjamin</h2>
-    <p>Apply to experience Benjamin handling a live intake scenario before you commit.</p>
-    <a href="#trial-form" class="btn">Apply for the 90-Day Intake Trial &rarr;</a>
+    <p>Experience Benjamin handling a live intake scenario before you commit.</p>
+    <a href="#trial-form" class="btn">Start Your 90-Day Intake Trial &rarr;</a>
     <div class="hero-badges" style="margin-top:28px">
-        <span>Approval required</span>
         <span>Firm-approved intake paths</span>
-        <span>No public checkout</span>
         <span>Test call before activation</span>
+        <span>No public checkout</span>
     </div>
 </section>
 
@@ -571,6 +611,49 @@
         document.getElementById('trial-form').scrollIntoView({behavior:'smooth',block:'start'});
     }
 
+    // Same-as controls for firm email / phone
+    function toggleSameAs(checkboxId,sourceId,targetId){
+        var cb=document.getElementById(checkboxId);
+        var src=document.getElementById(sourceId);
+        var tgt=document.getElementById(targetId);
+        if(cb.checked){
+            tgt.value=src.value;
+            tgt.readOnly=true;
+            tgt.style.opacity='0.6';
+            tgt.style.cursor='not-allowed';
+            // Sync on source change
+            src.addEventListener('input',syncSameAs);
+            src['_sync_'+targetId]=syncSameAs;
+            function syncSameAs(){
+                document.getElementById(targetId).value=document.getElementById(sourceId).value;
+            }
+        }else{
+            tgt.value='';
+            tgt.readOnly=false;
+            tgt.style.opacity='1';
+            tgt.style.cursor='';
+            // Remove listener
+            if(src['_sync_'+targetId]){
+                src.removeEventListener('input',src['_sync_'+targetId]);
+                src['_sync_'+targetId]=null;
+            }
+        }
+    }
+
+    // --- SERVER-SIDE WORK REQUIRED BEFORE DEPLOY ---
+    // 1. ROTATE the exposed Sales Ops X-API-Key (was in this file's browser JS — removed).
+    // 2. /api/waitlist MUST perform the authoritative Sales Ops submission server-side
+    //    (authenticated, rate-limited) and return success ONLY after Sales Ops durably accepts.
+    //    The browser MUST NOT call Sales Ops directly.
+    // 3. The full payload (attorney + firm identity, qualification/setup fields, UTM) must
+    //    reach the canonical Sales Ops application record — not a subset.
+    // 4. Server-side handles defaults for governance fields that are no longer sent from
+    //    the browser (understands_not_law_firm, consent_communications, acknowledges_bar_compliance).
+    //    Disclosure was displayed but not affirmatively checked. If governance requires
+    //    affirmative acknowledgement, add explicit checkboxes back; otherwise update the
+    //    backend schema to record disclosure/version evidence instead of fabricated consent.
+    // ---
+
     // Form submission
     var form=document.getElementById('trial-form-form');
     var submitBtn=document.getElementById('submit-btn');
@@ -599,30 +682,40 @@
                 fbclid:new URLSearchParams(window.location.search).get('fbclid')||null,
                 msclkid:new URLSearchParams(window.location.search).get('msclkid')||null,
                 submitted_at:new Date().toISOString(),
+                // Attorney identity
                 first_name:document.getElementById('first_name').value.trim(),
                 last_name:document.getElementById('last_name').value.trim(),
-                email:document.getElementById('email').value.trim().toLowerCase(),
-                phone:document.getElementById('phone').value.trim(),
+                attorney_email:document.getElementById('attorney_email').value.trim().toLowerCase(),
+                attorney_mobile:document.getElementById('attorney_mobile').value.trim(),
+                bar_state:document.getElementById('bar_state').value,
+                bar_number:document.getElementById('bar_number').value.trim(),
+                // Firm identity
                 firm_name:document.getElementById('firm_name').value.trim(),
                 firm_website:document.getElementById('firm_website').value.trim()||null,
+                firm_email:document.getElementById('firm_email').value.trim().toLowerCase(),
+                firm_phone:document.getElementById('firm_phone').value.trim(),
                 state:document.getElementById('state').value,
                 primary_county:document.getElementById('primary_county').value.trim(),
-                bar_number:document.getElementById('bar_number').value.trim()||null,
+                // Firm qualification / setup
                 primary_practice_area:document.getElementById('primary_practice_area').value,
                 firm_size:document.getElementById('firm_size').value,
                 monthly_inbound_calls:document.getElementById('monthly_inbound_calls').value,
                 current_after_hours_process:document.getElementById('current_after_hours_process').value||null,
                 calendar_booking_available:document.getElementById('calendar_booking_available').value||null,
-                willing_to_forward_calls:document.getElementById('willing_to_forward_calls').checked,
+                willing_to_forward_calls:document.getElementById('willing_to_forward_calls').value||null,
                 referral_source:document.getElementById('referral_source').value||null,
-                understands_approval_required:document.getElementById('understands_approval_required').checked,
-                understands_90_day_trial:document.getElementById('understands_90_day_trial').checked,
-                understands_onboarding_required:document.getElementById('understands_onboarding_required').checked,
-                understands_not_law_firm:document.getElementById('understands_not_law_firm').checked,
-                consent_communications:document.getElementById('consent_communications').checked,
-                agree_terms_privacy:document.getElementById('agree_terms_privacy').checked,
-                acknowledges_bar_compliance:document.getElementById('acknowledges_bar_compliance').checked,
-                confirm_accuracy_authority:document.getElementById('confirm_accuracy_authority').checked,
+                // Governance evidence — map 3 visible checkboxes to their backend fields.
+                // Only fields the user explicitly agreed to are sent.
+                // Fields previously hardcoded as true (understands_not_law_firm, consent_communications,
+                // acknowledges_bar_compliance) are OMITTED — they were disclosed as text but never
+                // affirmatively checked. If the governance model requires affirmative acknowledgement,
+                // those must be captured as explicit checkboxes. Server-side handles defaults/omissions.
+                agree_terms_privacy:document.getElementById('agree_terms').checked,
+                confirm_accuracy_authority:document.getElementById('confirm_authority').checked,
+                understands_approval_required:document.getElementById('acknowledge_trial').checked,
+                understands_90_day_trial:document.getElementById('acknowledge_trial').checked,
+                understands_onboarding_required:document.getElementById('acknowledge_trial').checked,
+                // Attribution
                 ip_addr:null,
                 user_agent:navigator.userAgent,
                 referrer:document.referrer||null
@@ -639,7 +732,7 @@
                     messageDiv.style.background='rgba(16,185,129,0.1)';
                     messageDiv.style.border='2px solid #10B981';
                     messageDiv.style.color='#10B981';
-                    messageDiv.innerHTML='<p style="font-size:18px;font-weight:700;margin-bottom:12px">Application received.</p><p style="font-size:14px;margin-bottom:8px">We\'ll review your firm fit, practice area, and county availability. If approved, we\'ll send you the onboarding preparation form before your onboarding call.</p><p style="font-size:14px;margin-bottom:8px">Benjamin is activated only after setup, script review, calendar/routing configuration, and a successful test call.</p>'+(formData.bar_number?'<p style="font-size:14px;color:#F59E0B;font-weight:600">Bar number received. This may help us verify your application faster.</p>':'');
+                    messageDiv.innerHTML='<p style="font-size:18px;font-weight:700;margin-bottom:12px">You&rsquo;re all set.</p><p style="font-size:14px;margin-bottom:8px">We&rsquo;ve received your firm information. Our team will verify your firm and review your intake setup so we can prepare the right TrueVow configuration.</p><p style="font-size:14px;margin-bottom:4px"><strong>What happens next:</strong></p><ol style="text-align:left;font-size:14px;margin-bottom:16px;padding-left:20px"><li>We verify your firm</li><li>We review your intake requirements</li><li>We confirm your TrueVow setup</li><li>You continue to plan/trial setup and onboarding</li></ol><p style="font-size:14px">You&rsquo;ll receive the next step at your attorney email.</p>';
                     form.style.display='none';
                 }else{
                     var errorData={};
@@ -649,14 +742,14 @@
                         messageDiv.style.background='rgba(245,158,11,0.1)';
                         messageDiv.style.border='2px solid #F59E0B';
                         messageDiv.style.color='#F59E0B';
-                        messageDiv.innerHTML='<p style="font-size:16px;font-weight:700;margin-bottom:8px">You\'ve already applied!</p><p style="font-size:14px">We\'ll reach out with next steps if approved.</p>';
+                        messageDiv.innerHTML='<p style="font-size:16px;font-weight:700;margin-bottom:8px">We already have your information.</p><p style="font-size:14px">We&rsquo;ll reach out with next steps.</p>';
                     }else{
                         throw new Error(errorData.message||'Submission failed');
                     }
                     submitBtn.disabled=false;
                     submitBtn.style.opacity='1';
                     submitBtn.style.cursor='pointer';
-                    submitBtn.textContent='Apply for the 90-Day Intake Trial \u2192';
+                    submitBtn.textContent='Start My Setup \u2192';
                 }
             }catch(error){
                 messageDiv.style.display='block';
@@ -667,7 +760,7 @@
                 submitBtn.disabled=false;
                 submitBtn.style.opacity='1';
                 submitBtn.style.cursor='pointer';
-                submitBtn.textContent='Apply for the 90-Day Intake Trial \u2192';
+                submitBtn.textContent='Start My Setup \u2192';
             }
         });
     }
