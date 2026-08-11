@@ -25,7 +25,11 @@ function log(level, correlationId, message, detail) {
     else console.log(JSON.stringify(entry));
 }
 
-// ── Rate limiting (in-memory, per-IP) ──
+// ── Rate limiting (in-memory, per-process — NOT globally distributed) ──
+// This is a local abuse guard, not a strict platform-wide enforcement.
+// With 2+ Fly machines, each process has its own counter. Restarts reset it.
+// For production hardening: shared store (Redis) or edge-level enforcement.
+// Sales Ops should also enforce its own rate/abuse controls at the boundary.
 const rateLimitStore = new Map();
 const RATE_LIMIT_WINDOW_MS = 60_000;
 const RATE_LIMIT_MAX = 5;
@@ -190,7 +194,12 @@ async function forwardToSalesOps(endpoint, payload, correlationId) {
     }
 }
 
-// ── Idempotency helper ──
+// ── Idempotency (in-memory, per-process — NOT durable dedup) ──
+// This is a best-effort cache, not the integrity boundary.
+// Two Fly machines or a restart can accept the same submission independently.
+// Sales Ops MUST enforce durable submission dedup as the authoritative guard.
+// Marketing-side caching is an optimization that reduces duplicate attempts,
+// NOT the sole mechanism preventing duplicate canonical records.
 const idempotencyStore = new Map();
 const IDEMPOTENCY_TTL_MS = 86400_000; // 24 hours
 
