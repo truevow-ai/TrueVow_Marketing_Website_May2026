@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "TrueVow Marketing Website with Supabase Database Integration",
   "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
     "db:execute": "node scripts/execute_sql_to_supabase.js",
     "db:populate": "node scripts/populate_county_data.js",
     "db:calculate-all-states": "node scripts/calculate_all_states_county_data.js",
@@ -19,8 +21,13 @@
     "db:texas-practice-areas": "node scripts/populate_practice_areas_for_state.js TX",
     "db:practice-areas": "node scripts/populate_practice_areas_for_state.js",
     "db:fix-baker": "node scripts/fix_baker_immediate.js",
-    "db:remove-small-counties": "node scripts/force_delete_small_counties.js",
-    "dev": "npx http-server -p 8083"
+    "db:remove-small-counties": "node scripts/force_delete_small_counties.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "express": "^4.21.0",
+    "pg": "^8.11.3",
+    "dotenv": "^16.3.1"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.39.0",
