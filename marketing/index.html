@@ -165,13 +165,6 @@
         .tradeoff-card.gets li::before { content: '\2713'; color: var(--green); }
         .tradeoff-card.trade li::before { content: '\2192'; color: var(--navy); }
 
-        /* COUNTY SCARCITY */
-        .county-scarcity {
-            max-width: 600px; margin: 32px auto 0; padding: 16px 24px; background: #F8FAFC;
-            border-radius: 8px; font-size: 14px; color: #666; text-align: center; line-height: 1.7;
-        }
-        .county-scarcity a { color: var(--navy); font-weight: 700; text-decoration: none; }
-
         /* TRUST BAR */
         .trust-bar {
             padding: 16px 24px; background: var(--light); border-bottom: 1px solid var(--border);
@@ -450,7 +443,7 @@
       "name": "What is TrueVow?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "TrueVow is an intake architecture partner for solo and small personal injury firms. TrueVow helps firms map how intake works today, design a controlled routed-call process, implement Benjamin as the voice layer, and give attorneys structured intake records for review. TrueVow is not a law firm and does not provide legal advice."
+        "text": "TrueVow is an intake architecture partner for solo and small personal injury firms. We help firms set up a controlled routed-call intake path with Benjamin as the voice layer, structured intake records, priority alerts, booked consultations, and attorney review workflows. TrueVow is not a law firm and does not provide legal advice."
       }
     },
     {
@@ -458,23 +451,15 @@
       "name": "What does Benjamin do?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Benjamin is the voice layer that answers routed calls when enabled, follows selected intake templates, screens intake fit, creates structured intake records, flags priority opportunities, and books consultations based on configured rules. Benjamin does not provide legal advice, create an attorney-client relationship, run conflicts checks, or decide whether to accept a case."
+        "text": "Benjamin handles routed PI intake calls through the firm's selected intake path. It asks structured questions, captures key facts, flags priority opportunities, requests or books consultations based on configured rules, and creates intake records for attorney review. Benjamin does not provide legal advice, create an attorney-client relationship, run conflicts checks, or decide whether the firm accepts a matter."
       }
     },
     {
       "@type": "Question",
-      "name": "Is Benjamin an answering service?",
+      "name": "Do I need to change my case-management system?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Answering services usually take messages and forward calls. Benjamin is a controlled intake layer for routed PI calls. It follows selected intake templates, screens intake fit, creates structured intake records, flags priority opportunities, and books consultations based on onboarding settings and configured rules."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is this a chatbot?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Benjamin is not designed to be a free-form legal-advice chatbot. It uses controlled intake logic, selected templates, configured routing rules, and attorney review workflows for live-call intake decisions."
+        "text": "No. TrueVow starts with the front door: routed calls, intake questions, booking, alerts, and structured records. No full case-management migration is required to begin."
       }
     },
     {
@@ -482,15 +467,7 @@
       "name": "What does it cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "INTAKE plans start at $499/month. Pricing scales by routed call volume, workflow needs, reporting, and support. There are no public per-lead unlock fees, and all intake records remain visible inside the portal. Full pricing is available on the Pricing page."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I pay for every lead?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. TrueVow INTAKE does not use public per-lead unlock fees. Every plan keeps intake records visible inside the portal. Benjamin may flag priority opportunities based on configured criteria, but the firm reviews and decides what to pursue."
+        "text": "INTAKE plans start at $499/month. Every plan keeps intake records visible. There are no public per-lead unlock fees. The 90-day INTAKE trial runs for 12 qualifying completed intakes or 90 days, whichever comes first. Setup is confirmed before activation. Full pricing is available on the Pricing page."
       }
     },
     {
@@ -498,7 +475,7 @@
       "name": "Is Spanish included?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. English and Spanish intake are both included at no extra cost. Callers are served in whichever language they prefer."
+        "text": "Yes. English and Spanish intake are included. Callers can be routed through the selected intake path in the language they prefer."
       }
     },
     {
@@ -506,39 +483,7 @@
       "name": "Does Benjamin create a case?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Benjamin creates structured intake records for attorney review. The firm decides whether an intake opportunity becomes a case, whether conflicts checks are cleared, and whether representation will be offered."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I use SETTLE without INTAKE?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "SETTLE access may be available to approved firms for settlement-range context with confidence labels. SETTLE does not predict, recommend, or guarantee outcomes. Availability, eligibility, and pricing are confirmed after approval."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is TrueVow just software?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. TrueVow combines software, intake mapping, onboarding configuration, routed-call setup, and ongoing support. Benjamin is the voice layer, but the broader product is a controlled intake process for the firm."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do we need to change our whole firm to use TrueVow?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. TrueVow starts with the calls and workflows your firm already has: phone routing, calendar booking, intake questions, alerts, and attorney review. No full case-management migration is required to begin."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does TrueVow customize intake for each firm?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "TrueVow uses selected intake templates and onboarding settings. Standard configuration is included during onboarding. Custom workflows, unusual routing, or complex integrations may require separate scoping, validation, and pricing."
+        "text": "No. Benjamin creates structured intake records for attorney review. The firm decides whether to accept or decline a matter, whether conflicts are cleared, and whether representation will be offered."
       }
     }
   ]
@@ -575,7 +520,7 @@
                 <button class="nav-dropdown-toggle">Resources</button>
                 <div class="nav-dropdown-menu">
                     <a href="profitability.html">ROI Calculator</a>
-                    <a href="county-availability.html">County Availability</a>
+                    <a href="trace.html">TRACE</a>
                     <a href="compliance.html">Data &amp; Compliance</a>
                     <a href="integrations.html">Integrations &amp; Setup</a>
                     <a href="blog.html">Blog</a>
@@ -594,7 +539,7 @@
     <a href="pricing.html">Pricing</a>
     <div class="mobile-nav-label">Resources</div>
     <a href="profitability.html">ROI Calculator</a>
-    <a href="county-availability.html">County Availability</a>
+    <a href="trace.html">TRACE</a>
     <a href="compliance.html">Data &amp; Compliance</a>
     <a href="integrations.html">Integrations &amp; Setup</a>
     <a href="blog.html">Blog</a>
@@ -603,39 +548,38 @@
 
 <!-- HERO -->
 <section class="hero">
-    <div class="hero-icp-tag">For solo &amp; small PI firms already spending on marketing</div>
-    <h1>The Ad Worked. Make Sure the Next Call Gets Reviewed.</h1>
+    <div class="hero-icp-tag">For owner-led PI firms that already paid to make the phone ring</div>
+    <h1>The Firm You Built Should Not Depend on You Personally Catching Every Opportunity.</h1>
     <p class="hero-sub">
-        TrueVow helps owner-led personal injury firms design, implement, and support a controlled intake process for routed calls, structured intake records, priority alerts, and booked consultations for attorney review.
+        You already paid for the ad, referral, or search result that made the phone ring.
+    </p>
+    <p class="hero-sub" style="margin-top: -26px;">
+        But when the next serious caller reaches voicemail, waits for a callback, or gets reduced to thin notes, the firm may never get a clean intake record to review.
+    </p>
+    <p class="hero-sub" style="margin-top: -26px;">
+        Benjamin helps turn routed PI calls into structured intake records, priority opportunities, and booked consultations for attorney review &mdash; without public per-lead unlock fees.
     </p>
     <div class="hero-actions">
         <a href="benjamin-demo.html" class="btn btn-primary">See Benjamin Live (8 min) &rarr;</a>
         <a href="pricing.html" class="btn btn-secondary">View Pricing &rarr;</a>
     </div>
     <p class="hero-pricing-anchor">
-        <strong>INTAKE plans start at $499/month.</strong> No public per-lead unlock fees. No public checkout. Approval required before activation.
+        <strong>INTAKE plans start at $499/month.</strong> Every intake record visible. No public per-lead unlock fees. Setup confirmed before activation.
     </p>
-    <div class="hero-demo-explainer">
-        <span>Complete a short form</span>
-        <span>Experience a short live mock intake flow</span>
-        <span>See how intake facts become a structured record</span>
-        <span>No public checkout. Approval required before activation.</span>
-    </div>
-    <p style="font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 12px;">Short form. About 90 seconds. No public checkout.</p>
-    <p style="font-size: 13px; color: rgba(255,255,255,0.42); margin-top: 8px;">Not ready for the live demo? <a href="county-availability.html" style="color: rgba(255,255,255,0.7); font-weight: 600;">Check county availability first</a>.</p>
+    <p style="font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 12px;">Short form. About 90 seconds. No payment on the public website. No case-management migration required to begin.</p>
     <p style="font-size: 14px; color: rgba(255,255,255,0.35); margin-top: 24px;">
-        Benjamin is the voice layer. The intake process is the product.
+        You do not need another app demanding your attention. You need the next paid call to stop depending on whether you are at the desk.
     </p>
 </section>
 
 <!-- TRUST BAR -->
 <div class="trust-bar">
     <div class="trust-inner">
-        <span>Built for solo &amp; small PI firms</span>
-        <span>We Design</span>
-        <span>We Implement</span>
-        <span>We Support</span>
-        <span>Attorney Review Stays Inside the Firm</span>
+        <span>Keep your case system</span>
+        <span>Every intake record visible</span>
+        <span>English + Spanish intake</span>
+        <span>Attorney review stays inside the firm</span>
+        <span>No public per-lead unlock fees</span>
     </div>
 </div>
 
@@ -644,118 +588,83 @@
     <div class="movie-inner">
         <div class="movie-time">7:42 pm</div>
         <div class="movie-box">
-            <p>The firm already paid to make the phone ring.</p>
-            <p>The attorney is unavailable. A potential client has questions after an accident and is trying to reach a firm.</p>
-            <p><span class="highlight">Benjamin can answer the routed call when enabled, collect key intake facts, screen intake fit, and book a consultation based on configured rules.</span></p>
-            <p class="movie-result">The firm receives a structured intake record for attorney review. The call does not have to sit in voicemail before anyone understands what happened.</p>
+            <p>You are not at the desk.</p>
+            <p>Maybe you are finally at dinner. Maybe you are watching your kid’s game. Maybe you just stopped for the day after court, calls, emails, and the weekend list already forming in your head.</p>
+            <p>Then the phone rings.</p>
+            <p>The ad worked. The referral worked. The person on the other end needs to know what happens next.</p>
+            <p>In the old pattern, that call may become a voicemail, a delayed callback, a thin message, or another item you try to catch up on later.</p>
+            <p><span class="highlight">With Benjamin handling routed intake calls through your selected path, the caller can be taken through structured questions, key facts can be captured, and a consultation can be requested or booked based on your firm’s rules.</span></p>
+            <p class="movie-result">The caller gets heard. The record gets captured. The firm still decides.</p>
         </div>
     </div>
 </section>
 
-<!-- CREDIBILITY STRIP -->
-<div class="social-proof-bar reveal">
-    <div class="social-proof-inner">
-        <p class="social-proof-label">Built for owner-led PI intake operations</p>
-        <div class="testimonial-grid">
-            <div class="testimonial-card">
-                <p class="testimonial-quote">Designed around routed calls, intake-fit screening, priority alerts, booked consultations, and attorney review.</p>
-                <div class="testimonial-attr">Controlled intake process</div>
-                <div class="testimonial-firm">Not a free-form legal-advice chatbot</div>
-            </div>
-            <div class="testimonial-card">
-                <p class="testimonial-quote">Standard onboarding uses selected intake templates and configuration settings. Custom workflows require separate scoping.</p>
-                <div class="testimonial-attr">Configuration-first setup</div>
-                <div class="testimonial-firm">No firm overhaul required</div>
-            </div>
-            <div class="testimonial-card">
-                <p class="testimonial-quote">TrueVow is not a law firm. The attorney reviews the intake record and decides what happens next.</p>
-                <div class="testimonial-attr">Attorney review stays inside the firm</div>
-                <div class="testimonial-firm">No case-acceptance automation</div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- WHAT IS TRUEVOW -->
-<section class="pain-section reveal" style="padding: 80px 24px; background: #fff;">
+<!-- THE REAL PROBLEM -->
+<section class="pain-section reveal" style="padding: 90px 24px; background: #fff;">
     <div class="container">
         <div class="section-head">
-            <h2>What Is TrueVow?</h2>
-            <p>TrueVow is an intake architecture partner for solo and small personal injury firms. We help firms map how intake works today, design a controlled routed-call process, implement Benjamin as the voice layer, and give attorneys structured intake records for review.</p>
-            <p style="margin-top: 16px; font-size: 16px; color: #666;">TrueVow is not a law firm and does not provide legal advice. The firm reviews, decides, and accepts or declines matters.</p>
+            <h2>The Problem Is Not That You Do Not Care.<br>The Problem Is That Too Much Still Depends on You.</h2>
         </div>
-    </div>
-</section>
-
-<!-- PROCESS FIRST -->
-<section class="pipeline-section reveal" style="background: #fff;">
-    <div class="container">
-        <div class="section-head">
-            <h2>Process First. Software Second.</h2>
-            <p>Most intake tools start with features. TrueVow starts by understanding how the firm actually handles calls, callbacks, booking, language needs, routing, and attorney review.</p>
-        </div>
-        <div class="pipeline-grid">
-            <div class="pipeline-card intake">
-                <div class="stage-label">Step 1</div>
-                <h3>Map Intake</h3>
-                <p>We identify where calls go, who answers, what happens after hours, how consultations are booked, and where intake details get lost.</p>
-            </div>
-            <div class="pipeline-card leverage">
-                <div class="stage-label">Step 2</div>
-                <h3>Design the Flow</h3>
-                <p>We configure routed-call handling, selected intake templates, booking rules, priority alerts, escalation paths, and attorney-review steps.</p>
-            </div>
-            <div class="pipeline-card settle">
-                <div class="stage-label">Step 3</div>
-                <h3>Operate and Improve</h3>
-                <p>Benjamin handles routed intake calls when enabled. The firm reviews structured records, booked consults, low-fit calls, and priority opportunities.</p>
-            </div>
+        <div class="pain-box" style="text-align: left;">
+            <p>Most solo and small PI owners already know the pain.</p>
+            <p style="font-family: 'Montserrat', sans-serif; font-size: 17px; color: #333; line-height: 2.0;">The missed call. The late callback. The voicemail you meant to review. The weekend catch-up. The notes scattered between phone, email, calendar, and case software.</p>
+            <p>After enough years, the chaos can start to feel normal.</p>
+            <p style="font-weight: 700; color: var(--navy);">But familiar does not mean free.</p>
+            <p>Every month the old intake path stays in place, the same leak stays hidden: paid calls that never become structured records, serious callers who may keep searching, and opportunities that depend too much on whether the owner is personally available at the right moment.</p>
+            <p style="font-weight: 700;">TrueVow does not start by asking you to rebuild the firm.</p>
+            <p>It starts where the pressure shows up first: the front door.</p>
         </div>
     </div>
 </section>
 
 <!-- THE EXPENSIVE CALL -->
-<section class="pain-section reveal">
+<section class="pain-section reveal" style="background: #fff; padding-top: 0;">
     <div class="container">
         <div class="pain-box">
-            <h2>The expensive call is the one your firm never gets to review.</h2>
-            <p>Most owner-led PI firms work hard to make the phone ring. The problem is what happens after that: court, client meetings, after-hours calls, voicemail, weak notes, slow follow-up, and intake details scattered across too many places.</p>
-            <p style="font-weight: 700; color: var(--navy); margin-top: 8px;">You are not buying another disconnected app. You are installing intake discipline into the part of the firm where opportunities often leak first.</p>
+            <h2>The Expensive Call Is the One Your Firm Never Gets to Review.</h2>
+            <p>You already paid to create demand.</p>
+            <p>The ad spend is running. The referral network is working. The search result got the click. The caller reached out.</p>
+            <p>The risk is what happens next.</p>
+            <p>If the caller reaches voicemail, waits too long, or gets captured in a thin message, your competitor does not have to be better. They only have to be present when the caller is ready.</p>
+            <p style="font-weight: 700; color: var(--navy); margin-top: 8px;">More ad spend is not always the first answer. Sometimes the first answer is making sure the calls you already paid for become reviewable intake records.</p>
+            <div style="margin-top: 28px;">
+                <a href="profitability.html" class="btn btn-primary">Estimate Your Intake Leak &rarr;</a>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- INTAKE-FIRST -->
+<!-- NOT ANOTHER TOOL -->
 <section class="intake-section reveal">
     <div class="container">
         <div class="section-head">
-            <h2>Stage 1 &mdash; INTAKE Captures the Opportunity</h2>
-            <p>Benjamin answers routed calls, follows controlled intake logic, asks practice-specific questions, screens intake fit, flags priority opportunities, sends priority alerts, and books consultations for attorney review.</p>
+            <h2>You Do Not Need Another Tool to Manage.<br>You Need a Front Door That Works When You Are Not Free.</h2>
+            <p>TrueVow is not trying to replace your judgment, your case software, or the way you practice law. It helps create a controlled intake path around routed PI calls so the firm can capture what matters before the opportunity disappears into voicemail, weekend catch-up, or scattered notes.</p>
         </div>
         <div class="intake-grid">
             <div class="intake-feature">
-                <strong>Routed Calls Answered When Enabled</strong>
-                <p>Calls can route to Benjamin based on your firm's configured schedule, routing rules, and intake setup.</p>
+                <strong>Routed Calls Get Heard</strong>
+                <p>Benjamin handles routed PI intake calls through the firm's configured intake path.</p>
             </div>
             <div class="intake-feature">
-                <strong>English + Spanish</strong>
-                <p>Benjamin supports English and Spanish intake, so callers can be routed through the selected intake flow in the language they prefer.</p>
+                <strong>Key Facts Get Captured</strong>
+                <p>Practice-area questions, incident basics, contact details, treatment signals, and booking details are organized into a structured record.</p>
             </div>
             <div class="intake-feature">
-                <strong>Priority Visibility</strong>
-                <p>See intake priority flags and review every routed intake record before deciding what happens next.</p>
+                <strong>Priority Opportunities Get Flagged</strong>
+                <p>The firm can see which intake records need faster review based on configured criteria.</p>
             </div>
             <div class="intake-feature">
-                <strong>All Intake Records Visible</strong>
-                <p>Every structured intake record stays visible. Benjamin may flag priority opportunities for review, but the firm decides what becomes a case.</p>
+                <strong>Consultations Can Be Requested or Booked</strong>
+                <p>Booking follows the firm's rules, calendar settings, and onboarding preferences.</p>
             </div>
             <div class="intake-feature">
-                <strong>Calendar Booking</strong>
-                <p>Consultations can be booked into your calendar based on onboarding settings and configured booking rules.</p>
+                <strong>Records Stay Visible</strong>
+                <p>Every intake record remains visible. No public per-lead unlock fees.</p>
             </div>
             <div class="intake-feature">
-                <strong>Priority Alerts</strong>
-                <p>Priority intake opportunities can trigger alerts so your team can review quickly.</p>
+                <strong>The Firm Decides</strong>
+                <p>Benjamin does not give legal advice, run conflicts, accept cases, or replace attorney review.</p>
             </div>
         </div>
         <div style="text-align: center;">
@@ -764,191 +673,130 @@
     </div>
 </section>
 
-<!-- THE TRUEVOW INTAKE ARCHITECTURE -->
-<section class="comparison-section reveal" style="background: #fff;">
+<!-- OWNER-DEPENDENCE -->
+<section class="pain-section reveal" style="background: #F8F9FA; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
     <div class="container">
         <div class="section-head">
-            <h2>The TrueVow Intake Architecture</h2>
-            <p>Benjamin is one layer inside the TrueVow intake architecture. The full system includes intake mapping, routed-call design, selected intake templates, booking rules, priority flags, structured intake records, attorney review workflows, and ongoing support.</p>
+            <h2>The First Step Toward a Less Owner-Dependent Firm Is Intake.</h2>
+            <p>You built the reputation. You built the referral base. You paid for the marketing. You carried the phone, the pressure, and the decisions.</p>
+            <p style="margin-top: 16px;">But the firm should not have to depend on whether you are available to catch every opportunity before it becomes real.</p>
+            <p style="margin-top: 16px;">A stronger intake function gives the firm more room to grow without forcing every caller, callback, booking, and review step back onto the owner's weekend.</p>
         </div>
-        <div class="pipeline-grid">
-            <div class="pipeline-card intake">
-                <div class="stage-label">Reality</div>
-                <h3>Current Intake Reality</h3>
-                <p>A caller reaches the firm through the phone, voicemail, referral, ad campaign, calendar workflow, or existing intake process.</p>
-            </div>
-            <div class="pipeline-card leverage">
-                <div class="stage-label">Design</div>
-                <h3>Designed Intake Flow</h3>
-                <p>TrueVow configures selected templates, routed-call handling, booking rules, priority criteria, alerts, and escalation settings.</p>
-            </div>
-            <div class="pipeline-card settle">
-                <div class="stage-label">Operation</div>
-                <h3>Reviewable Intake Operation</h3>
-                <p>The firm receives structured intake information, priority flags, and consultation details for review. The attorney decides what happens next.</p>
-            </div>
+        <p style="text-align: center; font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 700; color: var(--navy); margin: 0 auto 40px; max-width: 700px; line-height: 1.7;">Your intake should look as serious as your legal work.</p>
+        <div style="text-align: center;">
+            <a href="benjamin-demo.html?source=homepage-owner" class="btn btn-primary">See Benjamin Live (8 min) &rarr;</a>
         </div>
     </div>
 </section>
 
-<!-- HOW IMPLEMENTATION WORKS -->
+<!-- BUSINESS GROWTH / COMPETITIVE URGENCY -->
+<section class="pain-section reveal" style="background: #fff;">
+    <div class="container">
+        <div class="section-head">
+            <h2>The Next Caller May Not Wait for Your Next Callback Window.</h2>
+            <p>In PI, timing matters.</p>
+            <p style="margin-top: 16px;">The caller who reaches voicemail may keep searching. The caller who gets a serious response may have the first serious conversation.</p>
+            <p style="margin-top: 16px;">TrueVow helps your firm turn routed calls into structured intake records, priority alerts, and booked consultations for review &mdash; so your intake path is not limited by the moments when you have time to answer, call back, copy notes, or catch up.</p>
+            <p style="margin-top: 24px; font-family: 'Montserrat', sans-serif; font-weight: 700; color: var(--navy); font-size: 18px;">This month's ad spend is already running. The next paid call should not be the next voicemail you regret.</p>
+        </div>
+    </div>
+</section>
+
+<!-- HOW TRUEVOW STARTS -->
 <section class="intake-section reveal">
     <div class="container">
         <div class="section-head">
-            <h2>How TrueVow Implements Intake</h2>
-            <p>This is not a plug-in widget dropped onto your phone line. TrueVow helps configure the intake process around how your firm actually works.</p>
-            <p style="margin-top: 16px; font-size: 16px; color: #666;">Standard onboarding uses selected intake templates and configuration settings. Custom workflows, unusual routing, or complex integrations may require separate scoping, validation, and pricing.</p>
+            <h2>Start With the Calls. Keep the Firm in Control.</h2>
+            <p>TrueVow does not ask you to change everything at once. We start with the calls and workflows your firm already has: routing, practice areas, intake questions, booking flow, alerts, and attorney review.</p>
         </div>
         <div class="intake-grid">
             <div class="intake-feature">
-                <strong>1. Intake Discovery</strong>
-                <p>Review current call routing, office hours, after-hours handling, language needs, staff roles, and consultation-booking process.</p>
+                <strong>1. Confirm the Intake Path</strong>
+                <p>Review the practice areas, caller questions, greeting, booking flow, and legal-boundary language Benjamin will follow.</p>
             </div>
             <div class="intake-feature">
-                <strong>2. Flow Design</strong>
-                <p>Select intake templates, routing rules, escalation paths, booking settings, priority criteria, and alert preferences.</p>
+                <strong>2. Connect Routing and Booking</strong>
+                <p>Set up routed calls, configured coverage windows, calendar preferences, alerts, and consultation rules.</p>
             </div>
             <div class="intake-feature">
-                <strong>3. Voice Layer Setup</strong>
-                <p>Configure Benjamin for routed calls, selected questions, disclaimers, booking logic, and attorney-review outputs.</p>
+                <strong>3. Hear Benjamin Before Launch</strong>
+                <p>Test the intake path before callers use it.</p>
             </div>
             <div class="intake-feature">
-                <strong>4. Portal Review Setup</strong>
-                <p>Prepare the firm to review structured intake records, priority flags, booked consultations, and low-fit calls.</p>
+                <strong>4. Activate Trial Coverage</strong>
+                <p>Trial coverage begins after setup is confirmed and the firm has reviewed the workflow.</p>
             </div>
             <div class="intake-feature">
-                <strong>5. Go-Live Support</strong>
-                <p>Launch with setup support so the firm knows what callers hear, what records are created, and how alerts work.</p>
+                <strong>5. Review the Records</strong>
+                <p>The firm receives structured intake records, booking details, and priority alerts for attorney review.</p>
             </div>
             <div class="intake-feature">
-                <strong>6. Ongoing Optimization</strong>
-                <p>Review routed-call patterns, intake friction, booking flow, language needs, and priority criteria as the firm learns.</p>
+                <strong>Benjamin prepares the record. The attorney reviews it. The firm decides.</strong>
+                <p>That is the operating rhythm TrueVow helps set up &mdash; with every record visible and no public per-lead unlock fees.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- THE VILLAIN -->
-<section class="comparison-section reveal" style="background:var(--light);">
-  <div class="container">
-    <div class="section-head">
-      <h2>The Villain Is the After-the-Ring Gap</h2>
-      <p>The After-the-Ring Gap is the space between a caller reaching out and the firm having a structured intake record ready for attorney review. The ad worked. The referral worked. The search result worked. Then the caller reached the firm — and the process depended on voicemail, callbacks, scattered notes, or a generic message-taker.</p>
-    </div>
-    <div class="pain-box" style="margin: 0 auto 48px; max-width: 760px; text-align: left; border-left: 4px solid #B91C1C; background: #fff;">
-        <p style="font-size: 16px; color: #555; line-height: 1.9; margin: 0;">
-            The caller hears a generic voicemail. The message is delayed, shallow, or never reviewed with enough detail. They may keep searching for help while incident timing, practice-area fit, and consultation booking remain unclear. <strong style="color: var(--dark);">That is the cost of the After-the-Ring Gap: the firm paid for the call, but may not have a structured intake record ready for attorney review.</strong>
-        </p>
-    </div>
-    <div class="compare-grid">
-      <div class="compare-col as-is">
-        <h3>What the gap looks like</h3>
-        <ul>
-          <li>A caller leaves a voicemail after hours</li>
-          <li>A receptionist takes a shallow message</li>
-          <li>Incident timing is not captured clearly</li>
-          <li>Practice-area fit is unclear</li>
-          <li>The consultation is not booked while intent is high</li>
-        </ul>
-      </div>
-      <div class="compare-col truevow">
-        <h3>What Benjamin adds</h3>
-        <ul>
-          <li>Routed-call handling when enabled</li>
-          <li>Selected intake templates</li>
-          <li>Structured intake records</li>
-          <li>Priority flags for review</li>
-          <li>Consultation booking based on configured rules</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- NOT A RECEPTIONIST. NOT AN ANSWERING SERVICE. NOT A CHATBOT. -->
+<!-- COMPARISON SECTION -->
 <section class="comparison-section reveal" style="background: #fff;">
     <div class="container">
         <div class="section-head">
-            <h2>Not a Receptionist. Not an Answering Service. Not a Chatbot.</h2>
-            <p>TrueVow sits between generic message-taking and building an internal intake department: a controlled intake architecture designed for owner-led PI firms.</p>
+            <h2>Generic Message-Taking Captures a Call.<br>TrueVow Helps Build an Intake Function.</h2>
         </div>
         <div class="compare-grid">
             <div class="compare-col as-is">
-                <h3>Generic call handling</h3>
+                <h3>Basic call handling</h3>
                 <ul>
                     <li>Answers calls</li>
                     <li>Takes messages</li>
-                    <li>Routes basic information</li>
-                    <li>Often lacks PI-specific intake structure</li>
-                    <li>May not create reviewable intake records</li>
+                    <li>May create thin notes</li>
+                    <li>May not ask PI-specific intake questions</li>
+                    <li>May not book while intent is high</li>
+                    <li>May leave review scattered across phone, email, and case software</li>
                 </ul>
             </div>
             <div class="compare-col truevow">
-                <h3>TrueVow intake architecture</h3>
+                <h3>TrueVow intake path</h3>
                 <ul>
-                    <li>Maps the firm's intake process</li>
-                    <li>Configures routed-call handling</li>
-                    <li>Uses selected PI intake templates</li>
-                    <li>Creates structured intake records</li>
-                    <li>Supports booking and attorney review</li>
+                    <li>Handles routed PI intake calls</li>
+                    <li>Follows selected intake templates</li>
+                    <li>Captures structured facts</li>
+                    <li>Flags priority opportunities</li>
+                    <li>Requests or books consultations based on configured rules</li>
+                    <li>Keeps intake records visible for firm review</li>
                 </ul>
             </div>
         </div>
     </div>
 </section>
 
-<!-- BUILT AROUND INTAKE PROFITABILITY -->
-<section class="pipeline-section reveal" style="background: #fff;">
-    <div class="container">
-        <div class="section-head">
-            <h2>Built Around Intake Profitability</h2>
-            <p>The goal is not to answer more calls for the sake of answering calls. The goal is to help the firm see which routed calls became structured intake records, which consultations were booked, and where intake still leaks.</p>
-        </div>
-        <div class="pipeline-grid">
-            <div class="pipeline-card intake">
-                <div class="stage-label">Measure</div>
-                <h3>Routed Call Activity</h3>
-                <p>See routed intake activity, missed or low-fit calls, booked consultations, and records waiting for review.</p>
-            </div>
-            <div class="pipeline-card leverage">
-                <div class="stage-label">Improve</div>
-                <h3>Intake Friction</h3>
-                <p>Review where intake friction appears, where booking slows down, where language support matters, and where priority criteria may need adjustment.</p>
-            </div>
-            <div class="pipeline-card settle">
-                <div class="stage-label">Protect</div>
-                <h3>Marketing Spend</h3>
-                <p>You already paid to create demand. TrueVow helps protect the intake path after that demand turns into a call.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- PIPELINE REVEAL -->
+<!-- PRODUCT PIPELINE -->
 <section class="pipeline-section reveal">
     <div class="container">
         <div class="section-head">
             <h2>Start With INTAKE. Expand Only When the Workflow Is Ready.</h2>
-            <p>TrueVow starts where solo and small PI firms usually leak first: routed calls, intake records, priority review, and booked consultations. Later-stage tools may support settlement-range review or post-retainer workflow needs for approved firms, but the first product is intake discipline.</p>
+            <p>Most owner-led PI firms do not need a full enterprise rollout first. They need the front door to stop leaking opportunity. TrueVow starts with INTAKE: routed calls, structured records, priority alerts, booked consultations, and attorney review. Later workflows can support accepted matters and settlement-range context after setup review and onboarding.</p>
         </div>
         <div class="pipeline-grid">
             <div class="pipeline-card intake">
                 <div class="stage-label">Core Product</div>
                 <h3>INTAKE</h3>
-                <p>Captures the intake opportunity. Benjamin answers routed calls, screens intake fit, flags priority, and books consultations for attorney review.</p>
-                <a href="pricing.html">Learn more &rarr;</a>
-            </div>
-            <div class="pipeline-card settle">
-                <div class="stage-label">Optional Module</div>
-                <h3>SETTLE</h3>
-                <p>Supports settlement-range review with comparable signals and confidence labels. It does not predict, recommend, or guarantee outcomes.</p>
-                <a href="settle.html">Learn more &rarr;</a>
+                <p>Benjamin handles routed PI intake calls, collects key facts, flags priority opportunities, and requests or books consultations for attorney review.</p>
+                <a href="pricing.html">View INTAKE Pricing &rarr;</a>
             </div>
             <div class="pipeline-card leverage">
-                <div class="stage-label">Future Workflow Support</div>
-                <h3>Post-Retainer Readiness</h3>
-                <p>TrueVow may support additional post-retainer workflows for approved firms, including records, treatment-status, and readiness tracking. Availability depends on product readiness, firm configuration, and approved terms.</p>
-                <p style="margin-top:16px;font-size:14px;color:#999;font-weight:600;">Not publicly available yet</p>
+                <div class="stage-label">Second Workflow</div>
+                <h3>TRACE</h3>
+                <p>After a matter is accepted, TRACE helps organize providers, records, bills, liens, treatment gaps, missing items, and source-linked chronology drafts for attorney review.</p>
+                <p style="margin-top: 14px; font-size: 13px; color: #777;">Enabled after workflow review and onboarding. TRACE does not interpret medicine, value cases, or recommend settlement or legal decisions.</p>
+                <a href="trace.html">Discuss TRACE Readiness &rarr;</a>
+            </div>
+            <div class="pipeline-card settle">
+                <div class="stage-label">Later Workflow</div>
+                <h3>SETTLE</h3>
+                <p>May support settlement-range context with confidence labels. SETTLE does not predict, recommend, or guarantee outcomes.</p>
+                <a href="settle.html">Learn about SETTLE &rarr;</a>
             </div>
         </div>
     </div>
@@ -958,116 +806,56 @@
 <section class="world-after reveal">
     <div class="container">
         <div class="section-head">
-            <h2>What Changes After Intake Is Designed</h2>
-            <p>Not magic. Not automatic case acceptance. A clearer intake operating rhythm for the firm.</p>
+            <h2>What Changes When the Front Door Stops Depending Only on You</h2>
         </div>
         <div class="world-after-quote">
-            <p style="font-family: 'Montserrat', sans-serif; font-size: 20px; color: rgba(255,255,255,0.9); line-height: 1.9; margin-bottom: 24px;">
-                The firm starts the morning with routed intake activity in one place: new intake opportunities, booked consultations, low-fit calls, timing concerns, and structured intake records waiting for review.
+            <p style="font-family: 'Montserrat', sans-serif; font-size: 22px; color: rgba(255,255,255,0.92); line-height: 1.9; margin-bottom: 24px;">
+                It is Saturday.
             </p>
-            <p style="font-size: 17px; color: rgba(255,255,255,0.6); line-height: 1.9; margin-bottom: 24px;">
-                The attorney still reviews the record. The firm still decides what becomes a case. TrueVow helps organize the intake path so fewer details are scattered across voicemail, callbacks, and notes.
+            <p style="font-size: 17px; color: rgba(255,255,255,0.68); line-height: 1.9; margin-bottom: 24px;">
+                You are not trying to rebuild the week from voicemail, email, calendar notes, and memory.
+            </p>
+            <p style="font-size: 17px; color: rgba(255,255,255,0.68); line-height: 1.9; margin-bottom: 24px;">
+                A priority intake alert arrives with the caller's basic facts, practice area, and next step ready for firm review.
+            </p>
+            <p style="font-size: 17px; color: rgba(255,255,255,0.68); line-height: 1.9; margin-bottom: 24px;">
+                You did not have to leave the moment. The caller did not disappear into voicemail. The firm still decides what happens next.
             </p>
             <p style="font-family: 'Montserrat', sans-serif; font-size: 18px; color: var(--gold); font-weight: 700; line-height: 1.7;">
-                The change is not that software makes the decision. The change is that the firm has a cleaner record to review.
+                That is not software making the decision. That is the firm finally having a cleaner front door.
             </p>
         </div>
     </div>
 </section>
 
-<!-- CONTROL vs BLACK BOX -->
-<section class="pipeline-section reveal" style="background: white;">
-    <div class="container">
-        <div class="section-head">
-            <h2>Built for Firms That Want Control, Not an Enterprise Rollout</h2>
-            <p style="max-width: 800px; margin: 0 auto;">Some legal tech platforms try to automate the entire case lifecycle at once. TrueVow starts where solo and small PI firms usually leak money first: intake.</p>
-            <p style="max-width: 800px; margin: 16px auto 0;">Begin with routed calls, intake-fit screening, priority alerts, calendar booking, and structured intake records. Then expand into approved later-stage workflows only when the intake process proves value.</p>
-        </div>
-        <div class="pipeline-grid" style="margin-top: 48px;">
-            <div class="pipeline-card intake">
-                <div class="stage-label">Principle 1</div>
-                <h3>Controlled Intake First</h3>
-                <p>Benjamin follows selected intake templates and onboarding settings, routing rules, escalation logic, and recording settings. It is not a free-form chatbot improvising legal advice.</p>
-            </div>
-            <div class="pipeline-card leverage">
-                <div class="stage-label">Principle 2</div>
-                <h3>Built for Solo &amp; Small PI Firms</h3>
-                <p>TrueVow is designed for owner-led plaintiff firms that need clear pricing, fast setup, Spanish support, priority alerts, and practical pipeline visibility.</p>
-            </div>
-            <div class="pipeline-card settle">
-                <div class="stage-label">Principle 3</div>
-                <h3>No Firm Overhaul Required</h3>
-                <p>Start with routed calls, calendar booking, structured intake records, and portal review. No case-management migration, no enterprise rollout, and no need to rebuild your firm around software.</p>
-            </div>
-        </div>
-        <div style="text-align: center; margin-top: 48px;">
-            <a href="how-it-works.html" style="display: inline-block; background: #0A2463; color: white; padding: 16px 40px; border-radius: 8px; font-size: 18px; font-weight: 700; text-decoration: none;">See How TrueVow Works &rarr;</a>
-        </div>
-    </div>
-</section>
-
-<!-- WHAT BENJAMIN DOES NOT DO -->
+<!-- CONTROL AND BOUNDARIES -->
 <section class="comparison-section reveal" style="background: var(--light);">
     <div class="container">
         <div class="section-head">
-            <h2>What Benjamin Does Not Do</h2>
-            <p>Attorneys do not need another tool making bold promises. They need to know where the line is. Plain answers to the questions attorneys usually ask before trusting automation near intake.</p>
+            <h2>Built for Firms That Want Control, Not a Black Box.</h2>
+            <p>Benjamin is not a free-form legal-advice chatbot. It follows selected intake templates, routing rules, booking settings, escalation logic, and attorney-review boundaries. The firm keeps control where control matters.</p>
         </div>
         <div class="compare-grid">
             <div class="compare-col as-is">
-                <h3>Benjamin does not...</h3>
+                <h3>What Benjamin does</h3>
                 <ul>
-                    <li>Provide legal advice</li>
-                    <li>Create an attorney-client relationship</li>
-                    <li>Decide whether to accept a case</li>
-                    <li>Run conflicts checks</li>
-                    <li>Replace attorney review</li>
+                    <li>Handles routed intake calls</li>
+                    <li>Asks selected intake questions</li>
+                    <li>Captures structured records</li>
+                    <li>Flags priority opportunities</li>
+                    <li>Requests or books consultations based on configured rules</li>
+                    <li>Alerts the firm for review</li>
                 </ul>
             </div>
             <div class="compare-col truevow">
-                <h3>Benjamin does...</h3>
+                <h3>What Benjamin does not do</h3>
                 <ul>
-                    <li>Answer routed intake calls when enabled</li>
-                    <li>Follow selected intake templates</li>
-                    <li>Capture structured intake records</li>
-                    <li>Flag priority intake opportunities</li>
-                    <li>Book consultations based on configured rules</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- TRADE-OFFS -->
-<section class="comparison-section reveal" style="background: var(--light);">
-    <div class="container">
-        <div class="section-head">
-            <h2>What TrueVow Gets You. What It Doesn't.</h2>
-        </div>
-        <div style="max-width: 760px; margin: 0 auto 32px; padding: 28px 32px; background: #fff; border: 1px solid var(--border); border-radius: 12px; border-left: 4px solid var(--navy);">
-            <p style="font-size: 15px; color: #555; line-height: 1.8; font-style: italic;">
-                TrueVow is not "set it and forget it" magic. The firm still needs to route calls correctly, review records, and decide what becomes a case.
-            </p>
-        </div>
-        <div class="tradeoff-grid">
-            <div class="tradeoff-card gets">
-                <h4>With TrueVow</h4>
-                <ul>
-                    <li>Routed calls can be answered when Benjamin is enabled</li>
-                    <li>Practice-specific intake templates configured for the firm</li>
-                    <li>Structured intake records created for attorney review</li>
-                    <li>Priority alerts for priority intake opportunities</li>
-                    <li>Consultations booked based on configured rules</li>
-                </ul>
-            </div>
-            <div class="tradeoff-card trade">
-                <h4>Still on the firm</h4>
-                <ul>
-                    <li>Attorney reviews the intake record and makes the call</li>
-                    <li>Firm decides whether to accept or decline a matter</li>
-                    <li>Firm runs conflicts checks and determines fee terms</li>
-                    <li>Firm manages case strategy, litigation, and settlement</li>
-                    <li>Firm maintains compliance with bar rules and ethics obligations</li>
+                    <li>Provide legal advice</li>
+                    <li>Create an attorney-client relationship</li>
+                    <li>Run conflicts checks</li>
+                    <li>Accept or decline a case</li>
+                    <li>Replace attorney review</li>
+                    <li>Make settlement or litigation decisions</li>
                 </ul>
             </div>
         </div>
@@ -1077,47 +865,20 @@
 <!-- PRICING TEASER -->
 <section class="pricing-teaser reveal">
     <div class="container">
-        <h2>One Intake Process. One Partner. Three INTAKE Tiers.</h2>
-        <p>INTAKE plans start at $499/month. Pricing scales by routed call volume, workflow needs, reporting, and support. All intake records remain visible. No public per-lead unlock fees.</p>
-        <a href="pricing.html" class="btn btn-primary">View Full Pricing &rarr;</a>
+        <h2>One Intake Process. Three INTAKE Tiers. No Public Per-Lead Unlock Fees.</h2>
+        <p>INTAKE plans start at $499/month. Every plan keeps intake records visible. Pricing scales by routed-call volume, minutes, attorney count, reporting needs, and support level &mdash; not by hiding records behind public unlock fees. The 90-day INTAKE trial runs for 12 qualifying completed intakes or 90 days, whichever comes first. Setup is confirmed before activation.</p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+            <a href="pricing.html" class="btn btn-primary">View Full Pricing &rarr;</a>
+            <a href="trial.html?source=homepage-pricing-teaser" class="btn btn-secondary" style="border-color: rgba(255,255,255,0.5); color: #fff;">Review the 90-Day Trial Path &rarr;</a>
+        </div>
+        <p style="margin-top: 20px; font-size: 14px; color: rgba(255,255,255,0.65);">Takes about 90 seconds. No payment on the public website.</p>
     </div>
 </section>
 
-<!-- APPLICATION / APPROVAL -->
+<!-- WHAT HAPPENS WITH THE DEMO -->
 <section class="application-section reveal">
     <div class="container">
-        <div class="section-head">
-            <h2>Access Is Approved Before Activation</h2>
-            <p>TrueVow is built for solo and small PI firms. Public website visitors apply first. Approved firms complete plan selection, payment, and onboarding inside the customer portal.</p>
-        </div>
-        <div class="app-steps">
-            <div class="app-step">
-                <div class="step-num">1</div>
-                <h4>Submit</h4>
-                <p>Share firm details</p>
-            </div>
-            <div class="app-step">
-                <div class="step-num">2</div>
-                <h4>Firm Review</h4>
-                <p>Firm fit and county availability reviewed</p>
-            </div>
-            <div class="app-step">
-                <div class="step-num">3</div>
-                <h4>Portal Invite</h4>
-                <p>Plan selection &amp; payment</p>
-            </div>
-            <div class="app-step">
-                <div class="step-num">4</div>
-                <h4>Onboarding</h4>
-                <p>Setup &amp; screenshare</p>
-            </div>
-            <div class="app-step">
-                <div class="step-num">5</div>
-                <h4>Activation</h4>
-                <p>Benjamin goes live</p>
-            </div>
-        </div>
-        <div class="pain-box" style="margin-top: 48px;">
+        <div class="pain-box" style="margin-top: 0;">
             <h2>What Happens When You Click "See Benjamin Live"?</h2>
             <p>Complete a short form so TrueVow can route the demo correctly.</p>
             <p>Benjamin can call your cell for a live mock intake experience.</p>
@@ -1126,41 +887,36 @@
                 <p style="font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #888; margin-bottom: 10px;">Sample opening</p>
                 <p style="font-size: 15px; color: #555; line-height: 1.8; margin: 0;">"Hi, I'm Benjamin. I help the firm collect basic intake information for attorney review. I cannot provide legal advice, and speaking with me does not mean the firm has agreed to represent you. I'll ask a few structured questions so the firm can review what happened."</p>
             </div>
-            <p style="font-weight: 700; color: var(--navy);">No public checkout. No instant activation. Approval is required before a firm goes live.</p>
-        </div>
-        <div class="county-scarcity">
-            Access may vary by county and practice-area availability.
-            <a href="county-availability.html"> Check county availability &rarr;</a>
+            <p style="font-weight: 700; color: var(--navy);">No payment on the public website. No instant activation. Setup is confirmed before a firm goes live.</p>
         </div>
     </div>
 </section>
 
-<!-- NOT FOR EVERY FIRM -->
+<!-- WHO THIS IS FOR -->
 <section class="comparison-section reveal" style="background: var(--light);">
     <div class="container">
         <div class="section-head">
-            <h2>TrueVow Is Not for Firms That Want Another Tool</h2>
-            <p>TrueVow is for firms that want a more disciplined intake function, not another disconnected app.</p>
+            <h2>Built for Firms That Want a Clearer Intake Function.</h2>
+            <p>TrueVow is for owner-led PI firms that already know the phone problem is costing more than it shows on paper. It is for firms that want more reviewed opportunities from the same reputation and ad spend. It is for attorneys who want the firm to grow without every opportunity depending on their personal availability. It is for the owner who believes the firm can still become more valuable, more organized, and less dependent on his personal availability.</p>
         </div>
         <div class="compare-grid">
             <div class="compare-col as-is">
-                <h3>Not built for firms that want...</h3>
+                <h3>Not what TrueVow does</h3>
                 <ul>
-                    <li>Software to give legal advice</li>
-                    <li>Software to make case-acceptance decisions</li>
-                    <li>A replacement for attorney review</li>
-                    <li>A generic chatbot for legal questions</li>
-                    <li>A public checkout with instant activation</li>
+                    <li>Firms looking for software to give legal advice</li>
+                    <li>Firms looking for instant public checkout</li>
+                    <li>Firms looking for software to accept or decline cases</li>
+                    <li>Firms that do not want attorney review in the process</li>
                 </ul>
             </div>
             <div class="compare-col truevow">
-                <h3>Built for firms that want...</h3>
+                <h3>Built for firms that want</h3>
                 <ul>
-                    <li>A designed routed-call process</li>
-                    <li>Structured intake records</li>
-                    <li>Priority alerts for attorney review</li>
-                    <li>Calendar booking based on configured rules</li>
-                    <li>Ongoing intake optimization</li>
+                    <li>More reviewed opportunities from the same ad spend</li>
+                    <li>Less dependence on owner availability</li>
+                    <li>A firmer front door for the firm</li>
+                    <li>Structured intake records and priority alerts</li>
+                    <li>Consultations booked through configured rules</li>
                 </ul>
             </div>
         </div>
@@ -1177,73 +933,37 @@
             <div class="faq-item">
                 <div class="faq-question">What is TrueVow?</div>
                 <div class="faq-answer">
-                    <p>TrueVow is an intake architecture partner for solo and small personal injury firms. TrueVow helps firms map how intake works today, design a controlled routed-call process, implement Benjamin as the voice layer, and give attorneys structured intake records for review. TrueVow is not a law firm and does not provide legal advice.</p>
+                    <p>TrueVow is an intake architecture partner for solo and small personal injury firms. We help firms set up a controlled routed-call intake path with Benjamin as the voice layer, structured intake records, priority alerts, booked consultations, and attorney review workflows. TrueVow is not a law firm and does not provide legal advice.</p>
                 </div>
             </div>
             <div class="faq-item">
                 <div class="faq-question">What does Benjamin do?</div>
                 <div class="faq-answer">
-                    <p>Benjamin is the voice layer that answers routed calls when enabled, follows selected intake templates, screens intake fit, creates structured intake records, flags priority opportunities, and books consultations based on configured rules. Benjamin does not provide legal advice, create an attorney-client relationship, run conflicts checks, or decide whether to accept a case.</p>
+                    <p>Benjamin handles routed PI intake calls through the firm's selected intake path. It asks structured questions, captures key facts, flags priority opportunities, requests or books consultations based on configured rules, and creates intake records for attorney review. Benjamin does not provide legal advice, create an attorney-client relationship, run conflicts checks, or decide whether the firm accepts a matter.</p>
                 </div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">Is Benjamin an answering service?</div>
+                <div class="faq-question">Do I need to change my case-management system?</div>
                 <div class="faq-answer">
-                    <p>No. Answering services usually take messages and forward calls. Benjamin is a controlled intake layer for routed PI calls. It follows selected intake templates, screens intake fit, creates structured intake records, flags priority opportunities, and books consultations based on onboarding settings and configured rules.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">Is this a chatbot?</div>
-                <div class="faq-answer">
-                    <p>No. Benjamin is not designed to be a free-form legal-advice chatbot. It uses controlled intake logic, selected templates, configured routing rules, and attorney review workflows for live-call intake decisions.</p>
+                    <p>No. TrueVow starts with the front door: routed calls, intake questions, booking, alerts, and structured records. No full case-management migration is required to begin.</p>
                 </div>
             </div>
             <div class="faq-item">
                 <div class="faq-question">What does it cost?</div>
                 <div class="faq-answer">
-                    <p>INTAKE plans start at $499/month. Pricing scales by routed call volume, workflow needs, reporting, and support. There are no public per-lead unlock fees, and all intake records remain visible inside the portal. Full pricing is available on the <a href="pricing.html">Pricing page</a>.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">Do I pay for every lead?</div>
-                <div class="faq-answer">
-                    <p>No. TrueVow INTAKE does not use public per-lead unlock fees. Every plan keeps intake records visible inside the portal. Benjamin may flag priority opportunities based on configured criteria, but the firm reviews and decides what to pursue.</p>
+                    <p>INTAKE plans start at $499/month. Every plan keeps intake records visible. There are no public per-lead unlock fees. The 90-day INTAKE trial runs for 12 qualifying completed intakes or 90 days, whichever comes first. Setup is confirmed before activation. Full pricing is available on the <a href="pricing.html">Pricing page</a>.</p>
                 </div>
             </div>
             <div class="faq-item">
                 <div class="faq-question">Is Spanish included?</div>
                 <div class="faq-answer">
-                    <p>Yes. English and Spanish intake are both included at no extra cost. Callers are served in whichever language they prefer.</p>
+                    <p>Yes. English and Spanish intake are included. Callers can be routed through the selected intake path in the language they prefer.</p>
                 </div>
             </div>
             <div class="faq-item">
                 <div class="faq-question">Does Benjamin create a case?</div>
                 <div class="faq-answer">
-                    <p>No. Benjamin creates structured intake records for attorney review. The firm decides whether an intake opportunity becomes a case, whether conflicts checks are cleared, and whether representation will be offered.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">Can I use SETTLE without INTAKE?</div>
-                <div class="faq-answer">
-                    <p>SETTLE access may be available to approved firms for settlement-range context with confidence labels. SETTLE does not predict, recommend, or guarantee outcomes. Availability, eligibility, and pricing are confirmed after approval.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">Is TrueVow just software?</div>
-                <div class="faq-answer">
-                    <p>No. TrueVow combines software, intake mapping, onboarding configuration, routed-call setup, and ongoing support. Benjamin is the voice layer, but the broader product is a controlled intake process for the firm.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">Do we need to change our whole firm to use TrueVow?</div>
-                <div class="faq-answer">
-                    <p>No. TrueVow starts with the calls and workflows your firm already has: phone routing, calendar booking, intake questions, alerts, and attorney review. No full case-management migration is required to begin.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">Does TrueVow customize intake for each firm?</div>
-                <div class="faq-answer">
-                    <p>TrueVow uses selected intake templates and onboarding settings. Standard configuration is included during onboarding. Custom workflows, unusual routing, or complex integrations may require separate scoping, validation, and pricing.</p>
+                    <p>No. Benjamin creates structured intake records for attorney review. The firm decides whether to accept or decline a matter, whether conflicts are cleared, and whether representation will be offered.</p>
                 </div>
             </div>
         </div>
@@ -1253,17 +973,21 @@
 <!-- FINAL CTA -->
 <section class="final-cta reveal">
     <div class="container">
-        <h2>The Ad Worked. Now Make Sure the Next Call Gets Reviewed.</h2>
-        <p>See how Benjamin handles a routed intake call and how intake facts become a structured record for attorney review. No public checkout. Approval required before a firm goes live.</p>
-        <a href="benjamin-demo.html" class="btn btn-primary">See Benjamin Live (8 min) &rarr;</a>
+        <h2>Your Next Paid Call Should Not Be the Next Voicemail You Regret.</h2>
+        <p>Hear how Benjamin handles a routed PI intake call, captures the caller's facts, and prepares a structured record for attorney review. You do not need to rebuild your firm today. You do not need to change your case system today. You only need to hear what your firm's front door could sound like when the next serious caller reaches out.</p>
+        <div class="hero-actions" style="justify-content: center;">
+            <a href="benjamin-demo.html" class="btn btn-primary">See Benjamin Live (8 min) &rarr;</a>
+            <a href="trial.html?source=homepage-final" class="btn btn-secondary">Review the 90-Day Trial Path &rarr;</a>
+        </div>
         <div class="final-cta-badges">
             <span>Built for owner-led PI firms</span>
-            <span>Controlled intake logic</span>
-            <span>Attorney review required</span>
-            <span>No public checkout</span>
+            <span>Every intake record visible</span>
+            <span>No public per-lead unlock fees</span>
+            <span>Attorney review stays inside the firm</span>
+            <span>No case-management migration required to begin</span>
         </div>
         <p style="font-family: 'Montserrat', sans-serif; font-size: 16px; color: rgba(255,255,255,0.75); margin-top: 32px; line-height: 1.7;">
-            The change is not that software makes the decision. The change is that the firm has a cleaner record to review.
+            The change is not that software makes the decision. The change is that the caller gets heard, the record gets captured, and the firm no longer depends entirely on you being available at the exact moment opportunity arrives.
         </p>
     </div>
 </section>
@@ -1286,13 +1010,13 @@
         <div class="footer-col">
             <h4>PRODUCT</h4>
             <a href="pricing.html">INTAKE</a>
+            <a href="trace.html">TRACE</a>
             <a href="settle.html">SETTLE</a>
             <a href="pricing.html">Pricing</a>
             <a href="profitability.html">ROI Calculator</a>
         </div>
         <div class="footer-col">
             <h4>RESOURCES</h4>
-            <a href="county-availability.html">County Availability</a>
             <a href="compliance.html">Data &amp; Compliance</a>
             <a href="integrations.html">Integrations &amp; Setup</a>
             <a href="blog.html">Blog</a>

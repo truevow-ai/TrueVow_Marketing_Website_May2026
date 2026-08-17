@@ -204,7 +204,7 @@
         </a>
         <div class="nav-r">
             <a href="pricing.html" class="nav-link">Pricing</a>
-            <a href="#demo-form" class="nav-cta">Apply for Demo &rarr;</a>
+            <a href="#demo-form" class="nav-cta">See Benjamin Live (8 min) &rarr;</a>
         </div>
     </div>
 </nav>
@@ -368,7 +368,7 @@
     <div class="si">
         <h2 class="st">What Happens After You Apply?</h2>
         <div class="setup-steps">
-            <div class="setup-step"><span class="sn">Step 1</span><h4>Apply</h4><p>Submit firm details and requested setup.</p></div>
+            <div class="setup-step"><span class="sn">Step 1</span><h4>Submit Firm Details</h4><p>Tell us about your firm and requested setup.</p></div>
             <div class="setup-step"><span class="sn">Step 2</span><h4>Review</h4><p>Firm fit, county availability, and onboarding readiness are reviewed.</p></div>
             <div class="setup-step"><span class="sn">Step 3</span><h4>Configure</h4><p>Routing, intake path, calendar, recording policy, and alerts are configured.</p></div>
             <div class="setup-step"><span class="sn">Step 4</span><h4>Test Call</h4><p>A test call is completed before activation.</p></div>
@@ -449,9 +449,9 @@
             <p class="bar-note">Providing your Bar # may help us verify your application faster.</p>
             <label class="cb-label">
                 <input type="checkbox" id="is_firm" name="is_firm" required>
-                <span>I am requesting access on behalf of a law firm. *</span>
+                <span>I am submitting firm details on behalf of a law firm. *</span>
             </label>
-            <button type="submit" id="submit-btn" class="form-submit">Request Demo Review &rarr;</button>
+            <button type="submit" id="submit-btn" class="form-submit">Submit Firm Details &rarr;</button>
             <div id="demo-message"></div>
         </form>
     </div>
@@ -549,12 +549,12 @@
                     messageDiv.style.background='rgba(16,185,129,0.1)';
                     messageDiv.style.border='2px solid #10B981';
                     messageDiv.style.color='#10B981';
-                    messageDiv.innerHTML='<p style="font-size:18px;font-weight:700;margin-bottom:12px">Request received.</p><p style="font-size:14px;margin-bottom:8px">We\'ll review your firm fit and send next steps if approved.</p>'+(formData.bar_number?'<p style="font-size:14px;color:#F59E0B;font-weight:600">Bar number received. This may help us verify your application faster.</p>':'');
+                    messageDiv.innerHTML='<p style="font-size:18px;font-weight:700;margin-bottom:12px">We received your firm details.</p><p style="font-size:14px;margin-bottom:8px">We\'ll review your firm fit and send next steps.</p>'+(formData.bar_number?'<p style="font-size:14px;color:#F59E0B;font-weight:600">Bar number received. This may help us verify your details faster.</p>':'');
                     form.reset();
                     submitBtn.disabled=true;
                     submitBtn.style.opacity='0.8';
                     submitBtn.style.cursor='not-allowed';
-                    submitBtn.textContent='Request Received';
+                    submitBtn.textContent='Details Received';
                 }else{
                     var errorData={};
                     try{
@@ -574,7 +574,7 @@
                     submitBtn.disabled=false;
                     submitBtn.style.opacity='1';
                     submitBtn.style.cursor='pointer';
-                    submitBtn.textContent='Request Demo Review \u2192';
+                    submitBtn.textContent='Submit Firm Details \u2192';
                 }
             }catch(error){
                 messageDiv.style.display='block';
@@ -585,7 +585,7 @@
                 submitBtn.disabled=false;
                 submitBtn.style.opacity='1';
                 submitBtn.style.cursor='pointer';
-                submitBtn.textContent='Request Demo Review \u2192';
+                submitBtn.textContent='Submit Firm Details \u2192';
             }
         });
     }
