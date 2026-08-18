@@ -199,20 +199,20 @@
         <div class="eyebrow">Live Phone Demo &middot; 8&ndash;10 Minutes &middot; No Payment</div>
         <h1>Hear Benjamin Run a PI Intake Call With Your Firm's Name.</h1>
         <p>
-            You are not testing software. You are hearing what the next serious caller would hear when your front door answers: your firm's name, structured intake questions, priority signals, and a consultation booked.
+            You are not testing software. You are hearing what the next serious caller would hear when your front door answers: your firm's name, structured intake questions, priority signals, and a sample consultation booking.
         </p>
         <p>
-            The preview on the right shows how Benjamin appears on a sample firm website. Complete the short form below and Benjamin calls your cell phone within moments, using your law firm's name. Oakwood Law Firm is a fictional firm used for this demonstration.
+            The preview on the right shows how Benjamin appears on a sample firm website. Complete the short form below and Benjamin calls your cell phone within about 8 minutes, using your law firm's name. Oakwood Law Firm is a fictional firm used for this demonstration.
         </p>
         <div class="hero-actions">
-            <a href="#phone-demo-form" class="primary-btn">Call Me With the Benjamin Demo &rarr;</a>
+            <a href="#phone-demo-form" class="primary-btn">Have Benjamin Call My Cell &rarr;</a>
             <a href="#experience" class="secondary-btn">See What Happens on the Call</a>
         </div>
     </div>
     <div class="benjamin-panel" id="benjaminPanel">
         <div class="bpv-card" role="img" aria-label="Preview of the Benjamin website intake widget">
             <div class="bpv-stage">
-                <div class="bpv-status">Static preview &middot; the live call below is the real experience</div>
+                <div class="bpv-status">Static preview &middot; the phone call below is the experience to test</div>
                 <div class="bpv-shell">
                     <div class="bpv-ring"></div>
                     <div class="bpv-img">
@@ -228,7 +228,7 @@
                     <button type="button" class="bpv-btn-voice" disabled>Start Voice Demo</button>
                     <button type="button" class="bpv-btn-chat" disabled>Type Instead</button>
                 </div>
-                <p class="bpv-note">Static preview. The live in-browser widget is enabled for firms after workflow review.</p>
+                <p class="bpv-note">Static preview. The live in-browser widget is enabled for firms after setup confirmation.</p>
             </div>
         </div>
     </div>
@@ -252,7 +252,7 @@
                 <li>Complete the phone-demo form and hear Benjamin call you using your firm's name.</li>
                 <li>After the call, you receive a sample intake record and booking confirmation to review.</li>
             </ul>
-            <p style="margin-top: 16px; font-style: italic; color: #0A2463;">This is a controlled demo environment. No real client data is processed here.</p>
+            <p style="margin-top: 16px; font-style: italic; color: #0A2463;">No real potential-client data is processed in this demo.</p>
         </div>
     </div>
 
@@ -275,7 +275,7 @@
             <span>3</span>
             <div>
                 <h3>Hear Benjamin call you</h3>
-                <p>Fill out the short form below and Benjamin calls your cell phone using your law firm's name. The call covers timing, location, injury, treatment, and intake details — and ends with a consultation booking. No payment on the public website. No commitment.</p>
+                <p>Fill out the short form below and Benjamin calls your cell phone within about 8 minutes, using your law firm's name. The call covers timing, location, injury, treatment, and intake details — and ends with a sample consultation booking. No payment on the public website. No commitment.</p>
             </div>
         </div>
     </div>
@@ -284,8 +284,8 @@
     <div class="demo-form-section" id="phone-demo-form">
         <div class="demo-form-container">
             <h2>Hear Benjamin Call You</h2>
-            <p class="demo-form-sub">Enter your details and Benjamin calls your cell phone moments later using your law firm's name. The demo usually takes 8&ndash;10 minutes and ends with a consultation booking.</p>
-            <p style="text-align:center;font-size:13px;color:#888;margin-bottom:28px;">No payment on the public website &middot; No commitment &middot; 8&ndash;10 minutes</p>
+            <p class="demo-form-sub">Enter your details and Benjamin calls your cell phone within about 8 minutes, using your law firm's name. The demo usually takes 8&ndash;10 minutes and ends with a sample consultation booking.</p>
+            <p style="text-align:center;font-size:13px;color:#888;margin-bottom:28px;">No payment on the public website &middot; No commitment &middot; 8&ndash;10 minutes &middot; Callback placed as outbound lines are available</p>
 
             <form id="demoRequestForm">
                 <div class="form-row">
@@ -304,18 +304,19 @@
                     </select>
                     <input type="text" id="county" name="county" placeholder="County *" required>
                 </div>
+                <p style="font-size:12px;color:#888;margin-top:-6px;margin-bottom:14px;">Used to prepare the sample intake context. This is not a county-availability check.</p>
 
                 <div class="consent-row">
                     <input type="checkbox" id="demo_consent" name="demo_consent" required>
                     <label for="demo_consent">I agree to receive a one-time automated Benjamin demo call and up to three demo-related SMS messages from TrueVow at the cell phone number provided, including a mock appointment confirmation, a sample intake record link, and a sample website/widget link. Message and data rates may apply. Reply STOP to opt out. This demo is not legal advice and does not create an attorney-client relationship.</label>
                 </div>
 
-                <button type="submit" id="demoSubmitBtn" class="demo-submit">Call Me With the Benjamin Demo &rarr;</button>
+                <button type="submit" id="demoSubmitBtn" class="demo-submit">Have Benjamin Call My Cell &rarr;</button>
             </form>
 
             <div class="success-state" id="demoSuccess">
                 <h3>We received your firm details.</h3>
-                <p>Benjamin will call your cell phone shortly using your law firm's name. The demo usually takes 8&ndash;10 minutes and ends with a consultation booking.</p>
+                <p>Benjamin will call your cell phone within about 8 minutes, using your law firm's name. The demo usually takes 8&ndash;10 minutes and ends with a sample consultation booking.</p>
                 <p style="font-size:15px;color:#666;margin-top:12px;">After the call, you will receive a mock appointment confirmation by SMS. We may also send a sample intake record and a link to the Oakwood widget demo so you can review the full caller and website experience.</p>
                 <a href="trial.html?product=intake&source=benjamin-demo-success" class="success-cta">Review the 90-Day Trial Path &rarr;</a>
                 <p style="font-size:14px;color:#888;margin-top:16px;">Not ready yet? <a href="pricing.html" style="color:#0A2463;font-weight:600;">Review pricing first &rarr;</a></p>
@@ -427,7 +428,7 @@
             } catch (err) {
                 console.error('Demo request failed:', err);
                 submitBtn.disabled = false;
-                submitBtn.textContent = 'Call Me With the Benjamin Demo \u2192';
+                submitBtn.textContent = 'Have Benjamin Call My Cell \u2192';
                 alert('Something went wrong. Please try again.');
             }
         });
