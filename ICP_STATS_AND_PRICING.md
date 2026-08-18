@@ -2231,9 +2231,10 @@ From AL-4, restated as standing rules:
 | Item | Status |
 |---|---|
 | **LEVERAGE** | Removed from the product lineup. Never publicly launched. No customers, no active subscriptions (per MSA changelog). Per founder decision: not a product — at most a future add-on concept. |
-| **TRACE** | Second product in the pipeline. Early access, approval-gated, no public pricing. Post-retainer case-readiness workflow. |
-| **SETTLE** | Third stage. Per Case and Pro tiers (priced in the billing catalogue — Section AO). Settlement-range context with confidence labels. |
-| **Pipeline** | **INTAKE → TRACE (after matter accepted) → SETTLE (later, where enabled).** VERIFY audit records span all stages. |
+| **TRACE** | Second product in the pipeline: **Matter Development**. Begins before post-retainer — engagement (representation review, conflict workflow, engagement package, consent/signature, Matter activation) through claim & coverage, treatment, records & bills, evidence, damages, deadlines, client requests, and readiness. **RETAINER is folded into TRACE Start — no longer a separate product.** Pricing per activated Matter: Start $35 / Essential $179 / Complete $299 (founder decision — billing catalogue update pending) |
+| **SETTLE** | Third stage. Resolution — settlement-range context with confidence labels. Defined product, not "may later." |
+| **COMMAND** | Fourth stage. Measures — portfolio oversight across matters, stages, and outcomes. |
+| **Pipeline** | **INTAKE captures → TRACE develops → SETTLE resolves → COMMAND measures.** VERIFY audit records span all stages. |
 
 ### AN-2. What TRACE Is (from trace.html + legal docs)
 
@@ -2315,7 +2316,7 @@ From AL-4, restated as standing rules:
 | INTAKE | subscription | ACTIVE | ✓ | ✓ | "Capture the opportunity" |
 | SETTLE | usage | ACTIVE | ✓ | ✓ | "Support resolution" |
 | LEVERAGE | subscription | ACTIVE | ✓ | ✓ | "Case economics" — **⚠ FLAG: still ACTIVE in catalogue; founder decision is retired (Section AN). Needs quarantine migration.** |
-| TRACE | usage | DRAFT | ✗ | ✗ | "Client Engagement and Case Readiness" |
+| TRACE | usage | **ACTIVE (founder decision Aug 17, 2026 — billing catalogue still DRAFT, migration needed)** | ✗ | ✓ (approved INTAKE firms) | "Matter Development — engagement through readiness" |
 | COMMAND | usage | DRAFT / INTERNAL_ONLY (Core) | ✗ | ✗ | "Portfolio oversight" |
 
 ### AO-2. INTAKE Plans v1.0
@@ -2328,7 +2329,19 @@ From AL-4, restated as standing rules:
 
 **Commercial policy:** monthly only (no annual; yearly = typed rejection). No enterprise tier. No unlock model. Spanish, calendar booking, priority SMS included. Recordings/transcripts opt-in and included; 180-day retention included where enabled. **Export automation included** (formerly a $49 add-on in Section P).
 
-### AO-3. Trial Offer (NEW — directly serves SLIP letter L, Section AK-3)
+### AO-3. TRACE Plans (founder decision — billing catalogue update pending)
+
+| Plan | Price | Scope |
+|---|---|---|
+| TRACE Start | $35 per activated Matter | Engagement and claim setup, operating board, attorney review |
+| TRACE Essential | $179 per activated Matter | Coverage, records & bills, treatment, evidence, damages development |
+| TRACE Complete | $299 per activated Matter | Deadline intelligence, client requests, full readiness through resolution handoff |
+
+- Promotion: **First 12 Complete Matters** for approved INTAKE firms — confirmed in the Customer Portal.
+- TRACE page CTA remains "Discuss TRACE Readiness"; pricing is per activated Matter, not monthly.
+- ⚠ FLAG: billing catalogue v1.0 still shows TRACE as DRAFT/not purchasable — catalogue migration required to make TRACE plans purchasable.
+
+### AO-4. Trial Offer (NEW — directly serves SLIP letter L, Section AK-3)
 
 | Field | Value |
 |---|---|
@@ -2341,7 +2354,7 @@ From AL-4, restated as standing rules:
 
 **ICP-doc impact:** the SLIP "Low initial cost" redesign (AK-3) is partially implemented in production — the value-based trial already exists in the catalogue. The remaining AK-3 layers ($399 pilot lever, money-back framing) remain product decisions.
 
-### AO-4. SETTLE Plans v1.0 (NEW — first authoritative pricing)
+### AO-5. SETTLE Plans v1.0 (NEW — first authoritative pricing)
 
 | Plan | Price | Model | Details |
 |---|---|---|---|
@@ -2352,7 +2365,7 @@ Retired: credit packs, $19 overage, $399/$199 legacy per-case rates.
 
 **⚠ FLAG:** SETTLE's requirement "active INTAKE or LEVERAGE" references LEVERAGE. If LEVERAGE is quarantined, this requirement must be re-seeded to "active INTAKE" only.
 
-### AO-5. Quarantined and Retired
+### AO-6. Quarantined and Retired
 
 | Item | Status |
 |---|---|
@@ -2366,17 +2379,17 @@ Retired: credit packs, $19 overage, $399/$199 legacy per-case rates.
 | Credit packs (leverage_*, settle_*) | RETIRED |
 | Per-case pricing rates (benjamin_unlock, leverage_case, settle_case) | RETIRED |
 
-### AO-6. Founding Council Benefits (V3)
+### AO-7. Founding Council Benefits (V3)
 
 SETTLE reports $0 (requires pricing_tier 'founding'); LEVERAGE + SETTLE pillars unlocked immediately; 11 welcome LEVERAGE credits on join; $199 credit for 6 settlement report contributions; progressive dashboard access tiers (0–4); 15% firm-level revenue share. Removed with V3: 40–50% discounts, 36-month price lock, $99/unlock.
 
 **⚠ FLAG:** "11 welcome LEVERAGE credits" and "LEVERAGE pillar unlocked" reference the retired product — reconcile with Section AN if the Founding Council program is still live.
 
-### AO-7. Billing Mechanics
+### AO-8. Billing Mechanics
 
 Monthly in arrears; usage accumulates during the month; invoice generated the 1st of the following month; payment due within 30 days. Solo free quota = one_time (lifetime allocation of 11); Growth = monthly reset, no rollover. Billing's `billing_invoices`/`billing_payments` are LEGACY — Financial Accounting owns canonical invoices/payments; `financial_invoice_projection` is read-only display.
 
-### AO-8. Deltas vs Section O (June 17 "LOCKED") — Action List
+### AO-9. Deltas vs Section O (June 17 "LOCKED") — Action List
 
 | # | Delta | Action |
 |---|---|---|

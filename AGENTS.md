@@ -51,11 +51,11 @@ This file governs how any agent creates or reviews TrueVow website copy and page
 
 **Source of truth:** `ICP_STATS_AND_PRICING.md` Sections AN (product lineup) and AO (Billing Catalogue v1.0) + the `TrueVow-Tenant_Billing-Service` repo (`billing_products` and `billing_catalogue_plans` tables are price authority; `constants.py` is NOT).
 
-- **Lineup:** INTAKE → TRACE (post-retainer, early access) → SETTLE (Per Case / Pro). VERIFY spans all stages. **LEVERAGE is retired — never mention it.**
+- **Lineup:** **INTAKE captures → TRACE develops → SETTLE resolves → COMMAND measures.** VERIFY spans all stages. TRACE = Matter Development (engagement through readiness; RETAINER folded into TRACE Start). **LEVERAGE is retired — never mention it.**
 - **INTAKE plans:** Solo $499/mo (40 calls, $15 overflow, 1 attorney) · Growth $1,299/mo (100 calls, $12 overflow, 1–3 attorneys) · Team $1,999/mo (200 calls, $10 overflow, 2–6 attorneys). Monthly only. No yearly. No enterprise tier. No unlock fees. All records visible.
 - **Trial:** 90 days or 12 qualifying completed intakes, whichever comes first.
 - **SETTLE:** Per Case $79/report · Pro $299/mo (15 reports, $25 overage, 3-month min).
-- **TRACE:** DRAFT, approval-gated, no public pricing — never invent one.
+- **TRACE:** Start $35 / Essential $179 / Complete $299 per activated Matter (founder decision; billing catalogue update pending). First 12 Complete Matters promotion for approved INTAKE firms.
 - Never state prices, feature lists, or product names that don't exist in the authoritative catalogue.
 
 ---
@@ -754,7 +754,7 @@ Each story beat belongs in a different medium.
 | Week-1 report | Relief, New Life | Show early value |
 | Month-1 report | Wound, Relief, Guard | Make pain-of-loss visible |
 | Cancellation flow | Guard | Show what returns if paused |
-| TRACE page | Different story: accepted matter stalls → one readiness board | Do not use the voicemail story as TRACE's main story |
+| TRACE page | TRACE remembers the work; you handle the decisions — matter-development story (engagement through readiness), never the voicemail story |
 
 ## Eight Voice Rules
 
