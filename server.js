@@ -412,6 +412,18 @@ app.get('/benjamin-ad-landing-page-01.html', (req, res) => {
     res.redirect(301, '/benjamin-demo.html' + qs);
 });
 
+// County-gating pages are retired (county availability is no longer an
+// acquisition gate; county is a data field on the trial form). Residual
+// traffic lands on the 90-day trial path with query parameters preserved.
+app.get('/county-availability.html', (req, res) => {
+    const qs = req.originalUrl.includes('?') ? req.originalUrl.slice(req.originalUrl.indexOf('?')) : '';
+    res.redirect(301, '/trial.html' + qs);
+});
+app.get('/county-cap.html', (req, res) => {
+    const qs = req.originalUrl.includes('?') ? req.originalUrl.slice(req.originalUrl.indexOf('?')) : '';
+    res.redirect(301, '/trial.html' + qs);
+});
+
 // ── Static file serving (replaces nginx) ──
 // Marketing pages at root (trial.html → /trial.html)
 app.use(express.static(path.join(__dirname, 'dist', 'marketing'), {

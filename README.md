@@ -67,7 +67,7 @@ This is a **static HTML website** that connects to **Supabase** for backend func
 │   ├── compliance.html          # Compliance page
 │   ├── integrations.html        # Integrations page
 │   ├── profitability.html       # ROI/profitability page
-│   ├── county-cap.html          # 33% County Cap strategy
+    L-- county-cap.html            # RETIRED - server 301 to trial.html
 │   ├── blog.html                # Blog hub (dynamic content)
 │   ├── about.html               # About page
 │   ├── careers.html             # Careers page
@@ -116,7 +116,7 @@ This is a **static HTML website** that connects to **Supabase** for backend func
 | `integrations.html` | Integrations page | Calendar, phone, CRM connections |
 | `compliance.html` | Compliance page | Claim-safe language, legal positioning |
 | `profitability.html` | ROI/profitability | ROI calculator, value metrics |
-| `county-cap.html` | 33% County Cap | Interactive strategy guide |
+| `county-cap.html` | 33% County Cap | RETIRED - server 301 to trial.html (UTMs preserved) |
 
 ### Trial Funnel Pages
 

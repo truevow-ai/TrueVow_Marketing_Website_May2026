@@ -17,7 +17,7 @@ blog.html                      # Blog hub (dynamic Supabase content)
 careers.html                   # Careers page
 case-studies.html              # Case studies
 compliance.html                # Compliance page
-county-cap.html                # 33% County Cap strategy
+county-cap.html                # RETIRED - deleted, server 301 to trial.html
 demo-oakwood.html              # Demo page
 founding-members.html          # Founding members
 how-it-works.html              # Product explanation
@@ -54,7 +54,7 @@ trial-onboarding.html          # Onboarding prep form (APPROVED FIRMS ONLY, noin
 - benjamin-ad-landing-page-01.html: deleted; server 301 to benjamin-demo.html with UTMs preserved
 
 ### Compliance Audit Complete
-- All pages reviewed: pricing, index, how-it-works, profitability, county-cap, compliance, integrations, settle, leverage
+- All pages reviewed: pricing, index, how-it-works, profitability, compliance, integrations, settle
 - Old pricing references eliminated (5/15/45 A+ unlocks, Rollover bank, case credits, Unlock $99)
 - Claim-safe language enforced across all pages
 
