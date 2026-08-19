@@ -110,10 +110,14 @@ function validateTrialPayload(body) {
     if (!requiredString(body.firm_size)) errors.push('firm_size is required');
     if (!requiredString(body.monthly_inbound_calls)) errors.push('monthly_inbound_calls is required');
 
-    // Governance (3 explicit checkboxes)
+    // Governance (3 explicit checkboxes) — canonical field understands_setup_confirmation_required,
+    // legacy alias understands_approval_required accepted for backward compatibility
     if (!requiredBool(body.agree_terms_privacy)) errors.push('agree_terms_privacy must be true');
     if (!requiredBool(body.confirm_accuracy_authority)) errors.push('confirm_accuracy_authority must be true');
-    if (!requiredBool(body.understands_approval_required)) errors.push('understands_approval_required must be true');
+    const setupConfirmation = body.understands_setup_confirmation_required !== undefined
+        ? body.understands_setup_confirmation_required
+        : body.understands_approval_required;
+    if (!requiredBool(setupConfirmation)) errors.push('understands_setup_confirmation_required must be true');
 
     return errors;
 }
@@ -227,6 +231,9 @@ setInterval(() => {
 
 // ── BUILD SALES OPS PAYLOAD ──
 function buildSalesOpsTrialPayload(validated) {
+    const setupConfirmation = validated.understands_setup_confirmation_required !== undefined
+        ? validated.understands_setup_confirmation_required
+        : validated.understands_approval_required;
     return {
         product: validated.product || 'INTAKE_TRIAL',
         source: validated.source || 'trial-page',
@@ -255,7 +262,7 @@ function buildSalesOpsTrialPayload(validated) {
 
         agree_terms_privacy: validated.agree_terms_privacy,
         confirm_accuracy_authority: validated.confirm_accuracy_authority,
-        understands_approval_required: validated.understands_approval_required,
+        understands_setup_confirmation_required: setupConfirmation,
         understands_90_day_trial: validated.understands_90_day_trial,
         understands_onboarding_required: validated.understands_onboarding_required,
 
