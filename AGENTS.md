@@ -754,7 +754,7 @@ Each story beat belongs in a different medium.
 | Week-1 report | Relief, New Life | Show early value |
 | Month-1 report | Wound, Relief, Guard | Make pain-of-loss visible |
 | Cancellation flow | Guard | Show what returns if paused |
-| TRACE page | TRACE remembers the work; you handle the decisions — matter-development story (engagement through readiness), never the voicemail story |
+| TRACE page | Education + ecosystem reinforcement, NOT acquisition: explain TRACE for INTAKE customers, then route — existing firms to the Customer Portal, everyone else to Explore INTAKE. No TRACE lead form, no waitlist |
 
 ## Eight Voice Rules
 
