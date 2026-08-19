@@ -754,7 +754,7 @@ Each story beat belongs in a different medium.
 | Week-1 report | Relief, New Life | Show early value |
 | Month-1 report | Wound, Relief, Guard | Make pain-of-loss visible |
 | Cancellation flow | Guard | Show what returns if paused |
-| TRACE page | Education + ecosystem reinforcement, NOT acquisition: explain TRACE for INTAKE customers, then route — existing firms to the Customer Portal, everyone else to Explore INTAKE. No TRACE lead form, no waitlist |
+| TRACE page | Education + ecosystem reinforcement, NOT acquisition: the rich matter-development story (lifecycle, board, owns, deterministic, PMS boundary, plans, limits) with NO TRACE form or signup CTA — route existing firms to the Customer Portal, everyone else to Explore INTAKE |
 
 ## Eight Voice Rules
 

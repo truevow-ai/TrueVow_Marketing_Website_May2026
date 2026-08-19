@@ -2338,7 +2338,7 @@ From AL-4, restated as standing rules:
 | TRACE Complete | $299 per activated Matter | Deadline intelligence, client requests, full readiness through resolution handoff |
 
 - Promotion: **First 12 Complete Matters** for approved INTAKE firms — confirmed in the Customer Portal.
-- TRACE is an ecosystem product for approved INTAKE firms — no public acquisition funnel, no TRACE lead form. Page routes: existing firms → Customer Portal; non-customers → Explore INTAKE. Pricing is per activated Matter, not monthly.
+- TRACE page: pre-litigation matter-development education with NO TRACE form or signup CTA — route existing firms to the Customer Portal, everyone else to Explore INTAKE. Pricing is per activated Matter, not monthly.
 - ⚠ FLAG: billing catalogue v1.0 still shows TRACE as DRAFT/not purchasable — catalogue migration required to make TRACE plans purchasable.
 
 ### AO-4. Trial Offer (NEW — directly serves SLIP letter L, Section AK-3)
