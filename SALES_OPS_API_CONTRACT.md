@@ -171,9 +171,36 @@ Sales Ops may re-validate, but must not reject fields the website sends as `null
 
 ---
 
-## 8. Operational Checklist Before Go-Live
+## 8. Implementation Status (2026-08-19)
+
+**Sales Ops side: BUILT AND VERIFIED** (truevow-sales-ops repo):
+
+- `POST /website/application-received` — INTAKE_TRIAL: durable receipt → `sales_leads` → intake routing (fire-and-forget)
+- `POST /demo-request` — BENJAMIN_DEMO: receipt → lead upsert by email → `sales_demos` (source=`benjamin-demo`, ASAP) → demo trigger (~8-min SLA), 3/24h rate limit, watchdog backstop
+- `POST /website/waitlist-submission` — legacy pass-through, raw body stored
+- `lib/website-submission-contract.ts` — zod schemas; **`understands_setup_confirmation_required` is required (400 if the website regresses)**
+- `lib/website-submission-auth.ts` — `X-API-Key` auth, fail-closed 503 in prod
+- `supabase/migrations/20260819000001_website_submission_contract.sql` — `website_submissions` UNIQUE dedup + `sales_demos.source` CHECK — applied live
+- `middleware.ts` — new paths public
+- Verified: 15 unit tests, typecheck, live E2E (trial 201→dup 409, demo 201→dup 409, waitlist 200, bad key 401)
+
+**Website side: NO CHANGES NEEDED** — server.js already sends the canonical field, correct headers, and correct endpoint paths.
+
+**Remaining ops actions (outside both repos):**
+
+1. Set `WEBSITE_SUBMISSION_API_KEY` on Fly app `truevow-sales-ops` = the website's `SALES_OPS_API_KEY`
+2. Set/confirm `SALES_OPS_API_URL` on Fly app `truevow-ai` = Sales Ops app root, no trailing slash
+3. Set `SALES_OPS_API_KEY` on Fly app `truevow-ai` (same value as #1)
+4. Deploy the Sales Ops app (routes currently in-repo only)
+5. Run the E2E checklist in section 8 below
+
+---
+
+## 9. Operational Checklist Before Go-Live
 
 - [ ] `SALES_OPS_API_URL` and `SALES_OPS_API_KEY` set on Fly (website app `truevow-ai`)
+- [ ] `WEBSITE_SUBMISSION_API_KEY` set on Fly (Sales Ops app `truevow-sales-ops`) — same value as `SALES_OPS_API_KEY`
+- [ ] Sales Ops app deployed with the new routes (currently in-repo only)
 - [ ] Sales Ops `/website/application-received` deployed and reading `understands_setup_confirmation_required`
 - [ ] Sales Ops `/demo-request` deployed with ~8-minute callback workflow
 - [ ] Durable dedup + 409 `"duplicate"` contract implemented
