@@ -404,6 +404,14 @@ app.post('/api/demo-requests', rateLimit, async (req, res) => {
     return res.status(201).json(successBody);
 });
 
+// ── Retired campaign redirects ──
+// benjamin-ad-landing-page-01.html is retired. Residual ad/UTM traffic
+// lands on the Benjamin demo page with query parameters preserved.
+app.get('/benjamin-ad-landing-page-01.html', (req, res) => {
+    const qs = req.originalUrl.includes('?') ? req.originalUrl.slice(req.originalUrl.indexOf('?')) : '';
+    res.redirect(301, '/benjamin-demo.html' + qs);
+});
+
 // ── Static file serving (replaces nginx) ──
 // Marketing pages at root (trial.html → /trial.html)
 app.use(express.static(path.join(__dirname, 'dist', 'marketing'), {

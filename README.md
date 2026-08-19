@@ -39,7 +39,7 @@ This is a **static HTML website** that connects to **Supabase** for backend func
 
 - 28+ production HTML pages (marketing + legal + trial funnel + ad landing pages)
 - 90-Day Intake Trial funnel (trial.html + trial-onboarding.html)
-- Ad landing pages for cold traffic (benjamin-ad-landing-page-01.html)
+- Ad landing pages retired (benjamin-ad-landing-page-01.html deleted; server 301 to benjamin-demo.html)
 - Approval-first purchase flow (no public checkout)
 - Claim-safe legal marketing language across all pages
 - Automated Blog Hub (fetches content from Supabase)
@@ -60,7 +60,7 @@ This is a **static HTML website** that connects to **Supabase** for backend func
 │   ├── how-it-works.html        # Product explanation
 │   ├── trial.html               # 90-Day Intake Trial application (public)
 │   ├── trial-onboarding.html    # Onboarding prep form (approved firms only)
-│   ├── benjamin-ad-landing-page-01.html  # Ad landing page (cold traffic)
+    L-- apply.html               # General application form
 │   ├── apply.html               # General application form
 │   ├── settle.html              # SETTLE product page
 │   ├── leverage.html            # LEVERAGE product page
@@ -129,7 +129,7 @@ This is a **static HTML website** that connects to **Supabase** for backend func
 
 | Page | Purpose | Traffic Source |
 |------|---------|---------------|
-| `benjamin-ad-landing-page-01.html` | INTAKE-only ad landing page | Facebook/Instagram/Google ads |
+| `benjamin-ad-landing-page-01.html` | RETIRED - server 301 to benjamin-demo.html (UTMs preserved) | residual ad traffic |
 
 ### Other Marketing Pages
 

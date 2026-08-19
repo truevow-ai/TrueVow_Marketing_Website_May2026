@@ -12,7 +12,7 @@ about.html                     # About TrueVow
 affiliate-apply.html           # Affiliate application
 affiliate.html                 # Affiliate program
 apply.html                     # General application form (legacy, still live)
-benjamin-ad-landing-page-01.html  # Ad landing page (FB/IG/Google cold traffic)
+benjamin-ad-landing-page-01.html  # RETIRED - deleted, server 301 to benjamin-demo.html
 blog.html                      # Blog hub (dynamic Supabase content)
 careers.html                   # Careers page
 case-studies.html              # Case studies
@@ -50,8 +50,8 @@ trial-onboarding.html          # Onboarding prep form (APPROVED FIRMS ONLY, noin
 - 3-step trial form: Attorney+Firm → Firm Fit → Trial Confirmation
 
 ### Ad Landing Page
-- benjamin-ad-landing-page-01.html: INTAKE-only for Facebook/Instagram/Google
-- Minimal nav, claim-safe language throughout
+### Ad Landing Page (Retired)
+- benjamin-ad-landing-page-01.html: deleted; server 301 to benjamin-demo.html with UTMs preserved
 
 ### Compliance Audit Complete
 - All pages reviewed: pricing, index, how-it-works, profitability, county-cap, compliance, integrations, settle, leverage
