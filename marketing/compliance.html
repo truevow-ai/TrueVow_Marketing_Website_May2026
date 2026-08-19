@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Handling &amp; Compliance â€” TrueVow</title>
+    <title>Data Handling &amp; Compliance &mdash; TrueVow</title>
     <meta name="description" content="See how TrueVow handles legal intake data, recordings, transcripts, template-based intake paths, deterministic controls, client identifiers, and legal-advice boundaries.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,8 +31,8 @@
         .nav-cta:hover { background: #0052CC; }
         .nav-dropdown { position: relative; }
         .nav-dropdown-toggle { cursor: pointer; display: inline-flex; align-items: center; gap: 4px; background: none; border: none; color: #555; text-decoration: none; font-size: 16px; font-weight: 500; font-family: 'Montserrat', sans-serif; padding: 0; }
-                .nav-dropdown-toggle::after { content: ' â–¾'; font-size: 10px; }
-                .nav-dropdown:hover .nav-dropdown-toggle::after { content: ' â–´'; }
+                .nav-dropdown-toggle::after { content: ' \25BE'; font-size: 10px; }
+                .nav-dropdown:hover .nav-dropdown-toggle::after { content: ' \25B4'; }
         .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%); background: white; border: 1px solid #E5E5E5; border-radius: 8px; padding: 8px 0; min-width: 210px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); z-index: 1001; }
         .nav-dropdown-menu::before { content: ''; position: absolute; top: -10px; left: 0; width: 100%; height: 10px; background: transparent; }
         .nav-dropdown-menu a { display: block; padding: 10px 20px; color: #555555 !important; text-decoration: none !important; font-size: 15px; font-weight: 500; white-space: nowrap; }
@@ -194,7 +194,7 @@
       "name": "Does Benjamin record calls?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Recording and transcript generation are optional. If enabled by the firm, recordings and transcripts are retained for 14 days by default, then automatically deleted unless the firm configures export or extended retention. Export automation to firm-controlled storage is included with INTAKE. If disab"
+        "text": "Recording and transcript generation are optional. If enabled by the firm, recordings and transcripts are retained for 14 days by default, then automatically deleted unless the firm configures export or extended retention. Export automation to firm-controlled storage is included with INTAKE. If disabled, the system relies on structured intake facts, scores, booking details, and risk flags as the core business record."
       }
     },
     {
@@ -202,7 +202,7 @@
       "name": "Are transcripts stored?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Only if transcript generation is enabled by the firm. Transcripts are retained for 14 days by default. Extended retention (30-day, 180-day) is available as a paid configuration. Transcript retention follows the firm&rsquo;s configured policy."
+        "text": "Only if transcript generation is enabled by the firm. Transcripts are retained for 14 days by default. Extended retention (30-day, 180-day) is available by firm configuration. Transcript retention follows the firm&rsquo;s configured policy."
       }
     },
     {
@@ -210,7 +210,7 @@
       "name": "Is TrueVow zero-knowledge?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. TrueVow is not a zero-knowledge architecture. That would be misleading because the system may process and store structured intake data, contact details, optional transcripts, optional recordings, and case-related facts depending on firm configuration. The better promise is controlled data handli"
+        "text": "No. TrueVow is not a zero-knowledge architecture. That would be misleading because the system may process and store structured intake data, contact details, optional transcripts, optional recordings, and case-related facts depending on firm configuration. The better promise is controlled data handling, firm-configured retention, and structured records."
       }
     },
     {
@@ -258,7 +258,7 @@
       "name": "Who controls recording retention?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The law firm&rsquo;s configured policy controls whether recording and transcript features are enabled, how long those materials are retained, and whether they are exported to firm-controlled storage. The default retention period is 14 days when enabled. Extended retention is available only by explic"
+        "text": "The law firm&rsquo;s configured policy controls whether recording and transcript features are enabled, how long those materials are retained, and whether they are exported to firm-controlled storage. The default retention period is 14 days when enabled. Extended retention is available only by explicit firm configuration. TrueVow is not intended to be the firm&rsquo;s permanent archive."
       }
     },
     {
@@ -274,7 +274,7 @@
       "name": "Does TRACE replace case management software?",
       "acceptedAnswer": {
         "@type": "Answer",
-                    "text": "No. TRACE is a post-retainer case-readiness workflow, enabled after workflow review. It helps track providers, records, bills, liens, treatment gaps, missing items, and source-linked chronology drafts for attorney review. It is not case management software and does not interpret medicine, value cases, or recommend settlement or legal decisions."
+        "text": "No. TRACE is a Matter-development and readiness workflow for TrueVow INTAKE firms, enabled after workflow review. It covers engagement, claim and coverage, treatment, records, evidence, documented damages, deadline review, client requests, and explainable readiness. It is not practice management software and does not interpret medicine, value cases, or recommend settlement or legal decisions."
       }
     }
   ]
@@ -308,6 +308,7 @@
                 <button class="nav-dropdown-toggle">Resources</button>
                 <div class="nav-dropdown-menu">
                     <a href="profitability.html">ROI Calculator</a>
+                    <a href="trace.html">TRACE</a>
                     <a href="compliance.html">Data &amp; Compliance</a>
                     <a href="integrations.html">Integrations &amp; Setup</a>
                     <a href="blog.html">Blog</a>
@@ -326,6 +327,7 @@
     <a href="pricing.html">Pricing</a>
     <div class="mobile-nav-label">Resources</div>
     <a href="profitability.html">ROI Calculator</a>
+    <a href="trace.html">TRACE</a>
     <a href="compliance.html">Data &amp; Compliance</a>
     <a href="integrations.html">Integrations &amp; Setup</a>
     <a href="blog.html">Blog</a>
@@ -453,11 +455,11 @@
                 </tr>
                 <tr>
                     <td>30-day retention</td>
-                    <td>+&dollar;49/mo</td>
+                    <td>Available by firm configuration</td>
                 </tr>
                 <tr>
                     <td>180-day retention</td>
-                    <td>+&dollar;199/mo</td>
+                    <td>Available by firm configuration</td>
                 </tr>
                 <tr>
                     <td>Long-term retention</td>
@@ -561,7 +563,7 @@
 <section class="section section-alt">
     <div class="section-inner">
         <h2>Case analysis does not need unnecessary identifiers.</h2>
-        <p>TRACE and SETTLE are designed to support post-retainer case-readiness tracking and settlement decision support using relevant case facts and comparable signals.</p>
+        <p>TRACE and SETTLE are designed to support Matter development and settlement decision support using relevant case facts and comparable signals.</p>
         <p>Client identifiers are not required for many case analysis workflows.</p>
         <p>That means the firm can work with structured case information such as:</p>
         <ul class="spec-list">
@@ -600,7 +602,7 @@
                 <li>Replace a lawyer&rsquo;s ethical duties</li>
                 <li>Replace the firm&rsquo;s conflict checks, engagement process, or legal review</li>
             </ul>
-            <p style="margin-top: 16px; font-size: 17px; color: #444;"><strong>Benjamin</strong> supports intake. <strong>TRACE</strong> supports post-retainer case readiness. <strong>SETTLE</strong> supports settlement decision context.</p>
+            <p style="margin-top: 16px; font-size: 17px; color: #444;"><strong>Benjamin</strong> supports intake. <strong>TRACE</strong> supports Matter development and readiness. <strong>SETTLE</strong> supports settlement decision context.</p>
             <p style="margin-top: 8px; font-size: 17px; color: #444;">The attorney remains responsible for legal judgment.</p>
         </div>
     </div>
@@ -621,7 +623,7 @@
             <li>Risk flags</li>
             <li>Optional transcripts</li>
             <li>Optional recordings</li>
-            <li>TRACE case-readiness items (enabled after workflow review)</li>
+            <li>TRACE Matter-development items (enabled after workflow review)</li>
             <li>SETTLE reports and confidence labels</li>
         </ul>
 
@@ -678,9 +680,9 @@
                 <p>Captures and screens calls through Benjamin, assigns intake priority, books consultations, and alerts the firm.</p>
             </div>
             <div class="product-card">
-                <h4>TRACE <span style="font-size:12px;font-weight:700;color:#B8860B;">(Post-Retainer)</span></h4>
-                <div class="product-tagline">Track and prepare readiness</div>
-                <p>Being prepared as a post-retainer workflow to track providers, records, bills, liens, treatment gaps, missing items, and source-linked chronology drafts for attorney review. It organizes factual readiness items only &mdash; it does not interpret medicine, value cases, or recommend settlement or legal decisions.</p>
+                <h4>TRACE <span style="font-size:12px;font-weight:700;color:#B8860B;">(Matter Development)</span></h4>
+                <div class="product-tagline">Develop and prepare readiness</div>
+                <p>Develops an active PI Matter &mdash; from engagement and claim setup through treatment, records, evidence, documented damages, deadline review, client requests, and explainable readiness. It organizes factual readiness items only &mdash; it does not interpret medicine, value cases, or recommend settlement or legal decisions.</p>
             </div>
             <div class="product-card">
                 <h4>SETTLE</h4>
@@ -706,7 +708,7 @@
         <div class="faq-item">
             <div class="faq-question">Are transcripts stored?</div>
             <div class="faq-answer">
-                <p>Only if transcript generation is enabled by the firm. Transcripts are retained for 14 days by default. Extended retention (30-day, 180-day) is available as a paid configuration. Transcript retention follows the firm&rsquo;s configured policy.</p>
+                <p>Only if transcript generation is enabled by the firm. Transcripts are retained for 14 days by default. Extended retention (30-day, 180-day) is available by firm configuration. Transcript retention follows the firm&rsquo;s configured policy.</p>
             </div>
         </div>
 
@@ -755,7 +757,7 @@
         <div class="faq-item">
             <div class="faq-question">Who controls recording retention?</div>
             <div class="faq-answer">
-                <p>The law firm&rsquo;s configured policy controls whether recording and transcript features are enabled, how long those materials are retained, and whether they are exported to firm-controlled storage. The default retention period is 14 days when enabled. Extended retention is available only by explicit firm configuration and billed separately. TrueVow is not intended to be the firm&rsquo;s permanent archive.</p>
+                <p>The law firm&rsquo;s configured policy controls whether recording and transcript features are enabled, how long those materials are retained, and whether they are exported to firm-controlled storage. The default retention period is 14 days when enabled. Extended retention is available only by explicit firm configuration. TrueVow is not intended to be the firm&rsquo;s permanent archive.</p>
             </div>
         </div>
 
@@ -769,7 +771,7 @@
         <div class="faq-item">
             <div class="faq-question">Does TRACE replace case management software?</div>
             <div class="faq-answer">
-                <p>No. TRACE is a post-retainer case-readiness workflow, enabled after workflow review. It helps track providers, records, bills, liens, treatment gaps, missing items, and source-linked chronology drafts for attorney review. It is not case management software and does not interpret medicine, value cases, or recommend settlement or legal decisions.</p>
+                <p>No. TRACE is a Matter-development and readiness workflow for TrueVow INTAKE firms, enabled after workflow review. It covers engagement, claim and coverage, treatment, records, evidence, documented damages, deadline review, client requests, and explainable readiness. It is not practice management software and does not interpret medicine, value cases, or recommend settlement or legal decisions.</p>
             </div>
         </div>
     </div>
@@ -830,6 +832,10 @@
         <a href="/legal/terms.html">Terms of Service</a>
         <span style="color: #555;">|</span>
         <a href="/legal/msa.html">MSA</a>
+        <span style="color: #555;">|</span>
+        <a href="/legal/bar-compliance.html">Bar Compliance</a>
+        <span style="color: #555;">|</span>
+        <a href="/legal/subprocessors.html">Sub-Processors</a>
     </div>
     <p class="footer-disclaimer">
         &copy; 2026 TrueVow Technologies. All rights reserved. TrueVow is a brand of TrueVow Global Tech FZE LLC (UAE), a subsidiary of TrueVow Global Technologies Holdings Ltd. (Nevis). TrueVow Global Technologies (USA) Inc. (Wyoming) provides passive marketing only and does not handle contracts or operations. All contracts are with TrueVow Global Tech FZE LLC (UAE). Technology and IP held by TrueVow Global Technologies Holdings Ltd. (Nevis). We are not a law firm and do not provide legal advice. By using our services, you acknowledge that TrueVow operates as a technology and services provider only.
