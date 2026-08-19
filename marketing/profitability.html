@@ -230,7 +230,7 @@
       "name": "Why include break-even cases?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Because break-even math is the cleanest way to evaluate intake infrastructure. The question is simple: how many signed cases does INTAKE need to help you capture for the base subscription to make economic sense?"
+        "text": "Because break-even math is the cleanest way to evaluate intake infrastructure. The question is simple: how many retained cases does INTAKE need to help you capture for the base subscription to make economic sense?"
       }
     },
     {
@@ -403,7 +403,7 @@
                 </div>
                 <div class="result-item">
                     <div class="result-value" id="signedCases">--</div>
-                    <div class="result-label">Estimated signed cases/month</div>
+                    <div class="result-label">Estimated retained cases/month</div>
                 </div>
                 <div class="result-item">
                     <div class="result-value" id="grossFee">--</div>
@@ -426,10 +426,10 @@
 <section class="section">
     <div class="section-inner">
         <div class="breakeven-box">
-            <h3>How Many Extra Signed Cases Does INTAKE Need to Justify Itself?</h3>
+            <h3>How Many Extra Retained Cases Does INTAKE Need to Justify Itself?</h3>
             <p>At your current average fee, the break-even is:</p>
             <div class="breakeven-highlight" id="breakevenCases">--</div>
-            <p id="breakevenPlain">signed cases/month to cover the base subscription.</p>
+            <p id="breakevenPlain">retained cases/month to cover the base subscription.</p>
             <p class="breakeven-story" id="breakevenStory"></p>
         </div>
 
@@ -567,7 +567,7 @@
         <div class="faq-item">
             <div class="faq-question">Why include break-even cases?</div>
             <div class="faq-answer">
-                <p>Because break-even math is the cleanest way to evaluate intake infrastructure. The question is simple: how many signed cases does INTAKE need to help you capture for the base subscription to make economic sense?</p>
+                <p>Because break-even math is the cleanest way to evaluate intake infrastructure. The question is simple: how many retained cases does INTAKE need to help you capture for the base subscription to make economic sense?</p>
             </div>
         </div>
 
@@ -594,8 +594,8 @@
     <a href="trial.html?product=intake&source=roi-calculator-cta" class="final-cta-btn">See Benjamin Live (8 min) &rarr;</a>
     <div class="final-cta-badges">
         <span>Deterministic intake controls</span>
-        <span>Approval required</span>
-        <span>No public checkout</span>
+        <span>Setup confirmed before activation</span>
+        <span>No payment on the public website</span>
     </div>
 </section>
 
@@ -701,9 +701,9 @@
         // Break-even story per spec
         var story = '';
         if (breakEvenPerYear < 1) {
-            story = 'At a $' + avgCaseFee.toLocaleString() + ' average fee, INTAKE needs to help you capture less than one additional signed case per year to cover the base subscription.';
+            story = 'At a $' + avgCaseFee.toLocaleString() + ' average fee, INTAKE needs to help you capture less than one additional retained case per year to cover the base subscription.';
         } else {
-            story = 'At a $' + avgCaseFee.toLocaleString() + ' average fee, INTAKE needs to help you capture roughly ' + breakEvenPerYear.toFixed(1) + ' additional signed cases per year to cover the base subscription.';
+            story = 'At a $' + avgCaseFee.toLocaleString() + ' average fee, INTAKE needs to help you capture roughly ' + breakEvenPerYear.toFixed(1) + ' additional retained cases per year to cover the base subscription.';
         }
         document.getElementById('breakevenStory').textContent = story;
 
