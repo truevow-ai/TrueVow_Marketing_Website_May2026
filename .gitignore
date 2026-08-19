@@ -32,7 +32,3 @@ temp-*
 # Build & Login Artifacts
 deploy.zip
 fly_login.txt
-
-
-
-archive/

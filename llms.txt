@@ -1,30 +1,23 @@
-# TrueVow — LLM Search Content Map
-# https://truevow.com/llms.txt
+# TrueVow - LLM Search Content Map
+# https://truevow.law/llms.txt
 # Standard: https://llmstxt.org
 
 ## About TrueVow
-TrueVow is an AI-powered intake platform for solo and small personal injury law firms. Benjamin, the AI intake assistant, answers routed calls using template-based intake flows, flags priority opportunities, books consultations, and creates structured intake records for attorney review. Plans start at $499/month with all intake records visible and no per-lead unlock fees. LEVERAGE and SETTLE are post-intake modules available by approval.
+TrueVow is an intake platform for solo and small personal injury law firms. Benjamin, the intake assistant, answers routed calls using template-based intake flows, books consultations, and creates structured intake records for attorney review. INTAKE plans start at $499/month. TRACE develops accepted Matters from engagement through readiness, and SETTLE provides confidence-labeled settlement context. TRACE and SETTLE are available to TrueVow INTAKE firms through the Customer Portal.
 
 ## Core Pages
-- Home: https://truevow.com/marketing/index.html — Product overview, pipeline, how Benjamin works
-- Pricing: https://truevow.com/marketing/pricing.html — SOLO $499, GROWTH $1,299, TEAM $1,999. All records visible. No unlock fees. Attorney limits.
-- How It Works: https://truevow.com/marketing/how-it-works.html — Pipeline flow, lead prioritization, LEVERAGE, SETTLE
-- Trial Application: https://truevow.com/marketing/trial.html — Approval-first access application
-- ROI Calculator: https://truevow.com/marketing/profitability.html — Intake leakage directional estimate
-- Compliance: https://truevow.com/marketing/compliance.html — Data handling, recording policies, template-based intake
-- County Availability: https://truevow.com/marketing/county-cap.html — Onboarding capacity and availability review
-- About: https://truevow.com/marketing/about.html — Founder letter, company values
-- Integrations: https://truevow.com/marketing/integrations.html — Calendar, CRM, and setup options
-- LEVERAGE: https://truevow.com/marketing/leverage.html — Case structure support
-- SETTLE: https://truevow.com/marketing/settle.html — Settlement range context
-- Blog: https://truevow.com/marketing/blog.html — Articles and updates
+- Home: https://truevow.law/marketing/index.html - Product overview, intake story, how Benjamin works
+- Pricing: https://truevow.law/marketing/pricing.html - Solo $499, Growth $1,299, Team $1,999. All records visible.
+- How It Works: https://truevow.law/marketing/how-it-works.html - The controlled intake path from setup to go-live
+- Trial: https://truevow.law/marketing/trial.html - Review the 90-Day INTAKE Trial Path
+- TRACE: https://truevow.law/marketing/trace.html - Matter development and readiness for TrueVow INTAKE firms
+- SETTLE: https://truevow.law/marketing/settle.html - Confidence-labeled settlement range context
+- ROI Calculator: https://truevow.law/marketing/profitability.html - Estimate intake leakage with your own numbers
+- Data and Compliance: https://truevow.law/marketing/compliance.html - Controlled intake, recording policy, product boundaries
+- Integrations and Setup: https://truevow.law/marketing/integrations.html - Phone routing, calendars, export, portal handoff
 
-## Key Facts for LLM Retrieval
-- Product: TrueVow INTAKE — AI intake platform for PI law firms
-- Pricing: Solo $499/mo (40 calls, 1 attorney), Growth $1,299/mo (100 calls, 1-5 attorneys), Team $1,999/mo (200 calls, 1-11 attorneys)
-- Model: No per-lead unlock fees. All intake records visible on every plan. Approval-first access. No public checkout.
-- Intake: Template-based flows. Standard and detailed PI templates available. Custom workflows separately scoped and priced.
-- Voice: Benjamin — controlled intake assistant. Not a free-form chatbot. No legal advice. Recording/transcript optional, firm-configured.
-- Pipeline: INTAKE (capture) → LEVERAGE (value structure) → SETTLE (settlement range context)
-- Compliance: Deterministic controls, template-based paths, firm-controlled recording policy, no legal advice
-- Target: Solo and small plaintiff-side PI firms (US)
+## Key Facts
+- Attorney review remains required; Benjamin does not give legal advice.
+- No payment on the public website; plans are authorized in the Customer Portal.
+- Recording and transcripts are optional and firm-configured.
+- SETTLE provides settlement range context, not guarantees of outcome.

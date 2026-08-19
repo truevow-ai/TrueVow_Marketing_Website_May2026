@@ -3,15 +3,6 @@ Allow: /marketing/
 Allow: /legal/
 Allow: /assets/
 Allow: /widgets/
-Disallow: /demo/
-Disallow: /portal/
-Disallow: /archive/
-Disallow: /admin/
-Disallow: /legacy/
-Disallow: /webchat-integration/
-Disallow: /components/
-Disallow: /scripts/
-Disallow: /rules/
-Disallow: /js/
+Disallow: /api/
 
-Sitemap: https://truevow.com/sitemap.xml
+Sitemap: https://truevow.law/sitemap.xml
