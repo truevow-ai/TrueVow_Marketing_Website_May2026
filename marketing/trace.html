@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TRACE — Matter Development for PI Firms | TrueVow</title>
-  <meta name="description" content="TRACE develops each accepted PI matter: engagement, claim and coverage, treatment, records and bills, evidence, damages, deadlines, and client requests — derived from the matter itself, with attorney review at every step.">
+  <title>TRACE — Client Engagement & Case Readiness | TrueVow</title>
+  <meta name="description" content="TRACE helps solo and small PI firms move an approved prospect through engagement, claim setup, treatment, records, evidence, documented damages, deadline review, and explainable readiness — without replacing the firm's practice management system.">
   <meta name="robots" content="noindex,nofollow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,6 +59,8 @@
     .eyebrow { display: block; color: #F59E0B; text-transform: uppercase; letter-spacing: 2px; font-size: clamp(13px, 1.4vw, 15px); font-weight: 900; margin-bottom: 26px; }
     .hero h1 { max-width: 920px; margin: 0 auto 26px; font-size: clamp(40px, 6.4vw, 72px); font-weight: 900; letter-spacing: -2.2px; line-height: 1.1; color: #FFFFFF; }
     .hero-sub { max-width: 820px; margin: 0 auto; font-size: clamp(17px, 2vw, 21px); color: rgba(255,255,255,0.82); }
+    .hero-rule { max-width: 800px; margin: 24px auto 0; padding: 16px 20px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; color: #fff; font-size: 15px; font-weight: 700; }
+    .hero-rule strong { color: #F6C453; }
     .hero-actions { margin-top: 34px; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
     .btn { display: inline-block; padding: 16px 28px; border-radius: 10px; text-decoration: none; font-weight: 900; transition: 0.2s ease; }
     .btn:hover { transform: translateY(-2px); }
@@ -66,7 +68,7 @@
     .btn-secondary { color: white; border: 1px solid rgba(255,255,255,0.28); background: rgba(255,255,255,0.08); }
     .hero-note { margin-top: 22px; color: rgba(255,255,255,0.66); font-size: 14px; font-weight: 700; }
 
-    /* EARLY ACCESS NOTICE */
+    /* POSITIONING NOTICE */
     .ea-notice { background: #FFFBEB; border-bottom: 1px solid #FDE68A; }
     .ea-inner { max-width: 1000px; margin: 0 auto; padding: 18px 24px; display: flex; align-items: center; justify-content: center; gap: 12px; text-align: center; flex-wrap: wrap; }
     .ea-pill { background: #111; color: #F59E0B; font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.8px; padding: 6px 14px; border-radius: 999px; white-space: nowrap; }
@@ -78,25 +80,84 @@
     .section-head h2 { font-size: clamp(30px, 4vw, 46px); margin-bottom: 14px; font-weight: 900; }
     .section-head p { font-size: 19px; color: var(--muted); }
 
-    /* READINESS BOARD */
+    /* OPERATING BOARD */
     .board-section { background: var(--light); }
-    .board { max-width: 960px; margin: 0 auto; background: white; border: 1px solid var(--border); border-radius: 20px; overflow: hidden; box-shadow: 0 8px 28px rgba(0,0,0,0.05); }
-    .board-header { background: #111827; color: white; padding: 22px 28px; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 18px; }
-    .board-grid { display: grid; grid-template-columns: repeat(2, 1fr); }
-    .board-item { padding: 22px 28px; border-bottom: 1px solid var(--border); }
-    .board-item:nth-child(odd) { border-right: 1px solid var(--border); }
-    .board-item .q { font-weight: 800; color: var(--navy); font-size: 16px; margin-bottom: 4px; }
-    .board-item .a { color: var(--muted); font-size: 14px; }
-    .board-item .status { display: inline-block; margin-top: 8px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px; padding: 4px 10px; border-radius: 999px; background: var(--blue-soft); color: var(--navy); }
+    .ops-board { max-width: 980px; margin: 0 auto; background: white; border: 1px solid var(--border); border-radius: 20px; overflow: hidden; box-shadow: 0 8px 28px rgba(0,0,0,0.05); }
+    .ops-header { background: #111827; color: white; padding: 22px 28px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .ops-header strong { font-family: 'Montserrat', sans-serif; font-size: 18px; }
+    .ops-header span { font-size: 13px; color: #CBD5E1; }
+    .ops-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .ops-col { padding: 24px; border-right: 1px solid var(--border); }
+    .ops-col:last-child { border-right: none; }
+    .ops-title { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 17px; margin-bottom: 14px; display:flex; gap:8px; align-items:center; }
+    .dot { width: 9px; height: 9px; border-radius: 99px; display:inline-block; }
+    .dot-blue { background:#2563EB; } .dot-amber { background:#F59E0B; } .dot-red { background:#DC2626; }
+    .ops-item { border:1px solid var(--border); border-radius:12px; padding:14px 15px; margin-bottom:10px; background:white; }
+    .ops-item:last-child { margin-bottom:0; }
+    .ops-item b { display:block; font-size:14px; margin-bottom:4px; }
+    .ops-item p { color:var(--muted); font-size:13px; line-height:1.45; }
+    .ops-note { border-top:1px solid var(--border); padding:18px 24px; text-align:center; color:#555; font-size:14px; background:#FAFAFA; }
+
+    /* FLOW */
+    .flow-section { background:var(--light); }
+    .flow-grid { display:grid; grid-template-columns:repeat(7,1fr); gap:8px; }
+    .flow-step { border:1px solid var(--border); border-radius:14px; padding:18px 13px; background:white; text-align:center; }
+    .flow-step .n { color:var(--gold); font-size:11px; text-transform:uppercase; letter-spacing:1px; font-weight:900; margin-bottom:7px; }
+    .flow-step h3 { font-size:15px; margin-bottom:6px; }
+    .flow-step p { color:var(--muted); font-size:12px; line-height:1.45; }
+    .flow-step.settle { background:#F8FAFC; }
 
     /* TRACKS GRID */
     .tracks-section { background: white; }
-    .tracks-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .tracks-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
     .track-card { border: 1px solid var(--border); border-radius: 16px; padding: 26px; background: white; text-align: left; }
     .track-card .k { font-family: 'Montserrat', sans-serif; font-weight: 900; color: var(--navy); font-size: 18px; margin-bottom: 8px; }
     .track-card p { color: var(--muted); font-size: 14px; }
+    .track-card .tag { display:inline-block; margin-bottom:11px; padding:4px 9px; border-radius:999px; background:var(--blue-soft); color:var(--navy); text-transform:uppercase; letter-spacing:.7px; font-size:11px; font-weight:900; }
+    .track-card ul { margin:12px 0 0 18px; color:#444; font-size:13px; }
+    .track-card li { margin-bottom:5px; }
 
-    /* DOES NOT DO */
+    /* DETERMINISTIC */
+    .det-section { background:white; }
+    .det-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:stretch; }
+    .det-lead { background:#0B1220; color:white; border-radius:18px; padding:38px; }
+    .det-lead h2 { font-size:32px; margin-bottom:14px; }
+    .det-lead p { color:#D0D7E2; font-size:17px; }
+    .det-lead strong { color:#F6C453; }
+    .det-points { display:grid; gap:12px; }
+    .det-point { border:1px solid var(--border); border-radius:14px; padding:20px 22px; background:white; }
+    .det-point b { display:block; color:var(--navy); margin-bottom:5px; }
+    .det-point p { color:var(--muted); font-size:14px; }
+
+    /* BOUNDARY */
+    .boundary-section { background:#111; color:white; }
+    .boundary-section .section-head p { color:#D0D0D0; }
+    .boundary-grid { display:grid; grid-template-columns:1fr 1fr; gap:22px; max-width:980px; margin:0 auto; }
+    .boundary-card { background:#1B1B1B; border:1px solid #333; border-radius:16px; padding:30px; }
+    .boundary-card h3 { font-size:22px; margin-bottom:14px; }
+    .boundary-card.pms h3 { color:#A7C7FF; } .boundary-card.trace h3 { color:#F6C453; }
+    .boundary-card ul { margin-left:20px; color:#E5E5E5; }
+    .boundary-card li { margin-bottom:8px; }
+    .boundary-note { max-width:920px; margin:26px auto 0; padding:20px 22px; border-left:4px solid #D6B15A; background:#242424; border-radius:10px; color:#E5E5E5; }
+    .boundary-note strong { color:#F6C453; }
+
+    /* PLANS */
+    .plans-section { background:var(--light); }
+    .plans-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+    .plan-card { background:white; border:1px solid var(--border); border-radius:18px; padding:30px; display:flex; flex-direction:column; }
+    .plan-card.complete { border:2px solid var(--navy); box-shadow:0 10px 28px rgba(10,36,99,0.1); }
+    .plan-label { text-transform:uppercase; letter-spacing:.9px; color:var(--gold); font-size:11px; font-weight:900; margin-bottom:6px; }
+    .plan-card h3 { font-size:24px; margin-bottom:8px; }
+    .plan-price { font-family:'Montserrat',sans-serif; font-size:37px; font-weight:900; color:var(--navy); }
+    .plan-price small { font-family:'Inter',sans-serif; font-size:13px; font-weight:600; color:var(--muted); }
+    .plan-desc { color:var(--muted); font-size:14px; margin:12px 0 16px; }
+    .plan-card ul { margin:0 0 18px 18px; font-size:13px; color:#444; flex:1; }
+    .plan-card li { margin-bottom:7px; }
+    .promo-note { max-width:850px; margin:28px auto 0; padding:20px 24px; border:1px solid #C7D2FE; background:#EEF2FF; color:#25347A; border-radius:14px; text-align:center; }
+    .promo-note strong { font-family:'Montserrat',sans-serif; }
+    .plan-fine { text-align:center; margin-top:18px; color:var(--muted); font-size:13px; }
+
+    /* DOES NOT DECIDE */
     .limits-section { background: white; }
     .limits-box { background: #111; color: white; border-radius: 20px; padding: 44px; max-width: 1000px; margin: 0 auto; }
     .limits-box h2 { color: #D6B15A; text-align: center; margin-bottom: 14px; }
@@ -110,14 +171,14 @@
 
     /* WHERE IT FITS */
     .fit-section { background: var(--light); }
-    .fit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .fit-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
     .fit-card { background: white; border: 1px solid var(--border); border-radius: 16px; padding: 32px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
     .fit-card .stage { text-transform: uppercase; letter-spacing: 1px; font-size: 13px; font-weight: 900; color: var(--gold); margin-bottom: 10px; }
     .fit-card h3 { font-size: 22px; margin-bottom: 10px; }
     .fit-card p { color: #555; font-size: 15px; }
     .fit-card.current { border: 2px solid var(--navy); box-shadow: 0 10px 28px rgba(10,36,99,0.1); }
 
-    /* EARLY ACCESS FORM */
+    /* ACCESS FORM */
     .access-section { padding: 80px 24px; background: linear-gradient(135deg, var(--navy), var(--navy-2)); color: white; text-align: center; }
     .access-inner { max-width: 600px; margin: 0 auto; }
     .access-inner h2 { font-size: 34px; font-weight: 900; margin-bottom: 14px; }
@@ -168,7 +229,8 @@
     .mobile-nav-close { position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 28px; cursor: pointer; color: #999; padding: 4px 8px; }
 
     /* RESPONSIVE */
-    @media (max-width: 968px) {
+    @media (max-width: 1020px) {
+      .flow-grid { grid-template-columns: repeat(4, 1fr); }
       .tracks-grid { grid-template-columns: repeat(2, 1fr); }
       .limits-grid { grid-template-columns: 1fr; }
       .fit-grid { grid-template-columns: 1fr; max-width: 460px; margin: 0 auto; }
@@ -177,8 +239,10 @@
       .nav-links { display: none; }
       .nav-cta { display: none; }
       .nav-hamburger { display: flex; }
-      .board-grid { grid-template-columns: 1fr; }
-      .board-item:nth-child(odd) { border-right: none; }
+      .ops-grid, .det-grid, .boundary-grid { grid-template-columns: 1fr; }
+      .ops-col { border-right: none; border-bottom: 1px solid var(--border); }
+      .ops-col:last-child { border-bottom: none; }
+      .plans-grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
       .tracks-grid { grid-template-columns: 1fr; }
       .access-form .row2 { grid-template-columns: 1fr; }
       .footer-links { grid-template-columns: 1fr; }
@@ -237,228 +301,78 @@
 
 <!-- HERO -->
 <section class="hero">
-    <span class="eyebrow">TrueVow TRACE &mdash; Matter Development</span>
+    <span class="eyebrow">TrueVow TRACE &mdash; Client Engagement &amp; Case Readiness</span>
     <h1>TRACE Remembers the Work. You Handle the Decisions.</h1>
-    <p class="hero-sub">
-        From the moment a matter moves toward representation, TRACE develops it through engagement, claim and coverage, treatment, records and bills, evidence, damages, deadlines, and client requests &mdash; every operational item derived from the matter itself, and every decision left to the firm.
-    </p>
-    <div class="hero-actions">
-        <a href="#early-access" class="btn btn-primary">Discuss TRACE Readiness &rarr;</a>
-        <a href="#tracks" class="btn btn-secondary">See What TRACE Tracks &rarr;</a>
-    </div>
-    <p class="hero-note">Treatment, Records, and Case-Readiness Tracking &middot; Attorney-reviewed &middot; Not legal or medical advice</p>
+    <p class="hero-sub">TRACE is a deterministic pre-litigation operating layer for solo and small PI firms &mdash; from engagement and claim setup through treatment, records, evidence, documented damages, deadline review, and explainable readiness.</p>
+    <div class="hero-rule"><strong>Not another practice management system.</strong> TRACE focuses on the operational work inside an active PI matter: what needs attention, what the firm is waiting on, what is missing, and what still blocks readiness.</div>
+    <div class="hero-actions"><a href="#early-access" class="btn btn-primary">Discuss TRACE Readiness &rarr;</a><a href="#workflow" class="btn btn-secondary">See How TRACE Works &rarr;</a></div>
+    <p class="hero-note">Deterministic core &middot; Source-linked evidence &middot; Attorney-controlled decisions &middot; Not legal or medical advice</p>
 </section>
 
-<!-- EARLY ACCESS NOTICE -->
-<div class="ea-notice">
-    <div class="ea-inner">
-        <span class="ea-pill">Matter Development</span>
-        <p>TRACE is available to approved INTAKE firms. Pricing is per activated Matter: Start $35 &middot; Essential $179 &middot; Complete $299.</p>
-    </div>
-</div>
+<!-- POSITIONING NOTICE -->
+<div class="ea-notice"><div class="ea-inner"><span class="ea-pill">Built for PI pre-litigation</span><p>TRACE sits between an approved prospect and SETTLE. It is designed to make the Matter operationally complete and evidentially ready while your existing PMS remains the firm&rsquo;s general administrative system. Plans: Start $35 &middot; Essential $179 &middot; Complete $299 per activated Matter.</p></div></div>
 
-<!-- SECTION 0: THE POST-RETAINER STALL -->
-<section class="board-section reveal" style="background: white;">
-    <div class="container">
-        <div class="section-head">
-            <h2>The Matter Is Accepted. The Operational Work Should Not Live in Memory.</h2>
-            <p>Representation review begins, engagement documents are prepared, coverage is confirmed, records are authorized and requested, evidence is collected, damages develop, deadlines approach. When those pieces live in email, spreadsheets, and memory, the matter stalls &mdash; and nobody can see exactly what is missing.</p>
-        </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 22px; max-width: 900px; margin: 0 auto;">
-            <div style="background: #F8F9FA; border: 1px solid #E5E7EB; border-radius: 16px; padding: 30px;">
-                <h3 style="font-size: 20px; color: #1A1A1A; margin-bottom: 14px;">Fragmented way</h3>
-                <ul style="list-style: none; padding: 0; color: #555; font-size: 15px; line-height: 2.1;">
-                    <li>&#10005; Record requests across email and notes</li>
-                    <li>&#10005; Bills and liens tracked separately</li>
-                    <li>&#10005; Treatment gaps found late</li>
-                    <li>&#10005; Chronology rebuilt under pressure</li>
-                    <li>&#10005; Readiness blockers unclear</li>
-                </ul>
-            </div>
-            <div style="background: #0A2463; border-radius: 16px; padding: 30px; color: white;">
-                <h3 style="font-size: 20px; color: #D6B15A; margin-bottom: 14px;">With TRACE</h3>
-                <ul style="list-style: none; padding: 0; color: rgba(255,255,255,.85); font-size: 15px; line-height: 2.1;">
-                    <li>&#10003; Providers, records, bills, liens, missing items, and treatment gaps visible on one readiness board</li>
-                    <li>&#10003; Source-linked chronology drafts prepared for attorney review</li>
-                    <li>&#10003; Unresolved items shown clearly</li>
-                    <li>&#10003; Attorney reviews every item</li>
-                </ul>
-            </div>
-        </div>
-        <p style="text-align: center; margin-top: 28px; font-family: 'Montserrat', sans-serif; font-weight: 700; color: var(--navy); font-size: 17px;">The habit is simple: before demand, open the board. The readiness items the file is waiting on are in one place.</p>
+<!-- SECTION 0: THE OPERATING PROBLEM -->
+<section class="board-section reveal" style="background:white;">
+  <div class="container">
+    <div class="section-head"><h2>The Matter Is Active. The Operational Work Should Not Live in Memory.</h2><p>Once representation is approved, pre-litigation work starts moving in parallel: claims, treatment, records, evidence, damages support, deadlines, and client follow-up. TRACE keeps those dependencies visible without forcing the firm into another general-purpose PMS.</p></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:920px;margin:0 auto;">
+      <div style="background:#F8F9FA;border:1px solid #E5E7EB;border-radius:16px;padding:30px;"><h3 style="font-size:20px;margin-bottom:14px;">The fragmented way</h3><ul style="list-style:none;padding:0;color:#555;font-size:15px;line-height:2.05;"><li>&#10005; Carrier follow-up lives in email</li><li>&#10005; Record requests live in spreadsheets</li><li>&#10005; New providers surface late</li><li>&#10005; Missing bills and wage proof are found near demand</li><li>&#10005; Deadline review depends on memory</li><li>&#10005; Nobody can explain exactly why the file is not ready</li></ul></div>
+      <div style="background:#0A2463;border-radius:16px;padding:30px;color:white;"><h3 style="font-size:20px;color:#D6B15A;margin-bottom:14px;">With TRACE</h3><ul style="list-style:none;padding:0;color:rgba(255,255,255,.85);font-size:15px;line-height:2.05;"><li>&#10003; Claim and coverage state is visible</li><li>&#10003; Providers, requests, productions, and follow-ups are linked</li><li>&#10003; Evidence remains tied to its source</li><li>&#10003; Documented damages show what is supported vs. missing</li><li>&#10003; Deadline candidates require attorney confirmation</li><li>&#10003; Readiness explains the blockers instead of hiding them in a score</li></ul></div>
     </div>
+  </div>
 </section>
 
-<!-- SECTION 1: READINESS BOARD -->
+<!-- SECTION 1: TRACE OPERATING VIEW -->
 <section class="board-section reveal">
-    <div class="container">
-        <div class="section-head">
-            <h2>The Operating Board</h2>
-            <p>Every matter surfaces as three kinds of operational items &mdash; what needs the firm, what is waiting on others, and what is at risk.</p>
-        </div>
-        <div class="board">
-            <div class="board-header">Matter Operating Board &middot; illustrative view</div>
-            <div class="board-grid" style="grid-template-columns: 1fr;">
-                <div class="board-item">
-                    <div class="q">Needs You</div>
-                    <div class="a">Confirm provider &middot; Review deadline candidate &middot; Resolve coverage discrepancy &middot; Verify wage-loss support</div>
-                    <span class="status">Your review</span>
-                </div>
-                <div class="board-item">
-                    <div class="q">Waiting on Others</div>
-                    <div class="a">Carrier acknowledgment &middot; Medical records &middot; Client document request &middot; Itemized bill</div>
-                    <span class="status">In progress</span>
-                </div>
-                <div class="board-item">
-                    <div class="q">At Risk</div>
-                    <div class="a">Treatment gap &middot; Partial production &middot; Unconfirmed policy limits &middot; Deadline pending attorney review</div>
-                    <span class="status">Flagged</span>
-                </div>
-            </div>
-        </div>
-        <p style="text-align:center; margin-top: 24px; font-family: 'Montserrat', sans-serif; font-weight: 700; color: var(--navy); font-size: 17px; max-width: 700px; margin-left: auto; margin-right: auto;">TRACE creates these operational items from the Matter itself. It is not asking your firm to maintain another task list.</p>
-        <p style="text-align:center; color: var(--muted); font-size: 14px; margin-top: 16px; font-style: italic;">Illustrative board only. TRACE surfaces factual readiness items; the firm reviews every item and decides what happens next.</p>
+  <div class="container">
+    <div class="section-head"><h2>Open TRACE and Know What Needs Attention</h2><p>A solo attorney should not have to remember every missing record, carrier follow-up, new provider, wage-loss document, or unresolved deadline. TRACE turns its own workflow state into a small operating view.</p></div>
+    <div class="ops-board"><div class="ops-header"><strong>Matter Operations &middot; illustrative view</strong><span>Generated from TRACE workflow state &mdash; not a generic task board</span></div>
+      <div class="ops-grid">
+        <div class="ops-col"><div class="ops-title"><span class="dot dot-blue"></span>Needs You</div><div class="ops-item"><b>Confirm newly discovered provider</b><p>A referral appears in received records and needs firm confirmation.</p></div><div class="ops-item"><b>Review deadline candidate</b><p>A calculated limitation date requires attorney confirmation.</p></div><div class="ops-item"><b>Verify wage-loss support</b><p>The loss is recorded, but employer documentation is still missing.</p></div></div>
+        <div class="ops-col"><div class="ops-title"><span class="dot dot-amber"></span>Waiting on Others</div><div class="ops-item"><b>Medical records</b><p>Request delivered to the provider. Follow-up date is approaching.</p></div><div class="ops-item"><b>Carrier acknowledgment</b><p>Representation notice sent. Claim number has not been received.</p></div><div class="ops-item"><b>Client evidence request</b><p>Waiting for wage support and expense documentation.</p></div></div>
+        <div class="ops-col"><div class="ops-title"><span class="dot dot-red"></span>At Risk</div><div class="ops-item"><b>Unexplained treatment gap</b><p>No visit appears after an expected follow-up.</p></div><div class="ops-item"><b>Partial production</b><p>Bills arrived, but requested clinical records are incomplete.</p></div><div class="ops-item"><b>Readiness blocked</b><p>Unresolved items still prevent the Matter from being ready for SETTLE.</p></div></div>
+      </div><div class="ops-note">TRACE generates operational obligations only from TRACE-owned workflow state. It does not replace the firm&rsquo;s general task or project management system.</div>
     </div>
+  </div>
 </section>
 
-<!-- SECTION 2: WHAT TRACE TRACKS -->
-<section class="tracks-section reveal" id="tracks">
-    <div class="container">
-        <div class="section-head">
-            <h2>What TRACE Develops</h2>
-            <p>Nine domains, developed in parallel &mdash; not a linear checklist.</p>
-        </div>
-        <div class="tracks-grid">
-            <div class="track-card"><div class="k">Engagement</div><p>Representation review, conflict workflow, engagement documents, consent and signature &mdash; tracked to a confirmed Matter activation.</p></div>
-            <div class="track-card"><div class="k">Claim &amp; Coverage</div><p>Carrier, policy, insured, adjuster, claim number, representation notice, coverage and limits status, and follow-up.</p></div>
-            <div class="track-card"><div class="k">Treatment</div><p>Providers, authorizations, treatment status, and newly discovered providers and referrals &mdash; updated as treatment continues.</p></div>
-            <div class="track-card"><div class="k">Records &amp; Bills</div><p>Authorization &rarr; request &rarr; delivery &rarr; production &rarr; reconciliation, with completeness checked against requested dates and itemized bills.</p></div>
-            <div class="track-card"><div class="k">Evidence</div><p>Facts tied to source documents &mdash; reviewed, corrected, disputed, or excluded &mdash; with the chronology derived from them.</p></div>
-            <div class="track-card"><div class="k">Damages</div><p>Documented medical expenses, wage loss, property and out-of-pocket losses, and evidence completeness. Valuation stays with SETTLE.</p></div>
-            <div class="track-card"><div class="k">Deadlines</div><p>Calculated candidates from the matter, flagged for attorney review, and confirmed by the attorney &mdash; nothing is auto-applied.</p></div>
-            <div class="track-card"><div class="k">Client Requests</div><p>Focused requests for specific missing information or evidence through the Client Portal &mdash; not a generic messaging system.</p></div>
-            <div class="track-card"><div class="k">Readiness</div><p>The answer to one question: what still needs to happen before this Matter is ready?</p></div>
-        </div>
-    </div>
-</section>
+<!-- FLOW -->
+<section class="flow-section reveal" id="workflow"><div class="container"><div class="section-head"><h2>One Pre-Litigation Spine</h2><p>TRACE begins with the engagement workflow, then develops the active Matter across several parallel operational tracks until it is ready to hand to SETTLE.</p></div><div class="flow-grid"><div class="flow-step"><div class="n">01</div><h3>Engage</h3><p>Representation review, conflict workflow, package, consent, signature, activation.</p></div><div class="flow-step"><div class="n">02</div><h3>Claim &amp; Coverage</h3><p>Carrier, policy, adjuster, claim number, notice, limits status.</p></div><div class="flow-step"><div class="n">03</div><h3>Treatment</h3><p>Providers, referrals, episodes, expected follow-up, treatment gaps.</p></div><div class="flow-step"><div class="n">04</div><h3>Records &amp; Bills</h3><p>Authorizations, requests, production status, follow-up, reconciliation.</p></div><div class="flow-step"><div class="n">05</div><h3>Evidence &amp; Damages</h3><p>Source-linked facts, chronology, economic losses, missing support.</p></div><div class="flow-step"><div class="n">06</div><h3>Deadlines &amp; Readiness</h3><p>Attorney-reviewed deadline candidates and explicit readiness blockers.</p></div><div class="flow-step settle"><div class="n">07</div><h3>SETTLE Handoff</h3><p>Verified Matter inputs move into resolution intelligence.</p></div></div></div></section>
 
-<!-- SECTION 3: WHAT TRACE DOES NOT DO -->
-<section class="limits-section reveal">
-    <div class="container">
-        <div class="limits-box">
-            <h2>What TRACE Does Not Do</h2>
-            <p>TRACE is matter-development operations support. It organizes factual items for attorney review. It does not interpret medicine, value cases, or recommend settlement or legal decisions.</p>
-            <div class="limits-grid">
-                <div class="limit-card">No legal advice</div>
-                <div class="limit-card">No medical advice</div>
-                <div class="limit-card">No causation opinions</div>
-                <div class="limit-card">No injury-severity opinions</div>
-                <div class="limit-card">No settlement recommendations</div>
-                <div class="limit-card">No case valuation</div>
-            </div>
-            <div class="limits-note">
-                <p><strong>Attorney review is required.</strong> TRACE does not provide legal advice, medical advice, causation opinions, injury-severity opinions, case valuation, or settlement recommendations. The firm reviews all outputs and decides what happens next.</p>
-            </div>
-        </div>
-    </div>
-</section>
+<!-- SECTION 2: WHAT TRACE OWNS -->
+<section class="tracks-section reveal" id="tracks"><div class="container"><div class="section-head"><h2>What TRACE Owns</h2><p>TRACE is intentionally narrower than a PMS. It owns the pre-litigation workflow state that can be tracked deterministically and that materially affects whether the Matter is complete and ready.</p></div><div class="tracks-grid">
+<div class="track-card"><span class="tag">Engagement</span><div class="k">Engagement &amp; Matter Activation</div><p>TRACE begins with the engagement work required to turn an approved prospect into an active Matter.</p><ul><li>Structured conflict workflow</li><li>Engagement package and signature</li><li>Matter activation and engagement history</li></ul></div>
+<div class="track-card"><span class="tag">Operations</span><div class="k">Claim &amp; Coverage</div><p>Track the carrier-side facts needed to move pre-litigation work forward.</p><ul><li>Carrier, insured, policy and adjuster</li><li>Claim number and representation notice</li><li>Coverage / limits status and source</li></ul></div>
+<div class="track-card"><span class="tag">Treatment</span><div class="k">Providers &amp; Treatment</div><p>Keep the provider universe current as treatment evolves and surface exceptions for review.</p><ul><li>Providers and referrals</li><li>Treatment episodes</li><li>Gap and missing-follow-up signals</li></ul></div>
+<div class="track-card"><span class="tag">Records</span><div class="k">Records, Bills &amp; Completeness</div><p>Know exactly what was requested, what came back, what is partial, and what still needs follow-up.</p><ul><li>Medical authorization lifecycle</li><li>Request / production tracking</li><li>Records and bill reconciliation</li></ul></div>
+<div class="track-card"><span class="tag">Evidence</span><div class="k">Source-Linked Evidence</div><p>Extracted or entered facts remain tied to the source and can be reviewed, corrected, disputed, or excluded.</p><ul><li>Source provenance</li><li>Fact review and version history</li><li>Derived chronology and contradiction signals</li></ul></div>
+<div class="track-card"><span class="tag">Losses</span><div class="k">Damages Development</div><p>Maintain documented economic losses and the evidence supporting them without turning TRACE into a case-valuation product.</p><ul><li>Medical expenses</li><li>Lost wages and work impact</li><li>Property and out-of-pocket support</li></ul></div>
+<div class="track-card"><span class="tag">Risk Control</span><div class="k">Deadline Intelligence</div><p>TRACE can calculate and surface deadline candidates, but the attorney confirms the operational deadline.</p><ul><li>Rule / version provenance</li><li>Exception-review states</li><li>Attorney-confirmed deadline</li></ul></div>
+<div class="track-card"><span class="tag">Client</span><div class="k">Focused Client Requests</div><p>Use the Client Portal to collect specific facts and evidence TRACE identifies as missing.</p><ul><li>Treatment clarification</li><li>Provider confirmation</li><li>Wage / expense / evidence requests</li></ul></div>
+<div class="track-card"><span class="tag">Readiness</span><div class="k">Explainable Readiness</div><p>Instead of a mysterious score, TRACE shows what passed, what is unresolved, and exactly why the Matter is or is not ready.</p><ul><li>Coverage, treatment and record blockers</li><li>Evidence / damages / deadline blockers</li><li>Structured SETTLE handoff</li></ul></div>
+</div></div></section>
 
-<!-- SECTION 3B: PMS BOUNDARY + TRUST -->
-<section class="tracks-section reveal" style="background: #F8F9FA;">
-    <div class="container" style="max-width: 860px;">
-        <div class="section-head">
-            <h2>TRACE Is Not Your Practice Management System</h2>
-            <p>Your PMS administers the firm: generic tasks, calendars, email, document storage, billing, and litigation. TRACE develops the matter itself &mdash; the operational items that must be resolved before it is ready &mdash; and leaves those systems where they are.</p>
-        </div>
-        <div style="background: #0A2463; border-radius: 16px; padding: 34px; color: white; max-width: 760px; margin: 0 auto;">
-            <h3 style="color: #D6B15A; font-size: 20px; margin-bottom: 12px;">Unknown stays unknown.</h3>
-            <p style="color: rgba(255,255,255,.85); font-size: 16px; line-height: 1.9;">TRACE does not invent missing providers, dates, records, bills, liens, sources, or completion states. If an item is missing, unresolved, partial, or waiting on review, TRACE shows that clearly.</p>
-            <p style="color: rgba(255,255,255,.85); font-size: 16px; line-height: 1.9; margin-top: 14px;">TRACE does not mark an action complete until the authoritative action or state actually exists. Manual review remains available &mdash; AI and OCR may assist extraction, but core TRACE workflows continue manually when AI is unavailable.</p>
-            <p style="color: rgba(255,255,255,.85); font-size: 16px; line-height: 1.9; margin-top: 14px;">Attorney decisions remain human decisions.</p>
-        </div>
-    </div>
-</section>
+<!-- DETERMINISTIC -->
+<section class="det-section reveal"><div class="container"><div class="det-grid"><div class="det-lead"><h2>Deterministic Where It Matters</h2><p>OCR and language models may help <strong>propose extraction candidates</strong>, but TRACE does not depend on AI to run the Matter. Workflow, evidence provenance, authority rules, state changes, and human review remain deterministic.</p></div><div class="det-points"><div class="det-point"><b>Unknown stays unknown.</b><p>TRACE does not invent missing Matter IDs, dates, providers, plans, sources, or completion states.</p></div><div class="det-point"><b>Success means durable success.</b><p>A material action should not appear complete until the authoritative state or durable command exists.</p></div><div class="det-point"><b>AI failure does not stop the firm.</b><p>Manual claim, provider, records, damages, deadline, and readiness workflows remain available.</p></div><div class="det-point"><b>Attorney decisions remain human decisions.</b><p>TRACE surfaces facts, evidence, missing items, and review candidates. Legal judgment stays with the lawyer.</p></div></div></div></div></section>
 
-<!-- SECTION 3C: THE PUNCH -->
-<section class="board-section reveal" style="background: white;">
-    <div class="container" style="max-width: 860px; text-align: center;">
-        <h2 style="font-family: 'Montserrat', sans-serif; font-size: clamp(26px, 4vw, 38px); font-weight: 900; margin-bottom: 26px; letter-spacing: -0.6px;">One Question Each Product Answers</h2>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 22px;">
-            <div style="background: #0A2463; border-radius: 16px; padding: 34px; color: white;">
-                <h3 style="color: #D6B15A; font-size: 18px; margin-bottom: 12px;">TRACE answers:</h3>
-                <p style="color: rgba(255,255,255,.9); font-size: 19px; font-weight: 700; line-height: 1.6;">What still needs to happen before this Matter is ready?</p>
-            </div>
-            <div style="background: #111; border: 1px solid #333; border-radius: 16px; padding: 34px; color: white;">
-                <h3 style="color: #D6B15A; font-size: 18px; margin-bottom: 12px;">SETTLE answers:</h3>
-                <p style="color: rgba(255,255,255,.9); font-size: 19px; font-weight: 700; line-height: 1.6;">What do the verified facts mean for resolution?</p>
-            </div>
-        </div>
-        <p style="margin-top: 30px; font-family: 'Montserrat', sans-serif; font-weight: 800; color: var(--navy); font-size: 18px;">INTAKE captures &rarr; TRACE develops &rarr; SETTLE resolves &rarr; COMMAND measures.</p>
-    </div>
-</section>
+<!-- BOUNDARY -->
+<section class="boundary-section reveal"><div class="container"><div class="section-head"><h2>TRACE Is Not Your Practice Management System</h2><p>Your PMS administers the firm. TRACE focuses on the pre-litigation work that determines whether an active Matter is complete, supported, and ready. No PMS replacement is required.</p></div><div class="boundary-grid"><div class="boundary-card pms"><h3>Keep in your PMS</h3><ul><li>General matters and contacts</li><li>Firm-wide tasks and projects</li><li>General calendar and email</li><li>Document management</li><li>Timekeeping, billing and trust accounting</li><li>Litigation docketing and discovery</li></ul></div><div class="boundary-card trace"><h3>Let TRACE handle</h3><ul><li>TRACE-generated Needs You / Waiting / At Risk items</li><li>Claim / coverage workflow state</li><li>Treatment, records, bills and evidence completeness</li><li>Documented damages development</li><li>Deadline candidates and attorney confirmation</li><li>Explainable pre-litigation readiness</li></ul></div></div><div class="boundary-note"><strong>The boundary:</strong> Your PMS administers the firm. TRACE develops and prepares the Matter. SETTLE uses verified Matter inputs for settlement intelligence and resolution support.</div></div></section>
 
-<!-- SECTION 3D: TRACE PLANS -->
-<section class="board-section reveal" style="background: #F8F9FA;">
-    <div class="container" style="max-width: 860px; text-align: center;">
-        <h2 style="font-family: 'Montserrat', sans-serif; font-size: clamp(26px, 4vw, 38px); font-weight: 900; margin-bottom: 26px;">TRACE Plans &mdash; Per Activated Matter</h2>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;">
-            <div style="background: white; border: 1px solid #E5E7EB; border-radius: 16px; padding: 28px;">
-                <h3 style="font-size: 20px; color: #0A2463; margin-bottom: 8px;">Start</h3>
-                <p style="font-size: 28px; font-weight: 900; color: #1A1A1A; margin-bottom: 10px;">$35</p>
-                <p style="color: #666; font-size: 14px;">Engagement and claim setup, the operating board, and attorney review.</p>
-            </div>
-            <div style="background: white; border: 2px solid #0A2463; border-radius: 16px; padding: 28px; box-shadow: 0 10px 28px rgba(10,36,99,.1);">
-                <h3 style="font-size: 20px; color: #0A2463; margin-bottom: 8px;">Essential</h3>
-                <p style="font-size: 28px; font-weight: 900; color: #1A1A1A; margin-bottom: 10px;">$179</p>
-                <p style="color: #666; font-size: 14px;">Coverage, records and bills, treatment, evidence, and damages development.</p>
-            </div>
-            <div style="background: white; border: 1px solid #E5E7EB; border-radius: 16px; padding: 28px;">
-                <h3 style="font-size: 20px; color: #0A2463; margin-bottom: 8px;">Complete</h3>
-                <p style="font-size: 28px; font-weight: 900; color: #1A1A1A; margin-bottom: 10px;">$299</p>
-                <p style="color: #666; font-size: 14px;">Deadline intelligence, client requests, and full readiness through resolution handoff.</p>
-            </div>
-        </div>
-        <p style="margin-top: 26px; color: #555; font-size: 15px;">Approved INTAKE firms: ask about the First 12 Complete Matters promotion &mdash; confirmed in the Customer Portal.</p>
-    </div>
-</section>
+<!-- PLANS -->
+<section class="plans-section reveal"><div class="container"><div class="section-head"><h2>TRACE Plans</h2><p>Choose the level of TRACE support each Matter needs &mdash; from engagement only through full pre-litigation development and readiness.</p></div><div class="plans-grid"><div class="plan-card"><div class="plan-label">Engage</div><h3>TRACE Start</h3><div class="plan-price">$35 <small>/ activated Matter</small></div><p class="plan-desc">For firms that want a governed path from approved representation through engagement and Matter activation.</p><ul><li>Representation-review workflow</li><li>Structured conflict review</li><li>Engagement package and e-consent/signature</li><li>Matter activation and engagement history</li></ul></div><div class="plan-card"><div class="plan-label">Develop</div><h3>TRACE Essential</h3><div class="plan-price">$179 <small>/ activated Matter</small></div><p class="plan-desc">For firms that want TRACE to keep the core pre-litigation Matter-development work organized and visible.</p><ul><li>Everything in Start</li><li>Claim &amp; Coverage operations</li><li>Treatment and provider tracking</li><li>Records, bills and completeness</li><li>Source-linked evidence</li><li>Basic documented damages and liens</li><li>Standard readiness</li></ul></div><div class="plan-card complete"><div class="plan-label">Protect &amp; Prepare</div><h3>TRACE Complete</h3><div class="plan-price">$299 <small>/ activated Matter</small></div><p class="plan-desc">For deeper exception handling, Deadline Intelligence, advanced damages development, and explainable readiness.</p><ul><li>Everything in Essential</li><li>Deadline Intelligence</li><li>Advanced treatment exceptions</li><li>Advanced evidence completeness</li><li>Work-impact / damages support</li><li>Escalations and advanced readiness</li><li>Structured SETTLE handoff</li></ul></div></div><div class="promo-note"><strong>Launch benefit for approved INTAKE firms:</strong> the first 12 activated Matters can use TRACE Complete at $0 under the launch-credit program, subject to the applicable promotion terms.</div><p class="plan-fine">The firm selects the TRACE tier before activation. TRACE does not silently upgrade a Matter after launch credits are consumed.</p></div></section>
+
+<!-- SECTION 3: WHAT TRACE DOES NOT DECIDE -->
+<section class="limits-section reveal"><div class="container"><div class="limits-box"><h2>What TRACE Does Not Decide</h2><p>TRACE is operational and evidentiary support. It does not replace the attorney, interpret medicine, or determine what a case is worth.</p><div class="limits-grid"><div class="limit-card">No legal advice</div><div class="limit-card">No medical advice</div><div class="limit-card">No liability conclusion</div><div class="limit-card">No pain-and-suffering multiplier</div><div class="limit-card">No settlement valuation</div><div class="limit-card">No negotiation recommendation</div></div><div class="limits-note"><p><strong>Product boundary:</strong> TRACE organizes facts, evidence, documented economic losses, deadline candidates, and readiness. SETTLE owns settlement intelligence and resolution support.</p></div></div></div></section>
 
 <!-- SECTION 4: WHERE TRACE FITS -->
-<section class="fit-section reveal">
-    <div class="container">
-        <div class="section-head">
-            <h2>Where TRACE Fits</h2>
-            <p>One matter, developed end to end: captured, developed, resolved, measured. If your firm already runs INTAKE, TRACE is the next layer &mdash; not a case-management migration, but the readiness pieces your team already tracks, organized for review.</p>
-        </div>
-        <div class="fit-grid" style="grid-template-columns: repeat(4, 1fr);">
-            <div class="fit-card">
-                <div class="stage">Capture</div>
-                <h3>INTAKE</h3>
-                <p>INTAKE gets the opportunity captured, structured, and routed for attorney review.</p>
-            </div>
-            <div class="fit-card current">
-                <div class="stage">Develop</div>
-                <h3>TRACE</h3>
-                <p>TRACE develops the accepted matter &mdash; engagement, coverage, treatment, records, evidence, damages, deadlines, and client requests, tracked to readiness.</p>
-            </div>
-            <div class="fit-card">
-                <div class="stage">Resolve</div>
-                <h3>SETTLE</h3>
-                <p>SETTLE supports resolution &mdash; settlement-range context with confidence labels for attorney-controlled decisions. It does not predict, recommend, or guarantee outcomes.</p>
-            </div>
-            <div class="fit-card">
-                <div class="stage">Measure</div>
-                <h3>COMMAND</h3>
-                <p>COMMAND measures &mdash; portfolio oversight across matters, stages, and outcomes.</p>
-            </div>
-        </div>
-    </div>
-</section>
+<section class="fit-section reveal"><div class="container"><div class="section-head"><h2>Where TRACE Fits</h2><p>Each TrueVow product owns a distinct part of the plaintiff-firm lifecycle.</p></div><div class="fit-grid"><div class="fit-card"><div class="stage">Capture</div><h3>INTAKE</h3><p>INTAKE gets the opportunity captured, structured, and routed for attorney review.</p></div><div class="fit-card current"><div class="stage">Develop</div><h3>TRACE</h3><p>Engages the client, then keeps the active pre-litigation Matter operationally complete and evidentially ready.</p></div><div class="fit-card"><div class="stage">Resolve</div><h3>SETTLE</h3><p>Uses verified Matter inputs for settlement intelligence and attorney-controlled resolution work.</p></div><div class="fit-card"><div class="stage">Measure</div><h3>COMMAND</h3><p>Shows cross-product operational, funnel, usage, readiness, and firm-performance intelligence.</p></div></div></div></section>
 
-<!-- EARLY ACCESS FORM -->
+<!-- ACCESS FORM -->
 <section class="access-section" id="early-access">
     <div class="access-inner">
         <h2>Discuss TRACE Readiness</h2>
-        <p class="lead">Matter Development for PI firms</p>
+        <p class="lead">Deterministic pre-litigation operations for solo and small PI firms</p>
         <p class="fine">TRACE is enabled after workflow review and onboarding. Plans: Start $35, Essential $179, Complete $299 per activated Matter. We focus on plaintiff-side PI firms.</p>
         <form id="trace-access-form" class="access-form">
             <div class="row2">
@@ -531,9 +445,7 @@
         <span style="color: #555;">|</span>
         <a href="/legal/subprocessors.html">Sub-Processors</a>
     </div>
-    <p class="footer-disclaimer">
-        &copy; 2026 TrueVow Technologies. All rights reserved. TrueVow is a brand of TrueVow Global Tech FZE LLC (UAE), a subsidiary of TrueVow Global Technologies Holdings Ltd. (Nevis). TrueVow Global Technologies (USA) Inc. (Wyoming) provides passive marketing only and does not handle contracts or operations. All contracts are with TrueVow Global Tech FZE LLC (UAE). Technology and IP held by TrueVow Global Technologies Holdings Ltd. (Nevis). We are not a law firm and do not provide legal advice. By using our services, you acknowledge that TrueVow operates as a technology and services provider only.
-    </p>
+    <p class="footer-disclaimer">&copy; 2026 TrueVow Technologies. All rights reserved. TrueVow is a brand of TrueVow Global Tech FZE LLC (UAE), a subsidiary of TrueVow Global Technologies Holdings Ltd. (Nevis). TrueVow Global Technologies (USA) Inc. (Wyoming) provides passive marketing only and does not handle contracts or operations. All contracts are with TrueVow Global Tech FZE LLC (UAE). Technology and IP held by TrueVow Global Technologies Holdings Ltd. (Nevis). We are not a law firm and do not provide legal or medical advice. TRACE outputs, deadline candidates, evidence signals, readiness assessments, and damages-development records require appropriate firm review. Settlement valuation and resolution support are separate SETTLE functions.</p>
 </footer>
 
 <script>
@@ -545,7 +457,7 @@
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach(function(el) { revealObserver.observe(el); });
 
-    // Early access form submission
+    // Form submission
     var form = document.getElementById('trace-access-form');
     var submitBtn = document.getElementById('submit-btn');
     var messageDiv = document.getElementById('access-msg');
@@ -568,7 +480,7 @@
                 bar_number: document.getElementById('bar_number').value.trim() || null,
                 accepted_matters: document.getElementById('accepted_matters').value.trim() || null,
                 is_pi_attorney: document.getElementById('is_pi_attorney').checked,
-                source: 'trace_early_access_page',
+                source: 'trace_page',
                 landing_page: window.location.pathname,
                 query_string: window.location.search || null,
                 utm_source: getParam('utm_source'),
